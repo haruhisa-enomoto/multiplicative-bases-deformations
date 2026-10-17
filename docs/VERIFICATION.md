@@ -38,7 +38,7 @@ does not import the Challenge.
 | Fresh library build (no project artifacts, Mathlib from cache) | 9254 jobs, 21 min 54 s, peak 8.7 GB, research commit `36f7a0d57` |
 | Library build after adding the independent statement | 9261 jobs, no `sorry` |
 | Axiom audit, `scripts/AxiomAudit.lean` and the independent theorems | only `propext`, `Classical.choice`, `Quot.sound` |
-| Comparator replay of Challenge and Solution | statement match, axiom boundary, NanoDa and Lean kernel replay passed; 7 min 36 s, peak 7.4 GB |
+| Comparator replay of Challenge and Solution | statement match, axiom boundary, NanoDa and Lean kernel replay passed; first run 7 min 36 s, rerun on the release commit 9 min 12 s, peak 7.4 GB |
 | API generation (doc-gen4) | 555 modules, 39 min 38 s; website link check: 568 pages, all local targets present, displayed Challenge matches |
 
 The [Comparator record](../verification/2026-10-17/comparator.json) gives the

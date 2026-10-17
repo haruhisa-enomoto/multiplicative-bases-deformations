@@ -1,11 +1,11 @@
 {
- "checked_at": "2026-10-17T15:45:32+09:00",
+ "checked_at": "2026-10-17T21:11:04+09:00",
  "exit": 0,
  "targets": [
   "MultiplicativeBasisDeformations.Challenge.theoremA",
   "MultiplicativeBasisDeformations.Challenge.theoremB"
  ],
- "source_commit": "ee501416c493626ba39fb5b07bf523978e3cbb20",
+ "source_commit": "965b038a478b0dcbd23db745a19d9a2e96605f22",
  "challenge_sha256": "4812b9ae0cbe38e6f4598906438263ace409cc2f76c71dd8981a5cf153474d13",
  "solution_sha256": "2baf243d8b780f7e90c3f185794d10e527f0bd22a44a8ee2bd967c3495c77903",
  "lean": "leanprover/lean4:v4.33.1",
@@ -26,12 +26,12 @@
  "nanoda": "passed",
  "lean_kernel_replay": "passed",
  "result": "Your solution is okay!",
- "log_sha256": "bfd72424c1165df738d67569c07cb5bd426d336ce48568da3b5822a6b04acae9",
- "log_bytes": 626236,
+ "log_sha256": "6c434ee5644e0013436abdd3d6bea6de827c8101d76e65645b7db88229fee98a",
+ "log_bytes": 626274,
  "qualification": "Local replay with tool builds reused from the magnitude-conjecture verification (same pins; exporter v4.33.0 source compiled with Lean v4.33.1); not a hosted Palomar preflight or registry acceptance.",
  "timing": {
-  "elapsed_seconds": 455.83,
-  "peak_rss_kib": 7723924,
+  "elapsed_seconds": 551.67,
+  "peak_rss_kib": 7731304,
   "exit": 0
  }
 }
