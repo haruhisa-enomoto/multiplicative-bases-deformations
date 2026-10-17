@@ -1,0 +1,1051 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>MultiplicativeBasisDeformations.Foundations.ExtResolutions</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="MultiplicativeBasisDeformations.Foundations.ExtResolutions";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Multiplicative bases</a></span></h1><h2 class="header_filename break_within"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Foundations</span>.<span class="name">ExtResolutions</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.33.1/src/Init.lean">Init</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtUnique.html">MultiplicativeBasisDeformations.Foundations.ExtUnique</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-MultiplicativeBasisDeformations.Foundations.ExtResolutions" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.IsGMap"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">IsGMap</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GMod.reg"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GMod</span>.<span class="name">reg</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GMod.reg_act"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GMod</span>.<span class="name">reg_act</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.regCyc"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">regCyc</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GMod.free"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GMod</span>.<span class="name">free</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GMod.free_act"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GMod</span>.<span class="name">free_act</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GMod.free_isHom"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GMod</span>.<span class="name">free_isHom</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.extVanish_free"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">extVanish_free</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GProj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GProj</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.Cover"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">Cover</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.exists_free_cover"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">exists_free_cover</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.gProj_free"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">gProj_free</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GProj.extVanish"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GProj</span>.<span class="name">extVanish</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.proj_of_retract"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">proj_of_retract</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.proj_free"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">proj_free</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GProj.proj_pieces"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GProj</span>.<span class="name">proj_pieces</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.exists_gsection"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">exists_gsection</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.extVanish_zero_iff_extend"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">extVanish_zero_iff_extend</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.ExtVanish"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ExtVanish</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.kerMod"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">kerMod</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.ε'"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ε'</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.ε'_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ε'_apply</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.ε'_surj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ε'_surj</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.ε'_map"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ε'_map</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.ker_ε'"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ker_ε'</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.trunc"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">trunc</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.trunc_extVanish"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">trunc_extVanish</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.extVanish_zero_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">extVanish_zero_iff</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.extVanish_kerMod_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">extVanish_kerMod_iff</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.kerMod_proj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">kerMod_proj</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.extVanish_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">extVanish_iff</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.FinGMod"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">FinGMod</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.FinGMod.cov"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">FinGMod</span>.<span class="name">cov</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.FinGMod.next"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">FinGMod</span>.<span class="name">next</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.syz"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">syz</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.exists_gres"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">exists_gres</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.GExt.GRes.extVanish_iff_field"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">extVanish_iff_field</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Graded-Ext-from-graded-projective-resolutions-Lemma-6-3" class="markdown-heading">Graded <code>Ext</code> from graded projective resolutions (Lemma 6.3) <a class="hover-link" href="#Graded-Ext-from-graded-projective-resolutions-Lemma-6-3">#</a></h1><p><code>positive-deformations.tex</code>: &quot;Internal degree <code>t</code> in <code>Hom</code> or <code>Ext</code> means maps from a graded
+projective resolution to the target which raise degree by <code>t</code>.&quot; This file defines that <code>Ext</code>
+and compares it with the bar <code>Ext</code> (<code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ExtVanish">ExtVanish</a></code>) used in the rest of the formalization.</p><ul><li><code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GProj">GProj</a></code>: a graded projective module (degree-zero graded module maps lift along graded
+surjections). Finitely generated ones are retracts of finite sums of shifted regular modules
+(<code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.exists_free_cover">exists_free_cover</a></code>), so their bar <code>Ext</code> vanishes (<code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GProj.extVanish">GProj.extVanish</a></code>).</li><li><code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a></code>: a graded projective resolution <code>⋯ → P₁ → P₀ → M → 0</code> (finitely generated graded
+projectives, maps of degree <code>0</code>, exact). <code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ExtVanish">GRes.ExtVanish</a></code>: <code>Ext^{n+1}(M, N)_t = 0</code> computed
+from it, i.e. every degree-<code>t</code> graded module map <code>P_{n+1} → N</code> vanishing on the image of
+<code>P_{n+2}</code> factors through <code>P_{n+1} → P_n</code> by a degree-<code>t</code> graded module map.</li><li><code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.extVanish_iff">GRes.extVanish_iff</a></code>: for every graded projective resolution, this vanishing is the bar
+vanishing. In particular it does not depend on the resolution. Over a commutative ring <code>R</code>
+(a field, or <code>ℤ/4</code> in Lemma 6.6) it assumes the graded pieces of <code>Λ</code> and <code>M</code> projective over <code>R</code>
+(for the free modules of Lemma 6.6, and automatically over a field: <code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.extVanish_iff_field">GRes.extVanish_iff_field</a></code>).</li><li><code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.exists_gres">exists_gres</a></code>: a finitely generated graded module over a module-finite graded algebra over a
+noetherian ring has a graded projective resolution.</li></ul><p>So every <code>Ext</code> vanishing hypothesis or conclusion stated in the bar form (Lemma 6.3,
+Propositions 6.5, 10.1, Lemma 6.6) is equivalent to the manuscript's form for any graded
+projective resolution.</p></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.IsGMap"><div class="structure"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L44-L48">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.IsGMap"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">IsGMap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Y</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">XX</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">X</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">YY</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">X</span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>A graded module map of degree <code>t</code>.</p><ul class="structure_fields" id="MultiplicativeBasisDeformations.GExt.IsGMap.mk"><li id="MultiplicativeBasisDeformations.GExt.IsGMap.act" class="structure_field"><div class="structure_field_info">act<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">X</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">Λ</span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn">f</span> <span class="fn">(<span class="fn">(<span class="fn"><span class="fn">XX</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.act">act</a></span> <span class="fn">x</span>)</span> <span class="fn">a</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<span class="fn"><span class="fn">YY</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.act">act</a></span> <span class="fn">(<span class="fn">f</span> <span class="fn">x</span>)</span>)</span> <span class="fn">a</span></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.IsGMap.deg" class="structure_field"><div class="structure_field_info">deg<span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">X</span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">XX</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.IsHom">IsHom</a></span> <span class="fn">p</span> <span class="fn">x</span></span> → <span class="fn"><span class="fn"><span class="fn"><span class="fn">YY</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.IsHom">IsHom</a></span> <span class="fn">(<span class="fn">p</span> <span class="fn">+</span> <span class="fn">t</span>)</span> <span class="fn">(<span class="fn">f</span> <span class="fn">x</span>)</span></span></span></div></li></ul><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.IsGMap" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GMod.reg"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L51-L57">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.reg"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GMod</span>.<span class="name">reg</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">Λ</span></span></div></div><p>The regular graded module <code>Λ</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.GMod.reg" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GMod.reg_act"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L59-L59">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.reg_act"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GMod</span>.<span class="name">reg_act</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">m </span><span class="fn">a</span> : <span class="fn">Λ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.reg">reg</a> <span class="fn">GΛ</span>)</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.act">act</a></span> <span class="fn">m</span>)</span> <span class="fn">a</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">m</span> <span class="fn">*</span> <span class="fn">a</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.regCyc"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L61-L70">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.regCyc"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">regCyc</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.CycProj">CycProj</a> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.reg">GMod.reg</a> <span class="fn">GΛ</span>)</span></span></div></div><p>The regular module is cyclic projective, generated by <code>1</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.regCyc" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GMod.free"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L73-L75">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.free"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GMod</span>.<span class="name">free</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">ℤ</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">(<span class="fn">ι</span> → <span class="fn">Λ</span>)</span></span></div></div><p>The finite free graded module <code>⊕_i Λ⟨b_i⟩</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.GMod.free" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GMod.free_act"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L77-L78">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.free_act"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GMod</span>.<span class="name">free_act</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">ℤ</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">Λ</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">Λ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">i</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.free">free</a> <span class="fn">GΛ</span> <span class="fn">b</span>)</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.act">act</a></span> <span class="fn">x</span>)</span> <span class="fn">a</span> <span class="fn">i</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">x</span> <span class="fn">i</span></span> <span class="fn">*</span> <span class="fn">a</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GMod.free_isHom"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L80-L82">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.free_isHom"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GMod</span>.<span class="name">free_isHom</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">ℤ</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">Λ</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.free">free</a> <span class="fn">GΛ</span> <span class="fn">b</span>)</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.IsHom">IsHom</a></span> <span class="fn">p</span> <span class="fn">x</span></span> <span class="fn">↔</span> <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">GΛ</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.IsHom">IsHom</a></span> <span class="fn">(<span class="fn">p</span> <span class="fn">-</span> <span class="fn"><span class="fn">b</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn">x</span> <span class="fn">i</span>)</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.extVanish_free"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L84-L88">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.extVanish_free"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">extVanish_free</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">ℤ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">NN</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ExtVanish">ExtVanish</a> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.free">GMod.free</a> <span class="fn">GΛ</span> <span class="fn">b</span>)</span> <span class="fn">NN</span> <span class="fn">n</span> <span class="fn">t</span></span></div></div><p><strong><code>Ext</code> out of a finite free graded module vanishes.</strong></p></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GProj"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L90-L96">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GProj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GProj</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">PP</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">P</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>A graded projective module</strong>: graded module maps of degree <code>0</code> lift along graded
+surjections from graded modules in the universe of <code>Λ</code> onto graded modules in the universe of <code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.GProj" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.Cover"><div class="structure"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L98-L106">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.Cover"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">Cover</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">XX</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">X</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> (max (max 1 u) u_1)</div></div><p>A cover of a graded module by a finite free graded module.</p><ul class="structure_fields" id="MultiplicativeBasisDeformations.GExt.Cover.mk"><li id="MultiplicativeBasisDeformations.GExt.Cover.ι" class="structure_field"><div class="structure_field_info">ι : <a href="../.././foundational_types.html">Type</a></div></li><li id="MultiplicativeBasisDeformations.GExt.Cover.fi" class="structure_field"><div class="structure_field_info">fi : <span class="fn"><span class="fn">Fintype</span> <span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.Cover.ι">ι</a></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.Cover.de" class="structure_field"><div class="structure_field_info">de : <span class="fn"><span class="fn">DecidableEq</span> <span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.Cover.ι">ι</a></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.Cover.b" class="structure_field"><div class="structure_field_info">b : <span class="fn"><span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.Cover.ι">ι</a></span> → <span class="fn">ℤ</span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.Cover.c" class="structure_field"><div class="structure_field_info">c : <span class="fn"><span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.Cover.ι">ι</a></span> → <span class="fn">Λ</span>)</span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">X</span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.Cover.hc" class="structure_field"><div class="structure_field_info">hc : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.IsGMap">IsGMap</a> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.free">GMod.free</a> <span class="fn">GΛ</span> <span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.Cover.b">b</a></span>)</span> <span class="fn">XX</span> <span class="fn">0</span> <span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.Cover.c">c</a></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.Cover.surj" class="structure_field"><div class="structure_field_info">surj : <span class="fn"><span class="fn">Function.Surjective</span> <span class="fn">⇑<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.Cover.c">c</a></span></span></span></div></li></ul><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.Cover" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.exists_free_cover"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L110-L141">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.exists_free_cover"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">exists_free_cover</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">XX</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">X</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">R</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Nonempty</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.Cover">Cover</a> <span class="fn">XX</span>)</span></span></div></div><p><strong>A finitely generated graded module has a finite free graded cover</strong>: the homogeneous
+components of a finite generating set, as generators of shifted copies of <code>Λ</code>.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.gProj_free"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L143-L186">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.gProj_free"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">gProj_free</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">ℤ</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GProj">GProj</a> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.free">GMod.free</a> <span class="fn">GΛ</span> <span class="fn">b</span>)</span></span></div></div><p><strong>Finite free graded modules are graded projective.</strong></p></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GProj.extVanish"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L188-L198">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GProj.extVanish"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GProj</span>.<span class="name">extVanish</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">PP</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">P</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GProj">GProj</a> <span class="fn">PP</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">R</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">NN</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ExtVanish">ExtVanish</a> <span class="fn">PP</span> <span class="fn">NN</span> <span class="fn">n</span> <span class="fn">t</span></span></div></div><p><strong><code>Ext</code> out of a finitely generated graded projective vanishes</strong>: it is a retract of a
+finite free graded module.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.proj_of_retract"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L200-L214">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.proj_of_retract"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">proj_of_retract</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Y</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">gX</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr">ZGr</a> <span class="fn">X</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">gY</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr">ZGr</a> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">i</span> : <span class="fn"><span class="fn">X</span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn"><span class="fn">Y</span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">X</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hi</span> : <span class="fn">∀ (<span class="fn">p</span> : <span class="fn">ℤ</span>) (<span class="fn">x</span> : <span class="fn">X</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">gX</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.IsHom">IsHom</a></span> <span class="fn">p</span> <span class="fn">x</span></span> → <span class="fn"><span class="fn"><span class="fn">gY</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.IsHom">IsHom</a></span> <span class="fn">p</span> <span class="fn">(<span class="fn">i</span> <span class="fn">x</span>)</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hs</span> : <span class="fn">∀ (<span class="fn">p</span> : <span class="fn">ℤ</span>) (<span class="fn">y</span> : <span class="fn">Y</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">gY</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.IsHom">IsHom</a></span> <span class="fn">p</span> <span class="fn">y</span></span> → <span class="fn"><span class="fn"><span class="fn">gX</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.IsHom">IsHom</a></span> <span class="fn">p</span> <span class="fn">(<span class="fn">s</span> <span class="fn">y</span>)</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hsi</span> : <span class="fn"><span class="fn"><span class="fn">s</span> <span class="fn">∘ₗ</span> <span class="fn">i</span></span> <span class="fn">=</span> <span class="fn">LinearMap.id</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn">gY</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn">gX</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></div></div><p>A degree-<code>0</code> graded retract of a module with projective graded pieces has projective graded
+pieces.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.proj_free"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L216-L238">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.proj_free"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">proj_free</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hΛ</span> : <span class="fn">∀ (<span class="fn">q</span> : <span class="fn">ℤ</span>), <span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">GΛ</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">ℤ</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GMod.free">GMod.free</a> <span class="fn">GΛ</span> <span class="fn">b</span>)</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></div></div><p>The graded pieces of a finite free graded module are projective when those of <code>Λ</code> are.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GProj.proj_pieces"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L240-L251">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GProj.proj_pieces"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GProj</span>.<span class="name">proj_pieces</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">PP</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">P</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GProj">GProj</a> <span class="fn">PP</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">R</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hΛ</span> : <span class="fn">∀ (<span class="fn">q</span> : <span class="fn">ℤ</span>), <span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">GΛ</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">PP</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></div></div><p><strong>The graded pieces of a finitely generated graded projective module are projective</strong> when
+those of <code>Λ</code> are.</p></div></div><div class="mod_doc"><h3 id="Ext¹-and-extensions-of-maps-from-the-syzygy" class="markdown-heading"><code>Ext¹</code> and extensions of maps from the syzygy <a class="hover-link" href="#Ext¹-and-extensions-of-maps-from-the-syzygy">#</a></h3></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.exists_gsection"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L268-L274">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.exists_gsection"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">exists_gsection</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">PP</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">P</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">π</span> : <span class="fn"><span class="fn">P</span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hπ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.IsGMap">IsGMap</a> <span class="fn">PP</span> <span class="fn">MM</span> <span class="fn">0</span> <span class="fn">π</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hs</span> : <span class="fn"><span class="fn">Function.Surjective</span> <span class="fn">⇑<span class="fn">π</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hM</span> : <span class="fn">∀ (<span class="fn">q</span> : <span class="fn">ℤ</span>), <span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">MM</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">s</span> : <span class="fn"><span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">P</span></span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">∘ₗ</span> <span class="fn">s</span></span> <span class="fn">=</span> <span class="fn">LinearMap.id</span></span> <span class="fn">∧</span> <span class="fn">∀ (<span class="fn">p</span> : <span class="fn">ℤ</span>) (<span class="fn">m</span> : <span class="fn">M</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">MM</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.IsHom">IsHom</a></span> <span class="fn">p</span> <span class="fn">m</span></span> → <span class="fn"><span class="fn"><span class="fn"><span class="fn">PP</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.IsHom">IsHom</a></span> <span class="fn">(<span class="fn">p</span> <span class="fn">+</span> <span class="fn">0</span>)</span> <span class="fn">(<span class="fn">s</span> <span class="fn">m</span>)</span></span></span></span></span></span></div></div><p>A graded <code>R</code>-linear section of a graded surjection.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.extVanish_zero_iff_extend"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L276-L435">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.extVanish_zero_iff_extend"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">extVanish_zero_iff_extend</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">P</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">PP</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">P</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">π</span> : <span class="fn"><span class="fn">P</span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hπ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.IsGMap">IsGMap</a> <span class="fn">PP</span> <span class="fn">MM</span> <span class="fn">0</span> <span class="fn">π</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hs</span> : <span class="fn"><span class="fn">Function.Surjective</span> <span class="fn">⇑<span class="fn">π</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hM</span> : <span class="fn">∀ (<span class="fn">q</span> : <span class="fn">ℤ</span>), <span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">MM</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">NN</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ExtVanish">ExtVanish</a> <span class="fn">PP</span> <span class="fn">NN</span> <span class="fn">0</span> <span class="fn">t</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ExtVanish">ExtVanish</a> <span class="fn">MM</span> <span class="fn">NN</span> <span class="fn">0</span> <span class="fn">t</span></span> <span class="fn">↔</span>   <span class="fn">∀ (<span class="fn">h</span> : <span class="fn"><span class="fn">↥<span class="fn"><span class="fn">π</span>.<span class="fn">ker</span></span></span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">N</span></span>), <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.IsGMap">IsGMap</a> <span class="fn">(<span class="fn"><span class="fn">PP</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.ker">ker</a></span> <span class="fn">MM</span> <span class="fn">⋯</span> <span class="fn">⋯</span>)</span> <span class="fn">NN</span> <span class="fn">t</span> <span class="fn">h</span></span> → <span class="fn">∃ (<span class="fn">g</span> : <span class="fn"><span class="fn">P</span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">N</span></span>), <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.IsGMap">IsGMap</a> <span class="fn">PP</span> <span class="fn">NN</span> <span class="fn">t</span> <span class="fn">g</span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">g</span> <span class="fn">∘ₗ</span> <span class="fn"><span class="fn"><span class="fn">π</span>.<span class="fn">ker</span></span>.<span class="fn">subtype</span></span></span> <span class="fn">=</span> <span class="fn">h</span></span></span></span></span></span></span></div></div><p><strong><code>Ext¹(M, N)_t</code> (bar) vanishes iff every degree-<code>t</code> graded module map out of the kernel
+extends to <code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></code></strong>, along <code>0 → K → <a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a> → M → 0</code> with <code>Ext¹(P, N)_t = 0</code>.</p></div></div><div class="mod_doc"><h3 id="Graded-projective-resolutions" class="markdown-heading">Graded projective resolutions <a class="hover-link" href="#Graded-projective-resolutions">#</a></h3></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes"><div class="structure"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L441-L456">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> (max (max u v) (w + 1))</div></div><p><strong>A graded projective resolution</strong> <code>⋯ → P₁ → P₀ → M → 0</code> of a graded module <code>M</code>: finitely
+generated graded projective modules (in the universe of <code>M</code>), maps of degree <code>0</code>, exact.</p><ul class="structure_fields" id="MultiplicativeBasisDeformations.GExt.GRes.mk"><li id="MultiplicativeBasisDeformations.GExt.GRes.P" class="structure_field"><div class="structure_field_info">P : <span class="fn"><span class="fn">ℕ</span> → <a href="../.././foundational_types.html">Type</a> w</span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.acg" class="structure_field"><div class="structure_field_info">acg<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+ : <span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></span> <span class="fn">n</span>)</span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.mod" class="structure_field"><div class="structure_field_info">mod<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+ : <span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></span> <span class="fn">n</span>)</span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.PP" class="structure_field"><div class="structure_field_info">PP<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+ : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></span> <span class="fn">n</span>)</span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.d" class="structure_field"><div class="structure_field_info">d<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></span> <span class="fn">(<span class="fn">n</span> <span class="fn">+</span> <span class="fn">1</span>)</span></span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn"><span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></span> <span class="fn">n</span></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.ε" class="structure_field"><div class="structure_field_info">ε : <span class="fn"><span class="fn"><span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></span> <span class="fn">0</span></span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">M</span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.d_map" class="structure_field"><div class="structure_field_info">d_map<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+ : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.IsGMap">IsGMap</a> <span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.PP">PP</a></span> <span class="fn">(<span class="fn">n</span> <span class="fn">+</span> <span class="fn">1</span>)</span>)</span> <span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.PP">PP</a></span> <span class="fn">n</span>)</span> <span class="fn">0</span> <span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.d">d</a></span> <span class="fn">n</span>)</span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.ε_map" class="structure_field"><div class="structure_field_info">ε_map : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.IsGMap">IsGMap</a> <span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.PP">PP</a></span> <span class="fn">0</span>)</span> <span class="fn">MM</span> <span class="fn">0</span> <span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.ε_surj" class="structure_field"><div class="structure_field_info">ε_surj : <span class="fn"><span class="fn">Function.Surjective</span> <span class="fn">⇑<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a></span></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.exact_zero" class="structure_field"><div class="structure_field_info">exact_zero : <span class="fn"><span class="fn"><span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a></span>.<span class="fn">ker</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.d">d</a></span> <span class="fn">0</span>)</span>.<span class="fn">range</span></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.exact" class="structure_field"><div class="structure_field_info">exact<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.d">d</a></span> <span class="fn">n</span>)</span>.<span class="fn">ker</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.d">d</a></span> <span class="fn">(<span class="fn">n</span> <span class="fn">+</span> <span class="fn">1</span>)</span>)</span>.<span class="fn">range</span></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.proj" class="structure_field"><div class="structure_field_info">proj<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+ : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GProj">GProj</a> <span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.PP">PP</a></span> <span class="fn">n</span>)</span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.GRes.fin" class="structure_field"><div class="structure_field_info">fin<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+ : <span class="fn"><span class="fn">Module.Finite</span> <span class="fn">R</span> <span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></span> <span class="fn">n</span>)</span></span></div></li></ul><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.GRes" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.ExtVanish"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L464-L469">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ExtVanish"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ExtVanish</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">NN</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong><code>Ext^{n+1}(M, N)_t = 0</code> computed from the resolution</strong>: every degree-<code>t</code> graded module map
+<code>P_{n+1} → N</code> that vanishes on the image of <code>P_{n+2}</code> is <code>g ∘ <a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.d">d</a></code> for a degree-<code>t</code> graded module
+map <code>g : P_n → N</code> (the cocycles of <code>Hom_t(P_•, N)</code> in degree <code>n+1</code> are coboundaries).</p><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.GRes.ExtVanish" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.kerMod"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L471-L472">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.kerMod"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">kerMod</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">↥<span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a></span>.<span class="fn">ker</span></span></span></span></div></div><p>The first syzygy <code>ker <a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a></code> as a graded module.</p><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.GRes.kerMod" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.ε'"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L474-L476">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε'"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ε'</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></span> <span class="fn">1</span></span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">↥<span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a></span>.<span class="fn">ker</span></span></span></span></div></div><p><code>P₁ → ker <a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a></code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.GRes.ε'" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.ε'_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L478-L478">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε'_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ε'_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></span> <span class="fn">1</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">↑<span class="fn">(<span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε'">ε'</a></span> <span class="fn">x</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.d">d</a></span> <span class="fn">0</span>)</span> <span class="fn">x</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.ε'_surj"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L480-L484">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε'_surj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ε'_surj</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Function.Surjective</span> <span class="fn">⇑<span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε'">ε'</a></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.ε'_map"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L486-L488">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε'_map"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ε'_map</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.IsGMap">IsGMap</a> <span class="fn">(<span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.PP">PP</a></span> <span class="fn">1</span>)</span> <span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.kerMod">kerMod</a></span> <span class="fn">0</span> <span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε'">ε'</a></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.ker_ε'"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L490-L491">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ker_ε'"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">ker_ε'</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε'">ε'</a></span>.<span class="fn">ker</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.d">d</a></span> <span class="fn">1</span>)</span>.<span class="fn">range</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.trunc"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L493-L505">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.trunc"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">trunc</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.kerMod">kerMod</a></span></span></div></div><p><strong>The truncated resolution</strong> <code>⋯ → P₂ → P₁ → ker <a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a> → 0</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.GRes.trunc" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.trunc_extVanish"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L507-L508">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.trunc_extVanish"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">trunc_extVanish</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">NN</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.trunc">trunc</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ExtVanish">ExtVanish</a></span> <span class="fn">NN</span> <span class="fn">n</span> <span class="fn">t</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ExtVanish">ExtVanish</a></span> <span class="fn">NN</span> <span class="fn">(<span class="fn">n</span> <span class="fn">+</span> <span class="fn">1</span>)</span> <span class="fn">t</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.extVanish_zero_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L510-L560">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.extVanish_zero_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">extVanish_zero_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">NN</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ExtVanish">ExtVanish</a></span> <span class="fn">NN</span> <span class="fn">0</span> <span class="fn">t</span></span> <span class="fn">↔</span>   <span class="fn">∀ (<span class="fn">h</span> : <span class="fn"><span class="fn">↥<span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a></span>.<span class="fn">ker</span></span></span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">N</span></span>),
+    <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.IsGMap">IsGMap</a> <span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.kerMod">kerMod</a></span> <span class="fn">NN</span> <span class="fn">t</span> <span class="fn">h</span></span> → <span class="fn">∃ (<span class="fn">g</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.P">P</a></span> <span class="fn">0</span></span> <span class="fn">→ₗ[</span><span class="fn">R</span><span class="fn">]</span> <span class="fn">N</span></span>), <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.IsGMap">IsGMap</a> <span class="fn">(<span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.PP">PP</a></span> <span class="fn">0</span>)</span> <span class="fn">NN</span> <span class="fn">t</span> <span class="fn">g</span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">g</span> <span class="fn">∘ₗ</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a></span>.<span class="fn">ker</span></span>.<span class="fn">subtype</span></span></span> <span class="fn">=</span> <span class="fn">h</span></span></span></span></span></span></span></div></div><p><strong><code>Ext¹</code> from the resolution vanishes iff every degree-<code>t</code> graded module map out of
+<code>ker <a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a></code> extends to <code>P₀</code>.</strong></p></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.extVanish_kerMod_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L562-L602">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.extVanish_kerMod_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">extVanish_kerMod_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hM</span> : <span class="fn">∀ (<span class="fn">q</span> : <span class="fn">ℤ</span>), <span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">MM</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">NN</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ExtVanish">GExt.ExtVanish</a> <span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.kerMod">kerMod</a></span> <span class="fn">NN</span> <span class="fn">n</span> <span class="fn">t</span></span> <span class="fn">↔</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ExtVanish">GExt.ExtVanish</a> <span class="fn">MM</span> <span class="fn">NN</span> <span class="fn">(<span class="fn">n</span> <span class="fn">+</span> <span class="fn">1</span>)</span> <span class="fn">t</span></span></span></div></div><p>The degree-<code>0</code> graded <code>R</code>-split sequence <code>0 → ker <a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ε">ε</a> → P₀ → M → 0</code>, and dimension shifting
+of the bar <code>Ext</code> along it.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.kerMod_proj"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L604-L626">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.kerMod_proj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">kerMod_proj</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hΛ</span> : <span class="fn">∀ (<span class="fn">q</span> : <span class="fn">ℤ</span>), <span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">GΛ</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hM</span> : <span class="fn">∀ (<span class="fn">q</span> : <span class="fn">ℤ</span>), <span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">MM</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.kerMod">kerMod</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></div></div><p>The graded pieces of the first syzygy are projective.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.extVanish_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L630-L647">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.extVanish_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">extVanish_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hΛ</span> : <span class="fn">∀ (<span class="fn">q</span> : <span class="fn">ℤ</span>), <span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">GΛ</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">NN</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(∀ (<span class="fn">q</span> : <span class="fn">ℤ</span>), <span class="fn"><span class="fn">Module.Projective</span> <span class="fn">R</span> <span class="fn">↥<span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">MM</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod.gr">gr</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ZGr.proj">proj</a></span> <span class="fn">q</span>)</span>.<span class="fn">range</span></span></span></span>)</span> → <span class="fn">∀ (<span class="fn">t</span> : <span class="fn">ℤ</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ExtVanish">ExtVanish</a></span> <span class="fn">NN</span> <span class="fn">n</span> <span class="fn">t</span></span> <span class="fn">↔</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ExtVanish">GExt.ExtVanish</a> <span class="fn">MM</span> <span class="fn">NN</span> <span class="fn">n</span> <span class="fn">t</span></span></span></span></span></div></div><p><strong>The <code>Ext</code> of a graded projective resolution is the bar <code>Ext</code></strong>: for every graded
+projective resolution of <code>M</code>, <code>Ext^{n+1}(M, N)_t</code> computed from it vanishes iff the bar
+<code>Ext^{n+1}(M, N)_t</code> vanishes. In particular the vanishing does not depend on the resolution.
+Over a commutative ring, assuming the graded pieces of <code>Λ</code> and of <code>M</code> projective (automatic over a
+field, <code><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.extVanish_iff_field">GRes.extVanish_iff_field</a></code>; true for the free modules over <code>ℤ/4</code> of Lemma 6.6).</p></div></div><div class="mod_doc"><h3 id="Existence-of-graded-projective-resolutions" class="markdown-heading">Existence of graded projective resolutions <a class="hover-link" href="#Existence-of-graded-projective-resolutions">#</a></h3></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.FinGMod"><div class="structure"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L655-L661">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">FinGMod</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> (max (u + 1) v)</div></div><p>A finite-dimensional graded module.</p><ul class="structure_fields" id="MultiplicativeBasisDeformations.GExt.FinGMod.mk"><li id="MultiplicativeBasisDeformations.GExt.FinGMod.X" class="structure_field"><div class="structure_field_info">X : <a href="../.././foundational_types.html">Type</a> u</div></li><li id="MultiplicativeBasisDeformations.GExt.FinGMod.acg" class="structure_field"><div class="structure_field_info">acg : <span class="fn"><span class="fn">AddCommGroup</span> <span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod.X">X</a></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.FinGMod.mod" class="structure_field"><div class="structure_field_info">mod : <span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod.X">X</a></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.FinGMod.XX" class="structure_field"><div class="structure_field_info">XX : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod.X">X</a></span></span></div></li><li id="MultiplicativeBasisDeformations.GExt.FinGMod.fin" class="structure_field"><div class="structure_field_info">fin : <span class="fn"><span class="fn">Module.Finite</span> <span class="fn">R</span> <span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod.X">X</a></span></span></div></li></ul><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.FinGMod" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.FinGMod.cov"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L666-L668">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod.cov"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">FinGMod</span>.<span class="name">cov</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod">FinGMod</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.Cover">Cover</a> <span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod.XX">XX</a></span></span></div></div><p>A chosen finite free cover.</p><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.FinGMod.cov" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.FinGMod.next"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L671-L674">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod.next"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">FinGMod</span>.<span class="name">next</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsNoetherianRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod">FinGMod</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod">FinGMod</a></div></div><p>The kernel of the chosen cover.</p><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.FinGMod.next" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.syz"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L677-L680">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.syz"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">syz</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsNoetherianRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod">FinGMod</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">ℕ</span> → <a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.FinGMod">FinGMod</a></span></div></div><p>The syzygies.</p><details id="instances-for-list-MultiplicativeBasisDeformations.GExt.syz" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.exists_gres"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L682-L726">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.exists_gres"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">exists_gres</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsNoetherianRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">R</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Nonempty</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span>)</span></span></div></div><p><strong>Every finite-dimensional graded module over a finite-dimensional graded algebra has a
+graded projective resolution</strong> (by finite free graded modules).</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.GExt.GRes.extVanish_iff_field"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ExtResolutions.lean#L737-L741">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.extVanish_iff_field"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">GExt</span>.<span class="name">GRes</span>.<span class="name">extVanish_iff_field</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">GΛ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GAlg">GAlg</a> <span class="fn">Λ</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">NN</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">MM</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.GMod">GMod</a> <span class="fn">GΛ</span> <span class="fn">M</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Rs</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes">GRes</a> <span class="fn">MM</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn">ℤ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">Rs</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ExtResolutions.html#MultiplicativeBasisDeformations.GExt.GRes.ExtVanish">ExtVanish</a></span> <span class="fn">NN</span> <span class="fn">n</span> <span class="fn">t</span></span> <span class="fn">↔</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedExt.html#MultiplicativeBasisDeformations.GExt.ExtVanish">GExt.ExtVanish</a> <span class="fn">MM</span> <span class="fn">NN</span> <span class="fn">n</span> <span class="fn">t</span></span></span></div></div><p><strong>The comparison over a field</strong>: no projectivity hypotheses.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

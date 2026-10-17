@@ -1,0 +1,598 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>MultiplicativeBasisDeformations.Foundations.ThinCategory</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="MultiplicativeBasisDeformations.Foundations.ThinCategory";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Multiplicative bases</a></span></h1><h2 class="header_filename break_within"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Foundations</span>.<span class="name">ThinCategory</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.33.1/src/Init.lean">Init</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/PosetWeights.html">MultiplicativeBasisDeformations.Foundations.PosetWeights</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-MultiplicativeBasisDeformations.Foundations.ThinCategory" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.IsThin"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">IsThin</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.exists_smul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">exists_smul</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.MultBasis"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">MultBasis</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.MultBasis.comp_eq"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">MultBasis</span>.<span class="name">comp_eq</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.SupP"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">SupP</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.instFintypeSupP"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">instFintypeSupP</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.instDecidableEqSupP"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">instDecidableEqSupP</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.supLe"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">supLe</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.supLe_trans"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">supLe_trans</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.supLe_antisymm"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">supLe_antisymm</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.supOrder"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">supOrder</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.SupRepFinite"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">SupRepFinite</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.coef"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.coef_spec"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_spec</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.coef_eq"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_eq</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.coef_add"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_add</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.coef_smul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_smul</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.coef_zero"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_zero</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.coef_self"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_self</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.coef_sum"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_sum</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.coef_comp"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_comp</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.coef_comp_right"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_comp_right</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.supp"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">supp</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.fvec"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">fvec</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.fvec_ne"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">fvec_ne</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.zero_of_not_supp"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">zero_of_not_supp</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.Thin.extend_source"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">extend_source</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Thin-directed-categories-and-the-extension-of-multiplicative-bases" class="markdown-heading">Thin directed categories and the extension of multiplicative bases <a class="hover-link" href="#Thin-directed-categories-and-the-extension-of-multiplicative-bases">#</a></h1><p>Abstract form of Subsection 4.4 (<code>scalar-normalization.tex</code>). A
+<code>k</code>-linear category is <em>thin</em> if its Hom spaces have dimension at most one,
+its endomorphisms are scalars, and it is directed (no nonzero morphisms both
+ways between distinct objects). A <em>multiplicative basis</em> on a set of objects
+chooses a nonzero vector on each nonzero line, identities on objects, and is
+closed under composition up to zero.</p><p>Lemma 4.11(1) (<code>lem:source-basis-extension</code>): a multiplicative basis on a
+finite set extends over a source. The proof is the source's: choose <code>f_y</code> in
+<code>T(s, y)</code>, write <code>f_y b_{yz} = μ_{yz} f_z</code>, express <code>μ</code> through object values by
+Lemma 4.9 on the support poset of Lemma 4.10, and rescale the <code>f_y</code>. The
+representation-finiteness of the incidence algebra of the support poset is a
+hypothesis here; it is supplied by Lemma 4.10 for the graded covering category
+(<code>SupportPoset.lean</code>). Sinks are sources of the opposite category.</p></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.IsThin"><div class="structure"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L38-L43">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">IsThin</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>A thin directed <code>k</code>-linear category.</p><ul class="structure_fields" id="MultiplicativeBasisDeformations.Thin.IsThin.mk"><li id="MultiplicativeBasisDeformations.Thin.IsThin.fin" class="structure_field"><div class="structure_field_info">fin<span class="decl_args">
+<span class="fn">(<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>)</span></span>
+ : <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span>)</span></span></div></li><li id="MultiplicativeBasisDeformations.Thin.IsThin.thin" class="structure_field"><div class="structure_field_info">thin<span class="decl_args">
+<span class="fn">(<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">(<span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span>)</span></span> <span class="fn">≤</span> <span class="fn">1</span></span></div></li><li id="MultiplicativeBasisDeformations.Thin.IsThin.endo" class="structure_field"><div class="structure_field_info">endo<span class="decl_args">
+<span class="fn">(<span class="fn">o</span> : <span class="fn">O</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o</span></span>)</span></span>
+ : <span class="fn">∃ (<span class="fn">c</span> : <span class="fn">k</span>), <span class="fn"><span class="fn">f</span> <span class="fn">=</span> <span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn"><span class="fn">CategoryTheory.CategoryStruct.id</span> <span class="fn">o</span></span></span></span></span></div></li><li id="MultiplicativeBasisDeformations.Thin.IsThin.dir" class="structure_field"><div class="structure_field_info">dir<span class="decl_args">
+<span class="fn">(<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn">o</span> <span class="fn">≠</span> <span class="fn">o'</span></span> → <span class="fn">∀ (<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>) (<span class="fn">g</span> : <span class="fn"><span class="fn">o'</span> <span class="fn">⟶</span> <span class="fn">o</span></span>), <span class="fn"><span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn">0</span></span> → <span class="fn"><span class="fn">g</span> <span class="fn">=</span> <span class="fn">0</span></span></span></span></span></div></li></ul><details id="instances-for-list-MultiplicativeBasisDeformations.Thin.IsThin" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.exists_smul"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L48-L54">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.exists_smul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">exists_smul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">g</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">c</span> : <span class="fn">k</span>), <span class="fn"><span class="fn">g</span> <span class="fn">=</span> <span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn">f</span></span></span></span></div></div><p>Every morphism is a multiple of a nonzero one.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.MultBasis"><div class="structure"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L56-L60">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.MultBasis"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">MultBasis</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">Set</span> <span class="fn">O</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">β</span> : <span class="fn">(<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>A multiplicative basis on a set of objects.</p><ul class="structure_fields" id="MultiplicativeBasisDeformations.Thin.MultBasis.mk"><li id="MultiplicativeBasisDeformations.Thin.MultBasis.ne_zero" class="structure_field"><div class="structure_field_info">ne_zero<span class="decl_args">
+<span class="fn">(<span class="fn">o</span> : <span class="fn">O</span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn">o</span> <span class="fn">∈</span> <span class="fn">S</span></span> → <span class="fn">∀ <span class="fn">o'</span> ∈ <span class="fn">S</span>, <span class="fn">∀ (<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>), <span class="fn"><span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn">0</span></span> → <span class="fn"><span class="fn"><span class="fn">β</span> <span class="fn">o</span> <span class="fn">o'</span></span> <span class="fn">≠</span> <span class="fn">0</span></span></span></span></span></span></div></li><li id="MultiplicativeBasisDeformations.Thin.MultBasis.id" class="structure_field"><div class="structure_field_info">id<span class="decl_args">
+<span class="fn">(<span class="fn">o</span> : <span class="fn">O</span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn">o</span> <span class="fn">∈</span> <span class="fn">S</span></span> → <span class="fn"><span class="fn"><span class="fn">β</span> <span class="fn">o</span> <span class="fn">o</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">CategoryTheory.CategoryStruct.id</span> <span class="fn">o</span></span></span></span></div></li><li id="MultiplicativeBasisDeformations.Thin.MultBasis.mul" class="structure_field"><div class="structure_field_info">mul<span class="decl_args">
+<span class="fn">(<span class="fn">o</span> : <span class="fn">O</span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn">o</span> <span class="fn">∈</span> <span class="fn">S</span></span> →
+  <span class="fn">∀ <span class="fn">o'</span> ∈ <span class="fn">S</span>,
+    <span class="fn">∀ <span class="fn">o''</span> ∈ <span class="fn">S</span>,
+      <span class="fn"><span class="fn"><span class="fn"><span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">(<span class="fn">β</span> <span class="fn">o</span> <span class="fn">o'</span>)</span> <span class="fn">(<span class="fn">β</span> <span class="fn">o'</span> <span class="fn">o''</span>)</span></span> <span class="fn">=</span> <span class="fn">0</span></span> <span class="fn">∨</span>         <span class="fn"><span class="fn"><span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">(<span class="fn">β</span> <span class="fn">o</span> <span class="fn">o'</span>)</span> <span class="fn">(<span class="fn">β</span> <span class="fn">o'</span> <span class="fn">o''</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">β</span> <span class="fn">o</span> <span class="fn">o''</span></span></span></span></span></span></span></div></li></ul><details id="instances-for-list-MultiplicativeBasisDeformations.Thin.MultBasis" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.MultBasis.comp_eq"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L63-L67">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.MultBasis.comp_eq"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">MultBasis</span>.<span class="name">comp_eq</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <span class="fn"><span class="fn">Set</span> <span class="fn">O</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">β</span> : <span class="fn">(<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hβ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.MultBasis">MultBasis</a> <span class="fn">S</span> <span class="fn">β</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o' </span><span class="fn">o''</span> : <span class="fn">O</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn">o</span> <span class="fn">∈</span> <span class="fn">S</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h'</span> : <span class="fn"><span class="fn">o'</span> <span class="fn">∈</span> <span class="fn">S</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h''</span> : <span class="fn"><span class="fn">o''</span> <span class="fn">∈</span> <span class="fn">S</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hne</span> : <span class="fn"><span class="fn"><span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">(<span class="fn">β</span> <span class="fn">o</span> <span class="fn">o'</span>)</span> <span class="fn">(<span class="fn">β</span> <span class="fn">o'</span> <span class="fn">o''</span>)</span></span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">(<span class="fn">β</span> <span class="fn">o</span> <span class="fn">o'</span>)</span> <span class="fn">(<span class="fn">β</span> <span class="fn">o'</span> <span class="fn">o''</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">β</span> <span class="fn">o</span> <span class="fn">o''</span></span></span></div></div><p>A nonzero composite through basis vectors is the basis vector.</p></div></div><div class="mod_doc"><h3 id="The-support-poset-of-a-source" class="markdown-heading">The support poset of a source <a class="hover-link" href="#The-support-poset-of-a-source">#</a></h3></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.SupP"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L75-L76">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.SupP"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">SupP</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">_s</span> : <span class="fn">O</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">_fv</span> : <span class="fn">(<span class="fn">y</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">_s</span> <span class="fn">⟶</span> <span class="fn">y</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> v</div></div><p>The support poset: <code>y ≤ z</code> if some morphism <code>y → z</code> acts nonzero on <code>f_y</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.Thin.SupP" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.instFintypeSupP"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L78-L78">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.instFintypeSupP"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">instFintypeSupP</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">O</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">fv</span> : <span class="fn">(<span class="fn">y</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">s</span> <span class="fn">⟶</span> <span class="fn">y</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Fintype</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.SupP">SupP</a> <span class="fn">s</span> <span class="fn">P</span> <span class="fn">fv</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.instDecidableEqSupP"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L81-L81">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">noncomputable instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.instDecidableEqSupP"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">instDecidableEqSupP</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">O</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">fv</span> : <span class="fn">(<span class="fn">y</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">s</span> <span class="fn">⟶</span> <span class="fn">y</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">DecidableEq</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.SupP">SupP</a> <span class="fn">s</span> <span class="fn">P</span> <span class="fn">fv</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.supLe"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L85-L86">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supLe"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">supLe</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">fv</span> : <span class="fn">(<span class="fn">y</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">s</span> <span class="fn">⟶</span> <span class="fn">y</span></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">y </span><span class="fn">z</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.SupP">SupP</a> <span class="fn">s</span> <span class="fn">P</span> <span class="fn">fv</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>The order relation.</p><details id="instances-for-list-MultiplicativeBasisDeformations.Thin.supLe" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.supLe_trans"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L91-L101">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supLe_trans"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">supLe_trans</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">fv</span> : <span class="fn">(<span class="fn">y</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">s</span> <span class="fn">⟶</span> <span class="fn">y</span></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hfv</span> : <span class="fn">∀ <span class="fn">y</span> ∈ <span class="fn">P</span>, <span class="fn"><span class="fn"><span class="fn">fv</span> <span class="fn">y</span></span> <span class="fn">≠</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">y </span><span class="fn">z </span><span class="fn">w</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.SupP">SupP</a> <span class="fn">s</span> <span class="fn">P</span> <span class="fn">fv</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h₁</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supLe">supLe</a> <span class="fn">y</span> <span class="fn">z</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h₂</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supLe">supLe</a> <span class="fn">z</span> <span class="fn">w</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supLe">supLe</a> <span class="fn">y</span> <span class="fn">w</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.supLe_antisymm"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L104-L113">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supLe_antisymm"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">supLe_antisymm</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">fv</span> : <span class="fn">(<span class="fn">y</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">s</span> <span class="fn">⟶</span> <span class="fn">y</span></span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">y </span><span class="fn">z</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.SupP">SupP</a> <span class="fn">s</span> <span class="fn">P</span> <span class="fn">fv</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h₁</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supLe">supLe</a> <span class="fn">y</span> <span class="fn">z</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h₂</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supLe">supLe</a> <span class="fn">z</span> <span class="fn">y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">y</span> <span class="fn">=</span> <span class="fn">z</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.supOrder"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L115-L120">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supOrder"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">supOrder</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">fv</span> : <span class="fn">(<span class="fn">y</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">s</span> <span class="fn">⟶</span> <span class="fn">y</span></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hfv</span> : <span class="fn">∀ <span class="fn">y</span> ∈ <span class="fn">P</span>, <span class="fn"><span class="fn"><span class="fn">fv</span> <span class="fn">y</span></span> <span class="fn">≠</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">PartialOrder</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.SupP">SupP</a> <span class="fn">s</span> <span class="fn">P</span> <span class="fn">fv</span>)</span></span></div></div><p>The support poset as a partial order.</p><details id="instances-for-list-MultiplicativeBasisDeformations.Thin.supOrder" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.SupRepFinite"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L123-L129">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.SupRepFinite"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">SupRepFinite</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">s</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">fv</span> : <span class="fn">(<span class="fn">y</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">s</span> <span class="fn">⟶</span> <span class="fn">y</span></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hfv</span> : <span class="fn">∀ <span class="fn">y</span> ∈ <span class="fn">P</span>, <span class="fn"><span class="fn"><span class="fn">fv</span> <span class="fn">y</span></span> <span class="fn">≠</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>The incidence algebra of the support poset, or of its dual, is
+representation-finite (supplied by Lemma 4.10).</p><details id="instances-for-list-MultiplicativeBasisDeformations.Thin.SupRepFinite" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="mod_doc"><h3 id="Lemma-4-11-1-extension-over-a-source" class="markdown-heading">Lemma 4.11(1): extension over a source <a class="hover-link" href="#Lemma-4-11-1-extension-over-a-source">#</a></h3></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.coef"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L138-L139">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">f </span><span class="fn">g</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">k</span></div></div><p>The coefficient of <code>g</code> along a nonzero <code>f</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.Thin.coef" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.coef_spec"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L141-L144">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef_spec"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_spec</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">g</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">g</span> <span class="fn">=</span> <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f</span> <span class="fn">g</span></span> <span class="fn">•</span> <span class="fn">f</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.coef_eq"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L146-L150">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef_eq"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_eq</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">g</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">c</span> : <span class="fn">k</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn">g</span> <span class="fn">=</span> <span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn">f</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f</span> <span class="fn">g</span></span> <span class="fn">=</span> <span class="fn">c</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.coef_add"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L152-L155">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef_add"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_add</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">g </span><span class="fn">g'</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f</span> <span class="fn">(<span class="fn">g</span> <span class="fn">+</span> <span class="fn">g'</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f</span> <span class="fn">g</span></span> <span class="fn">+</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f</span> <span class="fn">g'</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.coef_smul"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L157-L160">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef_smul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_smul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn">k</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">g</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f</span> <span class="fn">(<span class="fn">c</span> <span class="fn">•</span> <span class="fn">g</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">c</span> <span class="fn">*</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f</span> <span class="fn">g</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.coef_zero"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L162-L163">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef_zero"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_zero</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f</span> <span class="fn">0</span></span> <span class="fn">=</span> <span class="fn">0</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.coef_self"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L165-L166">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef_self"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_self</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f</span> <span class="fn">f</span></span> <span class="fn">=</span> <span class="fn">1</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.coef_sum"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L168-L173">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef_sum"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_sum</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">κ</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">κ</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">g</span> : <span class="fn"><span class="fn">κ</span> → <span class="fn">(<span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span>)</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f</span> <span class="fn">(∑ <span class="fn">i</span> ∈ <span class="fn">t</span>, <span class="fn"><span class="fn">g</span> <span class="fn">i</span></span>)</span></span> <span class="fn">=</span> <span class="fn">∑ <span class="fn">i</span> ∈ <span class="fn">t</span>, <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f</span> <span class="fn">(<span class="fn">g</span> <span class="fn">i</span>)</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.coef_comp"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L175-L184">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef_comp"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_comp</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o' </span><span class="fn">o'' </span><span class="fn">o'''</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f'</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o''</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hf'</span> : <span class="fn"><span class="fn">f'</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">g</span> : <span class="fn"><span class="fn">o'</span> <span class="fn">⟶</span> <span class="fn">o''</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">g'</span> : <span class="fn"><span class="fn">o''</span> <span class="fn">⟶</span> <span class="fn">o'''</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f''</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'''</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf''</span> : <span class="fn"><span class="fn">f''</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f''</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">f</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">g</span> <span class="fn">g'</span>)</span>)</span></span> <span class="fn">=</span>   <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f'</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">f</span> <span class="fn">g</span>)</span></span> <span class="fn">*</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f''</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">f'</span> <span class="fn">g'</span>)</span></span></span></span></div></div><p>Coefficients multiply along composites.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.coef_comp_right"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L186-L195">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef_comp_right"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">coef_comp_right</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">o </span><span class="fn">o' </span><span class="fn">o'' </span><span class="fn">t</span> : <span class="fn">O</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">t</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f'</span> : <span class="fn"><span class="fn">o'</span> <span class="fn">⟶</span> <span class="fn">t</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f''</span> : <span class="fn"><span class="fn">o''</span> <span class="fn">⟶</span> <span class="fn">t</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf'</span> : <span class="fn"><span class="fn">f'</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hf''</span> : <span class="fn"><span class="fn">f''</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">g</span> : <span class="fn"><span class="fn">o''</span> <span class="fn">⟶</span> <span class="fn">o'</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">g'</span> : <span class="fn"><span class="fn">o'</span> <span class="fn">⟶</span> <span class="fn">o</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f''</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">g</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">g'</span> <span class="fn">f</span>)</span>)</span></span> <span class="fn">=</span>   <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f'</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">g'</span> <span class="fn">f</span>)</span></span> <span class="fn">*</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.coef">coef</a> <span class="fn">hT</span> <span class="fn">f''</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">g</span> <span class="fn">f'</span>)</span></span></span></span></div></div><p>Coefficients multiply along composites, on the right.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.supp"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L201-L202">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supp"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">supp</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">O</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span></div></div><p>The support of <code>T(s, -)</code> in <code>S</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.Thin.supp" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.fvec"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L205-L206">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.fvec"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">fvec</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">s </span><span class="fn">y</span> : <span class="fn">O</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">s</span> <span class="fn">⟶</span> <span class="fn">y</span></span></div></div><p>Chosen nonzero vectors <code>f_y ∈ T(s, y)</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.Thin.fvec" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.fvec_ne"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L208-L211">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.fvec_ne"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">fvec_ne</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">O</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">y</span> : <span class="fn">O</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hy</span> : <span class="fn"><span class="fn">y</span> <span class="fn">∈</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supp">supp</a> <span class="fn">s</span> <span class="fn">S</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.fvec">fvec</a> <span class="fn">s</span> <span class="fn">y</span></span> <span class="fn">≠</span> <span class="fn">0</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.zero_of_not_supp"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L213-L216">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.zero_of_not_supp"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">zero_of_not_supp</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">O</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">y</span> : <span class="fn">O</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hyS</span> : <span class="fn"><span class="fn">y</span> <span class="fn">∈</span> <span class="fn">S</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hy</span> : <span class="fn"><span class="fn">y</span> ∉ <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.supp">supp</a> <span class="fn">s</span> <span class="fn">S</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">s</span> <span class="fn">⟶</span> <span class="fn">y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">f</span> <span class="fn">=</span> <span class="fn">0</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.Thin.extend_source"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/ThinCategory.lean#L219-L358">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.extend_source"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Thin</span>.<span class="name">extend_source</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">O</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">O</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.IsThin">IsThin</a> <span class="fn">k</span> <span class="fn">O</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Infinite</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">O</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">Finset</span> <span class="fn">O</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hsS</span> : <span class="fn"><span class="fn">s</span> ∉ <span class="fn">S</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hsrc</span> : <span class="fn">∀ <span class="fn">o</span> ∈ <span class="fn">S</span>, <span class="fn">∀ (<span class="fn">f</span> : <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">s</span></span>), <span class="fn"><span class="fn">f</span> <span class="fn">=</span> <span class="fn">0</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">β</span> : <span class="fn">(<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hβ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.MultBasis">MultBasis</a> <span class="fn">(↑<span class="fn">S</span>)</span> <span class="fn">β</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hrep</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.SupRepFinite">SupRepFinite</a> <span class="fn">hT</span> <span class="fn">⋯</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">β'</span> : <span class="fn">(<span class="fn">o </span><span class="fn">o'</span> : <span class="fn">O</span>) → <span class="fn"><span class="fn">o</span> <span class="fn">⟶</span> <span class="fn">o'</span></span></span>), <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ThinCategory.html#MultiplicativeBasisDeformations.Thin.MultBasis">MultBasis</a> <span class="fn">(<span class="fn">insert</span> <span class="fn">s</span> <span class="fn">↑<span class="fn">S</span></span>)</span> <span class="fn">β'</span></span> <span class="fn">∧</span> <span class="fn">∀ <span class="fn">o</span> ∈ <span class="fn">S</span>, <span class="fn">∀ <span class="fn">o'</span> ∈ <span class="fn">S</span>, <span class="fn"><span class="fn"><span class="fn">β'</span> <span class="fn">o</span> <span class="fn">o'</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">β</span> <span class="fn">o</span> <span class="fn">o'</span></span></span></span></span></span></span></div></div><p><strong>Lemma 4.11(1)</strong> (<code>lem:source-basis-extension</code>): a multiplicative basis on
+<code>S</code> extends over a source <code>s</code>.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

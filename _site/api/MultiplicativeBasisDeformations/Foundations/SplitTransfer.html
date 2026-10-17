@@ -1,0 +1,647 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>MultiplicativeBasisDeformations.Foundations.SplitTransfer</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="MultiplicativeBasisDeformations.Foundations.SplitTransfer";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Multiplicative bases</a></span></h1><h2 class="header_filename break_within"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Foundations</span>.<span class="name">SplitTransfer</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.33.1/src/Init.lean">Init</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/Exchange.html">MultiplicativeBasisDeformations.Foundations.Exchange</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/RepFinite.html">MultiplicativeBasisDeformations.Foundations.RepFinite</a></li><li><a href="../.././MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.html">MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd</a></li><li><a href="../.././MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.html">MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-MultiplicativeBasisDeformations.Foundations.SplitTransfer" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.inclOp"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">inclOp</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.qOp"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">qOp</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.pi_mul_right"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">pi_mul_right</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.pi_mul_left"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">pi_mul_left</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.RC"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">RC</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.instAddCommGroupRC"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instAddCommGroupRC</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.toRC"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">toRC</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.instModuleMulOppositeSubtypeMemSubalgebraRC"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instModuleMulOppositeSubtypeMemSubalgebraRC</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.smul_def"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">smul_def</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.lmul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">lmul</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.Obj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">Obj</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.instAddCommGroupObj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instAddCommGroupObj</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.instFunLikeObjRCCarrierMulOppositeSubtypeMemSubalgebra"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instFunLikeObjRCCarrierMulOppositeSubtypeMemSubalgebra</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.instLinearMapClassObjMulOppositeSubtypeMemSubalgebraRCCarrier"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instLinearMapClassObjMulOppositeSubtypeMemSubalgebraRCCarrier</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.Obj.ext"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">Obj</span>.<span class="name">ext</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.Obj.ext_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">Obj</span>.<span class="name">ext_iff</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.instSMulMulOppositeObj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instSMulMulOppositeObj</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.smul_apply'"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">smul_apply'</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.instModuleMulOppositeObj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instModuleMulOppositeObj</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.coind"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">coind</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.evalK"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">evalK</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.evalK_injective"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">evalK_injective</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.coind_finite"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">coind_finite</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.Infl"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">Infl</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.Res"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">Res</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.gm"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">gm</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.gm_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">gm_apply</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.jmap"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">jmap</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.rmap"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">rmap</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.SplitCoind.jmap_rmap"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">jmap_rmap</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.finite_restrict"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">finite_restrict</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.restrict_full"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">restrict_full</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.not_isZero_of_local"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">not_isZero_of_local</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.splitRepresentationTransfer_of"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">splitRepresentationTransfer_of</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Lemma-4-6-split-representation-transfer" class="markdown-heading">Lemma 4.6: split representation transfer <a class="hover-link" href="#Lemma-4-6-split-representation-transfer">#</a></h1><p><code>lem:split-representation-transfer</code> (<code>scalar-normalization.tex</code>): let
+<code>C ⊆ B</code> be a unital inclusion of finite-dimensional algebras, <code>q : C ↠ D</code> a
+quotient and <code>π : B → D</code> a <code>C</code>-bimodule map with <code>π|_C = q</code>. If <code>B</code> is
+representation-finite, so is <code>D</code>.</p><p>The source proves that a right <code>D</code>-module <code>M</code>, inflated to <code>C</code>, is a summand
+of <code>(M ⊗_C B)|_C</code> (map <code>m ↦ m ⊗ 1</code>, retraction <code>m ⊗ b ↦ m π(b)</code>). We use the
+adjoint form: <code>M</code> is a summand of <code>Hom_C(B, M)|_C</code>, with map
+<code>m ↦ (b ↦ m π(b))</code> and retraction <code>φ ↦ φ(1)</code>; the rest of the argument
+(decomposition over the finitely many indecomposable <code>B</code>-modules, exchange,
+inflation fully faithful) is the source's.</p></div><div class="decl" id="MultiplicativeBasisDeformations.inclOp"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L37-L38">source</a></div><div class="attributes">@[reducible, inline]</div>
+<div class="decl_header"><span class="decl_kind">abbrev</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.inclOp"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">inclOp</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span> <span class="fn">→+*</span> <span class="fn"><span class="fn">B</span><span class="fn">ᵐᵒᵖ</span></span></span></div></div><p>The inclusion <code>Cᵐᵒᵖ → Bᵐᵒᵖ</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.inclOp" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.qOp"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L40-L41">source</a></div><div class="attributes">@[reducible, inline]</div>
+<div class="decl_header"><span class="decl_kind">abbrev</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.qOp"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">qOp</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B </span><span class="fn">D</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">↥<span class="fn">C</span></span> <span class="fn">→ₐ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span> <span class="fn">→+*</span> <span class="fn"><span class="fn">D</span><span class="fn">ᵐᵒᵖ</span></span></span></div></div><p>The quotient <code>Cᵐᵒᵖ → Dᵐᵒᵖ</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.qOp" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.pi_mul_right"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L47-L49">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.pi_mul_right"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">pi_mul_right</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B </span><span class="fn">D</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q</span> : <span class="fn"><span class="fn">↥<span class="fn">C</span></span> <span class="fn">→ₐ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">π</span> : <span class="fn"><span class="fn">B</span> <span class="fn">→ₗ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hbimod</span> : <span class="fn">∀ (<span class="fn">c </span><span class="fn">c'</span> : <span class="fn">↥<span class="fn">C</span></span>) (<span class="fn">b</span> : <span class="fn">B</span>), <span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">(<span class="fn"><span class="fn">↑<span class="fn">c</span></span> <span class="fn">*</span> <span class="fn">b</span></span> <span class="fn">*</span> <span class="fn">↑<span class="fn">c'</span></span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">q</span> <span class="fn">c</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">π</span> <span class="fn">b</span></span></span> <span class="fn">*</span> <span class="fn"><span class="fn">q</span> <span class="fn">c'</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">B</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn">↥<span class="fn">C</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">(<span class="fn">b</span> <span class="fn">*</span> <span class="fn">↑<span class="fn">c</span></span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">b</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">q</span> <span class="fn">c</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.pi_mul_left"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L52-L54">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.pi_mul_left"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">pi_mul_left</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B </span><span class="fn">D</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q</span> : <span class="fn"><span class="fn">↥<span class="fn">C</span></span> <span class="fn">→ₐ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">π</span> : <span class="fn"><span class="fn">B</span> <span class="fn">→ₗ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hbimod</span> : <span class="fn">∀ (<span class="fn">c </span><span class="fn">c'</span> : <span class="fn">↥<span class="fn">C</span></span>) (<span class="fn">b</span> : <span class="fn">B</span>), <span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">(<span class="fn"><span class="fn">↑<span class="fn">c</span></span> <span class="fn">*</span> <span class="fn">b</span></span> <span class="fn">*</span> <span class="fn">↑<span class="fn">c'</span></span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">q</span> <span class="fn">c</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">π</span> <span class="fn">b</span></span></span> <span class="fn">*</span> <span class="fn"><span class="fn">q</span> <span class="fn">c'</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn">↥<span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">B</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">(<span class="fn">↑<span class="fn">c</span></span> <span class="fn">*</span> <span class="fn">b</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">q</span> <span class="fn">c</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">π</span> <span class="fn">b</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.RC"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L58-L60">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">RC</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">_C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> v</div></div><p><code>B</code> as a right <code>C</code>-module.</p><details id="instances-for-list-MultiplicativeBasisDeformations.SplitCoind.RC" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.instAddCommGroupRC"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L62-L62">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.instAddCommGroupRC"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instAddCommGroupRC</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC">RC</a> <span class="fn">C</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.toRC"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L64-L65">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.toRC"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">toRC</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">B</span> <span class="fn">≃+</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC">RC</a> <span class="fn">C</span></span></span></div></div><p>The identification <code>B = <a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC">RC</a></code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.SplitCoind.toRC" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.instModuleMulOppositeSubtypeMemSubalgebraRC"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L67-L79">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.instModuleMulOppositeSubtypeMemSubalgebraRC"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instModuleMulOppositeSubtypeMemSubalgebraRC</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Module</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC">RC</a> <span class="fn">C</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.smul_def"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L81-L81">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.smul_def"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">smul_def</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">B</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.toRC">toRC</a> <span class="fn">x</span></span></span> <span class="fn">=</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.toRC">toRC</a> <span class="fn">(<span class="fn">x</span> <span class="fn">*</span> <span class="fn">↑<span class="fn">(<span class="fn">MulOpposite.unop</span> <span class="fn">c</span>)</span></span>)</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.lmul"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L83-L89">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.lmul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">lmul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">B</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC">RC</a> <span class="fn">C</span></span> <span class="fn">→ₗ[</span><span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span><span class="fn">]</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC">RC</a> <span class="fn">C</span></span></span></div></div><p>Left multiplication by <code>b</code> on <code><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC">RC</a></code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.SplitCoind.lmul" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.Obj"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L92-L93">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">Obj</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> v</div></div><p>The carrier <code>Hom_C(B, V)</code> of the coinduced module.</p><details id="instances-for-list-MultiplicativeBasisDeformations.SplitCoind.Obj" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.instAddCommGroupObj"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L95-L96">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.instAddCommGroupObj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instAddCommGroupObj</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj">Obj</a> <span class="fn">C</span> <span class="fn">V</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.instFunLikeObjRCCarrierMulOppositeSubtypeMemSubalgebra"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L98-L99">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.instFunLikeObjRCCarrierMulOppositeSubtypeMemSubalgebra"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instFunLikeObjRCCarrierMulOppositeSubtypeMemSubalgebra</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">FunLike</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj">Obj</a> <span class="fn">C</span> <span class="fn">V</span>)</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC">RC</a> <span class="fn">C</span>)</span> <span class="fn">↑<span class="fn">V</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.instLinearMapClassObjMulOppositeSubtypeMemSubalgebraRCCarrier"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L101-L102">source</a></div><div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.instLinearMapClassObjMulOppositeSubtypeMemSubalgebraRCCarrier"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instLinearMapClassObjMulOppositeSubtypeMemSubalgebraRCCarrier</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">LinearMapClass</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj">Obj</a> <span class="fn">C</span> <span class="fn">V</span>)</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC">RC</a> <span class="fn">C</span>)</span> <span class="fn">↑<span class="fn">V</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.Obj.ext"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L104-L105">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj.ext"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">Obj</span>.<span class="name">ext</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">φ </span><span class="fn">ψ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj">Obj</a> <span class="fn">C</span> <span class="fn">V</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn">∀ (<span class="fn">x</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC">RC</a> <span class="fn">C</span></span>), <span class="fn"><span class="fn"><span class="fn">φ</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">ψ</span> <span class="fn">x</span></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">φ</span> <span class="fn">=</span> <span class="fn">ψ</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.Obj.ext_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L104-L104">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj.ext_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">Obj</span>.<span class="name">ext_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">φ </span><span class="fn">ψ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj">Obj</a> <span class="fn">C</span> <span class="fn">V</span></span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">φ</span> <span class="fn">=</span> <span class="fn">ψ</span></span> <span class="fn">↔</span> <span class="fn">∀ (<span class="fn">x</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.RC">RC</a> <span class="fn">C</span></span>), <span class="fn"><span class="fn"><span class="fn">φ</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">ψ</span> <span class="fn">x</span></span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.instSMulMulOppositeObj"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L107-L108">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.instSMulMulOppositeObj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instSMulMulOppositeObj</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">SMul</span> <span class="fn"><span class="fn">B</span><span class="fn">ᵐᵒᵖ</span></span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj">Obj</a> <span class="fn">C</span> <span class="fn">V</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.smul_apply'"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L110-L111">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.smul_apply'"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">smul_apply'</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><span class="fn">B</span><span class="fn">ᵐᵒᵖ</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">φ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj">Obj</a> <span class="fn">C</span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">B</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn">b</span> <span class="fn">•</span> <span class="fn">φ</span>)</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.toRC">toRC</a> <span class="fn">x</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">φ</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.toRC">toRC</a> <span class="fn">(<span class="fn"><span class="fn">MulOpposite.unop</span> <span class="fn">b</span></span> <span class="fn">*</span> <span class="fn">x</span>)</span>)</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.instModuleMulOppositeObj"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L113-L127">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.instModuleMulOppositeObj"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">instModuleMulOppositeObj</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Module</span> <span class="fn"><span class="fn">B</span><span class="fn">ᵐᵒᵖ</span></span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj">Obj</a> <span class="fn">C</span> <span class="fn">V</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.coind"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L129-L130">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.coind"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">coind</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">B</span><span class="fn">ᵐᵒᵖ</span></span></span></div></div><p>The coinduced right <code>B</code>-module.</p><details id="instances-for-list-MultiplicativeBasisDeformations.SplitCoind.coind" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.evalK"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L132-L153">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.evalK"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">evalK</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">↑<span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.coind">coind</a> <span class="fn">V</span>)</span></span> <span class="fn">→ₗ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn"><span class="fn">B</span> <span class="fn">→ₗ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">↑<span class="fn">V</span></span></span></span></div></div><p>Evaluation of <code>Hom_C(B, V)</code> on <code>B</code>, a <code>k</code>-linear injection into
+<code>Hom_k(B, V)</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.SplitCoind.evalK" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.evalK_injective"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L155-L161">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.evalK_injective"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">evalK_injective</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Function.Injective</span> <span class="fn">⇑<span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.evalK">evalK</a> <span class="fn">V</span>)</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.coind_finite"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L163-L165">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.coind_finite"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">coind_finite</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">V</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">k</span> <span class="fn">↑<span class="fn">V</span></span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Module.Finite</span> <span class="fn">k</span> <span class="fn">↑<span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.coind">coind</a> <span class="fn">V</span>)</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.Infl"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L168-L170">source</a></div><div class="attributes">@[reducible, inline]</div>
+<div class="decl_header"><span class="decl_kind">noncomputable abbrev</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Infl"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">Infl</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B </span><span class="fn">D</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">↥<span class="fn">C</span></span> <span class="fn">→ₐ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">D</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span></div></div><p>Inflation of a right <code>D</code>-module to <code>C</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.SplitCoind.Infl" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.Res"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L173-L175">source</a></div><div class="attributes">@[reducible, inline]</div>
+<div class="decl_header"><span class="decl_kind">noncomputable abbrev</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Res"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">Res</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">N</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">B</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">(↥<span class="fn">C</span>)</span><span class="fn">ᵐᵒᵖ</span></span></span></div></div><p>Restriction of a right <code>B</code>-module to <code>C</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.SplitCoind.Res" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.gm"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L178-L189">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.gm"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">gm</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B </span><span class="fn">D</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q</span> : <span class="fn"><span class="fn">↥<span class="fn">C</span></span> <span class="fn">→ₐ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">π</span> : <span class="fn"><span class="fn">B</span> <span class="fn">→ₗ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hbimod</span> : <span class="fn">∀ (<span class="fn">c </span><span class="fn">c'</span> : <span class="fn">↥<span class="fn">C</span></span>) (<span class="fn">b</span> : <span class="fn">B</span>), <span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">(<span class="fn"><span class="fn">↑<span class="fn">c</span></span> <span class="fn">*</span> <span class="fn">b</span></span> <span class="fn">*</span> <span class="fn">↑<span class="fn">c'</span></span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">q</span> <span class="fn">c</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">π</span> <span class="fn">b</span></span></span> <span class="fn">*</span> <span class="fn"><span class="fn">q</span> <span class="fn">c'</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">D</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn">↑<span class="fn">M</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Obj">Obj</a> <span class="fn">C</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Infl">Infl</a> <span class="fn">q</span> <span class="fn">M</span>)</span></span></div></div><p><code>ψ_m : b ↦ m π(b)</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.SplitCoind.gm" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.gm_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L191-L192">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.gm_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">gm_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B </span><span class="fn">D</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q</span> : <span class="fn"><span class="fn">↥<span class="fn">C</span></span> <span class="fn">→ₐ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">π</span> : <span class="fn"><span class="fn">B</span> <span class="fn">→ₗ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hbimod</span> : <span class="fn">∀ (<span class="fn">c </span><span class="fn">c'</span> : <span class="fn">↥<span class="fn">C</span></span>) (<span class="fn">b</span> : <span class="fn">B</span>), <span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">(<span class="fn"><span class="fn">↑<span class="fn">c</span></span> <span class="fn">*</span> <span class="fn">b</span></span> <span class="fn">*</span> <span class="fn">↑<span class="fn">c'</span></span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">q</span> <span class="fn">c</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">π</span> <span class="fn">b</span></span></span> <span class="fn">*</span> <span class="fn"><span class="fn">q</span> <span class="fn">c'</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">D</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn">↑<span class="fn">M</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">B</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.gm">gm</a> <span class="fn">π</span> <span class="fn">hbimod</span> <span class="fn">M</span> <span class="fn">m</span>)</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.toRC">toRC</a> <span class="fn">x</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">MulOpposite.op</span> <span class="fn">(<span class="fn">π</span> <span class="fn">x</span>)</span></span> <span class="fn">•</span> <span class="fn">m</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.jmap"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L194-L206">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.jmap"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">jmap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B </span><span class="fn">D</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q</span> : <span class="fn"><span class="fn">↥<span class="fn">C</span></span> <span class="fn">→ₐ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">π</span> : <span class="fn"><span class="fn">B</span> <span class="fn">→ₗ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hbimod</span> : <span class="fn">∀ (<span class="fn">c </span><span class="fn">c'</span> : <span class="fn">↥<span class="fn">C</span></span>) (<span class="fn">b</span> : <span class="fn">B</span>), <span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">(<span class="fn"><span class="fn">↑<span class="fn">c</span></span> <span class="fn">*</span> <span class="fn">b</span></span> <span class="fn">*</span> <span class="fn">↑<span class="fn">c'</span></span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">q</span> <span class="fn">c</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">π</span> <span class="fn">b</span></span></span> <span class="fn">*</span> <span class="fn"><span class="fn">q</span> <span class="fn">c'</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">D</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Infl">Infl</a> <span class="fn">q</span> <span class="fn">M</span></span> <span class="fn">⟶</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Res">Res</a> <span class="fn">C</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.coind">coind</a> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Infl">Infl</a> <span class="fn">q</span> <span class="fn">M</span>)</span>)</span></span></span></div></div><p>The split mono <code>M → Hom_C(B, M)|_C</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.SplitCoind.jmap" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.rmap"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L208-L216">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.rmap"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">rmap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B </span><span class="fn">D</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q</span> : <span class="fn"><span class="fn">↥<span class="fn">C</span></span> <span class="fn">→ₐ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">D</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Res">Res</a> <span class="fn">C</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.coind">coind</a> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Infl">Infl</a> <span class="fn">q</span> <span class="fn">M</span>)</span>)</span></span> <span class="fn">⟶</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Infl">Infl</a> <span class="fn">q</span> <span class="fn">M</span></span></span></div></div><p>The retraction <code>φ ↦ φ(1)</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.SplitCoind.rmap" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.SplitCoind.jmap_rmap"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L221-L227">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.jmap_rmap"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">SplitCoind</span>.<span class="name">jmap_rmap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B </span><span class="fn">D</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q</span> : <span class="fn"><span class="fn">↥<span class="fn">C</span></span> <span class="fn">→ₐ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">π</span> : <span class="fn"><span class="fn">B</span> <span class="fn">→ₗ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hbimod</span> : <span class="fn">∀ (<span class="fn">c </span><span class="fn">c'</span> : <span class="fn">↥<span class="fn">C</span></span>) (<span class="fn">b</span> : <span class="fn">B</span>), <span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">(<span class="fn"><span class="fn">↑<span class="fn">c</span></span> <span class="fn">*</span> <span class="fn">b</span></span> <span class="fn">*</span> <span class="fn">↑<span class="fn">c'</span></span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">q</span> <span class="fn">c</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">π</span> <span class="fn">b</span></span></span> <span class="fn">*</span> <span class="fn"><span class="fn">q</span> <span class="fn">c'</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hπ</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">↥<span class="fn">C</span></span>), <span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">↑<span class="fn">c</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn">q</span> <span class="fn">c</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn"><span class="fn">D</span><span class="fn">ᵐᵒᵖ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.jmap">jmap</a> <span class="fn">π</span> <span class="fn">hbimod</span> <span class="fn">M</span>)</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.rmap">rmap</a> <span class="fn">M</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">CategoryTheory.CategoryStruct.id</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.SplitCoind.Infl">Infl</a> <span class="fn">q</span> <span class="fn">M</span>)</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.finite_restrict"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L231-L242">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.finite_restrict"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">finite_restrict</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R </span><span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">φ</span> : <span class="fn"><span class="fn">R</span> <span class="fn">→+*</span> <span class="fn">S</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hφ</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">k</span>), <span class="fn"><span class="fn"><span class="fn">φ</span> <span class="fn">(<span class="fn">(<span class="fn">algebraMap</span> <span class="fn">k</span> <span class="fn">R</span>)</span> <span class="fn">c</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<span class="fn">algebraMap</span> <span class="fn">k</span> <span class="fn">S</span>)</span> <span class="fn">c</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn">S</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">k</span> <span class="fn">↑<span class="fn">M</span></span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Module.Finite</span> <span class="fn">k</span> <span class="fn">↑<span class="fn">(<span class="fn"><span class="fn">(<span class="fn">ModuleCat.restrictScalars</span> <span class="fn">φ</span>)</span>.<span class="fn">obj</span></span> <span class="fn">M</span>)</span></span></span></div></div><p>Restriction of scalars along a <code>k</code>-algebra map preserves finite dimension
+over <code>k</code>.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.restrict_full"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L244-L254">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.restrict_full"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">restrict_full</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R </span><span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">φ</span> : <span class="fn"><span class="fn">R</span> <span class="fn">→+*</span> <span class="fn">S</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hφ</span> : <span class="fn"><span class="fn">Function.Surjective</span> <span class="fn">⇑<span class="fn">φ</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(<span class="fn">ModuleCat.restrictScalars</span> <span class="fn">φ</span>)</span>.<span class="fn">Full</span></span></div></div><p>Restriction of scalars along a surjective ring map is full.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.not_isZero_of_local"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L256-L259">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.not_isZero_of_local"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">not_isZero_of_local</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{u_2, u_1}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <span class="fn">𝒞</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsLocalRing</span> <span class="fn">(<span class="fn">CategoryTheory.End</span> <span class="fn">X</span>)</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">¬</span><span class="fn"><span class="fn">CategoryTheory.Limits.IsZero</span> <span class="fn">X</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.splitRepresentationTransfer_of"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/SplitTransfer.lean#L263-L323">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/SplitTransfer.html#MultiplicativeBasisDeformations.splitRepresentationTransfer_of"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">splitRepresentationTransfer_of</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B </span><span class="fn">D</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <span class="fn"><span class="fn">Subalgebra</span> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q</span> : <span class="fn"><span class="fn">↥<span class="fn">C</span></span> <span class="fn">→ₐ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">π</span> : <span class="fn"><span class="fn">B</span> <span class="fn">→ₗ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hbimod</span> : <span class="fn">∀ (<span class="fn">c </span><span class="fn">c'</span> : <span class="fn">↥<span class="fn">C</span></span>) (<span class="fn">b</span> : <span class="fn">B</span>), <span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">(<span class="fn"><span class="fn">↑<span class="fn">c</span></span> <span class="fn">*</span> <span class="fn">b</span></span> <span class="fn">*</span> <span class="fn">↑<span class="fn">c'</span></span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">q</span> <span class="fn">c</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">π</span> <span class="fn">b</span></span></span> <span class="fn">*</span> <span class="fn"><span class="fn">q</span> <span class="fn">c'</span></span></span></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn"><span class="fn">Function.Surjective</span> <span class="fn">⇑<span class="fn">q</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hπ</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">↥<span class="fn">C</span></span>), <span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">↑<span class="fn">c</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn">q</span> <span class="fn">c</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hB</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">D</span></span></div></div><p><strong>Lemma 4.6</strong> (<code>lem:split-representation-transfer</code>).</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

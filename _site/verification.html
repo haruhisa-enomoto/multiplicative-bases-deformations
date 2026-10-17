@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verification · Multiplicative bases</title><link rel="stylesheet" href="assets/site.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><nav class="nav" aria-label="Main"><a class="brand" href="index.html">Multiplicative bases</a><a href="index.html">Overview</a><a href="statement.html">Statement</a><a href="proof.html">Proof guide</a><a href="api.html">API</a><a href="verification.html">Verification</a><a href="paper.pdf">Paper PDF</a><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations">GitHub</a></nav></header>
+<main id="main"><p class="eyebrow">Reproducibility</p><h1>Verification and provenance</h1>
+<p>The library and its independent statement compile with Lean 4.33.1. Their axiom reports contain only <code>propext</code>, <code>Classical.choice</code>, and <code>Quot.sound</code>. The two deliberate Challenge placeholders are not part of the proof.</p>
+<p>October 17, 2026: fresh library build passed (9254 jobs); axiom audit passed with only propext, Classical.choice and Quot.sound; Comparator replay of the independent statement of Theorems A and B passed, including NanoDa and Lean kernel replay.</p>
+<h2>Build the project</h2><pre><code>lake exe cache get
+lake build
+python3 scripts/audit_axioms.py
+python3 scripts/generate_challenge.py --check
+lake build Challenge Solution</code></pre>
+<p>A fresh build of the library takes about twenty minutes on a desktop machine and needs about 9 GB of memory. Build <code>Challenge Solution</code> before independent comparison with <code>scripts/verify-comparator.sh</code>.</p>
+<h2>Source and attribution</h2><p>The development is maintained by Haruhisa Enomoto. The provenance record describes AI contributions, source revisions and licences. The vendored Auslander–Reiten foundations retain their attribution and Apache-2.0 licence.</p>
+<p><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/b4fa373dcbf4f798491aa2f7101a4640d1807537/PROVENANCE.md">Provenance</a> · <a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/b4fa373dcbf4f798491aa2f7101a4640d1807537/VENDORED.md">Reused source</a> · <a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/b4fa373dcbf4f798491aa2f7101a4640d1807537/docs/PAPER-CORRESPONDENCE.md">Paper correspondence</a></p>
+<p><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/b4fa373dcbf4f798491aa2f7101a4640d1807537/docs/VERIFICATION.md">Detailed verification records and reproduction commands</a></p>
+</main><footer class="site-footer">Source: <a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/tree/b4fa373dcbf4f798491aa2f7101a4640d1807537">b4fa373</a> · API: <a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/tree/965b038a478b0dcbd23db745a19d9a2e96605f22">965b038</a><br>Haruhisa Enomoto · Lean formalization · Apache-2.0</footer></body></html>

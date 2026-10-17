@@ -1,0 +1,215 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>MultiplicativeBasisDeformations.Foundations.CornerAlgebra</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="MultiplicativeBasisDeformations.Foundations.CornerAlgebra";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Multiplicative bases</a></span></h1><h2 class="header_filename break_within"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Foundations</span>.<span class="name">CornerAlgebra</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.33.1/src/Init.lean">Init</a></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib.lean">Mathlib</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-MultiplicativeBasisDeformations.Foundations.CornerAlgebra" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.cornerVal"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerVal</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.cornerMk"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerMk</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.cornerVal_mem"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerVal_mem</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.corner_ext"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_ext</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.corner_ext_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_ext_iff</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.cornerVal_mk"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerVal_mk</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.corner_smul_mem"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_smul_mem</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.cornerSMul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerSMul</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.corner_smul_val"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_smul_val</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.corner_one_val"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_one_val</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.corner_mul_val"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_mul_val</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.corner_add_val"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_add_val</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.corner_zero_val"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_zero_val</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.corner_mul_left"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_mul_left</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.corner_mul_right"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_mul_right</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.cornerAlgebra"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerAlgebra</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Corner-algebras" class="markdown-heading">Corner algebras <a class="hover-link" href="#Corner-algebras">#</a></h1><p>For an idempotent <code>e</code> of a <code>k</code>-algebra <code>A</code>, Mathlib's corner ring
+<code>IsIdempotentElem.Corner</code> is <code>eAe</code> with identity <code>e</code>. This file makes it a
+<code>k</code>-algebra, with <code>c ↦ c • e</code> as structure map.</p></div><div class="decl" id="MultiplicativeBasisDeformations.cornerVal"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L20-L21">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerVal</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">A</span></div></div><p>The underlying element of <code>A</code> of an element of the corner.</p><details id="instances-for-list-MultiplicativeBasisDeformations.cornerVal" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.cornerMk"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L23-L25">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerMk"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerMk</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">A</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ha</span> : <span class="fn"><span class="fn">a</span> <span class="fn">∈</span> <span class="fn"><span class="fn">Subsemigroup.corner</span> <span class="fn">e</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span></div></div><p>An element of <code>A</code> lying in the corner, as an element of the corner.</p><details id="instances-for-list-MultiplicativeBasisDeformations.cornerMk" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.cornerVal_mem"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L27-L28">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal_mem"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerVal_mem</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">x</span></span> <span class="fn">∈</span> <span class="fn"><span class="fn">Subsemigroup.corner</span> <span class="fn">e</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.corner_ext"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L30-L32">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.corner_ext"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_ext</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x </span><span class="fn">y</span> : <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">y</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">x</span> <span class="fn">=</span> <span class="fn">y</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.corner_ext_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L30-L30">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.corner_ext_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_ext_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x </span><span class="fn">y</span> : <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">x</span> <span class="fn">=</span> <span class="fn">y</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">y</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.cornerVal_mk"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L34-L36">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal_mk"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerVal_mk</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">A</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ha</span> : <span class="fn"><span class="fn">a</span> <span class="fn">∈</span> <span class="fn"><span class="fn">Subsemigroup.corner</span> <span class="fn">e</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerMk">cornerMk</a> <span class="fn">idem</span> <span class="fn">a</span> <span class="fn">ha</span>)</span></span> <span class="fn">=</span> <span class="fn">a</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.corner_smul_mem"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L38-L43">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.corner_smul_mem"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_smul_mem</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn">k</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">x</span></span></span> <span class="fn">∈</span> <span class="fn"><span class="fn">Subsemigroup.corner</span> <span class="fn">e</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.cornerSMul"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L45-L46">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerSMul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerSMul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">SMul</span> <span class="fn">k</span> <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.corner_smul_val"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L48-L50">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.corner_smul_val"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_smul_val</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn">k</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">(<span class="fn">c</span> <span class="fn">•</span> <span class="fn">x</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">x</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.corner_one_val"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L52-L53">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.corner_one_val"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_one_val</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">1</span></span> <span class="fn">=</span> <span class="fn">e</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.corner_mul_val"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L55-L57">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.corner_mul_val"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_mul_val</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">(<span class="fn">x</span> <span class="fn">*</span> <span class="fn">y</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">x</span></span> <span class="fn">*</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">y</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.corner_add_val"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L59-L61">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.corner_add_val"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_add_val</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">(<span class="fn">x</span> <span class="fn">+</span> <span class="fn">y</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">x</span></span> <span class="fn">+</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">y</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.corner_zero_val"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L63-L64">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.corner_zero_val"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_zero_val</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">0</span></span> <span class="fn">=</span> <span class="fn">0</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.corner_mul_left"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L66-L67">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.corner_mul_left"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_mul_left</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">e</span> <span class="fn">*</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">x</span></span></span> <span class="fn">=</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">x</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.corner_mul_right"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L69-L70">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.corner_mul_right"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">corner_mul_right</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">x</span></span> <span class="fn">*</span> <span class="fn">e</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerVal">cornerVal</a> <span class="fn">idem</span> <span class="fn">x</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.cornerAlgebra"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/CornerAlgebra.lean#L72-L88">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/CornerAlgebra.html#MultiplicativeBasisDeformations.cornerAlgebra"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">cornerAlgebra</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">idem</span> : <span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn"><span class="fn">idem</span>.<span class="fn">Corner</span></span></span></div></div><p>The corner <code>eAe</code> is a <code>k</code>-algebra.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

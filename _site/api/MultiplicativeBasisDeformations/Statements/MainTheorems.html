@@ -1,0 +1,202 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>MultiplicativeBasisDeformations.Statements.MainTheorems</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="MultiplicativeBasisDeformations.Statements.MainTheorems";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Multiplicative bases</a></span></h1><h2 class="header_filename break_within"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Statements</span>.<span class="name">MainTheorems</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Statements/MainTheorems.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.33.1/src/Init.lean">Init</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/ARBrick.html">MultiplicativeBasisDeformations.Foundations.ARBrick</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/ARQuiver.html">MultiplicativeBasisDeformations.Foundations.ARQuiver</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/BasicCorner.html">MultiplicativeBasisDeformations.Foundations.BasicCorner</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/FilteredNormalForm.html">MultiplicativeBasisDeformations.Foundations.FilteredNormalForm</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/FinalBasis.html">MultiplicativeBasisDeformations.Foundations.FinalBasis</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/RayStandard.html">MultiplicativeBasisDeformations.Foundations.RayStandard</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html">MultiplicativeBasisDeformations.Foundations.Rays</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/SkeletonExists.html">MultiplicativeBasisDeformations.Foundations.SkeletonExists</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/StandardForm.html">MultiplicativeBasisDeformations.Foundations.StandardForm</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/StandardRay.html">MultiplicativeBasisDeformations.Foundations.StandardRay</a></li><li><a href="../.././MultiplicativeBasisDeformations/Statements/PartOne.html">MultiplicativeBasisDeformations.Statements.PartOne</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-MultiplicativeBasisDeformations.Statements.MainTheorems" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.theoremB"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">theoremB</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.basic_hasNormedBasis"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">basic_hasNormedBasis</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.theoremA_of_ringChar_ne_two"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">theoremA_of_ringChar_ne_two</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.theoremA"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">theoremA</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.awayFromTwoBasis"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">awayFromTwoBasis</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.finalBasis_ray"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">finalBasis_ray</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.finalBasis_rayLinearization"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">finalBasis_rayLinearization</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.standard_iff_rayLinearization"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">standard_iff_rayLinearization</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Main-theorems-statements" class="markdown-heading">Main theorems (statements) <a class="hover-link" href="#Main-theorems-statements">#</a></h1><p>Theorems A and B of the introduction (<code>main.tex</code>), Theorem 11.7
+(<code>thm:final-basis</code>), Corollary 5.5 (<code>cor:away-from-two-basis</code>), and
+Theorem 11.8(2) (<code>thm:final-standardness</code>).</p><p>Throughout, <code>k</code> is algebraically closed and <code>A</code> is a finite-dimensional
+<code>k</code>-algebra, in the same universe (the vendored Auslander--Reiten library
+works in one universe). &quot;Characteristic different from two&quot; is <code>ringChar k ≠ 2</code>.</p></div><div class="decl" id="MultiplicativeBasisDeformations.theoremB"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Statements/MainTheorems.lean#L34-L49">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Statements/MainTheorems.html#MultiplicativeBasisDeformations.theoremB"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">theoremB</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hbasic</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.IsBasicAlgebra">IsBasicAlgebra</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hchar</span> : <span class="fn"><span class="fn"><span class="fn">ringChar</span> <span class="fn">k</span></span> <span class="fn">≠</span> <span class="fn">2</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ARQuiver.html#MultiplicativeBasisDeformations.IsStandard">IsStandard</a> <span class="fn">k</span> <span class="fn">A</span></span></div></div><p><strong>Theorem B</strong> (<code>main.tex</code>; Corollary 5.5, <code>cor:away-from-two-basis</code>).
+Every basic finite-dimensional representation-finite algebra over an
+algebraically closed field of characteristic different from two is
+standard.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.basic_hasNormedBasis"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Statements/MainTheorems.lean#L51-L63">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Statements/MainTheorems.html#MultiplicativeBasisDeformations.basic_hasNormedBasis"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">basic_hasNormedBasis</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hbasic</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.IsBasicAlgebra">IsBasicAlgebra</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hchar</span> : <span class="fn"><span class="fn"><span class="fn">ringChar</span> <span class="fn">k</span></span> <span class="fn">≠</span> <span class="fn">2</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.HasNormedMultiplicativeBasis">HasNormedMultiplicativeBasis</a> <span class="fn">k</span> <span class="fn">A</span></span></div></div><p><strong>Corollary 5.5(2)</strong> (<code>cor:away-from-two-basis</code>), existence part: a basic
+representation-finite algebra over an algebraically closed field of
+characteristic different from two has a normed multiplicative basis. The
+standard equivalence of Theorem B identifies <code>A</code> with <code>A₀</code> (restricting to the
+projective labels), and <code>A₀</code> has a normed multiplicative basis by
+Proposition 4.14 and Corollary 3.3.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.theoremA_of_ringChar_ne_two"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Statements/MainTheorems.lean#L65-L74">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Statements/MainTheorems.html#MultiplicativeBasisDeformations.theoremA_of_ringChar_ne_two"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">theoremA_of_ringChar_ne_two</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hchar</span> : <span class="fn"><span class="fn"><span class="fn">ringChar</span> <span class="fn">k</span></span> <span class="fn">≠</span> <span class="fn">2</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.HasNormedMultiplicativeBasis">HasNormedMultiplicativeBasis</a> <span class="fn">k</span> <span class="fn">A</span></span></div></div><p><strong>Theorem A away from characteristic two</strong> (<code>main.tex</code>; Theorem 11.7(1)
+for <code>char k ≠ 2</code>, via Corollary 5.5(2) and Lemma 2.1): the basic algebra <code>eAe</code>
+is a representation-finite full corner, it has a normed multiplicative basis,
+and Lemma 2.1 lifts it to <code>A</code>.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.theoremA"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Statements/MainTheorems.lean#L76-L90">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Statements/MainTheorems.html#MultiplicativeBasisDeformations.theoremA"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">theoremA</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.HasNormedMultiplicativeBasis">HasNormedMultiplicativeBasis</a> <span class="fn">k</span> <span class="fn">A</span></span></div></div><p><strong>Theorem A</strong> (<code>main.tex</code>; Theorem 11.7(1), <code>thm:final-basis</code>). Every
+finite-dimensional representation-finite algebra over an algebraically closed
+field has a normed multiplicative basis. Outside characteristic two this is
+<code><a href="../.././MultiplicativeBasisDeformations/Statements/MainTheorems.html#MultiplicativeBasisDeformations.theoremA_of_ringChar_ne_two">theoremA_of_ringChar_ne_two</a></code>; in characteristic two the basic corner has one by
+Proposition 8.3 with Corollary 10.5 (<code>basic_hasNormedBasis_char2</code>), and Lemma 2.1
+lifts it to <code>A</code>.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.awayFromTwoBasis"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Statements/MainTheorems.lean#L92-L106">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Statements/MainTheorems.html#MultiplicativeBasisDeformations.awayFromTwoBasis"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">awayFromTwoBasis</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hbasic</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.IsBasicAlgebra">IsBasicAlgebra</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hchar</span> : <span class="fn"><span class="fn"><span class="fn">ringChar</span> <span class="fn">k</span></span> <span class="fn">≠</span> <span class="fn">2</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents">PrimitiveIdempotents</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ARQuiver.html#MultiplicativeBasisDeformations.IsStandard">IsStandard</a> <span class="fn">k</span> <span class="fn">A</span></span> <span class="fn">∧</span>   <span class="fn">∃ (<span class="fn">b</span> : <span class="fn"><span class="fn">Module.Basis</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents.NonzeroRay">PrimitiveIdempotents.NonzeroRay</a> <span class="fn">k</span> <span class="fn">F</span>)</span> <span class="fn">k</span> <span class="fn">A</span></span>),
+    <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.IsNormedMultiplicativeBasis">IsNormedMultiplicativeBasis</a> <span class="fn">b</span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">F</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents.IsRayTransversal">IsRayTransversal</a></span> <span class="fn">⇑<span class="fn">b</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">F</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents.KillsZeroRayProducts">KillsZeroRayProducts</a></span> <span class="fn">⇑<span class="fn">b</span></span></span></span></span></span></span></div></div><p>Corollary 5.5 (<code>cor:away-from-two-basis</code>). Let <code>A</code> be basic and
+representation-finite, and <code>char k ≠ 2</code>. (1) <code>A ≅ k ray A</code>, and <code>A</code> is
+standard. (2) The ray basis is a normed multiplicative basis of <code>A</code>, with one
+representative of every nonzero ray.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.finalBasis_ray"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Statements/MainTheorems.lean#L108-L119">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Statements/MainTheorems.html#MultiplicativeBasisDeformations.finalBasis_ray"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">finalBasis_ray</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hbasic</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.IsBasicAlgebra">IsBasicAlgebra</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents">PrimitiveIdempotents</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">b</span> : <span class="fn"><span class="fn">Module.Basis</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents.NonzeroRay">PrimitiveIdempotents.NonzeroRay</a> <span class="fn">k</span> <span class="fn">F</span>)</span> <span class="fn">k</span> <span class="fn">A</span></span>), <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.IsNormedMultiplicativeBasis">IsNormedMultiplicativeBasis</a> <span class="fn">b</span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">F</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents.IsRayTransversal">IsRayTransversal</a></span> <span class="fn">⇑<span class="fn">b</span></span></span></span></span></div></div><p>Theorem 11.7(2) (<code>thm:final-basis</code>). For a basic algebra, the normed
+multiplicative basis can be chosen with one representative of every nonzero
+ray, the primitive idempotents representing the identity rays.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.finalBasis_rayLinearization"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Statements/MainTheorems.lean#L121-L130">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Statements/MainTheorems.html#MultiplicativeBasisDeformations.finalBasis_rayLinearization"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">finalBasis_rayLinearization</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hbasic</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.IsBasicAlgebra">IsBasicAlgebra</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hchar</span> : <span class="fn"><span class="fn"><span class="fn">ringChar</span> <span class="fn">k</span></span> <span class="fn">≠</span> <span class="fn">2</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents">PrimitiveIdempotents</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">b</span> : <span class="fn"><span class="fn">Module.Basis</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents.NonzeroRay">PrimitiveIdempotents.NonzeroRay</a> <span class="fn">k</span> <span class="fn">F</span>)</span> <span class="fn">k</span> <span class="fn">A</span></span>),
+  <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.IsNormedMultiplicativeBasis">IsNormedMultiplicativeBasis</a> <span class="fn">b</span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">F</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents.IsRayTransversal">IsRayTransversal</a></span> <span class="fn">⇑<span class="fn">b</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">F</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents.KillsZeroRayProducts">KillsZeroRayProducts</a></span> <span class="fn">⇑<span class="fn">b</span></span></span></span></span></span></div></div><p>Theorem 11.7(3) (<code>thm:final-basis</code>). For a basic algebra and
+characteristic different from two, these representatives induce an
+isomorphism <code>k ray A ≅ A</code>.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.standard_iff_rayLinearization"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Statements/MainTheorems.lean#L132-L156">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Statements/MainTheorems.html#MultiplicativeBasisDeformations.standard_iff_rayLinearization"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">standard_iff_rayLinearization</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hbasic</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.IsBasicAlgebra">IsBasicAlgebra</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents">PrimitiveIdempotents</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/ARQuiver.html#MultiplicativeBasisDeformations.IsStandard">IsStandard</a> <span class="fn">k</span> <span class="fn">A</span></span> <span class="fn">↔</span>   <span class="fn">∃ (<span class="fn">b</span> : <span class="fn"><span class="fn">Module.Basis</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents.NonzeroRay">PrimitiveIdempotents.NonzeroRay</a> <span class="fn">k</span> <span class="fn">F</span>)</span> <span class="fn">k</span> <span class="fn">A</span></span>),
+    <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/NormedBasis.html#MultiplicativeBasisDeformations.IsMultiplicativeBasis">IsMultiplicativeBasis</a> <span class="fn">b</span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">F</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents.IsRayTransversal">IsRayTransversal</a></span> <span class="fn">⇑<span class="fn">b</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">F</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Rays.html#MultiplicativeBasisDeformations.PrimitiveIdempotents.KillsZeroRayProducts">KillsZeroRayProducts</a></span> <span class="fn">⇑<span class="fn">b</span></span></span></span></span></span></span></div></div><p>Theorem 11.8(2) (<code>thm:final-standardness</code>). In every characteristic, a
+basic representation-finite algebra is standard if and only if
+<code>A ≅ k ray A</code>, expressed by a multiplicative ray transversal that kills zero
+ray products.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

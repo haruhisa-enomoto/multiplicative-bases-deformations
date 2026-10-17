@@ -1,0 +1,551 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>MultiplicativeBasisDeformations.Foundations.LiftedEvaluation</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="MultiplicativeBasisDeformations.Foundations.LiftedEvaluation";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Multiplicative bases</a></span></h1><h2 class="header_filename break_within"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Foundations</span>.<span class="name">LiftedEvaluation</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.33.1/src/Init.lean">Init</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/CoverCategory.html">MultiplicativeBasisDeformations.Foundations.CoverCategory</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/InjectiveLabels.html">MultiplicativeBasisDeformations.Foundations.InjectiveLabels</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-MultiplicativeBasisDeformations.Foundations.LiftedEvaluation" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.HomGrading.degs"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">HomGrading</span>.<span class="name">degs</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj_eq_zero_of_not_mem"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">HomGrading</span>.<span class="name">proj_eq_zero_of_not_mem</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.HomGrading.eq_zero_of_not_mem"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">HomGrading</span>.<span class="name">eq_zero_of_not_mem</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.HomGrading.eq_sum_degs"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">HomGrading</span>.<span class="name">eq_sum_degs</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj_comp_left"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">HomGrading</span>.<span class="name">proj_comp_left</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.term"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">term</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">Ψ</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.single"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">single</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">Ψ_apply</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ_single"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">Ψ_single</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.exists_hom"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">exists_hom</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.MeshData.eq_zero_of_lifted"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">eq_zero_of_lifted</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Lemma-4-8-evaluation-of-lifted-objects-is-fully-faithful" class="markdown-heading">Lemma 4.8: evaluation of lifted objects is fully faithful <a class="hover-link" href="#Lemma-4-8-evaluation-of-lifted-objects-is-fully-faithful">#</a></h1><p><code>lem:lifted-projective-evaluation</code> (<code>scalar-normalization.tex</code>). For a
+lifted object <code>X̃</code> put <code>V_X̃(z) = C̃(P_z, X̃)</code> on the lifted projective vertices
+<code>z</code>. &quot;By <code>eq:walk-hom-sum</code>, for each projective label <code>x</code>,
+<code>C(P_x, X) = ⊕_g V_X̃(g x̃)</code>. Thus <code>ev(X)</code> is the direct sum of the components
+of <code>V_X̃</code> […]. A map <code><a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.φ">φ</a> : V_X̃ → V_Ỹ</code> of <code>L</code>-modules therefore defines an
+<code>A₀</code>-module map <code>ev(X) → ev(Y)</code> […]. By Proposition 2.10, this map is <code>ev(f)</code>
+for a unique <code>f ∈ C(X, Y)</code>. […] write <code>f = Σ_g f̄_g</code> […] <code>ev(f̄_g)</code> maps the
+component at <code>z̃</code> to the component at <code>g⁻¹ z̃</code>. The deck action is free, so for
+<code>g ≠ 1</code> these blocks are off the diagonal, where <code>ev(f)</code> vanishes. Hence
+<code>ev(f̄_g) = 0</code> for <code>g ≠ 1</code>. Faithfulness of <code>ev</code> gives <code>f̄_g = 0</code> […]. Thus
+<code>f = f̄_1</code> […]; this proves fullness. If the evaluation of
+<code>f ∈ C̃(X̃, Ỹ)</code> is zero, then the image of <code>f</code> in <code>C(X, Y)</code> is killed by <code>ev</code>;
+the same two facts give <code>f = 0</code>, proving faithfulness.&quot;</p><p>Here the cover is the graded covering category of a <code>G</code>-graded family with
+mesh data: a lifted object is <code>(X, h)</code>, a lifted projective vertex is
+<code>z = (p, g)</code> with <code>p</code> projective, and <code>V_X̃(z)</code> is the degree <code>g⁻¹h</code> part of
+<code>C(P_p, X)</code>. A map <code>V_X̃ → V_Ỹ</code> of modules over the lifted projectives is a
+natural family (<code><a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam">NatFam</a></code>); the deck degree <code>g</code> of <code>f̄_g</code> is relative to the
+sheets of <code>X̃</code> and <code>Ỹ</code>.</p></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.HomGrading.degs"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L49-L51">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.degs"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">HomGrading</span>.<span class="name">degs</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Finset</span> <span class="fn">G</span></span></div></div><p>All degrees occurring between labels.</p><details id="instances-for-list-MultiplicativeBasisDeformations.CatAlg.HomGrading.degs" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.HomGrading.proj_eq_zero_of_not_mem"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L53-L60">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj_eq_zero_of_not_mem"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">HomGrading</span>.<span class="name">proj_eq_zero_of_not_mem</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">g</span> : <span class="fn">G</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hg</span> : <span class="fn"><span class="fn">g</span> ∉ <span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.degs">degs</a></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj">proj</a></span> <span class="fn">g</span> <span class="fn">x</span> <span class="fn">y</span>)</span> <span class="fn">f</span></span> <span class="fn">=</span> <span class="fn">0</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.HomGrading.eq_zero_of_not_mem"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L62-L64">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.eq_zero_of_not_mem"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">HomGrading</span>.<span class="name">eq_zero_of_not_mem</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">g</span> : <span class="fn">G</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hg</span> : <span class="fn"><span class="fn">g</span> ∉ <span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.degs">degs</a></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.IsHom">IsHom</a></span> <span class="fn">g</span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">f</span> <span class="fn">=</span> <span class="fn">0</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.HomGrading.eq_sum_degs"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L66-L79">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.eq_sum_degs"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">HomGrading</span>.<span class="name">eq_sum_degs</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">f</span> <span class="fn">=</span> <span class="fn">∑ <span class="fn">g</span> ∈ <span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.degs">degs</a></span>, <span class="fn"><span class="fn">(<span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj">proj</a></span> <span class="fn">g</span> <span class="fn">x</span> <span class="fn">y</span>)</span> <span class="fn">f</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.HomGrading.proj_comp_left"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L81-L85">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj_comp_left"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">HomGrading</span>.<span class="name">proj_comp_left</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">a </span><span class="fn">c</span> : <span class="fn">G</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x </span><span class="fn">y </span><span class="fn">z</span> : <span class="fn">ι</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">m</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hm</span> : <span class="fn"><span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.IsHom">IsHom</a></span> <span class="fn">a</span> <span class="fn">m</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">y</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">z</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj">proj</a></span> <span class="fn">c</span> <span class="fn">x</span> <span class="fn">z</span>)</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">m</span> <span class="fn">f</span>)</span></span> <span class="fn">=</span>   <span class="fn"><span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">m</span> <span class="fn">(<span class="fn">(<span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj">proj</a></span> <span class="fn">(<span class="fn"><span class="fn">a</span><span class="fn">⁻¹</span></span> <span class="fn">*</span> <span class="fn">c</span>)</span> <span class="fn">y</span> <span class="fn">z</span>)</span> <span class="fn">f</span>)</span></span></span></div></div><p>Projection after a homogeneous morphism.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam"><div class="structure"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L94-L102">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.LocalFamily">LocalFamily</a> <span class="fn">F</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">D</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.MeshData">MeshData</a> <span class="fn">F</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">X </span><span class="fn">Y</span> : <span class="fn"><span class="fn">ι</span> <span class="fn">×</span> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> w</div></div><p><strong>A map <code>V_X̃ → V_Ỹ</code> of modules over the lifted projectives</strong>: a natural
+family of maps <code>C̃(P_z, X̃) → C̃(P_z, Ỹ)</code>, <code>z = (p, g)</code>.</p><ul class="structure_fields" id="MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.mk"><li id="MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.φ" class="structure_field"><div class="structure_field_info">φ<span class="decl_args">
+<span class="fn">(<span class="fn">z</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.PV">PV</a></span> <span class="fn">×</span> <span class="fn">G</span></span>)</span></span>
+ : <span class="fn"><span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">↑<span class="fn"><span class="fn">z</span>.1</span></span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn"><span class="fn">X</span>.1</span></span>)</span> <span class="fn">→ₗ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">↑<span class="fn"><span class="fn">z</span>.1</span></span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn"><span class="fn">Y</span>.1</span></span></span></span></div></li><li id="MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.mem" class="structure_field"><div class="structure_field_info">mem<span class="decl_args">
+<span class="fn">(<span class="fn">z</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.PV">PV</a></span> <span class="fn">×</span> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">↑<span class="fn"><span class="fn">z</span>.1</span></span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn"><span class="fn">X</span>.1</span></span></span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn">m</span> <span class="fn">∈</span> <span class="fn"><span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Thinness.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.part">part</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">z</span>.2</span><span class="fn">⁻¹</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">X</span>.2</span>)</span> <span class="fn">(↑<span class="fn"><span class="fn">z</span>.1</span>)</span> <span class="fn"><span class="fn">X</span>.1</span></span></span> → <span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.φ">φ</a></span> <span class="fn">z</span>)</span> <span class="fn">m</span></span> <span class="fn">∈</span> <span class="fn"><span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Thinness.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.part">part</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">z</span>.2</span><span class="fn">⁻¹</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">Y</span>.2</span>)</span> <span class="fn">(↑<span class="fn"><span class="fn">z</span>.1</span>)</span> <span class="fn"><span class="fn">Y</span>.1</span></span></span></span></div></li><li id="MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.nat" class="structure_field"><div class="structure_field_info">nat<span class="decl_args">
+<span class="fn">(<span class="fn">z </span><span class="fn">z'</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.PV">PV</a></span> <span class="fn">×</span> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">u</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">↑<span class="fn"><span class="fn">z'</span>.1</span></span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">↑<span class="fn"><span class="fn">z</span>.1</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">↑<span class="fn"><span class="fn">z</span>.1</span></span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn"><span class="fn">X</span>.1</span></span></span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn">u</span> <span class="fn">∈</span> <span class="fn"><span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Thinness.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.part">part</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">z'</span>.2</span><span class="fn">⁻¹</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">z</span>.2</span>)</span> <span class="fn">↑<span class="fn"><span class="fn">z'</span>.1</span></span> <span class="fn">↑<span class="fn"><span class="fn">z</span>.1</span></span></span></span> →
+  <span class="fn"><span class="fn"><span class="fn">m</span> <span class="fn">∈</span> <span class="fn"><span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Thinness.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.part">part</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">z</span>.2</span><span class="fn">⁻¹</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">X</span>.2</span>)</span> <span class="fn">(↑<span class="fn"><span class="fn">z</span>.1</span>)</span> <span class="fn"><span class="fn">X</span>.1</span></span></span> →
+    <span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.φ">φ</a></span> <span class="fn">z'</span>)</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">u</span> <span class="fn">m</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">u</span> <span class="fn">(<span class="fn">(<span class="fn"><span class="fn">self</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.φ">φ</a></span> <span class="fn">z</span>)</span> <span class="fn">m</span>)</span></span></span></span></span></div></li></ul><details id="instances-for-list-MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.term"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L108-L125">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.term"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">term</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.LocalFamily">LocalFamily</a> <span class="fn">F</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.MeshData">MeshData</a> <span class="fn">F</span> <span class="fn">L</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">hfd</span> : <span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X </span><span class="fn">Y</span> : <span class="fn"><span class="fn">ι</span> <span class="fn">×</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">N</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam">NatFam</a></span> <span class="fn">Dg</span> <span class="fn">X</span> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">p </span><span class="fn">q</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.PV">PV</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a </span><span class="fn">b</span> : <span class="fn">G</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">μ</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">↑<span class="fn">p</span></span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">↑<span class="fn">q</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">↑<span class="fn">q</span></span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn"><span class="fn">X</span>.1</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">∑ <span class="fn">e</span> ∈ <span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.degs">degs</a></span>,
+    <span class="fn"><span class="fn">(<span class="fn"><span class="fn">N</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.φ">φ</a></span> <span class="fn"><span class="fn">(</span><span class="fn">p</span><span class="fn">,</span> <span class="fn"><span class="fn"><span class="fn">X</span>.2</span> <span class="fn">*</span> <span class="fn"><span class="fn">e</span><span class="fn">⁻¹</span></span></span><span class="fn">)</span></span>)</span>
+      <span class="fn">(<span class="fn">(<span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj">proj</a></span> <span class="fn">e</span> <span class="fn">(↑<span class="fn">p</span>)</span> <span class="fn"><span class="fn">X</span>.1</span>)</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">(<span class="fn">(<span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj">proj</a></span> <span class="fn">a</span> <span class="fn">↑<span class="fn">p</span></span> <span class="fn">↑<span class="fn">q</span></span>)</span> <span class="fn">μ</span>)</span> <span class="fn">(<span class="fn">(<span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj">proj</a></span> <span class="fn">b</span> <span class="fn">(↑<span class="fn">q</span>)</span> <span class="fn"><span class="fn">X</span>.1</span>)</span> <span class="fn">m</span>)</span>)</span>)</span></span></span> <span class="fn">=</span>   <span class="fn"><span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">(<span class="fn">(<span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj">proj</a></span> <span class="fn">a</span> <span class="fn">↑<span class="fn">p</span></span> <span class="fn">↑<span class="fn">q</span></span>)</span> <span class="fn">μ</span>)</span> <span class="fn">(<span class="fn">(<span class="fn"><span class="fn">N</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.φ">φ</a></span> <span class="fn"><span class="fn">(</span><span class="fn">q</span><span class="fn">,</span> <span class="fn"><span class="fn"><span class="fn">X</span>.2</span> <span class="fn">*</span> <span class="fn"><span class="fn">b</span><span class="fn">⁻¹</span></span></span><span class="fn">)</span></span>)</span> <span class="fn">(<span class="fn">(<span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj">proj</a></span> <span class="fn">b</span> <span class="fn">(↑<span class="fn">q</span>)</span> <span class="fn"><span class="fn">X</span>.1</span>)</span> <span class="fn">m</span>)</span>)</span></span></span></div></div><p>The term identity behind the module map.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L127-L159">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">Ψ</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.LocalFamily">LocalFamily</a> <span class="fn">F</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.MeshData">MeshData</a> <span class="fn">F</span> <span class="fn">L</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">hfd</span> : <span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X </span><span class="fn">Y</span> : <span class="fn"><span class="fn">ι</span> <span class="fn">×</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">N</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam">NatFam</a></span> <span class="fn">Dg</span> <span class="fn">X</span> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Rep">Rep</a> <span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.F0">F0</a></span> <span class="fn">(<span class="fn">F</span> <span class="fn"><span class="fn">X</span>.1</span>)</span></span> <span class="fn">→ₗ[</span><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.F0">F0</a></span></span><span class="fn">]</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Rep">Rep</a> <span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.F0">F0</a></span> <span class="fn">(<span class="fn">F</span> <span class="fn"><span class="fn">Y</span>.1</span>)</span></span></span></div></div><p><strong>The <code>A₀</code>-module map</strong> <code>ev(X) → ev(Y)</code> assembled from the components.</p><details id="instances-for-list-MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.single"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L161-L162">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.single"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">single</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.LocalFamily">LocalFamily</a> <span class="fn">F</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.MeshData">MeshData</a> <span class="fn">F</span> <span class="fn">L</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <span class="fn"><span class="fn">ι</span> <span class="fn">×</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.PV">PV</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">↑<span class="fn">p</span></span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn"><span class="fn">X</span>.1</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Rep">Rep</a> <span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.F0">F0</a></span> <span class="fn">(<span class="fn">F</span> <span class="fn"><span class="fn">X</span>.1</span>)</span></span></div></div><p>A morphism concentrated at one label.</p><details id="instances-for-list-MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.single" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L164-L165">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">Ψ_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.LocalFamily">LocalFamily</a> <span class="fn">F</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.MeshData">MeshData</a> <span class="fn">F</span> <span class="fn">L</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">hfd</span> : <span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X </span><span class="fn">Y</span> : <span class="fn"><span class="fn">ι</span> <span class="fn">×</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">N</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam">NatFam</a></span> <span class="fn">Dg</span> <span class="fn">X</span> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Rep">Rep</a> <span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.F0">F0</a></span> <span class="fn">(<span class="fn">F</span> <span class="fn"><span class="fn">X</span>.1</span>)</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.PV">PV</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">N</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ">Ψ</a></span> <span class="fn">m</span> <span class="fn">p</span></span> <span class="fn">=</span> <span class="fn">∑ <span class="fn">e</span> ∈ <span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.degs">degs</a></span>, <span class="fn"><span class="fn">(<span class="fn"><span class="fn">N</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.φ">φ</a></span> <span class="fn"><span class="fn">(</span><span class="fn">p</span><span class="fn">,</span> <span class="fn"><span class="fn"><span class="fn">X</span>.2</span> <span class="fn">*</span> <span class="fn"><span class="fn">e</span><span class="fn">⁻¹</span></span></span><span class="fn">)</span></span>)</span> <span class="fn">(<span class="fn">(<span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.proj">proj</a></span> <span class="fn">e</span> <span class="fn">(↑<span class="fn">p</span>)</span> <span class="fn"><span class="fn">X</span>.1</span>)</span> <span class="fn">(<span class="fn">m</span> <span class="fn">p</span>)</span>)</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ_single"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L167-L175">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ_single"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">Ψ_single</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.LocalFamily">LocalFamily</a> <span class="fn">F</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.MeshData">MeshData</a> <span class="fn">F</span> <span class="fn">L</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">hfd</span> : <span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X </span><span class="fn">Y</span> : <span class="fn"><span class="fn">ι</span> <span class="fn">×</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">N</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam">NatFam</a></span> <span class="fn">Dg</span> <span class="fn">X</span> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.PV">PV</a></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">e</span> : <span class="fn">G</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">m</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">↑<span class="fn">p</span></span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn"><span class="fn">X</span>.1</span></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hm</span> : <span class="fn"><span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.IsHom">IsHom</a></span> <span class="fn">e</span> <span class="fn">m</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">N</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ">Ψ</a></span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.single">single</a> <span class="fn">p</span> <span class="fn">m</span>)</span> <span class="fn">p</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<span class="fn"><span class="fn">N</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.φ">φ</a></span> <span class="fn"><span class="fn">(</span><span class="fn">p</span><span class="fn">,</span> <span class="fn"><span class="fn"><span class="fn">X</span>.2</span> <span class="fn">*</span> <span class="fn"><span class="fn">e</span><span class="fn">⁻¹</span></span></span><span class="fn">)</span></span>)</span> <span class="fn">m</span></span></span></div></div><p><code><a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.Ψ">Ψ</a></code> on a homogeneous component concentrated at one label.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.exists_hom"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L180-L224">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.exists_hom"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">NatFam</span>.<span class="name">exists_hom</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.LocalFamily">LocalFamily</a> <span class="fn">F</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.MeshData">MeshData</a> <span class="fn">F</span> <span class="fn">L</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">hfd</span> : <span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X </span><span class="fn">Y</span> : <span class="fn"><span class="fn">ι</span> <span class="fn">×</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">N</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam">NatFam</a></span> <span class="fn">Dg</span> <span class="fn">X</span> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">f</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn"><span class="fn">X</span>.1</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn"><span class="fn">Y</span>.1</span></span></span>),
+  <span class="fn"><span class="fn"><span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.IsHom">IsHom</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">X</span>.2</span><span class="fn">⁻¹</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">Y</span>.2</span>)</span> <span class="fn">f</span></span> <span class="fn">∧</span>     <span class="fn">∀ (<span class="fn">z</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.PV">PV</a></span> <span class="fn">×</span> <span class="fn">G</span></span>), <span class="fn">∀ <span class="fn">m</span> ∈ <span class="fn"><span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Thinness.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.part">part</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">z</span>.2</span><span class="fn">⁻¹</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">X</span>.2</span>)</span> <span class="fn">(↑<span class="fn"><span class="fn">z</span>.1</span>)</span> <span class="fn"><span class="fn">X</span>.1</span></span>, <span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">N</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.NatFam.φ">φ</a></span> <span class="fn">z</span>)</span> <span class="fn">m</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">m</span> <span class="fn">f</span></span></span></span></span></span></span></div></div><p><strong>Lemma 4.8, fullness</strong>: a natural family is composition with a morphism
+<code>X̃ → Ỹ</code> of the cover.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.MeshData.eq_zero_of_lifted"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.lean#L227-L238">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/LiftedEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.eq_zero_of_lifted"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">MeshData</span>.<span class="name">eq_zero_of_lifted</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.LocalFamily">LocalFamily</a> <span class="fn">F</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/LocalMesh.html#MultiplicativeBasisDeformations.CatAlg.MeshData">MeshData</a> <span class="fn">F</span> <span class="fn">L</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">hfd</span> : <span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Dg</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/GradedCover.html#MultiplicativeBasisDeformations.CatAlg.HomGrading">HomGrading</a> <span class="fn">F</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X </span><span class="fn">Y</span> : <span class="fn"><span class="fn">ι</span> <span class="fn">×</span> <span class="fn">G</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn"><span class="fn">X</span>.1</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn"><span class="fn">Y</span>.1</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn">∀ (<span class="fn">z</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/ProjectiveEvaluation.html#MultiplicativeBasisDeformations.CatAlg.MeshData.PV">PV</a></span> <span class="fn">×</span> <span class="fn">G</span></span>), <span class="fn">∀ <span class="fn">m</span> ∈ <span class="fn"><span class="fn"><span class="fn">Dg</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Thinness.html#MultiplicativeBasisDeformations.CatAlg.HomGrading.part">part</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">z</span>.2</span><span class="fn">⁻¹</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">X</span>.2</span>)</span> <span class="fn">(↑<span class="fn"><span class="fn">z</span>.1</span>)</span> <span class="fn"><span class="fn">X</span>.1</span></span>, <span class="fn"><span class="fn"><span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">m</span> <span class="fn">f</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">f</span> <span class="fn">=</span> <span class="fn">0</span></span></div></div><p><strong>Lemma 4.8, faithfulness</strong>: a morphism killed by every lifted projective
+vertex is zero.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

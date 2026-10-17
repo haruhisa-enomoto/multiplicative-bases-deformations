@@ -1,0 +1,115 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../../.././style.css"></link><link rel="icon" href="../../.././favicon.svg"></link><link rel="mask-icon" href="../../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../../.././/declarations/declaration-data.bmp" as="image"></link><title>MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd</title><script defer="true" src="../../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../../.././";</script><script>const MODULE_NAME="MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd";</script><script type="module" src="../../.././jump-src.js"></script><script type="module" src="../../.././search.js"></script><script type="module" src="../../.././expand-nav.js"></script><script type="module" src="../../.././how-about.js"></script><script type="module" src="../../.././instances.js"></script><script type="module" src="../../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../../index.html">Multiplicative bases</a></span></h1><h2 class="header_filename break_within"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">IndecomposableOfLocalEnd</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.33.1/src/Init.lean">Init</a></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/CategoryTheory/Preadditive/AdditiveFunctor.lean">Mathlib.CategoryTheory.Preadditive.AdditiveFunctor</a></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/CategoryTheory/Preadditive/Biproducts.lean">Mathlib.CategoryTheory.Preadditive.Biproducts</a></li><li><a href="../../.././MBDVendor/QSE/Foundation/RingTheory/LocalRing/Basic.html">MBDVendor.QSE.Foundation.RingTheory.LocalRing.Basic</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.CategoryTheory.indecomposable_iff_of_iso"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">indecomposable_iff_of_iso</span></a></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.CategoryTheory.indecomposable_op_iff"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">indecomposable_op_iff</span></a></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.CategoryTheory.indecomposable_of_fully_faithful_additive"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">indecomposable_of_fully_faithful_additive</span></a></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.CategoryTheory.indecomposable_map_iff_of_equivalence"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">indecomposable_map_iff_of_equivalence</span></a></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.CategoryTheory.indecomposable_of_local_end"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">indecomposable_of_local_end</span></a></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.RingEquiv.isLocalRing_noncomm"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">RingEquiv</span>.<span class="name">isLocalRing_noncomm</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Categorical-indecomposability-from-a-local-endomorphism-ring" class="markdown-heading">Categorical indecomposability from a local endomorphism ring <a class="hover-link" href="#Categorical-indecomposability-from-a-local-endomorphism-ring">#</a></h1><p>In a preadditive category with binary biproducts, a local endomorphism ring
+forces categorical indecomposability.  This is a bounded adaptation of the
+generic lemma in the donor's
+<code>RepresentationDirected/IyamaWordMeshAdditiveHull.lean</code> at commit
+<code>d5ba0c48e7a851afd51247ff9cd81fc629e00ed2</code>; no word-mesh layer is imported.</p></div><div class="decl" id="MBDVendor.Magnitude.CategoryTheory.indecomposable_iff_of_iso"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.lean#L25-L42">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.html#MBDVendor.Magnitude.CategoryTheory.indecomposable_iff_of_iso"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">indecomposable_iff_of_iso</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{v, u}</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Limits.HasBinaryBiproducts</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X </span><span class="fn">Y</span> : <span class="fn">C</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">e</span> : <span class="fn"><span class="fn">X</span> <span class="fn">≅</span> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">CategoryTheory.Indecomposable</span> <span class="fn">X</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn">CategoryTheory.Indecomposable</span> <span class="fn">Y</span></span></span></div></div><p>Categorical indecomposability is invariant under isomorphism.</p></div></div><div class="decl" id="MBDVendor.Magnitude.CategoryTheory.indecomposable_op_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.lean#L44-L68">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.html#MBDVendor.Magnitude.CategoryTheory.indecomposable_op_iff"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">indecomposable_op_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{v, u}</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Limits.HasBinaryBiproducts</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">X</span> : <span class="fn">C</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">CategoryTheory.Indecomposable</span> <span class="fn">(<span class="fn">Opposite.op</span> <span class="fn">X</span>)</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn">CategoryTheory.Indecomposable</span> <span class="fn">X</span></span></span></div></div><p>Passing to the opposite category preserves and reflects categorical
+indecomposability.</p></div></div><div class="decl" id="MBDVendor.Magnitude.CategoryTheory.indecomposable_of_fully_faithful_additive"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.lean#L72-L91">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.html#MBDVendor.Magnitude.CategoryTheory.indecomposable_of_fully_faithful_additive"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">indecomposable_of_fully_faithful_additive</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{v, u}</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Limits.HasBinaryBiproducts</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <a href="../../.././foundational_types.html">Type</a> u'}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{v', u'}</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Limits.HasBinaryBiproducts</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><span class="fn">CategoryTheory.Functor</span> <span class="fn">C</span> <span class="fn">D</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">F</span>.<span class="fn">Additive</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">F</span>.<span class="fn">Full</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">F</span>.<span class="fn">Faithful</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">X</span> : <span class="fn">C</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hX</span> : <span class="fn"><span class="fn">CategoryTheory.Indecomposable</span> <span class="fn">(<span class="fn"><span class="fn">F</span>.<span class="fn">obj</span></span> <span class="fn">X</span>)</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">CategoryTheory.Indecomposable</span> <span class="fn">X</span></span></div></div><p>A fully faithful additive functor reflects indecomposability from the
+image of an object.</p></div></div><div class="decl" id="MBDVendor.Magnitude.CategoryTheory.indecomposable_map_iff_of_equivalence"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.lean#L93-L114">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.html#MBDVendor.Magnitude.CategoryTheory.indecomposable_map_iff_of_equivalence"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">indecomposable_map_iff_of_equivalence</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{v, u}</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Limits.HasBinaryBiproducts</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <a href="../../.././foundational_types.html">Type</a> u'}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{v', u'}</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Limits.HasBinaryBiproducts</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><span class="fn">CategoryTheory.Functor</span> <span class="fn">C</span> <span class="fn">D</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">F</span>.<span class="fn">Additive</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">F</span>.<span class="fn">IsEquivalence</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">X</span> : <span class="fn">C</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">CategoryTheory.Indecomposable</span> <span class="fn">(<span class="fn"><span class="fn">F</span>.<span class="fn">obj</span></span> <span class="fn">X</span>)</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn">CategoryTheory.Indecomposable</span> <span class="fn">X</span></span></span></div></div><p>An additive equivalence preserves and reflects indecomposability.</p></div></div><div class="decl" id="MBDVendor.Magnitude.CategoryTheory.indecomposable_of_local_end"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.lean#L116-L160">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.html#MBDVendor.Magnitude.CategoryTheory.indecomposable_of_local_end"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">indecomposable_of_local_end</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{v, u}</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Limits.HasBinaryBiproducts</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">X</span> : <span class="fn">C</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsLocalRing</span> <span class="fn">(<span class="fn">CategoryTheory.End</span> <span class="fn">X</span>)</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">CategoryTheory.Indecomposable</span> <span class="fn">X</span></span></div></div><p>A nontrivial local endomorphism ring rules out a nontrivial binary
+biproduct decomposition.</p></div></div><div class="decl" id="MBDVendor.Magnitude.RingEquiv.isLocalRing_noncomm"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.lean#L168-L179">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.html#MBDVendor.Magnitude.RingEquiv.isLocalRing_noncomm"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">RingEquiv</span>.<span class="name">isLocalRing_noncomm</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../../.././foundational_types.html">Type</a> u₁}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../../.././foundational_types.html">Type</a> u₂}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsLocalRing</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">e</span> : <span class="fn"><span class="fn">R</span> <span class="fn">≃+*</span> <span class="fn">S</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">IsLocalRing</span> <span class="fn">S</span></span></div></div><p>Localness transports across a ring equivalence without a commutativity
+hypothesis.</p></div></div></main>
+<nav class="nav"><iframe src="../../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

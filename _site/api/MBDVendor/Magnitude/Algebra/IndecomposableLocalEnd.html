@@ -1,0 +1,146 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../../.././style.css"></link><link rel="icon" href="../../.././favicon.svg"></link><link rel="mask-icon" href="../../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../../.././/declarations/declaration-data.bmp" as="image"></link><title>MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd</title><script defer="true" src="../../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../../.././";</script><script>const MODULE_NAME="MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd";</script><script type="module" src="../../.././jump-src.js"></script><script type="module" src="../../.././search.js"></script><script type="module" src="../../.././expand-nav.js"></script><script type="module" src="../../.././how-about.js"></script><script type="module" src="../../.././instances.js"></script><script type="module" src="../../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../../index.html">Multiplicative bases</a></span></h1><h2 class="header_filename break_within"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">Algebra</span>.<span class="name">IndecomposableLocalEnd</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.33.1/src/Init.lean">Init</a></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/LinearAlgebra/Projection.lean">Mathlib.LinearAlgebra.Projection</a></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/RingTheory/HopkinsLevitzki.lean">Mathlib.RingTheory.HopkinsLevitzki</a></li><li><a href="../../.././MBDVendor/Magnitude/Algebra/RightModuleFiniteType.html">MBDVendor.Magnitude.Algebra.RightModuleFiniteType</a></li><li><a href="../../.././MBDVendor/Magnitude/CategoryTheory/IndecomposableOfLocalEnd.html">MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd</a></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/RingTheory/LocalRing/Basic.lean">Mathlib.RingTheory.LocalRing.Basic</a></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/RingTheory/Nilpotent/Basic.lean">Mathlib.RingTheory.Nilpotent.Basic</a></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Algebra/Category/ModuleCat/Biproducts.lean">Mathlib.Algebra.Category.ModuleCat.Biproducts</a></li><li><a href="../../.././MBDVendor/QSE/Foundation/RingTheory/KrullSchmidt/Indecomposable.html">MBDVendor.QSE.Foundation.RingTheory.KrullSchmidt.Indecomposable</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.CategoryTheory.Functor.endRingEquivOfFullyFaithful"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">Functor</span>.<span class="name">endRingEquivOfFullyFaithful</span></a></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.CategoryTheory.Functor.endRingEquivOfFullyFaithful_apply"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">Functor</span>.<span class="name">endRingEquivOfFullyFaithful_apply</span></a></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.rightRegularEndEquiv"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">rightRegularEndEquiv</span></a></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.finiteDimensional_isLocalRing_of_idempotents"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">finiteDimensional_isLocalRing_of_idempotents</span></a></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.isUnit_or_isNilpotent_of_finite_indecomposable"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">isUnit_or_isNilpotent_of_finite_indecomposable</span></a></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.moduleCat_end_isLocalRing"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">moduleCat_end_isLocalRing</span></a></div><div class="nav_link"><a class="break_within" href="#MBDVendor.Magnitude.RightModule.FiniteIndecomposableSkeleton.fgObj_end_isLocalRing"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">RightModule</span>.<span class="name">FiniteIndecomposableSkeleton</span>.<span class="name">fgObj_end_isLocalRing</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Local-endomorphism-rings-of-finite-dimensional-indecomposable-modules" class="markdown-heading">Local endomorphism rings of finite-dimensional indecomposable modules <a class="hover-link" href="#Local-endomorphism-rings-of-finite-dimensional-indecomposable-modules">#</a></h1><p>Fitting decomposition shows that every endomorphism of a finite-dimensional
+indecomposable module is either invertible or nilpotent.  Consequently its
+endomorphism ring is local.  The result is then transported through the fully
+faithful inclusion of finitely generated modules into all modules.</p><p>The Fitting argument and the two small transport lemmas are adapted from
+<code>CartanDeterminant.RepresentationTheory.IndecomposableLocalEnd</code> and
+<code>CartanDeterminant.CategoryTheory.LinearEndTransport</code> at
+homological-conjectures commit <code>eade4e75</code>.</p><p>The file also records a ring-level form: a finite-dimensional algebra with
+no nontrivial idempotents is local.  This follows by applying Fitting's lemma
+to its right regular module.</p></div><div class="decl" id="MBDVendor.Magnitude.CategoryTheory.Functor.endRingEquivOfFullyFaithful"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.lean#L44-L54">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.html#MBDVendor.Magnitude.CategoryTheory.Functor.endRingEquivOfFullyFaithful"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">Functor</span>.<span class="name">endRingEquivOfFullyFaithful</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../../.././foundational_types.html">Type</a> u₁}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{v, u₁}</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <a href="../../.././foundational_types.html">Type</a> u₂}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{v, u₂}</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><span class="fn">CategoryTheory.Functor</span> <span class="fn">C</span> <span class="fn">D</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">F</span>.<span class="fn">Additive</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">F</span>.<span class="fn">Full</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">F</span>.<span class="fn">Faithful</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">X</span> : <span class="fn">C</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">CategoryTheory.End</span> <span class="fn">X</span></span> <span class="fn">≃+*</span> <span class="fn"><span class="fn">CategoryTheory.End</span> <span class="fn">(<span class="fn"><span class="fn">F</span>.<span class="fn">obj</span></span> <span class="fn">X</span>)</span></span></span></div></div><p>A fully faithful additive functor identifies the endomorphism rings of an
+object and its image.</p><details id="instances-for-list-MBDVendor.Magnitude.CategoryTheory.Functor.endRingEquivOfFullyFaithful" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MBDVendor.Magnitude.CategoryTheory.Functor.endRingEquivOfFullyFaithful_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.lean#L56-L61">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.html#MBDVendor.Magnitude.CategoryTheory.Functor.endRingEquivOfFullyFaithful_apply"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">CategoryTheory</span>.<span class="name">Functor</span>.<span class="name">endRingEquivOfFullyFaithful_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../../.././foundational_types.html">Type</a> u₁}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{v, u₁}</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <a href="../../.././foundational_types.html">Type</a> u₂}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{v, u₂}</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">D</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><span class="fn">CategoryTheory.Functor</span> <span class="fn">C</span> <span class="fn">D</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">F</span>.<span class="fn">Additive</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">F</span>.<span class="fn">Full</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">F</span>.<span class="fn">Faithful</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">X</span> : <span class="fn">C</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">CategoryTheory.End</span> <span class="fn">X</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../../.././MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.html#MBDVendor.Magnitude.CategoryTheory.Functor.endRingEquivOfFullyFaithful">endRingEquivOfFullyFaithful</a> <span class="fn">F</span> <span class="fn">X</span>)</span> <span class="fn">f</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">F</span>.<span class="fn">map</span></span> <span class="fn">f</span></span></span></div></div></div></div><div class="decl" id="MBDVendor.Magnitude.rightRegularEndEquiv"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.lean#L70-L89">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.html#MBDVendor.Magnitude.rightRegularEndEquiv"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">rightRegularEndEquiv</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">R</span> : <a href="../../.././foundational_types.html">Type</a> v)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">R</span> <span class="fn">≃+*</span> <span class="fn"><span class="fn">Module.End</span> <span class="fn"><span class="fn">R</span><span class="fn">ᵐᵒᵖ</span></span> <span class="fn">R</span></span></span></div></div><p>Left multiplication identifies a ring with the endomorphism ring of its
+right regular module.</p><details id="instances-for-list-MBDVendor.Magnitude.rightRegularEndEquiv" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MBDVendor.Magnitude.finiteDimensional_isLocalRing_of_idempotents"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.lean#L91-L122">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.html#MBDVendor.Magnitude.finiteDimensional_isLocalRing_of_idempotents"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">finiteDimensional_isLocalRing_of_idempotents</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">R</span> : <a href="../../.././foundational_types.html">Type</a> v)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Nontrivial</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hidem</span> : <span class="fn">∀ (<span class="fn">e</span> : <span class="fn">R</span>), <span class="fn"><span class="fn"><span class="fn">IsIdempotentElem</span> <span class="fn">e</span></span> → <span class="fn"><span class="fn"><span class="fn">e</span> <span class="fn">=</span> <span class="fn">0</span></span> <span class="fn">∨</span> <span class="fn"><span class="fn">e</span> <span class="fn">=</span> <span class="fn">1</span></span></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">IsLocalRing</span> <span class="fn">R</span></span></div></div><p>A finite-dimensional algebra whose only idempotents are zero and one is
+local.  Fitting is applied to the right regular module, whose endomorphism
+ring is the original ring through left multiplication.</p></div></div><div class="decl" id="MBDVendor.Magnitude.isUnit_or_isNilpotent_of_finite_indecomposable"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.lean#L124-L177">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.html#MBDVendor.Magnitude.isUnit_or_isNilpotent_of_finite_indecomposable"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">isUnit_or_isNilpotent_of_finite_indecomposable</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn">A</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">k</span> <span class="fn">↑<span class="fn">M</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hM</span> : <span class="fn"><span class="fn">CategoryTheory.Indecomposable</span> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">CategoryTheory.End</span> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">IsUnit</span> <span class="fn">f</span></span> <span class="fn">∨</span> <span class="fn"><span class="fn">IsNilpotent</span> <span class="fn">f</span></span></span></div></div><p>A finite-dimensional indecomposable module has the Fitting alternative:
+each endomorphism is invertible or nilpotent.</p></div></div><div class="decl" id="MBDVendor.Magnitude.moduleCat_end_isLocalRing"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.lean#L179-L194">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.html#MBDVendor.Magnitude.moduleCat_end_isLocalRing"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">moduleCat_end_isLocalRing</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <span class="fn"><span class="fn">ModuleCat</span> <span class="fn">A</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module.Finite</span> <span class="fn">k</span> <span class="fn">↑<span class="fn">M</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hM</span> : <span class="fn"><span class="fn">CategoryTheory.Indecomposable</span> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">IsLocalRing</span> <span class="fn">(<span class="fn">CategoryTheory.End</span> <span class="fn">M</span>)</span></span></div></div><p>The categorical endomorphism ring of a finite-dimensional indecomposable
+module is local.</p></div></div><div class="decl" id="MBDVendor.Magnitude.RightModule.FiniteIndecomposableSkeleton.fgObj_end_isLocalRing"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.lean#L201-L215">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.html#MBDVendor.Magnitude.RightModule.FiniteIndecomposableSkeleton.fgObj_end_isLocalRing"><span class="name">MBDVendor</span>.<span class="name">Magnitude</span>.<span class="name">RightModule</span>.<span class="name">FiniteIndecomposableSkeleton</span>.<span class="name">fgObj_end_isLocalRing</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../../.././MBDVendor/Magnitude/Algebra/RightModuleFiniteType.html#MBDVendor.Magnitude.RightModule.FiniteIndecomposableSkeleton">FiniteIndecomposableSkeleton</a> <span class="fn">k</span> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">i</span> : <span class="fn"><span class="fn">Fin</span> <span class="fn"><span class="fn">S</span>.<a href="../../.././MBDVendor/Magnitude/Algebra/RightModuleFiniteType.html#MBDVendor.Magnitude.RightModule.FiniteIndecomposableSkeleton.n">n</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">IsLocalRing</span> <span class="fn">(<span class="fn">CategoryTheory.End</span> <span class="fn">(<span class="fn"><span class="fn">S</span>.<a href="../../.././MBDVendor/Magnitude/Algebra/RightModuleFiniteType.html#MBDVendor.Magnitude.RightModule.FiniteIndecomposableSkeleton.fgObj">fgObj</a></span> <span class="fn">i</span>)</span>)</span></span></div></div><p>The chosen skeleton object's endomorphism ring remains local after it is
+bundled in the literal category of finitely generated right modules.</p></div></div></main>
+<nav class="nav"><iframe src="../../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

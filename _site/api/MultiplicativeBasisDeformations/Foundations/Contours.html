@@ -1,0 +1,890 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>MultiplicativeBasisDeformations.Foundations.Contours</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="MultiplicativeBasisDeformations.Foundations.Contours";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Multiplicative bases</a></span></h1><h2 class="header_filename break_within"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Foundations</span>.<span class="name">Contours</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.33.1/src/Init.lean">Init</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/ContourTrees.html">MultiplicativeBasisDeformations.Foundations.ContourTrees</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/PrimitiveCorners.html">MultiplicativeBasisDeformations.Foundations.PrimitiveCorners</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-MultiplicativeBasisDeformations.Foundations.Contours" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.Ord"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">Ord</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.OL"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">OL</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.OR"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">OR</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.ne_e_of_deg"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">ne_e_of_deg</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.deg_pos_of_ne_e"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">deg_pos_of_ne_e</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.exists_OL"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">exists_OL</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.mul_qpow_endpoints"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">mul_qpow_endpoints</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.qpow_mul_endpoints"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">qpow_mul_endpoints</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.gen_loop_e"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">gen_loop_e</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.gen_factor"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">gen_factor</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.no_loop_factor"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_loop_factor</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.no_below_gen"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_below_gen</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.ord_not_rf"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">ord_not_rf</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.ol_cofactor_ne"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">ol_cofactor_ne</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.supp_of_qh"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">supp_of_qh</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.supp_of_qh'"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">supp_of_qh'</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.local_eq_q"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">local_eq_q</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.no_hidden_target"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_hidden_target</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.no_return_one"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_return_one</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.no_cross"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_cross</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.first_arrow_types"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">first_arrow_types</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.op_ord"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">op_ord</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.op_OL"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">op_OL</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.last_arrow_types"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">last_arrow_types</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.ord_not_lf"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">ord_not_lf</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.op_qh'"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">op_qh'</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.no_hidden_source"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_hidden_source</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.or_cofactor_ne"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">or_cofactor_ne</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.right_two_last"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">right_two_last</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.unique_last"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">unique_last</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.op_OR"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">op_OR</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.RaySys.Sys.unique_first"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">unique_first</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Ordinary-arrows-and-one-sided-generating-contours" class="markdown-heading">Ordinary arrows and one-sided generating contours <a class="hover-link" href="#Ordinary-arrows-and-one-sided-generating-contours">#</a></h1><p><code>def:generating-rays</code>(3), the path part of <code>lem:generating-paths</code>, and
+<code>prop:controlled-contours</code> (<code>primitive-ray-equations.tex</code>, Appendix C.1 in
+<code>local-ray-restrictions.tex</code>).</p><p>An ordinary path for a ray <code>f</code> starts with an ordinary left divisor of <code>f</code>, and every
+ordinary left divisor starts such a path. We prove <code>prop:controlled-contours</code> in the form
+used by <code>lem:one-sided-path-coefficients</code>: a generating ray of type <code>L</code> has exactly one
+ordinary left divisor (all its ordinary paths start with the same arrow), and dually for
+type <code>R</code>. The proof is that of Appendix C.1 applied to two paths with distinct first
+(respectively last) arrows: the crown and the six-point tree fix their types, and the
+six-lift and eight-lift trees exclude the remaining case.</p></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.Ord"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L38-L41">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.Ord"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">Ord</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>An ordinary arrow (<code>def:generating-rays</code>(3)).</p><details id="instances-for-list-MultiplicativeBasisDeformations.RaySys.Sys.Ord" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.OL"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L43-L44">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OL"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">OL</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f </span><span class="fn">a</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>An ordinary left divisor: the first arrow of an ordinary path of <code>f</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.RaySys.Sys.OL" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.OR"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L46-L47">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OR"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">OR</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f </span><span class="fn">b</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>An ordinary right divisor: the last arrow of an ordinary path of <code>f</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.RaySys.Sys.OR" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.ne_e_of_deg"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L49-L50">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.ne_e_of_deg"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">ne_e_of_deg</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">r</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.wt">wt</a></span> <span class="fn">r</span>)</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">r</span> <span class="fn">≠</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.e">e</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">r</span>)</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.deg_pos_of_ne_e"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L52-L53">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.deg_pos_of_ne_e"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">deg_pos_of_ne_e</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">r</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn">r</span> <span class="fn">≠</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.e">e</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">r</span>)</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.wt">wt</a></span> <span class="fn">r</span>)</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.exists_OL"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L55-L70">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.exists_OL"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">exists_OL</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn">f</span> <span class="fn">≠</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.e">e</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">f</span>)</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">a</span> : <span class="fn">R</span>), <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OL">OL</a></span> <span class="fn">f</span> <span class="fn">a</span></span></span></div></div><p><strong>Every nonidentity ray has an ordinary left divisor.</strong></p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.mul_qpow_endpoints"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L72-L87">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.mul_qpow_endpoints"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">mul_qpow_endpoints</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">a </span><span class="fn">a'</span> : <span class="fn">R</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x</span> : <span class="fn">V</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">n</span> : <span class="fn">ℕ</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">a</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.q">q</a></span> <span class="fn">x</span></span> <span class="fn">^</span> <span class="fn">n</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">a'</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">a'</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">a</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.tgt">tgt</a></span> <span class="fn">a'</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.tgt">tgt</a></span> <span class="fn">a</span></span></span></span></div></div><p>Right multiplication by a local power keeps the endpoints of a ray.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.qpow_mul_endpoints"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L89-L104">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.qpow_mul_endpoints"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">qpow_mul_endpoints</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">b </span><span class="fn">b'</span> : <span class="fn">R</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x</span> : <span class="fn">V</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">n</span> : <span class="fn">ℕ</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.q">q</a></span> <span class="fn">x</span></span> <span class="fn">^</span> <span class="fn">n</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">b</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">b'</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">b'</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">b</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.tgt">tgt</a></span> <span class="fn">b'</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.tgt">tgt</a></span> <span class="fn">b</span></span></span></span></div></div><p>Left multiplication by a local power keeps the endpoints of a ray.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.gen_loop_e"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L106-L112">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.gen_loop_e"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">gen_loop_e</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">m</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hm</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.IsGen">IsGen</a></span> <span class="fn">m</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hl</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">m</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.tgt">tgt</a></span> <span class="fn">m</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">m</span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.e">e</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">m</span>)</span></span></span></div></div><p>A generating local ray is an identity.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.gen_factor"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L116-L158">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.gen_factor"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">gen_factor</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hfin</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">↥<span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/TableAlg.html#MultiplicativeBasisDeformations.RaySys.Mult.Lin">Lin</a></span> <span class="fn">k</span>)</span></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">a </span><span class="fn">m </span><span class="fn">b</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.IsGen">IsGen</a></span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hd</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GeneratingPaths.html#MultiplicativeBasisDeformations.RaySys.Sys.Dim2">Dim2</a></span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">a</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">m</span></span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">b</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">f</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.IsGen">IsGen</a></span> <span class="fn">m</span></span></div></div><p><strong>Lemma 8.14, path part</strong> (<code>lem:generating-paths</code>): every factor of a generating ray in
+a Hom of dimension at least two is generating.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.no_loop_factor"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L160-L165">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.no_loop_factor"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_loop_factor</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hfin</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">↥<span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/TableAlg.html#MultiplicativeBasisDeformations.RaySys.Mult.Lin">Lin</a></span> <span class="fn">k</span>)</span></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">a </span><span class="fn">m </span><span class="fn">b</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.IsGen">IsGen</a></span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hd</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/GeneratingPaths.html#MultiplicativeBasisDeformations.RaySys.Sys.Dim2">Dim2</a></span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">a</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">m</span></span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">b</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">f</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hl</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">m</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.tgt">tgt</a></span> <span class="fn">m</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">m</span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.e">e</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">m</span>)</span></span></span></div></div><p><strong>Lemma 8.14, vertex-simplicity</strong>: a generating ray in a Hom of dimension at least two has
+no local nonidentity factor.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.no_below_gen"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L168-L176">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.no_below_gen"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_below_gen</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hχ</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">χ</span></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">g </span><span class="fn">r</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hg</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.IsGen">IsGen</a></span> <span class="fn">g</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h1</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">r</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">g</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.tgt">tgt</a></span> <span class="fn">r</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.tgt">tgt</a></span> <span class="fn">g</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hn</span> : <span class="fn"><span class="fn">1</span> <span class="fn">≤</span> <span class="fn">n</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.wt">wt</a></span> <span class="fn">g</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.wt">wt</a></span> <span class="fn">r</span></span> <span class="fn">+</span> <span class="fn"><span class="fn">n</span> <span class="fn">•</span> <span class="fn">χ</span></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">False</span></div></div><p>No ray lies <code>n χ</code> below a generating ray (start of Appendix C.1).</p></div></div><div class="mod_doc"><h3 id="First-arrows-of-a-left-sided-generating-ray" class="markdown-heading">First arrows of a left-sided generating ray <a class="hover-link" href="#First-arrows-of-a-left-sided-generating-ray">#</a></h3></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.ord_not_rf"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L181-L190">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.ord_not_rf"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">ord_not_rf</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">a1 </span><span class="fn">a2</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h1</span> : <span class="fn"><span class="fn">a1</span> <span class="fn">≠</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.e">e</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">a1</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.Ord">Ord</a></span> <span class="fn">a2</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hne</span> : <span class="fn"><span class="fn">a1</span> <span class="fn">≠</span> <span class="fn">a2</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">¬</span><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/TableSupport.html#MultiplicativeBasisDeformations.RaySys.Tab.RF">RF</a></span> <span class="fn">a1</span> <span class="fn">a2</span></span></span></div></div><p>Distinct ordinary arrows are incomparable.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.ol_cofactor_ne"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L193-L207">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.ol_cofactor_ne"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">ol_cofactor_ne</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">a1 </span><span class="fn">a2 </span><span class="fn">w1</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h1</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.Ord">Ord</a></span> <span class="fn">a1</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OL">OL</a></span> <span class="fn">f</span> <span class="fn">a2</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hne</span> : <span class="fn"><span class="fn">a1</span> <span class="fn">≠</span> <span class="fn">a2</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw1</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">a1</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">w1</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">f</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">w1</span> <span class="fn">≠</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.e">e</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">w1</span>)</span></span></span></div></div><p>The cofactor of an ordinary left divisor is not an identity when another one exists.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.supp_of_qh"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L212-L215">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.supp_of_qh"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">supp_of_qh</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x</span> : <span class="fn">V</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">r</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.qh">qh</a></span> <span class="fn">χ</span> <span class="fn">x</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">r</span></span></span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Supp">Supp</a></span> <span class="fn">χ</span> <span class="fn">x</span></span></div></div><p>A supporting source gives <code>q̂_x = q_x</code> and <code>ℓ(q_x) = χ</code>.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.supp_of_qh'"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L218-L220">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.supp_of_qh'"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">supp_of_qh'</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x</span> : <span class="fn">V</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">r</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">r</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.qh">qh</a></span> <span class="fn">χ</span> <span class="fn">x</span></span></span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Supp">Supp</a></span> <span class="fn">χ</span> <span class="fn">x</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.local_eq_q"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L223-L237">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.local_eq_q"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">local_eq_q</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hχ</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">χ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hprim</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Prim">Prim</a> <span class="fn">χ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">v</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hl</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.tgt">tgt</a></span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.wt">wt</a></span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">χ</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.q">q</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">v</span>)</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Supp">Supp</a></span> <span class="fn">χ</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">v</span>)</span></span></span></div></div><p>A local ray of character <code>χ</code> (primitive, positive) is the local generator.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.no_hidden_target"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L240-L254">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.no_hidden_target"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_hidden_target</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hχ</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">χ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hprim</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Prim">Prim</a> <span class="fn">χ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">v</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TL">TL</a></span> <span class="fn">χ</span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hv</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">f</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">v</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.qh">qh</a></span> <span class="fn">χ</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">f</span>)</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">f</span></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">False</span></div></div><p>A left-sided ray has no target action of character <code>χ</code> hidden in its projective support:
+<code>f v = q̂_x f</code> is impossible.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.no_return_one"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L257-L277">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.no_return_one"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_return_one</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hχ</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">χ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hprim</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Prim">Prim</a> <span class="fn">χ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">a </span><span class="fn">v</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TL">TL</a></span> <span class="fn">χ</span> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hv</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">a</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">v</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.q">q</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">a</span>)</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">False</span></div></div><p>A left-sided ray has no return <code>a v = q_x</code>.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.no_cross"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L280-L305">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.no_cross"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_cross</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hχ</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">χ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hprim</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Prim">Prim</a> <span class="fn">χ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">ai </span><span class="fn">wi </span><span class="fn">aj </span><span class="fn">wj </span><span class="fn">h</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TL">TL</a></span> <span class="fn">χ</span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hai</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TL">TL</a></span> <span class="fn">χ</span> <span class="fn">ai</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hai0</span> : <span class="fn"><span class="fn">ai</span> <span class="fn">≠</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.e">e</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">ai</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hwi0</span> : <span class="fn"><span class="fn">wi</span> <span class="fn">≠</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.e">e</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">wi</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hwi</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">ai</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">wi</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">f</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hwj</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">aj</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">wj</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">f</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hsj</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">aj</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">f</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hh</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">ai</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">h</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.qh">qh</a></span> <span class="fn">χ</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">f</span>)</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">aj</span></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">False</span></div></div><p>A cross comparison <code>a_i h = q̂_x a_j</code> between first arrows of a left-sided ray.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.first_arrow_types"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L307-L483">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.first_arrow_types"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">first_arrow_types</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hfin</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">↥<span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/TableAlg.html#MultiplicativeBasisDeformations.RaySys.Mult.Lin">Lin</a></span> <span class="fn">k</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hχ</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">χ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hprim</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Prim">Prim</a> <span class="fn">χ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">a1 </span><span class="fn">a2</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.IsGen">IsGen</a></span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TL">TL</a></span> <span class="fn">χ</span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h1</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OL">OL</a></span> <span class="fn">f</span> <span class="fn">a1</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OL">OL</a></span> <span class="fn">f</span> <span class="fn">a2</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hne</span> : <span class="fn"><span class="fn">a1</span> <span class="fn">≠</span> <span class="fn">a2</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TL">TL</a></span> <span class="fn">χ</span> <span class="fn">a1</span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TB">TB</a></span> <span class="fn">χ</span> <span class="fn">a2</span></span></span> <span class="fn">∨</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TB">TB</a></span> <span class="fn">χ</span> <span class="fn">a1</span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TL">TL</a></span> <span class="fn">χ</span> <span class="fn">a2</span></span></span></span></div></div><p><strong>Two distinct first arrows of a left-sided generating ray</strong> (Appendix C.1, first step):
+one is left-sided and the other two-sided.</p></div></div><div class="mod_doc"><h3 id="The-opposite-system" class="markdown-heading">The opposite system <a class="hover-link" href="#The-opposite-system">#</a></h3></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.op_ord"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L488-L499">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.op_ord"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">op_ord</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayOp.html#MultiplicativeBasisDeformations.RaySys.Sys.op">op</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.Ord">Ord</a></span> <span class="fn">a</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.Ord">Ord</a></span> <span class="fn">a</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.op_OL"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L502-L511">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.op_OL"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">op_OL</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f </span><span class="fn">a</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayOp.html#MultiplicativeBasisDeformations.RaySys.Sys.op">op</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OL">OL</a></span> <span class="fn">f</span> <span class="fn">a</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OR">OR</a></span> <span class="fn">f</span> <span class="fn">a</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.last_arrow_types"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L513-L523">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.last_arrow_types"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">last_arrow_types</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hfin</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">↥<span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/TableAlg.html#MultiplicativeBasisDeformations.RaySys.Mult.Lin">Lin</a></span> <span class="fn">k</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hχ</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">χ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hprim</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Prim">Prim</a> <span class="fn">χ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">b1 </span><span class="fn">b2</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.IsGen">IsGen</a></span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TR">TR</a></span> <span class="fn">χ</span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h1</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OR">OR</a></span> <span class="fn">f</span> <span class="fn">b1</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OR">OR</a></span> <span class="fn">f</span> <span class="fn">b2</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hne</span> : <span class="fn"><span class="fn">b1</span> <span class="fn">≠</span> <span class="fn">b2</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TR">TR</a></span> <span class="fn">χ</span> <span class="fn">b1</span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TB">TB</a></span> <span class="fn">χ</span> <span class="fn">b2</span></span></span> <span class="fn">∨</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TB">TB</a></span> <span class="fn">χ</span> <span class="fn">b1</span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TR">TR</a></span> <span class="fn">χ</span> <span class="fn">b2</span></span></span></span></div></div><p><strong>Two distinct last arrows of a right-sided generating ray</strong>: one is right-sided and the
+other two-sided (the dual of <code><a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.first_arrow_types">first_arrow_types</a></code>).</p></div></div><div class="mod_doc"><h3 id="Right-sided-rays-with-two-last-arrows" class="markdown-heading">Right-sided rays with two last arrows <a class="hover-link" href="#Right-sided-rays-with-two-last-arrows">#</a></h3></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.ord_not_lf"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L528-L538">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.ord_not_lf"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">ord_not_lf</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">a </span><span class="fn">b</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ha</span> : <span class="fn"><span class="fn">a</span> <span class="fn">≠</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.e">e</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">a</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hb</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.Ord">Ord</a></span> <span class="fn">b</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hne</span> : <span class="fn"><span class="fn">a</span> <span class="fn">≠</span> <span class="fn">b</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">¬</span><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/TableSupport.html#MultiplicativeBasisDeformations.RaySys.Tab.LF">LF</a></span> <span class="fn">b</span> <span class="fn">a</span></span></span></div></div><p>An ordinary arrow is not a proper left multiple of another ray.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.op_qh'"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L541-L541">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.op_qh'"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">op_qh'</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">V</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayOp.html#MultiplicativeBasisDeformations.RaySys.Sys.op">op</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.qh">qh</a></span> <span class="fn">χ</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayOp.html#MultiplicativeBasisDeformations.RaySys.Tab.toOp">toOp</a></span> <span class="fn">(<span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.qh">qh</a></span> <span class="fn">χ</span> <span class="fn">x</span>)</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.no_hidden_source"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L544-L549">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.no_hidden_source"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">no_hidden_source</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hχ</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">χ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hprim</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Prim">Prim</a> <span class="fn">χ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">v</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TR">TR</a></span> <span class="fn">χ</span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hv</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">v</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">f</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">f</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.qh">qh</a></span> <span class="fn">χ</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.tgt">tgt</a></span> <span class="fn">f</span>)</span></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">False</span></div></div><p><code>eq:absent-source-action</code>: a right-sided ray has no hidden source action.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.or_cofactor_ne"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L552-L558">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.or_cofactor_ne"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">or_cofactor_ne</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">b1 </span><span class="fn">b2 </span><span class="fn">w1</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h1</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.Ord">Ord</a></span> <span class="fn">b1</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OR">OR</a></span> <span class="fn">f</span> <span class="fn">b2</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hne</span> : <span class="fn"><span class="fn">b1</span> <span class="fn">≠</span> <span class="fn">b2</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw1</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">w1</span></span> <span class="fn">*</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">b1</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.rr">rr</a></span> <span class="fn">f</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">w1</span> <span class="fn">≠</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.e">e</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Mult.src">src</a></span> <span class="fn">w1</span>)</span></span></span></div></div><p>The cofactor of an ordinary right divisor is not an identity when another one exists.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.right_two_last"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L560-L800">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.right_two_last"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">right_two_last</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hfin</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">↥<span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/TableAlg.html#MultiplicativeBasisDeformations.RaySys.Mult.Lin">Lin</a></span> <span class="fn">k</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hχ</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">χ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hprim</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Prim">Prim</a> <span class="fn">χ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">α </span><span class="fn">β</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.IsGen">IsGen</a></span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TR">TR</a></span> <span class="fn">χ</span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hα</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OR">OR</a></span> <span class="fn">f</span> <span class="fn">α</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hβ</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OR">OR</a></span> <span class="fn">f</span> <span class="fn">β</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hne</span> : <span class="fn"><span class="fn">α</span> <span class="fn">≠</span> <span class="fn">β</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hαB</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TB">TB</a></span> <span class="fn">χ</span> <span class="fn">α</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hβR</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TR">TR</a></span> <span class="fn">χ</span> <span class="fn">β</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">False</span></div></div><p><strong>The right-sided case of Appendix C.1</strong>: a right-sided generating ray has no two last
+arrows of types <code>B</code> and <code>R</code>. With a primitive reverse of the two-sided arrow the six-lift
+tree occurs; otherwise the eight-lift tree occurs.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.unique_last"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L802-L810">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.unique_last"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">unique_last</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hfin</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">↥<span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/TableAlg.html#MultiplicativeBasisDeformations.RaySys.Mult.Lin">Lin</a></span> <span class="fn">k</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hχ</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">χ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hprim</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Prim">Prim</a> <span class="fn">χ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">b1 </span><span class="fn">b2</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.IsGen">IsGen</a></span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TR">TR</a></span> <span class="fn">χ</span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h1</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OR">OR</a></span> <span class="fn">f</span> <span class="fn">b1</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OR">OR</a></span> <span class="fn">f</span> <span class="fn">b2</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">b1</span> <span class="fn">=</span> <span class="fn">b2</span></span></div></div><p><strong>Proposition 9.10</strong> (<code>prop:controlled-contours</code>), right-sided form: all ordinary paths
+of a right-sided generating ray end with the same arrow.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.op_OR"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L813-L822">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.op_OR"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">op_OR</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f </span><span class="fn">a</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayOp.html#MultiplicativeBasisDeformations.RaySys.Sys.op">op</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OR">OR</a></span> <span class="fn">f</span> <span class="fn">a</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OL">OL</a></span> <span class="fn">f</span> <span class="fn">a</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.RaySys.Sys.unique_first"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/Contours.lean#L824-L830">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.unique_first"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">RaySys</span>.<span class="name">Sys</span>.<span class="name">unique_first</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V </span><span class="fn">R </span><span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">L</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys">Sys</a> <span class="fn">V</span> <span class="fn">R</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">χ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hfin</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RightModules.html#MultiplicativeBasisDeformations.IsRepresentationFinite">IsRepresentationFinite</a> <span class="fn">k</span> <span class="fn">↥<span class="fn">(<span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/TableAlg.html#MultiplicativeBasisDeformations.RaySys.Mult.Lin">Lin</a></span> <span class="fn">k</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hχ</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.P">P</a></span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RayTable.html#MultiplicativeBasisDeformations.RaySys.Tab.deg">deg</a></span> <span class="fn">χ</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hprim</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.Prim">Prim</a> <span class="fn">χ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f </span><span class="fn">a1 </span><span class="fn">a2</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hf</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/RaySetting.html#MultiplicativeBasisDeformations.RaySys.Sys.IsGen">IsGen</a></span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hT</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Successor.html#MultiplicativeBasisDeformations.RaySys.Sys.TL">TL</a></span> <span class="fn">χ</span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h1</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OL">OL</a></span> <span class="fn">f</span> <span class="fn">a1</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/Contours.html#MultiplicativeBasisDeformations.RaySys.Sys.OL">OL</a></span> <span class="fn">f</span> <span class="fn">a2</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">a1</span> <span class="fn">=</span> <span class="fn">a2</span></span></div></div><p><strong>Proposition 9.10</strong>, left-sided form: all ordinary paths of a left-sided generating ray
+start with the same arrow.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

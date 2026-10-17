@@ -1,0 +1,261 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>MultiplicativeBasisDeformations.Foundations.RowRotation</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="MultiplicativeBasisDeformations.Foundations.RowRotation";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Multiplicative bases</a></span></h1><h2 class="header_filename break_within"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Foundations</span>.<span class="name">RowRotation</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/RowRotation.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.33.1/src/Init.lean">Init</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/PeriodicLocalization.html">MultiplicativeBasisDeformations.Foundations.PeriodicLocalization</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/StableTranslation.html">MultiplicativeBasisDeformations.Foundations.StableTranslation</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-MultiplicativeBasisDeformations.Foundations.RowRotation" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.ScalarMeshCategory.Coker"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">Coker</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.ScalarMeshCategory.rowClass"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowClass</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.ScalarMeshCategory.OppositeOnMates"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">OppositeOnMates</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.ScalarMeshCategory.rowClass_rotate"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowClass_rotate</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowQ</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_cast"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowQ_cast</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_eq"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowQ_eq</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_rotate"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowQ_rotate</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_eq_mk"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowQ_eq_mk</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Rotation-of-rows-with-signed-coefficients" class="markdown-heading">Rotation of rows with signed coefficients <a class="hover-link" href="#Rotation-of-rows-with-signed-coefficients">#</a></h1><p>Proof of Lemma A.2 (<code>lem:twisted-trace-surjection</code>,
+<code>periodic-mesh-calculations.tex</code>): &quot;In the signed meshes an arrow
+correction identifies a row path <code>wa</code> with <code>(τa)w</code>, with coefficient one. Indeed,
+the correction column gives <code>c[wa] + c'[(τa)w] = 0</code>, where <code>c, c'</code> are the two
+mesh coefficients of the corresponding tree edge, and these are opposite.&quot;</p><p>Here the cokernel of <code>D_m</code> is the quotient <code>MeshFamily c ⧸ imageD c m</code>, and the
+coefficients are <em>opposite on mates</em>: <code>c_{y, σ a} = - c_{x, a}</code> for <code>a : y → x</code>.</p></div><div class="decl" id="MultiplicativeBasisDeformations.ScalarMeshCategory.Coker"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/RowRotation.lean#L36-L37">source</a></div><div class="attributes">@[reducible, inline]</div>
+<div class="decl_header"><span class="decl_kind">abbrev</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.Coker"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">Coker</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Quiver</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Q</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver">TranslationQuiver</a> <span class="fn">V</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">Fintype</span> <span class="fn">((<span class="fn">y</span> : <span class="fn">V</span>) × <span class="fn">(<span class="fn">y</span> <span class="fn">⟶</span> <span class="fn">x</span>)</span>)</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.MeshCoefficients">MeshCoefficients</a> <span class="fn">k</span> <span class="fn">Q</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> (max (max (max w v) u) (max u v) w)</div></div><p>The cokernel of <code>D_m</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.ScalarMeshCategory.Coker" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.ScalarMeshCategory.rowClass"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/RowRotation.lean#L39-L41">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowClass"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowClass</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Quiver</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Q</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver">TranslationQuiver</a> <span class="fn">V</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">Fintype</span> <span class="fn">((<span class="fn">y</span> : <span class="fn">V</span>) × <span class="fn">(<span class="fn">y</span> <span class="fn">⟶</span> <span class="fn">x</span>)</span>)</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.MeshCoefficients">MeshCoefficients</a> <span class="fn">k</span> <span class="fn">Q</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">↑<span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.nonprojective">nonprojective</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><span class="fn">Quiver.Path</span> <span class="fn">↑<span class="fn">(<span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.tau">tau</a></span> <span class="fn">x</span>)</span></span> <span class="fn">↑<span class="fn">x</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.Coker">Coker</a> <span class="fn">c</span> <span class="fn">m</span></span></div></div><p>The class of a row in the cokernel.</p><details id="instances-for-list-MultiplicativeBasisDeformations.ScalarMeshCategory.rowClass" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.ScalarMeshCategory.OppositeOnMates"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/RowRotation.lean#L43-L46">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.OppositeOnMates"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">OppositeOnMates</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Quiver</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Q</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver">TranslationQuiver</a> <span class="fn">V</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.MeshCoefficients">MeshCoefficients</a> <span class="fn">k</span> <span class="fn">Q</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hQ</span> : <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable">IsStable</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>Coefficients opposite on mates.</p><details id="instances-for-list-MultiplicativeBasisDeformations.ScalarMeshCategory.OppositeOnMates" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.ScalarMeshCategory.rowClass_rotate"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/RowRotation.lean#L48-L66">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowClass_rotate"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowClass_rotate</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Quiver</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Q</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver">TranslationQuiver</a> <span class="fn">V</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">Fintype</span> <span class="fn">((<span class="fn">y</span> : <span class="fn">V</span>) × <span class="fn">(<span class="fn">y</span> <span class="fn">⟶</span> <span class="fn">x</span>)</span>)</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.MeshCoefficients">MeshCoefficients</a> <span class="fn">k</span> <span class="fn">Q</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">DecidableEq</span> <span class="fn">(<span class="fn">x</span> <span class="fn">⟶</span> <span class="fn">y</span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidablePred</span> <span class="fn">fun (<span class="fn">x</span> : <span class="fn">V</span>) =&gt; <span class="fn"><span class="fn">x</span> <span class="fn">∈</span> <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.nonprojective">nonprojective</a></span></span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hQ</span> : <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable">IsStable</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hc</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.OppositeOnMates">OppositeOnMates</a> <span class="fn">c</span> <span class="fn">hQ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">m</span> : <span class="fn">ℕ</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">↑<span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.nonprojective">nonprojective</a></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">y</span> : <span class="fn">V</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn"><span class="fn">y</span> <span class="fn">⟶</span> <span class="fn">↑<span class="fn">x</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Quiver.Path</span> <span class="fn">(↑<span class="fn">(<span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.tau">tau</a></span> <span class="fn">x</span>)</span>)</span> <span class="fn">y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn"><span class="fn"><span class="fn">q</span>.<span class="fn">length</span></span> <span class="fn">=</span> <span class="fn">m</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowClass">rowClass</a> <span class="fn">c</span> <span class="fn">m</span> <span class="fn">x</span> <span class="fn">(<span class="fn"><span class="fn">q</span>.<span class="fn">cons</span></span> <span class="fn">a</span>)</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowClass">rowClass</a> <span class="fn">c</span> <span class="fn">m</span> <span class="fn"><span class="fn">⟨</span><span class="fn">y</span>, <span class="fn">⋯</span><span class="fn">⟩</span></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">(<span class="fn">(<span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.mate">mate</a></span> <span class="fn"><span class="fn">⟨</span><span class="fn">y</span>, <span class="fn">⋯</span><span class="fn">⟩</span></span> <span class="fn">↑<span class="fn">(<span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.tau">tau</a></span> <span class="fn">x</span>)</span></span>)</span> <span class="fn">(<span class="fn">(<span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.mate">mate</a></span> <span class="fn">x</span> <span class="fn">y</span>)</span> <span class="fn">a</span>)</span>)</span>.<span class="fn">toPath</span></span>.<span class="fn">comp</span></span> <span class="fn">q</span>)</span></span></span></div></div><p><strong>Rotation</strong>: with coefficients opposite on mates, a row <code>(x, q a)</code> has the
+class of its rotation <code>(y, (σσ a) q)</code>.</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/RowRotation.lean#L70-L74">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowQ</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Quiver</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Q</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver">TranslationQuiver</a> <span class="fn">V</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">Fintype</span> <span class="fn">((<span class="fn">y</span> : <span class="fn">V</span>) × <span class="fn">(<span class="fn">y</span> <span class="fn">⟶</span> <span class="fn">x</span>)</span>)</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.MeshCoefficients">MeshCoefficients</a> <span class="fn">k</span> <span class="fn">Q</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hQ</span> : <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable">IsStable</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">u </span><span class="fn">y</span> : <span class="fn">V</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><span class="fn">Quiver.Path</span> <span class="fn">u</span> <span class="fn">y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.Coker">Coker</a> <span class="fn">c</span> <span class="fn">m</span></span></div></div><p>The class of an arbitrary path in the cokernel: the row class of <code>w</code> if it
+runs from <code>τ y</code> to <code>y</code>, and zero otherwise. Its endpoints are free, so it is
+insensitive to casts.</p><details id="instances-for-list-MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_cast"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/RowRotation.lean#L76-L78">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_cast"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowQ_cast</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Quiver</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Q</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver">TranslationQuiver</a> <span class="fn">V</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">Fintype</span> <span class="fn">((<span class="fn">y</span> : <span class="fn">V</span>) × <span class="fn">(<span class="fn">y</span> <span class="fn">⟶</span> <span class="fn">x</span>)</span>)</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.MeshCoefficients">MeshCoefficients</a> <span class="fn">k</span> <span class="fn">Q</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">DecidableEq</span> <span class="fn">(<span class="fn">x</span> <span class="fn">⟶</span> <span class="fn">y</span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidablePred</span> <span class="fn">fun (<span class="fn">x</span> : <span class="fn">V</span>) =&gt; <span class="fn"><span class="fn">x</span> <span class="fn">∈</span> <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.nonprojective">nonprojective</a></span></span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hQ</span> : <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable">IsStable</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">u </span><span class="fn">y </span><span class="fn">u' </span><span class="fn">y'</span> : <span class="fn">V</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hu</span> : <span class="fn"><span class="fn">u</span> <span class="fn">=</span> <span class="fn">u'</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hy</span> : <span class="fn"><span class="fn">y</span> <span class="fn">=</span> <span class="fn">y'</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><span class="fn">Quiver.Path</span> <span class="fn">u</span> <span class="fn">y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ">rowQ</a> <span class="fn">c</span> <span class="fn">hQ</span> <span class="fn">m</span> <span class="fn">(<span class="fn">Quiver.Path.cast</span> <span class="fn">hu</span> <span class="fn">hy</span> <span class="fn">w</span>)</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ">rowQ</a> <span class="fn">c</span> <span class="fn">hQ</span> <span class="fn">m</span> <span class="fn">w</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_eq"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/RowRotation.lean#L80-L82">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_eq"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowQ_eq</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Quiver</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Q</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver">TranslationQuiver</a> <span class="fn">V</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">Fintype</span> <span class="fn">((<span class="fn">y</span> : <span class="fn">V</span>) × <span class="fn">(<span class="fn">y</span> <span class="fn">⟶</span> <span class="fn">x</span>)</span>)</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.MeshCoefficients">MeshCoefficients</a> <span class="fn">k</span> <span class="fn">Q</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">DecidableEq</span> <span class="fn">(<span class="fn">x</span> <span class="fn">⟶</span> <span class="fn">y</span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidablePred</span> <span class="fn">fun (<span class="fn">x</span> : <span class="fn">V</span>) =&gt; <span class="fn"><span class="fn">x</span> <span class="fn">∈</span> <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.nonprojective">nonprojective</a></span></span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hQ</span> : <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable">IsStable</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">y</span> : <span class="fn">V</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><span class="fn">Quiver.Path</span> <span class="fn">(<span class="fn"><span class="fn">hQ</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/StableTranslation.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable.tauE">tauE</a></span> <span class="fn">y</span>)</span> <span class="fn">y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ">rowQ</a> <span class="fn">c</span> <span class="fn">hQ</span> <span class="fn">m</span> <span class="fn">w</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowClass">rowClass</a> <span class="fn">c</span> <span class="fn">m</span> <span class="fn"><span class="fn">⟨</span><span class="fn">y</span>, <span class="fn">⋯</span><span class="fn">⟩</span></span> <span class="fn">w</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_rotate"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/RowRotation.lean#L84-L91">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_rotate"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowQ_rotate</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Quiver</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Q</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver">TranslationQuiver</a> <span class="fn">V</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">Fintype</span> <span class="fn">((<span class="fn">y</span> : <span class="fn">V</span>) × <span class="fn">(<span class="fn">y</span> <span class="fn">⟶</span> <span class="fn">x</span>)</span>)</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.MeshCoefficients">MeshCoefficients</a> <span class="fn">k</span> <span class="fn">Q</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">DecidableEq</span> <span class="fn">(<span class="fn">x</span> <span class="fn">⟶</span> <span class="fn">y</span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidablePred</span> <span class="fn">fun (<span class="fn">x</span> : <span class="fn">V</span>) =&gt; <span class="fn"><span class="fn">x</span> <span class="fn">∈</span> <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.nonprojective">nonprojective</a></span></span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hQ</span> : <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable">IsStable</a></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">V</span>), <span class="fn"><span class="fn">Subsingleton</span> <span class="fn">(<span class="fn">x</span> <span class="fn">⟶</span> <span class="fn">y</span>)</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hc</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.OppositeOnMates">OppositeOnMates</a> <span class="fn">c</span> <span class="fn">hQ</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">m</span> : <span class="fn">ℕ</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x </span><span class="fn">y</span> : <span class="fn">V</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn"><span class="fn">y</span> <span class="fn">⟶</span> <span class="fn">x</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn">hQ</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/StableTranslation.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable.tauE">tauE</a></span> <span class="fn">y</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn"><span class="fn">hQ</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/StableTranslation.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable.tauE">tauE</a></span> <span class="fn">x</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Quiver.Path</span> <span class="fn">(<span class="fn"><span class="fn">hQ</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/StableTranslation.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable.tauE">tauE</a></span> <span class="fn">x</span>)</span> <span class="fn">y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn"><span class="fn"><span class="fn">q</span>.<span class="fn">length</span></span> <span class="fn">=</span> <span class="fn">m</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ">rowQ</a> <span class="fn">c</span> <span class="fn">hQ</span> <span class="fn">m</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">b</span>.<span class="fn">toPath</span></span>.<span class="fn">comp</span></span> <span class="fn">q</span>)</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ">rowQ</a> <span class="fn">c</span> <span class="fn">hQ</span> <span class="fn">m</span> <span class="fn">(<span class="fn"><span class="fn">q</span>.<span class="fn">cons</span></span> <span class="fn">a</span>)</span></span></span></div></div><p><strong>Rotation of rows</strong>, with free endpoints: for <code>a : y → x</code> and
+<code>b : τ y → τ x</code>, the row <code>b q</code> at <code>y</code> and the row <code>q a</code> at <code>x</code> have the same
+class (coefficients opposite on mates).</p></div></div><div class="decl" id="MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_eq_mk"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/RowRotation.lean#L93-L97">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ_eq_mk"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">ScalarMeshCategory</span>.<span class="name">rowQ_eq_mk</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CommRing</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Quiver</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Q</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver">TranslationQuiver</a> <span class="fn">V</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">Fintype</span> <span class="fn">((<span class="fn">y</span> : <span class="fn">V</span>) × <span class="fn">(<span class="fn">y</span> <span class="fn">⟶</span> <span class="fn">x</span>)</span>)</span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.MeshCoefficients">MeshCoefficients</a> <span class="fn">k</span> <span class="fn">Q</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn">V</span>) → <span class="fn"><span class="fn">DecidableEq</span> <span class="fn">(<span class="fn">x</span> <span class="fn">⟶</span> <span class="fn">y</span>)</span></span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidablePred</span> <span class="fn">fun (<span class="fn">x</span> : <span class="fn">V</span>) =&gt; <span class="fn"><span class="fn">x</span> <span class="fn">∈</span> <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.nonprojective">nonprojective</a></span></span></span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hQ</span> : <span class="fn"><span class="fn">Q</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshCategory.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable">IsStable</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">y</span> : <span class="fn">V</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><span class="fn">Quiver.Path</span> <span class="fn">(<span class="fn"><span class="fn">hQ</span>.<a href="../.././MultiplicativeBasisDeformations/Foundations/StableTranslation.html#MultiplicativeBasisDeformations.TranslationQuiver.IsStable.tauE">tauE</a></span> <span class="fn">y</span>)</span> <span class="fn">y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/RowRotation.html#MultiplicativeBasisDeformations.ScalarMeshCategory.rowQ">rowQ</a> <span class="fn">c</span> <span class="fn">hQ</span> <span class="fn">m</span> <span class="fn">w</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">Submodule.Quotient.mk</span> <span class="fn">(<span class="fn">Pi.single</span> <span class="fn"><span class="fn">⟨</span><span class="fn">y</span>, <span class="fn">⋯</span><span class="fn">⟩</span></span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/MeshDerivativeRows.html#MultiplicativeBasisDeformations.ScalarMeshCategory.pathMor">pathMor</a> <span class="fn">c</span> <span class="fn">w</span>)</span>)</span></span></span></div></div><p>The row class of a path as a linear function of its image in <code>C(Q, c)</code>.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

@@ -1,0 +1,692 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>MultiplicativeBasisDeformations.Foundations.DualRepresentables</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="MultiplicativeBasisDeformations.Foundations.DualRepresentables";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Multiplicative bases</a></span></h1><h2 class="header_filename break_within"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">Foundations</span>.<span class="name">DualRepresentables</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.33.1/src/Init.lean">Init</a></li><li><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html">MultiplicativeBasisDeformations.Foundations.CategoryAlgebra</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-MultiplicativeBasisDeformations.Foundations.DualRepresentables" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.DRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.instAddCommGroupDRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instAddCommGroupDRep</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.instModuleDRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instModuleDRep</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.instFiniteDimensionalDRepOfHom"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instFiniteDimensionalDRepOfHom</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.DRep.add_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">add_apply</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.DRep.zero_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">zero_apply</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.DRep.smulk_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">smulk_apply</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.postL"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">postL</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.postL_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">postL_apply</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.instSMulAlgDRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instSMulAlgDRep</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.DRep.smul_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">smul_apply</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.DRep.ext"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">ext</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.DRep.ext_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">ext_iff</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.instModuleAlgDRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instModuleAlgDRep</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.instIsScalarTowerAlgDRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instIsScalarTowerAlgDRep</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.elemAt"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">elemAt</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.elemAt_mul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">elemAt_mul</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.elemAt_id"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">elemAt_id</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.elemAt_add"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">elemAt_add</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.elemAt_smul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">elemAt_smul</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.thetaFun"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">thetaFun</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.thetaFun_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">thetaFun_apply</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.theta"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">theta</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.theta_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">theta_apply</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.sum_idem_eq_one"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">sum_idem_eq_one</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.eq_zero_of_idem"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">eq_zero_of_idem</span></a></div><div class="nav_link"><a class="break_within" href="#MultiplicativeBasisDeformations.CatAlg.exists_embedding"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">exists_embedding</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Dual-representables-and-injective-copresentations" class="markdown-heading">Dual representables and injective copresentations <a class="hover-link" href="#Dual-representables-and-injective-copresentations">#</a></h1><p>For the category algebra <code>Λ</code> of a family <code>F</code>, the dual representable
+<code>J_p = (D C(F p, F q))_q</code> is the module <code>D(e_p Λ)</code> (in the manuscript's
+right-module notation <code>D(Λ e_p)</code>, <code>graded-category.tex</code>). A
+functional <code>λ</code> on a module <code>X</code> gives <code>θ_λ : X → J_p</code>,
+<code>θ_λ(x)_q(h) = λ(h · x)</code>. Every finite-dimensional module embeds into a finite
+sum of the <code>J_p</code>, which gives the injective copresentations used in Lemma 2.9.</p></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.DRep"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L29-L30">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> (max w u)</div></div><p>The dual representable <code>J_p</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.CatAlg.DRep" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.instAddCommGroupDRep"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L32-L33">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.instAddCommGroupDRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instAddCommGroupDRep</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.instModuleDRep"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L35-L36">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.instModuleDRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instModuleDRep</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.instFiniteDimensionalDRepOfHom"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L38-L40">source</a></div><div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.instFiniteDimensionalDRepOfHom"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instFiniteDimensionalDRepOfHom</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">∀ (<span class="fn">x </span><span class="fn">y</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">y</span></span>)</span></span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.DRep.add_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L44-L45">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep.add_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">add_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">p</span> : <span class="fn">ι</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">φ </span><span class="fn">ψ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn">φ</span> <span class="fn">+</span> <span class="fn">ψ</span>)</span> <span class="fn">q</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">φ</span> <span class="fn">q</span></span> <span class="fn">+</span> <span class="fn"><span class="fn">ψ</span> <span class="fn">q</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.DRep.zero_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L46-L46">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep.zero_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">zero_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">p</span> : <span class="fn">ι</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">0</span> <span class="fn">q</span></span> <span class="fn">=</span> <span class="fn">0</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.DRep.smulk_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L47-L48">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep.smulk_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">smulk_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">p</span> : <span class="fn">ι</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn">k</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">φ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn">c</span> <span class="fn">•</span> <span class="fn">φ</span>)</span> <span class="fn">q</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn"><span class="fn">φ</span> <span class="fn">q</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.postL"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L50-L54">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.postL"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">postL</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X </span><span class="fn">Y </span><span class="fn">Z</span> : <span class="fn">𝒞</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">g</span> : <span class="fn"><span class="fn">Y</span> <span class="fn">⟶</span> <span class="fn">Z</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(<span class="fn">X</span> <span class="fn">⟶</span> <span class="fn">Y</span>)</span> <span class="fn">→ₗ[</span><span class="fn">k</span><span class="fn">]</span> <span class="fn"><span class="fn">X</span> <span class="fn">⟶</span> <span class="fn">Z</span></span></span></div></div><p>Postcomposition, as a linear map.</p><details id="instances-for-list-MultiplicativeBasisDeformations.CatAlg.postL" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.postL_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L56-L56">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.postL_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">postL_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X </span><span class="fn">Y </span><span class="fn">Z</span> : <span class="fn">𝒞</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">g</span> : <span class="fn"><span class="fn">Y</span> <span class="fn">⟶</span> <span class="fn">Z</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn">X</span> <span class="fn">⟶</span> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.postL">postL</a> <span class="fn">g</span>)</span> <span class="fn">h</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">h</span> <span class="fn">g</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.instSMulAlgDRep"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L58-L59">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.instSMulAlgDRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instSMulAlgDRep</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">SMul</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.DRep.smul_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L61-L65">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep.smul_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">smul_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">p</span> : <span class="fn">ι</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">φ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">p</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">q</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn">(<span class="fn">a</span> <span class="fn">•</span> <span class="fn">φ</span>)</span> <span class="fn">q</span>)</span> <span class="fn">h</span></span> <span class="fn">=</span> <span class="fn">∑ <span class="fn">r</span> : <span class="fn">ι</span>, <span class="fn"><span class="fn">(<span class="fn">φ</span> <span class="fn">r</span>)</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">h</span> <span class="fn">(<span class="fn">a</span> <span class="fn">q</span> <span class="fn">r</span>)</span>)</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.DRep.ext"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L67-L68">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep.ext"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">ext</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">p</span> : <span class="fn">ι</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">φ </span><span class="fn">ψ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn">∀ (<span class="fn">q</span> : <span class="fn">ι</span>) (<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">p</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">q</span></span></span>), <span class="fn"><span class="fn"><span class="fn">(<span class="fn">φ</span> <span class="fn">q</span>)</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<span class="fn">ψ</span> <span class="fn">q</span>)</span> <span class="fn">x</span></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">φ</span> <span class="fn">=</span> <span class="fn">ψ</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.DRep.ext_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L67-L67">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep.ext_iff"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">DRep</span>.<span class="name">ext_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">p</span> : <span class="fn">ι</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">φ </span><span class="fn">ψ</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span></span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">φ</span> <span class="fn">=</span> <span class="fn">ψ</span></span> <span class="fn">↔</span> <span class="fn">∀ (<span class="fn">q</span> : <span class="fn">ι</span>) (<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">p</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">q</span></span></span>), <span class="fn"><span class="fn"><span class="fn">(<span class="fn">φ</span> <span class="fn">q</span>)</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<span class="fn">ψ</span> <span class="fn">q</span>)</span> <span class="fn">x</span></span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.instModuleAlgDRep"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L70-L91">source</a></div><div class="attributes">@[instance_reducible]</div>
+<div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.instModuleAlgDRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instModuleAlgDRep</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Module</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.instIsScalarTowerAlgDRep"><div class="instance"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L93-L98">source</a></div><div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.instIsScalarTowerAlgDRep"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">instIsScalarTowerAlgDRep</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span>)</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.elemAt"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L100-L101">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">elemAt</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p </span><span class="fn">q</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">p</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">q</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span></span></div></div><p>The element of <code>Λ</code> with the single entry <code>h : F p → F q</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.CatAlg.elemAt" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.elemAt_mul"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L103-L109">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt_mul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">elemAt_mul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p </span><span class="fn">q</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">p</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">q</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt">elemAt</a> <span class="fn">p</span> <span class="fn">q</span> <span class="fn">h</span></span> <span class="fn">*</span> <span class="fn">a</span></span> <span class="fn">=</span> <span class="fn">∑ <span class="fn">r</span> : <span class="fn">ι</span>, <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt">elemAt</a> <span class="fn">p</span> <span class="fn">r</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.comp</span> <span class="fn">h</span> <span class="fn">(<span class="fn">a</span> <span class="fn">q</span> <span class="fn">r</span>)</span>)</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.elemAt_id"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L111-L112">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt_id"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">elemAt_id</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt">elemAt</a> <span class="fn">p</span> <span class="fn">p</span> <span class="fn">(<span class="fn">CategoryTheory.CategoryStruct.id</span> <span class="fn">(<span class="fn">F</span> <span class="fn">p</span>)</span>)</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.idem">idem</a> <span class="fn">p</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.elemAt_add"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L114-L116">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt_add"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">elemAt_add</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p </span><span class="fn">q</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h </span><span class="fn">h'</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">p</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">q</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt">elemAt</a> <span class="fn">p</span> <span class="fn">q</span> <span class="fn">(<span class="fn">h</span> <span class="fn">+</span> <span class="fn">h'</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt">elemAt</a> <span class="fn">p</span> <span class="fn">q</span> <span class="fn">h</span></span> <span class="fn">+</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt">elemAt</a> <span class="fn">p</span> <span class="fn">q</span> <span class="fn">h'</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.elemAt_smul"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L118-L120">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt_smul"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">elemAt_smul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p </span><span class="fn">q</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">c</span> : <span class="fn">k</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">p</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">q</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt">elemAt</a> <span class="fn">p</span> <span class="fn">q</span> <span class="fn">(<span class="fn">c</span> <span class="fn">•</span> <span class="fn">h</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt">elemAt</a> <span class="fn">p</span> <span class="fn">q</span> <span class="fn">h</span></span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.thetaFun"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L124-L128">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.thetaFun"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">thetaFun</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">lam</span> : <span class="fn"><span class="fn">Module.Dual</span> <span class="fn">k</span> <span class="fn">X</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">X</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span></span></div></div><p>The values of <code>θ_λ</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.CatAlg.thetaFun" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.thetaFun_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L130-L131">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.thetaFun_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">thetaFun_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">lam</span> : <span class="fn"><span class="fn">Module.Dual</span> <span class="fn">k</span> <span class="fn">X</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">X</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">p</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">q</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.thetaFun">thetaFun</a> <span class="fn">p</span> <span class="fn">lam</span> <span class="fn">x</span> <span class="fn">q</span>)</span> <span class="fn">h</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">lam</span> <span class="fn">(<span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt">elemAt</a> <span class="fn">p</span> <span class="fn">q</span> <span class="fn">h</span></span> <span class="fn">•</span> <span class="fn">x</span>)</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.theta"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L133-L144">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.theta"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">theta</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">lam</span> : <span class="fn"><span class="fn">Module.Dual</span> <span class="fn">k</span> <span class="fn">X</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">X</span> <span class="fn">→ₗ[</span><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span></span><span class="fn">]</span> <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn">p</span></span></span></div></div><p><code>θ_λ : X → J_p</code>, <code>θ_λ(x)_q(h) = λ(h · x)</code>.</p><details id="instances-for-list-MultiplicativeBasisDeformations.CatAlg.theta" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.theta_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L146-L147">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.theta_apply"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">theta_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">lam</span> : <span class="fn"><span class="fn">Module.Dual</span> <span class="fn">k</span> <span class="fn">X</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">X</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn">F</span> <span class="fn">p</span></span> <span class="fn">⟶</span> <span class="fn"><span class="fn">F</span> <span class="fn">q</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.theta">theta</a> <span class="fn">p</span> <span class="fn">lam</span>)</span> <span class="fn">x</span> <span class="fn">q</span>)</span> <span class="fn">h</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">lam</span> <span class="fn">(<span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.elemAt">elemAt</a> <span class="fn">p</span> <span class="fn">q</span> <span class="fn">h</span></span> <span class="fn">•</span> <span class="fn">x</span>)</span></span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.sum_idem_eq_one"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L149-L153">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.sum_idem_eq_one"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">sum_idem_eq_one</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">∑ <span class="fn">x</span> : <span class="fn">ι</span>, <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.idem">idem</a> <span class="fn">x</span></span></span> <span class="fn">=</span> <span class="fn">1</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.eq_zero_of_idem"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L155-L157">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.eq_zero_of_idem"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">eq_zero_of_idem</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x</span> : <span class="fn">X</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn">∀ (<span class="fn">p</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn"><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.idem">idem</a> <span class="fn">p</span></span> <span class="fn">•</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">x</span> <span class="fn">=</span> <span class="fn">0</span></span></div></div></div></div><div class="decl" id="MultiplicativeBasisDeformations.CatAlg.exists_embedding"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/multiplicative-bases-deformations/blob/965b038a478b0dcbd23db745a19d9a2e96605f22/MultiplicativeBasisDeformations/Foundations/DualRepresentables.lean#L159-L180">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.exists_embedding"><span class="name">MultiplicativeBasisDeformations</span>.<span class="name">CatAlg</span>.<span class="name">exists_embedding</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">𝒞</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Category.{w, v}</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Preadditive</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">CategoryTheory.Linear</span> <span class="fn">k</span> <span class="fn">𝒞</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ι</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Fintype</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidableEq</span> <span class="fn">ι</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><span class="fn">ι</span> → <span class="fn">𝒞</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">(<a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span>)</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">X</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">n</span> : <span class="fn">ℕ</span>) (<span class="fn">e</span> : <span class="fn"><span class="fn">X</span> <span class="fn">→ₗ[</span><span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/CategoryAlgebra.html#MultiplicativeBasisDeformations.CatAlg.Alg">Alg</a> <span class="fn">F</span></span><span class="fn">]</span> <span class="fn">(<span class="fn">c</span> : <span class="fn"><span class="fn">ι</span> <span class="fn">×</span> <span class="fn"><span class="fn">Fin</span> <span class="fn">n</span></span></span>) → <span class="fn"><a href="../.././MultiplicativeBasisDeformations/Foundations/DualRepresentables.html#MultiplicativeBasisDeformations.CatAlg.DRep">DRep</a> <span class="fn">F</span> <span class="fn"><span class="fn">c</span>.1</span></span></span></span>), <span class="fn"><span class="fn">Function.Injective</span> <span class="fn">⇑<span class="fn">e</span></span></span></span></div></div><p><strong>Every finite-dimensional module embeds into a finite sum of dual
+representables.</strong></p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>
