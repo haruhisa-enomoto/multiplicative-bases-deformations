@@ -19,3 +19,8 @@
 'MultiplicativeBasisDeformations.RaySys.Sys.nondeep_return_types' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'MultiplicativeBasisDeformations.Statement.theoremA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultiplicativeBasisDeformations.Statement.theoremB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultiplicativeBasisDeformations.Statement.translateCompatible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -8,8 +8,8 @@
     "scripts/AxiomAudit.lean"
   ],
   "source": "scripts/AxiomAudit.lean",
-  "expected_queries": 11,
-  "reported_declarations": 11,
+  "expected_queries": 14,
+  "reported_declarations": 14,
   "axioms": [
     "Classical.choice",
     "Quot.sound",

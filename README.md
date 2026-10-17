@@ -32,6 +32,10 @@ sending each vertex to its indecomposable module.
 - [Normed multiplicative bases](MultiplicativeBasisDeformations/Foundations/NormedBasis.lean)
   (Definition 1.1) and [standardness](MultiplicativeBasisDeformations/Foundations/ARQuiver.lean)
   (Definition 1.2).
+- [Independent statement](MultiplicativeBasisDeformations/Statement.lean): both
+  theorems stated with Mathlib alone, proved as `Statement.theoremA` and
+  `Statement.theoremB`. The [Challenge](Challenge.lean) is generated from it,
+  and [Solution](Solution.lean) proves it; Comparator replay passes.
 - [Paper correspondence](docs/PAPER-CORRESPONDENCE.md): every numbered statement
   of the manuscript with its Lean declarations.
 
@@ -73,7 +77,14 @@ python3 scripts/audit_axioms.py
 ```
 
 A fresh full build is substantial; use a machine with at least 16 GiB RAM.
-Build and axiom records are in [verification](verification/).
+Independent replay with Comparator is described in
+[docs/VERIFICATION.md](docs/VERIFICATION.md), and the records are in
+[verification](verification/).
+
+## Website
+
+The `website/` pages and the generated API form a mathematical website. Build
+it locally with the commands in [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
 ## Provenance
 

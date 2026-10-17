@@ -21,5 +21,9 @@ no `sorry` warning. Wall clock 21 min 54 s; peak resident memory 8.7 GB
 
 A source search finds no `sorry`, `admit` or `axiom` declaration.
 
-This record is a build and axiom check by the formalizing agent. It is not an
-independent kernel replay (for example with Comparator or NanoDa).
+## Independent replay
+
+Comparator replayed `Challenge.lean` against `Solution.lean` (theorems
+`MultiplicativeBasisDeformations.Challenge.theoremA` and `theoremB`): the
+statements match, only the three standard axioms occur, and both NanoDa and
+the Lean kernel accept the exported proof. Record: [comparator.json](comparator.json).

@@ -1,0 +1,37 @@
+{
+ "checked_at": "2026-10-17T15:45:32+09:00",
+ "exit": 0,
+ "targets": [
+  "MultiplicativeBasisDeformations.Challenge.theoremA",
+  "MultiplicativeBasisDeformations.Challenge.theoremB"
+ ],
+ "source_commit": "ee501416c493626ba39fb5b07bf523978e3cbb20",
+ "challenge_sha256": "4812b9ae0cbe38e6f4598906438263ace409cc2f76c71dd8981a5cf153474d13",
+ "solution_sha256": "2baf243d8b780f7e90c3f185794d10e527f0bd22a44a8ee2bd967c3495c77903",
+ "lean": "leanprover/lean4:v4.33.1",
+ "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+ "tools": {
+  "comparator": "575674928e239f5bc452aab72d1dd7b0f1326494",
+  "lean4export": "15f6055e299ad5b89345e533cc2192f4cc00f659",
+  "nanoda": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+  "landrun": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4"
+ },
+ "axioms": [
+  "propext",
+  "Classical.choice",
+  "Quot.sound"
+ ],
+ "statement_match": "passed",
+ "axiom_boundary": "passed",
+ "nanoda": "passed",
+ "lean_kernel_replay": "passed",
+ "result": "Your solution is okay!",
+ "log_sha256": "bfd72424c1165df738d67569c07cb5bd426d336ce48568da3b5822a6b04acae9",
+ "log_bytes": 626236,
+ "qualification": "Local replay with tool builds reused from the magnitude-conjecture verification (same pins; exporter v4.33.0 source compiled with Lean v4.33.1); not a hosted Palomar preflight or registry acceptance.",
+ "timing": {
+  "elapsed_seconds": 455.83,
+  "peak_rss_kib": 7723924,
+  "exit": 0
+ }
+}

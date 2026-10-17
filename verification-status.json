@@ -1,0 +1,3 @@
+{
+  "summary": "October 17, 2026: fresh library build passed (9254 jobs); axiom audit passed with only propext, Classical.choice and Quot.sound; Comparator replay of the independent statement of Theorems A and B passed, including NanoDa and Lean kernel replay."
+}

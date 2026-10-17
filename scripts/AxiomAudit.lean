@@ -14,3 +14,6 @@ Run with `lake env lean scripts/AxiomAudit.lean`, or `python3 scripts/audit_axio
 #print axioms MultiplicativeBasisDeformations.MeshWalk.coinvEquiv_line
 #print axioms MultiplicativeBasisDeformations.RaySys.Sys.BL_proper_inS
 #print axioms MultiplicativeBasisDeformations.RaySys.Sys.nondeep_return_types
+#print axioms MultiplicativeBasisDeformations.Statement.theoremA
+#print axioms MultiplicativeBasisDeformations.Statement.theoremB
+#print axioms MultiplicativeBasisDeformations.Statement.translateCompatible
