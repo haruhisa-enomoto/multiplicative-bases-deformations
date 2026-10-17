@@ -71,6 +71,33 @@ def fix_dependency_links():
     return replaced
 
 
+def unlink_missing_targets():
+    """Keep the text of auto-links to files that are not part of this site.
+
+    doc-gen4 links `.lean` file names that appear in docstrings; some name
+    files of other projects or older paths. Such links are replaced by their
+    text.
+    """
+    site = BUILD / "doc"
+    unlinked = 0
+    for page in site.rglob("*.html"):
+        def keep(match):
+            nonlocal unlinked
+            link = urlsplit(match.group(1))
+            if link.scheme or link.netloc or not link.path or link.path.startswith("/"):
+                return match.group(0)
+            target = (page.parent / unquote(link.path)).resolve()
+            if target.exists():
+                return match.group(0)
+            unlinked += 1
+            return match.group(2)
+        text = page.read_text()
+        new = re.sub(r'<a href="([^"]+)">(.*?)</a>', keep, text, flags=re.S)
+        if new != text:
+            page.write_text(new)
+    return unlinked
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--wait-for-build", action="store_true")
@@ -122,6 +149,7 @@ def main():
     run("fromDb", "--build", str(BUILD), "--manifest", str(BUILD / "api-manifest.json"),
         str(BUILD / "api-docs.db"))
     state["dependency_source_links"] = fix_dependency_links()
+    state["unlinked_missing_targets"] = unlink_missing_targets()
     state["complete"] = True
     state_path.write_text(json.dumps(state, indent=2) + "\n")
     print(f"Generated API for {len(paths)} modules at {BUILD / 'doc'}", flush=True)

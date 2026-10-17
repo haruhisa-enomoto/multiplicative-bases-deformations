@@ -38,8 +38,9 @@ def main():
     has_api = (api / "index.html").exists() and api_state.get("complete", False)
     if has_api:
         for revisions in ([api_state["source_commit"], "HEAD"], ["HEAD"]):
-            subprocess.run(["git", "diff", "--exit-code", *revisions, "--", "*.lean",
-                            "lean-toolchain", "lake-manifest.json", "lakefile.toml"],
+            subprocess.run(["git", "diff", "--exit-code", *revisions, "--",
+                            "MultiplicativeBasisDeformations.lean", "MultiplicativeBasisDeformations",
+                            "MBDVendor", "lean-toolchain", "lake-manifest.json"],
                            cwd=ROOT, check=True)
         # A source migration can delete modules; discard stale generated pages.
         if (output / "api").exists():
