@@ -10,7 +10,7 @@ describes formal coverage.
 
 The Lean sources originate in `formalization/multiplicative_basis_deformations`
 of the same research repository, at commit
-`36f7a0d5700c6c072e59d56e7bb1feec56149e4c`. The
+`83da26adada5490dfd41e1fe233ef6b1c13509ce`. The
 [source manifest](verification/2026-10-17/source-sync.json) records the hash of
 every copied file.
 

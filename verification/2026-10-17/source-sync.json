@@ -1,7 +1,8 @@
 {
  "source_repository": "homological-conjectures (private research repository)",
  "source_path": "formalization/multiplicative_basis_deformations",
- "source_commit": "36f7a0d5700c6c072e59d56e7bb1feec56149e4c",
+ "source_commit": "83da26adada5490dfd41e1fe233ef6b1c13509ce",
+ "note": "lakefile.toml differs from the source only by the Challenge and Solution libraries of this repository.",
  "files": {
   "MBDVendor/Magnitude/Algebra/FiniteModuleDecomposition.lean": "b77bc4cadefe835ae03ca23e5bc9af24ed12f218293367b0dad279fc9131480e",
   "MBDVendor/Magnitude/Algebra/IndecomposableLocalEnd.lean": "9344fe1d57e14e5bc93389feb97d7b9cf085bf540f1cdd89765b4080eb9c4bb0",
@@ -126,7 +127,7 @@
   "MBDVendor/QSE/RepresentationTheory/SubmoduleAntiExchange.lean": "e1ca3136a91e080081911a1179b5b2b11b8a7d02074b255b9265841c297a17da",
   "MBDVendor/QSE/RepresentationTheory/Trace.lean": "b481cfc1d4b9fa05df1034f69f22546bcb8b302bb7ac9494937055bce25e6e55",
   "MBDVendor/README.md": "e868530b3833a2fd78f5688c9b0ba8762fb981d2c590c25d2951bdea551e7ce3",
-  "MultiplicativeBasisDeformations.lean": "60468106b54be27be0ebdde28996036187fb0860a46c84ebfcdc609dfa46a44e",
+  "MultiplicativeBasisDeformations.lean": "5f9e022bd0dd65d646a6529e0699844d24924e0b88da3277f60a556835cee236",
   "MultiplicativeBasisDeformations/Foundations/A0Basis.lean": "20f54a850d9734803efa5adbf85b00c61f5a09b2a485f8280e510516bed6cd09",
   "MultiplicativeBasisDeformations/Foundations/A0Graded.lean": "ac8a9c3201899ad43190bf8e01dc63fe373dedebf73c3f40b73617fec927fc86",
   "MultiplicativeBasisDeformations/Foundations/A0Lift.lean": "e7aed7c0ad45ec719de612155a15dceb2a7df1a023bcf7268556d2ff40084e96",
@@ -493,6 +494,12 @@
   "MultiplicativeBasisDeformations/Foundations/ZDeltaGauge.lean": "5d7f01d66a2429eb19890ae23e3b956fa55710251fcc0c12eb646b38c4934c78",
   "MultiplicativeBasisDeformations/Foundations/ZModFour.lean": "eaa82be18be6f7bebc71e43a15947bf38a552cee2dba5a88ea66e99f748e5d0e",
   "MultiplicativeBasisDeformations/Foundations/ZTransport.lean": "5e8796457b4e89f1fbcbd4a1594eb7572a9955d0b49c25b3c38b6d83dd5b1d24",
+  "MultiplicativeBasisDeformations/Independent/MeshComparison.lean": "90a2d5439c9ca7fd2c452a8d08ca90ed541cb4dfb90c562e1bf78082089697bc",
+  "MultiplicativeBasisDeformations/Independent/Skeleton.lean": "ed5d3f68d793dba66ec1cbc123cbdb08cf47c3c3b8c6a64a0293e2712145d2ca",
+  "MultiplicativeBasisDeformations/Independent/StandardComparison.lean": "0831d7ea40c0685d8eb3924bdb602a0a7216cf7e04c42c8b90ebf58ed94515cd",
+  "MultiplicativeBasisDeformations/Independent/TheoremA.lean": "5b27e5eb38469d2233c33bff53c130bac42bfe238c9fae0cede8aad735757ce1",
+  "MultiplicativeBasisDeformations/Independent/TheoremB.lean": "b5ea1d80373474f84ad65bf70ea158baf2a392155e795e8390e9302622d93192",
+  "MultiplicativeBasisDeformations/Independent/Translate.lean": "c80bf925be312ccb799367deef7750be66ee5c4c4fdea63d8bf721e91a21e191",
   "MultiplicativeBasisDeformations/Refinements/CocycleLift.lean": "d940ecf658f98469b768d579a62e5c16dd41c6f41781570fe34cb9fddf686fe8",
   "MultiplicativeBasisDeformations/Refinements/ConeLifting.lean": "5cb7ceaeda95e83197ff05552634e58fc28e28b6d8bd7124869b6e6849992688",
   "MultiplicativeBasisDeformations/Refinements/FamilyArrows.lean": "608ab2274e711fb3c8f6ea1030cc8d27f30857ded926e50934a1393c387d32c8",
@@ -538,6 +545,7 @@
   "MultiplicativeBasisDeformations/Refinements/TwistLifting.lean": "dabb0b4d8f2d2158a98bc8796e15458134e5ba1cc0608d58f0e3845eeb93e700",
   "MultiplicativeBasisDeformations/Refinements/WeightCone.lean": "35f4e7d8388077fe746630305c3e0c9e6e8f805f9cc5f59020def5958d6a1218",
   "MultiplicativeBasisDeformations/Refinements/WeightedComparison.lean": "b07ec2c8e89865d0e5a04be4f43afe8fdc1a597e3464e78cb71886cde509f205",
+  "MultiplicativeBasisDeformations/Statement.lean": "5ee5da483296cce44faf0a768cf972674b8ea20d50642c68d54ce495ab89dc50",
   "MultiplicativeBasisDeformations/Statements/A0Basic.lean": "08838beb3c97531c00992f684962ff74fa4f3727d6bdc734ef1301fdabf456e7",
   "MultiplicativeBasisDeformations/Statements/A0Instances.lean": "aa69a4122dcfba5eb2c5612164421adf2012eba606fcc4730f6feb0eac0b5e58",
   "MultiplicativeBasisDeformations/Statements/ClassicalMixtures.lean": "c8401d1874406db7115bb7514e6003d93f737e69781a87315559bfe0547903a6",
@@ -553,8 +561,7 @@
   "MultiplicativeBasisDeformations/Statements/PolynomialMesh.lean": "b5f7bf884fa0fe9bd831cc67c9854d4d890c638138da168ce71da88d8fa65167",
   "MultiplicativeBasisDeformations/Statements/SanityChecks.lean": "e98b3f613a5476288d1b5a477602b935a0a1d3c69e91393a3133779605193f8b",
   "lake-manifest.json": "f837c15ce1a5b621f116a0cb4d323554664d25aeee0b06e9f8c4a4b5be69b86c",
-  "lakefile.toml": "3a9f5cc009269109c59cdfc9726f286802ff4992c1e44382ec3c413c8747cb1b",
   "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
  },
- "file_count": 552
+ "file_count": 558
 }

@@ -1,5 +1,7 @@
 .lake/
 .build-audit/
+.cache/
+_site/
 __pycache__/
 *.pyc
 .DS_Store

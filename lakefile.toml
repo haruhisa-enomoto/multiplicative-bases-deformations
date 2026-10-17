@@ -17,3 +17,13 @@ name = "MBDVendor"
 globs = ["MBDVendor.+"]
 moreLeanArgs = ["-Dbackward.isDefEq.respectTransparency.types=false"]
 weakLeanArgs = ["-j1", "-M14000"]
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+weakLeanArgs = ["-j1", "-M14000"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]
+weakLeanArgs = ["-j1", "-M14000"]
