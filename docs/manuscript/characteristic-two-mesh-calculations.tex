@@ -1,0 +1,230 @@
+\section{Residual and integral mesh correction spaces}
+\label{app:residual-mesh}
+
+In this appendix we complete the periodic trace calculations required for the characteristic-two and integral branches of the main argument. Appendix~\ref{app:characteristic-two-calculations} establishes Proposition~\ref{prop:residual-correction-spaces} by bounding the positive-degree cokernels $\operatorname{coker}D_m(\C)$ ($m\geq2$) over a field of characteristic two, and Appendix~\ref{app:integral-corrections} lifts these calculations to $\mathcal O=\Z/4\Z$ to prove Lemma~\ref{lem:integral-mesh-cokernels} (used in Section~\ref{sec:integral-deformations}). Throughout, we retain the periodic tree models and trace reductions of Appendix~\ref{app:periodic-mesh}.
+
+\subsection{Bounds for the characteristic-two correction spaces}
+\label{app:characteristic-two-calculations}
+
+Throughout this subsection we assume $\charac k=2$ and prove Proposition~\ref{prop:residual-correction-spaces}. We show that each periodic component of $\Gamma_A$ contributes at most one correction line across all degrees $m\geq2$, spanned by the class of a single row path. Defining $I$ to be the set of periodic components for which this cokernel line is actually nonzero then yields Proposition~\ref{prop:residual-correction-spaces} directly, without requiring a classification of which periodic components occur in $\Gamma_A$ or a separate nonvanishing proof for each model.
+
+As in Appendix~\ref{app:periodic-mesh}, all vertex deletions below retain $\tau$-invariant subsets of vertices; by~\eqref{eq:mesh-object-quotient}, the resulting object quotients are the mesh categories of the retained subquivers, allowing us to restrict nonzero paths from smaller models to rule out small periods under the brick hypothesis.
+
+\subsubsection{Trees of type A}
+\label{app:char2-line-models}
+
+In the preprojective category $\Pi(A_M)$, number the vertices $1,\ldots,M$ from left to right and denote the rightward and leftward steps by $s_+$ and $s_-$. The interior mesh relations commute $s_+s_-$ with $s_-s_+$, while the endpoint backtracks at~$1$ and~$M$ vanish. Sorting the steps of any path starting at vertex $i$ shows that the paths
+\begin{equation}
+  s_+^a s_-^b\qquad(0\leq a\leq M-i,\ 0\leq b\leq i-1)
+  \label{eq:a-rectangle}
+\end{equation}
+span the paths from $i$, because any step pushing $a$ past $M-i$ or $b$ past $i-1$ can be commuted to an endpoint backtrack and vanishes. To see that the paths~\eqref{eq:a-rectangle} are linearly independent, consider the representation of $\Pi(A_M)$ with basis vectors $v_{a,b}$ ($0\leq a\leq M-i$, $0\leq b\leq i-1$) placed at vertex $i+a-b$, on which $s_+$ and $s_-$ increment $a$ and $b$ respectively (and act by zero at the boundary $a=M-i$ or $b=i-1$). Since these increments commute and satisfy the endpoint relations, the paths~\eqref{eq:a-rectangle} map $v_{0,0}$ to the distinct basis vectors $v_{a,b}$. In particular, all paths of degree at least $M$ in $\Pi(A_M)$ vanish, and for each vertex $i$ there is a unique nonzero path of top degree $M-1$, which terminates at the reflected vertex $M+1-i$.
+
+We now examine the three periodic models of type~$A$:
+\begin{itemize}
+\item \emph{Pure translation quotients $\Z A_M/\langle\tau^s\rangle$.} The positive ordinary trace of $\Pi(A_M)$ vanishes even in characteristic two: any closed path at $i$ sorts to $(s_+s_-)^q$, and cyclic rotation combined with the interior commutation relation transports $(s_+s_-)^q$ step by step to an endpoint, where it vanishes (without dividing by $q$). Lemma~\ref{lem:twisted-trace-surjection}(1) therefore gives $\operatorname{coker}D_{d-1}=0$ for all $d\geq3$ and every period $s\geq1$.
+
+\item \emph{Reflected odd trees $\Z A_{2m+1}/\langle\tau^s\rho\rangle$.} Here the brick hypothesis forces $s>m$: if $s\leq m$, retaining the central vertex and the first $s$ vertices of each arm yields the quotient $\Z A_{2s+1}/\langle\tau^s\rho\rangle$, in which the top-degree paths of length $2s$ in $\Pi(A_{2s+1})$ connect each vertex to its $\rho$-reflection while advancing the repetition coordinate by $s$, and hence project to nonzero radical endomorphisms at every vertex. With $s>m$ established, any row path from $\tau v$ to $v$ in $\Z A_{2m+1}/\langle\tau^s\rho\rangle$ has even path degree $d=2q\leq2m$ satisfying $s\mid(q-1)$ by Lemma~\ref{lem:twisted-trace-surjection}. Since $0\leq q-1<m<s$ for $q\geq1$, this divisibility forces $q=1$ ($d=2$), so no correction of path degree $d\geq3$ exists.
+
+\item \emph{Folded even trees $\Z A_{2n}/\langle\eta^r\rangle$ ($r$ odd).} In the coordinates $(i,j)\in\{1,\ldots,n\}\times(\Z/r\Z)$ of Appendix~\ref{app:periodic-trees}, the arrows $\varepsilon_j\colon(1,j)\to(1,j+1)$, $a_{i,j}\colon(i,j)\to(i+1,j)$, and $b_{i,j}\colon(i+1,j)\to(i,j+2)$ have the property that any path starting and ending at the same level $i$ contains an equal number of $a$-steps and $b$-steps, so its total shift in the second coordinate $j$ equals its path degree $d$. If $r\leq2n-1$, retaining the first $(r+1)/2$ levels yields $\Z A_{r+1}/\langle\eta^r\rangle$; the top-degree paths of length $r$ in $\Pi(A_{r+1})$ connect each vertex to its reflection at the same level $i$ and shift $j$ by $r\equiv0\pmod r$, giving nonzero radical endomorphisms at every vertex and contradicting the brick hypothesis. Thus $r>2n-1$. Since any row path from $\tau(i,j)=(i,j-2)$ to $(i,j)$ starts and ends at level $i$, its path degree $d$ satisfies $d\equiv2\pmod r$; as $d\leq2n-1<r$, we must have $d=2$, ruling out any correction of degree $d\geq3$.
+\end{itemize}
+
+\subsubsection{The two short arms of type D}
+
+For $\Delta=D_n$, set $N=n-2$. By Lemma~\ref{lem:star-return-reduction}, the central corner $e_{x_0}\Pi(D_n)e_{x_0}$ is a quotient of
+\[
+  R_N=k\langle x,y\rangle/\bigl(x^2,y^2,(x+y)^N\bigr),
+\]
+where $x$ and $y$ represent the length-two closed paths along the two short arms. In word degree $j<N$, $R_N$ is spanned by the two alternating words $w_j$ and $w'_j$ of length $j$ starting with $x$ and $y$, respectively; in word degree $N$, the relation $(x+y)^N=0$ becomes $w_N+w'_N=0$. Multiplying $w_N+w'_N=0$ on the left or right by $x$ and $y$ kills both alternating words of degree $N+1$, so $(R_N)_j=0$ for all $j>N$.
+
+By Lemma~\ref{lem:arm-trace-reduction}, the positive twisted trace of $\Pi(D_n)$ is a quotient of the corresponding twisted trace of $R_N$:
+\begin{itemize}
+\item For the \emph{ordinary trace} ($\theta=\id$), the degree-one classes $[x]$ and $[y]$ vanish by~\eqref{eq:arm-power-trace-zero}. Any alternating word of odd length $j\geq3$ begins and ends with the same letter, so cyclic rotation produces $x^2$ or $y^2$ and the class vanishes. For even $j$, cyclic rotation identifies $[w_j]=[w'_j]$. Hence the positive ordinary trace is at most one-dimensional in each path degree $d=2j$ with $j$ even and $2\leq j\leq N$, and vanishes in all other positive degrees.
+\item For the \emph{short-arm interchange} ($\theta=\iota$ swapping $x$ and $y$), twisted cyclic rotation $[uv]=[v\iota(u)]$ turns an alternating word of even length $j$ into a word containing $x^2$ or $y^2$, while for odd $j$ it identifies $[w_j]=[w'_j]$. Hence the positive $\iota$-twisted trace is at most one-dimensional in each path degree $d=2j$ with $j$ odd and $1\leq j\leq N$, and vanishes in all other positive degrees.
+\end{itemize}
+In either case, Lemma~\ref{lem:twisted-trace-surjection} shows that a nonzero cokernel in path degree $d=2j\geq3$ can occur only when
+\begin{equation}
+  2\leq j\leq N\qquad\text{and}\qquad s\mid(j-1).
+  \label{eq:d-possible-correction}
+\end{equation}
+(These degree and parity restrictions match Riedtmann's characteristic-two analysis of type~$D$ in~\cite[Section~2, p.~487, and Sections~3.3, 3.9]{Riedtmann1984}.)
+
+For $D_4$ ($N=2$), we also check a $3$-cycle $\rho$ permuting the three arms $x,y,x+y$. Here $R_2$ is spanned by $1,x,y,xy=yx$ with $(R_2)_j=0$ for $j\geq3$. In word degree~$1$, twisted cyclic rotation under $\rho$ identifies $[x]=[y]=[x+y]$, whence $[x]=0$; in word degree~$2$, $[xy]=[y\rho(x)]=[y^2]=0$ (and for $\rho^2$, $[yx]=[x\rho^2(y)]=[x^2]=0$). The only possible ordinary trace class has path degree $d=4$ ($j=2$), for which $s\mid(j-1)$ forces $s=1$; since $3\nmid s$, the induced twist $\theta=\rho^{\pm1}$ is nontrivial, so no correction class arises from a $3$-cycle on $D_4$.
+
+To show that~\eqref{eq:d-possible-correction} admits at most one value of $j$ when $\theta\in\{\id,\iota\}$, we bound $N$ in terms of the period $s$ using the top-degree socle paths of $\Pi(D_n)$ (cf.\ \cite[Section~6.2]{Kaplan}).
+
+\begin{lemma}
+\label{lem:d-top-paths}
+Let $\Pi(D_n)$ be the preprojective algebra of type $D_n$ over an arbitrary field, set $N=n-2$, and let $\nu\in\Aut(D_n)$ be the identity if $N$ is even and the short-arm interchange if $N$ is odd. For every vertex $x$ of $D_n$, there is a nonzero path of degree $2N$ in $\Pi(D_n)$ from $x$ to $\nu x$.
+\end{lemma}
+\begin{proof}
+We apply the integer recurrence criterion~\eqref{eq:preprojective-lower-bound}. First consider the line $A_M$ on vertices $1,\ldots,M$ with adjacency matrix $\mathcal A$, and define $V_{-1}=0$, $V_0=I$, and $V_{d+1}=\mathcal AV_d-V_{d-1}$. On the infinite integer line $\Z$, the function
+\[
+  c_d(r)=\begin{cases}
+    1,&\text{if }|r|\leq d\text{ and }r\equiv d\pmod2,\\
+    0,&\text{otherwise}
+  \end{cases}
+  \qquad(c_{-1}=0)
+\]
+satisfies $c_{d+1}(r)=c_d(r-1)+c_d(r+1)-c_{d-1}(r)$. By the method of images, the reflected sum
+\[
+  (V_d)_{ij}=\sum_{h\in\Z}\bigl(c_d(i-j+2h(M+1))-c_d(i+j+2h(M+1))\bigr)\qquad(1\leq i,j\leq M)
+\]
+satisfies the same recurrence and initial conditions, and vanishes at the artificial boundaries $i=0$ (since $c_d(r)=c_d(-r)$) and $i=M+1$ (by shifting $h\mapsto h-1$). For $0\leq d\leq M-1$, only the $h=0$ term can contribute to the first sum and only the $h=0,-1$ terms can contribute to the second, subtracting the ranges $d\geq i+j$ and $d\geq2M+2-i-j$. Thus, for $0\leq d\leq M-1$, $(V_d)_{ij}=1$ if and only if
+\[
+  |i-j|\leq d\leq\min(i+j-2,2M-i-j)\qquad\text{and}\qquad d\equiv i-j\pmod2,
+\]
+and $(V_d)_{ij}=0$ otherwise. In particular, $V_0,\ldots,V_{M-1}$ are entrywise nonnegative, and $V_{M-1}$ is the reflection matrix $i\mapsto M+1-i$.
+
+Now set $M=2N+1$ and shift the vertex labels of $A_{2N+1}$ to $-N,\ldots,N$. On the reflection-invariant subspace spanned by $f_0=e_0$ and $f_r=e_r+e_{-r}$ ($1\leq r\leq N$), the adjacency matrix $\mathcal A$ sends $f_0\mapsto f_1$, $f_1\mapsto 2f_0+f_2$, and $f_r\mapsto f_{r-1}+f_{r+1}$ for $r\geq2$ (omitting $f_{N+1}$). On $D_n$, label the two short-arm leaves by $a,b$ and the remaining vertices from the center outward by $1,\ldots,N$. On the subspace spanned by $g_0=e_a+e_b$ and $g_r=e_r$ ($1\leq r\leq N$), the adjacency matrix of $D_n$ sends $g_0\mapsto 2g_1$, $g_1\mapsto g_0+g_2$, and $g_r\mapsto g_{r-1}+g_{r+1}$ for $r\geq2$. Since these two $(N+1)\times(N+1)$ matrices are transposes of one another, the recurrence polynomials $U_d$ for $D_n$ and $V_d$ for $A_{2N+1}$ satisfy the corresponding transpose relations. Using the symmetries $(V_d)_{rt}=(V_d)_{tr}=(V_d)_{-r,-t}$, we obtain for $1\leq r,t\leq N$:
+\[
+  (U_d)_{rt}=(V_d)_{r,t}+(V_d)_{r,-t},\qquad
+  (U_d)_{ar}=(U_d)_{br}=(V_d)_{r,0}=(V_d)_{0,r}.
+\]
+On the antisymmetric line $e_a-e_b$, the adjacency matrix of $D_n$ acts by zero, so $U_d(e_a-e_b)$ follows the recurrence $u_{-1}=0$, $u_0=1$, $u_{d+1}=-u_{d-1}$, giving $u_{2q}=(-1)^q$ and $u_{2q+1}=0$. Since the symmetric leaf coefficient $(V_d)_{00}$ equals~$1$ for even $d\in[0,2N]$ and~$0$ for odd $d$, writing $e_a=\frac12(g_0+e_a-e_b)$ and $e_b=\frac12(g_0-(e_a-e_b))$ yields the $\{a,b\}\times\{a,b\}$ block of $U_d$ for $0\leq d\leq2N$: it vanishes for odd $d$, and for $d=2q$ it equals
+\[
+  \frac12\begin{pmatrix}1+(-1)^q&1-(-1)^q\\1-(-1)^q&1+(-1)^q\end{pmatrix}.
+\]
+Thus $U_0,\ldots,U_{2N}$ are entrywise nonnegative integer matrices, and at $d=2N$ ($q=N$) the matrix $U_{2N}$ is the permutation matrix of $\nu$. The lemma now follows from~\eqref{eq:preprojective-lower-bound}.
+\end{proof}
+
+Returning to $\Z D_n/\langle\tau^s\rho\rangle$ with $\rho\in\{\id,\iota\}$, the brick hypothesis forces $N<2s$: otherwise, deleting the outer $N-2s$ vertices of the long arm leaves $\Z D_{2s+2}/\langle\tau^s\rho\rangle$, in which Lemma~\ref{lem:d-top-paths} (with $N'=2s$ even) provides nonzero paths of degree $4s$ fixing every vertex of $D_{2s+2}$ and advancing the repetition coordinate by $2s$, which project to nonzero radical endomorphisms at every vertex for either choice of $\rho$. Combining $N<2s$ with~\eqref{eq:d-possible-correction} yields $1\leq j-1\leq N-1<2s-1$ and $s\mid(j-1)$, which uniquely forces $j=s+1$ and $d=2s+2$ (occurring only when $s+1\leq N<2s$, with $s$ odd for the trivial twist $\theta=\id$ and $s$ even for $\theta=\iota$).
+
+\subsubsection{Exceptional upper bounds}
+
+For $\Delta=E_6,E_7,E_8$, we retain the presentation $R_m=k\langle x,y\rangle/(x^m,y^3,(x+y)^2)$ from Lemma~\ref{lem:e78-traces} for $m=3,4,5$, respectively. In $R_5$ over a field of characteristic two, set
+\[
+  \omega_3=yx^3y,\qquad \omega_4=yx^4y,\qquad \omega_5=\omega_4 x^3y,\qquad u=x^2yx^3+x^3yx^2.
+\]
+Reducing the word identities~\eqref{eq:e8-word-identities} modulo~$2$ gives
+\begin{gather}
+  \omega_3 x=\omega_4+x\omega_3+u,\quad \omega_3 y=x\omega_3+u,\quad
+  \omega_4 y=\omega_4 x,\quad \omega_4 xy=0,\quad \omega_4 x^2y=\omega_4 x^3,
+  \label{eq:e2-reduction-one}\\
+  0=\omega_3 x^5=\sum_{r=0}^4 x^r\omega_4 x^{4-r},
+  \label{eq:e2-reduction-two}
+\end{gather}
+where~\eqref{eq:e2-reduction-two} follows by iterating the first relation of~\eqref{eq:e2-reduction-one} five times and using $x^5=0$ to kill all resulting $u$-terms. Multiplying~\eqref{eq:e2-reduction-two} on the right by $y$ and applying~\eqref{eq:e2-reduction-one} gives $\omega_4 x^4y=x\omega_5+x^2\omega_4 x^3+x^4\omega_4 x$. Left-multiplying the last identity of~\eqref{eq:e8-word-identities} by $yx^4$ also gives $\omega_5 x=\omega_4 x^4y$, while expanding $y^2=xy+yx+x^2$ at the end of $\omega_5 y$ gives $\omega_5 y=0$; hence
+\begin{equation}
+  \omega_5 x=x\omega_5+x^2\omega_4 x^3+x^4\omega_4 x,\qquad \omega_5 y=0.
+  \label{eq:e2-reduction-three}
+\end{equation}
+From~\eqref{eq:e8-word-identities} and~\eqref{eq:e2-reduction-one}--\eqref{eq:e2-reduction-three}, one checks immediately that the span of the words
+\begin{equation}
+  \label{eq:e2-spanning-list}
+  \begin{gathered}
+  x^i\ (0\leq i\leq4),\qquad
+  x^iyx^j\ (0\leq i,j\leq4),\qquad
+  x^i\omega_3\ (0\leq i\leq4),\\
+  x^i\omega_4 x^j\ (0\leq i\leq4,\ 0\leq j\leq3),\qquad
+  x^i\omega_5\ (0\leq i\leq4)
+  \end{gathered}
+\end{equation}
+contains~$1$ and is closed under right multiplication by $x$ and $y$, so~\eqref{eq:e2-spanning-list} spans $R_5$ (with maximum word degree~$14$). Passing to the quotients $R_4=R_5/(x^4)$ and $R_3=R_5/(x^3)$ kills $\omega_4,\omega_5$ in $R_4$ (leaving $x^i$, $x^iyx^j$, $x^i\omega_3$ with $0\leq i,j\leq3$, of maximum word degree~$8$) and also kills $\omega_3$ in $R_3$ (leaving $x^i$, $x^iyx^j$ with $0\leq i,j\leq2$, of maximum word degree~$5$).
+
+Applying Lemma~\ref{lem:e78-traces}(1) in characteristic two with $a=yx^3$ and $b=yx^4$, the relations $2=0$ and $3[ab]=0$ simplify the block identities to
+\[
+  [a^2W]=0\ (W\ne1),\qquad [abW]=[baW]\ (W\ne1),\qquad [ab]=0,\qquad [b^q]=0\ (q\geq2).
+\]
+Thus any word in $a,b$ of length at least~$3$ containing at least two $a$'s vanishes by commuting the $a$'s to be adjacent, while a word with a single $a$ reduces to $[ab^r]$, which vanishes for $r=1$ (as $[ab]=0$) and for $r\geq3$ (as $\deg(ab^r)=4+5r\geq19>14$). Among the single-$y$ words, $3[yx^2]=0$ and $5[yx^4]=0$ still force $[yx^2]=[yx^4]=0$ in characteristic two, leaving only the following spanning representatives for the positive ordinary trace:
+\[
+  \begin{array}{c|c|c}
+  \text{Dynkin type}&\text{spanning trace representatives}&\text{path degrees }d\\ \hline
+  E_6&[yx]&4\\
+  E_7&[yx],\ [yx^3],\ [(yx^3)^2]&4,\ 8,\ 16\\
+  E_8&[yx],\ [yx^3],\ [(yx^3)^2],\ [(yx^3)(yx^4)^2]&4,\ 8,\ 16,\ 28
+  \end{array}
+\]
+Each listed path degree is at most one-dimensional, and all other positive ordinary trace degrees vanish.
+
+For the nontrivial graph automorphism $\theta$ of $E_6$ (which swaps $x$ and $y$ in $R_3$), the spanning words of $R_3$ in word degrees $1$ through $5$ are:
+\[
+  \begin{array}{c|l}
+  \text{word degree}& \text{spanning words in }R_3\\ \hline
+  1&x,\ y\\
+  2&x^2,\ xy,\ yx\\
+  3&\xi_1=x^2y,\ \xi_2=xyx,\ \xi_3=yx^2\\
+  4&\xi_4=x^2yx,\ \xi_5=xyx^2\\
+  5&\xi_6=x^2yx^2
+  \end{array}
+\]
+The $\theta$-twisted trace relations $[xw]=[wy]$ and $[yw]=[wx]$ identify the words in degree~$1$ ($[x]=[y]$) and in degree~$2$ ($[x^2]=[xy]=[yx]$, using $y^2=xy+yx+x^2$). In degrees~$3$ and~$4$, using the algebra expansions $xy^2=x^2y+xyx=\xi_1+\xi_2$, $x^2y^2=x^2yx=\xi_4$, and $y^2x^2=xyx^2=\xi_5$ (since $x^3=0$), five twisted-trace cuts kill all spanning classes:
+\begin{align*}
+  w=x^2\text{ in }[xw]=[wy]&\implies [\xi_1]=[x^2y]=[x^3]=0,\\
+  w=x^2\text{ in }[yw]=[wx]&\implies [\xi_3]=[yx^2]=[x^3]=0,\\
+  w=xy\text{ in }[xw]=[wy]&\implies [\xi_1]=[xy^2]=[\xi_1]+[\xi_2]\implies [\xi_2]=0,\\
+  w=x^2y\text{ in }[xw]=[wy]&\implies 0=[x^3y]=[x^2y^2]=[\xi_4],\\
+  w=yx^2\text{ in }[yw]=[wx]&\implies [\xi_5]=[y^2x^2]=[yx^3]=0.
+\end{align*}
+Degree~$5$ is spanned by $\xi_6$ alone, and the fixed long arm contributes no new classes. Thus the positive $\theta$-twisted trace of $\Pi(E_6)$ is at most one-dimensional in path degrees $d=2,4,10$ and vanishes in all other positive degrees.
+
+Applying Lemma~\ref{lem:twisted-trace-surjection} to these candidate degrees:
+\begin{itemize}
+\item For an ordinary trace class ($\theta=\id$) in path degree $d\in\{4,8,16,28\}$, the period $s$ must divide $d/2-1\in\{1,3,7,13\}$. (In the reflected $E_6$ model $\Z E_6/\langle\tau^s\rho\rangle$, Lemma~\ref{lem:twisted-trace-surjection}(1) requires $(d/2-1)/s$ to be even for the untwisted trace; for the sole $E_6$ candidate $d=4$, $s\mid1$ forces $s=1$, for which $(d/2-1)/s=1$ is odd and hence twisted.)
+\item For a $\theta$-twisted trace class on $E_6$ in path degree $d\in\{4,10\}$, Lemma~\ref{lem:twisted-trace-surjection}(2) requires $s\mid(d/2-1)$ with $(d/2-1)/s$ odd, which forces $s=1$ for $d=4$ and $s=4$ for $d=10$.
+\end{itemize}
+Finally, period $s=1$ is excluded in every case by deleting the vertices outside the central $D_4$ subquiver and applying Lemma~\ref{lem:d4-four-return} (noting that the degree-$4$ closed paths in $\Pi(D_4)$ advance the repetition coordinate by~$2$ and therefore also close in the reflected quotient $\Z D_4/\langle\tau\rho\rangle$ since $\rho^2=\id$). Consequently, the only remaining possibilities for a positive correction class of degree $d\geq3$ in types $E_6,E_7,E_8$ are:
+\begin{equation}
+  \label{eq:exceptional-correction-bounds}
+  \begin{array}{c|c|c}
+  \text{Dynkin type and action}&\text{period }s&\text{path degree }d\\ \hline
+  E_6\text{ (with reflection }\rho\text{)}&4&10\\
+  E_7&3,\ 7&8,\ 16\text{ respectively}\\
+  E_8&3,\ 7,\ 13&8,\ 16,\ 28\text{ respectively}
+  \end{array}
+\end{equation}
+In every case, each periodic component admits at most one correction degree $d=2s+2$, spanned by a single central row path. Taking $I$ to be the set of periodic components for which $\operatorname{coker}D_{2s_i+1}(\C)\ne0$ completes the proof of Proposition~\ref{prop:residual-correction-spaces}.
+
+\subsection{Correction spaces over the integers modulo four}
+\label{app:integral-corrections}
+
+We now lift the preceding calculations to $\mathcal O=\Z/4\Z$ for the integral mesh category $E_4$ constructed in Proposition~\ref{prop:fixed-integral-companion}.
+
+\begin{lemma}
+\label{lem:integral-mesh-cokernels}
+Let $\mathcal O=\Z/4\Z$, and let $E_4$ be the finite free mesh category over $\mathcal O$ of Proposition~\ref{prop:fixed-integral-companion}, with mod-$2$ reduction $\mathcal C^{(2)}$ over $\F_2$. Write $D_m(E_4)$ for its mesh derivative with respect to the unit coefficients of that presentation. With $I$ and $\chi_i$ as in Proposition~\ref{prop:residual-correction-spaces} and~\eqref{eq:parameter-character}, there is a degree- and weight-preserving isomorphism
+\[
+  \bigoplus_{m\geq2}\operatorname{coker}D_m(E_4)
+  \cong\bigoplus_{i\in I}(\mathcal O/2\mathcal O)_{\chi_i},
+\]
+where the summand indexed by $i\in I$ lies in $\operatorname{coker}D_{d_i-1}(E_4)$ ($d_i=2s_i+2$) and has internal degree $d_i-2$.
+\end{lemma}
+\begin{proof}
+Set $Q_m=\operatorname{coker}D_m(E_4)$. By Proposition~\ref{prop:fixed-integral-companion}, reducing the source, target, and matrix of $D_m(E_4)$ modulo~$2$ recovers $D_m(\mathcal C^{(2)})$, so right exactness of the tensor product gives degree- and weight-preserving identifications
+\[
+  Q_m/2Q_m\cong\operatorname{coker}D_m(\mathcal C^{(2)}),\qquad
+  \operatorname{coker}D_m(\mathcal C^{(2)})\otimes_{\F_2}k\cong\operatorname{coker}D_m(\C).
+\]
+By Proposition~\ref{prop:residual-correction-spaces}, the retained row paths of path degree $m+1$ span $\operatorname{coker}D_m(\C)$ over $k$ and hence already form an $\F_2$-basis of $\operatorname{coker}D_m(\mathcal C^{(2)})$. Lifting these retained rows to $E_4$ and letting $U_m\subseteq Q_m$ denote the $\mathcal O$-submodule they generate, Nakayama's lemma (or directly $Q_m=U_m+2Q_m=U_m+2(U_m+2Q_m)=U_m$ since $4Q_m=0$) shows that $Q_m=U_m$, and in particular $Q_m=0$ in all degrees and weights without a retained row. Since the mod-$2$ reductions of the retained rows are linearly independent over $\F_2$, it suffices to show that twice each retained row lies in $\operatorname{im}D_m(E_4)$, i.e., vanishes in $Q_m$.
+
+First, any row path that leaves its periodic component passes through a nonperiodic vertex and therefore lies in a finite triangular incidence chain as in the proof of Proposition~\ref{prop:periodic-localization}; because the mesh coefficients of $E_4$ are units in $\mathcal O$, eliminating from an exposed end expresses any such row path as a derivative over $\mathcal O$. Consequently, all terms in a contextual mesh relation that leave the periodic component vanish in $Q_m$. Likewise, the scalar normalizations of Lemma~\ref{lem:periodic-scalar-gauges}(1) hold over $\mathcal O$, since they divide only by unit mesh coefficients and rescale arrows and rows by units in $\mathcal O$. After this normalization to the signed preprojective coefficients $\pm1$, each arrow-correction column on a retained periodic component has opposite unit coefficients $\pm\alpha$ in its two row incidences, giving $\alpha[wa]-\alpha[(\tau a)w]=0$ and hence $[wa]=[(\tau a)w]$ in $Q_m$. Thus the class of a retained row in $Q_m$ factors through the positive $\theta$-twisted trace of the integral signed preprojective category $\Pi_{\mathcal O}(\Delta)$.
+
+Moreover, the star and arm reductions of Lemmas~\ref{lem:star-return-reduction} and~\ref{lem:arm-trace-reduction} hold verbatim over $\mathcal O$, because every replacement step uses only coefficients $\pm1$:
+\begin{itemize}
+\item Replacing an outward backtrack $a_j b_j$ along an arm by $\pm b_{j-1}a_{j-1}$ decreases the total arm depth until any closed path at the center is a word in the length-two arm loops, whose signed sum at the center vanishes.
+\item Along an arm of length $L$, replacing $b_j a_j$ at internal vertices by $\pm a_{j+1}b_{j+1}$ rewrites $(a_1 b_1)^q$ as $\pm a_1\cdots a_q b_q\cdots b_1$ for $q\leq L$ and kills $(a_1 b_1)^{L+1}$ via the leaf relation $b_L a_L=0$.
+\item In the twisted trace along a $\theta$-fixed arm, rotating a closed word to a vertex of minimal depth and replacing the inward backtrack by the outward backtrack strictly increases the depth sum until the word reaches the leaf and vanishes, showing that positive powers of a fixed-arm loop have zero trace over $\mathcal O$.
+\end{itemize}
+
+We now check that $2$ annihilates the retained trace classes in each Dynkin type that can contribute to $I$:
+\begin{itemize}
+\item \emph{Type $D_n$.} In the central corner quotient over $\mathcal O$, the short-arm relations $x^2=y^2=0$ leave the alternating words $w_j$ and $w'_j$ of word degree $j=s+1$. For the trivial twist $\theta=\id$ ($s$ odd, $j$ even), cyclic rotation gives $[w_j]=[w'_j]$; for the short-arm interchange $\theta=\iota$ ($s$ even, $j$ odd), twisted cyclic rotation $[uv]=[v\iota(u)]$ likewise gives $[w_j]=[w'_j]$. Since the long-arm loop equals $-(x+y)$ in the central mesh relation and its $j$-th power has zero trace along the fixed long arm, we obtain in both cases
+\[
+  0=[(-x-y)^j]=(-1)^j([w_j]+[w'_j])=\pm2[w_j],
+\]
+so $2[w_j]=0$ over $\mathcal O$.
+
+\item \emph{Reflected type $E_6$ ($s=4$, $d=10$, word degree~$5$).} In the central corner $R_3$ over $\mathcal O$, the relations $x^3=y^3=(x+y)^2=0$ give
+\[
+  y^2=-yx-xy-x^2,\qquad yxy=xyx,\qquad yx^2y=-xyx^2-x^2yx,
+\]
+where the second identity follows from $0=y^3=(-yx-xy-x^2)y=-yxy-xy^2-x^2y=-yxy-x(-yx-xy-x^2)-x^2y=-yxy+xyx+x^3=-yxy+xyx$ and the third follows by comparing $(yxy)y=(xyx)y$ with $yx(y^2)=yx(-yx-xy-x^2)$. These three identities eliminate any pair of $y$'s separated by $0$, $1$, or $2$ factors of $x$, so $R_3$ is spanned over $\mathcal O$ by $x^i$ and $x^iyx^j$ ($0\leq i,j\leq2$), and word degree~$5$ is spanned by $\xi_6=x^2yx^2$. Applying the $\theta$-twisted trace relation $[xw]=[wy]$ ($\theta(x)=y$) together with the third identity and $x^3=0$ yields
+\[
+  [\xi_6]=[x(xyx^2)]=[(xyx^2)y]=[x(yx^2y)]=[-x^2yx^2-x^3yx]=-[\xi_6],
+\]
+so $2[\xi_6]=0$ over $\mathcal O$.
+
+\item \emph{Types $E_7$ and $E_8$.} Lemma~\ref{lem:e78-traces}(1) holds over any commutative ring, and in particular over $\mathcal O=\Z/4\Z$. Every spanning class in the positive ordinary trace is annihilated by $2$, $3$, or $5$; since $3$ and $5$ are units in $\Z/4\Z$, the entire positive trace is annihilated by~$2$.
+\end{itemize}
+Thus $2Q_m=0$ for all $m\geq2$, completing the proof.
+\end{proof}

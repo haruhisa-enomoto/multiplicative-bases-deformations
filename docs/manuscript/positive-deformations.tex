@@ -1,0 +1,439 @@
+\section{Residual mesh parameters and deformation of module categories}
+\label{sec:positive-deformations}
+
+From now on we assume that $A$ is basic and $\charac k=2$, retaining the
+graded category $\C=\gr_\JJ\ind(\modu A)$ and its standard form $A_0$ from
+Part~\ref{part:graded-form}. In characteristic two, the mesh derivative
+$D_m(\C)$ need not be surjective, so higher-degree error terms in the mesh
+relations cannot in general be eliminated by adjusting the irreducible
+morphisms. We begin by describing the cokernel of $D_m(\C)$ on the
+$\tau$-periodic components of $\Gamma_A$. We then introduce positive
+filtered deformations of $A_0$—of which $A$ itself is the primary
+example—and establish internal-degree bounds on $\Ext$ groups that allow us
+to lift graded $A_0$-modules and their morphisms to any positive filtered
+deformation. In Section~\ref{sec:weights-and-parameters} we use this module
+lifting to embed the positive-degree Hochschild cohomology of $A_0$ into the
+cokernel of the mesh derivative.
+
+\subsection{The remaining linear correction spaces}
+
+By Proposition~\ref{prop:periodic-localization}, the cokernel of the mesh
+derivative $D_m(\C)$ of \eqref{eq:mesh-derivative} is isomorphic to
+$\operatorname{coker}D_m(\C_T)$ on the stable subquiver of $\tau$-periodic
+vertices. Evaluating $\operatorname{coker}D_m$ on the periodic tree models
+of Proposition~\ref{prop:periodic-tree-model} in characteristic two yields
+the following classification, proved in
+Appendix~\ref{app:characteristic-two-calculations} (where periodic
+components of type $A$ are shown to have vanishing cokernel in
+Appendix~\ref{app:char2-line-models}).
+
+\begin{proposition}
+\label{prop:residual-correction-spaces}
+Let $C=C(Q,c)$ be a finite-dimensional scalar mesh category on a finite
+translation quiver $Q$ with at most one arrow between each ordered pair of
+vertices. Assume that $\charac k=2$ and that $C$ satisfies the brick
+hypothesis of Subsection~\ref{subsec:brick-hypothesis}. Call a periodic
+component of $Q$ containing at least one arrow \emph{residual} if
+$\bigoplus_{m\geq2}\operatorname{coker}D_m(C)$ has a nonzero class supported
+on that component, and let $I$ index the residual components of $Q$.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item The $i$th residual component ($i\in I$) is isomorphic to
+$\Z\Delta/\langle\tau^{s_i}\rho\rangle$, where $\Delta$ is a Dynkin tree of
+type $D$ or $E$ and $s_i\geq1$, as in
+Proposition~\ref{prop:periodic-tree-model}(2).
+\item For each $i\in I$, there exist a vertex $v_i$ of the $i$th residual
+component and a path $p_i:\tau v_i\to v_i$ of length $d_i=2s_i+2$ such that,
+viewing $p_i$ as an element of $V_{d_i}(C)$ supported in the row of $v_i$
+and writing $[p_i]$ for its class in $\operatorname{coker}D_{d_i-1}(C)$, we
+have
+\[
+ \bigoplus_{m\geq2}\operatorname{coker}D_m(C)
+                      =\bigoplus_{i\in I}k[p_i].
+\]
+In particular, $d_i=2s_i+2$ is the unique path degree in which the $i$th
+residual component has a nonzero cokernel class.
+\end{enumerate}
+\end{proposition}
+
+By Subsection~\ref{subsec:brick-hypothesis}, Proposition~\ref{prop:residual-correction-spaces}
+applies directly to $C=\C$.
+
+\subsection{Degrees of extensions between normalized modules}
+\label{subsec:ext-degrees}
+
+To relate filtered deformations of $A_0$ to the mesh cokernel classes
+$[p_i]$, we will lift the graded indecomposable $A_0$-modules to any
+positive filtered deformation $B$ of $A_0$.
+
+\begin{definition}
+\label{def:positive-deformation}
+A \emph{positive filtered deformation} of a finite-dimensional nonnegatively
+graded algebra $\Lambda=\bigoplus_{d\geq0}\Lambda_d$ is an algebra $B$
+equipped with a finite decreasing multiplicative filtration $F^\bullet B$
+and a specified graded algebra isomorphism $\gr_F B\cong\Lambda$.
+\end{definition}
+
+In particular, the categorical radical filtration
+$F^n A(x,y)=\JJ^n(P_y,P_x)$ of Section~\ref{sec:projective-rays} makes the
+original algebra $A$ a positive filtered deformation of its standard form
+$A_0$.
+
+In classical deformation theory \cite{Gerstenhaber,Lowen}, the obstructions
+to lifting a graded $\Lambda$-module action to a positive filtered
+deformation lie in $\Ext^2_\Lambda$ in positive internal degrees, while the
+choices of module lifts and the obstructions to lifting morphisms lie in
+$\Ext^1_\Lambda$ in positive internal degrees. Here, for graded right
+$\Lambda$-modules $M$ and $N$, a homomorphism or extension has
+\emph{internal degree} $t\in\Z$ if it is represented on a graded projective
+resolution of $M$ by a cochain that shifts degrees by $+t$. Using the shift
+convention $(N\langle a\rangle)_q=N_{q-a}$ (so that a degree-zero map
+$M\langle a\rangle\to N\langle b\rangle$ has underlying internal degree
+$a-b$), we have
+\[
+ \Ext^n_\Lambda(M,N)_t
+   =\Ext^n_{\mathrm{gr}\text{-}\Lambda}(M,N\langle-t\rangle),
+\]
+where $\Ext_{\mathrm{gr}\text{-}\Lambda}$ is computed in the category of
+graded right $\Lambda$-modules with degree-zero morphisms.
+
+For $\Lambda=A_0$, enumerate the objects of $\C$ as $X_1,\ldots,X_h$, and
+let $M_1,\ldots,M_h$ be the corresponding graded indecomposable right
+$A_0$-modules obtained by projective evaluation, graded by
+$(M_i)_d e_x=\C_d(P_x,X_i)$. We refer to $M_1,\ldots,M_h$ as the
+\emph{degree-normalized} indecomposable $A_0$-modules; note that the
+indecomposable projective $A_0$-modules $e_x A_0$ carry their natural
+gradings under this normalization. Full faithfulness of projective
+evaluation (Proposition~\ref{prop:projective-evaluation}(1)) immediately
+gives
+\begin{equation}
+ \Hom_{A_0}(M_i,M_j)_r=0\quad(r<0),\qquad
+ \Hom_{A_0}(M_i,M_j)_0=
+ \begin{cases}k\cdot\id_{M_i},&\text{if }i=j,\\0,&\text{if }i\ne j.\end{cases}
+ \label{eq:normalized-hom-degrees}
+\end{equation}
+
+\begin{lemma}
+\label{lem:positive-ext-vanishing}
+Let $A_0$ be the standard form of Construction~\ref{con:projective-algebra},
+and let $M_1,\ldots,M_h$ be the degree-normalized indecomposable
+$A_0$-modules defined above.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item Every finite-dimensional graded right $A_0$-module is isomorphic to a
+direct sum of degree shifts of the modules $M_i$.
+\item For all $i,j$ and all $n\geq1$,
+\[
+                 \Ext^n_{A_0}(M_i,M_j)_t=0\qquad\text{for all }t>-2n.
+\]
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Let $X$ be a finite-dimensional graded right $A_0$-module that is
+indecomposable as a graded module. Decomposing $X$ as an ungraded
+$A_0$-module into copies of the indecomposable modules $M_i$, let
+$p_a:X\to M_{i_a}$ and $j_a:M_{i_a}\to X$ be the projection and inclusion
+maps of the summands, so that $1_X=\sum_a p_a j_a$ in path order. Passing to
+the homogeneous component of degree zero gives
+\[
+                   1_X=\sum_{a,r}(p_a)_r(j_a)_{-r}
+\]
+in the local ring $\End_{\mathrm{gr}\text{-}A_0}(X)$. Some single term
+$(p_a)_r(j_a)_{-r}$ is therefore invertible, exhibiting $X$ as a graded
+direct summand of $M_{i_a}\langle-r\rangle$. Since $M_{i_a}$ is already
+indecomposable as an ungraded module, $X\cong M_{i_a}\langle-r\rangle$,
+proving (1).
+
+We prove (2) first for $n=1$. The vanishing is trivial if $M_i$ is
+projective. If $X_i$ is nonprojective, Proposition~\ref{prop:graded-realization}(1)
+and Lemma~\ref{lem:mesh-simple-tops} provide an exact sequence of
+representable functors
+\[
+ 0\longrightarrow\C(-,\tau X_i)\longrightarrow
+ \bigoplus_{Y\to X_i}\C(-,Y)\longrightarrow\C(-,X_i)
+\]
+whose cokernel is the simple functor $\C_0(-,X_i)$. Restricting these
+functors to the projective objects $P_x$ annihilates the simple cokernel
+(since $X_i$ is nonprojective) and yields a short exact sequence of graded
+$A_0$-modules with degree-one maps. Under the equivalence
+$\add\C\simeq\modu A_0$, this short exact sequence is the almost split
+sequence ending at $M_i$; inserting degree shifts so that its maps become
+homogeneous of degree zero writes it as
+\[
+ 0\longrightarrow M_{\tau i}\langle2\rangle\longrightarrow
+ \bigoplus_{Y\to X_i}M_Y\langle1\rangle\longrightarrow M_i
+ \longrightarrow0.
+\]
+Now suppose for a contradiction that
+$0\to M_j\langle-t\rangle\to E\xrightarrow{v}M_i\to0$ is a nonsplit graded
+extension with $t>-2$. It remains nonsplit as an ungraded sequence (since any
+ungraded section would have a degree-zero component that is a graded
+section). By the lifting property of the right almost split map, $v$ factors
+through $\bigoplus_{Y\to X_i}M_Y\langle1\rangle\to M_i$, and taking the
+degree-zero component produces a graded factorization. The induced graded
+map on kernels $M_j\langle-t\rangle\to M_{\tau i}\langle2\rangle$ has
+underlying internal degree $-t-2<0$ and therefore vanishes by
+\eqref{eq:normalized-hom-degrees}. Consequently, the factorization descends
+to a section of the almost split sequence ending at $M_i$, a contradiction.
+Thus $\Ext^1_{A_0}(M_i,M_j)_t=0$ for all $t>-2$.
+
+For $n\geq2$, observe that in a minimal graded projective presentation of a
+nonprojective module $M_i$, every projective summand $P\langle a\rangle$ of
+the projective cover has $a\geq1$ because its nonzero map to $M_i$ lies in
+positive degree; similarly, every indecomposable summand $Z\langle b\rangle$
+of the first syzygy $\Omega^1 M_i$ maps into $P\langle a\rangle$ via a
+radical morphism of positive degree, so $b-a\geq1$ and hence $b\geq2$. By
+induction on $r$, every indecomposable summand of the $r$th syzygy
+$\Omega^r M_i$ has the form $Z\langle b\rangle$ with $b\geq 2r$. Dimension
+shifting then gives
+\[
+ \Ext^n_{A_0}(M_i,M_j)_t
+ =\Ext^1_{A_0}(\Omega^{n-1}M_i,M_j)_t=0
+ \qquad\text{for all }t>-2n,
+\]
+because each indecomposable summand $Z\langle b\rangle$ of
+$\Omega^{n-1}M_i$ has $b\geq 2(n-1)$ and thus contributes
+$\Ext^1_{A_0}(Z,M_j)_{t+b}=0$ since $t+b>-2$.
+\end{proof}
+
+\subsection{Lifting actions and morphisms}
+
+Before lifting modules to a positive filtered deformation $B$, we place $B$
+in a split relative normal form over its degree-zero semisimple subalgebra.
+
+For an algebra $\Lambda$ over a commutative ring $R$ and a unital subalgebra
+$S\subseteq\Lambda$, the space of \emph{normalized $S$-relative Hochschild
+$n$-cochains} ($n\geq1$) is
+\begin{equation}
+ C^n_S(\Lambda,\Lambda)
+   =\Hom_{S\text{-}S}\bigl((\Lambda/S)^{\otimes_S n},\Lambda\bigr),
+ \label{eq:normalized-relative-cochains}
+\end{equation}
+with $C^0_S(\Lambda,\Lambda)=\{a\in\Lambda:as=sa\text{ for all }s\in S\}$
+in degree zero and the standard Hochschild differential (in particular,
+$(df)(a,b)=af(b)-f(ab)+f(a)b$ for a $1$-cochain $f$). Viewed as an
+$R$-multilinear map on $\Lambda^n$, a normalized $S$-relative $n$-cochain is
+$S$-bilinear in the outer variables, $S$-balanced across each adjacent pair
+of inputs, and vanishes whenever any input belongs to $S$. We will use these
+cochains over fields and over $\Z/4$.
+
+\begin{lemma}
+\label{lem:split-positive-deformation}
+Let $k$ be a field, let $\Lambda=\bigoplus_{d\geq0}\Lambda_d$ be a
+finite-dimensional nonnegatively graded $k$-algebra whose degree-zero part
+$S=\Lambda_0$ is split semisimple, and let $B$ be a positive filtered
+deformation of $\Lambda$. Then $S$ lifts to a unital subalgebra of $B$, and
+the filtration $F^\bullet B$ splits as a filtration of $S$-bimodules. Under
+the resulting filtered $S$-bimodule identification $B\cong\Lambda$ (inducing
+the given identification $\gr_F B=\Lambda$), the multiplication of $B$ takes
+the form $\mu_0+\sum_{q>0}\mu_q$, where $\mu_0$ is the multiplication of
+$\Lambda$ and each $\mu_q\in C^2_S(\Lambda,\Lambda)$ is a normalized
+$S$-relative $2$-cochain raising internal degree by $q$.
+\end{lemma}
+\begin{proof}
+Set $\mathfrak n=F^1 B$, so that $\mathfrak n$ is a nilpotent two-sided
+ideal of $B$ with $B/\mathfrak n\cong S$. Because idempotents can be lifted
+modulo any nilpotent ideal—iterating $a\mapsto a+(1-2a)(a^2-a)$ across
+successive square-zero quotients—and orthogonal idempotents lift
+successively in complementary corners, we may lift all diagonal matrix units
+of the matrix blocks of $S$ to a complete set of orthogonal idempotents in
+$B$.
+
+Within a single matrix block $M_n(k)$ of $S$, let $p_1,\ldots,p_n\in B$ be
+the lifted diagonal idempotents, and choose elements $u_i\in p_i B p_1$ and
+$v_i\in p_1 B p_i$ lifting the elementary matrix units $E_{i1}$ and $E_{1i}$
+(with $u_1=v_1=p_1$). Since $v_i u_i\equiv p_1\pmod{\mathfrak n}$, the
+element $v_i u_i$ is invertible in $p_1 B p_1$; replacing $v_i$ by
+$(v_i u_i)^{-1}v_i$ ensures that $v_i u_i=p_1$. Then $u_i v_i$ is an
+idempotent in $p_i B p_i$ congruent to $p_i$ modulo $\mathfrak n$, so
+$p_i-u_i v_i$ is an idempotent in $\mathfrak n$ and therefore vanishes. Thus
+$u_i v_i=p_i$, and the products $u_i v_j$ satisfy the matrix-unit relations
+of $M_n(k)$. Since idempotents in distinct matrix blocks are orthogonal,
+these matrix units define a unital algebra embedding $S\hookrightarrow B$
+lifting $B/\mathfrak n\cong S$.
+
+Finally, because $S\otimes_k S^{\op}$ is a finite product of matrix algebras
+over $k$, it is semisimple, so every short exact sequence of $S$-bimodules
+splits. Choosing $S$-bimodule splittings $F^d B/F^{d+1}B\hookrightarrow F^d B$
+(using the subalgebra $S$ itself in degree $d=0$) identifies $B$ with
+$\Lambda$ as a filtered $S$-bimodule inducing the prescribed isomorphism
+$\gr_F B\cong\Lambda$. Under this identification, the multiplication of $B$
+is $S$-bilinear, restricts to the multiplication of $S$ on $S$, and raises
+grading degree by at least $0$, with degree-zero component equal to $\mu_0$.
+\end{proof}
+
+\begin{proposition}
+\label{prop:positive-module-lifting}
+Let $k$ be a field, let $\Lambda$ be a finite-dimensional nonnegatively
+graded $k$-algebra with split semisimple degree-zero part $S=\Lambda_0$, and
+let $M_1,\ldots,M_h$ be finite-dimensional graded right $\Lambda$-modules
+satisfying
+\[
+ \Ext^2_\Lambda(M_i,M_i)_q=0,\qquad
+ \Ext^1_\Lambda(M_i,M_j)_q=0\qquad\text{for all }i,j\text{ and all }q>0.
+\]
+Let $B$ be a positive filtered deformation of $\Lambda$.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item Each $M_i$ admits a filtered right $B$-module lift $M_i^B$ with
+$\gr M_i^B=M_i$, unique up to a filtered $B$-module isomorphism inducing the
+identity on $M_i$.
+\item Every homogeneous $\Lambda$-module homomorphism $M_i\to M_j$ of degree
+$r\geq0$ lifts to a filtered $B$-module homomorphism $M_i^B\to M_j^B$ in
+filtration degree $r$ with that prescribed leading term. Consequently, the
+associated graded Hom spaces in nonnegative degrees between the lifted
+modules coincide with the original graded Hom spaces.
+\item Suppose further that $\Hom_\Lambda(M_i,M_j)_r=0$ for all $r<0$ and
+$\Hom_\Lambda(M_i,M_j)_0=\delta_{ij}k$. Then the full subcategory $E$ of
+$\modu B$ on $M_1^B,\ldots,M_h^B$, filtered by map degree, has associated
+graded category equal to the graded Hom category on $M_1,\ldots,M_h$; if the
+latter is generated in degree one, then the map-degree filtration on $E$
+coincides with its categorical radical filtration. Moreover, if
+$M_i=e_x\Lambda$ for a primitive idempotent $e_x\in S$, we may take
+$M_i^B=e_x B$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Identify $B$ as a filtered $S$-bimodule with $\Lambda$ via
+Lemma~\ref{lem:split-positive-deformation}, so that the multiplication $a*b$
+of $B$ has the form $\mu_0(a,b)+\sum_{q>0}\mu_q(a,b)$. Because $S$ is
+semisimple, any filtered right $B$-module lift of $M_i$ can likewise be
+identified with $M_i$ as a filtered right $S$-module, so that its $B$-action
+takes the form $m\cdot a=\nu_0(m,a)+\sum_{q>0}\nu_q(m,a)$, where $\nu_0$ is
+the $\Lambda$-action on $M_i$ and each $\nu_q:M_i\otimes_S(\Lambda/S)\to M_i$
+is a right $S$-linear map raising internal degree by $q$. Recall that the
+normalized $S$-relative bar resolution of a graded right $\Lambda$-module $M$
+has degree-$n$ term
+\[
+           M\otimes_S(\Lambda/S)^{\otimes_S n}\otimes_S \Lambda,
+\]
+which is a graded projective right $\Lambda$-module because $S$ is
+semisimple; applying $\Hom_\Lambda(-,N)$ computes $\Ext^n_\Lambda(M,N)$ via
+normalized $S$-relative bar cochains.
+
+Suppose by induction on $t\geq1$ that we have chosen $\nu_1,\ldots,\nu_{t-1}$
+so that the associativity identity $(m\cdot a)\cdot b=m\cdot(a*b)$ holds in
+internal degrees less than $t$. A direct check using the associativity of
+$*$ and the lower-degree action identities shows that the degree-$t$ failure
+of $(m\cdot a)\cdot b=m\cdot(a*b)$ is a normalized $S$-relative bar
+$2$-cocycle of internal degree $t$ with values in $\Hom_k(M_i,M_i)$. Since
+$\Ext^2_\Lambda(M_i,M_i)_t=0$, this $2$-cocycle is the bar coboundary of a
+normalized $1$-cochain $\nu_t$ of internal degree $t$, which cancels the
+degree-$t$ error. Because $M_i$ is finite-dimensional, this induction
+terminates after finitely many steps and yields a filtered $B$-module action
+on $M_i$. Similarly, if two such actions agree in degrees less than $t$,
+their degree-$t$ difference is a bar $1$-cocycle of internal degree $t$; by
+$\Ext^1_\Lambda(M_i,M_i)_t=0$, it is the coboundary of an $S$-linear
+endomorphism $h_t$ of $M_i$ of degree $t$, so conjugating by the invertible
+filtered automorphism $1+h_t$ brings the two actions into agreement through
+degree $t$. This proves (1).
+
+For (2), let $f_0:M_i\to M_j$ be homogeneous of degree $r\geq0$, and suppose
+we have constructed $f=f_0+f_1+\cdots+f_{t-1}$ (with $f_s$ of degree $r+s$)
+commuting with the $B$-actions in degrees less than $r+t$. The degree-$(r+t)$
+error in $f(m\cdot a)=f(m)\cdot a$ is a bar $1$-cocycle in
+$C^1_S(M_i,M_j)$ of internal degree $r+t>0$. Since
+$\Ext^1_\Lambda(M_i,M_j)_{r+t}=0$, this error is the coboundary of a map
+$f_t:M_i\to M_j$ of degree $r+t$, allowing us to continue the induction to
+obtain a filtered $B$-linear lift of $f_0$. Since the leading homogeneous
+term of any nonzero filtered $B$-module homomorphism $M_i^B\to M_j^B$ is a
+nonzero homogeneous $\Lambda$-module homomorphism $M_i\to M_j$, this proves
+(2).
+
+Under the hypotheses of (3), there are no nonzero homomorphisms of negative
+degree, so the associated graded category of $E$ is the full graded Hom
+category on $M_1,\ldots,M_h$. The positive-degree filtration ideal $F^1 E$
+is nilpotent and $E/F^1 E\cong\prod_i k$, so $F^1 E$ is the categorical
+radical $\JJ(E)$ of $E$ (and in particular the lifted modules $M_i^B$ are
+indecomposable and pairwise nonisomorphic). If $\gr_F E$ is generated in
+degree one, then each $F^q E/F^{q+1}E$ is spanned by products of $q$
+elements of $F^1 E/F^2 E$, so descending induction on $q$ gives
+$F^q E=\JJ(E)^q$ for all $q\geq1$. Finally, when $M_i=e_x\Lambda$, the lifted
+projective module $e_x B$ has associated graded module $e_x\Lambda$, so by
+the uniqueness in (1) we may take $M_i^B=e_x B$.
+\end{proof}
+
+Applying Proposition~\ref{prop:positive-module-lifting} to $\Lambda=A_0$ and
+its degree-normalized indecomposable modules $M_1,\ldots,M_h$ (whose Hom and
+$\Ext$ groups satisfy the required bounds by \eqref{eq:normalized-hom-degrees}
+and Lemma~\ref{lem:positive-ext-vanishing}(2)) shows that for every positive
+filtered deformation $B$ of $A_0$, the lifted modules $M_i^B$ form a
+filtered category with associated graded category $\C$, and its projective
+corner recovers $\End_B(\bigoplus_x e_x B)^{\op}=B$.
+
+In Section~\ref{sec:weights-and-parameters} and
+Section~\ref{sec:integral-deformations} we also need the first-order version
+of this lifting calculation over $R[\varepsilon]/(\varepsilon^2)$, where the
+coefficient ring $R$ is either a field or $\Z/4$.
+
+\begin{lemma}
+\label{lem:square-zero-selected-lifts}
+Let $R$ be a field or $\Z/4$, let $\Lambda$ be a finitely generated free
+nonnegatively graded $R$-algebra with $\Lambda_0=S=R^n$, and let
+$M_1,\ldots,M_h$ be finitely generated graded right $\Lambda$-modules that
+are free over $R$. Suppose that each graded module $\Hom_\Lambda(M_i,M_j)$ is
+free over $R$ and concentrated in nonnegative degrees, and that
+\[
+ \Ext^2_\Lambda(M_i,M_i)_t=0,\qquad
+ \Ext^1_\Lambda(M_i,M_j)_t=0\qquad\text{for all }i,j\text{ and all }t>0.
+\]
+Let $\mu\in C^2_S(\Lambda,\Lambda)$ be a normalized $S$-relative Hochschild
+$2$-cocycle of internal degree $q>0$, and form the graded first-order
+deformation
+$\Lambda_\mu=(\Lambda\otimes_R R[\varepsilon]/(\varepsilon^2),m+\varepsilon\mu)$
+with $\deg\varepsilon=-q$. Then:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item Each $M_i$ lifts to a graded right $\Lambda_\mu$-module $M_i^\mu$ free
+over $R[\varepsilon]/(\varepsilon^2)$ (taking $M_i^\mu=e_x\Lambda_\mu$ when
+$M_i=e_x\Lambda$), uniquely up to a degree-zero $\Lambda_\mu$-module
+isomorphism reducing to the identity modulo $\varepsilon$.
+\item Every homogeneous $\Lambda$-linear map $f:M_i\to M_j$ lifts to a
+homogeneous $\Lambda_\mu$-linear map $M_i^\mu\to M_j^\mu$ of the same degree,
+and for any homogeneous $R$-basis of $\Hom_\Lambda(M_i,M_j)$, any chosen
+homogeneous lifts form an $R[\varepsilon]/(\varepsilon^2)$-basis of
+$\Hom_{\Lambda_\mu}(M_i^\mu,M_j^\mu)$.
+\item If $\Lambda$ and the $M_i$ carry a compatible grading by an abelian
+group $L$ and $\mu$ is homogeneous of $L$-degree $\chi$, then assigning
+$\varepsilon$ the $L$-degree $-\chi$ allows all module and morphism lifts to
+be chosen homogeneous for the $L$-grading as well.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Because the vertex components of $\Lambda$ and $M_i$ are direct summands of
+finitely generated free $R$-modules, they are projective over $R$, so the
+normalized $S$-relative bar resolution of $M_i$ consists of graded projective
+$\Lambda$-modules and computes $\Ext^\bullet_\Lambda(M_i,M_j)$ over $R$ (including
+when $R=\Z/4$). Writing a candidate lifted action on
+$M_i\otimes_R R[\varepsilon]/(\varepsilon^2)$ as
+$m\cdot a=ma+\varepsilon\nu_i(m,a)$ with $\nu_i\in C^1_S(M_i,M_i)_q$, the
+associativity condition modulo $\varepsilon^2$ is
+\[
+ \nu_i(ma,b)-\nu_i(m,ab)+\nu_i(m,a)b=m\mu(a,b).
+\]
+Since $d\mu=0$, the right-hand side is a relative bar $2$-cocycle of internal
+degree $q>0$, so the vanishing of $\Ext^2_\Lambda(M_i,M_i)_q$ guarantees the
+existence of $\nu_i$. The difference of any two solutions is a relative bar
+$1$-cocycle of degree $q$, which by $\Ext^1_\Lambda(M_i,M_i)_q=0$ is the
+coboundary of a degree-$q$ endomorphism $h$ of $M_i$, so the two lifts are
+identified by the automorphism $1+\varepsilon h$. This proves (1).
+
+Similarly, a homogeneous map $f:M_i\to M_j$ of degree $r\geq0$ lifts to a
+$\Lambda_\mu$-linear map $f+\varepsilon g$ if and only if
+\[
+ g(ma)-g(m)a=\nu_j(f(m),a)-f(\nu_i(m,a)).
+\]
+The right-hand side is a relative bar $1$-cocycle of internal degree
+$r+q>0$, so the vanishing of $\Ext^1_\Lambda(M_i,M_j)_{r+q}$ provides the correction $g$.
+If $F_1,\ldots,F_s$ are homogeneous lifts of a homogeneous $R$-basis
+$f_1,\ldots,f_s$ of the entire module $\Hom_\Lambda(M_i,M_j)$, then
+subtracting from any $\Phi\in\Hom_{\Lambda_\mu}(M_i^\mu,M_j^\mu)$ the $R$-linear
+combination of $F_1,\ldots,F_s$ matching its reduction modulo $\varepsilon$
+leaves an element of the form $\varepsilon H$ where $H\in\Hom_\Lambda(M_i,M_j)$
+(when $\Phi$ is homogeneous of degree $r$, its reduction modulo $\varepsilon$
+lies in degree $r$ and $H$ lies in degree $r+q$), which is therefore an
+$R$-linear combination of $\varepsilon F_1,\ldots,\varepsilon F_s$. Conversely, if
+$\sum_l(a_l+\varepsilon b_l)F_l=0$ with $a_l,b_l\in R$, reducing modulo
+$\varepsilon$ gives $\sum_l a_l f_l=0$, so $a_l=0$; the remaining equation
+$\varepsilon\sum_l b_l f_l=0$ in the free $R[\varepsilon]/(\varepsilon^2)$-module
+$\Hom_R(M_i,M_j)\otimes_R R[\varepsilon]/(\varepsilon^2)$ then forces
+$\sum_l b_l f_l=0$ and hence $b_l=0$. This proves (2). Finally, since the
+bar differentials preserve the $L$-grading, projecting any solution onto its
+homogeneous component of the required $L$-degree gives (3).
+\end{proof}

@@ -1,0 +1,21 @@
+'MultiplicativeBasisDeformations.theoremA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultiplicativeBasisDeformations.theoremB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultiplicativeBasisDeformations.awayFromTwoBasis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultiplicativeBasisDeformations.standard_iff_rayLinearization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MultiplicativeBasisDeformations.IndSkeleton.familyCriterion_WP' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MultiplicativeBasisDeformations.IndSkeleton.polynomialMeshComparison_WP' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MultiplicativeBasisDeformations.MeshWalk.familyCriterion_G' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultiplicativeBasisDeformations.MeshWalk.polynomialMeshComparison_G' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MultiplicativeBasisDeformations.MeshWalk.coinvEquiv_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultiplicativeBasisDeformations.RaySys.Sys.BL_proper_inS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MultiplicativeBasisDeformations.RaySys.Sys.nondeep_return_types' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

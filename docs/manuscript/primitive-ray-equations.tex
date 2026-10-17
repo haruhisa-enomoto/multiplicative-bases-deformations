@@ -1,0 +1,221 @@
+\subsection{Successor coefficients and primitive returns}
+\label{sec:primitive-ray-equations}
+
+We next study the coefficients of normalized Hochschild one-cochains $\delta$ that shift ray weights by a fixed character $\chi\in L$. The Leibniz condition $\delta(rs)=\delta(r)s+r\delta(s)$ on nonzero ray products $rs\ne0$ is equivalent to the vanishing of the coboundary $d\delta$ on all nonzero products of basis elements. In Section~\ref{sec:integral-partial-lifts} we will lift solutions of these nonzero-product Leibniz equations from $\Z/2$ to $\Z$. Applied to a derivation over $\F_2$, such an integral lift produces a two-cocycle $(d\delta)/2$ over $\F_2$ that vanishes on all nonzero ray products and represents the connecting homomorphism class of $\delta$ in $\HH^2(\F_2P)_\chi$ (Proposition~\ref{prop:integral-bockstein}).
+
+\begin{definition}
+\label{def:primitive-characters}
+Evaluating characters in $L$ on the categorical degree $\deg_\JJ\in H_\Z$, we say that a character $\chi\in L$ is \emph{positive} if $\chi(\deg_\JJ)>0$, and \emph{primitive} if it cannot be written as $n\eta$ for an integer $n>1$ and a character $\eta\in L$.
+\end{definition}
+
+By Proposition~\ref{prop:primitive-parameter-characters} and the identity $\chi_i(\deg_\JJ)=2s_i$, every residual character $\chi_i$ is both positive and primitive.
+
+\begin{setting}
+\label{set:fixed-character}
+For the remainder of this section and Section~\ref{sec:integral-partial-lifts}, we fix a positive primitive character $\chi\in L$. For each vertex $x$, we define
+\[
+  \widehat q_x=\begin{cases}
+  q_x, & \text{if }q_x\ne0\text{ and }\ell(q_x)=\chi,\\
+  0, & \text{otherwise}.
+  \end{cases}
+\]
+Thus $q_x$ continues to denote the actual homogeneous generator of $\rad R_x$ from Setting~\ref{set:projective-companion}, whereas $\widehat q_x$ retains $q_x$ only when its weight equals the fixed character $\chi$.
+\end{setting}
+
+\begin{definition}
+\label{def:successor-types}
+Work with $A_0=kP$ and a positive primitive character $\chi$ as in Settings~\ref{set:projective-companion} and~\ref{set:fixed-character}.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item A vertex $x$ is \emph{supporting} (for $\chi$) if $\widehat q_x\ne0$, that is, if $q_x\ne0$ and $\ell(q_x)=\chi$. More generally, $x$ has \emph{primitive local weight} if $q_x\ne0$ and $\ell(q_x)$ is primitive in $L$.
+\item A nonidentity ray $r\colon x\to y$ is \emph{shiftable} if there is a ray $r^+\colon x\to y$ of weight $\ell(r)+\chi$, which we call the \emph{successor} of $r$.
+\item The \emph{endpoint type} of a shiftable ray $r\colon x\to y$ is classified by which of the endpoint actions $\widehat q_xr$ and $r\widehat q_y$ are nonzero:
+\[
+\begin{array}{c|c|l}
+\text{Name} & \text{Symbol} & \text{Defining condition} \\ \hline
+\text{left-sided} & \mathsf L & \widehat q_xr=r^+\ne0,\ r\widehat q_y=0 \\
+\text{right-sided} & \mathsf R & \widehat q_xr=0,\ r\widehat q_y=r^+\ne0 \\
+\text{two-sided} & \mathsf B & \widehat q_xr=r\widehat q_y=r^+\ne0.
+\end{array}
+\]
+We say that $r$ is \emph{one-sided} if its endpoint type is $\mathsf L$ or $\mathsf R$. We also say that the source $x$ \emph{controls} $r$ when $\widehat q_xr\ne0$, and that the target $y$ \emph{controls} $r$ when $r\widehat q_y\ne0$.
+\end{enumerate}
+\end{definition}
+
+To see why every shiftable ray $r\colon x\to y$ falls into one of the three types in Definition~\ref{def:successor-types}(3), recall that the corner bimodule $A_0(x,y)$ is cyclic over at least one of its endpoint rings $R_x$ or $R_y$, so its rays are successive powers of that endpoint's radical generator applied to the generating ray of $A_0(x,y)$. The weight difference $\ell(r^+)-\ell(r)=\chi$ must therefore be a positive integer multiple of the weight of that radical generator. Because $\chi$ is primitive, the multiple is necessarily~$1$, which means that $r^+$ is obtained from $r$ by a single multiplication by $\widehat q_x$ on the left or by $\widehat q_y$ on the right (and $r^+$ is unique because each weight space in $A_0(x,y)$ is at most one-dimensional). Notice the distinction between cyclicity in Definition~\ref{def:generating-rays}, which is a property of the entire corner bimodule $A_0(x,y)$ over $R_x$ or $R_y$, and the endpoint type $\mathsf L,\mathsf R,\mathsf B$, which records whether the action of weight $\chi$ on a specific shiftable ray $r$ remains nonzero on the left, on the right, or on both sides.
+
+For example, if $A_0(x,y)$ is a three-dimensional corner bimodule generated on the left at a supporting vertex $x$, its rays are $f$, $\widehat q_xf$, and $\widehat q_x^2f$, which lie in endpoint layers $0$, $1$, and $2$, respectively. The rays $f$ and $\widehat q_xf$ are shiftable, with successors $\widehat q_xf$ and $\widehat q_x^2f$, whereas the socle ray $\widehat q_x^2f$ is unshiftable. If the right action of $\widehat q_y$ satisfies $f\widehat q_y=\widehat q_xf$, then both $f$ and $\widehat q_xf$ have type $\mathsf B$; if instead $f\widehat q_y=0$, then both have type $\mathsf L$.
+
+Any normalized one-cochain $\delta$ of weight $\chi$ vanishes on the primitive idempotents $1_x$ and on all unshiftable rays, and is determined on shiftable nonidentity rays $r$ by scalar coefficients $d_r$ via $\delta(r)=d_r r^+$. On a nonzero product $rs=t$ of nonidentity rays, the Leibniz equation $\delta(rs)=\delta(r)s+r\delta(s)$ compares $d_t t^+$ with $d_r r^+s+d_s rs^+$. We refer to the products $r^+s$ and $rs^+$ as the \emph{successor substitutions} of $rs$; each substitution either equals $t^+$ or vanishes.
+
+Before tabulating these equations, we note a basic consequence of primitive local weight that will be used throughout our analysis.
+
+\begin{lemma}
+\label{lem:primitive-action-generation}
+In Setting~\ref{set:projective-companion}, let $f\colon x\to y$ be a generating ray, and suppose that $\ell(q_x)$ is primitive. If $q_xf\ne0$, then $A_0(x,y)=R_xf$. If in addition $A_0(x,y)$ is cyclic at $y$, then $\ell(q_y)=\ell(q_x)$ and $q_xf=fq_y\ne0$. The dual assertions hold when $\ell(q_y)$ is primitive and $fq_y\ne0$.
+\end{lemma}
+\begin{proof}
+If $A_0(x,y)$ is cyclic at $y$, then $q_xf\ne0$ must take the form $q_xf=fq_y^a$ for some integer $a\geq1$. Comparing weights gives $\ell(q_x)=a\ell(q_y)$, and the primitivity of $\ell(q_x)$ forces $a=1$. Iterating the relation $q_xf=fq_y$ then shows that $R_xf=fR_y=A_0(x,y)$. If $A_0(x,y)$ is not cyclic at $y$, then Lemma~\ref{lem:endpoint-chains}(3) immediately implies that $A_0(x,y)=R_xf$. The second assertion follows by the same weight comparison, and the dual statements follow by passing to the opposite algebra.
+\end{proof}
+
+\begin{lemma}
+\label{lem:successor-substitutions}
+In Settings~\ref{set:projective-companion} and~\ref{set:fixed-character}, let $rs=t$ be a nonzero product of nonidentity rays. If $t$ is unshiftable, then both successor substitutions $r^+s$ and $rs^+$ vanish (whenever defined), so $\delta(rs)=\delta(r)s+r\delta(s)$ imposes no condition on the coefficients $d_r,d_s$. If $t$ is shiftable, the possible endpoint types of $(r,s)$ and the resulting Leibniz equations for $d_t$ are given by the following table (where $*$ denotes an arbitrary shiftable or unshiftable ray):
+\begin{equation}
+  \label{eq:product-type-table}
+  \begin{array}{c|c|c}
+  \text{Type of }t=rs & \text{Types of }(r,s) & \text{Leibniz equation} \\ \hline
+  \mathsf L & (\mathsf L,*) & d_t=d_r \\
+  \mathsf L & (\mathsf B,\mathsf L) & d_t=d_r+d_s \\
+  \mathsf R & (*,\mathsf R) & d_t=d_s \\
+  \mathsf R & (\mathsf R,\mathsf B) & d_t=d_r+d_s \\
+  \mathsf B & (\mathsf B,\mathsf B)\text{ or }(\mathsf L,\mathsf R) & d_t=d_r+d_s.
+  \end{array}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $rs=t\ne0$ with $r\colon x\to y$ and $s\colon y\to z$. If $t$ is unshiftable, then $A_0(x,z)$ has no ray of weight $\ell(t)+\chi$, so neither $r^+s$ nor $rs^+$ can be nonzero.
+
+Assume now that $t$ is shiftable. Suppose first that $t$ has type $\mathsf L$, so that $t^+=\widehat q_xrs\ne0$ while $rs\widehat q_z=0$. Since $\widehat q_xrs\ne0$, we have $\widehat q_xr\ne0$, so $r$ is shiftable of type $\mathsf L$ or $\mathsf B$ and $r^+s=\widehat q_xrs=t^+$.
+\begin{itemize}
+\item If $r$ has type $\mathsf L$, then $r\widehat q_y=0$. If $s$ is shiftable, its successor $s^+$ equals either $\widehat q_ys$ or $s\widehat q_z$; in either case $rs^+$ equals $r\widehat q_ys=0$ or $rs\widehat q_z=0$. Thus only the first substitution $r^+s=t^+$ is nonzero, yielding $d_t=d_r$.
+\item If $r$ has type $\mathsf B$, then $r\widehat q_y=\widehat q_xr$, so $r\widehat q_ys=\widehat q_xrs=t^+\ne0$. Hence $\widehat q_ys\ne0$, which means $s$ is shiftable with a nonzero left action, while $s\widehat q_z$ cannot equal $\widehat q_ys$ because $rs\widehat q_z=0\ne r\widehat q_ys$. Thus $s$ has type $\mathsf L$ and $rs^+=r\widehat q_ys=t^+$, giving $d_t=d_r+d_s$.
+\end{itemize}
+The two rows for $t$ of type $\mathsf R$ follow symmetrically by passing to the opposite algebra.
+
+Finally, suppose that $t$ has type $\mathsf B$, so that $t^+=\widehat q_xrs=rs\widehat q_z\ne0$. Then $\widehat q_xr\ne0$ and $s\widehat q_z\ne0$, so $r\in\{\mathsf L,\mathsf B\}$ and $s\in\{\mathsf R,\mathsf B\}$. The mixed pairs $(\mathsf L,\mathsf B)$ and $(\mathsf B,\mathsf R)$ cannot occur: for $(\mathsf L,\mathsf B)$ we would have $t^+=rs\widehat q_z=r\widehat q_ys=0$, and for $(\mathsf B,\mathsf R)$ we would have $t^+=\widehat q_xrs=r\widehat q_ys=0$. In the remaining cases $(\mathsf L,\mathsf R)$ and $(\mathsf B,\mathsf B)$, both $r^+s=\widehat q_xrs$ and $rs^+=rs\widehat q_z$ equal $t^+$, which gives $d_t=d_r+d_s$.
+\end{proof}
+
+We now turn to factorizations of a primitive local generator $q_x$ through other vertices. Any factorization $q_x=fh$ through a vertex $y\ne x$ has $q_x$ as its output, and when $\ell(q_x)=\chi$ is shiftable (so $q_x^2\ne0$), Lemma~\ref{lem:successor-substitutions} yields a linear relation linking $d_f$, $d_h$, and $d_{q_x}$. We first describe the corner subcategories formed by the vertices through which such factorizations pass.
+
+\begin{definition}
+\label{def:primitive-return-corner}
+Using the local radical generators $q_x$ of Setting~\ref{set:projective-companion} (independently of the fixed character $\chi$):
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item A \emph{primitive reverse} of a ray $f\colon x\to y$ is a ray $h\colon y\to x$ satisfying $fh=q_x\ne0$ and $hf=q_y\ne0$ (neither $f$ nor $h$ is required to be shiftable).
+\item A \emph{return partner} of $x$ is a vertex $y\ne x$ for which there exists a generating ray $f\colon x\to y$ that admits a primitive reverse and satisfies $q_xf=fq_y\ne0$.
+\item Writing $V_x$ for the set consisting of $x$ together with all of its return partners, the \emph{primitive return corner} $S_x$ is the full corner subcategory of $A_0$ on $V_x$. We write $y\in S_x$ as shorthand for $y\in V_x$.
+\end{enumerate}
+\end{definition}
+
+\begin{lemma}
+\label{lem:primitive-cyclic-corners}
+Work in Setting~\ref{set:projective-companion}, with primitive reverses and return corners as in Definition~\ref{def:primitive-return-corner}.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item Let $f\colon x\to y$ ($x\ne y$) be a generating ray whose corner bimodule $A_0(x,y)$ is cyclic at both endpoints with $q_xf=fq_y\ne0$, and suppose that $\ell(q_x)$ is primitive. If $fA_0(y,x)\ne0$, then the generating ray $h$ of $A_0(y,x)$ satisfies
+\[
+  fh=q_x,\qquad hf=q_y.
+\]
+\item Let $x$ be a vertex of primitive local weight. The generating rays $f\colon x\to y$ ($y\ne x$) that admit a primitive reverse and satisfy $q_xf=fq_y\ne0$ are linearly ordered by factorization, and the primitive return corner $S_x$ is a basic cyclic Nakayama algebra.
+\item As $x$ ranges over all vertices of primitive local weight with $N_x\geq3$, the vertex sets $V_x$ are pairwise disjoint or equal, and every factorization $q_x=uv$ into nonidentity rays $u\colon x\to y$ and $v\colon y\to x$ has its intermediate vertex $y$ in $S_x$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+\textit{(1)} Because $A_0(x,y)=fR_y$ is cyclic at $y$, multiplying the generating ray $h$ of $A_0(y,x)$ by powers of $q_y$ or $q_x$ simply multiplies $fh$ by powers of $q_x$. The assumption $fA_0(y,x)\ne0$ therefore ensures that $fh=q_x^a\ne0$ for some least return exponent $a\geq1$. If $a\geq2$, then the faithful projective support at $x$ contains the four-point subposet with lower elements $q_x,f$ and upper elements $q_x^a,q_xf$. All four comparisons from $\{q_x,f\}$ to $\{q_x^a,q_xf\}$ hold because $q_xf=fq_y$ and $fh=q_x^a$. On the other hand, $q_x$ and $f$ are incomparable (since $f$ is generating and $a\geq2$ is minimal), and by left cancellation $q_x^a$ and $q_xf$ are likewise incomparable, while neither upper element can precede a lower element by degree. Thus $\{q_x,f,q_x^a,q_xf\}$ forms a forbidden four-point crown, a contradiction. Hence $a=1$ and $fh=q_x$. Since $f(hf)=(fh)f=q_xf=fq_y\ne0$, we also have $hf=q_y$. (Note that $h$ had to be generating from the outset, as any proper endpoint factor of $h$ would strip a power of $q_x$ or $q_y$ from $fh=q_x$, factoring an identity morphism through a distinct vertex.)
+
+\textit{(2)} By Definition~\ref{def:primitive-return-corner} and Lemma~\ref{lem:primitive-action-generation}, the targets of the specified generating rays $f\colon x\to y$ are precisely the return partners of $x$, and each associated corner bimodule $A_0(x,y)$ is cyclic at both endpoints. Given two such rays $f_i\colon x\to y_i$ and $f_j\colon x\to y_j$, their primitive reverses show that both $f_i$ and $f_j$ precede both $q_xf_i$ and $q_xf_j$ in the faithful projective support at $x$. By left cancellation of $q_x$, $f_i$ and $f_j$ are comparable if and only if $q_xf_i$ and $q_xf_j$ are comparable; moreover, no upper element $q_xf_i$ can precede a lower element $f_j$ because a generating ray $f_j$ cannot factor through $q_x$ (Lemma~\ref{lem:generating-paths}). If $f_i$ and $f_j$ were incomparable, the four rays $\{f_i,f_j,q_xf_i,q_xf_j\}$ would therefore form a four-point crown. Consequently, these outgoing generating rays form a chain under factorization. Since their categorical degrees lie strictly between $0$ and $\deg_\JJ(q_x)$ and no two distinct rays from $x$ to the same partner have the same weight, the return partners of $x$ may be listed in strictly increasing factorization order as $y_1,\ldots,y_t$.
+
+For $1\leq i<j\leq t$, let $h_{ij}\colon y_i\to y_j$ be the ray satisfying $f_ih_{ij}=f_j$, and let $h_i\colon y_i\to x$ be the primitive reverse of $f_i$. Then
+\[
+  f_ih_{ij}=f_j,\qquad h_{ij}h_j=h_i,\qquad h_{ji}:=h_jf_i\colon y_j\to y_i.
+\]
+Cancellation and Lemma~\ref{lem:generating-paths} imply that all $h_{ij}$ and $h_{ji}$ are generating rays and are mutual primitive reverses. The full corner $S_x$ is therefore generated by the oriented cycle of ordinary arrows inside $S_x$,
+\[
+  x\to y_1\to\cdots\to y_t\to x,
+\]
+in which every simple path is a generating ray, one full turn around the cycle at any vertex is its local radical generator, and the only relations are monomial nilpotence relations. Thus $S_x$ is a cyclic Nakayama algebra.
+
+\textit{(3)} Let $a$ be any vertex of primitive local weight $\xi=\ell(q_a)$, and let $b,c\in V_a\setminus\{a\}$ be two distinct return partners of $a$, reached by generating rays $u\colon a\to b$ and $v\colon a\to c$ with primitive reverses $\bar u,\bar v$. By the chain property in~(2), we may assume after swapping $b$ and $c$ if necessary that $v=ut$ for a ray $t\colon b\to c$. Setting $h=\bar v u\colon c\to b$, we have
+\[
+  ht=\bar v ut=\bar v v=q_c,\qquad u(th)=(ut)\bar v u=v\bar v u=q_a u\ne0.
+\]
+Since $q_a$, $q_b$, and $q_c$ all have weight $\xi$, the nonzero ray $th\in R_b$ has weight $\xi$ and therefore equals $q_b$. Neither $t$ nor $h$ can be a proper ray, since pulling out a local generator from $th=q_b$ or $ht=q_c$ would factor $1_b$ or $1_c$ through a distinct vertex. By associativity,
+\[
+  q_bt=(th)t=t(ht)=tq_c,\qquad q_ch=(ht)h=h(th)=hq_b.
+\]
+If either $N_b\geq3$ or $N_c\geq3$, then $q_b^2=tq_ch$ or $q_c^2=hq_bt$ is nonzero, which forces $q_bt=tq_c\ne0$ and $q_ch=hq_b\ne0$; hence $b$ and $c$ are mutual return partners whenever $\max(N_b,N_c)\geq3$. Likewise, if $N_a\geq3$, then $u\bar u q_a=q_a^2\ne0$ forces $q_b\bar u=\bar u q_a\ne0$, so $a\in V_b$; if both $N_a\geq3$ and $N_b\geq3$, applying the preceding partner comparison at $a$ and at $b$ shows that $V_a=V_b$.
+
+Now suppose that $N_x\geq3$ and $N_{x'}\geq3$, and let $v\in V_x\cap V_{x'}$. Then $v$ has the same primitive local weight as $x$ and $x'$. If $N_v\geq3$, the equality just proved gives $V_x=V_v=V_{x'}$. If instead $N_v=2$, then since $N_x\geq3$ and $N_{x'}\geq3$, the reverse rays from $v$ to $x$ and to $x'$ show as above that $x,x'\in V_v$. Applying the partner comparison at $v$ to its two partners $x$ and $x'$ (which satisfy $N_x,N_{x'}\geq3$) shows that $x$ and $x'$ are mutual return partners, and hence $V_x=V_{x'}$. Thus the sets $V_x$ ($N_x\geq3$) are pairwise disjoint or equal.
+
+Finally, suppose that $q_x=uv$ is a factorization of $q_x$ into nonidentity rays $u\colon x\to y$ and $v\colon y\to x$ at a vertex $x$ of primitive local weight $\xi$ with $N_x\geq3$ (so $q_x^2\ne0$). Then $u(vu)=(uv)u=q_xu\ne0$ (since $q_x^2=q_xuv\ne0$), so $vu=q_y^a\ne0$ for some $a\geq1$. Comparing weights gives $\xi=a\ell(q_y)$, so primitivity of $\xi$ forces $a=1$ and $vu=q_y$. Because $q_x^2=uvuv\ne0$, we have $q_xu=uq_y\ne0$ and $vq_x=q_yv\ne0$, and both $u$ and $v$ are generating rays because $uv=q_x$ cannot contain an extra local radical factor. Thus $y\in V_x$, so the factorization passes through $S_x$.
+\end{proof}
+
+\begin{lemma}
+\label{lem:external-hom-chain}
+In Setting~\ref{set:projective-companion}, let $x$ be a vertex of primitive local weight with $N_x\geq3$. Then the generating rays $f\colon x\to y$ satisfying $q_xf\ne0$ and $y\notin S_x$ are linearly ordered by factorization. The dual statement holds for incoming generating rays $g\colon y\to x$ with $gq_x\ne0$ and $y\notin S_x$.
+\end{lemma}
+\begin{proof}
+Suppose for a contradiction that $f\colon x\to y$ and $h\colon x\to z$ are two incomparable generating rays with $q_xf\ne0$, $q_xh\ne0$, and $y,z\notin S_x$. In the faithful projective support at $x$, consider the five rays
+\[
+  1_x,\quad q_x,\quad q_x^2,\quad q_xf,\quad q_xh.
+\]
+Clearly $1_x<q_x$, and $q_x$ precedes each of $q_x^2$, $q_xf$, and $q_xh$. By left cancellation of $q_x$, the elements $q_xf$ and $q_xh$ are incomparable because $f$ and $h$ are incomparable. Neither $q_x^2\leq q_xf$ nor $q_xf\leq q_x^2$ can hold: the first inequality would cancel to $q_x\leq f$, contradicting Lemma~\ref{lem:generating-paths}, while the second would cancel to $fa=q_x$ for some ray $a\colon y\to x$, placing $y$ in $S_x$ by Lemma~\ref{lem:primitive-cyclic-corners}(3). The same holds for $q_xh$, and degree considerations rule out any remaining comparisons. The five points therefore form a four-leaf star with center $q_x$ and leaves $1_x,q_x^2,q_xf,q_xh$, which is impossible by Lemma~\ref{lem:dimension-infinity}.
+\end{proof}
+
+\subsection{First and last arrows of generating rays}
+
+To construct our integral coefficient lift in Section~\ref{sec:integral-partial-lifts}, we will define the coefficient $d_f$ of a generating one-sided ray $f$ in terms of the first (or last) ordinary arrow along a path representing $f$. For this prescription to be well defined, all ordinary paths representing $f$ must share the same initial (or terminal) arrow. Constraints on multiple paths representing the same ray play a central role in \cite{BGRS,BongartzMild}; we establish the exact uniqueness property we need in the next proposition.
+
+\begin{proposition}
+\label{prop:controlled-contours}
+In Settings~\ref{set:projective-companion} and~\ref{set:fixed-character}, all ordinary paths representing a generating left-sided ray begin with the same ordinary arrow. Dually, all ordinary paths representing a generating right-sided ray end with the same ordinary arrow.
+\end{proposition}
+
+The proof of Proposition~\ref{prop:controlled-contours} is given in Appendix~\ref{app:controlled-contours}, where we show that two distinct initial arrows for a generating left-sided ray would allow one to construct a bimodule retraction onto the incidence category of a representation-infinite tree.
+
+The Leibniz equations of Lemma~\ref{lem:successor-substitutions} also constrain products $rs$ of generating rays whose output $rs$ is a \emph{proper} shiftable ray. A key source of such proper products is a path that leaves the primitive return corner $S_x$ and returns to $x$ with value $\widehat q_x^2$ at a vertex where $\widehat q_x^3\ne0$.
+
+\begin{definition}
+\label{def:nondeep-return}
+In Settings~\ref{set:projective-companion} and~\ref{set:fixed-character}, a \emph{nondeep external return at $x$} is a pair of generating rays $e\colon x\to y$ of type $\mathsf L$ and $l\colon y\to x$ of type $\mathsf R$, with $y\notin S_x$, such that
+\[
+  el=\widehat q_x^2\quad\text{and}\quad\widehat q_x^3\ne0.
+\]
+\end{definition}
+
+The adjective \emph{nondeep} reflects the condition $\widehat q_x^3\ne0$, which means that the return value $el=\widehat q_x^2$ is shiftable (with successor $\widehat q_x^3$) rather than lying in the socle of $R_x$.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[>=Latex,scale=.9,every node/.style={font=\small}]
+\draw[rounded corners] (-.65,-.7) rectangle (5.15,1.65);
+\node at (4.6,1.3) {$S_x$};
+\node (x) at (0,0) {$x$};
+\node (v1) at (1.5,1) {$v_1$};
+\node (dots) at (3,1) {$\cdots$};
+\node (vt) at (4.5,0) {$v_t$};
+\draw[->] (x)--(v1); \draw[->] (v1)--(dots);
+\draw[->] (dots)--(vt); \draw[->] (vt) to[bend left=14] (x);
+\node at (2.3,.3) {one cycle gives $\widehat q_x$};
+\node (y) at (0,-2.1) {$y\notin S_x$};
+\draw[->] (x) to[bend right=28] node[left] {$e\ (\mathsf L)$} (y);
+\draw[->] (y) to[bend right=28] node[right] {$l\ (\mathsf R)$} (x);
+\node[align=left] at (3,-1.8) {$el=\widehat q_x^2$,\quad $le=0$\\$\widehat q_x^3\ne0$,\quad $\widehat q_x^4=0$};
+\end{tikzpicture}
+\caption{A primitive return corner $S_x$ together with a nondeep external return $(e,l)$ through $y\notin S_x$. The cycle arrows depict the Nakayama generator cycle of $S_x$, whereas $e$ and $l$ are generating rays that may be composite paths in the quiver of $A_0$. The relations $le=0$ and $\widehat q_x^4=0$ (so $N_x=4$) are established in Lemma~\ref{lem:nondeep-two-object-return}.}
+\label{fig:primitive-corner-return}
+\end{figure}
+
+In the configuration of Figure~\ref{fig:primitive-corner-return}, both $e$ and $l$ are controlled at $x$: we have $\widehat q_xe=e^+\ne0$ and $l\widehat q_x=l^+\ne0$, whereas $e\widehat q_y=0$ and $\widehat q_yl=0$. Because $\widehat q_x=q_x\ne0$, Lemma~\ref{lem:nondeep-two-object-return} in Appendix~\ref{app:proper-products} shows that $le=0$ and $N_x=4$.
+
+The next proposition, proved in Appendix~\ref{app:proper-products}, catalogs all proper shiftable products of generating rays and describes how nondeep external returns interact with other rays at $x$.
+
+\begin{proposition}
+\label{prop:proper-ray-products}
+Work in Settings~\ref{set:projective-companion} and~\ref{set:fixed-character}, with endpoint layers as in Definition~\ref{def:generating-rays}, endpoint types as in Definition~\ref{def:successor-types}, and primitive return corners $S_x$ as in Definition~\ref{def:primitive-return-corner}.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item If a generating ray $f\colon x\to y$ has type $\mathsf L$ (respectively, $\mathsf R$), then $\dim A_0(x,y)\leq3$, with equality implying $N_x=3$ (respectively, $N_y=3$). Moreover, whenever a nonzero product $rs$ and its first factor $r$ both have type $\mathsf L$, they have the same endpoint layer; the dual statement holds when $rs$ and $s$ both have type $\mathsf R$.
+\item If $r\colon x\to y$ of type $\mathsf B$ and $s\colon y\to z$ of type $\mathsf L$ are generating rays whose product $rs$ is proper and shiftable, then $rs$ has endpoint layer~$1$, the source $x$ has local length $N_x=3$ ($\widehat q_x^2\ne0$ and $\widehat q_x^3=0$), and $r$ admits a primitive reverse (so $y\in S_x$). The dual statement holds for generating rays of types $(\mathsf R,\mathsf B)$.
+\item Let $r\colon x\to y$ of type $\mathsf L$ and $s\colon y\to z$ of type $\mathsf R$ be generating rays whose product $rs$ is proper and shiftable. Then $rs$ has endpoint layer~$2$:
+\begin{enumerate}[label={\upshape(\alph*)}]
+\item If $x=z$, so that $rs=\widehat q_x^2\in R_x$, then $(r,s)$ is a nondeep external return at $x$ (Definition~\ref{def:nondeep-return}).
+\item If $x\ne z$, write $rs=\widehat q_x^2f=f\widehat q_z^2$ where $f\colon x\to z$ is the generating ray of $A_0(x,z)$. Then at least one of the factorizations
+\[
+  r=fa,\quad as=\widehat q_z^2\qquad\text{or}\qquad s=bf,\quad rb=\widehat q_x^2
+\]
+holds, where $(a,s)$ (respectively, $(r,b)$) is a nondeep external return at $z$ (respectively, at $x$) and $a$ (respectively, $b$) is a generating one-sided ray.
+\end{enumerate}
+\item If $x$ admits a nondeep external return, then there is no generating two-sided ray $f\colon x\to z$ with $z\notin S_x$ and $\widehat q_xf\ne0$, and dually no generating two-sided ray $g\colon z\to x$ with $z\notin S_x$ and $g\widehat q_x\ne0$.
+\end{enumerate}
+\end{proposition}
+
+With these local restrictions in hand, we are ready to lift the modulo-two coefficient equations of Lemma~\ref{lem:successor-substitutions} to the integers: the two-sided rays are governed by a smaller centralizer table to which the induction hypothesis applies, while Proposition~\ref{prop:controlled-contours} and Proposition~\ref{prop:proper-ray-products} allow us to extend the resulting integral lift consistently to all one-sided rays.

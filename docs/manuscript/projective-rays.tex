@@ -1,0 +1,308 @@
+\section{Rays of the algebra and of its standard form}
+\label{sec:projective-rays}
+
+To compare the original algebra $A$ with its standard form $A_0$, we study
+the orbits of elements of $A(x,y)$ under the left and right actions of the
+unit groups of the local endomorphism rings $R_x=e_xAe_x$ and $R_y=e_yAe_y$.
+These orbits are the \emph{rays} of $A$ (Definition~\ref{def:rays}). In this
+section we show that the nonzero rays of $A$ correspond bijectively via
+initial forms to the nonzero homogeneous components $A_0(x,y)_d$, each of
+which is one-dimensional, and that the homogeneous lines of $A_0$ form an
+associative category with zero under ray multiplication.
+
+\subsection{Endpoint subbimodules}
+
+For each primitive idempotent $e_x$ of $A$, set $R_x=e_xAe_x$. The classical
+subbimodule structure of $A(x,y)$ over $R_x$ and $R_y$ follows from the
+finiteness of the ideal lattice of a representation-finite algebra (see Jans
+\cite[Corollary~1.3 and Theorem~2.1]{Jans} and Bongartz
+\cite[Section~2.3]{BongartzSurvey}).
+
+\begin{lemma}
+\label{lem:endpoint-chains}
+Let $A$ be a basic representation-finite algebra over $k$.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item The algebra $A$ has only finitely many two-sided ideals, and every
+idempotent corner $eAe$ is representation-finite (these two properties hold
+without assuming $A$ basic).
+\item For each primitive idempotent $e_x$, there is an isomorphism
+$R_x\cong k[t]/(t^{N_x})$ for some $N_x\geq1$.
+\item For each pair of vertices $x,y$, the $R_x$--$R_y$-subbimodules of
+$A(x,y)$ form a finite chain with one-dimensional successive quotients. In
+particular, for every nonzero element $f\in A(x,y)$, either
+$R_xfR_y=R_xf$ or $R_xfR_y=fR_y$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Each two-sided ideal $I$ of $A$ is the annihilator of the cyclic right module
+$A/I$. Because $A$ has only finitely many isomorphism classes of modules of
+dimension at most $\dim_k A$, it has only finitely many two-sided ideals.
+For any idempotent $e\in A$ and $C=eAe$, the induction functor
+$V\mapsto V\otimes_C eA$ is fully faithful because the unit of its
+adjunction with the restriction functor $(-)e$ is the canonical isomorphism
+\[
+ V\xrightarrow{\sim}(V\otimes_C eA)e\cong V\otimes_C eAe.
+\]
+Since induction preserves finite dimension, indecomposability, and
+isomorphism classes, $C$ is also representation-finite. This proves (1).
+
+For a primitive idempotent $e=e_x$, every ideal $I$ of the local algebra
+$C=eAe$ equals $e(AIA)e$, so $C$ has only finitely many ideals. Every linear
+subspace of $\rad C/(\rad C)^2$ is the image of an ideal containing
+$(\rad C)^2$; since $k$ is infinite, a space of dimension at least two would
+contain infinitely many lines and thus produce infinitely many ideals of $C$.
+Hence $\dim_k\rad C/(\rad C)^2\leq1$. By Nakayama's lemma, any lift
+$t\in\rad C$ of a spanning element of $\rad C/(\rad C)^2$ generates all
+powers of $\rad C$. Since $\rad C$ is nilpotent, $t$ generates $C$ as a
+$k$-algebra, giving $C\cong k[t]/(t^N)$ for some $N\geq1$, which proves (2).
+
+Similarly, any $R_x$--$R_y$-subbimodule $N\subseteq A(x,y)$ satisfies
+$e_x(ANA)e_y=N$, so $A(x,y)$ has only finitely many
+$R_x$--$R_y$-subbimodules. We may view $A(x,y)$ as a module over the
+commutative local algebra $T=R_x\otimes_k R_y^{\op}$, which has residue
+field $k$. If $A(x,y)$ contained two incomparable $T$-submodules, their sum
+modulo their intersection would contain a direct sum of two nonzero
+submodules and hence a two-dimensional semisimple submodule $k^{\oplus 2}$
+in its socle; pulling back the infinitely many lines in $k^{\oplus 2}$ would
+yield infinitely many $T$-submodules of $A(x,y)$, a contradiction. Thus the
+$R_x$--$R_y$-subbimodules of $A(x,y)$ form a chain, and its successive
+quotients are simple $T$-modules, hence one-dimensional.
+
+Finally, for any nonzero $f\in A(x,y)$, the cyclic $T$-submodule
+$Tf=R_xfR_y$ is isomorphic to $T/\ann_T(f)$. Because the ideals of the
+quotient ring $T/\ann_T(f)$ also form a chain, its radical modulo its
+radical square has dimension at most one and is therefore spanned by the
+image of the radical generator of either $R_x$ or $R_y$. By Nakayama's
+lemma, the corresponding endpoint algebra surjects onto $T/\ann_T(f)$, which
+means that $R_xfR_y=R_xf$ or $R_xfR_y=fR_y$.
+\end{proof}
+
+\begin{definition}[{\cite[Section~1]{BGRS}}]
+\label{def:rays}
+For a nonzero element $f\in A(x,y)$, the \emph{ray} of $f$ is the orbit
+\[
+ [f]=\{ufv:u\in R_x^*,\ v\in R_y^*\}.
+\]
+We set $U(f)=R_xfR_y$ and
+\[
+ R(f)=(\rad R_x)fR_y+R_xf(\rad R_y).
+\]
+In each corner $A(x,y)$ we also include a zero ray $0$. Since $U(f)$ depends
+only on the ray $r=[f]$, we often write $U_r=U(f)$.
+\end{definition}
+
+By Lemma~\ref{lem:endpoint-chains}(3), the $R_x$--$R_y$-subbimodule $U(f)$ is
+uniserial with unique maximal proper subbimodule $R(f)$, and $U(f)$ is cyclic
+over either $R_x$ or $R_y$. By Nakayama's lemma, the generators of $U(f)$ over
+that endpoint algebra are precisely the elements of $U(f)\setminus R(f)$, and
+any two such generators differ by a unit of that endpoint algebra. Thus
+\begin{equation}
+                        [f]=U(f)\setminus R(f).
+\label{eq:ray-layer}
+\end{equation}
+
+\begin{corollary}
+\label{cor:ray-transversal}
+Let $A$ be a basic representation-finite algebra over $k$. Choose one
+representative from each nonzero ray of $A$, taking $e_x$ as the
+representative of $[e_x]$. Then these representatives form a basis of $A$
+whose intersection with every two-sided ideal $I$ of $A$ is a basis of $I$.
+\end{corollary}
+\begin{proof}
+In each corner $A(x,y)$, the chosen representatives project to bases of the
+one-dimensional successive quotients $U(f)/R(f)$ of the finite chain of
+$R_x$--$R_y$-subbimodules. They therefore form a basis of $A(x,y)$ adapted
+to every subbimodule in the chain. Since $I\cap A(x,y)=e_xIe_y$ is an
+$R_x$--$R_y$-subbimodule, it belongs to this chain and is spanned by the
+representatives it contains.
+\end{proof}
+
+To define multiplication of rays independently of the choice of
+representatives, one must quotient out contributions coming from the radical
+of the middle vertex.
+
+\begin{definition}
+\label{def:ray-product}
+For composable nonzero elements $f\in A(x,y)$ and $h\in A(y,z)$, define the
+subbimodule
+\[
+                  M(f,h)=R_x f(\rad R_y)hR_z.
+\]
+The \emph{ray product} of $[f]$ and $[h]$ is defined by
+\begin{equation}
+ [f][h]=
+ \begin{cases}
+ [fh],&\text{if }fh\notin M(f,h),\\
+ 0,&\text{if }fh\in M(f,h),
+ \end{cases}
+ \label{eq:ray-product}
+\end{equation}
+and any product involving a zero ray is defined to be zero.
+\end{definition}
+
+As the following example illustrates, a product $fh$ of specific
+representatives can be nonzero in $A$ even when its ray product $[f][h]$ is
+zero because $fh\in M(f,h)$.
+
+\begin{example}
+\label{ex:zero-ray-span}
+Let $B$ be the bound quiver algebra given by
+\[
+\begin{tikzcd}
+b\arrow[r,"\alpha"]&c\arrow[r,"\beta"]\arrow[loop above,"q"]&a
+\end{tikzcd}
+\qquad q^2=0,\quad\alpha\beta=0.
+\]
+This is a representation-finite string algebra with basis
+\[
+ e_b,e_c,e_a,\quad\alpha,q,\beta,\quad\alpha q,q\beta,
+       \quad u=\alpha q\beta.
+\]
+Each basis vector spans a distinct ray. Here
+$U_{\alpha}=\Span_k\{\alpha,\alpha q\}$ and
+$U_{\beta}=\Span_k\{\beta,q\beta\}$, while $M(\alpha,\beta)=ku$. Notice that
+$\alpha$ and $\alpha(1+q)$ represent the same ray $[\alpha]$, yet
+$\alpha\beta=0$ whereas $\alpha(1+q)\beta=u\ne0$. Because both products lie
+in $M(\alpha,\beta)=ku$, Definition~\ref{def:ray-product} assigns
+$[\alpha][\beta]=0$.
+\end{example}
+
+\begin{lemma}
+\label{lem:ray-product-independent}
+The ray product \eqref{eq:ray-product} is independent of the choice of
+representatives. In particular, if $[f][h]\ne0$, then $f'h'\ne0$ for all
+$f'\in[f]$ and $h'\in[h]$.
+\end{lemma}
+\begin{proof}
+Every unit of $R_y$ has the form $\lambda(1+n)$ with $\lambda\in k^*$ and
+$n\in\rad R_y$. Changing the representatives $f$ and $h$ within their rays
+therefore replaces $fh$, up to action by outer units in $R_x^*\times R_z^*$,
+by $fh+fnh$ with $fnh\in M(f,h)$, while the subbimodule $M(f,h)$ itself is
+unchanged. If $fh\in M(f,h)$, then $fh+fnh\in M(f,h)$ as well. If
+$fh\notin M(f,h)$, then $U(fh)\not\subseteq M(f,h)$; since the subbimodules
+of $A(x,z)$ form a chain and $R(fh)$ is the unique maximal proper
+subbimodule of $U(fh)$, it follows that $M(f,h)\subseteq R(fh)$. Hence
+$fh+fnh\in U(fh)\setminus R(fh)=[fh]$, so the perturbed product is nonzero
+and defines the same ray $[fh]$.
+\end{proof}
+
+We call the set of rays of $A$ equipped with the operation
+\eqref{eq:ray-product} the \emph{ray table} $\ray A$. At this stage we do
+not yet claim that $\ray A$ is associative for an arbitrary $A$; we first
+establish associativity for the graded standard form $A_0$, and later
+transfer it to $A$ in Proposition~\ref{prop:dimension-induction}(2).
+
+\subsection{Homogeneous rays of the standard form}
+
+Consider the categorical radical filtration $F^n A(x,y)=\JJ^n(P_y,P_x)$ used
+in Construction~\ref{con:projective-algebra} to define $A_0=\gr_F A$. Since
+each subspace $F^n A(x,y)$ is an $R_x$--$R_y$-subbimodule, multiplication by
+units in $R_x^*\times R_y^*$ preserves the filtration. Every nonzero ray $r$
+of $A$ therefore has a well-defined categorical degree $\deg_\JJ(r)$, the
+unique integer $d$ such that $r\subset F^d A\setminus F^{d+1}A$ (compare
+\cite[Section~1.1]{BretscherGabriel}).
+
+\begin{lemma}
+\label{lem:ray-degree}
+Let $A$ be a basic representation-finite algebra over $k$. Each homogeneous
+component $A_0(x,y)_d$ has dimension at most one, and passing to initial
+forms induces a bijection between the nonzero rays of $A$ in $A(x,y)$ and
+the nonzero homogeneous spaces $A_0(x,y)_d$. Moreover, if two rays $r,r'$ in
+$A(x,y)$ satisfy $U_{r'}\subsetneq U_r$, then $\deg_\JJ(r')>\deg_\JJ(r)$.
+\end{lemma}
+\begin{proof}
+Let $A(x,y)=U_0\supsetneq U_1\supsetneq\cdots\supsetneq U_l=0$ be the
+complete chain of $R_x$--$R_y$-subbimodules of $A(x,y)$. Its successive
+quotients $U_i/U_{i+1}$ are one-dimensional, and
+$U_{i+1}=(\rad R_x)U_i+U_i(\rad R_y)$. Since every $F^d A(x,y)$ is an
+$R_x$--$R_y$-subbimodule, it must equal one of the $U_i$. Because
+$\rad R_x\subseteq \JJ(P_x,P_x)$ and $\rad R_y\subseteq \JJ(P_y,P_y)$, we have
+\[
+ F^d A(x,y)=U_i\quad\Longrightarrow\quad
+ U_{i+1}\subseteq F^{d+1}A(x,y)\subseteq U_i.
+\]
+As $d$ increases from $0$, the filtration starts at $U_0=A(x,y)$, ends at
+$0$, and at each step either remains at $U_i$ or drops by a single step to
+$U_{i+1}$. Consequently, each one-dimensional quotient $U_i/U_{i+1}$ appears
+as $A_0(x,y)_d=F^d A(x,y)/F^{d+1}A(x,y)$ for a unique degree $d$. Since the
+nonzero rays of $A(x,y)$ are precisely the layers $U_i\setminus U_{i+1}$,
+all claims follow.
+\end{proof}
+
+We now examine the intrinsic rays of the representation-finite graded
+algebra $A_0$ itself.
+
+\begin{proposition}
+\label{prop:projective-ray-product}
+Let $P=\ray A_0$ be the ray table of $A_0$. Then:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item each nonzero ray of $A_0$ contains the nonzero vectors of a unique
+homogeneous line $A_0(x,y)_d$, giving a bijection between the nonzero rays in
+$P(x,y)$ and the nonzero homogeneous lines $A_0(x,y)_d$;
+\item for any two nonzero rays of $A_0$, the product of their homogeneous
+lines in $A_0$ is nonzero if and only if their ray product in $P$ is
+nonzero, in which case the product line represents that ray product;
+\item $P$ is an associative category with zero.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+By Proposition~\ref{prop:projective-evaluation}(2), $A_0$ is basic and
+representation-finite, so Lemma~\ref{lem:endpoint-chains} applies to $A_0$.
+For each $a\in k^*$, the grading automorphism of $A_0$ that scales degree
+$d$ by $a^d$ preserves every endpoint subbimodule of $A_0(x,y)$, because the
+subbimodules of $A_0(x,y)$ form a chain with at most one member of each
+dimension. Since $k$ is infinite, invariance under these scaling
+automorphisms implies that every endpoint subbimodule is homogeneous. In
+particular, its one-dimensional successive quotients are the nonzero
+homogeneous lines $A_0(x,y)_d$, and because the radical of each endpoint
+algebra of $A_0$ lies in positive degrees, each nonzero ray $U_i\setminus U_{i+1}$
+contains the nonzero vectors of a unique homogeneous line $A_0(x,y)_d$. This proves (1).
+
+For homogeneous elements $f\in A_0(x,y)_p$ and $g\in A_0(y,z)_q$, the
+product $fg$ is homogeneous of degree $p+q$, whereas every element of
+$M(f,g)=R_x f(\rad R_y)g R_z$ is supported in degrees strictly greater than
+$p+q$. Thus $fg\in M(f,g)$ if and only if $fg=0$, which proves (2).
+Finally, (3) follows immediately from (2) and the associativity of
+multiplication in $A_0$.
+\end{proof}
+
+In Section~\ref{sec:scalar-normalization} we will show that $A_0$ is
+isomorphic to the linearization of $P=\ray A_0$, and in
+Theorem~\ref{thm:final-standardness}(3) we will also apply our constructions
+to algebras defined directly from combinatorial ray categories. We record the
+precise terminology for both settings here.
+
+\begin{definition}
+\label{def:finite-ray-category}
+We adopt the following conventions:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item When the ray table $\ray A$ of a basic algebra $A$ is associative, we
+call $\ray A$ the \emph{ray category} of $A$: its objects are the vertices
+indexing the primitive idempotents of $A$, and its composition is the ray
+product of Definition~\ref{def:ray-product}.
+\item Given a finite skeletal category with zero $Q$, its
+\emph{linearization} $kQ$ is the $k$-algebra with basis consisting of the
+nonzero morphisms of $Q$ and multiplication extending the composition in $Q$
+(with zero compositions in $Q$ giving $0$ in $kQ$). Note that here $Q$ is
+already a category with zero, rather than a quiver whose path algebra is
+being formed.
+\item A finite skeletal category with zero $Q$ is called a \emph{finite ray
+category} if the identity morphisms of $Q$ form a complete set of primitive
+orthogonal idempotents in $kQ$, the ray product \eqref{eq:ray-product} on
+$kQ$ is independent of the choice of representatives, and the map
+$r\mapsto[r]$ identifies $Q$ with $\ray(kQ)$.
+\end{enumerate}
+\end{definition}
+
+When $\ray A$ is associative, we write $k\ray A$ for its linearization. For
+$P=\ray A_0$, choose a nonzero homogeneous representative $b_r\in A_0$ for
+each nonzero ray $r\in P$, taking $b_{1_x}=e_x$ for the identity rays. By
+Proposition~\ref{prop:projective-ray-product}, there exist nonzero structure
+constants $\kappa(r,s)\in k^*$ such that
+\begin{equation}
+ b_rb_s=\begin{cases}\kappa(r,s)b_{rs},&\text{if }rs\ne0,\\0,&\text{if }rs=0,\end{cases}
+ \label{eq:projective-scalars}
+\end{equation}
+and associativity of $A_0$ is equivalent to the two-cocycle identity
+$\kappa(r,s)\kappa(rs,t)=\kappa(s,t)\kappa(r,st)$ for all composable triples
+with $rst\ne0$.

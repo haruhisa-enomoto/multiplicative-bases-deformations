@@ -1,0 +1,73 @@
+\subsection{Existence of multiplicative bases in every characteristic}
+\label{subsec:main-theorems}
+
+We now assemble the preceding results to prove the inductive step for Proposition~\ref{prop:table-weight-lifting} and deduce our main theorems. We first show that if Proposition~\ref{prop:table-weight-lifting} holds for all weighted multiplication tables of dimension strictly less than $\dim A$, then every basic connected representation-finite algebra $A$ of dimension $\dim A$ in characteristic two satisfies all three conclusions of Proposition~\ref{prop:dimension-induction}.
+
+\begin{lemma}
+\label{lem:recovery-with-lifting}
+Assume that $\charac k=2$ and let $A$ be a basic connected representation-finite algebra over $k$. If Proposition~\ref{prop:table-weight-lifting} holds for all weighted multiplication tables with fewer than $\dim A$ nonzero elements, then all three conclusions of Proposition~\ref{prop:dimension-induction} hold for $A$.
+\end{lemma}
+\begin{proof}
+Since $\dim A_0=\dim A$, the smaller-table hypothesis applies to the centralizer tables $Q_\chi$ in Theorem~\ref{thm:integral-partial-lifting}. For each $i\in I_0$, Corollary~\ref{cor:zero-supported-coverage} therefore provides a cocycle generator of the one-dimensional weight space $\HH^2(A_0)_{\chi_i}$ supported on active zero pairs $Z$. By Proposition~\ref{prop:indicator-cocycles}(2), this cocycle is a $k$-linear combination of indicator cocycles $\mu_E$ of weight $\chi_i$. Consequently, for each $i\in I_0$ we can choose a single equivalence class $E_i\in Z/{\sim}$ of weight $\chi_i$ whose indicator cocycle $\mu_i:=\mu_{E_i}$ represents a nonzero cohomology class in $\HH^2(A_0)_{\chi_i}$.
+
+Because the characters $\chi_i$ ($i\in I_0$) are pairwise distinct, the classes $E_i$ are distinct. Specializing the family of Proposition~\ref{prop:zero-product-family} by setting $T_{E_i}=t_i$ for $i\in I_0$ and $T_E=0$ for all other classes $E\notin\{E_i:i\in I_0\}$ produces the polynomial family of multiplications
+\begin{equation}
+  m_t=m+\sum_{i\in I_0}t_i\mu_i
+  \label{eq:selected-binary-family}
+\end{equation}
+over $k[t_i:i\in I_0]$. By Proposition~\ref{prop:zero-product-family}, $m_t$ is associative, every scalar fiber has ray category $P$, and every binary fiber ($t_i\in\{0,1\}$) has the nonzero rays of $P$ as a normed multiplicative basis. Together with our choice of $\mu_i$ as a basis of $\HH^2(A_0)_{>0}=\bigoplus_{i\in I_0}\HH^2(A_0)_{\chi_i}$, all hypotheses of Proposition~\ref{prop:family-criterion} are satisfied. Hence there exists a binary specialization $A_t$ ($t_i\in\{0,1\}$) and a filtered algebra isomorphism $A_t\xrightarrow{\sim}A$ whose associated graded isomorphism $\gr A_t\xrightarrow{\sim}\gr A$ rescales each homogeneous ray line of $A_0$. Transporting the normed multiplicative ray basis of $A_t$ across this isomorphism gives a normed multiplicative ray basis of $A$, proving conclusion~(1) of Proposition~\ref{prop:dimension-induction}.
+
+Furthermore, because $\ray A_t=P=\ray A_0$ by Proposition~\ref{prop:zero-product-family}(3) and the filtered isomorphism $A_t\xrightarrow{\sim}A$ induces a diagonal rescaling on $\gr A_t=A_0=\gr A$, the initial-form bijection of Lemma~\ref{lem:ray-degree} identifies the ray multiplication in $\ray A$ with that in $\ray A_0$, proving conclusion~(2). Finally, $W(\ray A)\cong W(P)$ is free abelian by Proposition~\ref{prop:integral-ray-weights}, proving conclusion~(3).
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:table-weight-lifting}]
+We proceed by strong induction on the number $n=\dim kT$ of nonzero elements of $T$. The base case $n=0$ is vacuous, and if $T$ is disconnected, it decomposes as a disjoint union of smaller weighted multiplication tables whose linearizations are representation-finite direct factors of $kT$, so the claim follows componentwise.
+
+Assume now that $T$ is connected with $n$ nonzero elements, and set $B=kT$. Because nonidentity elements of $T$ have strictly positive degree $d(\ell(r))>0$, they span a nilpotent ideal of $B$ whose quotient is $\prod_x k\cdot 1_x$; thus $B$ is a basic connected representation-finite algebra of dimension $n$. We claim that the basis elements of $T$ represent the intrinsic rays of $B$ and identify $T\cong\ray B$ as multiplication tables. By Lemma~\ref{lem:endpoint-chains}, each local ring $R_x=B(x,x)$ is a truncated polynomial ring and each corner bimodule $B(x,y)$ is cyclic over $R_x$ or $R_y$. Since the product of two elements of $T$ is either an element of $T$ or zero and nonidentity elements have positive degree, the radical $\rad R_x$ and all endpoint subbimodules of $B(x,y)$ are spanned by subsets of $T$. Choosing elements $q_x\in T$ and $f\in T$ that project to generators of $\rad R_x/(\rad R_x)^2$ and of the top of $B(x,y)$, we see that the powers $q_x^j$ and the products $q_x^if$ (or $fq_y^i$) are nonzero elements of $T$ of strictly increasing degree, and therefore form a basis for the successive endpoint layers of $R_x$ and $B(x,y)$. Thus every nonzero ray of $B$ contains a unique element of $T$. Moreover, whenever two elements $r,s\in T$ have a nonzero product $rs\in T$, its degree $d(\ell(rs))=d(\ell(r))+d(\ell(s))$ is strictly smaller than the degree of any middle-radical insertion $rq_y^ms$ ($m\geq1$); hence $rs\notin M(r,s)$, which means that the ray product in $\ray B$ coincides with the product in $T$. Thus $T\cong\ray B$.
+
+If $\charac k\ne2$, Corollary~\ref{cor:away-from-two-basis} identifies $\ray B$ with $\ray B_0$, and if $\charac k=2$, the strong induction hypothesis and Lemma~\ref{lem:recovery-with-lifting} applied to $B$ likewise identify $\ray B$ with $\ray B_0$. By Proposition~\ref{prop:integral-ray-weights}, the scalar weight group $W(\ray B_0)$ is free abelian. Since $W(T)\cong W(\ray B)\cong W(\ray B_0)$ is free abelian, every homomorphism $W(T)\to\Z/2$ lifts to a homomorphism $W(T)\to\Z$, completing the induction.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:dimension-induction}]
+Decomposing $A$ into connected components, we may assume that $A$ is connected. When $\charac k=2$, Proposition~\ref{prop:table-weight-lifting} provides the smaller-table hypothesis of Lemma~\ref{lem:recovery-with-lifting}, which gives~(1), (2), and~(3). When $\charac k\ne2$, Corollary~\ref{cor:away-from-two-basis} gives~(1) and~(2), and Proposition~\ref{prop:integral-ray-weights} gives~(3).
+\end{proof}
+
+Together with the matrix-unit extension for nonbasic algebras in Lemma~\ref{lem:nonbasic-basis}, Proposition~\ref{prop:dimension-induction} establishes Theorem~A from the introduction.
+
+\begin{theorem}[{\cite[Sections~1.2 and~1.12]{BGRS}}]
+\label{thm:final-basis}
+Let $A$ be a finite-dimensional representation-finite algebra over an algebraically closed field $k$.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item The algebra $A$ admits a normed multiplicative basis (Definition~\ref{def:normed-multiplicative-basis}).
+\item If $A$ is basic, this basis can be chosen to consist of one representative from each nonzero ray of $A$, with the primitive idempotents representing the identity rays.
+\item If $A$ is basic and $\charac k\ne2$, these representatives may be chosen so that they induce an algebra isomorphism $k\ray A\xrightarrow{\sim}A$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+When $A$ is basic, Proposition~\ref{prop:dimension-induction}(1) gives~(1) and~(2), and Corollary~\ref{cor:away-from-two-basis} gives~(3). When $A$ is nonbasic, Lemma~\ref{lem:nonbasic-basis} extends the normed multiplicative basis from its basic corner to $A$.
+\end{proof}
+
+Our next theorem establishes Theorem~B from the introduction: it identifies the standard form of Bretscher and Gabriel~\cite[Section~3]{BretscherGabriel} with the linearization $k\ray A$ of the ray category (as in~\cite[Section~9]{BGRS}) and records the freeness of the scalar weight group.
+
+\begin{theorem}
+\label{thm:final-standardness}
+Let $A$ be a basic representation-finite algebra over an algebraically closed field $k$, and form $k(\Gamma_A)$ using the mesh coefficients from the almost split sequences of $\modu A$. In every characteristic:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item Taking initial forms identifies $\ray A$ with $\ray A_0$. In particular, $\ray A$ is an associative ray category, $A_0\cong k\ray A$ is representation-finite, and
+\[
+  \add k(\Gamma_A)\simeq\modu k\ray A.
+\]
+\item The algebra $A$ is standard if and only if $A\cong k\ray A$.
+\item For every finite ray category $Q$ whose linearization $kQ$ is representation-finite, the scalar weight group $W(Q)$ is free abelian and
+\[
+  k(\Gamma_{kQ})\simeq\ind(\modu kQ).
+\]
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Parts~(1) and~(2) follow immediately from Proposition~\ref{prop:dimension-induction}(2), Proposition~\ref{prop:scalar-normalization}, and Corollary~\ref{cor:graded-standard-form}.
+
+For~(3), we first check that $B=kQ$ is basic. By Definition~\ref{def:finite-ray-category}, the identity elements $e_x=1_x$ form a complete set of orthogonal primitive idempotents in $B$. If two distinct vertices $x\ne y$ gave isomorphic projective modules $e_xB\cong e_yB$, there would exist elements $f\in e_xBe_y$ and $g\in e_yBe_x$ satisfying $fg=e_x$ and $gf=e_y$. Conjugation by $f$ and $g$ would identify the local rings $R_x$ and $R_y$ and their radicals, ensuring that $M(f,g)\subseteq\rad R_x$ and $M(g,f)\subseteq\rad R_y$. The ray products in $\ray B\cong Q$ would then satisfy $[f][g]=[e_x]$ and $[g][f]=[e_y]$, making $x$ and $y$ isomorphic in $Q$ and contradicting the skeletality of $Q$ (Definition~\ref{def:finite-ray-category}). Thus $kQ$ is basic. Applying~(1) and~(2) together with Proposition~\ref{prop:dimension-induction}(3) to each connected component of $kQ$ (and noting that $\ray(kQ)\cong Q$ by Definition~\ref{def:finite-ray-category}, so $(kQ)_0\cong kQ$) shows that $W(Q)$ is free abelian and $k(\Gamma_{kQ})\simeq\ind(\modu kQ)$.
+\end{proof}
+
+We emphasize that in characteristic two, the existence of a normed multiplicative ray basis in Theorem~\ref{thm:final-basis}(2) does \emph{not} imply that $A$ is isomorphic to $k\ray A$. Outside characteristic two, the products of the chosen ray representatives match composition in $\ray A$. In characteristic two, however, the deformation family~\eqref{eq:selected-binary-family} allows a pair of rays with zero ray product $rs=0$ to have the nonzero product $r\cdot s=r*s=rq_ys$ in $A$. Because $rq_ys$ lies in the middle-radical insertion subspace $M(r,s)$ of Definition~\ref{def:ray-product}, the ray product in $\ray A$ remains zero even though the product of the basis representatives in $A$ is nonzero. Thus the deformation changes the algebra structure from standard to nonstandard while preserving the ray category $\ray A$.

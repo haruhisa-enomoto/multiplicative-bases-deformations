@@ -1,0 +1,226 @@
+\section{Integral lifting via centralizers and four-point crowns}
+\label{sec:integral-partial-lifts}
+
+The local restrictions established in Section~\ref{sec:local-ray-geometry} govern how endpoint layers and endpoint types behave under nonzero compositions of rays. Continuing in Settings~\ref{set:projective-companion} and~\ref{set:fixed-character} for a fixed positive primitive character $\chi\in L$, we now use those restrictions to lift modulo-two solutions of the nonzero-product Leibniz equations to the integers. The equations involving only two-sided rays turn out to be the additive-weight relations of a strictly smaller weighted multiplication table obtained from a centralizer quotient, to which our inductive hypothesis applies. Once the two-sided coefficients are lifted, the remaining equations for generating one-sided rays reduce to a linear system on a bipartite graph, and the absence of four-point crowns ensures that the right-hand sides are constant on each connected component.
+
+\subsection{The coefficient equations and their two-sided part}
+
+For each shiftable nonidentity ray $r$, let $d_r$ denote its scalar coefficient in a normalized one-cochain $\delta(r)=d_r r^+$ of weight $\chi$, and set $d_r=0$ when $r$ is an identity or an unshiftable ray. For any nonzero product $rs=t$ of nonidentity rays whose output $t$ is shiftable, the Leibniz identity $\delta(rs)=\delta(r)s+r\delta(s)$ takes the form
+\begin{equation}
+  d_t=\epsilon_L d_r+\epsilon_R d_s,
+  \qquad
+  \epsilon_L=\begin{cases}1, & \text{if }r^+s=t^+,\\ 0, & \text{otherwise},\end{cases}
+  \quad
+  \epsilon_R=\begin{cases}1, & \text{if }rs^+=t^+,\\ 0, & \text{otherwise}.
+  \end{cases}
+  \label{eq:partial-leibniz-group}
+\end{equation}
+By Lemma~\ref{lem:successor-substitutions}, if $t=rs\ne0$ is unshiftable, then $\epsilon_L=\epsilon_R=0$ and the Leibniz condition on $(r,s)$ holds trivially as $0=0$. No condition is imposed on pairs $(r,s)$ with $rs=0$.
+
+\begin{theorem}
+\label{thm:integral-partial-lifting}
+Let $A_0=kP$ and $\chi$ satisfy Settings~\ref{set:projective-companion} and~\ref{set:fixed-character}. Assume that Proposition~\ref{prop:table-weight-lifting} holds for every weighted multiplication table whose linearization is representation-finite of dimension strictly less than $\dim A_0$. Then every modulo-two solution $(\bar d_r)$ of the nonzero-product Leibniz equations~\eqref{eq:partial-leibniz-group} lifts to an integer solution $(d_r)$, and in particular reduces to a solution over $\Z/4$.
+\end{theorem}
+
+The proof of Theorem~\ref{thm:integral-partial-lifting} proceeds in three steps: first we isolate a smaller weighted multiplication table that governs the coefficients of all two-sided rays; next we express the coefficients of generating one-sided rays in terms of their initial or terminal one-sided ordinary arrows and solve the resulting bipartite system; finally, in Subsection~\ref{subsec:verify-nonzero-equations}, we verify that our formulas automatically satisfy every remaining equation in~\eqref{eq:partial-leibniz-group}.
+
+To construct the algebra governing the two-sided rays, set $\widehat q=\sum_x\widehat q_x\in A_0$ and define
+\[
+  C_\chi=\operatorname{Cent}_{A_0}(\widehat q),\qquad
+  \mathfrak a_\chi=\{c\in C_\chi:\widehat q c=0\},\qquad
+  B_\chi=C_\chi/\mathfrak a_\chi.
+\]
+
+\begin{lemma}
+\label{lem:centralizer-ray-algebra}
+The quotient algebra $B_\chi$ is basic and representation-finite. The images of the supporting vertex idempotents $1_x$ ($\widehat q_x\ne0$) and the two-sided rays of $A_0$ form a multiplicative basis of $B_\chi$, defining a weighted multiplication table $Q_\chi$ with the weights and positive degree inherited from $P$ so that $B_\chi=kQ_\chi$. Moreover, if $B_\chi\ne0$, then $Q_\chi$ has strictly fewer nonzero elements than $P$.
+\end{lemma}
+\begin{proof}
+For any ray $r\colon x\to y$, the commutator $\widehat q r-r\widehat q=\widehat q_xr-r\widehat q_y$ vanishes if and only if $r$ is an identity, an unshiftable ray, or a two-sided ray (for a one-sided ray, $\widehat q_xr-r\widehat q_y=\pm r^+\ne0$, and distinct rays in $A_0(x,y)$ have distinct weights). Thus $C_\chi$ has a basis consisting of all vertex idempotents $1_x$, all two-sided rays, and all unshiftable rays. Among these basis elements, multiplication by $\widehat q$ annihilates precisely the non-supporting idempotents ($\widehat q_x=0$) and the unshiftable rays, so they span the ideal $\mathfrak a_\chi$. Consequently, the supporting idempotents and the two-sided rays project to a basis of $B_\chi$.
+
+Let $\pi\colon A_0\to B_\chi$ be the linear projection onto this basis that sends all one-sided rays, unshiftable rays, and non-supporting idempotents to zero. We claim that $\pi$ is a $C_\chi$-bimodule morphism extending the quotient map $C_\chi\to B_\chi$. Indeed, for any composable rays $r$ and $s$, if their product $rs$ is a retained nonidentity ray in $B_\chi$, then $rs$ has type $\mathsf B$; by the table~\eqref{eq:product-type-table} of Lemma~\ref{lem:successor-substitutions}, the pair $(r,s)$ must have types $(\mathsf B,\mathsf B)$ or $(\mathsf L,\mathsf R)$. If at least one factor belongs to $C_\chi$, the case $(\mathsf L,\mathsf R)$ cannot occur because $C_\chi$ contains no one-sided rays. Hence no discarded ray can multiply an element of $C_\chi$ to produce a retained ray in $B_\chi$. Conversely, if both factors are retained in $B_\chi$ but their product in $A_0$ is unshiftable (or zero), that product lies in $\mathfrak a_\chi$ and vanishes on both sides of the bimodule identity. Since identity factors manifestly respect $\pi$, it follows that $\pi$ is a $C_\chi$-bimodule retraction of the quotient $C_\chi\to B_\chi$ through $C_\chi\hookrightarrow A_0$. By Lemma~\ref{lem:split-representation-transfer}, $B_\chi$ is therefore representation-finite.
+
+Because the retained basis elements of $B_\chi$ inherit associative multiplication, identities, additive weights, endpoint-and-weight separation, and positive categorical degree from $P$, they form a weighted multiplication table $Q_\chi$ in the sense of Definition~\ref{def:weighted-table} with $B_\chi=kQ_\chi$. Its positive-degree ideal is nilpotent with semisimple quotient $\prod_{\widehat q_x\ne0}k$, so $B_\chi$ is basic. Finally, if $B_\chi\ne0$, then $\widehat q\ne0$, and the highest nonzero power $\widehat q^d$ of the nilpotent element $\widehat q$ is unshiftable and hence lies in $\mathfrak a_\chi\setminus\{0\}$. Therefore
+\[
+  \dim B_\chi<\dim C_\chi\leq\dim A_0,
+\]
+so $Q_\chi$ has strictly fewer nonzero elements than $P$.
+\end{proof}
+
+Write $W_\chi=W(Q_\chi)$ for the scalar weight group of $Q_\chi$. By definition, $W_\chi$ is the abelian group generated by symbols $[r]$ for two-sided rays $r$, subject to the relations $[rs]=[r]+[s]$ whenever $r$, $s$, and $rs$ are all two-sided. Comparing with the $(\mathsf B,\mathsf B)$ row of~\eqref{eq:product-type-table}, we see that these relations are precisely the equations in~\eqref{eq:partial-leibniz-group} in which both inputs and the output are two-sided. Any modulo-two solution of~\eqref{eq:partial-leibniz-group} therefore restricts on two-sided rays to a homomorphism $W_\chi\to\Z/2$, which lifts to a homomorphism $W_\chi\to\Z$ by Lemma~\ref{lem:centralizer-ray-algebra} and the inductive hypothesis of Theorem~\ref{thm:integral-partial-lifting}.
+
+\subsection{Coefficients of generating one-sided rays}
+
+We next determine how the coefficients of generating one-sided rays depend on the coefficients of two-sided rays and one-sided ordinary arrows. The following lemma constrains the two-sided prefixes and suffixes that can appear along an ordinary path representing a one-sided ray.
+
+\begin{lemma}
+\label{lem:two-sided-factor-paths}
+In Settings~\ref{set:projective-companion} and~\ref{set:fixed-character}, let $b$ be a two-sided ray. If $s$ is a ray of type $\mathsf L$ such that $bs$ is nonzero and shiftable, then every ordinary path representing $b$ consists entirely of two-sided ordinary arrows. Dually, if $r$ has type $\mathsf R$ and $rb$ is nonzero and shiftable, then every ordinary path representing $b$ consists entirely of two-sided ordinary arrows.
+\end{lemma}
+\begin{proof}
+Suppose for a contradiction that $b$ admits an ordinary path containing at least one arrow that is not two-sided, and read the path from left to right up to the first arrow $a$ that is not of type $\mathsf B$. Because $\widehat q b\ne0$, every prefix of the path has a nonzero left action by $\widehat q$. Along the two-sided arrows preceding $a$, this left action commutes across each arrow to reach the source of $a$; hence $\widehat q a\ne0$, which means that $a$ has type $\mathsf L$. Consequently, the prefix $u$ ending at $a$ also has type $\mathsf L$ ($\widehat q u\ne0$ and $u\widehat q=0$). Since $b$ itself is two-sided, the remaining suffix $v$ of the path must be a nonidentity ray, and the factorization $b=uv$ has output of type $\mathsf B$ and first factor $u$ of type $\mathsf L$. By the table~\eqref{eq:product-type-table}, the second factor $v$ must have type $\mathsf R$.
+
+Now consider the product $bs=uvs$. Because $bs$ is shiftable and $b$ is two-sided, we have
+\[
+  \widehat q bs=b\widehat q s=u(v\widehat q s)\ne0,
+\]
+so in particular $vs\ne0$ and $v\widehat q s=v^+s=vs^+\ne0$. However, $v$ has type $\mathsf R$ and $s$ has type $\mathsf L$, so both outer actions on $vs$ vanish: $\widehat q(vs)=(\widehat q v)s=0$ and $(vs)\widehat q=v(s\widehat q)=0$. Thus $vs$ cannot have a successor of weight $\ell(vs)+\chi$, contradicting $v\widehat q s\ne0$. The statement for $rb$ follows by passing to the opposite algebra.
+\end{proof}
+
+Because every nonidentity ray of $A_0$ has positive categorical degree, repeatedly factoring any decomposable ray into two rays of smaller degree shows that every nonidentity ray can be represented by an ordinary path. We now introduce formal symbols $X_a$ for each ordinary arrow $a$ of type $\mathsf L$ and $Y_b$ for each ordinary arrow $b$ of type $\mathsf R$, and work in the abelian group formed by the direct sum of $W_\chi$ with the free abelian group on these symbols.
+
+\begin{lemma}
+\label{lem:one-sided-path-coefficients}
+Let $r$ be a generating ray of type $\mathsf L$, choose an ordinary path representing $r$, let $p$ be its maximal two-sided prefix, and let $a$ be the first arrow of the path that has type $\mathsf L$. Dually, for a generating ray $s$ of type $\mathsf R$, choose an ordinary path representing $s$, let $b$ be its last arrow of type $\mathsf R$, and let $p'$ be its maximal two-sided suffix. Then the formal expressions
+\begin{equation}
+  d_r=[p]+X_a,\qquad d_s=Y_b+[p']
+  \label{eq:one-sided-path-coefficients}
+\end{equation}
+(where an empty prefix or suffix has class $0\in W_\chi$) do not depend on the choice of ordinary paths representing $r$ and $s$, and they satisfy every Leibniz equation in~\eqref{eq:partial-leibniz-group} whose output is a generating one-sided ray. In particular, the first $\mathsf L$-arrow $a$ along an ordinary path for $r$, and the last $\mathsf R$-arrow $b$ along an ordinary path for $s$, are independent of the chosen path.
+\end{lemma}
+\begin{proof}
+We prove the statements for a generating left-sided ray $r$ by induction on its categorical degree $\deg_\JJ(r)$. Any ordinary path representing $r$ must contain at least one arrow that is not two-sided, since a shiftable product of two-sided rays is again two-sided. Because $\widehat q r\ne0$, every prefix of the path has a nonzero left action, and commuting $\widehat q$ across the initial two-sided arrows shows that the first non-two-sided arrow $a$ has $\widehat q a\ne0$ and hence is of type $\mathsf L$. Moreover, every prefix extending past $a$ also has type $\mathsf L$: if some longer proper prefix $u$ had type $\mathsf B$, then in the factorization $r=uv$ the suffix $v$ would have type $\mathsf L$ by~\eqref{eq:product-type-table}, and Lemma~\ref{lem:two-sided-factor-paths} applied to $uv=r$ would force every ordinary path for $u$ to consist solely of two-sided arrows, contradicting the presence of $a$ in $u$.
+
+By Proposition~\ref{prop:controlled-contours}, all ordinary paths representing $r$ begin with the same initial ordinary arrow $u$. If $u$ has type $\mathsf L$, then $p$ is empty, $a=u$ is the first arrow of every path for $r$, and every path yields $d_r=X_u$. If instead $u$ has type $\mathsf B$, write $r=uv$. The suffix rays $v$ obtained from any two ordinary paths for $r$ share the same endpoints and the same weight $\ell(r)-\ell(u)$, so they are the same ray $v$. By Lemma~\ref{lem:generating-paths}, $v$ is a generating ray, and by~\eqref{eq:product-type-table} it has type $\mathsf L$. Since $\deg_\JJ(v)<\deg_\JJ(r)$, the induction hypothesis ensures that the first $\mathsf L$-arrow $a$ of $v$ and the sum $[p_v]+X_a$ are independent of the path chosen for $v$. Prepending $u$ gives $[p]=[u]+[p_v]$ in $W_\chi$, so $[p]+X_a$ is independent of the path for $r$. The statements for a generating right-sided ray $s$ follow by duality.
+
+Finally, for any nonzero product $rs=t$ whose output $t$ is generating and one-sided (say of type $\mathsf L$), we concatenate an ordinary path for $r$ with an ordinary path for $s$ to obtain an ordinary path for $t$. If $r$ has type $\mathsf L$, then $r$ already contains the first $\mathsf L$-arrow $a$ of $t$ and shares the same two-sided prefix $p$, so $d_t=[p]+X_a=d_r$. If $r$ has type $\mathsf B$ and $s$ has type $\mathsf L$, then by Lemma~\ref{lem:two-sided-factor-paths} every arrow in the path of $r$ is two-sided, so the two-sided prefix of $t=rs$ is $rp$, which satisfies $[rp]=[r]+[p]$ in $W_\chi$; hence $d_t=[r]+[p]+X_a=d_r+d_s$. Both cases match~\eqref{eq:product-type-table}, and the right-sided case is dual.
+\end{proof}
+
+Consider now a nonzero product $rs=t$ in which $r$ has type $\mathsf L$, $s$ has type $\mathsf R$, and the output $t$ is a \emph{generating} two-sided ray. Concatenating ordinary paths for $r$ and $s$ yields an ordinary path for $t$. Writing $r=pa r'$ and $s=s'bp'$ where $p$ is the two-sided prefix of $r$, $a$ is its first $\mathsf L$-arrow, $b$ is the last $\mathsf R$-arrow of $s$, and $p'$ is its two-sided suffix, we have $t=pfp'$, where the middle subsegment $f=ar's'b$ is a generating ray by Lemma~\ref{lem:generating-paths} and is two-sided because the outer actions on $t$ commute across $p$ and $p'$. Since $[t]=[p]+[f]+[p']$ in $W_\chi$ while $d_r=[p]+X_a$ and $d_s=Y_b+[p']$, subtracting $[p]+[p']$ reduces the Leibniz equation $d_r+d_s=d_t$ to
+\begin{equation}
+  X_a+Y_b=[f],
+  \label{eq:generating-crown-row}
+\end{equation}
+where $f$ is a generating two-sided ray represented by an ordinary path that begins with $a$ and ends with $b$.
+
+\subsection{Four-point crowns and equal right-hand sides}
+
+Because the same variable $X_a$ or $Y_b$ can appear in several equations of the form~\eqref{eq:generating-crown-row}, we must check that these equations are mutually consistent over $\Z$. Excluding four-point crowns shows that any two equations sharing a variable have the exact same right-hand side $[f]$.
+
+\begin{lemma}
+\label{lem:crown-output-comparison}
+Any two two-sided rays that admit ordinary paths beginning with the same $\mathsf L$-arrow $a$ are comparable under right factorization. Dually, any two two-sided rays that admit ordinary paths ending with the same $\mathsf R$-arrow $b$ are comparable under left factorization. Consequently, any two equations of the form~\eqref{eq:generating-crown-row} (with generating two-sided outputs) that share a variable $X_a$ or $Y_b$ have the same output ray $f$.
+\end{lemma}
+\begin{proof}
+Let $f$ and $t$ be two-sided rays admitting ordinary paths that start with the same $\mathsf L$-arrow $a\colon x\to y$. Write $f=av$ and $t=aw$. Because $f$ is two-sided, we have $\widehat q_xf=f\widehat q_z=a(v\widehat q_z)\ne0$, so $a$ precedes $\widehat q_xf$ in the faithful projective support at $x$, and likewise $a$ precedes $\widehat q_xt$. Since $\widehat q_x$ obviously precedes both $\widehat q_xf$ and $\widehat q_xt$, all four upward comparisons between the lower pair $\{\widehat q_x,a\}$ and the upper pair $\{\widehat q_xf,\widehat q_xt\}$ hold in the faithful projective support at $x$.
+
+Notice that $\widehat q_x$ and $a$ are incomparable: $\widehat q_x\leq a$ would factor the ordinary arrow $a$ through $\widehat q_x$, while $a\leq\widehat q_x$ would give $ah=\widehat q_x$ for some ray $h\colon y\to x$, forcing $a(ha)=\widehat q_xa\ne0$ and hence $ha=\widehat q_y$ (by primitivity of $\chi$), which would make $a\widehat q_y=\widehat q_xa\ne0$ two-sided rather than left-sided. Nor can either upper element precede $a$ (which would again factor $a$ through $\widehat q_x$) or $\widehat q_x$ (by positive degree). Therefore, if $\widehat q_xf$ and $\widehat q_xt$ were incomparable, the four rays $\{\widehat q_x,a,\widehat q_xf,\widehat q_xt\}$ would form a forbidden four-point crown. Thus $\widehat q_xf$ and $\widehat q_xt$ are comparable, and left cancellation of $\widehat q_x$ shows that $f$ and $t$ are comparable under right factorization.
+
+Suppose now that $f$ and $t$ are \emph{generating} two-sided outputs of two equations~\eqref{eq:generating-crown-row} that share the variable $X_a$. By what we have just shown, $f$ and $t$ are comparable; assume without loss of generality that $t=fh$ for a ray $h$. If $h$ were a nonidentity ray, then writing $f=av$ and $t=aw$ (where $v=r's'b$ and $w$ are generating rays of type $\mathsf R$ by Lemma~\ref{lem:generating-paths} and~\eqref{eq:product-type-table}) and canceling $a$ would give $vh=w$. Because $w=vh$ is shiftable, $v$ has type $\mathsf R$, and $t=fh$ is two-sided (so $h$ has type $\mathsf B$), the dual of Lemma~\ref{lem:two-sided-factor-paths} would imply that every ordinary path representing $h$ consists of two-sided arrows. Concatenating a path for $v$ with a path for $h$ would then produce an ordinary path for $w$ ending in a two-sided arrow, whereas $w$ also has an ordinary path ending in its terminal $\mathsf R$-arrow from~\eqref{eq:generating-crown-row}. This contradicts the dual of Proposition~\ref{prop:controlled-contours}, which requires all ordinary paths representing the generating right-sided ray $w$ to share the same final ordinary arrow. Thus $h$ is an identity and $f=t$. The case of a shared variable $Y_b$ follows dually.
+\end{proof}
+
+We also need to incorporate the equations coming from nondeep external returns (Definition~\ref{def:nondeep-return}).
+
+\begin{lemma}
+\label{lem:nondeep-boundary-arrows}
+Let $el=\widehat q_x^2$ (with $\widehat q_x^3\ne0$) be a nondeep external return at $x$, where $e\colon x\to y$ and $l\colon y\to x$ are generating rays of types $\mathsf L$ and $\mathsf R$, respectively. Then every ordinary path representing $e$ begins with a single left-sided arrow $a$, and every ordinary path representing $l$ ends with a single right-sided arrow $b$ (so both the two-sided prefix of $e$ and the two-sided suffix of $l$ are empty).
+\end{lemma}
+\begin{proof}
+The first arrow $u\colon x\to v$ of an ordinary path for $e$ satisfies $\widehat q_xu\ne0$ (since $\widehat q_xe\ne0$) and therefore has type $\mathsf L$ or $\mathsf B$. Suppose for a contradiction that $u$ has type $\mathsf B$, and write $e=uc$. Because $e$ and $e^+=\widehat q_xe$ are distinct rays in $A_0(x,y)$, we have $\dim A_0(x,y)\geq2$, so Lemma~\ref{lem:generating-paths} implies that $x\ne v$ and that both $u$ and $c$ are generating rays. Since $u$ is generating and two-sided with $\widehat q_xu\ne0$ and $\chi$ is primitive, Lemma~\ref{lem:primitive-action-generation} shows that $A_0(x,v)$ is cyclic at both endpoints. Furthermore, $u(cl)=el=\widehat q_x^2\ne0$, so $uA_0(v,x)\ne0$. Lemma~\ref{lem:primitive-cyclic-corners}(1) therefore provides a generating primitive reverse $g\colon v\to x$ satisfying $ug=\widehat q_x$ and $gu=\widehat q_v$.
+
+Comparing $u(cl)=\widehat q_x^2=u(\widehat q_vg)\ne0$ shows that $cl$ and $\widehat q_vg$ have the same endpoints and weight, so $cl=\widehat q_vg$. Its successor $\widehat q_v^2g$ is nonzero because $u(\widehat q_v^2g)=\widehat q_x^3\ne0$. On the other hand, applying~\eqref{eq:product-type-table} to $e=uc$ shows that $c$ has type $\mathsf L$, while $l$ has type $\mathsf R$ by hypothesis. Thus $cl=\widehat q_vg$ is a proper shiftable product of generating rays of types $(\mathsf L,\mathsf R)$ whose endpoint layer is~$1$, contradicting Proposition~\ref{prop:proper-ray-products}(3) (which forces any such product to have endpoint layer~$2$).
+
+Consequently, the initial arrow of every ordinary path for $e$ has type $\mathsf L$, and by Proposition~\ref{prop:controlled-contours} (or Lemma~\ref{lem:one-sided-path-coefficients}) this initial arrow $a$ is independent of the path. The statement for $l$ follows by passing to the opposite algebra.
+\end{proof}
+
+By Lemma~\ref{lem:nondeep-boundary-arrows}, if $(e,l)$ is a nondeep external return at $x$ with initial arrow $a$ of $e$ and terminal arrow $b$ of $l$, then $d_e=X_a$ and $d_l=Y_b$. Since $\widehat q_x$ is two-sided and $\widehat q_x^3\ne0$, we have $[\widehat q_x^2]=2[\widehat q_x]$ in $W_\chi$, so the Leibniz equation $d_e+d_l=d_{\widehat q_x^2}$ for $el=\widehat q_x^2$ becomes
+\begin{equation}
+  X_a+Y_b=2[\widehat q_x].
+  \label{eq:nondeep-coefficient-row}
+\end{equation}
+Moreover, neither $X_a$ nor $Y_b$ can appear in any generating-output equation~\eqref{eq:generating-crown-row}. Indeed, if a generating two-sided ray $f$ had an ordinary path starting with $a$, Lemma~\ref{lem:crown-output-comparison} would make $f$ and $\widehat q_x^2$ comparable under right factorization; however, $\widehat q_x^2h=f$ would contradict the fact that $f$ is generating (Lemma~\ref{lem:generating-paths}), while $fh=\widehat q_x^2$ would give $f$ (and hence its initial arrow $a$) a nonzero return to $x$, forcing $a$ to be two-sided by Lemma~\ref{lem:primitive-action-generation} and Lemma~\ref{lem:primitive-cyclic-corners}(1), a contradiction. The dual argument excludes $Y_b$ from~\eqref{eq:generating-crown-row}. Finally, if two nondeep-return equations~\eqref{eq:nondeep-coefficient-row} share $X_a$, their base vertex $x$ is the source of $a$, and if they share $Y_b$, their base vertex $x$ is the target of $b$; in either case their right-hand sides $2[\widehat q_x]$ coincide.
+
+We now form the bipartite graph whose vertices are the formal variables $X_a$ and $Y_b$ and whose edges correspond to the equations~\eqref{eq:generating-crown-row} and~\eqref{eq:nondeep-coefficient-row}, labeled by their right-hand sides in $W_\chi$. By Lemma~\ref{lem:crown-output-comparison} and the preceding paragraph, any two edges incident to a common vertex carry the same label $\omega\in W_\chi$, so the edge labels are constant on each connected component of the bipartite graph. On a connected component with constant edge label $\omega$, the system of equations $X_a+Y_b=\omega$ has the general solution
+\[
+  X_a=\omega+z,\qquad Y_b=-z,
+\]
+parametrized by a single free variable $z$ per connected component (with an isolated vertex likewise contributing one free variable). Letting $T$ denote the quotient of the direct sum of $W_\chi$ and the free abelian group on all symbols $X_a,Y_b$ by the relations~\eqref{eq:generating-crown-row} and~\eqref{eq:nondeep-coefficient-row}, and writing $m$ for the number of connected components of the bipartite graph, we obtain an isomorphism
+\begin{equation}
+  T\cong W_\chi\oplus\Z^m.
+  \label{eq:crown-coefficient-group}
+\end{equation}
+In particular, even when $\omega=2[\widehat q_x]$ in~\eqref{eq:nondeep-coefficient-row}, the equation $X_a+Y_b=2[\widehat q_x]$ imposes no modulo-two divisibility obstruction on lifting $X_a$ and $Y_b$, because each variable appears with coefficient~$1$ and the right-hand side is constant across each connected component.
+
+\subsection{Verification of all nonzero-product equations}
+\label{subsec:verify-nonzero-equations}
+
+We now complete the proof of Theorem~\ref{thm:integral-partial-lifting} by assigning coefficients in the group $T\cong W_\chi\oplus\Z^m$ of~\eqref{eq:crown-coefficient-group} to all rays of $A_0$ and verifying that they satisfy every nonzero-product Leibniz equation~\eqref{eq:partial-leibniz-group}.
+
+\begin{proof}[Proof of Theorem~\ref{thm:integral-partial-lifting}]
+We first define a universal solution with values in the group $T$ of~\eqref{eq:crown-coefficient-group}:
+\begin{itemize}
+\item For every two-sided ray $b$, set $d_b=[b]\in W_\chi\subseteq T$.
+\item For every generating one-sided ray $r$ (of type $\mathsf L$) or $s$ (of type $\mathsf R$), define $d_r$ and $d_s$ in $T$ by the path formulas~\eqref{eq:one-sided-path-coefficients}.
+\item For every proper shiftable one-sided ray, write it as $\widehat q_x^jr$ or $s\widehat q_z^j$ with $r,s$ generating and $j\geq1$, and set
+\begin{equation}
+  d_{\widehat q_x^jr}=j[\widehat q_x]+d_r,\qquad
+  d_{s\widehat q_z^j}=d_s+j[\widehat q_z]
+  \label{eq:proper-successor-coefficients}
+\end{equation}
+(note that $\widehat q_x^{j+1}r\ne0$ implies $\widehat q_x^2\ne0$, so $\widehat q_x$ is two-sided and $[\widehat q_x]\in W_\chi$ is defined, and dually for $[\widehat q_z]$).
+\item For all vertex idempotents and unshiftable rays, set $d_r=0$.
+\end{itemize}
+Work in the integral ray algebra $\Z P$ (which is free over $\Z$ on the nonzero rays of $P$, with basis products having coefficients $0$ or $1$), let $\delta\colon\Z P\to(\Z P)\otimes_\Z T$ be the resulting normalized $\Z$-linear one-cochain $\delta(r)=r^+\otimes d_r$, and let $\mu=d\delta$ be its Hochschild coboundary with values in $(\Z P)\otimes_\Z T\cong\bigoplus_{r\in P\setminus\{0\}}T$. We verify that $\mu(r,s)=0$ in $(\Z P)\otimes_\Z T$ for every pair of composable rays $(r,s)$ with $rs\ne0$ by checking five exhaustive cases.
+
+\smallskip
+\noindent\textbf{Case 1: One of the factors is a local ray.}
+When $r$ or $s$ is an identity, $\mu(r,s)=0$ by normalization. Suppose that the left factor is a nonidentity local ray $c=q_x^j$ ($j\geq1$) with $cs\ne0$. If the output $cs$ is unshiftable, then $\mu(c,s)=0$ by Lemma~\ref{lem:successor-substitutions}. Assume therefore that $cs$ is shiftable.
+
+If $x$ is a supporting vertex ($q_x=\widehat q_x$), then $s$ cannot have type $\mathsf R$ (since $q_xs\ne0$), so by~\eqref{eq:product-type-table} the local ray $c=\widehat q_x^j$ has type $\mathsf B$ and $s$ has type $\mathsf B$ or $\mathsf L$. When $s$ has type $\mathsf B$, the relation $d_{cs}=d_c+d_s$ holds in $W_\chi$. When $s$ has type $\mathsf L$, write $s=\widehat q_x^if$ with $f$ generating ($A_0(x,y)$ is cyclic at $x$ by Lemma~\ref{lem:primitive-action-generation}). Note that $f$ also has type $\mathsf L$, since if $f\widehat q_y=\widehat q_xf$ were nonzero, then $s\widehat q_y=\widehat q_x^{i+1}f=\widehat q_xs\ne0$ would make $s$ two-sided. Because $c=\widehat q_x^j$ is a product of $j$ copies of $\widehat q_x$ in $W_\chi$, we have $d_c=j[\widehat q_x]$, and~\eqref{eq:proper-successor-coefficients} gives
+\[
+  d_{cs}=(j+i)[\widehat q_x]+d_f=j[\widehat q_x]+\bigl(i[\widehat q_x]+d_f\bigr)=d_c+d_s,
+\]
+matching~\eqref{eq:product-type-table}.
+
+If $x$ is not a supporting vertex ($\ell(q_x)\ne\chi$), we claim that no nonzero product $cs=q_x^js$ can be shiftable. Indeed, if the corner bimodule $A_0(x,y)$ containing $s$ is cyclic at $x$, then adjacent rays in $A_0(x,y)$ differ in weight by $\ell(q_x)\ne\chi$, and since $\chi$ is primitive no multiple of $\ell(q_x)$ can equal $\chi$; hence $A_0(x,y)$ contains no shiftable rays at all. If instead $A_0(x,y)$ is cyclic only at $y$ with generating ray $f$, then $A_0(x,y)$ can contain shiftable rays only when $\ell(q_y)=\chi$, in which case $\ell(q_x)\ne\ell(q_y)$ forces any nonzero left action $q_xf=fq_y^n$ to have $n\geq2$. By Lemma~\ref{lem:unequal-endpoint-action} (applied in the opposite algebra), $q_xf$ then lies in the endpoint socle of $A_0(x,y)$, so $cs=q_x^js$ is again unshiftable (and $cs^+=0$). Thus $\mu(c,s)=0$ in all cases, and the dual argument gives $\mu(r,c)=0$ for any local ray $c$ on the right.
+
+Moreover, if $cr=0$ or $rc=0$ for a local ray $c$, then $c*r=0$ and $r*c=0$ by Corollary~\ref{cor:active-zero-pairs} (since a nonidentity local ray $c=q_x^j$ is never the generating ray of a non-cyclic corner), so $\mu(c,r)=0$ and $\mu(r,c)=0$ even when the product vanishes. Expanding the cocycle identity $d\mu=0$ on the triples $(c,r,s)$, $(r,s,c)$, and $(r,c,s)$ for any local ray $c$ therefore yields the local-linearity relations in $(\Z P)\otimes_\Z T$:
+\begin{equation}
+  \mu(cr,s)=c\mu(r,s),\qquad
+  \mu(r,sc)=\mu(r,s)c,\qquad
+  \mu(rc,s)=\mu(r,cs).
+  \label{eq:local-ring-relativity}
+\end{equation}
+
+\smallskip
+\noindent\textbf{Case 2: Generating outputs or two-sided inputs.}
+Every nonzero product whose output is generating and one-sided satisfies $\mu(r,s)=0$ by Lemma~\ref{lem:one-sided-path-coefficients}, and every nonzero product of types $(\mathsf L,\mathsf R)$ with a generating two-sided output is one of the defining relations~\eqref{eq:generating-crown-row} of $T$. Likewise, every product of two-sided rays (whether generating or proper) with a shiftable output has a two-sided output and holds by the defining relations of $W_\chi$.
+
+\smallskip
+\noindent\textbf{Case 3: Generating inputs of types $(\mathsf B,\mathsf L)$ or $(\mathsf R,\mathsf B)$ with a proper output.}
+Suppose that $r\colon x\to y$ of type $\mathsf B$ and $s\colon y\to z$ of type $\mathsf L$ are generating rays whose product $rs$ is proper and shiftable. By Proposition~\ref{prop:proper-ray-products}(2), $rs=\widehat q_xf$ has endpoint layer~$1$ (where $f\colon x\to z$ is generating of type $\mathsf L$) and $r$ admits a primitive reverse $u\colon y\to x$ with $ru=\widehat q_x$ and $ur=\widehat q_y$. Since $r(uf)=(ru)f=\widehat q_xf=rs\ne0$, the product $uf$ is a nonzero ray in $A_0(y,z)$ with the same endpoints and weight as $s$, so $uf=s$ by weight uniqueness in $A_0(y,z)$. Moreover, $\widehat q_ys=\widehat q_yuf=u\widehat q_xf=urs\ne0$, so $u$ has type $\mathsf B$. Because $s=uf$ is a generating left-sided output with $u$ of type $\mathsf B$ and $f$ of type $\mathsf L$, Case~2 gives $d_s=[u]+d_f$. Since $[\widehat q_x]=[r]+[u]$ in $W_\chi$, formula~\eqref{eq:proper-successor-coefficients} yields
+\[
+  d_{rs}=[\widehat q_x]+d_f=[r]+[u]+d_f=d_r+d_s,
+\]
+so $\mu(r,s)=0$. The case of types $(\mathsf R,\mathsf B)$ follows dually.
+
+\smallskip
+\noindent\textbf{Case 4: Generating inputs of types $(\mathsf L,\mathsf R)$ with a proper output.}
+Let $r\colon x\to y$ of type $\mathsf L$ and $s\colon y\to z$ of type $\mathsf R$ be generating rays whose product $rs$ is proper and shiftable. By Proposition~\ref{prop:proper-ray-products}(3), if $x=z$, then $(r,s)$ is a nondeep external return at $x$, so $\mu(r,s)=0$ is one of the defining relations~\eqref{eq:nondeep-coefficient-row} of $T$. If $x\ne z$, then Proposition~\ref{prop:proper-ray-products}(3)(b) gives either $r=fa$ and $as=\widehat q_z^2$ (with $f,a$ generating and $(a,s)$ a nondeep external return at $z$) or the dual factorization. In the first case, expanding $d\mu(f,a,s)=0$ gives
+\[
+  f\mu(a,s)-\mu(fa,s)+\mu(f,as)-\mu(f,a)s=0.
+\]
+Here $\mu(a,s)=0$ by the local-return case just noted, $\mu(f,as)=\mu(f,\widehat q_z^2)=0$ by Case~1, and $\mu(f,a)=0$ by Case~2 because $fa=r$ is a generating left-sided ray. Hence $\mu(r,s)=\mu(fa,s)=0$, and the dual factorization is handled symmetrically.
+
+\smallskip
+\noindent\textbf{Case 5: Proper inputs.}
+Suppose finally that at least one of $r$ or $s$ is a proper ray and $rs$ is shiftable.
+\begin{itemize}
+\item If the output $rs$ has type $\mathsf B$, then $(r,s)$ has types $(\mathsf B,\mathsf B)$ (already covered in Case~2) or $(\mathsf L,\mathsf R)$. For $(\mathsf L,\mathsf R)$, write $r=\widehat q_x^ir_0$ and $s=s_0\widehat q_z^j$ with $r_0,s_0$ generating; the local-linearity relations~\eqref{eq:local-ring-relativity} give $\mu(r,s)=\widehat q_x^i\mu(r_0,s_0)\widehat q_z^j=0$ by Case~2 or Case~4 applied to $(r_0,s_0)$.
+\item If the output $rs$ has type $\mathsf L$ and $r$ has type $\mathsf B$, write $r=\widehat q_x^ir_0$ and $s=\widehat q_y^js_0$ with $r_0,s_0$ generating; then~\eqref{eq:local-ring-relativity} and the two-sidedness of $r_0$ give $\mu(r,s)=\widehat q_x^i\mu(r_0\widehat q_y^j,s_0)=\widehat q_x^{i+j}\mu(r_0,s_0)=0$ by Case~2 or Case~3 applied to $(r_0,s_0)$.
+\item If both $r$ and $rs$ have type $\mathsf L$, write $r=\widehat q_x^ir_0$ with $r_0$ generating. By Proposition~\ref{prop:proper-ray-products}(1), $rs$ also has endpoint layer $i$, which means $rs=\widehat q_x^i(r_0s)$ with $r_0s$ generating (and $s$ is generating by Lemma~\ref{lem:generating-paths}). Then~\eqref{eq:local-ring-relativity} gives $\mu(r,s)=\widehat q_x^i\mu(r_0,s)=0$ by Case~2.
+\end{itemize}
+The remaining cases with output of type $\mathsf R$ follow by duality. By Lemma~\ref{lem:successor-substitutions}, this exhausts all nonzero products with shiftable output, so our universal coefficients in $T$ satisfy every equation in~\eqref{eq:partial-leibniz-group}.
+
+\smallskip
+\noindent\textbf{Lifting a prescribed modulo-two solution.}
+Now let $(\bar d_r)$ be any solution of~\eqref{eq:partial-leibniz-group} over $\Z/2$. Its restriction to two-sided rays defines a homomorphism $\bar w\colon W_\chi\to\Z/2$, which lifts by Lemma~\ref{lem:centralizer-ray-algebra} and our inductive hypothesis to a homomorphism $w\colon W_\chi\to\Z$.
+
+Evaluating the modulo-two equations~\eqref{eq:product-type-table} along the chosen ordinary paths for generating one-sided rays $r$ and $s$ forces
+\[
+  \bar d_r=\bar d_p+\bar d_a,\qquad \bar d_s=\bar d_b+\bar d_{p'},
+\]
+in the notation of~\eqref{eq:one-sided-path-coefficients}, and evaluating them on local products forces $\bar d_{\widehat q_x^jr}=j\bar d_{\widehat q_x}+\bar d_r$ and $\bar d_{s\widehat q_z^j}=\bar d_s+j\bar d_{\widehat q_z}$ as in~\eqref{eq:proper-successor-coefficients}. Moreover, splitting a generating two-sided ray $f$ of~\eqref{eq:generating-crown-row} after its first $\mathsf L$-arrow shows that $\bar d_a+\bar d_b=\bar d_f=\bar w([f])$, while for any nondeep external return $el=\widehat q_x^2$ Lemma~\ref{lem:nondeep-boundary-arrows} gives $\bar d_a+\bar d_b=\bar d_e+\bar d_l=\bar d_{\widehat q_x^2}=2\bar d_{\widehat q_x}=0=\bar w(2[\widehat q_x])$. Thus the modulo-two arrow coefficients $(\bar d_a,\bar d_b)$ satisfy every edge relation of the bipartite graph.
+
+On each connected component of the bipartite graph with constant edge label $\omega\in W_\chi$, the modulo-two values therefore take the form $\bar d_a=\bar w(\omega)+\bar z$ and $\bar d_b=-\bar z$ for a unique element $\bar z\in\Z/2$. Choosing an integer lift $z\in\Z$ of $\bar z$, we specialize the component's formal variables to $X_a=w(\omega)+z$ and $Y_b=-z$ (and for each isolated vertex we lift its modulo-two value directly to $\Z$). Together with $w\colon W_\chi\to\Z$, these choices define a group homomorphism $T\to\Z$ whose composition with the universal coefficients in $T$ yields an integer solution $(d_r)$ of~\eqref{eq:partial-leibniz-group} reducing modulo two to $(\bar d_r)$.
+\end{proof}

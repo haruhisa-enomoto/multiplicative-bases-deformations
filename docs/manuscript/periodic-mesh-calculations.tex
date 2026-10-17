@@ -1,0 +1,390 @@
+\section{Periodic meshes and correction vanishing outside characteristic two}
+\label{app:periodic-mesh}
+
+In this appendix we prove the two results on periodic mesh categories used in Part~\ref{part:graded-form}: the Dynkin-tree covering description of periodic components (Proposition~\ref{prop:periodic-tree-model}, used in Section~\ref{sec:scalar-normalization}) and the vanishing of the mesh correction cokernels $\operatorname{coker}D_m(\C)$ outside characteristic two (Proposition~\ref{prop:mesh-correction-spaces}, which completes the proof of Theorem~A when $\charac k\ne2$). The characteristic-two and modulo-four calculations in Appendix~\ref{app:residual-mesh} reuse the tree models and path identities established here, but are not needed outside characteristic two.
+
+\subsection{Finite trees and periodic mesh categories}
+\label{app:periodic-trees}
+
+We first prove Proposition~\ref{prop:periodic-tree-model}, stated in Subsection~\ref{subsec:mesh-walk-cover}, by lifting sectional paths to construct a repetition quiver cover. This proof also fixes the explicit Dynkin tree models used in our subsequent cokernel calculations. Both the repetition-quiver covering and its construction via sectional paths are due to Riedtmann~\cite[Sections~1.5--1.6 and~2.1]{Riedtmann1980}.
+
+\begin{proof}[Proof of Proposition~\ref{prop:periodic-tree-model}]
+We divide the proof into four steps.
+
+\medskip
+\noindent\textbf{Step 1: Sectional paths and a finite rooted tree.}
+A path in a periodic translation quiver $Q$ is called \emph{sectional} if it contains no consecutive pair of arrows of the form $(\sigma a)a$. Because every term in a mesh relation is of the form $(\sigma a)a$, a sectional path can never appear as a monomial in any contextual mesh relation $u r_v w$. Consequently, the indicator functional of a sectional path annihilates the mesh ideal, so every sectional path represents a nonzero morphism in the mesh category $C(Q,c)$. Since $C(Q,c)$ is finite-dimensional, there is an integer $N$ such that all paths of length at least $N$ vanish in $C(Q,c)$; hence every sectional path in $Q$ has length strictly less than $N$.
+
+Fix a base vertex $x_0$ in the connected periodic quiver $Q$, and let $\Delta$ be the directed graph whose vertices are all sectional paths in $Q$ starting at $x_0$ (including the trivial path at $x_0$), with a directed edge $p\to q$ whenever $q$ is obtained by appending a single arrow to $p$. By definition, $\Delta$ is a finite tree rooted at the trivial path, oriented away from the root. Its repetition quiver $\Z\Delta$ has vertices $(p,j)$ for $p\in\Delta_0$ and $j\in\Z$, translation $\tau(p,j)=(p,j-1)$, and for each directed edge $p\to q$ in $\Delta$ (where $q=pa$ for an arrow $a$ of $Q$) a pair of arrows
+\[
+  (p,j)\longrightarrow(q,j),\qquad
+  (q,j)\longrightarrow(p,j+1).
+\]
+We define a translation-quiver morphism $\pi\colon\Z\Delta\to Q$ on vertices by
+\[
+  \pi(p,j)=\tau^{-j}(\operatorname{target}p),
+\]
+and on the two repetition arrows associated to $q=pa$ by sending $(p,j)\to(q,j)$ to $\tau^{-j}a$ and $(q,j)\to(p,j+1)$ to $\tau^{-j}(\sigma^{-1}a)$.
+
+At the root $p=x_0$, the children $q$ correspond to all outgoing arrows from $x_0$. At a nonroot path $p$ ending with an arrow $a$, the children $q$ correspond to all outgoing arrows from $\operatorname{target}p$ except $\sigma^{-1}a$, while the returning arrow $(p,j)\to(p',j+1)$ to the parent $p'$ of $p$ maps to $\tau^{-j}(\sigma^{-1}a)$. Thus $\pi$ restricts to a bijection on the outgoing arrows at every vertex of $\Z\Delta$, and compatibility with the mate permutation $\sigma$ implies that $\pi$ is also bijective on incoming arrows. In particular, the image of $\pi$ is a union of connected components, hence equals all of $Q$.
+
+Because $\pi$ is a local isomorphism on incoming and outgoing stars, paths in $Q$ lift uniquely to $\Z\Delta$ once a starting vertex in $\Z\Delta$ is fixed. Pulling back the mesh coefficients of $Q$ along $\pi$ equips $\Z\Delta$ with a mesh category whose contextual mesh relations from a fixed starting vertex $(p,j)$ project bijectively onto those of $Q$ starting at $\pi(p,j)$. Taking the direct sum over all endpoints in $\Z\Delta$ therefore identifies the space of paths in $\Z\Delta$ starting at $(p,j)$, modulo lifted mesh relations, with the space of paths in $C(Q,c)$ starting at $\pi(p,j)$. In particular, all paths of length at least $N$ vanish in the lifted mesh category on $\Z\Delta$.
+
+\medskip
+\noindent\textbf{Step 2: The tree $\Delta$ is a Dynkin diagram.}
+We next rescale the arrows of $\Z\Delta$ so that the lifted mesh relations take the standard $\pm1$ signs of the signed preprojective algebra $\Pi(\Delta)$. Along each tree edge $u\to v$ of $\Delta$, denote the repetition arrows by $a_j\colon(u,j)\to(v,j)$ and $b_j\colon(v,j)\to(u,j+1)$. Prescribing mesh coefficients $+1$ at $(v,j)$ and $-1$ at $(u,j)$ imposes equations of the form $\mu_{a,j}\mu_{b,j-1}=\alpha_{v,j}$ and $\mu_{a,j-1}\mu_{b,j-1}=\beta_{u,j}$ on the arrow scales $\mu$. Taking their ratio determines $\mu_{a,j}$ recursively for all $j\in\Z$ from $\mu_{a,0}=1$, and then determines every $\mu_{b,j}$ (since the index $j$ runs over $\Z$, there is no periodicity obstruction, and distinct edges of $\Delta$ involve disjoint sets of arrows).
+
+Recall that the \emph{signed preprojective algebra} $\Pi(\Delta)$ is the quotient of the path algebra of the doubled quiver $\overline\Delta$ (obtained by adding a reverse arrow $a^*\colon v\to u$ for each tree edge $a\colon u\to v$) by the quadratic relations
+\[
+  \sum_{a:x\to y}aa^*-\sum_{a:y\to x}a^*a=0\qquad(x\in\Delta_0).
+\]
+Forgetting the integer coordinate $j$ in $\Z\Delta$ identifies the rescaled mesh relations on $\Z\Delta$ with the defining relations of $\Pi(\Delta)$, and every path in $\overline\Delta$ starting at $u$ lifts uniquely to a path in $\Z\Delta$ starting at $(u,0)$. Consequently, all paths of length at least $N$ vanish in $\Pi(\Delta)$, so $\Pi(\Delta)$ is finite-dimensional.
+
+For each vertex $i\in\Delta_0$, set $P_i=e_i\Pi(\Delta)$ and $n_i=\dim_k P_i$, and let $S_i$ be the simple right $\Pi(\Delta)$-module at $i$. Factoring paths and relations starting at $i$ through their initial arrows produces the exact sequence of right $\Pi(\Delta)$-modules
+\begin{equation}
+  P_i\longrightarrow\bigoplus_{j\sim i}P_j\longrightarrow P_i\longrightarrow S_i\longrightarrow0,
+  \label{eq:preprojective-dimension-sequence}
+\end{equation}
+where $j\sim i$ ranges over the neighbors of $i$ in $\Delta$. (Exactness at $\bigoplus_{j\sim i}P_j$ holds because any relation in the free path algebra starting at $i$ is a sum of contextual relations $v r_x w$: if $v$ is nonempty, stripping its first arrow leaves a relation in $\Pi(\Delta)$ that vanishes in $P_j$, while if $v$ is empty, stripping the first arrow of $r_i w$ gives an element in the image of the leftmost map $P_i\to\bigoplus_{j\sim i}P_j$.) Letting $K_i$ denote the kernel of the leftmost map in~\eqref{eq:preprojective-dimension-sequence}, taking dimensions yields
+\[
+  2n_i-\sum_{j\sim i}n_j=1+\dim_k K_i>0\qquad(i\in\Delta_0).
+\]
+For the symmetric matrix $M=2I-\operatorname{Adj}(\Delta)$ and any real vector $z=(z_i)$, expanding the quadratic form gives
+\[
+  z^{\mathsf T}Mz=\sum_{\{i,j\}\in\Delta_1}n_in_j\left(\frac{z_i}{n_i}-\frac{z_j}{n_j}\right)^2+\sum_{i\in\Delta_0}\frac{(Mn)_i}{n_i}z_i^2.
+\]
+Since $n_i\geq1$ and $(Mn)_i=1+\dim_k K_i>0$ for all $i$, the matrix $M$ is positive definite. This immediately rules out any vertex of degree at least~$4$ (which contains a $\widetilde D_4$ star, on which $z=(2;1,1,1,1)$ satisfies $z^{\mathsf T}Mz=0$) as well as two trivalent vertices (which contain a $\widetilde D_m$ subtree, on which $z$ equal to~$2$ along the connecting path and~$1$ at the four leaves satisfies $z^{\mathsf T}Mz=0$). Thus $\Delta$ is either a linear path $A_n$ or a star with three arms of lengths $p\leq q\leq r$. In the star case, the Cartan matrix of an arm of length $m$ has inverse entry $m/(m+1)$ at its inner endpoint, so taking the Schur complement at the central vertex gives
+\[
+  2-\frac{p}{p+1}-\frac{q}{q+1}-\frac{r}{r+1}>0\quad\Longleftrightarrow\quad
+  \frac1{p+1}+\frac1{q+1}+\frac1{r+1}>1,
+\]
+which forces $p=1$ and either $q=1$ ($D_n$) or $q=2$ with $r\in\{2,3,4\}$ ($E_6,E_7,E_8$).
+
+\medskip
+\noindent\textbf{Step 3: The fibers of $\pi$ are deck-group orbits.}
+Write $R=\Z\Delta$ and let $o=(x_0,0)$ be the root at coordinate~$0$. For any vertex $z\in R$ with $\pi(z)=\pi(o)$, we can construct a translation-quiver endomorphism $H_z\colon R\to R$ over $\pi$ by setting $H_z(o)=z$, lifting the rooted tree edges of $\Delta\times\{0\}$ uniquely from $z$, and extending to all of $R$ via $\tau$ and the mate permutation $\sigma$. Because $\Delta$ is a tree, this extension is well defined and locally bijective at every vertex, hence surjective onto $R$. Moreover, any translation-quiver morphism $R\to R$ over $\pi$ is uniquely determined by the image of a single vertex via unique lifting of undirected walks. Choosing $z'\in R$ with $H_z(z')=o$, we have $\pi(z')=\pi(o)$, and the compositions $H_z\circ H_{z'}$ and $H_{z'}\circ H_z$ fix $o$ and $z'$ respectively, so $H_z$ is an automorphism of $R$ over $\pi$.
+
+Consequently, the deck group $\Theta$ of translation-quiver automorphisms of $R$ over $\pi$ acts freely on $R$ and transitively on the fiber $\pi^{-1}(\pi(o))$. For any two vertices $u,v\in R$ with $\pi(u)=\pi(v)$, projecting an undirected walk from $o$ to $u$ down to $Q$ and lifting its reverse from $v$ produces a vertex $z\in\pi^{-1}(\pi(o))$ such that $H_z(u)=v$. Thus $\Theta$ acts transitively on every fiber of $\pi$, giving $R/\Theta\cong Q$.
+
+\medskip
+\noindent\textbf{Step 4: The deck group $\Theta$ is cyclic.}
+Every translation-commuting automorphism of $\Z\Delta$ has the form
+\[
+  (v,j)\longmapsto(\rho(v),j+n_v),
+\]
+where $\rho$ is an undirected graph automorphism of $\Delta$ and the integer shifts $n_v\in\Z$ satisfy $n_v=n_u$ along a directed edge $u\to v$ if $\rho$ preserves its orientation, and $n_v=n_u+1$ if $\rho$ reverses its orientation. Thus the automorphism is completely determined by $\rho$ and its shift at a single vertex, and changing the orientation of $\Delta$ simply shifts the repetition coordinates of the vertices of $\Z\Delta$.
+
+When $\Delta$ is of type $D_n$, $E_6$, $E_7$, $E_8$, or $A_{2n-1}$, every graph automorphism of $\Delta$ fixes a canonical root vertex (the trivalent vertex or the central vertex of $A_{2n-1}$). Orienting $\Delta$ away from this root makes every $\rho\in\Aut(\Delta)$ orientation-preserving, so $n_v$ is constant across $v\in\Delta_0$ and the full group of translation-commuting automorphisms of $\Z\Delta$ is $\Z\times\Aut(\Delta)$ (with $\Z$ generated by $\tau$). Since $\Theta$ acts freely on vertices and any element in the kernel of the projection $\Theta\to\Z$ fixes the root $(x_0,0)$, the projection $\Theta\to\Z$ is injective; since $Q=\Z\Delta/\Theta$ is finite, its image is a nontrivial subgroup $s\Z$ ($s\geq1$). Hence $\Theta=\langle\tau^s\rho\rangle$ for some $s\geq1$ and $\rho\in\Aut(\Delta)$, proving the first case of Proposition~\ref{prop:periodic-tree-model}(2).
+
+When $\Delta=A_{2n}$, label the two halves of the tree by $L_i$ and $R_i$ ($1\leq i\leq n$) from the center outward, orient the central edge as $L_1\to R_1$, and orient both halves outward ($L_i\to L_{i+1}$ and $R_i\to R_{i+1}$). The translation-quiver automorphism
+\[
+  \eta(L_i,j)=(R_i,j),\qquad \eta(R_i,j)=(L_i,j+1)
+\]
+satisfies $\eta^2=\tau^{-1}$, and the edge-shift equations show that every translation-commuting automorphism of $\Z A_{2n}$ is a power of $\eta$. Hence $\Theta=\langle\eta^r\rangle$ for some $r\geq1$ (where even $r$ gives a pure translation quotient and odd $r$ twists translation by the reflection of $A_{2n}$), completing the proof of Proposition~\ref{prop:periodic-tree-model}.
+\end{proof}
+
+For our later calculations on the odd quotient $\Z A_{2n}/\langle\eta^r\rangle$ ($r$ odd), it is convenient to identify $L_{i,j}$ with $(i,2j)$ and $R_{i,j}$ with $(i,2j+1)$. The quotient quiver then has vertices $(i,j)$ with $1\leq i\leq n$ and $j\in\Z/r\Z$, translation $\tau(i,j)=(i,j-2)$, and arrows
+\[
+  \varepsilon_j\colon(1,j)\to(1,j+1),\qquad
+  a_{i,j}\colon(i,j)\to(i+1,j),\qquad
+  b_{i,j}\colon(i+1,j)\to(i,j+2).
+\]
+
+\subsection{Mesh corrections outside characteristic two}
+\label{app:mesh-calculations}
+
+We now prove the vanishing assertion $\operatorname{coker}D_m(\C)=0$ ($m\geq2$) of Proposition~\ref{prop:mesh-correction-spaces} when $\charac k\ne2$. By Proposition~\ref{prop:periodic-localization}, $\operatorname{coker}D_m(\C)$ decomposes as the direct sum of the cokernels of the periodic components of $\Gamma_A$ (and a periodic component without arrows consists of isolated vertices with $\C_d=0$ for $d\geq1$). By Proposition~\ref{prop:periodic-tree-model}, each nontrivial periodic component is modeled on a Dynkin repetition quotient $\Z\Delta/\Theta$. We first normalize the mesh coefficients on these periodic models (diagonal rescalings of arrows and mesh relations conjugate $D_m$ by invertible diagonal matrices, preserving both $\operatorname{coker}D_m$ and the brick hypothesis). We then show that $\operatorname{coker}D_{d-1}$ is a quotient of a \emph{twisted trace space} of the signed preprojective algebra $\Pi(\Delta)$, and compute these twisted trace spaces for each Dynkin type. Note that our normalization, the twisted-trace surjection, and the nonvanishing results in Lemmas~\ref{lem:d4-four-return} and~\ref{lem:e7-sixteen-return} hold in arbitrary characteristic; we will point out explicitly where the invertibility of~$2$ is used.
+
+\subsubsection{Scalar coefficients in the periodic models}
+
+Consider first a rooted periodic model $Q(\Delta,s,\rho)=\Z\Delta/\langle\tau^s\rho\rangle$, where $\Delta$ is oriented away from a root fixed by $\rho$. The orbit graph $\Delta/\langle\rho\rangle$ is again a finite rooted tree. For each $\rho$-orbit $v$ of vertices in $\Delta$, let $m_v=s|v|$ denote the period of the corresponding $\tau$-cycle in $Q(\Delta,s,\rho)$. Along any parent-child edge orbit $u\to v$, the $\rho$-stabilizer of a child vertex fixes its unique parent in the tree, so $|u|$ divides $|v|$ and hence $m_u\mid m_v$.
+
+\begin{lemma}
+\label{lem:periodic-scalar-gauges}
+By rescaling arrows and mesh relations in $C(Q,c)$, any system of nonzero mesh coefficients $c$ can be normalized as follows:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item On $Q=\Z\Delta/\langle\tau^s\rho\rangle$, where $\Delta$ is a finite tree oriented away from a root fixed by $\rho$, the coefficients $c$ can be rescaled to the standard $\pm1$ coefficients of the signed preprojective algebra $\Pi(\Delta)$.
+\item On the odd quotient $\Z A_{2n}/\langle\eta^r\rangle$ ($r$ odd), written in the coordinates at the end of Appendix~\ref{app:periodic-trees}, the coefficients $c$ can be rescaled so that every length-two mesh path has coefficient $+1$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+For~(1), label the arrows in $Q$ lying over a parent-child edge orbit $u\to v$ by $j\in\Z/m_v\Z$ as
+\[
+  a_j\colon(u,j\bmod m_u)\to(v,j),\qquad
+  b_j\colon(v,j)\to(u,j+1\bmod m_u).
+\]
+Let $\mu_{a,j},\mu_{b,j}\in k^\times$ be arrow scales and let $\eta_{v,j}\in k^\times$ scale the mesh relation at $(v,j)$. Transforming the given mesh coefficients into the target $\pm1$ coefficients requires solving equations of the form
+\[
+  \mu_{a,j}\mu_{b,j-1}=t_{v,j}\eta_{v,j},\qquad
+  \mu_{a,j-1}\mu_{b,j-1}=t_{u,j}\eta_{u,j\bmod m_u},
+\]
+for prescribed nonzero scalars $t_{v,j},t_{u,j}\in k^\times$ (when $|\text{orbit }v|>|\text{orbit }u|$, several child indices $j$ share the same parent mesh $\eta_{u,j\bmod m_u}$). Dividing the two equations gives a first-order recurrence for $\mu_{a,j}$ around the cycle $j\in\Z/m_v\Z$, which has a solution if and only if the product of the ratios around the cycle equals~$1$:
+\[
+  \prod_{j\in\Z/m_v\Z}\eta_{v,j}=c_{uv}\left(\prod_{j\in\Z/m_u\Z}\eta_{u,j}\right)^{m_v/m_u},
+\]
+where $c_{uv}=\prod_{j}(t_{u,j}/t_{v,j})\in k^\times$. Because the orbit graph $\Delta/\langle\rho\rangle$ is a rooted tree, we may set $\eta_{\text{root},j}=1$ at the root and inductively choose $\eta_{v,j}\in k^\times$ down the tree so that the cycle-product condition holds on every edge orbit, after which the recurrences determine all arrow scales $\mu_{a,j},\mu_{b,j}\in k^\times$.
+
+For~(2), on $\Z A_{2n}/\langle\eta^r\rangle$ ($r$ odd), we set the scales of the central arrows $\varepsilon_j$ equal to~$1$ and choose the level-$1$ mesh scales $\eta_{1,j}$ so that each $\varepsilon_{j-2}\varepsilon_{j-1}$ has coefficient $+1$. Along each arm edge between level $i$ and level $i+1$, the ratio recurrence shifts the index $j\in\Z/r\Z$ by~$2$; because $r$ is odd, shifting by~$2$ generates the entire cycle $\Z/r\Z$, so the compatibility condition simply prescribes the product $\prod_{j\in\Z/r\Z}\eta_{i+1,j}$ in terms of $\prod_{j\in\Z/r\Z}\eta_{i,j}$ and can be solved inductively for $i=1,\ldots,n-1$.
+\end{proof}
+
+\subsubsection{Rotation and twisted traces}
+
+Let $\Pi=\Pi(\Delta)$ be the signed preprojective algebra of a rooted tree $\Delta$. Given an orientation-preserving automorphism $\theta\in\Aut(\Delta)$, we define the \emph{$\theta$-twisted trace space} of $\Pi$ to be the graded vector space quotient
+\begin{equation}
+  T_\theta(\Pi)=\left(\bigoplus_{x\in\Delta_0}\Pi(x,\theta x)\right)
+  \Big/\Span\bigl\{uv-v\theta(u):u\in\Pi(x,y),\ v\in\Pi(y,\theta x)\bigr\}.
+  \label{eq:twisted-trace-space}
+\end{equation}
+In $T_\theta(\Pi)$, the relation $[uv]=[v\theta(u)]$ allows one to cut a path $uv$ from $x$ to $\theta x$ and move its prefix $u$ to the end after applying $\theta$; in particular, $[w]=[\theta(w)]$ for every $w\in\Pi(x,\theta x)$. When $\theta=\id$, $T_{\id}(\Pi)=\Pi/[\Pi,\Pi]$ is the ordinary cyclic trace space of $\Pi$.
+
+\begin{lemma}
+\label{lem:twisted-trace-surjection}
+Let $Q=Q(\Delta,s,\rho)=\Z\Delta/\langle\tau^s\rho\rangle$ be a rooted periodic mesh model equipped with the signed preprojective mesh coefficients of $\Pi=\Pi(\Delta)$, and let $D_{d-1}$ be the mesh derivative~\eqref{eq:mesh-derivative} in path degree $d\geq3$.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item The cokernel $\operatorname{coker}D_{d-1}$ vanishes unless $d$ is even and $s$ divides $d/2-1$.
+\item When $d$ is even and $s\mid(d/2-1)$, set $l=(1-d/2)/s$ and $\theta=\rho^l$. Then there is a canonical surjection
+\[
+  T_\theta(\Pi)_d\twoheadrightarrow\operatorname{coker}D_{d-1}.
+\]
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+A path of length $d$ in $Q$ from $\tau(x,j)=(x,j-1)$ to $(x,j)$ lifts to a path in $\Z\Delta$ from $(x,j-1)$ to $(\rho^l x,j-sl)$ for some integer $l\in\Z$. Because $x$ and $\rho^l x$ lie at the same distance from the root of $\Delta$, the lifted path takes equal numbers of steps away from the root (which preserve the second coordinate) and toward the root (which increment the second coordinate by~$1$). Hence $d$ must be even and $(j-1)+d/2=j-sl$, which gives $d/2-1=-sl$; this proves~(1) and shows that the lifted path projects in $\Pi(\Delta)$ to a path of length $d$ from $x$ to $\theta x=\rho^l x$.
+
+In the signed mesh presentation on $Q$, modifying an arrow $a$ by a parallel path $w$ of length $d-1$ adds $c[wa]+c'[(\tau a)w]$ to $\im D_{d-1}$, where $c$ and $c'$ are the two mesh coefficients on the tree edge underlying $a$. Because $c$ and $c'$ have opposite signs $\{+1,-1\}$, this identifies $[wa]=[(\tau a)w]$ in $\operatorname{coker}D_{d-1}$. Iterating this single-arrow rotation $d$ times shows that $[w]=[\tau w]$, so the class in $\operatorname{coker}D_{d-1}$ of a lifted path depends only on its underlying path in $\Pi(\Delta)$ from $x$ to $\theta x$, independently of the repetition coordinate $j$ (and invariant under $\rho$ by the deck relation). Moreover, cutting a path $uv$ from $(x,j-1)$ to $(\theta x,j-sl)$ and rotating the prefix $u$ to the end via $[uv]=[v(\tau^{-1}u)]$ in $Q$ corresponds upstairs in $\Pi(\Delta)$ to $[uv]=[v\theta(u)]$. Since contextual mesh relations in $\Pi(\Delta)$ lift to contextual mesh relations in $Q$, the projection $T_\theta(\Pi)_d\to\operatorname{coker}D_{d-1}$ is well defined and surjective.
+\end{proof}
+
+To compute $T_\theta(\Pi)$ for star-shaped trees $\Delta$, we first express closed paths at the central vertex $o$ in terms of the length-two return loops along its arms, following~\cite[Sections~11.3 and~13.1]{Schedler} and incorporating the arm-permuting twist $\theta$.
+
+\begin{lemma}
+\label{lem:star-return-reduction}
+Let $\Delta$ be a star tree rooted at its central vertex $o$, with arms of lengths $L_1,\ldots,L_t$, and for each $i=1,\ldots,t$ let $x_i\in\Pi(o,o)_2$ denote the length-two closed path that steps out along the $i$-th arm and immediately returns to $o$. Then the corner algebra $\Pi(o,o)$ is generated by $x_1,\ldots,x_t$ and is a quotient of
+\begin{equation}
+  k\langle x_1,\ldots,x_t\rangle\big/\Bigl(\sum_{i=1}^t x_i,\ x_1^{L_1+1},\ldots,x_t^{L_t+1}\Bigr).
+  \label{eq:star-corner-presentation}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Label the vertices along the $i$-th arm as $v_0=o,v_1,\ldots,v_{L_i}$. At any internal vertex $v_{j-1}$ ($j\geq2$), the mesh relation replaces the outward backtrack $v_{j-1}\to v_j\to v_{j-1}$ (up to sign) by the inward backtrack $v_{j-1}\to v_{j-2}\to v_{j-1}$, strictly decreasing the sum of the distances from $o$ along the path. Iterating this replacement reduces every closed path at $o$ to a polynomial in $x_1,\ldots,x_t$. The mesh relation at $o$ gives $\sum_{i=1}^t x_i=0$, while pushing $x_i^{L_i+1}$ out along the $i$-th arm reaches the leaf relation at $v_{L_i}$ and vanishes.
+\end{proof}
+
+\begin{lemma}
+\label{lem:arm-trace-reduction}
+Let $\Delta$ be a star tree with center $o$, and let $\theta\in\Aut(\Delta)$ be an automorphism fixing $o$ and permuting the arms. In every positive degree, $T_\theta(\Pi)_+$ is spanned by the classes of positive-degree words in the arm loops $x_1,\ldots,x_t$ at $o$. Moreover, if the $i$-th arm is fixed pointwise by $\theta$, then
+\begin{equation}
+  [x_i^q]=0\quad\text{in }T_\theta(\Pi)\qquad\text{for all }q\geq1.
+  \label{eq:arm-power-trace-zero}
+\end{equation}
+\end{lemma}
+\begin{proof}
+If a path $w$ from $v$ to $\theta v$ passes through the center $o$, writing $w=uv$ with $u\colon v\to o$ and $v\colon o\to\theta v$ gives $[uv]=[v\theta(u)]$ in $T_\theta(\Pi)$, which is a closed path at $\theta o=o$ and hence a linear combination of words in $x_1,\ldots,x_t$ by Lemma~\ref{lem:star-return-reduction}.
+
+If instead $w$ never visits $o$, then $w$ is supported entirely on a single arm of $\Delta$. Because $w$ goes from $v$ to $\theta v$, that arm must be fixed pointwise by $\theta$, so $w$ is a closed path and twisted rotation on that arm is ordinary cyclic rotation. Rotating $w$ so that it begins at a vertex $v_j$ of minimum depth along $w$, we see that its two incident steps at $v_j$ form an inward-pointing turn $v_{j+1}\to v_j\to v_{j+1}$; applying the mesh relation at $v_{j+1}$ replaces this turn by $v_{j+1}\to v_{j+2}\to v_{j+1}$ (or by~$0$ at the leaf), strictly increasing the sum of the vertex depths along the cyclic word. Since the depth sum of a word of fixed length is bounded above, repeating this step eventually pushes the word off the leaf and shows that $[w]=0$. Applying the exact same outward-pushing argument to the loop power $x_i^q$ on any $\theta$-fixed arm yields~\eqref{eq:arm-power-trace-zero}.
+\end{proof}
+
+\subsubsection{Types A and D}
+
+Assume now that $\charac k\ne2$. We apply Lemma~\ref{lem:twisted-trace-surjection} and Lemma~\ref{lem:arm-trace-reduction} to rule out all nonzero classes in $\operatorname{coker}D_{d-1}$ ($d\geq3$) for the rooted models of types $A$ and $D$:
+\begin{itemize}
+\item \emph{Type $A$ with trivial twist ($\theta=\id$).} This covers all pure translation quotients of type $A$, including $\Z A_{2n}/\langle\eta^r\rangle$ for even $r$ (since $\eta^r=\tau^{-r/2}$). Rooting the path $A_n$ at one of its endpoints makes it a star with a single arm, so $\Pi(o,o)$ is generated by $x_1$ subject to $x_1=0$ by Lemma~\ref{lem:star-return-reduction}; hence $T_{\id}(\Pi)_+=0$.
+\item \emph{Type $A_{2n-1}$ with reflection ($\theta=\rho\ne\id$).} Rooting $A_{2n-1}$ at its central vertex gives two arms of length $n-1$ with loops $x_1=x$ and $x_2=-x$ exchanged by $\theta(x)=-x$. For every $q\geq1$, twisted rotation of one factor $x$ gives $[x^q]=[x^{q-1}\theta(x)]=-[x^q]$, so $2[x^q]=0$ and hence $[x^q]=0$ because $\charac k\ne2$.
+\item \emph{Type $D_n$ with $\theta=\id$ or the short-arm transposition.} Let $x$ and $y$ be the loops along the two short arms of length~$1$, and let $z=-x-y$ be the loop along the long arm of length $n-3$. Since $x^2=y^2=0$, the corner $\Pi(o,o)$ is spanned by alternating words in $x$ and $y$.
+  \begin{itemize}
+  \item When $\theta=\id$, any alternating word of odd length $2q+1\geq3$ has the same letters at its two ends and therefore rotates to a word containing $x^2=0$ or $y^2=0$, while $[x]=[y]=0$ by~\eqref{eq:arm-power-trace-zero}. In even word length $2q$, cyclic rotation identifies $[(xy)^q]=[(yx)^q]$, while~\eqref{eq:arm-power-trace-zero} applied to the fixed long arm gives $0=[z^{2q}]=[(x+y)^{2q}]=[(xy)^q]+[(yx)^q]=2[(xy)^q]$. Since $\charac k\ne2$, we obtain $[(xy)^q]=0$.
+  \item When $\theta$ interchanges $x$ and $y$, any alternating word of even length $2q$ twisted-rotates to a word containing $x^2=0$ or $y^2=0$ (for instance, $[(xy)^q]=[(yx)^{q-1}y\theta(x)]=[(yx)^{q-1}y^2]=0$). In odd word length $2q+1$, the two alternating words $w=x(yx)^q$ and $w'=y(xy)^q$ satisfy $[w]=[\theta(w)]=[w']$, while the fixed long arm gives $0=[(-z)^{2q+1}]=[(x+y)^{2q+1}]=[w]+[w']=2[w]$, so again $[w]=0$.
+  \end{itemize}
+\item \emph{Type $D_4$ with a three-cycle $\theta$.} When $\Delta=D_4$, all three arms have length~$1$, so $x^2=y^2=(x+y)^2=0$, which gives $yx=-xy$ and kills all words of word degree~$3$ (path degree~$6$). In word degree~$2$ (path degree~$4$), if $\theta(x)=y$, then $[xy]=[y\theta(x)]=[y^2]=0$, and if $\theta^2(y)=x$, then $[yx]=[x\theta^2(y)]=[x^2]=0$. Thus $T_\theta(\Pi)_d=0$ for all $d\geq3$.
+\end{itemize}
+
+\subsubsection{The odd quotients of even A}
+
+Consider next the odd quotient $Q=\Z A_{2n}/\langle\eta^r\rangle$ ($r$ odd), normalized by Lemma~\ref{lem:periodic-scalar-gauges}(2) so that every mesh path of length~$2$ has coefficient $+1$ in the coordinates $(i,j)$ ($1\leq i\leq n$, $j\in\Z/r\Z$) of Appendix~\ref{app:periodic-trees}. Any path from $\tau(i,j)=(i,j-2)$ to $(i,j)$ takes equal numbers of outward steps $a$ (which change $j$ by~$0$) and inward steps $b$ (which change $j$ by $+2$); since each $\varepsilon$ step changes $j$ by $+1$, the total change in the second coordinate $j\in\Z/r\Z$ equals the path length $d$. Thus a path of length $d$ from $\tau(i,j)$ to $(i,j)$ can exist only when $d\equiv2\pmod r$.
+
+Because all mesh coefficients equal $+1$, the column of $D_{d-1}$ corresponding to any arrow $u$ imposes the relation $[wu]+[(\tau u)w]=0$ in $\operatorname{coker}D_{d-1}$, so rotating a path by one arrow negates its class in $\operatorname{coker}D_{d-1}$ while preserving its cyclic sequence of levels $i\in\{1,\ldots,n\}$. Given any path of length $d$ from $\tau v$ to $v$ that reaches a maximum level $i+1>1$, the step into level $i+1$ and the step out of it must be $a_i b_i$ (as there are no level-preserving arrows above level~$1$). Rotating the path if necessary so that $a_i b_i$ does not straddle the cut, we may apply the mesh relation at level $i$ to replace $a_i b_i$ by $-b_{i-1}a_{i-1}$ when $i>1$ (or by $-\varepsilon\varepsilon$ when $i=1$), strictly decreasing the sum of the levels along the path. Repeating this reduction expresses every class in $\operatorname{coker}D_{d-1}$ as a linear combination of the classes $w_j=[\varepsilon_{j-2}\varepsilon_{j-1}\cdots\varepsilon_{j+d-3}]$ of pure level-$1$ paths of length $d$ ending at $(1,j)$ ($j\in\Z/r\Z$).
+
+Since $d\equiv2\pmod r$, the path of length $d-1$ formed by $d-1$ consecutive $\varepsilon$-arrows starting at $(1,j-1)$ has the same source and target as $\varepsilon_{j-1}\colon(1,j-1)\to(1,j)$. Evaluating $D_{d-1}$ on this arrow correction in the two root meshes containing $\varepsilon_{j-2}\varepsilon_{j-1}$ and $\varepsilon_{j-1}\varepsilon_j$ yields
+\[
+  w_{j-1}+w_j=0\qquad(j\in\Z/r\Z).
+\]
+Because $r$ is odd, going all the way around the $r$-cycle gives $w_j=(-1)^r w_j=-w_j$, so $2w_j=0$ and hence $w_j=0$ whenever $\charac k\ne2$ (and for $n=1$ the root mesh $\varepsilon_{j-2}\varepsilon_{j-1}=0$ already kills all paths of length~$d\geq2$).
+
+\subsubsection{Type $E_6$ and the small-period exclusion}
+
+For $\Delta=E_6$, the three arms have lengths $1,2,2$. Let $x$ be the loop along the short arm and $y,z$ the loops along the two arms of length~$2$, so that $x+y+z=0$ and $x^2=y^3=z^3=0$. Assuming $\charac k\ne2$, set $v=y-z=x+2y$, so that $2y=v-x$ and $2z=-v-x$. Adding and subtracting $8y^3=0$ and $8z^3=0$ transforms the presentation of $\Pi(o,o)$ into
+\begin{equation}
+  x^2=0,\qquad v^3=-xvx,\qquad v^2x+vxv+xv^2=0.
+  \label{eq:e6-corner-relations}
+\end{equation}
+From~\eqref{eq:e6-corner-relations} one checks directly that $\Pi(o,o)$ is spanned in each word degree $q=d/2\geq1$ by the following words:
+\[
+\begin{array}{c|l}
+\text{Word degree }q & \text{Spanning words} \\\hline
+1 & x,\ v \\
+2 & xv,\ vx,\ v^2 \\
+3 & xvx,\ xv^2,\ vxv \\
+4 & \psi_4=xvxv,\ \psi_4'=vxv^2 \\
+5 & \psi_5=xvxv^2 \\
+\geq6 & 0.
+\end{array}
+\]
+Indeed, multiplying~\eqref{eq:e6-corner-relations} by $x$ gives $xv^2x=-\psi_4$, $vxvx=\psi_4$, and $xv^3=v^3x=0$; hence $\psi_4x=x(vxvx)=0$, $\psi_4v=\psi_5$, $\psi_4'x=-v\psi_4=-\psi_5$, $\psi_4'v=vxv^3=0$, $\psi_5v=xvxv^3=0$, and $\psi_5x=xvx(v^2x)=-xvx(vxv+xv^2)=-\psi_4xv=0$.
+
+When $\theta=\rho$ is the nontrivial reflection of $E_6$, $\theta$ fixes $x$ and negates $v$. In $T_\rho(\Pi)$, every word containing an odd number of $v$'s satisfies $[w]=[\theta(w)]=-[w]$ and therefore vanishes since $\charac k\ne2$. Among words with an even number of $v$'s, $[x]=0$ by~\eqref{eq:arm-power-trace-zero}, $[v^2]=[v\theta(v)]=-[v^2]=0$, the last relation of~\eqref{eq:e6-corner-relations} gives $0=[v^2x]+[vxv]+[xv^2]=[xv^2]-[xv^2]+[xv^2]=[xv^2]$ in word degree~$3$, and $[\psi_4]=[(xv)\theta(xv)]=-[\psi_4]=0$ in word degree~$4$. Thus $T_\rho(\Pi)_+=0$.
+
+When $\theta=\id$ (ordinary trace), all pure arm powers vanish by~\eqref{eq:arm-power-trace-zero}. Expanding $0=4[y^2]=[(v-x)^2]$ and $0=4[z^2]=[(v+x)^2]$ gives $[xv]=[vx]=[v^2]=0$ in word degree~$2$. In word degree~$3$, $[xvx]=[x^2v]=0$ and $[vxv]=[xv^2]$, while the last relation of~\eqref{eq:e6-corner-relations} gives $3[xv^2]=0$. In word degree~$4$, $[\psi_4]=-[xv^2x]=-[x^2v^2]=0$ and $[\psi_4']=[xv^3]=0$, and in word degree~$5$, $[\psi_5]=-[\psi_4'x]=-[x\psi_4']=-[\psi_5]=0$. Consequently, the only possible nonzero class in $T_{\id}(\Pi)_+$ occurs in word degree~$3$ (path degree $d=6$) when $\charac k=3$, where it is spanned by $[xv^2]$.
+
+To show that even this degree-$6$ class in characteristic~$3$ cannot occur in a periodic component containing a brick, we use the following characteristic-free lemma, which will also be needed for $E_7$ and $E_8$.
+
+\begin{lemma}
+\label{lem:d4-four-return}
+Over every field $k$, every vertex of $\Pi(D_4)$ admits a nonzero closed path of path degree~$4$. Consequently, the pure translation mesh quotients $\Z D_4/\langle\tau^s\rangle$ of periods $s=1$ and $s=2$ contain no bricks.
+\end{lemma}
+\begin{proof}
+Orient the three arms of $D_4$ outward from the center $0$ to the leaves $1,2,3$ with arrows $a_i\colon0\to i$ and $b_i\colon i\to0$, and set $x_i=a_ib_i$. The defining relations of $\Pi(D_4)$ are $b_ia_i=0$ ($i=1,2,3$) and $x_1+x_2+x_3=0$. At the center~$0$, the paths of length~$4$ are the six products $x_ix_j$ ($i\ne j$), subject only to the relations $x_i(x_1+x_2+x_3)=0$ and $(x_1+x_2+x_3)x_j=0$; in the order $(12,13,21,23,31,32)$, their classes in $\Pi(D_4)_4$ are $(z,-z,-z,z,z,-z)$ with $z=x_1x_2\ne0$. Likewise, at each leaf $i$, the two length-$4$ closed paths $b_ia_jb_ja_i$ ($j\ne i$) are subject only to the single relation $\sum_{j\ne i}b_ia_jb_ja_i=0$, so each is nonzero in $\Pi(D_4)_4$.
+
+In $\Z D_4$, each of these length-$4$ closed paths increases the repetition coordinate by~$2$, and therefore projects in $\Z D_4/\langle\tau^s\rangle$ for $s\in\{1,2\}$ to a nonzero radical endomorphism at every vertex, ruling out the existence of any brick.
+\end{proof}
+
+Returning to $E_6$ in path degree $d=6$, Lemma~\ref{lem:twisted-trace-surjection}(1) requires $s\mid(6/2-1)=2$, so $s\in\{1,2\}$. Deleting the outer vertices of the two long arms of $E_6$ at every repetition coordinate leaves a translation-invariant subquiver isomorphic to a $D_4$ quotient of period $s$, whose mesh category is the object quotient of the $E_6$ mesh category by~\eqref{eq:mesh-object-quotient}. For a pure translation quotient ($s=1$ or $2$), Lemma~\ref{lem:d4-four-return} shows that this $D_4$ quotient has no bricks; for the reflected quotient $\Z E_6/\langle\tau^s\rho\rangle$, $s=2$ gives an odd twist $l=-1$ where $T_\rho(\Pi)_6=0$, while $s=1$ gives a $D_4$ quotient with $(\tau\rho)^2=\tau^2$, on which the degree-$4$ closed paths of Lemma~\ref{lem:d4-four-return} again close up to form nonzero radical endomorphisms at every vertex. Thus no periodic $E_6$ component containing a brick has a nonzero correction class.
+
+\subsubsection{The remaining exceptional traces}
+
+We treat $\Delta=E_7$ and $\Delta=E_8$ simultaneously. Let $x,y,z$ denote the length-two loops at the center $o$ along the long, medium, and short arms, respectively (note that $x$ now denotes the long-arm loop, whereas in $E_6$ it denoted the short-arm loop). By Lemma~\ref{lem:star-return-reduction}, their relations in $\Pi(o,o)$ are
+\[
+  x+y+z=0,\qquad x^m=y^3=z^2=0,\qquad
+  \text{where }m=\begin{cases}4 & \text{for }E_7,\\ 5 & \text{for }E_8.\end{cases}
+\]
+Eliminating $z=-x-y$, we see from Lemmas~\ref{lem:star-return-reduction} and~\ref{lem:arm-trace-reduction} that the positive-degree part of the ordinary trace space $T_{\id}(\Pi)_+$ is a quotient of the positive-degree part of $T_m$, where for any commutative coefficient ring $R$ we define the graded $R$-algebra $R_m$ and its $R$-module trace quotient $T_m$ by
+\begin{equation}
+  \begin{split}
+  R_m &= R\langle x,y\rangle/\bigl(x^m,y^3,(x+y)^2\bigr),\\
+  T_m &= R_m\big/\bigl([R_m,R_m]+\Span_R\{x^q,y^q,(x+y)^q:q\geq1\}\bigr),
+  \end{split}
+  \label{eq:exceptional-trace-spaces}
+\end{equation}
+with word degree in $x,y$ equal to half the path degree in $\Pi(\Delta)$. We first compute a spanning set and torsion relations for $(T_5)_+$ over $\Z$; this integral calculation reproduces the torsion groups of~\cite[Theorem~13.1.1]{Schedler} and will be used both here (for $\charac k\ne2$) and in Appendix~\ref{app:residual-mesh} (for $\charac k=2$ and $\mathcal O=\Z/4$).
+
+\begin{lemma}
+\label{lem:e78-traces}
+Let $R_m$ and $T_m$ be defined as in~\eqref{eq:exceptional-trace-spaces} over an arbitrary commutative ring, and write $[w]$ for the class of a word $w$ in $T_m$.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item Over any commutative ring, set $a=yx^3$, $b=yx^4$, and $t_j=[yx^j]$. The positive-degree part $(T_5)_+$ is spanned by the elements
+\[
+  t_1,\ t_2,\ t_3,\ t_4,\qquad [a^2],\qquad [ab^r]\quad(r\geq1),
+\]
+which satisfy the torsion relations
+\begin{equation}
+  \begin{gathered}
+  2t_1=2t_3=0,\qquad 3t_2=0,\qquad 5t_4=0,\\
+  2[a^2]=0,\qquad 3[ab]=0,\qquad 2[ab^r]=0\quad(r\geq2).
+  \end{gathered}
+  \label{eq:integral-exceptional-trace-relations}
+\end{equation}
+Moreover, for every nonempty word $W$ in the blocks $a$ and $b$,
+\begin{equation}
+  [a^2W]=0,\qquad [abW]=-[baW],\qquad [b^q]=0\quad(q\geq2),
+  \label{eq:integral-exceptional-block-relations}
+\end{equation}
+and $T_4$ is the quotient of $T_5$ obtained by setting $x^4=0$.
+\item If $2$ is invertible in the coefficient ring, then $(T_5)_+$ is spanned by
+\[
+  [yx^2],\qquad [yx^4],\qquad [(yx^3)(yx^4)],
+\]
+which are annihilated by $3$, $5$, and $3$, respectively, and $(T_4)_+$ is spanned by $[yx^2]$, annihilated by $3$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+\textit{(1)} In $R_5$ over $\Z$, expanding $(x+y)^2=0$ and $y^3=0$ yields the four identities
+\begin{equation}
+\begin{aligned}
+  y^2 &= -yx-xy-x^2,\\
+  yxy &= xyx+x^3,\\
+  yx^2y &= -yx^3-xyx^2-x^2yx-x^3y-2x^4,\\
+  0 = F &:= yx^3yx+yx^4y+xyx^3y-x^2yx^3-x^3yx^2.
+\end{aligned}
+  \label{eq:e8-word-identities}
+\end{equation}
+(Indeed, substituting the first identity into $y^2\cdot y=0$ gives the second; expanding $y^2(xy)=(y^2x)y$ gives the third; and equating $(yxy)x^2y=xyx^3y+x^5y$ with $yx(yx^2y)=-yx^5+x^2yx^3+x^3yx^2+x^6-yx^3yx-yx^4y$ using $x^5=0$ gives the fourth.)
+
+Any cyclic word in $x$ and $y$ can be described by the lengths of the $x$-gaps between consecutive occurrences of $y$. Whenever a gap has length $0$, $1$, or $2$, applying the first, second, or third identity in~\eqref{eq:e8-word-identities} rewrites the word in terms of words with strictly fewer occurrences of $y$. Because $x^5=0$, iterating this reduction expresses every class in $(T_5)_+$ as a linear combination of words with at most one $y$ (namely $t_j=[yx^j]$ for $1\leq j\leq4$, as $[x^q]=0$) and cyclic words in the two blocks $a=yx^3$ and $b=yx^4$.
+
+Set $c=yx^2$. Note first that any word containing $c=yx^2$ flanked on both sides by $a$ or $b$ (so that the adjacent $x$-gaps have lengths $p,q\geq3$) has trace zero: rotating it to the form $yx^2yx^qUx^p$ and expanding $yx^2y$ via the third identity in~\eqref{eq:e8-word-identities} produces five terms, three of which contain $x^5=0$ and the other two of which begin with $x^2$ or $x^3$ and therefore contain $x^{p+2}=0$ or $x^{p+3}=0$ after cyclic rotation.
+
+Using the relation $F=0$ from~\eqref{eq:e8-word-identities}, we now establish~\eqref{eq:integral-exceptional-block-relations}:
+\begin{itemize}
+\item For any nonempty word $W$ in $\{a,b\}$, taking the trace of $Fx^2W=0$ gives
+\[
+  [a^2W]+[bcW]+[xacW]-[x^3bW]=0.
+\]
+Here $[bcW]=0$ and $[xacW]=0$ by the flanked-$c$ observation (or because rotating the initial $x$ to the end of $W$ produces $x^5=0$), and rotating $x^3$ to the end of $[x^3bW]$ likewise produces $x^6=0$ or $x^7=0$; hence $[a^2W]=0$. When $W$ is empty, $0=[Fx^2]=2[a^2]+[bc]$, and multiplying the third identity of~\eqref{eq:e8-word-identities} by $x^4$ gives $[bc]=[yx^2yx^4]=0$, so $2[a^2]=0$.
+\item Taking the trace of $Fx^3W=0$ gives
+\[
+  [abW]+[baW]+[xaaW]=0.
+\]
+When $W$ is nonempty, rotating the initial $x$ of $[xaaW]$ to the end either creates $x^5=0$ (if $W$ ends in $b$) or gives $[a^2W'b]=0$ (if $W=W'a$); thus $[abW]=-[baW]$. When $W$ is empty, all three terms equal $[ab]$, giving $3[ab]=0$.
+\item Taking the trace of $Fx^4b^r=0$ ($r\geq0$) gives $[b^{r+2}]+[xab^{r+1}]=0$; rotating the initial $x$ of the second term to the end creates $x^5=0$, so $[b^q]=0$ for all $q\geq2$.
+\end{itemize}
+From~\eqref{eq:integral-exceptional-block-relations}, in any word in $\{a,b\}$ of block length at least~$3$ containing at least two $a$'s, anticommuting $a$ and $b$ brings two $a$'s adjacent and kills the trace via $[a^2W]=0$; in a word with a single $a$ and $r\geq2$ copies of $b$, anticommuting $a$ all the way through $b^r$ and cyclically rotating back gives $[ab^r]=(-1)^r[b^ra]=(-1)^r[ab^r]$ and also $[ab\cdot b^{r-1}]=-[bab^{r-1}]=-[ab^r]$, so $2[ab^r]=0$.
+
+Finally, for $t_j=[yx^j]$ ($1\leq j\leq4$), taking the trace of the first identity in~\eqref{eq:e8-word-identities} gives $2t_1=0$; comparing the trace of the second identity with that of $y^2x$ gives $3t_2=0$; comparing the trace of the third identity with that of $y^2x^2$ gives $2t_3=0$; and taking the trace of the third identity multiplied by $x$ gives $t_4=-4t_4$, or $5t_4=0$. This proves~(1), and~(2) follows immediately on inverting~$2$.
+\end{proof}
+
+To exclude the remaining periods for $E_7$ and $E_8$ in characteristics~$3$ and~$5$, we establish a lower bound on the dimensions of path spaces in $\Pi(\Delta)$. For any finite graph $\Delta$ with adjacency matrix $M$, define the Chebyshev-type integer matrices $U_d$ ($d\geq0$) by the recurrence
+\[
+  U_0=I,\qquad U_1=M,\qquad U_{d+1}=MU_d-U_{d-1}.
+\]
+If $U_0,U_1,\ldots,U_N$ have nonnegative entries, then over every field $k$ we have the entrywise lower bound
+\begin{equation}
+  \label{eq:preprojective-lower-bound}
+  \bigl(\dim_k e_i\Pi(\Delta)_N e_j\bigr)_{i,j}\geq U_N.
+\end{equation}
+Indeed, let $H(t)=\sum_{d\geq0}(\dim_k e_i\Pi(\Delta)_d e_j)t^d$ be the matrix Hilbert series of $\Pi(\Delta)$. Recording the graded dimensions of the kernels $K_i$ of the leftmost maps in the graded exact sequences~\eqref{eq:preprojective-dimension-sequence} in a power series $K(t)$ with nonnegative matrix coefficients gives
+\[
+  (I-tM+t^2I)H(t)=I+K(t)\quad\Longrightarrow\quad
+  H(t)=\Bigl(\sum_{d\geq0}U_dt^d\Bigr)\bigl(I+K(t)\bigr),
+\]
+whose degree-$N$ coefficient is $U_N+\sum_{r=1}^N U_{N-r}K_r\geq U_N$ whenever $U_0,\ldots,U_N\geq0$.
+
+Using~\eqref{eq:preprojective-lower-bound}, we verify that every vertex of $\Pi(E_7)$ has a nonzero closed path in the top socle degree $d=16$ (compare~\cite[Section~6.2]{Kaplan}).
+
+\begin{lemma}
+\label{lem:e7-sixteen-return}
+Over every field $k$, every vertex of $\Pi(E_7)$ admits a nonzero closed path of path degree~$16$.
+\end{lemma}
+\begin{proof}
+Ordering the vertices of $E_7$ according to its bipartition (with the three vertices at odd distance from the center followed by the four vertices at even distance), the off-diagonal block $B$ of the adjacency matrix $M$ and its products $S=BB^{\mathsf T}$ and $T=B^{\mathsf T}B$ are
+\[
+  B=\begin{pmatrix}1&1&1&0\\0&1&0&0\\0&0&1&1\end{pmatrix},\quad
+  S=BB^{\mathsf T}=\begin{pmatrix}3&1&1\\1&1&0\\1&0&2\end{pmatrix},\quad
+  T=B^{\mathsf T}B=\begin{pmatrix}1&1&1&0\\1&2&1&0\\1&1&2&1\\0&0&1&1\end{pmatrix}.
+\]
+Setting $f(X)=X^3-6X^2+9X-3I$ and $w=(-1,0,1,-1)^{\mathsf T}$, direct matrix multiplication gives $f(S)=0$, $f(T)=-ww^{\mathsf T}$, and $Tf(T)=0$. Writing $U_{2j}=\operatorname{diag}(F_j(S),F_j(T))$, the recurrence $U_{d+1}=MU_d-U_{d-1}$ yields
+\[
+  F_0=I,\quad F_1(X)=X-I,\quad F_2(X)=X^2-3X+I,
+\]
+\[
+  \begin{array}{ll}
+  F_3(S)=F_2(S)+I, & F_3(T)=F_2(T)+I-ww^{\mathsf T},\\
+  F_4(S)=2(S-I), & F_4(T)=2(T-I)+ww^{\mathsf T}.
+  \end{array}
+\]
+Explicit evaluation shows that all entries of $F_1,F_2,F_3,F_4$ on $S$ and $T$ are nonnegative:
+\[
+  F_2(S)=\begin{pmatrix}3&1&2\\1&0&1\\2&1&0\end{pmatrix},\qquad
+  F_2(T)=\begin{pmatrix}1&1&1&1\\1&1&2&1\\1&2&2&0\\1&1&0&0\end{pmatrix},
+\]
+\[
+  F_3(T)=\begin{pmatrix}1&1&2&0\\1&2&2&1\\2&2&2&1\\0&1&1&0\end{pmatrix},\qquad
+  F_4(T)=\begin{pmatrix}1&2&1&1\\2&2&2&0\\1&2&3&1\\1&0&1&1\end{pmatrix}.
+\]
+Likewise, the upper-right blocks of the odd matrices $U_1,U_3,U_5,U_7$ are $B$, $(S-2I)B$, $(S^2-4S+3I)B$, and $(S-I)B$, which are nonnegative because
+\[
+  (S-2I)B=\begin{pmatrix}1&2&2&1\\1&0&1&0\\1&1&1&0\end{pmatrix},\qquad
+  S^2-4S+3I=\begin{pmatrix}2&0&1\\0&1&1\\1&1&0\end{pmatrix}.
+\]
+Thus $U_0,\ldots,U_8$ are entrywise nonnegative. Since $U_9=MU_8-U_7=U_7$, the reversibility of the recurrence $U_{d-1}=MU_d-U_{d+1}$ implies by induction that $U_{8+j}=U_{8-j}$ for $0\leq j\leq8$. In particular, $U_0,\ldots,U_{16}$ are all entrywise nonnegative and $U_{16}=U_0=I$, so the claim follows from~\eqref{eq:preprojective-lower-bound}.
+\end{proof}
+
+We can now complete the proof of Proposition~\ref{prop:mesh-correction-spaces} for $E_7$ and $E_8$ outside characteristic two. By Lemma~\ref{lem:e78-traces}(2), the only possible nonzero classes in $(T_4)_+$ and $(T_5)_+$ when $2$ is invertible are $[yx^2]$ (word degree~$3$, path degree $d=6$, in characteristic~$3$), $[yx^4]$ (word degree~$5$, path degree $d=10$, for $E_8$ in characteristic~$5$), and $[(yx^3)(yx^4)]$ (word degree~$9$, path degree $d=18$, for $E_8$ in characteristic~$3$). By Lemma~\ref{lem:twisted-trace-surjection}(1), path degrees $d=6,10,18$ require the period $s$ to divide $d/2-1=2,4,8$, respectively.
+
+However, periods $s=1$ and $s=2$ are ruled out by deleting the outer vertices to pass to $\Z D_4/\langle\tau^s\rangle$ and applying Lemma~\ref{lem:d4-four-return}. For periods $s=4$ and $s=8$, the degree-$16$ closed paths at every vertex of $\Pi(E_7)$ from Lemma~\ref{lem:e7-sixteen-return} advance the repetition coordinate by~$8$, and therefore project to nonzero radical endomorphisms at every vertex of $\Z E_7/\langle\tau^s\rangle$ (which is also an object quotient of $\Z E_8/\langle\tau^s\rangle$ obtained by deleting the terminal vertex of the long arm). Thus no periodic component of type $E_7$ or $E_8$ containing a brick can have period dividing~$8$. Since $E_7$ and $E_8$ have no nontrivial graph automorphisms, this completes the proof of Proposition~\ref{prop:mesh-correction-spaces}.

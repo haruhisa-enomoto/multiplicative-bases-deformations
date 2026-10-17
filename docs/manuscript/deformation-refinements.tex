@@ -1,0 +1,160 @@
+\section{Further consequences for deformations and mesh parameters}
+\label{sec:deformation-refinements}
+
+The module-lifting techniques developed in Part~\ref{part:mesh-deformations} yield further structural information about the module categories of positive filtered deformations of $A_0$. In this final section we show that the lifted modules of Proposition~\ref{prop:positive-module-lifting} exhaust all indecomposable modules over any positive deformation of $A_0$, establish a polynomial normal form for filtered mesh categories, and prove that the comparison map $\Psi$ of Proposition~\ref{prop:hochschild-mesh-restriction} is an isomorphism in all positive degrees. None of the results in this section is required for the proofs of Theorems~A and~B.
+
+\subsection{All modules over a positive deformation}
+
+When we apply Proposition~\ref{prop:positive-module-lifting} to the full collection of normalized graded indecomposable $A_0$-modules, the resulting lifted modules exhaust all indecomposable modules over the deformed algebra $B$. Compare the correspondence between modules over a nonstandard algebra and its standard form in \cite[Theorem~1.9 and Remark~1.10]{BautistaSalmeron}.
+
+\begin{corollary}
+\label{cor:positive-deformation-completeness}
+Let $A_0$ be the projective ray algebra of Construction~\ref{con:projective-algebra}. Every positive filtered deformation $B$ of $A_0$ is representation-finite, the lifted modules $M_i^B$ of Proposition~\ref{prop:positive-module-lifting} form a complete set of pairwise nonisomorphic indecomposable $B$-modules, and $\gr_\JJ\ind(\modu B)\cong\C$.
+\end{corollary}
+\begin{proof}
+Set $G=\bigoplus_i M_i^B$. At the projective objects $X_i=P_x$, we may take $M_i^B=e_xB$ to be the indecomposable projective right $B$-modules. Likewise, equipping the $k$-duals of the indecomposable projective left $B$-modules with their dual filtrations produces filtered injective right $B$-modules whose associated graded $A_0$-modules are degree shifts of the graded indecomposable injectives of $A_0$; after shifting their filtrations to match our degree normalization, the uniqueness statement in Proposition~\ref{prop:positive-module-lifting} identifies them with the corresponding lifted modules $M_i^B$. Consequently, $G$ contains all indecomposable projective and injective right $B$-modules and is therefore a generator-cogenerator for $\modu B$.
+
+Let $\Lambda_B=\End_B(G)^{\op}$ be the opposite endomorphism algebra of $G$ (so that $\Hom_B(G,-)$ takes values in right $\Lambda_B$-modules). By Proposition~\ref{prop:positive-module-lifting}(3), the associated graded algebra $\gr\Lambda_B$ is the Auslander algebra of $A_0$, which has global dimension at most~$2$. We show by a standard filtered lifting argument that $\operatorname{gl.dim}\Lambda_B\leq2$ as well. Because $F^1\Lambda_B$ is a nilpotent ideal with semisimple quotient $\Lambda_B/F^1\Lambda_B=\prod_i k$, the simple right $\Lambda_B$-modules coincide with the degree-zero simple modules of $\gr\Lambda_B$. Lifting the primitive idempotents $e_i$ and equipping each indecomposable projective $e_i\Lambda_B$ with its induced filtration, we can lift any graded projective cover $\bar P\to\gr X$ of the associated graded module of a finitely generated filtered $\Lambda_B$-module $X$ to a filtered morphism $P\to X$ (where $P$ is a direct sum of filtration-shifted copies of $e_i\Lambda_B$) by lifting the images of the homogeneous generators in each idempotent component.
+
+Because the filtration on $X$ is finite, successive approximation in increasing filtration degree shows that $P\to X$ is a strict filtered surjection ($F^dP\twoheadrightarrow F^dX$ for all $d$). Equipping $K=\ker(P\to X)$ with the induced filtration $F^dK=K\cap F^dP$, strictness implies that any element of $F^dP$ whose image lies in $F^{d+1}X$ can be modified by an element of $F^{d+1}P$ to lie in $F^dK$, so the induced sequence of associated graded modules
+\[
+  0\longrightarrow\gr K\longrightarrow\gr P\longrightarrow\gr X\longrightarrow0
+\]
+is exact. Applying this filtered projective cover construction twice to any simple $\Lambda_B$-module $S$ produces a filtered second syzygy $K_2$ whose associated graded module $\gr K_2$ is a graded second syzygy over $\gr\Lambda_B$, and hence is a graded projective $\gr\Lambda_B$-module because $\operatorname{gl.dim}\gr\Lambda_B\leq2$. Since $\gr\Lambda_B$ is positively graded, $\gr K_2$ is a direct sum of shifted copies of $e_i\gr\Lambda_B$; lifting its homogeneous generators yields a filtered morphism from a direct sum of shifted copies of $e_i\Lambda_B$ to $K_2$ that is an isomorphism on associated graded modules, and therefore an isomorphism of $\Lambda_B$-modules. Thus $\operatorname{proj.dim}_{\Lambda_B}S\leq2$ for every simple $\Lambda_B$-module $S$, so $\operatorname{gl.dim}\Lambda_B\leq2$.
+
+Finally, by Auslander's theorem, for any finitely generated right $B$-module $X$, choose the beginning of an injective copresentation $0\to X\to I^0\to I^1$ with $I^0,I^1\in\add G$. Applying the left-exact functor $\Hom_B(G,-)$ exhibits $\Hom_B(G,X)$ as the kernel of a morphism between projective $\Lambda_B$-modules, hence as a second syzygy over $\Lambda_B$, which is projective because $\operatorname{gl.dim}\Lambda_B\leq2$. Since $G$ is a generator for $\modu B$, the functor $\Hom_B(G,-)$ restricts to an equivalence between $\add G$ and $\proj\Lambda_B$, forcing $X\in\add G$. Because the modules $M_i^B$ have local endomorphism rings and pairwise nonisomorphic associated graded modules, they form a complete set of pairwise nonisomorphic indecomposable $B$-modules, and Proposition~\ref{prop:positive-module-lifting}(3) gives $\gr_\JJ\ind(\modu B)\cong\C$.
+\end{proof}
+
+\subsection{Normal forms for filtered mesh categories}
+
+Extending Proposition~\ref{prop:filtered-normal-form} from the case where the mesh derivative $D_{q-1}$ is surjective to the general case, we can eliminate all higher-order terms in a filtered deformation of a quadratic category except for a chosen set of representatives spanning $\operatorname{coker}D_{q-1}$. In characteristic two, Proposition~\ref{prop:residual-correction-spaces} provides canonical path representatives $(p_i)_{i\in I}$ for the mesh category $\C$.
+
+\begin{proposition}
+\label{prop:characteristic-two-normal-form}
+Let $C=kQ/(r_v:v\in V)$ be a finite-dimensional graded category (or algebra) over an arbitrary field $k$, where $Q$ is a finite quiver and the $r_v$ are homogeneous quadratic relations, and let $D_{q-1}$ be the linearized substitution map of Proposition~\ref{prop:filtered-normal-form}. Fix a finite family $(p_i)_{i\in I}$ of homogeneous path tuples of degrees $d_i\geq3$ such that, for each $q\geq3$, the classes of the tuples $p_i$ with $d_i=q$ span $\operatorname{coker}D_{q-1}$. Choose $N$ such that $C_d=0$ for all $d\geq N$, and let $\mathfrak m$ denote the arrow ideal of $kQ$. Then every filtered category $E$ equipped with a finite filtration and an identification $\gr E=C$ admits a presentation
+\begin{equation}
+  E\cong kQ/\Bigl(\mathfrak m^{N+1},\ r_v-\sum_{i\in I}\lambda_i(p_i)_v:v\in V\Bigr)
+  \label{eq:filtered-mesh-normal-form}
+\end{equation}
+for some scalars $\lambda_i\in k$, via a filtered isomorphism that induces the identity on $\gr E=C$.
+\end{proposition}
+\begin{proof}
+We adjust the lifted arrows inductively in increasing degree $q\geq3$. Suppose that arrow lifts have been chosen so that all terms of degree strictly between $2$ and $q$ in $r_v$ belong to the span of the retained path tuples $(p_i)_v$ with $d_i<q$. Let $z_v\in C_q$ be the leading degree-$q$ component of the remaining error $r_v-\sum_{d_i<q}\lambda_i(p_i)_v$. By assumption, the class of $(z_v)_{v\in V}$ in $\operatorname{coker}D_{q-1}$ can be written as $\sum_{d_i=q}\lambda_i[p_i]+D_{q-1}(g)$ for some scalars $\lambda_i\in k$ ($d_i=q$) and a degree-$(q-1)$ arrow tuple $g$. Modifying the arrow lifts in degree~$q-1$ by $-g$ cancels $D_{q-1}(g)$ in degree~$q$ while leaving all terms of degree less than $q$ unchanged (since substituting a degree-$(q-1)$ correction into a quadratic relation shifts degree by $q-2$, and substituting it into a previously retained term of degree $d_i\geq3$ shifts degree to at least $d_i+q-2>q$). Since the filtration of $E$ is finite, this inductive adjustment terminates at $q=N$.
+
+The resulting arrow lifts satisfy the relations of~\eqref{eq:filtered-mesh-normal-form} in $E$ and therefore induce a filtered surjection from the right-hand side of~\eqref{eq:filtered-mesh-normal-form} onto $E$. Passing to associated graded categories gives a composition of graded surjections $C\twoheadrightarrow\gr(\text{RHS})\twoheadrightarrow\gr E=C$ that is the identity on $C$, so both maps are isomorphisms of finite-dimensional categories.
+\end{proof}
+
+When $C=\C$ in characteristic two, Proposition~\ref{prop:residual-correction-spaces} shows that we may take $(p_i)_{i\in I}$ to be the single-path residual representatives supported on the residual periodic components of $\C$. Similar higher-degree perturbations of mesh relations define the deformed preprojective algebras of~\cite{BES}, and filtered reparametrizations of arrows appear in Kaplan's comparison of additive and multiplicative preprojective algebras~\cite[Lemma~3.8]{Kaplan}.
+
+\subsection{Dimensions of perturbed mesh categories}
+
+Viewing finite $k$-linear categories via their category algebras as in the introduction, the category algebra of $\C\simeq\ind(\modu A_0)$ has global dimension at most~$2$: projective resolutions of its simple modules of length at most~$2$ are obtained by applying representable functors to the almost split sequences and to the projective-injective sequences of Proposition~\ref{prop:graded-realization}(2). The next lemma shows that perturbing the homogeneous relations of any such category by higher-degree terms preserves both the dimensions of all morphism spaces and the projective resolutions of the simple modules.
+
+\begin{lemma}
+\label{lem:flat-mesh-perturbations}
+Let $k$ be an arbitrary field, and let $C=kQ/(r_1,\ldots,r_t)$ be a finite-dimensional graded category presented by homogeneous relations $r_l$ of degree at least~$2$. Assume that for each vertex $i$, the sequence of right $C$-modules obtained by factoring each relation $r_l$ starting at $i$ through its initial arrow is a projective resolution of the simple right module $S_i$ of length at most~$2$.
+
+Choose $N$ such that $C_d=0$ for all $d\geq N$, and for each $l=1,\ldots,t$ let $f_l\in kQ$ be a linear combination of paths having the same source and target as $r_l$ and degree strictly greater than $\deg(r_l)$. Set
+\[
+  B=kQ/(\mathfrak m^{N+1},\ r_1-f_1,\ldots,r_t-f_t).
+\]
+Then $\gr_{\mathfrak m}B\cong C$, every homogeneous path basis of $C$ lifts to a basis of $B$, and factoring the perturbed relations $r_l-f_l$ through their initial arrows yields projective resolutions of length at most~$2$ for the simple right $B$-modules.
+\end{lemma}
+\begin{proof}
+Taking leading terms gives a graded surjection $C\twoheadrightarrow\gr_{\mathfrak m}B$. Since $C_d=0$ for $d\geq N$, it follows that $\mathfrak m^NB=\mathfrak m^{N+1}B$, and because $\mathfrak m^{N+1}=0$ in $B$, we already have $\mathfrak m^NB=0$. In particular, if any path of length $N+1$ is factored as $ap$ with $a$ its initial arrow and $p$ of length $N$, the suffix $p$ already vanishes in $B$.
+
+With our left-to-right path convention, the indecomposable projective right $B$-module at vertex $i$ is the covariant representable module $P_i=B(i,-)$. Factoring each relation $r_l-f_l$ starting at $i$ through its initial arrow yields an exact sequence of right $B$-modules
+\begin{equation}
+  0\longrightarrow K_i\longrightarrow
+  \bigoplus_{r_l:i\to j}P_j\longrightarrow
+  \bigoplus_{a:i\to j}P_j\longrightarrow P_i\longrightarrow S_i
+  \longrightarrow0,
+  \label{eq:perturbed-simple-resolution}
+\end{equation}
+where $K_i$ denotes the kernel at the relation term. (Exactness at the arrow term $\bigoplus_{a:i\to j}P_j$ holds because any relation in $B$ starting at $i$ is a sum of expressions $v(r_l-f_l)w$ and paths of length at least $N+1$: when $v$ is nonempty, stripping the initial arrow of $v$ leaves $v'(r_l-f_l)w=0$ in $B$; when $v$ is empty, stripping the initial arrow of $r_l-f_l$ lands in the image of $\bigoplus_{r_l:i\to j}P_j$; and stripping the initial arrow of a path of length $N+1$ leaves a path of length $N$, which is zero in $B$.)
+
+Let $H$ and $H_B$ be the matrices whose $(i,j)$-entries are $\dim C(i,j)$ and $\dim B(i,j)$, let $M$ and $R$ be the adjacency matrices counting arrows $i\to j$ and relations $r_l\colon i\to j$, set $Z=I-M+R$, and let $K$ be the matrix with $(i,j)$-entry $\dim(K_i e_j)$. Taking Euler characteristics in the assumed projective resolutions over $C$ and in~\eqref{eq:perturbed-simple-resolution} over $B$ gives the matrix identities
+\[
+  ZH=I,\qquad ZH_B=I+K.
+\]
+Hence $Z$ is invertible with $Z^{-1}=H$, and multiplying the second identity on the left by $H$ gives $H_B=H+HK$. Because $H$ and $K$ have nonnegative entries, we have $H_B\geq H$ entrywise, while the graded surjection $C\twoheadrightarrow\gr_{\mathfrak m}B$ gives $H_B\leq H$ entrywise. Therefore $H_B=H$, $K=0$, and the surjection $C\twoheadrightarrow\gr_{\mathfrak m}B$ is an isomorphism.
+\end{proof}
+
+Note that for the category algebra of $C=\C$ (where $C(i,j)$ sits in the $(i,j)$-corner), the indecomposable projective right modules are the covariant functors $\C(X,-)$ rather than the contravariant functors $\C(-,X)$ used in Section~\ref{sec:graded-category}. Consequently, the projective resolution of the simple right $\C$-module at a noninjective object $X$ is induced by the almost split sequence $0\to X\to E_{\tau^{-1}X}\to\tau^{-1}X\to0$ starting at $X$ (the leftmost map $\C(\tau^{-1}X,-)\to\C(E_{\tau^{-1}X},-)$ is injective because $E_{\tau^{-1}X}\to\tau^{-1}X$ is an epimorphism in $\modu A_0$), while at an injective object $X$ the epimorphism of Proposition~\ref{prop:graded-realization}(2) gives a projective resolution of length at most~$1$. Thus Lemma~\ref{lem:flat-mesh-perturbations} applies directly to $C=\C$.
+
+\begin{corollary}
+\label{cor:polynomial-mesh-flatness}
+If the coefficients of the higher-degree perturbation terms $f_l$ in Lemma~\ref{lem:flat-mesh-perturbations} are replaced by independent polynomial variables over $k$, then any homogeneous path basis of $C$ lifts to a free basis of the perturbed category over the polynomial ring, and remains a basis after arbitrary base change to any commutative $k$-algebra.
+\end{corollary}
+\begin{proof}
+Using the homogeneous relations $r_l$ of $C$, every path in $kQ$ can be rewritten modulo $r_l-f_l$ as a $k$-linear combination of the chosen basis paths plus paths of strictly higher degree; iterating this reduction terminates at degree $N+1$ and shows that the basis paths span the perturbed category over the polynomial ring without dividing by any polynomials. Extending scalars to the rational function field and applying Lemma~\ref{lem:flat-mesh-perturbations} shows that the basis paths are linearly independent over the function field, and hence over the polynomial ring. Since the perturbed category is free with this basis over the polynomial ring, the same holds after any commutative base change.
+\end{proof}
+
+\subsection{The full Hochschild comparison}
+
+With Corollary~\ref{cor:polynomial-mesh-flatness} in hand, we can now prove that the injective comparison map $\Psi$ of Proposition~\ref{prop:hochschild-mesh-restriction} is also surjective, and hence an isomorphism in every positive internal degree.
+
+\begin{proposition}
+\label{prop:full-hochschild-comparison}
+For every internal degree $q>0$, the comparison homomorphism
+\[
+  \Psi\colon\HH^2(A_0)_q\xrightarrow{\;\sim\;}\operatorname{coker}D_{q+1}(\C)
+\]
+of Proposition~\ref{prop:hochschild-mesh-restriction} is an isomorphism preserving weights in $L$. In particular, when $\charac k=2$, we have $I_0=I$.
+\end{proposition}
+\begin{proof}
+Injectivity and weight compatibility were established in Proposition~\ref{prop:hochschild-mesh-restriction}. To prove surjectivity, fix a tuple of homogeneous morphisms $z_v\in\C_{q+2}(\tau v,v)$ representing a class $[z]\in\operatorname{coker}D_{q+1}(\C)$, and form the perturbed category $\mathcal C_\varepsilon$ over $k[\varepsilon]/(\varepsilon^2)$ defined by the relations $r_v-\varepsilon z_v$ (and $\mathfrak m^{N+1}=0$). By Corollary~\ref{cor:polynomial-mesh-flatness}, $\mathcal C_\varepsilon$ is a free deformation of $\C$ over $k[\varepsilon]/(\varepsilon^2)$. Its projective corner is therefore a first-order deformation $A_\varepsilon$ of $A_0$, and evaluating each object $X_i$ of $\mathcal C_\varepsilon$ on the projective objects yields a free lift $M_i^\varepsilon=\mathcal C_\varepsilon(P_-,X_i)$ of the normalized $A_0$-module $M_i$. Giving $\varepsilon$ internal degree $-q$ (and weight $-\chi$ when $z$ has weight $\chi$) makes $A_\varepsilon$ and $M_i^\varepsilon$ homogeneous of degree zero, so by the uniqueness in Lemma~\ref{lem:square-zero-selected-lifts} these modules are the unique graded lifts used to define $\Psi$. Moreover, the evaluation map from $\mathcal C_\varepsilon(X_i,X_j)$ to $\Hom_{A_\varepsilon}(M_i^\varepsilon,M_j^\varepsilon)$ is a map of free $k[\varepsilon]/(\varepsilon^2)$-modules of the same rank that reduces modulo $\varepsilon$ to the isomorphism $\C(X_i,X_j)\xrightarrow{\sim}\Hom_{A_0}(M_i,M_j)$, so it is an isomorphism. By construction of $\mathcal C_\varepsilon$, the lifted arrows satisfy $r_v=\varepsilon z_v$, which means that $\Psi$ sends the cohomology class of the corner deformation $A_\varepsilon$ to $[z]$. Thus $\Psi$ is surjective. In characteristic two, each residual line $k[p_i]$ ($i\in I$) of Proposition~\ref{prop:residual-correction-spaces} therefore lies in the image of $\Psi$ in weight $\chi_i$, forcing $\HH^2(A_0)_{\chi_i}\ne0$ for all $i\in I$ and hence $I_0=I$.
+\end{proof}
+
+\subsection{Rescaling the mesh parameters}
+
+Using the all-ones mesh normalization of Section~\ref{sec:weights-and-parameters} and the residual paths $(p_i)_{i\in I}$ of Proposition~\ref{prop:residual-correction-spaces}, let $C(\lambda)$ denote the perturbed mesh category of~\eqref{eq:filtered-mesh-normal-form} associated to a parameter vector $\lambda=(\lambda_i)_{i\in I}\in k^I$. By Lemma~\ref{lem:flat-mesh-perturbations}, $C(\lambda)$ has the same dimension as $\C$ for every $\lambda\in k^I$. We next show that up to isomorphism, $C(\lambda)$ depends only on the support $\{i\in I:\lambda_i\ne0\}$ of the parameter vector $\lambda$.
+
+\begin{lemma}
+\label{lem:same-support-forms}
+Assume that $\charac k=2$, and let $C(\lambda)$ and $C(\lambda')$ be two perturbed mesh categories of the form~\eqref{eq:filtered-mesh-normal-form} constructed from the all-ones mesh relations of $\C$ and the residual path representatives $(p_i)_{i\in I}$ of Proposition~\ref{prop:residual-correction-spaces}. If $\lambda_i=0\iff\lambda'_i=0$ for every $i\in I$, then there is an object-preserving isomorphism $C(\lambda)\cong C(\lambda')$.
+\end{lemma}
+\begin{proof}
+For each $i\in I$, choose a nonzero scalar $a_i\in k^\times$. On the $i$-th residual periodic component of $\Gamma_A$, set the arrow scale $\mu_a=a_i$ for every internal arrow $a$ and the mesh scale $\eta_v=a_i^2$ for every internal mesh $v$; on all other periodic components, set $\mu_a=1$ and $\eta_v=1$. Because all mesh coefficients $c_{v,a}$ equal~$1$, these choices satisfy the compatibility equations $\mu_a\mu_{\sigma(a)}=\eta_v$ of~\eqref{eq:global-mesh-scales} on all periodic components. Since the cycles of the mate permutation $\sigma$ consist precisely of the arrows whose endpoints are periodic (as $\sigma^2$ acts on endpoints as $\tau^{\pm1}$), all remaining arrows belong to open $\sigma$-chains; choosing $\eta_v=1$ on all remaining meshes and picking an arbitrary nonzero scale on the initial arrow of each open $\sigma$-chain determines $\mu_a\in k^\times$ globally so that $\mu_a\mu_{\sigma(a)}=\eta_v$ holds everywhere.
+
+The resulting diagonal rescaling of the arrows of $Q$ multiplies each quadratic mesh relation $r_v$ by $\eta_v$ and multiplies the residual path $p_i$ (which is a path of length $d_i\geq3$ internal to the $i$-th residual component) by $a_i^{d_i}$ while scaling its mesh $r_{v_i}$ by $a_i^2$. Dividing the $v$-th relation by $\eta_v$ therefore transforms the parameter $\lambda_i$ according to
+\[
+  \lambda_i\longmapsto \lambda_i a_i^{d_i-2}.
+\]
+Because $k$ is algebraically closed and $d_i-2\geq1$, whenever $\lambda_i$ and $\lambda'_i$ are both nonzero we may choose $a_i\in k^\times$ with $a_i^{d_i-2}=\lambda'_i/\lambda_i$, yielding an object-preserving isomorphism $C(\lambda)\xrightarrow{\sim}C(\lambda')$.
+\end{proof}
+
+\subsection{Polynomial comparison of the two parameter systems}
+
+Finally, we relate the algebra deformation parameters $t=(t_i)_{i\in I}$ of our family~\eqref{eq:selected-binary-family} to the mesh perturbation parameters $\lambda=(\lambda_i)_{i\in I}$ of the lifted module category. Because the residual characters $\chi_i$ form part of a $\Z$-basis of the weight lattice $L$, weight homogeneity forces the relationship between the two parameter systems to be purely diagonal and linear.
+
+\begin{lemma}
+\label{lem:nonresonant-polynomials}
+Let $L$ be an abelian group, and equip the polynomial ring $k[t_1,\ldots,t_s]$ with an $L$-grading by setting $\deg(t_i)=\chi_i\in L$. Assume that the weights $\chi_1,\ldots,\chi_s$ are pairwise distinct and satisfy the nonresonance condition that no $\chi_j$ can be written as $\sum_{i=1}^s n_i\chi_i$ with integers $n_i\geq0$ and $\sum_{i=1}^s n_i\geq2$. Then every homogeneous polynomial $F_j(t)\in k[t_1,\ldots,t_s]$ of weight $\chi_j$ with zero constant term has the linear form $F_j(t)=a_jt_j$ for some scalar $a_j\in k$.
+\end{lemma}
+\begin{proof}
+The nonresonance hypothesis rules out every monomial of degree at least~$2$ from having weight $\chi_j$, and distinctness of the $\chi_i$ leaves $t_j$ as the only degree-one monomial of weight $\chi_j$.
+\end{proof}
+
+Notice that any subset of a $\Z$-basis of a free abelian group $L$ automatically satisfies the hypotheses of Lemma~\ref{lem:nonresonant-polynomials}.
+
+\begin{proposition}
+\label{prop:polynomial-mesh-comparison}
+Let $m_t=m+\sum_{i\in I}t_i\mu_i$ be an associative polynomial family of multiplications on $A_0$ over $K=k[t_i:i\in I]$ satisfying the hypotheses of Proposition~\ref{prop:family-criterion} (such as the family~\eqref{eq:selected-binary-family}, where $I_0=I$ by Proposition~\ref{prop:full-hochschild-comparison}). Then the normalized graded $A_0$-modules $M_j$, their morphisms, and their mesh presentation lift over the polynomial ring $K$ so that the perturbed mesh relations take the normal form~\eqref{eq:filtered-mesh-normal-form} with linear parameter polynomials
+\begin{equation}
+  F_i(t)=a_it_i\qquad(a_i\in k^\times,\ i\in I).
+  \label{eq:diagonal-marking-map}
+\end{equation}
+Moreover, after specializing $t$ to any point of $k^I$, the specialized modules form a complete set of pairwise nonisomorphic indecomposable modules over the fiber algebra $A_t$.
+\end{proposition}
+\begin{proof}
+Set $K=k[t_i:i\in I]$, and lift a $\Z$-basis of $H_\Z$ to mesh weights via Lemma~\ref{lem:integer-weight-lifting} so that the normalized $A_0$-modules $M_j$ carry simultaneous $L$-gradings compatible with the $L$-grading of $A_0$. Assign each variable $t_i$ internal degree $-2s_i=-\chi_i(\deg_\JJ)$ and weight $-\chi_i\in L$, so that the deformed multiplication $m_t=m+\sum_{i\in I}t_i\mu_i$ on $A_K=A_0\otimes_k K$ is homogeneous of degree~$0$ and weight~$0$. In each internal degree and weight, choose once and for all a $k$-linear right inverse to the bar differentials on their images in the module bar complexes of the $M_j$, and choose a $k$-linear splitting of the mesh derivative $D_{q-1}(\C)$ with respect to the complement spanned by the residual paths $(p_i)_{i\in I}$. Tensoring these splittings with $K$ makes them available over $K$ without introducing denominators.
+
+Keeping the underlying $K$-modules $M_j\otimes_k K$ and their vertex idempotent actions fixed, we lift the module actions of $A_K$ inductively in increasing internal degree $q>0$: when the action has been constructed up to degree $q-1$, its degree-$q$ associativity defect is a two-cocycle of internal degree $q>0$ in the module bar complex tensored with $K$, which is killed in a single step by applying our chosen right inverse (since $\Ext^2_{A_0}(M_j,M_j)_{>0}=0$ by Lemma~\ref{lem:positive-ext-vanishing}). Because the underlying vector spaces $M_j$ are concentrated in a finite range of internal degrees, this inductive correction terminates after finitely many steps, yielding polynomial action matrices over $K$. By the same token, using $\Ext^1_{A_0}(M_j,M_l)_{>0}=0$ and our chosen right inverses, every homogeneous $A_0$-module homomorphism $f\in\Hom_{A_0}(M_j,M_l)_r$ ($r\geq0$) lifts in finitely many degree-raising steps to a polynomial $A_K$-module homomorphism $\widetilde f$, with $\widetilde f=f$ at $t=0$.
+
+Choosing a homogeneous $k$-basis $f_1,\ldots,f_h$ of each $\Hom_{A_0}(M_j,M_l)$, we see by standard degree induction on the leading term that their lifts $\widetilde f_1,\ldots,\widetilde f_h$ form a free $K$-basis of the lifted homomorphism module $\mathcal M(j,l):=\Hom_{A_K}(M_j\otimes_k K,M_l\otimes_k K)$, and that the same remains true after specializing $t$ to any point of $k^I$. In particular, at every scalar specialization, the specialized modules exhaust all indecomposable modules of the fiber algebra by Corollary~\ref{cor:positive-deformation-completeness}.
+
+Now apply the degree-by-degree arrow adjustment of Proposition~\ref{prop:characteristic-two-normal-form} to the lifted arrow morphisms in $\mathcal M$, using our $K$-linear splittings of $D_{q-1}(\C)\otimes_k K$ to eliminate all higher-degree mesh errors except for $K$-multiples $F_i(t)p_i$ of the residual paths $p_i$. Because the procedure is triangular and terminates above the top degree of $\C$, the coefficients $F_i(t)$ are polynomials in $K$ satisfying $F_i(0)=0$, and the resulting presentation is isomorphic to $\mathcal M$ over $K$.
+
+Finally, because every step preserves the $L$-grading, each polynomial $F_j(t)$ is homogeneous of weight $-\chi_j$ (canceling the weight difference $\chi_j$ between $p_j$ and its mesh relation $r_{v_j}$). Reversing the signs of the weights and applying Proposition~\ref{prop:primitive-parameter-characters} and Lemma~\ref{lem:nonresonant-polynomials} shows that $F_j(t)=a_jt_j$ for some scalar $a_j\in k$. Specializing $t_j=\varepsilon$ with $\varepsilon^2=0$ and $t_i=0$ for $i\ne j$ reduces the construction to the first-order lift of Lemma~\ref{lem:square-zero-selected-lifts} for $m+\varepsilon\mu_j$, where the residual mesh error is $\varepsilon a_j[p_j]=\varepsilon\Psi([\mu_j])$. Since $[\mu_j]\ne0$ in $\HH^2(A_0)_{\chi_j}$ and $\Psi$ is injective by Proposition~\ref{prop:hochschild-mesh-restriction}, we have $a_j\ne0$.
+\end{proof}

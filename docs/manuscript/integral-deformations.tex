@@ -1,0 +1,125 @@
+\section{Hochschild representatives from the integers modulo four}
+\label{sec:integral-deformations}
+
+We now construct a cocycle generator for each one-dimensional weight space $\HH^2(A_0)_{\chi_i}$ ($i\in I_0$) that is supported strictly on zero ray products $(r,s)$ with $rs=0$ and takes values in their stem-product lines $U_{r*s}$. Because $A_0=k\otimes_{\F_2}\F_2P$ and Hochschild cohomology commutes with field extensions, it suffices to construct these cocycles over the prime field $\F_2$; their $k$-linear combinations will then span all of $\HH^2(A_0)_{>0}$.
+
+The strategy is based on the Bockstein connecting homomorphism for the short exact coefficient sequence $0\to\F_2\xrightarrow{2}\mathcal O\to\F_2\to0$, where
+\[
+  \F_2=\Z/2,\qquad \mathcal O=\Z/4,
+\]
+and the inclusion $\F_2\hookrightarrow\mathcal O$ is given by $a\mapsto 2a$. Setting $A^{(2)}=\F_2P$ and $A^{(4)}=\mathcal OP$, we show in Proposition~\ref{prop:integral-bockstein} that every cohomology class in $\HH^2(A^{(2)})_{>0}$ lies in the image of the connecting map from $\HH^1(A^{(2)})_{>0}$, and is therefore represented by $(d\delta)/2$ for any $\mathcal O$-linear one-cochain $\delta$ lifting a derivation $\bar\delta$ of $A^{(2)}$. By Theorem~\ref{thm:integral-partial-lifting}, the lift $\delta$ can be chosen so that $d\delta$ vanishes on all nonzero ray products, which forces $(d\delta)/2$ to be supported exclusively on pairs of rays with zero product. Throughout this section, all cochains are normalized with respect to the vertex idempotents and are homogeneous with respect to both the categorical grading and the weight lattice $L$. For background on the Bockstein homomorphism in Hochschild cohomology, see \cite[Sections~4--5]{GerstenhaberSchack} and \cite[Section~2]{Linckelmann}.
+
+\subsection{The model over the two-element field and its module lifts}
+
+The all-ones mesh relations of Section~\ref{sec:weights-and-parameters} define a graded $\F_2$-linear category $\mathcal C^{(2)}$ satisfying $k\otimes_{\F_2}\mathcal C^{(2)}=\C$. Its full subcategory on the projective objects $P_x$ has opposite endomorphism algebra $\End(\bigoplus_x P_x)^{\op}=A^{(2)}$, since each nonzero homogeneous component of $A^{(2)}(x,y)$ is one-dimensional over $\F_2$ and every nonzero product of basis rays has coefficient~$1$. For each object $X_i$ of $\mathcal C^{(2)}$, define the graded right $A^{(2)}$-module $M_i^{(2)}$ by
+\[
+  M_i^{(2)}e_x=\mathcal C^{(2)}(P_x,X_i).
+\]
+Evaluation on the projective objects identifies $\mathcal C^{(2)}$ with the full graded homomorphism category of the modules $M_i^{(2)}$, because it does so after the faithfully flat base change $-\otimes_{\F_2}k$. Since tensoring a finitely generated projective resolution with $k$ commutes with graded $\Ext$, Lemma~\ref{lem:positive-ext-vanishing} implies that
+\begin{equation}
+  \Ext^n_{A^{(2)}}(M_i^{(2)},M_j^{(2)})_d=0\qquad(n\geq1,\ d\geq0).
+  \label{eq:prime-field-ext-vanishing}
+\end{equation}
+When $X_i=P_x$ is a projective object, $M_i^{(2)}=e_xA^{(2)}$ is the corresponding indecomposable projective $A^{(2)}$-module.
+
+\begin{proposition}
+\label{prop:fixed-integral-companion}
+The graded $A^{(2)}$-modules $M_i^{(2)}$ lift to graded $A^{(4)}$-modules $M_i^{(4)}$ that are free over $\mathcal O=\Z/4$, and their full graded homomorphism category $E_4$ has the following properties:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item Each morphism space of $E_4$ is a free $\mathcal O$-module, and $E_4/2E_4=\mathcal C^{(2)}$.
+\item At the projective objects $X_i=P_x$, we have $M_i^{(4)}=e_xA^{(4)}$, so the projective corner of $E_4$ has opposite endomorphism algebra $\End(\bigoplus_x e_xA^{(4)})^{\op}=A^{(4)}$.
+\item The category $E_4$ admits a quadratic scalar mesh presentation over $\mathcal O$ whose coefficients are units reducing modulo~$2$ to the all-ones mesh presentation of $\mathcal C^{(2)}$.
+\end{enumerate}
+Moreover, all of these lifts may be chosen to preserve the simultaneous integer weights in $L$: lifting a basis of $H_\Z$ to mesh weights via Lemma~\ref{lem:integer-weight-lifting} equips the modules $M_i^{(2)}$ with compatible $L$-gradings, and all obstruction and lifting steps can be carried out within each weight component.
+\end{proposition}
+\begin{proof}
+Choose arbitrary degree-preserving lifts of the action matrices of $A^{(2)}$ on $M_i^{(2)}$ to free graded $\mathcal O$-modules. Their associativity defect is divisible by~$2$; dividing it by~$2$ and reducing modulo~$2$ produces a degree-zero cocycle representing a class in $\Ext^2_{A^{(2)}}(M_i^{(2)},M_i^{(2)})_0$, which vanishes by~\eqref{eq:prime-field-ext-vanishing}. Subtracting $2$ times a bounding one-cochain kills the defect modulo~$4$ (since $(2\mathcal O)^2=0$), yielding an associative graded $A^{(4)}$-module structure $M_i^{(4)}$. The same bar-resolution calculation using the vanishing of $\Ext^1$ in nonnegative degrees shows that $M_i^{(4)}$ is unique up to isomorphism and that every homogeneous morphism of nonnegative degree between the modules $M_i^{(2)}$ lifts to $E_4$. At the projective objects $X_i=P_x$, we take $M_i^{(4)}=e_xA^{(4)}$ to be the regular projective $A^{(4)}$-modules, which gives~(2).
+
+To verify~(1), fix any pair of objects $X_i,X_j$ and lift an $\F_2$-basis $\bar f_1,\ldots,\bar f_r$ of $\mathcal C^{(2)}(X_i,X_j)_d$ ($d\geq0$) to homogeneous $A^{(4)}$-module homomorphisms $f_1,\ldots,f_r\in E_4(X_i,X_j)_d$. Any $g\in E_4(X_i,X_j)_d$ that reduces to zero modulo~$2$ has matrix entries in $2\mathcal O$; dividing by~$2$ gives an $A^{(2)}$-module homomorphism of degree~$d$, which is an $\F_2$-linear combination of $\bar f_1,\ldots,\bar f_r$, so $f_1,\ldots,f_r$ span $E_4(X_i,X_j)_d$ over $\mathcal O$. Likewise, if $\sum_{m=1}^r a_mf_m=0$ with $a_m\in\mathcal O$, reducing modulo~$2$ shows that $a_m=2b_m$ for all $m$, and dividing by~$2$ and reducing modulo~$2$ again shows that every $b_m$ is even, so $a_m=0$ in $\mathcal O$. The same two-step reduction shows that $E_4(X_i,X_j)_d=0$ for $d<0$.
+
+For~(3), Nakayama's lemma implies that the degree-one morphisms generate $E_4$ as an $\mathcal O$-linear category. Because $(E_4)_2$ is a free $\mathcal O$-module, the composition map from length-two paths onto $(E_4)_2$ splits, so its kernel is a free $\mathcal O$-module direct summand. Lifting the mesh relations of $\mathcal C^{(2)}$ to a basis of this kernel defines a quadratic $\mathcal O$-linear category $\widetilde E_4$ equipped with a graded surjection $\widetilde E_4\to E_4$ that reduces modulo~$2$ to the identity on $\mathcal C^{(2)}$. Each graded piece of $\widetilde E_4$ is finitely generated over $\mathcal O$, and in degrees above the top degree of $\mathcal C^{(2)}$ its reduction modulo~$2$ is zero, so $N=2N$ and hence $N=4N=0$; thus $\widetilde E_4$ is finite over $\mathcal O$. Since $E_4$ is free over $\mathcal O$, the surjection $\widetilde E_4\to E_4$ splits as a map of $\mathcal O$-modules, and its kernel vanishes by Nakayama's lemma because it reduces to zero modulo~$2$. Finally, because each arrow $\tau X\to Y$ in a mesh of $\mathcal C^{(2)}$ has a unique mate $Y\to X$ and the irreducible morphism spaces are one-dimensional, every length-two path between $\tau X$ and $X$ is a mesh path, so the lifted relations are quadratic scalar mesh relations with unit coefficients in $\mathcal O^\times$.
+\end{proof}
+
+\subsection{Comparison with the mesh derivative}
+
+Let $Q_m=\operatorname{coker}D_m(E_4)$ denote the cokernel of the mesh derivative of $E_4$ in degree $m$, as in Lemma~\ref{lem:integral-mesh-cokernels} of Appendix~\ref{app:integral-corrections}. For a Hochschild two-cocycle of $A^{(2)}$ of internal degree $q>0$, the corresponding arrow-correction degree on the mesh category is $m=q+1$, and Lemma~\ref{lem:integral-mesh-cokernels} gives
+\begin{equation}
+  2Q_{q+1}=0.
+  \label{eq:mod-four-mesh-annihilator}
+\end{equation}
+For any cochain $\bar\mu$ over $\F_2$, we write $2\widetilde\mu$ for twice an arbitrary coefficient lift $\widetilde\mu$ of $\bar\mu$ to $\mathcal O=\Z/4$; since $2\mathcal O\cong\F_2$, the cochain $2\widetilde\mu$ depends only on $\bar\mu$.
+
+\begin{lemma}
+\label{lem:mod-four-comparison}
+Let $\bar\mu$ be a normalized Hochschild two-cocycle of $A^{(2)}$ of internal degree $q>0$. Then $2\widetilde\mu$ is a coboundary in the normalized Hochschild complex of $A^{(4)}$. The same statement holds within each weight component $\chi\in L$ with $\chi(\deg_\JJ)=q>0$.
+\end{lemma}
+\begin{proof}
+Set $R=\mathcal O[\varepsilon]/(\varepsilon^2)$ with $\deg(\varepsilon)=-q$, and equip $B=A^{(4)}\otimes_{\mathcal O}R$ with the deformed multiplication $m+2\varepsilon\widetilde\mu$. Its associator is $2\varepsilon\,d\widetilde\mu=0$ because $d\bar\mu=0$ over $\F_2$, so $B$ is an associative graded $R$-algebra.
+
+Over the reduced ring $\F_2[\varepsilon]/(\varepsilon^2)$, we may apply Lemma~\ref{lem:square-zero-selected-lifts} to the first-order deformation $m+\varepsilon\bar\mu$ of $A^{(2)}$ and the modules $M_i^{(2)}$, since the required $\Ext^2$ and $\Ext^1$ groups vanish by~\eqref{eq:prime-field-ext-vanishing}. Let $\bar\nu_i$ be the resulting first-order corrections to the module actions and let $\bar g_a$ be the corrections to the generating arrow morphisms. On the free $R$-modules $M_i^{(4)}\otimes_{\mathcal O}R$, we then define deformed actions $\nu_i^{(4)}+2\varepsilon\widetilde\nu_i$ and deformed arrow maps $a^{(4)}+2\varepsilon\widetilde g_a$. Because every correction term carries a factor of $2\varepsilon$ and $(2\varepsilon)^2=0$, the module-action and module-homomorphism conditions depend only on the reductions $\bar\nu_i$ and $\bar g_a$ modulo~$2$ and are therefore satisfied over $R$. At the projective objects $P_x$, we take the lifted modules to be the regular projective $B$-modules $e_xB$, whose action corrections match the deformed multiplication $m+2\varepsilon\widetilde\mu$ of $B$.
+
+Now evaluate the quadratic scalar mesh relations of $E_4$ on the deformed arrow maps $a^{(4)}+2\varepsilon\widetilde g_a$. The constant terms vanish in $E_4$, and because the unit coefficients of the mesh relations in $E_4$ reduce to~$1$ modulo~$2$, the remaining residual error at each mesh ending at $X$ is $2\varepsilon\widetilde z_X$, where $\bar z_X$ is the mesh error of the modulo-two lift. Choose a homogeneous morphism $z_X\in E_4(\tau X,X)_{q+2}$ lifting $\bar z_X$; since the underlying representation spaces are free over $\mathcal O$, evaluating $2\varepsilon z_X$ produces precisely the residual error $2\varepsilon\widetilde z_X$. By~\eqref{eq:mod-four-mesh-annihilator}, the class of $2z=(2z_X)$ vanishes in $Q_{q+1}=\operatorname{coker}D_{q+1}(E_4)$, so there exist homogeneous $A^{(4)}$-module morphisms $f_a\in E_4(\operatorname{source}a,\operatorname{target}a)_{q+1}$ satisfying
+\[
+  D_{q+1}(f)=2z.
+\]
+Replacing the deformed arrow maps by $a^{(4)}+2\varepsilon\widetilde g_a-\varepsilon f_a$ preserves the $B$-module homomorphism property (since $f_a$ is $A^{(4)}$-linear and $\varepsilon^2=0$) and subtracts $\varepsilon D_{q+1}(f)=2\varepsilon z$ from the mesh errors, killing them completely. The corrected arrow maps therefore satisfy all relations of $E_4$ and define an $R$-linear functor from $E_4\otimes_{\mathcal O}R$ to the category of lifted $B$-modules.
+
+Restricting this functor to the projective objects $P_x$ and passing to opposite endomorphism algebras via Proposition~\ref{prop:fixed-integral-companion}(2) yields an $R$-algebra homomorphism
+\[
+  A^{(4)}\otimes_{\mathcal O}R\longrightarrow B
+\]
+that reduces to the identity modulo $\varepsilon$ and fixes the vertex idempotents. On the underlying free $R$-module it has the form $\id+\varepsilon h$ for a normalized one-cochain $h$ of $A^{(4)}$, and multiplicativity $(\id+\varepsilon h)(ab)=(\id+\varepsilon h)(a)\cdot_B(\id+\varepsilon h)(b)$ expands to
+\[
+  h(ab)=h(a)b+ah(b)+2\widetilde\mu(a,b),
+\]
+so $2\widetilde\mu=-dh$ is a coboundary. Giving $\varepsilon$ weight $-\chi$ keeps the entire construction homogeneous of weight zero, so $h$ may be taken in weight $\chi$.
+\end{proof}
+
+\begin{proposition}
+\label{prop:integral-bockstein}
+The Bockstein connecting homomorphism associated to the short exact coefficient sequence $0\to\F_2\xrightarrow{2}\mathcal O\to\F_2\to0$ is surjective in every positive internal degree $q>0$:
+\[
+  \beta\colon\HH^1(A^{(2)})_q\twoheadrightarrow\HH^2(A^{(2)})_q.
+\]
+Explicitly, for any derivation $\bar\delta$ of $A^{(2)}$ and any normalized $\mathcal O$-linear one-cochain $\delta$ of $A^{(4)}$ lifting $\bar\delta$, the class $\beta([\bar\delta])$ is represented by $(d\delta)/2$, where division by~$2$ denotes the inverse of the additive isomorphism $\F_2\xrightarrow{\sim}2\mathcal O$. The same statement holds within each weight component $\chi\in L$ with $\chi(\deg_\JJ)>0$.
+\end{proposition}
+\begin{proof}
+The short exact sequence of normalized Hochschild cochain complexes
+\[
+  0\longrightarrow C^*(A^{(2)})\xrightarrow{\,2\,}C^*(A^{(4)})\longrightarrow C^*(A^{(2)})\longrightarrow0
+\]
+induces a long exact sequence in cohomology. By Lemma~\ref{lem:mod-four-comparison}, multiplication by~$2$ from $\HH^2(A^{(2)})_q$ to $\HH^2(A^{(4)})_q$ is zero for every $q>0$, so the connecting homomorphism $\beta\colon\HH^1(A^{(2)})_q\to\HH^2(A^{(2)})_q$ is surjective. By the standard definition of the connecting homomorphism, $\beta([\bar\delta])$ is represented by $(d\delta)/2$ for any cochain lift $\delta\in C^1(A^{(4)})$, and all maps respect the weight grading by $L$.
+\end{proof}
+
+\subsection{A coefficient criterion for supported representatives}
+
+Before combining Proposition~\ref{prop:integral-bockstein} with Theorem~\ref{thm:integral-partial-lifting}, we isolate the elementary homological principle that produces cocycle representatives supported on a prescribed subset of basis elements. It holds for any prime $p$; we will apply it with $p=2$.
+
+\begin{lemma}
+\label{lem:supported-bockstein}
+Let $p$ be a prime, let $C^*$ be a cochain complex of free $\Z/p^2$-modules, and set $\overline C^*=C^*/pC^*$. Let $U\subseteq C^2$ be a submodule spanned by a subset of a fixed $\Z/p^2$-basis of $C^2$, and assume that:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item the map $H^2(\overline C^*)\xrightarrow{p}H^2(C^*)$ induced by the inclusion $\Z/p\hookrightarrow\Z/p^2$ is zero;
+\item every one-cocycle $\bar\delta\in Z^1(\overline C^*)$ lifts to a one-cochain $\delta\in C^1$ satisfying $d\delta\in U$.
+\end{enumerate}
+Then every cohomology class in $H^2(\overline C^*)$ is represented by a two-cocycle lying in the subspace $U/pU\subseteq\overline C^2$.
+\end{lemma}
+\begin{proof}
+By hypothesis~(1) and the long exact cohomology sequence for $0\to\overline C^*\xrightarrow{p}C^*\to\overline C^*\to0$, the Bockstein connecting map $H^1(\overline C^*)\to H^2(\overline C^*)$ is surjective. Given any class in $H^2(\overline C^*)$, choose a preimage represented by $\bar\delta\in Z^1(\overline C^*)$ and lift $\bar\delta$ to $\delta\in C^1$ with $d\delta\in U$ via~(2). Since $d\bar\delta=0$ in $\overline C^2$, the coboundary $d\delta$ lies in $U\cap pC^2=pU$ (as $U$ is spanned by a subset of a basis of $C^2$). Dividing $d\delta$ by $p$ therefore yields a representative of the given cohomology class in $U/pU$.
+\end{proof}
+
+\subsection{Moving the representative onto zero products}
+
+Combining Proposition~\ref{prop:integral-bockstein} with the integral lifting of the nonzero-product Leibniz equations in Theorem~\ref{thm:integral-partial-lifting} now yields a cocycle generator for each residual line $\HH^2(A_0)_{\chi_i}$ ($i\in I_0$) that vanishes on all nonzero ray products and takes values in the stem-product lines on zero ray products.
+
+\begin{corollary}
+\label{cor:zero-supported-coverage}
+Assume that Proposition~\ref{prop:table-weight-lifting} holds for all weighted multiplication tables with fewer than $\dim A_0$ nonzero elements, as in Theorem~\ref{thm:integral-partial-lifting}. Then for each $i\in I_0$, the one-dimensional weight space $\HH^2(A_0)_{\chi_i}$ has a nonzero cocycle representative supported exclusively on composable pairs of rays $(r,s)$ satisfying $rs=0$ and $r*s\ne0$, where $*$ is the stem product of Definition~\ref{def:stem-product}, and its value on each such pair $(r,s)$ lies in the one-dimensional socle line $U_{r*s}$. Moreover, this cocycle may be chosen over $\F_2$ and extended by scalars to $k$.
+\end{corollary}
+\begin{proof}
+Fix $i\in I_0$ and work first over $\F_2$ with $A^{(2)}=\F_2P$ and $A^{(4)}=\mathcal OP$. By Proposition~\ref{prop:primitive-parameter-characters}, the residual character $\chi_i\in L$ is part of a $\Z$-basis of $L$ and satisfies $\chi_i(\deg_\JJ)=2s_i>0$, so $\chi_i$ is positive and primitive as required by Setting~\ref{set:fixed-character}. Let $C^*$ be the weight-$\chi_i$ subcomplex of the normalized Hochschild complex of $A^{(4)}$, so that $\overline C^*$ is the weight-$\chi_i$ subcomplex for $A^{(2)}$, and let $U\subseteq C^2$ be the free $\mathcal O$-submodule of cochains that vanish on all pairs $(r,s)$ with $rs\ne0$ or $r*s=0$ and take values in $U_{r*s}$ when $rs=0$ and $r*s\ne0$.
+
+Condition~(1) of Lemma~\ref{lem:supported-bockstein} holds by Lemma~\ref{lem:mod-four-comparison}. For condition~(2), any derivation $\bar\delta\in Z^1(\overline C^*)$ of weight $\chi_i$ acts on shiftable rays by $\bar\delta(r)=\bar d_r r^+$ and vanishes on identities and unshiftable rays, where the coefficients $(\bar d_r)$ satisfy the nonzero-product Leibniz equations~\eqref{eq:partial-leibniz-group} modulo~$2$. By Theorem~\ref{thm:integral-partial-lifting}, $(\bar d_r)$ lifts to a solution $(d_r)$ over $\mathcal O=\Z/4$, so the lifted one-cochain $\delta(r)=d_r r^+\in C^1$ satisfies $(d\delta)(r,s)=0$ whenever $rs\ne0$. On any pair $(r,s)$ with $rs=0$, we have $\delta(rs)=0$, and any outer successor substitution $r^+=\widehat q_xr$ or $s^+=s\widehat q_z$ contributes $\widehat q_x(rs)=0$ or $(rs)\widehat q_z=0$ to $(d\delta)(r,s)$. Thus the only possible nonzero contributions to $(d\delta)(r,s)=d_r r^+s+d_s rs^+$ come from middle actions $r^+=r\widehat q_y$ or $s^+=\widehat q_ys$, both of which evaluate to $r\widehat q_ys$. By Corollary~\ref{cor:active-zero-pairs} and Proposition~\ref{prop:intrinsic-stem-product}, $r\widehat q_ys$ vanishes if $r*s=0$ and equals $r*s\in U_{r*s}$ if $r*s\ne0$. Hence $d\delta\in U$, verifying condition~(2) of Lemma~\ref{lem:supported-bockstein}.
+
+Lemma~\ref{lem:supported-bockstein} therefore produces a nonzero cocycle generator $(d\delta)/2\in U/2U$ of $\HH^2(A^{(2)})_{\chi_i}$, and tensoring with $k$ over $\F_2$ gives the desired generator of $\HH^2(A_0)_{\chi_i}$.
+\end{proof}

@@ -1,0 +1,140 @@
+\subsection{Finite normalization of an associative family}
+\label{subsec:characteristic-two-construction}
+
+We conclude Part~\ref{part:mesh-deformations} with a general deformation-theoretic
+criterion for realizing a positive filtered deformation as a specialized
+fibre of an associative polynomial family (compare Gerstenhaber
+\cite{Gerstenhaber}). For an algebra family over $k[t_1,\ldots,t_n]$, we call
+its specialization at a parameter vector $\lambda\in k^n$ a \emph{scalar
+fibre}, and we call it a \emph{binary fibre} when every coordinate of
+$\lambda$ belongs to $\{0,1\}$.
+
+\begin{theorem}
+\label{thm:finite-family-normalization}
+Let $\Lambda=\bigoplus_{d=0}^N\Lambda_d$ be a finite-dimensional nonnegatively
+graded algebra over a field $k$ whose degree-zero part $S=\Lambda_0$ is a
+finite product of copies of $k$. Let $\mu_1,\ldots,\mu_n\in C^2_S(\Lambda,\Lambda)$
+be normalized $S$-relative Hochschild $2$-cocycles of positive internal
+degrees $q_1,\ldots,q_n>0$. Assume that their cohomology classes span
+$\HH^2(\Lambda)_{>0}$ and that the deformed product
+\[
+                         m_t=m+\sum_{i=1}^n t_i\mu_i
+\]
+is associative over the polynomial ring $k[t_1,\ldots,t_n]$, where $m$ is
+the multiplication of $\Lambda$. Then every positive filtered deformation of
+$\Lambda$ is isomorphic to a scalar fibre $(\Lambda,m_\lambda)$ via a
+filtered isomorphism that induces the identity on $\gr\Lambda=\Lambda$ and
+fixes the lifted vertex idempotents.
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{lem:split-positive-deformation}, after lifting the vertex
+idempotents and splitting the filtration as $S$-bimodules, the given positive
+filtered deformation is defined on the underlying graded vector space
+$\Lambda$ by an associative $S$-relative multiplication $\star$ such that
+$\star-m$ raises internal degree by at least $1$. We construct a parameter
+vector $\lambda\in k^n$ and a sequence of filtered automorphisms of $\Lambda$
+by induction on the degree $q\geq1$, starting with $q=1$ and $\lambda=0$.
+
+Suppose that $\star$ agrees with $m_\lambda$ in all internal degrees less
+than $q$, where only those coordinates $\lambda_i$ with $q_i<q$ have been
+assigned. Let $\varphi_q\in C^2_S(\Lambda,\Lambda)_q$ denote the homogeneous
+component of $\star-m_\lambda$ of internal degree $q$. Subtracting the
+associativity identity for $m_\lambda$ from that for $\star$ in internal
+degree $q$, all cross-terms involving both $\varphi_q$ and lower-degree
+positive components of $\star$ or $m_\lambda$ have internal degree strictly
+greater than $q$ and therefore vanish, leaving the Hochschild cocycle
+condition $d\varphi_q=0$. Because the classes $[\mu_i]$ span
+$\HH^2(\Lambda)_{>0}$, there exist scalars $c_i\in k$ (for those indices $i$
+with $q_i=q$) and a normalized $S$-relative $1$-cochain
+$f_q\in C^1_S(\Lambda,\Lambda)_q$ such that
+\[
+                 \varphi_q=\sum_{q_i=q}c_i\mu_i+df_q.
+\]
+Setting $\lambda_i=c_i$ for all $i$ with $q_i=q$ keeps $m_\lambda$
+associative by hypothesis, and pulling the multiplication $\star$ back along
+the filtered $S$-bimodule automorphism $1-f_q$ subtracts
+$(df_q)(a,b)=a f_q(b)-f_q(ab)+f_q(a)b$ from its degree-$q$ component while
+leaving all components of degree less than $q$ unchanged. Thus the
+transformed product $\star$ agrees with $m_\lambda$ in all internal degrees
+at most $q$. Since $\Lambda$ is finite-dimensional, $C^2_S(\Lambda,\Lambda)_q=0$
+for all $q>N$, so this process terminates after at most $N$ steps and yields
+the desired filtered isomorphism with $(\Lambda,m_\lambda)$.
+\end{proof}
+
+Because the residual characters $\chi_i$ extend to a $\Z$-basis of the
+weight lattice $L=W(P)$ by Proposition~\ref{prop:primitive-parameter-characters},
+any nonzero coordinates of the parameter vector $\lambda$ can then be rescaled
+to $1$ by a diagonal grading automorphism of $\Lambda$.
+
+\begin{corollary}
+\label{cor:binary-normalization}
+In the setting of Theorem~\ref{thm:finite-family-normalization}, suppose
+that $\Lambda$ also carries a compatible grading by a finite-rank free
+abelian group $L$ with $S$ in degree zero, and that each cocycle $\mu_i$ is
+homogeneous of $L$-degree $\chi_i\in L$. If $\{\chi_1,\ldots,\chi_n\}$
+extends to a $\Z$-basis of $L$, then every positive filtered deformation of
+$\Lambda$ is isomorphic to a binary fibre $(\Lambda,m_\lambda)$ with
+$\lambda\in\{0,1\}^n$. More generally, any two parameter vectors in $k^n$
+having the same zero coordinates define isomorphic fibres.
+\end{corollary}
+\begin{proof}
+Every group homomorphism $a:L\to k^*$ defines a grading automorphism of
+$(\Lambda,m)$ that multiplies elements of $L$-weight $\ell$ by $a(\ell)$.
+Transporting the deformed product $m_\lambda$ along this automorphism
+rescales the $i$th parameter according to
+\begin{equation}
+                       \lambda'_i=\lambda_i a(\chi_i).
+ \label{eq:diagonal-algebra-rescaling}
+\end{equation}
+Because $\{\chi_1,\ldots,\chi_n\}$ extends to a $\Z$-basis of the free
+abelian group $L$, we can prescribe $a(\chi_i)\in k^*$ arbitrarily for
+$i=1,\ldots,n$; in particular, setting $a(\chi_i)=\lambda_i^{-1}$ whenever
+$\lambda_i\ne0$ and $a(\chi_i)=1$ when $\lambda_i=0$ transforms $m_\lambda$
+into a binary fibre.
+\end{proof}
+
+Specializing Theorem~\ref{thm:finite-family-normalization} and
+Corollary~\ref{cor:binary-normalization} to $A_0=kP$ yields our reduction
+criterion for Theorem~A in characteristic two.
+
+\begin{proposition}
+\label{prop:family-criterion}
+Let $A$ be a basic representation-finite algebra over an algebraically closed
+field $k$ of characteristic two, let $A_0=kP$ ($P=\ray A_0$), and let
+$I_0\subseteq I$ index the nonzero spaces $\HH^2(A_0)_{\chi_i}$ in
+Proposition~\ref{prop:hochschild-mesh-restriction}. Suppose that we have
+constructed normalized $S$-relative $2$-cochains
+$\mu_i\in C^2_S(A_0,A_0)$ ($i\in I_0$) satisfying:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item each $\mu_i$ is homogeneous of $L$-weight $\chi_i$, and its cohomology
+class in $\HH^2(A_0)_{\chi_i}$ is nonzero;
+\item the deformed product $m_t=m+\sum_{i\in I_0}t_i\mu_i$ is associative
+over $k[t_i:i\in I_0]$;
+\item in every binary fibre $(A_0,m_\lambda)$ ($\lambda\in\{0,1\}^{I_0}$),
+the basis of nonzero rays $P\setminus\{0\}$ is a normed multiplicative basis,
+and in every scalar fibre $(\lambda\in k^{I_0})$ the map sending each
+$r\in P\setminus\{0\}$ to its ray in $(A_0,m_\lambda)$ identifies the ray
+category of $(A_0,m_\lambda)$ with $P$.
+\end{enumerate}
+Then $A$ is isomorphic to a binary fibre $(A_0,m_\lambda)$ via a filtered
+isomorphism that transports $P\setminus\{0\}$ to a normed multiplicative ray
+basis of $A$ and identifies $\ray A$ with $P$ via initial forms.
+\end{proposition}
+\begin{proof}
+As noted after Definition~\ref{def:positive-deformation}, $A$ is a positive
+filtered deformation of $A_0$. By Proposition~\ref{prop:hochschild-mesh-restriction},
+the cohomology classes $[\mu_i]$ ($i\in I_0$) in (1) form a basis of
+$\HH^2(A_0)_{>0}$. Theorem~\ref{thm:finite-family-normalization} therefore
+provides a filtered isomorphism between $A$ and a scalar fibre
+$(A_0,m_{\lambda'})$ inducing the identity on $\gr A=A_0$, and
+Proposition~\ref{prop:primitive-parameter-characters} together with
+Corollary~\ref{cor:binary-normalization} rescales $(A_0,m_{\lambda'})$ via a
+diagonal grading automorphism on the ray basis $P\setminus\{0\}$ to a binary
+fibre $(A_0,m_\lambda)$. Because this diagonal rescaling preserves each
+homogeneous ray line in $A_0=\gr A$, the composite filtered isomorphism
+$(A_0,m_\lambda)\xrightarrow{\sim}A$ sends the normed multiplicative basis
+$P\setminus\{0\}$ of (3) to a normed multiplicative basis of $A$ consisting
+of one representative from each nonzero ray, and identifies $\ray A$ with
+$\ray(A_0,m_\lambda)=P$ via the initial-form bijection of
+Lemma~\ref{lem:ray-degree}.
+\end{proof}

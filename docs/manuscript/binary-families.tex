@@ -1,0 +1,126 @@
+\section{Associative families and completion of the proof}
+\label{sec:binary-families}
+
+Under the inductive hypothesis of Corollary~\ref{cor:zero-supported-coverage}, the cocycles supported on zero ray products span the positive-degree Hochschild cohomology $\HH^2(A_0)_{>0}$. In this section we organize all such cocycles into a single polynomial family of associative multiplications, verify that every specialization with parameters in $\{0,1\}$ has a normed multiplicative basis, and apply Proposition~\ref{prop:family-criterion} to recover the original algebra $A$ and close the induction of Proposition~\ref{prop:table-weight-lifting}.
+
+\subsection{Indicator cocycles on zero products}
+\label{subsec:binary-families}
+
+The stem product $r*s$ specifies the only possible nonzero value for a deformation term on a pair of rays $(r,s)$ with $rs=0$. Imposing the Hochschild cocycle condition on all such pairs simultaneously turns out to require only pairwise equalities between their scalar coefficients, partitioning the active zero pairs into equivalence classes whose indicator sums define independent deformation parameters.
+
+We first record this phenomenon as a general observation about two compatible associative multiplication tables on the same basis.
+
+\begin{lemma}
+\label{lem:two-associative-tables}
+Let $S$ be a finite set with an absorbing element $0$, and let $m$ and $m_*$ be two associative multiplications on $S$ that share a common finite set of orthogonal idempotents summing to the identity of both linearizations. Suppose that $m_*(a,b)=m(a,b)$ whenever $m(a,b)\ne0$. Set
+\[
+  Z=\{(a,b)\in(S\setminus\{0\})^2:m(a,b)=0\text{ and }m_*(a,b)\ne0\},
+\]
+and for each $z=(a,b)\in Z$ let $\epsilon_z$ be the bilinear cochain on the free abelian group $\Z[S\setminus\{0\}]$ that sends $(a,b)$ to $m_*(a,b)$ and vanishes on all other basis pairs. Assume that all nested insertions vanish:
+\[
+  \epsilon_z(\epsilon_w(a,b),c)=0=\epsilon_z(a,\epsilon_w(b,c))
+  \qquad\text{for all }z,w\in Z\text{ and }a,b,c\in S\setminus\{0\}.
+\]
+Then there is an equivalence relation $\sim$ on $Z$ such that, over any commutative ring $R$, the Hochschild two-cocycles of $(R[S\setminus\{0\}],m)$ of the form $\sum_{z\in Z}a_z\epsilon_z$ ($a_z\in R$) are precisely the $R$-linear combinations of the class sums
+\[
+  \mu_E=\sum_{z\in E}\epsilon_z\qquad(E\in Z/{\sim}).
+\]
+Moreover, the deformed multiplication $m+\sum_{E\in Z/{\sim}}T_E\mu_E$ is associative over the polynomial ring $R[T_E:E\in Z/{\sim}]$, and at every specialization with $T_E\in\{0,1\}$ the set $S\setminus\{0\}$ is a multiplicative basis.
+\end{lemma}
+\begin{proof}
+Set $\epsilon=\sum_{z\in Z}\epsilon_z$, so that $m_*=m+\epsilon$. Because both $m$ and $m_*$ are associative and all quadratic terms $\epsilon(\epsilon(a,b),c)$ and $\epsilon(a,\epsilon(b,c))$ vanish by hypothesis, the Hochschild coboundary $d\epsilon$ with respect to $m$ vanishes identically over $\Z$.
+
+Now consider a general $R$-linear combination $\mu=\sum_{z\in Z}a_z\epsilon_z$ and evaluate its coboundary on a triple of nonzero basis elements $a,b,c\in S\setminus\{0\}$ (writing $xy$ for $m(x,y)$):
+\[
+  (d\mu)(a,b,c)=a\mu(b,c)-\mu(ab,c)+\mu(a,bc)-\mu(a,b)c.
+\]
+If $abc\ne0$, then $ab\ne0$, $bc\ne0$, $(ab)c\ne0$, and $a(bc)\ne0$, so all four terms vanish because $\mu$ is supported on $Z$. When $abc=0$, the surviving terms depend on whether $ab$ and $bc$ are zero:
+\[
+  \begin{array}{c|c|c}
+  ab & bc & (d\mu)(a,b,c) \\\hline
+  0 & 0 & a\mu(b,c)-\mu(a,b)c \\
+  0 & \ne0 & \mu(a,bc)-\mu(a,b)c \\
+  \ne0 & 0 & a\mu(b,c)-\mu(ab,c) \\
+  \ne0 & \ne0 & \mu(a,bc)-\mu(ab,c).
+  \end{array}
+\]
+In every row, $(d\mu)(a,b,c)$ is the difference of at most one positive term and at most one negative term, each of which is a single coefficient $a_z$ times a nonzero element of $S$ (since $a\epsilon_{(b,c)}(b,c)$ lies in $S$). Specializing to $a_z=1$ for all $z\in Z$, the identity $d\epsilon=0$ over $\Z$ shows that on each triple $(a,b,c)$ either both terms vanish or both terms are $a_z$ and $a_{z'}$ times the exact same basis element of $S\setminus\{0\}$. Consequently, $(d\mu)(a,b,c)=0$ imposes either no condition or a simple equality $a_z=a_{z'}$. Generating an equivalence relation $\sim$ on $Z$ by these equalities proves that the cocycles of the form $\sum_{z\in Z}a_z\epsilon_z$ have $R$-basis $\{\mu_E:E\in Z/{\sim}\}$.
+
+Finally, the associator of $m+\sum_E T_E\mu_E$ has zero linear part in the variables $T_E$ because each $\mu_E$ is a cocycle, and zero quadratic part because all nested insertions vanish. When every $T_E$ is specialized to $0$ or $1$, the deformed product of $a,b\in S\setminus\{0\}$ equals $m(a,b)$ if $(a,b)\notin Z$, and equals either $0$ or $m_*(a,b)$ if $(a,b)\in Z$; in every case it belongs to $S$.
+\end{proof}
+
+We now specialize Lemma~\ref{lem:two-associative-tables} to the ray category $P$ of $A_0=kP$. Let $Z$ be the set of composable pairs $z=(r,s)$ of nonidentity rays of $P$ satisfying $rs=0$ and $r*s\ne0$, and for each $z=(r,s)\in Z$ let $\epsilon_z$ denote the bilinear cochain that sends $(r,s)$ to $r*s$ and vanishes on all other pairs of rays (including identities).
+
+\begin{proposition}
+\label{prop:indicator-cocycles}
+Let $Z$ and $\epsilon_z$ be as above for $A_0=kP$ in Setting~\ref{set:projective-companion}. Over any commutative coefficient ring $R$:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item Every nontrivial cocycle condition on a linear combination $\sum_{z\in Z}a_z\epsilon_z$ ($a_z\in R$) takes the form $a_z=a_{z'}$.
+\item If $\sim$ denotes the equivalence relation on $Z$ generated by these equalities, then the Hochschild two-cocycles of the form $\sum_{z\in Z}a_z\epsilon_z$ have $R$-basis
+\begin{equation}
+  \mu_E=\sum_{z\in E}\epsilon_z\qquad(E\in Z/{\sim}).
+  \label{eq:indicator-cocycles}
+\end{equation}
+\item For any two cochains $\mu,\nu$ in the span of $\{\epsilon_z:z\in Z\}$ and any rays $a,b,c$,
+\begin{equation}
+  \mu(\nu(a,b),c)=0,\qquad \mu(a,\nu(b,c))=0.
+  \label{eq:mixed-insertions-zero}
+\end{equation}
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+We first verify~(3). By Corollary~\ref{cor:active-zero-pairs}, any nonzero value $u=r*s$ of $\nu(a,b)$ spans the endpoint socle of its corner bimodule and is therefore annihilated by both endpoint radicals. For any composable ray $c$, if $uc\ne0$, then $(u,c)\notin Z$ and hence $\mu(u,c)=0$; if instead $uc=0$, then $uq_y^nc=0$ for all $n\geq1$ because $uq_y=0$, so $u*c=0$ by Proposition~\ref{prop:intrinsic-stem-product} and again $\mu(u,c)=0$. The identity $\mu(a,\nu(b,c))=0$ follows dually.
+
+Now view the ordinary ray product $m(r,s)=rs$ and the stem product $m_*(r,s)=r*s$ as binary operations on the finite set $S$ of rays of $P$ (including $0$). By Proposition~\ref{prop:intrinsic-stem-product}, $m_*$ is associative and agrees with $m$ whenever $m(r,s)\ne0$, so $m_*=m+\sum_{z\in Z}\epsilon_z$. Since all nested insertions vanish by~(3), Lemma~\ref{lem:two-associative-tables} immediately yields~(1) and~(2).
+\end{proof}
+
+We call the cocycles $\mu_E$ of~\eqref{eq:indicator-cocycles} the \emph{indicator cocycles} on $A_0$. Using them to build an affine family of multiplications verifies the associativity and basis hypotheses of Proposition~\ref{prop:family-criterion}, after which Corollary~\ref{cor:zero-supported-coverage} will allow us to select a subfamily spanning $\HH^2(A_0)_{>0}$.
+
+\begin{proposition}
+\label{prop:zero-product-family}
+Let $A_0=kP$ satisfy Setting~\ref{set:projective-companion}, let $E$ range over the equivalence classes in $Z/{\sim}$ defining the indicator cocycles $\mu_E$ in~\eqref{eq:indicator-cocycles}, and let $(T_E)_{E\in Z/{\sim}}$ be independent polynomial variables. On the free $k[T_E]$-module having the nonzero rays of $P$ as basis, define the multiplication
+\begin{equation}
+  r\cdot s=
+  \begin{cases}
+  rs, & \text{if }rs\ne0\text{ in }P,\\
+  T_E(r*s), & \text{if }(r,s)\in E\in Z/{\sim},\\
+  0, & \text{otherwise},
+  \end{cases}
+  \label{eq:affine-ray-family}
+\end{equation}
+where $r*s$ is the stem product of Definition~\ref{def:stem-product}. Then:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item The multiplication~\eqref{eq:affine-ray-family} is associative over $k[T_E]$.
+\item Every scalar fiber (obtained by specializing the variables $T_E$ to elements of $k$) is a positive filtered deformation of $A_0$.
+\item Every scalar fiber has ray category $P$, with the nonzero rays of $P$ as representatives, and every binary fiber (with $T_E\in\{0,1\}$ for all $E$) has a normed multiplicative basis consisting of the nonzero rays of $P$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Assertion~(1) follows directly from Lemma~\ref{lem:two-associative-tables} and Proposition~\ref{prop:indicator-cocycles}. For~(2), the vertex idempotents are unchanged, and for every pair $(r,s)\in E$ with middle vertex $y$, Corollary~\ref{cor:active-zero-pairs} shows that $r*s=rq_ys$, so the indicator term $\epsilon_{(r,s)}$ has weight
+\[
+  c_E=\ell(r*s)-\ell(r)-\ell(s)=\ell(q_y),
+\]
+which has positive categorical degree $\deg_\JJ(q_y)>0$ (and is constant across each equivalence class $E$ because the defining equations $a_z=a_{z'}$ arise from homogeneous triples). Thus every scalar fiber is a positive filtered deformation of $A_0$.
+
+For~(3), Corollary~\ref{cor:active-zero-pairs} shows that $(r,s)\in Z$ requires both $r$ and $s$ to be generating rays between distinct vertices. Consequently, all products involving a local ray $q_x^j$ or a proper ray remain unchanged in every scalar fiber. In particular, the local rings $R_x$ and their left and right actions on every corner bimodule coincide with those of $A_0$, so the basis elements represent the exact same $(R_x^\times\times R_y^\times)$-orbits and generate the same endpoint subbimodules $U_r$. Furthermore, for any composable rays $r\colon x\to y$ and $s\colon y\to z$ and any $n\in\rad R_y$, the product $rn$ is a linear combination of proper rays, so $(rn)\cdot s=(rn)s$; hence the middle-radical insertion subspace $M(r,s)=R_xr(\rad R_y)sR_z$ of Definition~\ref{def:ray-product} is identical in $A_0$ and in the fiber algebra. Because each deformation term $T_E(r*s)=T_E(rq_ys)$ lies inside $M(r,s)$, the deformed product $r\cdot s$ belongs to $M(r,s)$ if and only if $rs=0$ in $A_0$ (and when $rs\ne0$, $r\cdot s=rs$). Thus every scalar fiber has ray category $P$.
+
+Finally, at any binary specialization $T_E\in\{0,1\}$, all products of basis elements are either basis elements or zero. Because the endpoint subbimodule chains are unchanged, every corner of a two-sided ideal is an endpoint subbimodule and is therefore spanned by a subset of the basis rays. Intersecting with powers of the radical shows that the basis is normed.
+\end{proof}
+
+\begin{example}
+\label{ex:zero-product-fibre}
+In the nine-dimensional algebra $B$ of Example~\ref{ex:zero-ray-span}, replacing the single zero product $\alpha\beta=0$ by $\alpha\mathbin{\cdot_t}\beta=tu$ (where $u=\alpha q\beta=[\alpha]*[\beta]$) while keeping all other basis products fixed yields the one-parameter family
+\[
+  B_t=kQ/(q^2,\ \alpha\beta-t\alpha q\beta).
+\]
+The same nine paths form a basis of $B_t$, and at $t=0$ and $t=1$ they form a normed multiplicative basis; assigning degree~$1$ to $q,\alpha,\beta$ makes $B_t$ a positive filtered deformation of $B$. Notice that the linear change of basis $\alpha'=\alpha-t\alpha q$ satisfies $\alpha'\beta=0$ and $\alpha'q=\alpha q$, giving an isomorphism $B_t\cong B$ for every $t\in k$. Equivalently, the indicator cocycle $\epsilon_{(\alpha,\beta)}$ is the coboundary $d\delta$ of the cochain $\delta(\alpha)=\alpha q$. Thus an individual indicator cocycle $\mu_E$ can be a coboundary; to obtain cocycles that represent nonzero classes in $\HH^2(A_0)_{>0}$, we must combine Proposition~\ref{prop:zero-product-family} with Corollary~\ref{cor:zero-supported-coverage}.
+\end{example}
+
+\begin{remark}
+\label{rem:classical-mixtures}
+In \cite[Sections~9.2--9.7]{BGRS}, Bongartz, Gabriel, Roiter, and Scherback construct associative algebras whose basis multiplications agree with the ray product except on specified local configurations where they equal the stem product, using these "mixtures" to classify representation-finite algebras in characteristic two. From the deformation-theoretic perspective, the indicator cocycles $\mu_E$ in~\eqref{eq:indicator-cocycles} provide canonical cocycle coordinates for these mixtures: if $V=\bigoplus_{E\in Z/{\sim}}k\mu_E$ denotes their span, then under the inductive hypothesis of Corollary~\ref{cor:zero-supported-coverage}, that corollary together with Proposition~\ref{prop:hochschild-mesh-restriction} yields the short exact sequence
+\[
+  0\longrightarrow V\cap B^2(A_0)\longrightarrow V\longrightarrow\HH^2(A_0)_{>0}\longrightarrow0,
+\]
+where $B^2(A_0)$ is the space of normalized Hochschild two-coboundaries.
+\end{remark}

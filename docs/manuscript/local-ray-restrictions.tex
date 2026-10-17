@@ -1,0 +1,313 @@
+\section{Local restrictions on ray products}
+\label{app:local-rays}
+
+In this appendix we prove the two local structural results stated in Section~\ref{sec:local-ray-geometry}: the uniqueness of initial and terminal ordinary arrows for one-sided generating rays (Proposition~\ref{prop:controlled-contours}), and the classification of proper shiftable products and nondeep external returns (Proposition~\ref{prop:proper-ray-products}). Throughout, we work in the ray algebra $A_0=kP$ of Setting~\ref{set:projective-companion} over a field of arbitrary characteristic, fix a positive primitive character $\chi\in L$ as in Setting~\ref{set:fixed-character}, and use the endpoint types of Definition~\ref{def:successor-types} and the primitive return corners $S_x$ of Definition~\ref{def:primitive-return-corner}. Both proofs rely on the finite faithful supports of Definition~\ref{def:faithful-support}, the finite homogeneous categories of Subsection~\ref{subsec:homogeneous-local-categories}, and the quadratic-form criterion of Lemma~\ref{lem:dimension-infinity}.
+
+\subsection{One-sided generating rays}
+\label{app:controlled-contours}
+
+We begin by proving Proposition~\ref{prop:controlled-contours}. Recall from Subsection~\ref{subsec:homogeneous-local-categories} that for any finite collection of graded objects $(x_i,w_i)$ with weights $w_i\in L$, we can construct a representation-finite homogeneous category $H$ whose morphism spaces are spanned by rays $r\colon x_i\to x_j$ of weight $\ell(r)=w_j-w_i$. By Lemma~\ref{lem:endpoint-chains}(3), the corner bimodule $A_0(x,z)$ of a generating ray $f\colon x\to z$ is cyclic over at least one endpoint ring, so every ray in $A_0(x,z)$ has weight $\ell(f)$ plus a nonnegative multiple of a positive local weight. Since $\chi$ is positive, $A_0(x,z)$ contains no ray of weight $\ell(f)-n\chi$ for $n>0$, and a ray of weight $\ell(f)+\chi$, when it exists, is the proper successor $f^+$. Moreover, by Lemma~\ref{lem:generating-paths}, every factor of a generating shiftable ray $g$ is itself a generating ray (as the corner bimodule of $g$ has dimension at least~$2$).
+
+\subsubsection{Bimodule retractions from homogeneous categories}
+
+To transfer finite representation type from a finite homogeneous category $H$ to the incidence algebra $kQ$ of a finite poset $Q$, we use a general criterion for when a family of selected rays in $H$ admits a $kQ$-bimodule retraction, even when $H$ contains additional morphisms outside $kQ$ that do not form an ideal. Write $a\lessdot b$ when $a<b$ is a cover relation in $Q$ (so no element of $Q$ lies strictly between $a$ and $b$).
+
+\begin{lemma}
+\label{lem:configuration-retraction}
+Let $H$ be a finite homogeneous category whose objects are indexed by a finite poset $Q$. Suppose that for each pair $a\leq b$ in $Q$ we have chosen a nonzero basis morphism $r_{ab}\in H(a,b)$ such that $r_{aa}=1_a$ and $r_{ab}r_{bc}=r_{ac}$ for all $a\leq b\leq c$. Assume that for every cover relation $a\lessdot b$ in $Q$ and every homogeneous basis morphism $h$ in $H$ with the appropriate endpoints,
+\[
+  \begin{split}
+  r_{ab}h=r_{ac}\quad(a\leq c)&\quad\Longrightarrow\quad b\leq c,\\
+  hr_{ab}=r_{cb}\quad(c\leq b)&\quad\Longrightarrow\quad c\leq a.
+  \end{split}
+\]
+Then the linear projection $H\to kQ$ sending each selected basis morphism $r_{ab}$ to the corresponding poset basis element of $kQ$ and vanishing on all other basis morphisms of $H$ is a $kQ$-bimodule retraction. In particular, if $H$ is representation-finite, then so is the incidence algebra $kQ$.
+\end{lemma}
+\begin{proof}
+The relations $r_{aa}=1_a$ and $r_{ab}r_{bc}=r_{ac}$ embed the incidence algebra $kQ$ as a unital subalgebra of $H$. We first extend the two cover implications to arbitrary pairs $a\leq b$ in $Q$ by induction on the interval $[a,b]$. If $a<b$, choose a cover $a\lessdot a_1\leq b$. Any equality $r_{ab}h=r_{ac}$ with $a\leq c$ can be rewritten as $r_{aa_1}(r_{a_1b}h)=r_{ac}$. Since $r_{ac}\ne0$, the inner product $r_{a_1b}h$ is a nonzero basis morphism, so the cover assumption for $a\lessdot a_1$ gives $a_1\leq c$; because $H$ is thin, $r_{a_1b}h$ must equal $r_{a_1c}$, and the induction hypothesis on $[a_1,b]$ then yields $b\leq c$. The second implication extends in the same way by factoring out the last cover below $b$.
+
+It follows that the composition in $H$ of a selected basis morphism $r_{ab}$ with an unselected basis morphism $h$ (on either side) can never equal a selected basis morphism $r_{ac}$ or $r_{cb}$: otherwise the extended implications would give $b\leq c$ (respectively, $c\leq a$), forcing $r_{ab}h=r_{ab}r_{bc}$ and hence $h=r_{bc}$ (respectively, $h=r_{ca}$) by thinness of $H$. Thus the linear projection $H\to kQ$ onto the span of the selected morphisms $\{r_{ab}\}_{a\leq b}$ is a $kQ$-bimodule homomorphism restricting to the identity on $kQ$. The final assertion then follows from Lemma~\ref{lem:split-representation-transfer}.
+\end{proof}
+
+We will apply Lemma~\ref{lem:configuration-retraction} when $Q$ is the reachability poset of an oriented tree and the selected morphisms $r_{ab}$ are the evaluations of the unique oriented paths in the tree. Since the cover relations of $Q$ are precisely the arrows of the tree, it suffices to verify the two implications of Lemma~\ref{lem:configuration-retraction} at each tree arrow (and any candidate factor $h$ whose required weight has negative categorical degree $\deg_\JJ(h)<0$ is automatically absent).
+
+The first tree we will use is the six-vertex tree with two adjacent trivalent vertices:
+\begin{equation}
+  \sixlifttree
+  \label{eq:six-lift-tree}
+\end{equation}
+In our application below, the two arrows labeled $\alpha$ will be lifts of the same ray $\alpha$, with $(v_4,v_5)$ obtained from $(v_2,v_3)$ by shifting both object weights by $-\chi$ so that the six graded objects are pairwise distinct. Assigning dimension~$2$ to the trivalent vertices $v_2,v_5$ and dimension~$1$ to the four leaves gives $N=D=12$, so Lemma~\ref{lem:dimension-infinity} rules out every orientation of~\eqref{eq:six-lift-tree}. The second tree we will use is the eight-vertex tree of type $\widetilde E_7$ with arm lengths $(3,3,1)$, which is likewise representation-infinite in every orientation by the dimension vector recorded after Lemma~\ref{lem:dimension-infinity}.
+
+\subsubsection{Two distinct first arrows are impossible}
+
+Suppose for a contradiction that a generating left-sided ray $f\colon x\to z$ can be represented by ordinary paths starting with two distinct ordinary arrows $a_1\colon x\to y_1$ and $a_2\colon x\to y_2$. Write $f=a_1w_1=a_2w_2$; since $a_1\ne a_2$ are ordinary arrows, they are incomparable under right factorization ($a_1h=a_2$ with $\deg_\JJ(h)>0$ would contradict the ordinariness of $a_2$, while $\deg_\JJ(h)=0$ would force $a_1=a_2$), and both suffixes $w_1,w_2$ are nonidentity generating rays. Because $\widehat q_xf=\widehat q_xa_iw_i\ne0$, both $\widehat q_xa_1$ and $\widehat q_xa_2$ are nonzero.
+
+We first show that one of $a_1,a_2$ is left-sided and the other is two-sided:
+\begin{itemize}
+\item \emph{Both $a_1$ and $a_2$ cannot be two-sided.} If both were two-sided, then $\widehat q_xa_i=a_i\widehat q_{y_i}$, so $\widehat q_xf=a_i(\widehat q_{y_i}w_i)$ would be right-divisible by both $a_1$ and $a_2$, as is $f=a_iw_i$. In the faithful projective support at $x$, the four rays $\{a_1,a_2,f,\widehat q_xf\}$ would then form a four-point crown: $a_1$ and $a_2$ are incomparable; $f$ and $\widehat q_xf$ are incomparable because $f$ is generating and left-sided ($f\widehat q_z=0$); and neither $f$ nor $\widehat q_xf$ can precede $a_1$ or $a_2$ for degree reasons. This contradicts Lemma~\ref{lem:dimension-infinity}.
+
+\item \emph{Both $a_1$ and $a_2$ cannot be left-sided.} If both were left-sided, consider the six rays
+\[
+  1_x,\quad \widehat q_x,\quad a_1,\quad a_2,\quad \widehat q_xa_1,\quad \widehat q_xa_2
+\]
+in the faithful projective support at $x$. We claim that their induced poset has only the comparisons generated by
+\[
+  1_x\longrightarrow\widehat q_x\longrightarrow\widehat q_xa_1,\widehat q_xa_2,\qquad
+  1_x\longrightarrow a_1,a_2.
+\]
+Indeed, $\widehat q_x$ cannot precede $a_i$ (as $a_i$ is ordinary) and $a_i$ cannot precede $\widehat q_x$ (as $a_ih=\widehat q_x$ would place $y_i\in S_x$ by Lemma~\ref{lem:primitive-cyclic-corners}(3) and make $a_i$ two-sided); $a_1$ and $a_2$ (and hence $\widehat q_xa_1$ and $\widehat q_xa_2$) are incomparable; and any cross comparison $a_ih=\widehat q_xa_j$ ($i\ne j$) would multiply on the right by $w_j$ to give $a_i(hw_j)=\widehat q_xa_jw_j=\widehat q_xf\ne0$, forcing $hw_j$ to be the unique ray $w_i^+$ in $A_0(y_i,z)$ of weight $\ell(w_i)+\chi$, which contradicts $a_iw_i^+=0$ from the $(\mathsf L,*)$ row of~\eqref{eq:product-type-table}. All reverse comparisons are ruled out because $a_1,a_2$ are generating or by degree. The resulting six-element poset is the orientation of~\eqref{eq:six-lift-tree} with two outgoing leaves at each trivalent vertex, which is excluded by Lemma~\ref{lem:dimension-infinity}.
+\end{itemize}
+
+Thus one of the two initial arrows of a generating left-sided ray must have type~$\mathsf B$ and the other type~$\mathsf L$; dually, if a generating right-sided ray had two distinct terminal arrows, one would have type~$\mathsf B$ and the other type~$\mathsf R$. Passing to the opposite category $A_0^{\op}$, it therefore suffices to rule out a generating right-sided ray $f\colon x\to z$ admitting two factorizations
+\[
+  f=\gamma\alpha=\eta\beta,\qquad
+  \alpha\colon y\to z\text{ ordinary of type }\mathsf B,\quad
+  \beta\colon t\to z\text{ ordinary of type }\mathsf R.
+\]
+Here the prefixes $\gamma\colon x\to y$ and $\eta\colon x\to t$ are nonidentity generating rays by Lemma~\ref{lem:generating-paths}, and are incomparable (for instance, $\gamma h=\eta$ would imply $\gamma(h\beta)=\gamma\alpha=f\ne0$, so $h\beta=\alpha$ because both lie in $A_0(y,z)$ with the same weight, contradicting the fact that $\alpha$ and $\beta$ are distinct ordinary arrows). Using the local generators $\widehat q_y$ and $\widehat q_z$, we have $\gamma\widehat q_y\alpha=\gamma\alpha\widehat q_z=f\widehat q_z\ne0$, so $\gamma$ has type~$\mathsf R$ (since $f$ has type~$\mathsf R$, $\widehat q_x\gamma=0$). Moreover, if a local ray $u\in R_x$ has weight $\chi$, then primitivity of $\chi$ gives $u=\widehat q_x$, and hence $uf=\widehat q_xf=0\ne f\widehat q_z$ because $f$ is right-sided; thus
+\begin{equation}
+  uf\ne f\widehat q_z\qquad\text{for every local ray }u\in R_x.
+  \label{eq:absent-source-action}
+\end{equation}
+
+We now distinguish two cases according to whether $\alpha$ admits a primitive reverse.
+
+\medskip
+\noindent\textbf{Case 1: $\alpha$ has a primitive reverse $\lambda\colon z\to y$.}
+Here $\alpha\lambda=\widehat q_y$ and $\lambda\alpha=\widehat q_z$. Set $\zeta=\beta\lambda\colon t\to y$, which is nonzero because $\zeta\alpha=\beta\widehat q_z\ne0$. In a finite homogeneous category $H$, choose the six graded objects
+\begin{equation}
+  \begin{array}{c|rrrrrr}
+  \text{vertex}&v_1&v_2&v_3&v_4&v_5&v_6\\ \hline
+  \text{object}&x&y&z&y&z&t\\
+  \text{weight}&-\ell(\gamma)&0&\ell(\alpha)&-\chi&\ell(\alpha)-\chi&\ell(\alpha)-\chi-\ell(\beta)
+  \end{array}
+  \label{eq:six-lift-coordinates}
+\end{equation}
+and select the tree~\eqref{eq:six-lift-tree}, whose composite oriented paths evaluate to the nonzero rays $\widehat q_y,\zeta,\widehat q_z,\alpha\widehat q_z,\beta\widehat q_z,f$. To verify the cover conditions of Lemma~\ref{lem:configuration-retraction}, note that every left-multiplication check $r_{ab}h=r_{ac}$ with $b\nleq c$ requires $\deg_\JJ(h)<0$, while the right-multiplication checks $hr_{ab}=r_{cb}$ with $c\nleq a$ and $\deg_\JJ(h)\geq0$ reduce to the following forbidden factorizations:
+\[
+  \begin{array}{c|l}
+  \text{forbidden factorization}&\text{reason for exclusion}\\ \hline
+  h\gamma=\widehat q_y&(\gamma h)f=\gamma\widehat q_y\alpha=f\widehat q_z\text{, contradicting~\eqref{eq:absent-source-action}}\\
+  h\gamma=\lambda&hf=h\gamma\alpha=\widehat q_z\implies(fh)f=f\widehat q_z\text{, contradicting~\eqref{eq:absent-source-action}}\\
+  h\gamma=\zeta&(\eta h)f=\eta\beta\lambda\alpha=f\widehat q_z\text{, contradicting~\eqref{eq:absent-source-action}}\\
+  h\alpha=\beta\text{ or }h\beta=\alpha&\alpha,\beta\text{ are distinct ordinary arrows}\\
+  h\lambda=\gamma&\ell(h)=\ell(\gamma)-\ell(\lambda)=\ell(f)-\chi\text{ lies below the generator }f
+  \end{array}
+\]
+Thus Lemma~\ref{lem:configuration-retraction} provides a bimodule retraction onto the incidence algebra of~\eqref{eq:six-lift-tree}, contradicting Lemma~\ref{lem:dimension-infinity}. Consequently, $\alpha$ cannot admit a primitive reverse.
+
+\medskip
+\noindent\textbf{Case 2: $\alpha$ has no primitive reverse.}
+We first note that no ray $h\colon t\to y$ can satisfy $\beta\widehat q_z=h\alpha$. Otherwise, in the faithful injective support at $z$, the four rays $\{\widehat q_z,\alpha,\alpha\widehat q_z,\beta\widehat q_z\}$ would form a four-point crown: $\widehat q_z$ and $\alpha$ are incomparable because $\alpha$ is ordinary and has no primitive reverse; $\alpha\widehat q_z$ and $\beta\widehat q_z$ are incomparable because $u\alpha\widehat q_z=\beta\widehat q_z$ or $u\beta\widehat q_z=\alpha\widehat q_z$ cancels $\widehat q_z$ to $u\alpha=\beta$ or $u\beta=\alpha$; and no upper ray $\alpha\widehat q_z,\beta\widehat q_z$ can precede $\widehat q_z$ or $\alpha$ (the only nonnegative-degree possibility $u\beta\widehat q_z=\alpha$ would factor the ordinary arrow $\alpha$ through $\widehat q_z$).
+
+Now choose the eight graded objects in $H$:
+\begin{equation}
+  \begin{gathered}
+  \begin{array}{c|rrrr}
+  \text{vertex}&v_1&v_2&v_3&v_4\\ \hline
+  \text{object}&x&x&y&y\\
+  \text{weight}&-\ell(\gamma)&\chi-\ell(\gamma)&0&\chi
+  \end{array}
+  \\[1ex]
+  \begin{array}{c|rrrr}
+  \text{vertex}&v_5&v_6&v_7&v_8\\ \hline
+  \text{object}&z&z&t&t\\
+  \text{weight}&\ell(\alpha)&\ell(\alpha)-\chi&\ell(\alpha)+\chi-\ell(\beta)&\ell(\alpha)-\chi-\ell(\beta)
+  \end{array}
+  \end{gathered}
+  \label{eq:eight-lift-coordinates}
+\end{equation}
+and select the oriented tree of type $\widetilde E_7$:
+\begin{equation}
+\begin{tikzpicture}[>=Latex,x=1.2cm,y=1.1cm,every node/.style={font=\small}]
+\node (G) at (0,0) {$v_7$}; \node (B) at (1,0) {$v_2$};
+\node (D) at (2,0) {$v_4$}; \node (C) at (3,0) {$v_3$};
+\node (E) at (4,0) {$v_5$}; \node (F) at (5,0) {$v_6$};
+\node (H) at (6,0) {$v_8$}; \node (A) at (3,1) {$v_1$};
+\draw[->] (B)--node[above] {$\eta$}(G);
+\draw[->] (B)--node[above] {$\gamma$}(D);
+\draw[->] (C)--node[above] {$\widehat q_y$}(D);
+\draw[->] (C)--node[above] {$\alpha$}(E);
+\draw[->] (F)--node[above] {$\widehat q_z$}(E);
+\draw[->] (H)--node[above] {$\beta$}(F);
+\draw[->] (A)--node[right] {$\gamma$}(C);
+\end{tikzpicture}
+\label{eq:eight-lift-tree}
+\end{equation}
+Its composite oriented paths evaluate to the nonzero rays $\gamma\widehat q_y$, $f=\gamma\alpha$, and $\beta\widehat q_z$. After discarding negative-degree factors, the cover conditions of Lemma~\ref{lem:configuration-retraction} across the seven arrows of~\eqref{eq:eight-lift-tree} reduce to the following forbidden factorizations:
+\[
+  \begin{array}{c|l}
+  \text{forbidden factorization}&\text{reason for exclusion}\\ \hline
+  \widehat q_yh=\alpha\text{ or }h\widehat q_z=\alpha&\alpha\text{ is an ordinary arrow}\\
+  \alpha h=\widehat q_y\text{ or }h\alpha=\widehat q_z&\alpha\text{ has no primitive reverse}\\
+  \gamma h=\eta\text{ or }\eta h=\gamma&\gamma\text{ and }\eta\text{ are incomparable}\\
+  h\widehat q_y=\gamma&\ell(h)=\ell(\gamma)-\chi\text{ lies below the generator }\gamma\\
+  h\alpha=\beta\widehat q_z&\text{excluded by the injective-support crown above}\\
+  h\gamma=\gamma\widehat q_y&hf=h\gamma\alpha=\gamma\widehat q_y\alpha=f\widehat q_z\text{, contradicting~\eqref{eq:absent-source-action}}\\
+  h\gamma=\widehat q_y&(\gamma h)f=\gamma\widehat q_y\alpha=f\widehat q_z\text{, contradicting~\eqref{eq:absent-source-action}}\\
+  h\widehat q_z=f&\ell(h)=\ell(f)-\chi\text{ lies below the generator }f
+  \end{array}
+\]
+(In the second row, note that $\alpha h=\widehat q_y$ forces $\alpha(h\alpha)=\widehat q_y\alpha=\alpha\widehat q_z\ne0$ and hence $h\alpha=\widehat q_z$, and dually $h\alpha=\widehat q_z$ forces $\alpha h=\widehat q_y$, so either equality would make $h$ a primitive reverse of $\alpha$.) Lemma~\ref{lem:configuration-retraction} therefore yields a bimodule retraction onto the incidence algebra of~\eqref{eq:eight-lift-tree}. Assigning dimension~$4$ to $v_3$, dimensions $3,2,1$ along the two arms of length~$3$, and dimension~$2$ to $v_1$ gives $N=D=48$, contradicting Lemma~\ref{lem:dimension-infinity}. This completes the proof of Proposition~\ref{prop:controlled-contours}.
+
+\subsection{Proper products and external returns}
+\label{app:proper-products}
+
+We now prove Proposition~\ref{prop:proper-ray-products}. Recall that the finite homogeneous categories of Subsection~\ref{subsec:homogeneous-local-categories} are representation-finite by Lemma~\ref{lem:homogeneous-projection}, as are their corner subcategories and object quotients, and in particular the incidence algebras of the faithful projective and injective supports of Definition~\ref{def:faithful-support}.
+
+\subsubsection{One-sided lengths and the two-object return}
+
+We begin by noting a mild strengthening of Case~1 in the proof of Lemma~\ref{lem:opposite-controls}: if $f\colon u\to c$ and $g\colon c\to v$ are generating rays whose corner bimodules are generated only at $c$, and if the radical generator $q=q_c$ of $R_c$ satisfies $fq\ne0$, $qg\ne0$, and $q^2\ne0$, then
+\begin{equation}
+  fg=0.
+  \label{eq:strong-star-vanishing}
+\end{equation}
+Indeed, Case~1 of the proof of Lemma~\ref{lem:opposite-controls} uses only the four nonzero composite rays $fg,fq,qg,q^2$ together with the fact that $f$ and $g$ are generating rays and satisfy the radical inclusions~\eqref{eq:opposite-control-inclusions}; it does not require $fq^2$ or $q^2g$ to be nonzero.
+
+We now prove the dimension bound $\dim A_0(b,y)\leq3$ (with equality only when $N_b=3$) for a generating left-sided ray $f\colon b\to y$ in Proposition~\ref{prop:proper-ray-products}(1). If $\widehat q_b=0$ or $\widehat q_bf=0$, then $\dim A_0(b,y)=1$; if $\widehat q_bf\ne0$, then $A_0(b,y)=R_bf$ by Lemma~\ref{lem:primitive-action-generation}, so $\dim A_0(b,y)\leq N_b$, which already gives the bound when $N_b\leq3$. Suppose for a contradiction that $N_b\geq4$ and $\widehat q_b^2f\ne0$ (so $\dim A_0(b,y)\geq3$). We reach a contradiction in three steps:
+
+\medskip
+\noindent\textbf{Step 1: Support points and forward comparisons.}
+In the faithful projective support at $b$, retain the six rays
+\[
+  Q_i=\widehat q_b^i\quad(0\leq i\leq3),\qquad
+  Y_j=\widehat q_b^jf\quad(j=1,2).
+\]
+Clearly $Q_0<Q_1<Q_2<Q_3$, and $Q_i<Y_j$ whenever $i\leq j$. Conversely, if $i>j$, an inequality $Q_i\leq Y_j$ would require a ray $h\in A_0(b,y)$ of weight $\ell(f)-(i-j)\chi$, which is impossible because $A_0(b,y)=R_bf$ has only weights $\ell(f)+a\chi$ with $a\geq0$. Moreover, $Y_1$ and $Y_2$ are incomparable: any comparison between them would produce a local ray at $y$ of weight $\chi$, which by primitivity of $\chi$ would force $f\widehat q_y\ne0$ and make $f$ two-sided.
+
+\medskip
+\noindent\textbf{Step 2: Excluding reverse comparisons.}
+Suppose that $Y_j<Q_i$ for some $j\in\{1,2\}$ and $i\in\{0,1,2,3\}$. Left cancellation of $\widehat q_b^j$ gives $fh=\widehat q_b^a$ for a ray $h\colon y\to b$ and $a=i-j\in\{1,2\}$. Since $a\leq2$ and $N_b\geq4$, we have $fh\widehat q_b=\widehat q_b^{a+1}\ne0$, so $h\widehat q_b\ne0$. By the dual of Lemma~\ref{lem:primitive-action-generation}, the corner bimodule $A_0(y,b)$ is generated at $b$: writing $h=l\widehat q_b^u$ for the generating ray $l\colon y\to b$ gives $fl=\widehat q_b^m$ with $1\leq m\leq a\leq2$. Note that $y\notin S_b$ because $f$ is one-sided, and both $lf$ and $l\widehat q_b$ are nonzero because $f(lf)=\widehat q_b^mf\ne0$ and $f(l\widehat q_b)=\widehat q_b^{m+1}\ne0$. If $A_0(y,b)$ were also cyclic at $y$, Lemma~\ref{lem:primitive-action-generation} would give $q_yl=l\widehat q_b\ne0$ with $\ell(q_y)=\chi$, and Lemma~\ref{lem:primitive-cyclic-corners}(1) applied to $l$ and $f$ would yield $lf=q_y$ and $fl=\widehat q_b$, placing $y\in S_b$, a contradiction. Thus both $l\colon y\to b$ and $f\colon b\to y$ are generated only at $b$. Since $l\widehat q_b\ne0$, $\widehat q_bf\ne0$, and $\widehat q_b^2\ne0$, the strengthened star identity~\eqref{eq:strong-star-vanishing} gives $lf=0$, contradicting $f(lf)=\widehat q_b^mf\ne0$.
+
+\medskip
+\noindent\textbf{Step 3: The dimension contradiction.}
+By Steps~1 and~2, the induced poset on $\{Q_0,Q_1,Q_2,Q_3,Y_1,Y_2\}$ has cover diagram
+\[
+  Q_0\longrightarrow Q_1\longrightarrow Q_2\longrightarrow Q_3,\qquad
+  Q_1\longrightarrow Y_1,\qquad Q_2\longrightarrow Y_2,
+\]
+which is an orientation of the representation-infinite tree~\eqref{eq:six-lift-tree} (with $N=D=12$ for dimensions~$2$ on $Q_1,Q_2$ and~$1$ on the four leaves), contradicting Lemma~\ref{lem:dimension-infinity}. Thus $\widehat q_b^2f=0$ and $\dim A_0(b,y)\leq2$ whenever $N_b\geq4$; the dual argument gives the same bound for a generating right-sided ray.
+
+\medskip
+Before proving the second part of Proposition~\ref{prop:proper-ray-products}(1), we isolate the two-object return calculation used in Step~2 above.
+
+\begin{lemma}
+\label{lem:nondeep-two-object-return}
+Work in Settings~\ref{set:projective-companion} and~\ref{set:fixed-character}. Let $b$ be a supporting vertex, let $y\notin S_b$, and let $e\colon b\to y$ and $l\colon y\to b$ be generating rays satisfying
+\begin{equation}
+  el=\widehat q_b^a\qquad\text{with}\qquad\widehat q_b^{a+1}\ne0.
+  \label{eq:external-return-assumption}
+\end{equation}
+Then $e$ has type~$\mathsf L$, $l$ has type~$\mathsf R$, and
+\begin{equation}
+  N_b=4,\qquad el=\widehat q_b^2,\qquad le=0.
+  \label{eq:nondeep-two-object-table}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $el\widehat q_b=\widehat q_b^{a+1}\ne0$, we have $\widehat q_be\ne0$ and $l\widehat q_b\ne0$, so both $A_0(b,y)$ and $A_0(y,b)$ are generated at $b$ by Lemma~\ref{lem:primitive-action-generation}. Neither $A_0(b,y)$ nor $A_0(y,b)$ can be cyclic at $y$: if $A_0(b,y)$ were cyclic at $y$, Lemma~\ref{lem:primitive-action-generation} and Lemma~\ref{lem:primitive-cyclic-corners}(1) would give $el=\widehat q_b$ and $le=q_y$, placing $y\in S_b$; if $A_0(y,b)$ were cyclic at $y$, then $q_yl=l\widehat q_b\ne0$ would imply $(eq_y)l=el\widehat q_b=\widehat q_b^{a+1}\ne0$, so $eq_y=\widehat q_be\ne0$ and $A_0(b,y)$ would be cyclic at $y$ as well. Thus $e$ has type~$\mathsf L$, $l$ has type~$\mathsf R$, and both corner bimodules are generated only at $b$. By~\eqref{eq:strong-star-vanishing} applied to $l\colon y\to b$ and $e\colon b\to y$, we obtain $le=0$. Moreover, $a\geq2$ because $a=1$ would place $y\in S_b$ by Lemma~\ref{lem:primitive-cyclic-corners}(3). Note also that $\widehat q_b^ae=e(le)=0$ and $l\widehat q_b^a=(le)l=0$.
+
+To rule out $a\geq3$, set $E=\ell(e)$ and consider in a finite homogeneous category $H$ the six graded objects
+\[
+  B_i=(b,i\chi)\quad(0\leq i\leq3),\qquad
+  Y_+=(y,E+\chi),\qquad Y_-=(y,E+(2-a)\chi),
+\]
+together with the selected morphisms along the oriented tree
+\begin{equation}
+  B_0\xrightarrow{\widehat q_b}B_1\xrightarrow{\widehat q_b}B_2\xrightarrow{\widehat q_b}B_3,\qquad
+  B_1\xrightarrow{e}Y_+,\qquad Y_-\xrightarrow{l}B_2.
+  \label{eq:proper-six-tree}
+\end{equation}
+Every oriented path in~\eqref{eq:proper-six-tree} evaluates to a nonzero ray in $H$ because $\widehat q_b^3$ (as $a\geq2$ and $\widehat q_b^{a+1}\ne0$), $\widehat q_be$, and $l\widehat q_b$ are all nonzero. Writing $\ell(l)=a\chi-E$, any ray in $A_0(b,y)=R_be$ has weight $E+m\chi$ with $0\leq m<a$, and any ray in $A_0(y,b)=lR_b$ has weight $\ell(l)+m\chi$ with $0\leq m<a$. Relative to the generating weights $E=\ell(e)$ (for $B_i\to Y_\pm$) and $\ell(l)$ (for $Y_\pm\to B_i$), the required exponent $m$ of $\chi$ in each cross morphism space is:
+\[
+  \begin{array}{c|cccc}
+  \text{morphism space}&B_i\to Y_+&Y_-\to B_i&B_i\to Y_-&Y_+\to B_i\\ \hline
+  \text{exponent }m\text{ of }\chi&1-i&i-2&2-a-i&i-a-1
+  \end{array}
+\]
+When $a\geq3$, the exponents in the last two columns are negative for all $0\leq i\leq3$, while the exponents in the first two columns lie in $\{0,\ldots,a-1\}$ only for the selected paths $B_0,B_1\to Y_+$ and $Y_-\to B_2,B_3$. The only remaining unselected morphism space between distinct objects of~\eqref{eq:proper-six-tree} is $H(Y_-,Y_+)$ (of weight $(a-1)\chi$), which cannot compose on either side with any nonidentity selected morphism because $Y_-$ is a source and $Y_+$ is a sink in~\eqref{eq:proper-six-tree}. Thus Lemma~\ref{lem:configuration-retraction} gives a bimodule retraction onto the incidence algebra of~\eqref{eq:proper-six-tree}, contradicting Lemma~\ref{lem:dimension-infinity} (with $N=D=12$). Hence $a=2$, and therefore $\widehat q_b^4=(el)^2=e(le)l=0$ while $\widehat q_b^3\ne0$, so $N_b=4$.
+\end{proof}
+
+We now complete the proof of Proposition~\ref{prop:proper-ray-products}(1) by showing that if $rs\ne0$ and $r$ both have type~$\mathsf L$, then $rs$ and $r$ have the same endpoint layer (and dually for type~$\mathsf R$).
+\begin{itemize}
+\item \emph{Generating first factor.} Suppose that $f\colon b\to y$ is a generating ray of type~$\mathsf L$ and that $fv$ is a proper shiftable ray of type~$\mathsf L$, so that $fv=\widehat q_b^ih$ for a generating ray $h\colon b\to z$ of type~$\mathsf L$ and $i\geq1$. By the dimension bound just proved, $A_0(b,z)$ has dimension at most~$3$ and $fv$ is shiftable, so $i=1$ and $fv=\widehat q_bh$. Since $f$ and $h$ are one-sided, $y,z\notin S_b$, so Lemma~\ref{lem:external-hom-chain} implies that $f$ and $h$ are comparable under factorization:
+  \begin{itemize}
+  \item If $fc=h$ for a nonidentity ray $c\colon y\to z$, then $fv=\widehat q_bfc=f^+\!c$ shows that $\ell(v)=\ell(c)+\chi$, so $v=c^+$. Applying the $(\mathsf L,*)$ row of~\eqref{eq:product-type-table} to the nonzero product $fc=h$ of type~$\mathsf L$ forces the second substitution $fc^+=fv$ to vanish, contradicting $fv=\widehat q_bh\ne0$.
+  \item If $y=z$ and $f=h$, then $\ell(v)=\chi$, so $v=\widehat q_y$ by primitivity, making $f\widehat q_y=fv\ne0$ and contradicting the hypothesis that $f$ has type~$\mathsf L$.
+  \item If $hc=f$ for a ray $c\colon z\to y$, then $\widehat q_bh=fv=h(cv)$, so $cv\in R_z$ has weight $\chi$ and therefore equals $\widehat q_z$, making $h\widehat q_z=\widehat q_bh\ne0$ and contradicting the hypothesis that $h$ has type~$\mathsf L$.
+  \end{itemize}
+  Thus a generating ray $f$ of type~$\mathsf L$ cannot have a proper shiftable product $fv$ of type~$\mathsf L$.
+
+\item \emph{Proper first factor.} Now let $r=\widehat q_b^ir_0$ ($i\geq1$, $r_0$ generating of type~$\mathsf L$) be a proper ray of type~$\mathsf L$ such that $rs=\widehat q_b^i(r_0s)$ has type~$\mathsf L$. Then $\widehat q_b(r_0s)$ is a factor of $\widehat q_b^{i+1}(r_0s)=\widehat q_b(rs)\ne0$, so $r_0s$ is shiftable of type~$\mathsf L$ or~$\mathsf B$. If $r_0s$ had type~$\mathsf B$, then $(rs)\widehat q_z=\widehat q_b^i(r_0s\widehat q_z)=\widehat q_b^{i+1}(r_0s)=\widehat q_b(rs)\ne0$, contradicting the hypothesis that $rs$ has type~$\mathsf L$. Thus $r_0s$ has type~$\mathsf L$, so by the generating case just proved $r_0s$ has endpoint layer~$0$, and hence $rs=\widehat q_b^i(r_0s)$ has endpoint layer $i$, matching the endpoint layer of $r$. The statement for type~$\mathsf R$ follows by duality.
+\end{itemize}
+
+\subsubsection{Absence of external two-sided action at the return base}
+\label{app:external-two-sided-action}
+
+We next prove Proposition~\ref{prop:proper-ray-products}(4). Let $(e,l)$ be a nondeep external return at $b$ through $y\notin S_b$ (so $el=\widehat q_b^2$, $\widehat q_b^3\ne0$, $N_b=4$, and $le=0$ by Lemma~\ref{lem:nondeep-two-object-return}), and suppose for a contradiction that there exists a generating two-sided ray $f\colon b\to c$ with $c\notin S_b$ and $\widehat q_bf\ne0$.
+
+First observe that no ray $v\colon c\to b$ can satisfy $fv=\widehat q_b^2$. Indeed, since $f$ is generating and two-sided, $A_0(b,c)$ is cyclic at both endpoints by Lemma~\ref{lem:primitive-action-generation}; if $fv=\widehat q_b^2\ne0$, then Lemma~\ref{lem:primitive-cyclic-corners}(1) supplies a generating ray $h'\colon c\to b$ with $fh'=\widehat q_b$ and $h'f=q_c$, which places $c\in S_b$ and contradicts $c\notin S_b$.
+
+Now apply Lemma~\ref{lem:external-hom-chain} at $b$ to compare the outgoing generating rays $e\colon b\to y$ and $f\colon b\to c$. We cannot have $fa=e$ for a ray $a\colon c\to y$, as this would give $f(al)=el=\widehat q_b^2$, which was just ruled out. Hence $eh=f$ for some ray $h\colon y\to c$. In the faithful projective support at $b$, consider the four rays
+\[
+  e,\quad \widehat q_be;\qquad \widehat q_b^3,\quad \widehat q_bf.
+\]
+All four upward comparisons from $\{e,\widehat q_be\}$ to $\{\widehat q_b^3,\widehat q_bf\}$ hold via right multiplication by $l\widehat q_b$, $l$, $h\widehat q_c$ (using $\widehat q_bf=f\widehat q_c=eh\widehat q_c$), and $h$ (using $\widehat q_be\cdot h=\widehat q_bf$). On the other hand:
+\begin{itemize}
+\item $e$ and $\widehat q_be$ are incomparable because $e$ is left-sided;
+\item $\widehat q_b^3$ and $\widehat q_bf$ are incomparable: $\widehat q_b^3u=\widehat q_bf$ cancels to $\widehat q_b^2u=f$, contradicting the fact that $f$ is generating, while $(\widehat q_bf)v=\widehat q_b^3$ cancels to $fv=\widehat q_b^2$, which was ruled out above;
+\item no upper ray can precede a lower ray: $\widehat q_b^3u=\widehat q_b^te$ ($t\in\{0,1\}$) would require a ray in $A_0(b,y)=R_be$ of weight $\ell(e)-(3-t)\chi<\ell(e)$; $(\widehat q_bf)u=e$ would contradict the fact that $e$ is generating; and $(\widehat q_bf)u=\widehat q_be\ne0$ cancels to $fu=e$, which was already ruled out.
+\end{itemize}
+Thus $\{e,\widehat q_be,\widehat q_b^3,\widehat q_bf\}$ forms a forbidden four-point crown in the faithful projective support at $b$, contradicting Lemma~\ref{lem:dimension-infinity}. The incoming assertion for $g\colon z\to b$ follows by passing to $A_0^{\op}$.
+
+\subsubsection{Products with one-sided factors}
+
+We now prove Proposition~\ref{prop:proper-ray-products}(2) and begin the proof of Proposition~\ref{prop:proper-ray-products}(3). By Lemma~\ref{lem:successor-substitutions} and the layer-preservation property of Proposition~\ref{prop:proper-ray-products}(1), if $r\colon x\to y$ and $s\colon y\to z$ are generating rays whose product $rs$ is proper and shiftable, the pair of endpoint types of $(r,s)$ must be one of
+\[
+  (\mathsf B,\mathsf B),\qquad (\mathsf B,\mathsf L),\qquad (\mathsf R,\mathsf B),\qquad (\mathsf L,\mathsf R),
+\]
+and when $rs$ has type~$\mathsf L$ or~$\mathsf R$, Proposition~\ref{prop:proper-ray-products}(1) forces $rs$ to have endpoint layer~$1$ inside a three-dimensional corner bimodule $A_0(x,z)$ with $N_x=3$ (respectively, $N_z=3$).
+
+For Proposition~\ref{prop:proper-ray-products}(2), let $r\colon x\to y$ of type~$\mathsf B$ and $s\colon y\to z$ of type~$\mathsf L$ be generating rays such that $rs$ is proper and shiftable. By~\eqref{eq:product-type-table}, $rs$ has type~$\mathsf L$, so by the preceding paragraph $rs=\widehat q_xf$ where $f\colon x\to z$ is the generating ray of $A_0(x,z)$ (of type~$\mathsf L$) and $N_x=3$. Suppose for a contradiction that $y\notin S_x$. Since $z\notin S_x$ (as $f$ is one-sided), Lemma~\ref{lem:external-hom-chain} compares $r$ and $f$:
+\begin{itemize}
+\item If $ra=f$ for a ray $a\colon y\to z$, then $rs=\widehat q_xra=r\widehat q_ya$ cancels to $s=\widehat q_ya$, contradicting the fact that $s$ is generating.
+\item If $fa=r$ for a ray $a\colon z\to y$, then $f(as)=rs=\widehat q_xf$, so $as\in R_z$ has weight $\chi$ and equals $\widehat q_z$, making $f\widehat q_z=\widehat q_xf\ne0$ and contradicting the fact that $f$ has type~$\mathsf L$.
+\end{itemize}
+Thus $y\in S_x$, so $r$ admits a primitive reverse. The case $(\mathsf R,\mathsf B)$ follows by duality, proving Proposition~\ref{prop:proper-ray-products}(2).
+
+Now consider Proposition~\ref{prop:proper-ray-products}(3): let $r\colon x\to y$ of type~$\mathsf L$ and $s\colon y\to z$ of type~$\mathsf R$ be generating rays whose product $rs$ is proper and shiftable. By~\eqref{eq:product-type-table}, $rs$ has type~$\mathsf B$, so $rs=\widehat q_x^jf=f\widehat q_z^j$ for the generating ray $f\colon x\to z$ and some layer $j\geq1$ with $\widehat q_x^{j+1}f=f\widehat q_z^{j+1}\ne0$. If $x=z$, then $f=1_x$ and Lemma~\ref{lem:nondeep-two-object-return} immediately gives $j=2$, $N_x=4$, and that $(r,s)$ is a nondeep external return at $x$, proving~(3)(a).
+
+Assume henceforth that $x\ne z$. Then $f\colon x\to z$ is a generating ray of type~$\mathsf B$, while $y\notin S_x$ and $y\notin S_z$ because $r$ and $s$ are one-sided. We claim that $z\in S_x$ (so $S_x=S_z$). Suppose to the contrary that $z\notin S_x$. Then Lemma~\ref{lem:external-hom-chain} at $x$ compares $r\colon x\to y$ and $f\colon x\to z$. We cannot have $ra=f$ (as $rs=f\widehat q_z^j=ra\widehat q_z^j$ would cancel to $s=a\widehat q_z^j$, contradicting the fact that $s$ is generating), so $fa=r$ for a generating ray $a\colon z\to y$. Canceling $f$ from $f(as)=rs=f\widehat q_z^j$ gives $as=\widehat q_z^j$ with $\widehat q_z^{j+1}\ne0$, so Lemma~\ref{lem:nondeep-two-object-return} implies that $(a,s)$ is a nondeep external return at $z$ (with $j=2$). However, $f\colon x\to z$ is an incoming generating two-sided ray at $z$ with $x\notin S_z$ and $f\widehat q_z\ne0$, which contradicts Proposition~\ref{prop:proper-ray-products}(4)! Therefore $z\in S_x$.
+
+\subsubsection{A complementary path forces an endpoint return}
+
+To finish the proof of Proposition~\ref{prop:proper-ray-products}(3)(b), continue with $x\ne z$ and $z\in S_x$. Since $S_x$ is a primitive return corner, the generating ray $f\colon x\to z$ admits a primitive reverse $g\colon z\to x$ satisfying $fg=\widehat q_x$ and $gf=\widehat q_z$. Note that
+\begin{equation}
+  r(sg)=rsg=\widehat q_x^jfg=\widehat q_x^{j+1}\ne0,\qquad
+  (gr)s=grs=gf\widehat q_z^j=\widehat q_z^{j+1}\ne0,
+  \label{eq:complementary-closing-products}
+\end{equation}
+so both $sg\colon y\to x$ and $gr\colon z\to y$ are nonzero rays, as is $gfg=\widehat q_zg$ (since $\widehat q_z^2=gfgf\ne0$ from $j\geq1$ and $\widehat q_z^{j+1}\ne0$).
+
+Set $F=\ell(f)$ and $E=\ell(r)$. In a finite homogeneous category $H$, retain the six graded objects
+\[
+  \begin{gathered}
+  B_0=(z,F),\quad B_1=(x,\chi),\quad B_2=(z,F+\chi),\quad B_3=(x,2\chi),\\
+  Y_-=(y,E+(1-j)\chi),\qquad Y_+=(y,E+\chi),
+  \end{gathered}
+\]
+and select the oriented tree with spine $B_0\xrightarrow{g}B_1\xrightarrow{f}B_2\xrightarrow{g}B_3$ and branches $B_1\xrightarrow{r}Y_+$ and $Y_-\xrightarrow{s}B_2$. By~\eqref{eq:complementary-closing-products}, every oriented path in this six-vertex tree evaluates to a nonzero ray in $H$. After discarding negative-degree factors, checking the cover conditions of Lemma~\ref{lem:configuration-retraction} at the five arrows of this tree reduces to the following six possibilities for an unselected factor $h$:
+\[
+  \begin{array}{c|l}
+  \text{candidate factor or weight}&\text{consequence}\\ \hline
+  fh=r&hs=\widehat q_z^j\text{ (canceling }f\text{ from }fhs=f\widehat q_z^j\text{)}\\
+  \ell(r)+\ell(h)=\ell(f)&\ell(h)=\ell(s)-j\chi<\ell(s)\text{ (impossible as }s\text{ is generating)}\\
+  rh=\widehat q_x&y\in S_x\text{ by Lemma~\ref{lem:primitive-cyclic-corners}(3) (impossible)}\\
+  hf=s&rh=\widehat q_x^j\text{ (canceling }f\text{ from }rhf=\widehat q_x^jf\text{)}\\
+  \ell(h)+\ell(s)=\ell(f)&\ell(h)=\ell(r)-j\chi<\ell(r)\text{ (impossible as }r\text{ is generating)}\\
+  hs=\widehat q_z&y\in S_z\text{ by Lemma~\ref{lem:primitive-cyclic-corners}(3) (impossible)}
+  \end{array}
+\]
+The second, third, fifth, and sixth rows are impossible in all cases. In the first row, any ray $h\colon z\to y$ satisfying $fh=r$ is a factor of the generating shiftable ray $r$ and is therefore generating by Lemma~\ref{lem:generating-paths}, yielding a return $hs=\widehat q_z^j$ at $z$ with $\widehat q_z^{j+1}\ne0$. Similarly, in the fourth row, any ray $h\colon y\to x$ satisfying $hf=s$ is generating and yields a return $rh=\widehat q_x^j$ at $x$ with $\widehat q_x^{j+1}\ne0$.
+
+If neither the first nor the fourth row occurs, then all six rows are excluded, so Lemma~\ref{lem:configuration-retraction} gives a bimodule retraction onto the incidence algebra of the six-vertex tree, contradicting Lemma~\ref{lem:dimension-infinity} ($N=D=12$). Thus at least one of the two factorizations $fh=r$ (with $hs=\widehat q_z^j$) or $hf=s$ (with $rh=\widehat q_x^j$) must hold. Applying Lemma~\ref{lem:nondeep-two-object-return} to the resulting return $(h,s)$ at $z$ or $(r,h)$ at $x$ shows that $j=2$ and that $(h,s)$ (respectively, $(r,h)$) is a nondeep external return at $z$ (respectively, at $x$). This completes the proof of Proposition~\ref{prop:proper-ray-products}(3)(b), and hence of Proposition~\ref{prop:proper-ray-products}.

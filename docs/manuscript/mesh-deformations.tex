@@ -1,0 +1,263 @@
+\section{Standardness outside characteristic two}
+\label{sec:mesh-deformations}
+
+We now complete the proof of Theorems~A and~B when $\charac k\ne2$. By
+Corollary~\ref{cor:graded-standard-form}, it suffices to prove that
+$A\cong A_0$, or equivalently that $\ind(\modu A)\cong\C$. In the graded
+category $\C=\gr_\JJ\ind(\modu A)$, the chosen arrow representatives satisfy
+the quadratic mesh relations \eqref{eq:scalar-mesh} exactly, whereas any
+lifts of those arrows to $\ind(\modu A)$ satisfy the mesh relations modulo
+$\JJ^3$. If the linear derivative map sending degree-$m$ perturbations of the
+arrows to their degree-$(m+1)$ mesh errors is surjective for every $m\geq2$,
+we can inductively adjust the chosen irreducible morphisms degree by degree
+until the mesh relations hold on the nose in $\ind(\modu A)$.
+
+In Subsection~\ref{subsec:mesh-derivative} we show that, in any
+characteristic, the cokernel of this linearized mesh derivative localizes to
+the $\tau$-periodic components of $\Gamma_A$. In
+Appendix~\ref{app:periodic-mesh} we prove that the localized cokernel
+vanishes whenever $\charac k\ne2$, provided the mesh category satisfies a
+natural necessary condition for finite representation type that we call the
+\emph{brick hypothesis}: every nonempty object quotient contains an object
+with endomorphism ring $k$. Subsection~\ref{subsec:brick-hypothesis} verifies
+that $\C$ satisfies this hypothesis (which rules out the small-period
+components of types $E_6$, $E_7$, and $E_8$ that would otherwise have nonzero
+cokernels in characteristics $3$ and $5$), and
+Subsection~\ref{subsec:successive-correction} carries out the successive
+arrow corrections.
+
+\subsection{The derivative and periodic vertices}
+\label{subsec:mesh-derivative}
+
+Throughout this subsection, let $Q$ be an arbitrary finite translation quiver
+with at most one arrow between each ordered pair of vertices, and let
+$C=C(Q,c)$ be the scalar mesh category of
+Definition~\ref{def:scalar-mesh-category} for a fixed system of nonzero
+coefficients $c=(c_{x,a})$ (we reserve the calligraphic letter $\C$ for the
+graded module category $\gr_\JJ\ind(\modu A)$).
+
+For each integer $m\geq2$, define the homogeneous spaces of degree-$m$ arrow
+perturbations and degree-$(m+1)$ mesh errors by
+\[
+ U_m(C)=\bigoplus_{a:u\to v}C_m(u,v),\qquad
+ V_{m+1}(C)=\bigoplus_{x\text{ nonprojective}}C_{m+1}(\tau x,x),
+\]
+where $C_m$ denotes the homogeneous component of path length $m$. Substituting
+$a\mapsto a+f_a$ with $f_a\in C_m(u,v)$ into the quadratic mesh relations
+$r_x=\sum_{a:y\to x}c_{x,a}(\sigma a)a$ and taking the linear term in $f$
+yields the \emph{mesh derivative}
+\begin{equation}
+ \begin{split}
+ D_m:U_m(C)&\longrightarrow V_{m+1}(C),\\
+ (D_mf)_x&=\sum_{a:y\to x}c_{x,a}
+             \bigl(f_{\sigma a}a+(\sigma a)f_a\bigr).
+ \end{split}
+ \label{eq:mesh-derivative}
+\end{equation}
+Thus $\operatorname{coker}D_m(C)$ measures the degree-$(m+1)$ mesh errors
+that cannot be canceled by a degree-$m$ modification of the arrows.
+
+Let $T\subseteq Q_0$ be the set of $\tau$-periodic vertices of $Q$, so that
+the full subquiver $Q_T$ is a stable translation quiver, and let
+$C_T=C(Q_T,c|_T)$ be its scalar mesh category, which by
+\eqref{eq:mesh-object-quotient} is the object quotient of $C$ obtained by
+killing the identity morphisms outside $T$ (compare Riedtmann's stable-block
+construction \cite{Riedtmann1984}). The following localization proposition is
+used both in Appendix~\ref{app:periodic-mesh} (for $\charac k\ne2$) and in
+Section~\ref{sec:positive-deformations} (for $\charac k=2$).
+
+\begin{proposition}
+\label{prop:periodic-localization}
+Let $C=C(Q,c)$ be a scalar mesh category on a finite translation quiver $Q$
+with at most one arrow between each ordered pair of vertices, and let $C_T$
+be its object quotient on the set $T$ of $\tau$-periodic vertices. For every
+$m\geq2$, the quotient functor $C\twoheadrightarrow C_T$ induces an
+isomorphism
+\[
+ \operatorname{coker}D_m(C)\xrightarrow{\sim}
+ \operatorname{coker}D_m(C_T).
+\]
+\end{proposition}
+\begin{proof}
+Before imposing the mesh relations of $C$, let $\widetilde U_m$ and
+$\widetilde V_{m+1}$ be the free vector spaces spanned by literal paths in
+$Q$, with basis $(b,p)$ for $\widetilde U_m$ (where $b:u\to v$ is an arrow
+and $p:u\to v$ is a path of length $m$) and basis $(x,w)$ for
+$\widetilde V_{m+1}$ (where $x$ is a nonprojective vertex and
+$w:\tau x\to x$ is a path of length $m+1$). Formula~\eqref{eq:mesh-derivative}
+defines a lifted linear map $\widetilde D_m:\widetilde U_m\to\widetilde V_{m+1}$.
+
+In the matrix of $\widetilde D_m$ with respect to these path bases, each
+column $(b,p)$ has at most two nonzero entries: if $v$ is nonprojective, the
+occurrence of $b$ as the second arrow in $r_v$ contributes
+$c_{v,b}(\sigma b)p$ to the row $(v,(\sigma b)p)$; if $u$ is noninjective,
+writing $b=\sigma b'$ for $b':v\to\tau^{-1}u$, the occurrence of $b$ as the
+first arrow in $r_{\tau^{-1}u}$ contributes $c_{\tau^{-1}u,b'}pb'$ to the row
+$(\tau^{-1}u,pb')$. Conversely, each row $(x,w)$ with $w:\tau x\to x$ of
+length $m+1$ is incident to exactly two columns (counted with multiplicity),
+corresponding to the first and last arrows of $w$: writing $w=bp$ with first
+arrow $b=\sigma a:\tau x\to y$ gives the incidence with column $(a,p)$, while
+writing $w=pa$ with last arrow $a:y\to x$ gives the incidence with column
+$(\sigma a,p)$, which links $(x,pa)$ to $(y,(\sigma^2 a)p)$ whenever $y$ is
+nonprojective and has no second entry when $y$ is projective.
+
+Viewing the rows $(x,w)$ as vertices and the two-entry columns as edges (with
+one-entry columns as half-edges at exposed endpoints), the connected
+components of this incidence graph are finite chains and finite cycles. Every
+chain component ends at a one-entry column, so Gaussian elimination from that
+exposed end places the entire chain component in $\im\widetilde D_m$. Along a
+two-entry column, moving from $(x,pa)$ to $(y,(\sigma^2 a)p)$ rotates the
+last arrow $a$ of $w$ to the front and applies $\tau=\sigma^2$; iterating this
+rotation $d=m+1$ times gives
+\[
+ \operatorname{rot}^d(x,w)=(\tau x,\tau w).
+\]
+Consequently, a row $(x,w)$ lies on a cycle component if and only if every
+vertex visited by $w$ admits arbitrarily many positive and negative powers of
+$\tau$, which in the finite quiver $Q$ means precisely that the path $w$ lies
+entirely inside $Q_T$. Moreover, because a vertex is in $T$ if and only if
+its $\tau$-translate is in $T$, no column of $\widetilde D_m$ links a path
+contained in $Q_T$ to a path passing outside $T$. The free row space
+$\widetilde V_{m+1}$ therefore decomposes as a direct sum of the subspace of
+paths contained in $Q_T$ and the subspace of paths passing outside $T$; the
+latter is a sum of chain components and lies in $\im\widetilde D_m$, so
+projection onto paths in $Q_T$ induces an isomorphism
+$\operatorname{coker}\widetilde D_m(Q)\xrightarrow{\sim}\operatorname{coker}\widetilde D_m(Q_T)$.
+
+Finally, let $R_V\subseteq\widetilde V_{m+1}$ be the subspace spanned by the
+contextual mesh relations in $\widetilde V_{m+1}$, so that
+\[
+ \operatorname{coker}D_m(C)=\widetilde V_{m+1}/\bigl(R_V+\im\widetilde D_m\bigr).
+\]
+Because the projection onto paths contained in $Q_T$ kills every contextual
+mesh relation passing outside $T$ and sends the remaining terms to the
+contextual mesh relations of $C_T$, it induces the stated isomorphism
+$\operatorname{coker}D_m(C)\xrightarrow{\sim}\operatorname{coker}D_m(C_T)$.
+\end{proof}
+
+\subsection{The restriction imposed by finite representation type}
+\label{subsec:brick-hypothesis}
+
+We say that a $k$-linear category $C$ satisfies the \emph{brick hypothesis}
+if every nonempty object quotient of $C$ contains a \emph{brick}, that is, an
+object whose endomorphism ring is $k$. Here, for any subset $\Sigma$ of
+objects of $C$, the object quotient $C/[\Sigma]$ denotes the quotient of $C$
+by the ideal of morphisms factoring through finite direct sums of objects in
+$\Sigma$, with the objects in $\Sigma$ removed. Although the periodic
+quotient $\C_T$ of $\C=\gr_\JJ\ind(\modu A)$ need not itself be the category of
+indecomposable modules of an algebra, both $\C$ and $\C_T$ inherit the brick
+hypothesis from $\modu A_0$.
+
+\begin{lemma}
+\label{lem:deletion-brick}
+Let $\mathcal D$ be a full additive subcategory of a finite-length
+$k$-linear abelian category, closed under images and direct summands, with
+finite-dimensional Hom spaces and Krull--Schmidt decomposition. For any subset
+$\Sigma\subseteq\operatorname{ob}(\ind\mathcal D)$, every nonempty object
+quotient $(\ind\mathcal D)/[\Sigma]$ contains an object whose endomorphism
+ring is a division algebra (and hence is equal to $k$ when $k$ is
+algebraically closed).
+\end{lemma}
+\begin{proof}
+Choose an object $X\in\operatorname{ob}(\ind\mathcal D)\setminus\Sigma$ of
+minimal composition length. Every radical endomorphism $f\in\rad\End(X)$ has
+a proper image $\im f$ of strictly smaller composition length. By hypothesis,
+$\im f$ belongs to $\mathcal D$, and each of its indecomposable summands has
+length smaller than that of $X$ and therefore belongs to $\Sigma$. Thus every
+radical endomorphism of $X$ vanishes in $(\ind\mathcal D)/[\Sigma]$. On the
+other hand, $1_X$ cannot factor through a finite direct sum of objects in
+$\Sigma$ by the Krull--Schmidt property, so the endomorphism ring of $X$ in
+$(\ind\mathcal D)/[\Sigma]$ is the residue division ring of the local ring
+$\End(X)$.
+\end{proof}
+
+By Proposition~\ref{prop:projective-evaluation}(1), $\add\C\simeq\modu A_0$
+is a finite-length abelian category, so Lemma~\ref{lem:deletion-brick} shows
+that $\C$ satisfies the brick hypothesis. Since every object quotient of
+$\C_T$ is also an object quotient of $\C$, the periodic mesh category $\C_T$
+satisfies the brick hypothesis as well. Using Proposition~\ref{prop:periodic-tree-model}
+and Proposition~\ref{prop:periodic-localization}, we prove the following
+vanishing theorem in Appendix~\ref{app:mesh-calculations}.
+
+\begin{proposition}
+\label{prop:mesh-correction-spaces}
+Let $C=C(Q,c)$ be a finite-dimensional scalar mesh category on a finite
+translation quiver $Q$ with at most one arrow between each ordered pair of
+vertices. If $\charac k\ne2$ and $C$ satisfies the brick hypothesis, then the
+mesh derivative $D_m(C)$ is surjective for every $m\geq2$.
+\end{proposition}
+
+\subsection{Successive correction of irreducible representatives}
+\label{subsec:successive-correction}
+
+When $D_m$ is surjective for all $m\geq2$, a standard degree-by-degree
+perturbation argument (compare Riedtmann \cite[Section~3.3]{Riedtmann1984})
+shows that any filtered category whose associated graded category is $C$ is
+already isomorphic to $C$.
+
+\begin{proposition}
+\label{prop:filtered-normal-form}
+Let $C=kQ/(r_1,\ldots,r_t)$ be a finite-dimensional path-length graded
+algebra over an arbitrary field $k$, where $Q$ is a finite quiver and each
+relation $r_i$ is homogeneous of degree $2$. For each $q\geq3$, let
+$D_{q-1}$ denote the linear map sending a tuple $(f_a)_a$ of homogeneous
+elements $f_a\in C_{q-1}$ parallel to the arrows $a$ of $Q$ to the tuple in
+$C_q$ obtained by substituting $a\mapsto a+f_a$ into $(r_1,\ldots,r_t)$ and
+retaining the linear terms in $f$. If $D_{q-1}$ is surjective for every
+$q\geq3$, then any finite-dimensional filtered algebra or category $E$
+equipped with a graded isomorphism $\gr E\cong C$ is isomorphic to $C$ via a
+filtered isomorphism inducing the given identification on $\gr E$.
+\end{proposition}
+\begin{proof}
+Let $F^\bullet E$ be the finite decreasing filtration of $E$. Lift the vertex
+idempotents of $C$ to a complete set of orthogonal idempotents of $E$ (taking
+the identity morphisms when $E$ is a category), and choose initial lifts in
+$F^1 E$ of the arrows $a$ in the corresponding corners of $E$. Their
+quadratic relation errors $r_i$ then lie in $F^3 E$.
+
+Suppose by induction that we have chosen arrow lifts whose relation errors
+lie in $F^q E$ for some $q\geq3$. Passing to $F^q E/F^{q+1}E\cong C_q$, the
+leading classes of these relation errors lie in the image of $D_{q-1}$ by
+hypothesis. Subtracting a parallel correction of degree $q-1$ from each arrow
+lift cancels the degree-$q$ part of each relation error, while the terms
+quadratic in the correction have degree at least $2(q-1)>q$; thus the new
+relation errors lie in $F^{q+1}E$. Because the filtration $F^\bullet E$ is
+finite, this process terminates after finitely many steps, yielding arrow
+lifts in $E$ that satisfy the relations $r_1,\ldots,r_t$ on the nose. The
+induced homomorphism $C\to E$ has associated graded map equal to the identity
+on $C$ and is therefore an isomorphism.
+\end{proof}
+
+\begin{corollary}
+\label{cor:away-from-two-basis}
+Let $A$ be a basic finite-dimensional representation-finite algebra over an
+algebraically closed field $k$ with $\charac k\ne2$.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item There is an isomorphism $A\cong k\ray A$, and $A$ is standard.
+\item The algebra $A$ admits a normed multiplicative basis consisting of one
+representative from each nonzero ray of $A$, with the primitive idempotents
+representing the identity rays.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+By Proposition~\ref{prop:graded-realization}(3) and
+Lemma~\ref{lem:deletion-brick}, the graded category $\C=\gr_\JJ\ind(\modu A)$
+is a finite-dimensional scalar mesh category $k(\Gamma_A)$ satisfying the
+brick hypothesis. By Proposition~\ref{prop:mesh-correction-spaces}, its mesh
+derivative $D_{q-1}(\C)$ is surjective for every $q\geq3$. Applying
+Proposition~\ref{prop:filtered-normal-form} to $E=\ind(\modu A)$ with its
+radical filtration $F^n E=\JJ^n$ yields a filtered category isomorphism
+$\ind(\modu A)\cong\C\cong k(\Gamma_A)$ fixing the objects, which proves that
+$A$ is standard. Restricting this isomorphism to the projective vertices and
+taking opposite algebras gives $A\cong A_0$, and combining this with
+Proposition~\ref{prop:scalar-normalization} gives
+$A\cong A_0\cong k\ray A_0\cong k\ray A$. Finally, transporting the normed
+multiplicative ray basis of $A_0$ across this isomorphism yields (2).
+\end{proof}
+
+Combining Corollary~\ref{cor:away-from-two-basis} with
+Lemma~\ref{lem:nonbasic-basis} completes the proof of Theorem~A outside
+characteristic two, as well as Theorem~B. All periodic mesh calculations
+required for this branch are given in Appendix~\ref{app:periodic-mesh}; none
+of the results of Parts~\ref{part:mesh-deformations}
+and~\ref{part:characteristic-two} are needed when $\charac k\ne2$.

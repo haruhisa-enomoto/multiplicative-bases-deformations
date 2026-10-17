@@ -1,0 +1,270 @@
+\section{Local restrictions on zero products and returns}
+\label{sec:local-ray-geometry}
+
+Our first step in characteristic two is to constrain the products and factorizations of ray-basis elements in the standard algebra $A_0=kP$, including return paths that leave a vertex and come back to it with a nonzero value in the local ring. These local constraints play a role analogous to the analysis of endpoint actions in \cite[Sections~2.4--2.5]{BGRS}. Combined with the integral coefficient-lifting theorem of Section~\ref{sec:integral-partial-lifts} and the modulo-four comparison of Section~\ref{sec:integral-deformations}, they will allow us to construct cocycle representatives for every class in $\HH^2(A_0)_{>0}$ that vanish on all nonzero products of basis elements.
+
+The local structural results in this section do not themselves depend on an inductive hypothesis. In Section~\ref{sec:integral-partial-lifts}, however, lifting their associated modulo-two coefficient equations to the integers will require an induction on the size of a weighted multiplication table. We record the definition of such tables and the main inductive statements before beginning the local analysis.
+
+\begin{definition}
+\label{def:weighted-table}
+A \emph{weighted multiplication table} $T$ consists of a finite set of objects, identity elements $1_x$, and finitely many nonzero morphism elements (also called \emph{labels}), equipped with an associative partial composition under which the product of two composable elements is either an element of $T$ or zero, together with an additive weight $\ell\colon T\setminus\{0\}\to M$ valued in an abelian group $M$ and a homomorphism $d\colon M\to\Z$ satisfying the following conditions:
+\begin{enumerate}[label={\upshape(\roman*)}]
+\item $\ell(1_x)=0$ for every object $x$, and $d(\ell(r))>0$ for every nonidentity element $r\in T\setminus\{0\}$;
+\item two nonzero elements of $T$ with the same source, target, and weight are equal.
+\end{enumerate}
+The \emph{linearization} $kT$ is the finite-dimensional $k$-linear category having the nonzero elements of $T$ as a basis, and its scalar weight group $W(T)$ is defined by the presentation of Definition~\ref{def:scalar-weight-group}.
+\end{definition}
+
+\begin{proposition}
+\label{prop:table-weight-lifting}
+Let $T$ be a weighted multiplication table whose linearization $kT$ is representation-finite over the algebraically closed field $k$. Every additive weight $T\to\Z/2$ lifts to an additive weight $T\to\Z$.
+\end{proposition}
+
+Proposition~\ref{prop:table-weight-lifting} will be proved in Subsection~\ref{subsec:main-theorems} by strong induction on the total number $n=\dim kT$ of nonzero elements of $T$ (including identities). Assuming the statement for all tables with fewer than $n$ nonzero elements, we first use it in characteristic two—applied strictly to the smaller centralizer table of Lemma~\ref{lem:centralizer-ray-algebra}—to construct integral solutions to the nonzero-product Leibniz equations for the standard form $A_0$ of any basic connected representation-finite algebra $A$ of dimension $n$ (Theorem~\ref{thm:integral-partial-lifting}). The resulting cocycles and their associative deformation families recover $A$ and identify its ray multiplication table with that of $A_0$ (Lemma~\ref{lem:recovery-with-lifting}). Specializing to $A=kT$ for a connected table $T$ of size $n$ then identifies $T$ with $\ray(kT)$ and equates $W(T)$ with the free abelian weight group of its standard form (Proposition~\ref{prop:integral-ray-weights}), so that every $\Z/2$-valued weight on $T$ lifts to $\Z$. Outside characteristic two, the corresponding recovery is already given by Corollary~\ref{cor:away-from-two-basis}, and disconnected tables reduce immediately to their connected components.
+
+From this inductive step we also obtain the main structural consequences for representation-finite algebras in arbitrary characteristic, likewise proved in Subsection~\ref{subsec:main-theorems}.
+
+\begin{proposition}
+\label{prop:dimension-induction}
+Let $A$ be a basic representation-finite algebra over $k$, in any characteristic, and let $A_0$ be the projective ray algebra of Construction~\ref{con:projective-algebra}. Then:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item $A$ admits a normed multiplicative basis consisting of one representative of each nonzero ray;
+\item the initial-form bijection of Lemma~\ref{lem:ray-degree} identifies the ray multiplication in $\ray A$ with that in $\ray A_0$;
+\item the scalar weight group $W(\ray A)$ is free abelian.
+\end{enumerate}
+\end{proposition}
+
+\begin{setting}
+\label{set:projective-companion}
+Throughout Part~\ref{part:characteristic-two} and Appendix~\ref{app:local-rays}, we let $A_0=kP$ denote the projective ray algebra of Construction~\ref{con:projective-algebra}, identified with $kP$ via Proposition~\ref{prop:scalar-normalization} and equipped with its normed homogeneous ray basis. For each vertex $x$, we write $R_x=k[q_x]/(q_x^{N_x})$ when $R_x\ne k$, where $q_x$ is the chosen homogeneous generator of $\rad R_x$, and we set $q_x=0$ and $N_x=1$ when $R_x=k$.
+\end{setting}
+
+We use the following terminology for the rays of $A_0=kP$. Note that an \emph{ordinary arrow} below means an indecomposable nonidentity ray of $A_0$ (whose vertices correspond to the indecomposable projectives of $A$), whereas the arrows of the Auslander--Reiten quiver $\Gamma_A$ represent irreducible morphisms among all indecomposable $A$-modules.
+
+\begin{definition}
+\label{def:generating-rays}
+Let $A_0=kP$ satisfy Setting~\ref{set:projective-companion}.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item A ray $r\colon x\to y$ is \emph{generating} if it generates the full corner bimodule $A_0(x,y)$ as an $(R_x,R_y)$-bimodule; otherwise $r$ is \emph{proper}.
+\item Given a generating ray $f\colon x\to y$, we say that the corner bimodule $A_0(x,y)$ (or simply $f$) is \emph{cyclic at $x$} if $A_0(x,y)=R_xf$, and \emph{cyclic at $y$} if $A_0(x,y)=fR_y$. When $A_0(x,y)$ is cyclic at $x$, its rays are the elements $q_x^jf$, and we call the exponent $j$ the \emph{endpoint layer} of $q_x^jf$; the endpoint layer at $y$ is defined symmetrically when $A_0(x,y)$ is cyclic at $y$.
+\item An \emph{ordinary arrow} is a nonidentity ray that cannot be factored as a product of two nonidentity rays, and an \emph{ordinary path} is a composable sequence of ordinary arrows. Within a corner or quotient category, these terms refer to factorizations inside that corner or quotient.
+\item Let $x\ne y$, and let $f\colon x\to y$ and $h\colon y\to x$ be rays such that $fh=q_x^b\ne0$ for some integer $b\geq1$. We call $fh$ a \emph{return} at $x$ through $y$, $h$ a \emph{reverse} of $f$, and $b$ the \emph{exponent} of the return.
+\end{enumerate}
+\end{definition}
+
+The \emph{endpoint socle} of a corner bimodule $A_0(x,y)$ is the subspace of vectors annihilated by both $\rad R_x$ on the left and $\rad R_y$ on the right. By Lemma~\ref{lem:endpoint-chains}, every nonzero corner bimodule $A_0(x,y)$ has a one-dimensional endpoint socle.
+
+\begin{definition}[{\cite[Section~9.1]{BGRS}}]
+\label{def:stem-product}
+For a ray $r\colon x\to y$, let $U_r=R_xrR_y\subseteq A_0(x,y)$ denote the endpoint subbimodule it generates. For composable rays $r\colon x\to y$ and $s\colon y\to z$, their \emph{stem product} $r*s$ is the unique ray $t\colon x\to z$ satisfying $U_t=U_rU_s$ when $U_rU_s\ne0$, and $r*s=0$ when $U_rU_s=0$. Uniqueness is guaranteed by the linear ordering of endpoint subbimodules in Lemma~\ref{lem:endpoint-chains}.
+\end{definition}
+
+Under the bijection between rays and the endpoint subbimodules they generate, the stem product $*$ is composition in the stem category of Kupisch~\cite{Kupisch}; see \cite[Section~2.3]{BongartzSurvey} for the formulation used here. Because $U_rU_s=R_xrR_ysR_z$, the stem product captures the entire subspace spanned by products of representatives with arbitrary insertions from the intermediate local ring $R_y$. We will use it to determine which pairs of rays with $rs=0$ can support a nonzero deformation term.
+
+\subsection{Homogeneous subcategories and a dimension criterion}
+\label{subsec:homogeneous-local-categories}
+
+To establish the local restrictions on $A_0$, we show that any violation would produce a finite representation-infinite category built from rays of $A_0$, contradicting the representation-finiteness of $A_0$. We construct these test categories as follows. Equip $A_0$ with its grading by the weight lattice $L$ of Definition~\ref{def:integer-weights} (written additively), placing each ray $r$ in degree $\ell(r)$ and the primitive idempotents in degree zero. A \emph{homogeneous category} is the full subcategory $H$ of the associated graded covering category (Definition~\ref{def:graded-covering-category}) on a finite set of distinct objects $(x_i,w_i)$ with $w_i\in L$. Writing subscripts for $L$-degrees, its morphism spaces are
+\[
+  H(i,j)=A_0(x_i,x_j)_{w_j-w_i}.
+\]
+Because the categorical degree $\deg_\JJ$ is one of the coordinates of the weight lattice $L$, each nonzero morphism space $H(i,j)$ is one-dimensional and $H$ is a directed category. By Lemma~\ref{lem:homogeneous-projection}, every such homogeneous category $H$ is representation-finite. Passing to the graded covering allows us to separate distinct rays between the same vertices—or multiple copies of the same vertex at different weights—into distinct objects and morphisms of $H$. Whenever the categorical $\Z$-grading $\deg_\JJ$ alone suffices to separate the rays under consideration, we may perform the same construction using the $\Z$-graded covering category instead.
+
+A primary source of forbidden configurations is the factorization poset induced by the action of $H$ on a thin projective or injective $H$-module. Taking the quotient by the annihilator of the module in the next definition is essential, because a morphism that is nonzero in $H$ may still act as zero on the chosen module.
+
+\begin{definition}
+\label{def:faithful-support}
+Let $H$ be a homogeneous category (with respect to either the weight lattice $L$ or the categorical grading $\deg_\JJ$). Fix an object $X\in H$, set $V=H(X,-)$, and let $\ann V$ be the ideal of morphisms in $H$ that act as zero on $V$. The \emph{faithful projective support} at $X$ is the poset consisting of the objects $Y\in H$ with $V(Y)\ne0$, ordered by $Y\leq Z$ whenever $(H/\ann V)(Y,Z)\ne0$. Equivalently, if we label the points of this poset by the nonzero rays $r$ starting at $X$, then $r\leq s$ if and only if $rv=s$ for some ray $v$ in $H$.
+
+The \emph{faithful injective support} at $X$ is defined dually via the thin module $D_k H(-,X)$; in terms of nonzero rays ending at $X$, its order is given by $r\leq s$ if and only if $vr=s$ for some ray $v$ in $H$.
+\end{definition}
+
+When restricted to the objects on which $V$ is nonzero, the quotient $H/\ann V$ is isomorphic to the incidence category of the faithful projective support at $X$ by Lemma~\ref{lem:thin-module-incidence} (positivity of the grading rules out nonidentity isomorphisms). By the same lemma, this incidence category is representation-finite, and hence so is the incidence category of every full subposet (which is an idempotent corner of $H/\ann V$). The dual statements hold for the faithful injective support.
+
+The following standard Tits-form dimension criterion rules out the small representation-infinite quivers and posets that arise in our local arguments, sparing us from having to construct explicit one-parameter families of representations for each orientation.
+
+\begin{lemma}
+\label{lem:dimension-infinity}
+Let $B=kQ/(\rho_1,\ldots,\rho_t)$ be a finite-dimensional bound quiver algebra, where each relation $\rho_i$ is a linear combination of radical paths sharing a common source and target. For a nonzero dimension vector $d=(d_v)$, set
+\[
+  D=\sum_v d_v^2,\quad N=\sum_{a:v\to w} d_v d_w,\quad
+  F=\sum_{i=1}^t d_{\mathrm{source}(\rho_i)}d_{\mathrm{target}(\rho_i)}.
+\]
+If $N-F\geq D$, then $B$ is representation-infinite.
+\end{lemma}
+\begin{proof}
+The affine variety of $B$-modules of dimension vector $d$ is cut out inside $\mathbb{A}^N$ by at most $F$ polynomial equations, and it is nonempty because it contains the zero representation. Every irreducible component of this variety therefore has dimension at least $N-F$. On the other hand, the algebraic group $\prod_v\operatorname{GL}_{d_v}(k)$ has dimension $D$, and the diagonally embedded subgroup $k^\times$ acts trivially on every representation, so every isomorphism orbit has dimension at most $D-1$. Since $N-F>D-1$, the representation variety cannot be covered by finitely many orbits. By the Krull--Schmidt theorem, this contradicts finite representation type.
+\end{proof}
+
+For the relation-free quivers ($F=0$) used repeatedly below, the critical dimension vectors achieving $N=D$ are listed in the following table:
+\begin{center}
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Underlying graph & Dimension vector $d$ & $N=D$ \\\midrule
+Crown ($2n$ vertices) & $1$ at every vertex & $2n$ \\
+Four-leaf star ($\widetilde D_4$) & $2$ at center, $1$ at each leaf & $8$ \\
+Tree $\widetilde D_5$ (two trivalent vertices) & $2$ at trivalent vertices, $1$ at leaves & $12$ \\
+Tree $\widetilde E_7$ (arms $3,3,1$) & $4$ at center; $(3,2,1)$, $(3,2,1)$, $(2)$ on arms & $48$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Because $N$ and $D$ depend only on the underlying undirected graph when $F=0$, these counts apply to any orientation of the listed trees. Here a \emph{crown} means a bipartite cycle of $n$ minimal and $n$ maximal poset elements with no additional comparability relations. In particular, neither a four-point crown nor a four-leaf star can appear as a full subposet of any faithful projective or injective support.
+
+We also apply Lemma~\ref{lem:dimension-infinity} to any quotient $B$ of $A_0$ (or of an idempotent corner of $A_0$) satisfying $(\rad B)^2=0$. Grading $B$ by assigning degree~$1$ to its arrows and degree~$0$ to its vertices, we pass to the full subcategory of its graded covering category on the objects $v_0=(v,0)$ and $v_1=(v,1)$ as $v$ ranges over the vertices of $B$. The only nonidentity morphisms in this \emph{two-level category} go from $v_0$ to $w_1$, one for each arrow $v\to w$ of $B$. By Lemma~\ref{lem:homogeneous-projection}, the two-level category is representation-finite; consequently, its underlying bipartite graph cannot contain a four-cycle (for which the all-ones dimension vector on the cycle has $N=D=4$ and $F=0$).
+
+To rule out more general configurations with relations, we pull representations back along a split bimodule inclusion using the following observation.
+
+\begin{lemma}
+\label{lem:representation-transfer}
+Let $F\colon S\to B$ be a functor between finite categories, and let $B_F$ be the category having the same object set as $S$ and morphism spaces $B_F(x,y)=B(Fx,Fy)$. Suppose that the induced functor $S\to B_F$ is injective on morphism spaces and admits a retraction $\pi\colon B_F\to S$ as an $S$-bimodule morphism. If $B$ is representation-finite, then so is $S$.
+\end{lemma}
+\begin{proof}
+When several objects of $S$ map to the same object of $B$, the category $B_F$ is a matrix enlargement of an idempotent corner of $B$, and is therefore representation-finite by Lemma~\ref{lem:endpoint-chains}(1). Applying Lemma~\ref{lem:split-representation-transfer} to the split inclusion $S\hookrightarrow B_F$ with $C=D=S$ then shows that $S$ is representation-finite.
+\end{proof}
+
+\subsection{Unequal actions and generation at the middle endpoint}
+
+With respect to our normed homogeneous ray basis, every nonzero endpoint action on a corner bimodule can be written as a power of the radical generator at an endpoint where the bimodule is cyclic. We first analyze what happens when the radical generator at the opposite endpoint acts as a second or higher power of the cyclic generator. Together with Lemma~\ref{lem:opposite-controls}, this bound will force any zero ray product $rs=0$ with nonzero stem product $r*s\ne0$ to land in the one-dimensional endpoint socle (Corollary~\ref{cor:active-zero-pairs}).
+
+\begin{lemma}
+\label{lem:unequal-endpoint-action}
+In Setting~\ref{set:projective-companion}, suppose that $A_0(x,y)=R_xf$ has dimension $l$, where $f\colon x\to y$ is a generating ray. If $fq_y=q_x^af\ne0$ for some integer $a\geq2$, then $l=a+1$, and $fq_y$ spans the endpoint socle of $A_0(x,y)$. The dual statement holds when $A_0(x,y)=fR_y$.
+\end{lemma}
+\begin{proof}
+Since $q_x^af=fq_y\ne0$, we have $l\geq a+1$. Suppose for a contradiction that $l\geq a+2$, so that $q_x^{a+1}f\ne0$. Set $d=\deg_\JJ(q_x)$ and $e=\deg_\JJ(f)$; the relation $fq_y=q_x^af$ then gives $\deg_\JJ(q_y)=ad$. We first check that there is no homogeneous reverse ray $h\colon y\to x$ satisfying $fh=q_x^b$ with $1\leq b\leq a+1$. Indeed, if such an $h$ existed, then $f(hf)=(fh)f=q_x^bf\ne0$ because $b\leq a+1<l$; thus $hf$ would be a nonzero homogeneous element of $R_y$ of degree $bd$, which is possible only if $bd$ is a multiple of $\deg_\JJ(q_y)=ad$, forcing $b=a$. Even for $b=a$, however, the element $hq_xf\in R_y$ has degree $(a+1)d$, which is not divisible by $ad$; hence $hq_xf=0$, contradicting $f(hq_xf)=(fh)q_xf=q_x^{a+1}f\ne0$.
+
+Now consider the faithful projective support at $(x,0)$ (with respect to the categorical grading $\deg_\JJ$) and restrict to the six points
+\[
+  X_i=(x,id)\quad (i\in\{0,1,a,a+1\}),\qquad
+  Y_j=(y,e+jd)\quad (j\in\{1,a\}),
+\]
+which correspond to the nonzero rays $q_x^i$ and $q_x^jf$. One point precedes another in this poset if and only if the second ray is a right multiple of the first. Thus the points $X_0<X_1<X_a<X_{a+1}$ form a chain, and $X_i<Y_j$ holds whenever $i\leq j$. No reverse inequality $Y_j\leq X_i$ can hold, because it would require a ray $h\colon y\to x$ with $q_x^jfh=q_x^i$, and hence $fh=q_x^{i-j}$ with $1\leq i-j\leq a$, which we have just ruled out. This same exclusion prevents $X_i<Y_j$ when $i>j$. Finally, $Y_1$ and $Y_a$ are incomparable: a morphism $Y_1\to Y_a$ would have degree $(a-1)d$, which is not a multiple of $\deg_\JJ(q_y)=ad$, while a morphism $Y_a\to Y_1$ would have negative degree. Relabeling $X_0,X_1,X_a,X_{a+1}$ as $u_0,u_1,u_2,u_3$ and $Y_1,Y_a$ as $v_1,v_2$, we see that the induced full subposet has Hasse diagram
+\[
+\begin{tikzpicture}[x=1.3cm,y=.8cm,>=Latex,every node/.style={font=\small}]
+\node (u0) at (0,0) {$u_0$}; \node (u1) at (1,1) {$u_1$};
+\node (u2) at (1,2) {$u_2$}; \node (u3) at (2,3) {$u_3$};
+\node (v2) at (0,3) {$v_2$}; \node (v1) at (2,2) {$v_1$};
+\draw[->] (u0)--(u1); \draw[->] (u1)--(u2); \draw[->] (u2)--(u3);
+\draw[->] (u2)--(v2); \draw[->] (u1)--(v1);
+\end{tikzpicture}
+\]
+which is an orientation of the affine Dynkin tree $\widetilde D_5$. Assigning dimension~$2$ to the trivalent vertices $u_1,u_2$ and dimension~$1$ to the four leaves gives $N=D=12$ and $F=0$, contradicting finite representation type by Lemma~\ref{lem:dimension-infinity}.
+
+We conclude that $l=a+1$. Consequently $q_x(fq_y)=q_x^{a+1}f=0$ and $(fq_y)q_y=q_x^{2a}f=0$ (since $2a\geq a+1=l$), so $fq_y$ is annihilated by both endpoint radicals and therefore spans the endpoint socle of $A_0(x,y)$.
+\end{proof}
+
+\begin{lemma}
+\label{lem:opposite-controls}
+In Setting~\ref{set:projective-companion}, let $f\colon b\to c$ and $g\colon c\to a$ be generating rays whose corner bimodules $A_0(b,c)$ and $A_0(c,a)$ are cyclic at $c$ but not at $b$ and $a$, respectively, and let $q=q_c$ generate $\rad R_c$.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item Either $fq^2=0$ or $q^2g=0$.
+\item The product subspace $fR_cg\subseteq A_0(b,a)$ has dimension at most one and is annihilated by $\rad R_b$ on the left and by $\rad R_a$ on the right.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Because the local ring $R_c=A_0(c,c)$ is commutative and hence cyclic on both sides, the noncyclicity assumptions at $b$ and $a$ imply that $b\ne c$ and $a\ne c$ (though $b$ and $a$ may coincide). Moreover, a one-dimensional corner bimodule is automatically cyclic over both endpoint rings, so $\dim A_0(b,c)\geq2$ and $\dim A_0(c,a)\geq2$. Writing $A_0(b,c)=fR_c\cong k[q]/(q^n)$ with $n\geq2$, take any $t\in\rad R_b$ and write $tf=f\varphi(q)$ for a polynomial $\varphi(q)\in k[q]$. Nilpotence of $t$ forces $\varphi(0)=0$, and if the linear coefficient of $\varphi$ were nonzero, then the powers of $\varphi(q)$ would generate $k[q]/(q^n)$, making $A_0(b,c)=R_bf$ cyclic at $b$, contrary to assumption. Thus $(\rad R_b)f\subseteq fq^2R_c$. Furthermore, for any morphism $h\in A_0(c,b)$, the composition $fh$ lies in $\rad R_b$ because $b\ne c$; hence $f(hf)=(fh)f\in fq^2R_c$, and since $\ann_{R_c}(f)=(q^n)\subseteq(q^2)$, it follows that $hf\in(q^2)$. Applying the dual argument to $g$ yields the four inclusions
+\begin{equation}
+  \begin{gathered}
+    (\rad R_b)f\subseteq fq^2R_c,\qquad
+    g(\rad R_a)\subseteq R_cq^2g,\\
+    A_0(c,b)f\subseteq(q^2),\qquad
+    gA_0(a,c)\subseteq(q^2).
+  \end{gathered}
+  \label{eq:opposite-control-inclusions}
+\end{equation}
+
+To prove (1), suppose for a contradiction that both $fq^2\ne0$ and $q^2g\ne0$. We distinguish two cases according to whether $fg$ is nonzero.
+
+\smallskip
+\noindent\textbf{Case 1: $fg\ne0$.}
+Let $S$ be the path category of the four-leaf star quiver
+\[
+\begin{tikzcd}[row sep=small,column sep=small]
+  & u\arrow[d,"q_1"] & \\
+l\arrow[r,"f"] & c\arrow[r,"g"]\arrow[d,"q_2"] & r \\
+  & d &
+\end{tikzcd}
+\]
+in which the two paths $l\xrightarrow{f}c\xrightarrow{g}r$ and $u\xrightarrow{q_1}c\xrightarrow{q_2}d$ cross at $c$ with no relations. We map the five vertices $l,c,r,u,d$ of $S$ to the objects of the $\Z$-graded homogeneous category $H$ of $A_0$ having underlying vertices $b,c,a,c,c$ and grading coordinates
+\[
+  -\deg_\JJ(f),\quad 0,\quad \deg_\JJ(g),\quad -\deg_\JJ(q),\quad \deg_\JJ(q),
+\]
+respectively, sending the arrows $f,g,q_1,q_2$ to the rays $f,g,q,q$. All four length-two paths in $S$ then map to the nonzero rays $fg,fq,qg,q^2$ in $H$, so the functor $S\to H$ identifies each nonzero morphism space of $S$ with the corresponding one-dimensional morphism space of $H$.
+
+Define a linear map $\pi\colon H\to S$ on each morphism space to be the inverse of this identification whenever the morphism space in $S$ is nonzero, and zero otherwise. To see that $\pi$ is an $S$-bimodule retraction as required by Lemma~\ref{lem:representation-transfer}, it suffices to check that $\pi$ commutes with left and right multiplication by the four arrows of $S$. Whenever the product of two composable morphisms in $H$ lies in a morphism space where $S$ is nonzero, compatibility holds automatically because that homogeneous component is one-dimensional. Otherwise, we must verify that no morphism of $H$ outside the image of $S$ can compose with an arrow image to land inside the image of $S$. At the outgoing fork $c\to r,d$, a nonzero composite factoring through an ambient ray $h\colon r\to d$ or $h\colon d\to r$ would yield $gh=q$ or $qh=g$ (up to a nonzero scalar); dually, at the incoming fork $l,u\to c$, an ambient ray between $l$ and $u$ would yield $hf=q$ or $hq=f$. However, $gh=q$ and $hf=q$ are ruled out by~\eqref{eq:opposite-control-inclusions}, while $qh=g$ and $hq=f$ contradict the hypothesis that $g$ and $f$ are generating rays (Lemma~\ref{lem:generating-paths}). Since no product involving a morphism of positive degree can be an identity, $\pi$ is indeed an $S$-bimodule retraction. By Lemma~\ref{lem:dimension-infinity}, the four-leaf star $S$ is representation-infinite, contradicting Lemma~\ref{lem:representation-transfer}.
+
+\smallskip
+\noindent\textbf{Case 2: $fg=0$.}
+When $fg=0$, the last two inclusions in~\eqref{eq:opposite-control-inclusions} sharpen to
+\[
+  A_0(c,b)f\subseteq(q^3),\qquad gA_0(a,c)\subseteq(q^3),
+\]
+because if $hf$ had a nonzero $q^2$-term, multiplying on the right by $g$ would give $(hf)g=h(fg)=0$ while $q^2g\ne0$, and dually for $gh$. We now let $S$ be the bound quiver category on seven vertices with diagram and single relation
+\[
+\begin{tikzcd}[row sep=large,column sep=large]
+u' & u\arrow[l,"g_1"']\arrow[d,"q_1"] & \\
+l\arrow[r,"f_1"] & c\arrow[r,"g_2"]\arrow[d,"q_2"] & r \\
+l_d\arrow[r,"f_2"] & d &
+\end{tikzcd}
+\qquad f_1g_2=0.
+\]
+We map $l,c,r,u,d$ to the same graded objects as in Case~1, and we send $l_d$ and $u'$ to $(b,\deg_\JJ(q)-\deg_\JJ(f))$ and $(a,\deg_\JJ(g)-\deg_\JJ(q))$, respectively, mapping $f_1,f_2$ to $f$, $g_1,g_2$ to $g$, and $q_1,q_2$ to $q$. The relation $f_1g_2=0$ holds in $H$ because $fg=0$, and the three remaining length-two paths map to the nonzero rays $q^2,fq,qg$. Defining the projection $\pi\colon H\to S$ as before, we verify that no ambient morphism in $H$ can compose with an arrow of $S$ to produce a nonzero morphism in the image of $S$. The possible unwanted products and the reasons they vanish are summarized below:
+\[
+  \begin{array}{c|c|l}
+  \text{target ray in }S & \text{ambient product in }H & \text{reason for exclusion} \\ \hline
+  q\text{ or }q^2 & gh & gA_0(a,c)\subseteq(q^3) \\
+  qg & gv\ (v\in\rad R_a) & \text{inclusion~\eqref{eq:opposite-control-inclusions} and }q^3g\notin k\cdot qg \\
+  g & qh & g\text{ is a generating ray} \\
+  q\text{ or }q^2 & hf & A_0(c,b)f\subseteq(q^3) \\
+  fq & vf\ (v\in\rad R_b) & \text{inclusion~\eqref{eq:opposite-control-inclusions} and }fq^3\notin k\cdot fq \\
+  f & hq & f\text{ is a generating ray}.
+  \end{array}
+\]
+At $u$, the first three rows rule out factorizations between $g_1\colon u\to u'$ and the paths through $c$; at $c$, they rule out factorizations between the two outgoing branches $g_2$ and $q_2$. The last three rows provide the dual incoming exclusions at $c$ and $d$, while the remaining vertices have at most one incident branch in the relevant direction. Thus $\pi$ is a bimodule retraction (note that Lemma~\ref{lem:representation-transfer} permits distinct vertices of $S$ to share the same underlying graded object in $H$). Assigning dimension~$3$ to $c$, dimension~$2$ to $u$ and $d$, and dimension~$1$ to the four outer vertices $u',l,r,l_d$ gives $N=22$, $D=21$, and $F=1$ from the single relation $f_1g_2=0$. Since $N-F=D$, Lemma~\ref{lem:dimension-infinity} and Lemma~\ref{lem:representation-transfer} again yield a contradiction, completing the proof of~(1).
+
+\smallskip
+For~(2), consider the action of $\rad R_b$ on the left or $\rad R_a$ on the right of $fR_cg$. By~\eqref{eq:opposite-control-inclusions}, any such product is a linear combination of terms $fq^mg$ with $m\geq2$. Since either $fq^2=0$ or $q^2g=0$ by~(1), every such term vanishes. Thus $fR_cg$ is annihilated by both $\rad R_b$ and $\rad R_a$, so it lies inside the one-dimensional endpoint socle of $A_0(b,a)$.
+\end{proof}
+
+\subsection{Stem products and generating paths}
+
+We next show that the stem product of Definition~\ref{def:stem-product} is determined purely by the ray category $P$ via an explicit local formula, and can be nonzero even when the ordinary ray product vanishes.
+
+\begin{proposition}[{\cite[Section~9.1]{BGRS}}]
+\label{prop:intrinsic-stem-product}
+In Setting~\ref{set:projective-companion}, the stem product on $A_0=kP$ is determined by the ray category $P$: for any composable rays $r\colon x\to y$ and $s\colon y\to z$,
+\[
+  r*s=\begin{cases}
+  rq_y^ns, & \text{where }n\geq0\text{ is the least integer such that }rq_y^ns\ne0,\\
+  0, & \text{if }rq_y^ns=0\text{ for all }n\geq0,
+  \end{cases}
+\]
+with $q_y^0=1_y$ and $q_y=0$ when $R_y=k$. The operation $*$ is associative and agrees with the ray product $rs$ whenever $rs\ne0$. Moreover, the same formula computes the product of endpoint subbimodules in any algebra having ray category $P$ and satisfying the endpoint-chain properties of Lemma~\ref{lem:endpoint-chains}.
+\end{proposition}
+\begin{proof}
+Let $r\colon x\to y$ and $s\colon y\to z$ be composable rays in $P$, choose representatives $f\in r$ and $h\in s$ in an algebra with ray category $P$, and let $u$ generate $\rad R_y$ (with $u=0$ if $R_y=k$). For each $j\geq0$, set $V_j=R_xfu^jR_yhR_z$. We have $fu^j\ne0$ if and only if the ray product $rq_y^j$ is nonzero: indeed, if $fu^j\ne0$, then $fu^j$ generates the subbimodule $U(fu^j)$ and therefore lies outside its radical $R(fu^j)\supseteq M(f,u^j)$, which means $rq_y^j\ne0$ by~\eqref{eq:ray-product}; conversely, if $fu^j=0$, then $fu^j\in M(f,u^j)$ and $rq_y^j=0$. When $rq_y^j\ne0$, its ray product with $s$ vanishes if and only if $fu^jh\in V_{j+1}$, or equivalently $V_j=V_{j+1}$. Consequently, if $n\geq0$ is the smallest integer for which $rq_y^ns\ne0$, then $U_rU_s=V_0=V_n$, and hence
+\begin{equation}
+  U_rU_s=U_{rq_y^ns}.
+  \label{eq:intrinsic-stem-product}
+\end{equation}
+If no such $n$ exists, the chain of equalities $V_j=V_{j+1}$ and the nilpotence of $u$ force $U_rU_s=0$. Thus $r*s$ is given by the stated formula in $P$. Associativity of $*$ follows immediately from the associativity of subbimodule multiplication, and when $rs\ne0$ the least index is $n=0$, giving $r*s=rs$.
+\end{proof}
+
+\begin{corollary}
+\label{cor:active-zero-pairs}
+In Setting~\ref{set:projective-companion}, let $r\colon x\to y$ and $s\colon y\to z$ be composable rays such that $rs=0$ and $r*s\ne0$. Then $r$ and $s$ are generating rays, $r*s=rq_ys$, and $U_{r*s}$ is the one-dimensional endpoint socle of $A_0(x,z)$.
+\end{corollary}
+\begin{proof}
+If the corner bimodule $A_0(x,y)$ containing $r$ were cyclic at $x$, then $rq_y\in\rad A_0(x,y)$ would equal $q_x^ar$ for some $a\geq1$. For every $n\geq1$ we would then have $rq_y^ns=q_x^{an}(rs)=0$, giving $r*s=0$ by Proposition~\ref{prop:intrinsic-stem-product}, a contradiction. By the dual argument for $s$, neither $A_0(x,y)$ nor $A_0(y,z)$ is cyclic at its outer endpoint, so both are cyclic only at $y$. Write $r=fq_y^i$ and $s=q_y^jg$ where $f$ and $g$ are the generating rays of $A_0(x,y)$ and $A_0(y,z)$. By Lemma~\ref{lem:opposite-controls}, $fq_y^mg=0$ for all $m\geq2$, and the entire subspace $fR_yg$ lies in the endpoint socle of $A_0(x,z)$. Since $rs=fq_y^{i+j}g=0$ while $rq_y^ns=fq_y^{i+j+n}g\ne0$ for some $n\geq1$, the only possibility is $i=j=0$ and $n=1$. Thus $r=f$ and $s=g$ are generating rays, $r*s=rq_ys$, and $U_{r*s}$ is the endpoint socle of $A_0(x,z)$.
+\end{proof}
+
+\begin{lemma}
+\label{lem:generating-paths}
+In Setting~\ref{set:projective-companion}, let $f\colon x\to z$ be a generating ray whose corner bimodule $A_0(x,z)$ has dimension at least two. Then $f$ admits no factorization of the form $f=aq_yb$ through a local radical generator $q_y$. In particular, every ordinary path representing $f$ is vertex-simple (visits no vertex twice), and every nonempty proper subsegment of such a path represents a generating ray.
+\end{lemma}
+\begin{proof}
+Suppose for a contradiction that $f=aq_yb$ for some rays $a\colon x\to y$ and $b\colon y\to z$. If $a=1_x$, then $f=q_xb\in(\rad R_x)A_0(x,z)$ lies in the radical of $A_0(x,z)$, contradicting the assumption that $f$ generates $A_0(x,z)$; the case $b=1_z$ is ruled out similarly. If the corner bimodule $A_0(x,y)$ is cyclic at $x$, then $aq_y\in(\rad R_x)A_0(x,y)$, which again places $f=aq_yb$ inside $(\rad R_x)A_0(x,z)$, and symmetrically if $A_0(y,z)$ is cyclic at $z$. In the remaining case, both $A_0(x,y)$ and $A_0(y,z)$ are cyclic only at $y$. Writing $a=a'q_y^i$ and $b=q_y^jb'$ with $a',b'$ generating, we find $f\in a'R_yb'$. By Lemma~\ref{lem:opposite-controls}(2), $a'R_yb'$ is contained in the one-dimensional endpoint socle of $A_0(x,z)$, whereas the generating ray $f$ of a corner bimodule of dimension at least two cannot lie in its endpoint socle. This contradiction rules out any factorization $f=aq_yb$. Finally, any repeated vertex along an ordinary path representing $f$, or any proper (non-generating) subsegment of that path, would produce a factorization of $f$ through a local radical generator $q_y$.
+\end{proof}
+
+Example~\ref{ex:zero-ray-span} illustrates the difference between the ordinary ray product and the stem product: there $[\alpha][\beta]=0$ in the ray category, whereas $U_\alpha U_\beta=ku$ is nonzero because inserting the middle radical generator $q$ yields $\alpha q\beta=u\ne0$, so that $[\alpha]*[\beta]=[u]$.

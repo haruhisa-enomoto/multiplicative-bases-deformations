@@ -1,0 +1,87 @@
+{
+  "title": "Multiplicative bases and deformations of representation-finite algebras",
+  "author": "Haruhisa Enomoto",
+  "revision": "r41 (2026-10-17)",
+  "source_repository": "homological-conjectures (private research repository)",
+  "source_path": "paper/multiplicative-bases-via-deformations",
+  "source_commit": "a2b528715260a8733c77195ade440d6a2299d47e",
+  "pages": 105,
+  "files": {
+    "binary-families.tex": {
+      "sha256": "80ea49cdc1d7f6f9f5e0b980e508e9326f8adf3058880a74ffe61a7724c60600",
+      "bytes": 12864
+    },
+    "characteristic-two-construction.tex": {
+      "sha256": "034ba16c2ff045041455feb566ae143372415427b14b7b7a3cf99cfcc447bce2",
+      "bytes": 7805
+    },
+    "characteristic-two-mesh-calculations.tex": {
+      "sha256": "ac860bcbbc7e4bbe1140fea16169dd552b7225e213a97ccd3aa1cd18551ddb5e",
+      "bytes": 25848
+    },
+    "deformation-refinements.tex": {
+      "sha256": "de75d42b1a31932d526e04bbc6fa777ce56fe80d23a4b4aac6f7c04f4b0e0dd0",
+      "bytes": 27053
+    },
+    "graded-category.tex": {
+      "sha256": "0630d713578d0de83097dc944d20825d6a449eef35850df6c461b242307aec7b",
+      "bytes": 33223
+    },
+    "integral-deformations.tex": {
+      "sha256": "5a87fa415d88ef0b55d06cab95e250af63a70593f0d24d881fc2239294ad8eb5",
+      "bytes": 18634
+    },
+    "integral-partial-lifts.tex": {
+      "sha256": "47b536ced3b64a7b7d306ddc9186bee6bf54306783e5a778b3f1a56f46fbeace",
+      "bytes": 35118
+    },
+    "local-ray-geometry.tex": {
+      "sha256": "a4d004cba48fe228f2e3c5377fc6ba3723e458de667d5687e3574574fb27cad8",
+      "bytes": 32194
+    },
+    "local-ray-restrictions.tex": {
+      "sha256": "54729e5bb87050d1d21ec90a70eb06d58c01660fb327174b1d56cf0189604ad0",
+      "bytes": 37152
+    },
+    "main-theorems.tex": {
+      "sha256": "ee14db042f9007a8b0d6a4b1028b89e28269825ab91cb878a05a67465d2b2c4d",
+      "bytes": 10772
+    },
+    "main.pdf": {
+      "sha256": "ecd104e22a6da3648934511eac90f5f129d5edf49b26ca402042b15dc527e6e5",
+      "bytes": 1064023
+    },
+    "main.tex": {
+      "sha256": "fdfedc6bd816b12e52457dc09d1f341eca1fbffb12925f1540a0cd3003a85687",
+      "bytes": 28996
+    },
+    "mesh-deformations.tex": {
+      "sha256": "b89fbf2c34d7d762fe4be7f232e7d58f3892e0afd053e53def6d170d80c91753",
+      "bytes": 14499
+    },
+    "periodic-mesh-calculations.tex": {
+      "sha256": "9225a1f9d6af213d349b5c7b1d15d694869cc324f0063e03de5c77e2fd13f36a",
+      "bytes": 44848
+    },
+    "positive-deformations.tex": {
+      "sha256": "49f7265e3b5f04285b3f5ce829e4a3dff54617d16f8e6270bc88754eda0fccbc",
+      "bytes": 23613
+    },
+    "primitive-ray-equations.tex": {
+      "sha256": "1057a75546f009619d629262ff7c521176a169168234fdbf0a5e693fe510db3d",
+      "bytes": 25706
+    },
+    "projective-rays.tex": {
+      "sha256": "6d8c99cb64951c08e83c0ef4cf0ec96c49ee58a98e6e05dadf3319fd4ff4681c",
+      "bytes": 14814
+    },
+    "scalar-normalization.tex": {
+      "sha256": "def95a99a3ff1b24ecc40c5ab392696a22c0888b4b0e8a35523e2916472bbc12",
+      "bytes": 39999
+    },
+    "weights-and-parameters.tex": {
+      "sha256": "d2391690c02b02523b112f2069fafc24780eee2fca7d132a471297ece758719b",
+      "bytes": 20800
+    }
+  }
+}

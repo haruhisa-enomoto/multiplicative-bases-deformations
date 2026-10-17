@@ -1,0 +1,633 @@
+\documentclass[a4paper,reqno,11pt]{amsart}
+\usepackage{amsmath,amssymb,mathtools,enumitem,microtype,tikz-cd,booktabs,tabularx,placeins}
+\usepackage[a4paper,margin=30mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\setcounter{tocdepth}{2}
+\usetikzlibrary{arrows.meta,positioning}
+\makeatletter
+\renewcommand{\subsection}{\@startsection{subsection}{2}%
+  {\z@}{1.5ex plus .5ex minus .2ex}{.7ex plus .2ex}{\normalfont\bfseries}}
+\def\l@subsection{\@tocline{2}{0pt}{2pc}{5pc}{}}
+\makeatother
+\renewcommand{\thepart}{\Roman{part}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{setting}[theorem]{Setting}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{theoremA}{Theorem A}
+\newtheorem*{theoremB}{Theorem B}
+\newtheorem*{aiuse}{Use of AI}
+
+\DeclareMathOperator{\modu}{\mathsf{mod}}
+\DeclareMathOperator{\ind}{\mathsf{ind}}
+\DeclareMathOperator{\proj}{\mathsf{proj}}
+\DeclareMathOperator{\add}{\mathsf{add}}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\soc}{soc}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\HH}{HH}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\charac}{char}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\JJ}{\mathcal J}
+\newcommand{\C}{\mathcal C}
+\newcommand{\D}{\mathcal D}
+\newcommand{\B}{\mathcal B}
+\newcommand{\ray}{\operatorname{ray}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\F}{\mathbb F}
+\newcommand{\sixlifttree}{%
+\begin{tikzcd}[ampersand replacement=\&,row sep=large,column sep=large]
+v_1\arrow[r,"\gamma"]\&v_2\arrow[r,"\alpha"]\&v_3\\
+v_4\arrow[r,"\alpha"]\&v_5\arrow[u,"\lambda"]\&v_6\arrow[l,"\beta"']
+\end{tikzcd}}
+
+\title{Multiplicative bases and deformations of representation-finite algebras}
+\author[H.\ Enomoto]{Haruhisa Enomoto}
+\address{Parakeet Inc., Japan}
+\email{haruhisa.enomoto.math@gmail.com}
+\subjclass[2020]{16G10, 16G20, 16G60}
+\keywords{multiplicative basis, representation-finite algebra,
+Auslander--Reiten theory, mesh category, deformation}
+\date{October 16, 2026}
+
+\begin{document}
+
+\begin{abstract}
+Bautista, Gabriel, Roiter, and Salmer\'on proved that every
+finite-dimensional representation-finite algebra over an algebraically
+closed field admits a multiplicative basis and, outside characteristic two, is
+standard, meaning that its category of indecomposable modules is presented by
+the Auslander--Reiten quiver with mesh relations. We give a new,
+self-contained proof of both theorems by viewing the algebra as a filtered
+deformation of its standard form, which we construct from the radical layers
+of the module category and equip with a multiplicative basis. Outside
+characteristic two, this deformation is trivial, which yields both theorems
+at once. In characteristic two, we embed the algebra into an associative
+family of deformations of the standard form obtained by modifying the
+multiplication table only on pairs of basis elements whose product in the
+standard form is zero. After rescaling, the original algebra is isomorphic to
+a member of this family in which each modified product is either zero or a
+single basis element, so the multiplicative basis persists.
+\end{abstract}
+
+\maketitle
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+\label{sec:introduction}
+
+A finite-dimensional algebra is \emph{representation-finite} if it has only
+finitely many isomorphism classes of indecomposable finite-dimensional
+modules. Although this condition is module-theoretic, it imposes strong
+combinatorial restrictions on the multiplication of the algebra itself: over
+an algebraically closed field, every representation-finite algebra admits a
+\emph{multiplicative basis}, a basis in which the product of any two elements
+is either zero or another basis element (Theorem~A below). Consequently, the
+entire algebra multiplication is encoded by a finite combinatorial table
+without scalar structure constants.
+
+A companion structural theorem governs the category of indecomposable
+modules. A basic representation-finite algebra is called \emph{standard} if
+one can choose representatives of the irreducible morphisms so that every
+morphism between indecomposable modules is a linear combination of paths in
+these representatives, and all relations among such paths follow from the
+quadratic mesh relations induced by almost split sequences. Outside
+characteristic two, every basic representation-finite algebra over an
+algebraically closed field is standard (Theorem~B below). This structure
+theory was established in the landmark work of Bautista, Gabriel, Roiter,
+and Salmer\'on \cite{BGRS}, abbreviated BGRS below, building on the
+construction of the standard form by Bretscher and Gabriel
+\cite{BretscherGabriel}.
+
+Because of the intricacy of the original combinatorial case analysis, finding
+a more transparent proof has remained a longstanding problem. Bongartz
+described the BGRS paper as ``beautiful but hard to read''
+\cite[Section~1]{BongartzSurvey} and surveyed subsequent simplifications and
+extensions; more recently, Ringel remarked that ``any publication which
+provides help, provides improvement would be strongly appreciated''
+\cite[Section~3]{RingelVossieck}.
+
+In this paper we give an alternative, self-contained proof of both classical
+theorems. The central idea is to pass first to the radical grading of the
+module category to construct the standard form of the algebra, and then to
+analyze the original algebra as a filtered deformation of its standard form.
+All arguments required beyond basic Auslander--Reiten theory and elementary
+homological algebra are developed in full.
+
+\subsection{The classical results revisited}
+\label{subsec:intro-results}
+
+We begin with the existence theorem for multiplicative bases compatible with
+primitive idempotents and powers of the Jacobson radical.
+
+\begin{definition}
+\label{def:normed-multiplicative-basis}
+A basis $\B$ of a finite-dimensional algebra $A$ is \emph{multiplicative} if
+$bc\in\B\cup\{0\}$ for all $b,c\in\B$. It is \emph{normed} if it contains
+a complete set of primitive orthogonal idempotents and
+$\B\cap(\rad A)^n$ is a basis of $(\rad A)^n$ for every $n\geq1$.
+\end{definition}
+
+Bautista, Gabriel, Roiter, and Salmer\'on proved that every
+representation-finite algebra over an algebraically closed field admits a
+normed multiplicative basis \cite[Sections~1.2 and~1.12]{BGRS}.
+
+\begin{theoremA}[= Theorem~\ref{thm:final-basis}]
+Every finite-dimensional representation-finite algebra over an algebraically
+closed field has a normed multiplicative basis.
+\end{theoremA}
+
+Using matrix units to account for the multiplicities of indecomposable
+projective summands, Lemma~\ref{lem:nonbasic-basis} reduces Theorem~A
+immediately to basic algebras. We therefore focus on basic algebras in what
+follows.
+
+Let $A$ be a basic finite-dimensional representation-finite algebra over an
+algebraically closed field $k$, let $\ind(\modu A)$ be a skeletal category
+of indecomposable finite-dimensional right $A$-modules, and let $\Gamma_A$
+be its Auslander--Reiten quiver. Writing compositions of morphisms in path
+order from left to right, the components of an almost split sequence
+\[
+ 0\longrightarrow\tau X\xrightarrow{(a_i)_i}
+ \bigoplus_iY_i\xrightarrow{(b_i)_i}X\longrightarrow0
+\]
+satisfy $\sum_i a_i b_i=0$. Let $\JJ$ denote the categorical Jacobson radical
+of $\ind(\modu A)$. Choosing a basis of each space $\JJ(X,Y)/\JJ^2(X,Y)$ of
+irreducible morphisms—which is at most one-dimensional when $A$ is
+representation-finite (Lemma~\ref{lem:square-free})—and expressing the
+components $a_i$ and $b_i$ modulo $\JJ^2$ in these bases yields a quadratic
+mesh relation at each nonprojective vertex $X$. The \emph{mesh category}
+$k(\Gamma_A)$ has the vertices of $\Gamma_A$ as objects and paths in
+$\Gamma_A$ modulo these quadratic mesh relations as morphisms. Up to
+isomorphism fixing the objects, $k(\Gamma_A)$ is independent of the chosen
+bases, and its mesh coefficients can all be rescaled to one
+(Lemma~\ref{lem:unit-mesh-coefficients}).
+
+\begin{definition}
+\label{def:standardness}
+A basic finite-dimensional representation-finite algebra $A$ over an
+algebraically closed field $k$ is \emph{standard} if there is a $k$-linear equivalence
+\[
+ k(\Gamma_A)\simeq\ind(\modu A)
+\]
+sending each vertex of $\Gamma_A$ to the corresponding indecomposable module.
+\end{definition}
+
+\begin{theoremB}[= Corollary~\ref{cor:away-from-two-basis}]
+Every basic finite-dimensional representation-finite algebra over an
+algebraically closed field of characteristic different from two is standard.
+\end{theoremB}
+
+In characteristic two, standardness can fail
+\cite[Section~3.7]{BongartzSurvey}, even though Theorem~A remains valid.
+To treat all characteristics uniformly, we construct in
+Section~\ref{sec:graded-category} a basic representation-finite algebra
+$A_0$ whose category of indecomposable modules is equivalent to
+$k(\Gamma_A)$: this is the \emph{standard form} of $A$, introduced
+classically by Bretscher and Gabriel \cite{BretscherGabriel}. Specifically,
+the powers $\JJ^n$ of the categorical radical filter the morphism spaces
+$\Hom_A(P_y,P_x)$ between indecomposable projective modules by allowing
+factorizations through arbitrary indecomposable modules, not merely
+projective ones. This categorical filtration can be strictly finer than the
+ordinary radical filtration of $A$, and its associated graded algebra is
+$A_0$. Thus $A$ is naturally a positive filtered deformation of $A_0$, and
+$A$ is standard if and only if $A\cong A_0$
+(Corollary~\ref{cor:graded-standard-form}). Outside characteristic two, we
+show in Section~\ref{sec:mesh-deformations} that any higher-degree error terms
+in the mesh relations can be eliminated degree by degree by adjusting the
+chosen irreducible morphisms; hence the filtered deformation is trivial and
+Theorem~B follows.
+
+\subsection{The construction and its relation to earlier proofs}
+\label{subsec:intro-comparison}
+
+Bretscher and Gabriel constructed the standard form as the opposite
+endomorphism algebra of the projective vertices inside the mesh category
+\cite[Section~3.1]{BretscherGabriel}. We recover this description directly
+by showing that the associated graded category $\gr_\JJ\ind(\modu A)$ is
+isomorphic to $k(\Gamma_A)$ and that evaluation at the projective objects
+gives an equivalence $\add k(\Gamma_A)\simeq\modu A_0$
+(Propositions~\ref{prop:graded-realization}
+and~\ref{prop:projective-evaluation}; compare Iyama's graded realization
+theorems for $\tau$-categories \cite[Theorems~5.2 and~9.2]{IyamaI}). In
+Section~\ref{sec:scalar-normalization}, we construct a normed multiplicative
+basis of $A_0$ by lifting the mesh category to the universal cover of the
+Bongartz--Gabriel mesh complex \cite[Section~4]{BongartzGabriel}, extending
+the basis one projective vertex at a time as in
+\cite[Section~2.6]{BretscherGabriel}, and descending along the free deck
+group.
+
+In characteristic two, $A$ need not be isomorphic to $A_0$. Instead, we keep
+the multiplicative basis of $A_0$ and study deformations of $A_0$ obtained
+by modifying the multiplication table only on pairs of basis elements whose
+product in $A_0$ is zero, setting each such modified product equal to a
+scalar multiple of another basis element. Using a Bockstein connecting map
+from coefficients modulo four, we show that cocycles of this form span the
+positive-degree Hochschild cohomology spaces governing filtered deformations
+of $A_0$ (Corollary~\ref{cor:zero-supported-coverage}). The local
+factorization restrictions developed in
+Section~\ref{sec:local-ray-geometry} then imply that these zero-supported
+cocycles fit together into a global associative family of algebras over a
+polynomial ring (Proposition~\ref{prop:zero-product-family}). By finite
+filtered normalization and diagonal rescaling along the weight lattice
+(Theorem~\ref{thm:finite-family-normalization} and
+Corollary~\ref{cor:binary-normalization}), $A$ is isomorphic to a fibre of
+this family whose parameters all take values in $\{0,1\}$. In any such
+binary fibre, the basis of $A_0$ remains a normed multiplicative basis.
+
+Bautista, Gabriel, Roiter, and Salmer\'on likewise obtained the
+nonstandard characteristic-two algebras by replacing specified zero products
+in the standard multiplication table with nonzero basis elements
+\cite[Sections~9.2--9.7]{BGRS}. In our approach, the admissible
+modifications are organized cohomologically by Hochschild two-cocycles and
+their underlying derivation-lifting equations. Along the way, we establish
+two general deformation-theoretic tools of independent interest: a module-lifting
+theorem for positive filtered deformations based on internal-degree bounds
+for $\Ext$ groups (Lemma~\ref{lem:positive-ext-vanishing} and
+Proposition~\ref{prop:positive-module-lifting}), and an elementary
+construction of associative multi-parameter families from compatible
+multiplication tables (Lemma~\ref{lem:two-associative-tables}).
+Table~\ref{tab:method-comparison} summarizes the correspondence between the
+classical steps and the present proof.
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.19\textwidth}
+ >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Task & Classical constructions & Present organization \\
+\midrule
+Construct the standard form &
+Take the endomorphism algebra of the projective vertices of the mesh
+category \cite{BretscherGabriel}; alternatively, build an algebra from the
+multiplication table of basis elements up to scalars \cite{BGRS}. &
+Take the projective corner of the radical grading of $\ind(\modu A)$,
+then normalize the scalar structure constants on a universal cover. \\
+\addlinespace
+Prove standardness ($\charac k\ne2$) &
+Compare paths with equal values \cite{BGRS}, or correct the mesh
+relations on stable components step by step \cite{Riedtmann1984}. &
+Eliminate higher-degree error terms in the mesh relations degree by degree
+by modifying the chosen irreducible morphisms. \\
+\addlinespace
+Treat characteristic two &
+Replace specified zero products by nonzero basis elements in explicit normal
+forms \cite{BGRS}. &
+Represent positive-degree first-order deformations by zero-supported
+cocycles via $\Z/4$-lifts of derivations, and realize $A$ as a binary fibre
+of the resulting associative family. \\
+\addlinespace
+Restrict local configurations &
+Exhibit representation-infinite subcategories and analyze contours locally
+\cite{BGRS}; see also the shorter mild-contour proofs in
+\cite{BongartzMild}. &
+Bound trace spaces on $\tau$-periodic components of $\Gamma_A$, and restrict
+factorizations of basis elements in $A_0$ via bimodule retractions onto
+representation-infinite incidence and bound-quiver algebras. \\
+\bottomrule
+\end{tabularx}
+\caption{Comparison between the classical proofs and the present approach.}
+\label{tab:method-comparison}
+\end{table}
+
+The combinatorial case analysis that remains is concentrated in two places:
+Appendices~\ref{app:periodic-mesh} and~\ref{app:residual-mesh} analyze the
+linearized mesh derivative on $\tau$-periodic components of $\Gamma_A$,
+while Section~\ref{sec:local-ray-geometry} and
+Appendix~\ref{app:local-rays} restrict how basis elements of $A_0$ can
+factor through one another. In the periodic mesh calculations we bound spaces
+of paths modulo cyclic rotation—recovering special cases of Schedler's
+description of zeroth Hochschild homology of preprojective algebras
+\cite[Theorem~13.1.1]{Schedler}—as well as twisted rotation under tree
+automorphisms. The degree-by-degree correction of irreducible morphisms
+follows Riedtmann's method for stable blocks \cite{Riedtmann1984}.
+
+\subsection{Reading routes}
+\label{subsec:reading-routes}
+
+Readers interested only in the standard form or in the theorems outside
+characteristic two need only the first part of the paper. The table below
+indicates the sections required for each main result.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.26\textwidth}
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Reading goal & Route and conclusion \\
+\midrule
+Construct the standard form &
+Sections~\ref{sec:graded-category}--\ref{sec:scalar-normalization},
+culminating in Corollary~\ref{cor:graded-standard-form}. \\
+\addlinespace
+Prove Theorems~A and~B outside characteristic two &
+Continue through Section~\ref{sec:mesh-deformations} to
+Corollary~\ref{cor:away-from-two-basis} (with Lemma~\ref{lem:nonbasic-basis}
+covering nonbasic algebras). Appendix~\ref{app:periodic-mesh} proves
+Propositions~\ref{prop:periodic-tree-model}
+and~\ref{prop:mesh-correction-spaces}, whose statements suffice for the main
+text. \\
+\addlinespace
+Prove Theorem~A in characteristic two &
+After Sections~\ref{sec:graded-category}--\ref{sec:scalar-normalization},
+read Subsections~\ref{subsec:mesh-derivative}
+and~\ref{subsec:brick-hypothesis} together with
+Sections~\ref{sec:positive-deformations}--\ref{sec:binary-families}, ending
+at Theorems~\ref{thm:final-basis} and~\ref{thm:final-standardness}.
+Section~\ref{sec:deformation-refinements} establishes further properties of
+module categories and polynomial parameter spaces. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\medskip
+\phantomsection\label{subsec:intro-organization}
+\noindent\textbf{Organization.}
+Part~\ref{part:graded-form}
+(Sections~\ref{sec:graded-category}--\ref{sec:mesh-deformations})
+constructs the standard form $A_0$, equips it with a normed multiplicative
+basis, and completes the proof of Theorems~A and~B outside characteristic
+two. Part~\ref{part:mesh-deformations}
+(Sections~\ref{sec:positive-deformations}--\ref{sec:weights-and-parameters})
+turns to characteristic two: it relates positive filtered deformations of
+$A_0$ to the residual mesh cokernels on periodic components of $\Gamma_A$
+and reduces Theorem~A to constructing zero-supported Hochschild cocycles
+(Proposition~\ref{prop:family-criterion}).
+Part~\ref{part:characteristic-two}
+(Sections~\ref{sec:local-ray-geometry}--\ref{sec:deformation-refinements})
+constructs those cocycles by lifting derivation equations from $\F_2$ to
+$\Z$ and $\Z/4$ via induction on the number of basis elements, builds the
+resulting associative family of deformations to complete the proof of
+Theorem~A, and develops additional consequences for module categories and
+mesh parameters in Section~\ref{sec:deformation-refinements}.
+Appendix~\ref{app:periodic-mesh} contains the periodic mesh calculations
+used in Part~\ref{part:graded-form}, while
+Appendices~\ref{app:residual-mesh} and~\ref{app:local-rays} contain the
+characteristic-two mesh calculations and local ray exclusions.
+
+\medskip
+\noindent\textbf{Conventions and notation.}
+Throughout the paper, $k$ denotes an algebraically closed field unless
+explicitly stated otherwise. All algebras and modules are finite-dimensional,
+and modules are right modules. We assume familiarity with standard
+Auslander--Reiten theory, Morita equivalence \cite{ARS}, and basic
+homological algebra. We write $D_k=\Hom_k(-,k)$ for standard vector-space
+duality and $\tau X$ for the starting term of the almost split sequence
+ending at a nonprojective indecomposable module $X$.
+
+For a basic algebra $A$ with a chosen complete set of primitive orthogonal
+idempotents $\{e_x\}$, we set $A(x,y)=e_xAe_y$ and $P_x=e_xA$. Products of
+paths and morphisms are written in path order from left to right, whereas
+$\circ$ always denotes ordinary function composition: thus for morphisms
+$f:X\to Y$ and $g:Y\to Z$, their path-order product is $fg=g\circ f$. An
+arrow $a:x\to y$ of the quiver of $A$ lies in $A(x,y)=e_xAe_y$. Under the
+canonical identification $A(x,y)\cong\Hom_A(P_y,P_x)$ sending $a$ to left
+multiplication by $a$, endpoints are reversed, so the algebra product $ab$ of
+$a\in A(x,y)$ and $b\in A(y,z)$ corresponds to the composite
+$a\circ b:P_z\to P_x$. Because endomorphism algebras are formed using the
+path-order product $fg=g\circ f$, we have $A\cong\End_A(A)^{\op}$ and,
+similarly, $A_0=\End_{\C}(\bigoplus_x P_x)^{\op}$ in
+Construction~\ref{con:projective-algebra}.
+
+For an additive category $\C$, we write $\add\C$ for its closure under
+finite direct sums and direct summands. Any $k$-linear category $C$ with
+finitely many objects and finite-dimensional morphism spaces is identified
+with its category algebra $\bigoplus_{i,j} C(i,j)$, where the product of
+$f\in C(i,j)$ and $g\in C(j,l)$ is $fg=g\circ f$ and composites of
+noncomposable morphisms are zero; thus $C(i,j)$ is the $(i,j)$-corner of the
+category algebra. We write $\JJ$ for the categorical Jacobson radical of a
+category of indecomposable modules and $\rad A$ for the Jacobson radical of
+an algebra $A$.
+
+\begin{aiuse}
+The proof was developed by GPT-6-Astra under the author's direction.
+The manuscript was written with GPT-6-Astra, followed by Claude Opus~5.5
+and Gemini~4 Argon. GPT-6-Astra and Claude Opus~5.5 were used for
+formalization. The author directed the research and revisions and is
+responsible for the mathematical content and the final manuscript.
+\end{aiuse}
+
+\clearpage
+\part{The standard form and the proof outside characteristic two}
+\label{part:graded-form}
+
+In this part we construct the standard form $A_0$ of a basic
+representation-finite algebra $A$ in arbitrary characteristic, equip $A_0$
+with a normed multiplicative basis, and prove Theorems~A and~B when
+$\charac k\ne2$.
+
+\input{graded-category}
+\input{projective-rays}
+\input{scalar-normalization}
+\input{mesh-deformations}
+
+\clearpage
+\part{Deformations in characteristic two}
+\label{part:mesh-deformations}
+
+In this part we assume $\charac k=2$. Viewing $A$ as a positive filtered
+deformation of its standard form $A_0$, we show that first-order
+deformations of $A_0$ are governed by residual mesh parameters on the
+$\tau$-periodic components of $\Gamma_A$, and we reduce Theorem~A to the
+construction of homogeneous Hochschild two-cocycles supported on zero
+products (Proposition~\ref{prop:family-criterion}).
+
+\input{positive-deformations}
+\input{weights-and-parameters}
+\input{characteristic-two-construction}
+
+\clearpage
+\part{Construction of multiplicative bases in characteristic two}
+\label{part:characteristic-two}
+
+In this final part we construct the zero-supported Hochschild two-cocycles
+required by Proposition~\ref{prop:family-criterion}. Since the multiplicative
+basis $P=\ray A_0$ of $A_0$ has structure constants in $\{0,1\}$, it defines
+models $A^{(2)}=\F_2P$ and $A^{(4)}=(\Z/4)P$ with
+$A_0=k\otimes_{\F_2}A^{(2)}$. As we show in
+Proposition~\ref{prop:integral-bockstein}, every cohomology class in
+$\HH^2(A^{(2)})$ of positive internal degree can be represented via the
+Bockstein connecting map by $(d\delta)/2$, where $\delta$ is a one-cochain
+on $A^{(4)}$ lifting a derivation of $A^{(2)}$ and division by two identifies
+$2(\Z/4)$ with $\F_2$. For the resulting two-cocycle $(d\delta)/2$ to vanish
+on all nonzero basis products $rs\ne0$ in $P$, the lift $\delta$ must satisfy
+the Leibniz equation
+\[
+ \delta(rs)=\delta(r)s+r\delta(s)\qquad\text{whenever }rs\ne0.
+\]
+
+These Leibniz conditions form a system of linear congruences for the
+coefficients of $\delta$, which we decouple and solve one weight character at
+a time. Section~\ref{sec:local-ray-geometry} and
+Section~\ref{sec:primitive-ray-equations} establish local factorization
+restrictions on rays and classify how a primitive character shifts endpoint
+layers. Using these restrictions, Section~\ref{sec:integral-partial-lifts}
+shows that the equations on two-sided rays reduce to the additive-weight
+relations of a strictly smaller representation-finite ray algebra, while the
+remaining one-sided equations organize into a bipartite graph whose
+components are controlled by excluding four-point crowns. Induction on the
+number of basis elements then yields integer lifts of all prescribed modulo-two
+derivation coefficients. Finally, Section~\ref{sec:integral-deformations}
+and Section~\ref{sec:binary-families} pass via the Bockstein map to
+zero-supported cocycles over $k$, assemble them into a global associative
+family of deformations, and recover the original algebra $A$ as a binary
+fibre, completing the proof of Theorems~A and~B;
+Section~\ref{sec:deformation-refinements} records further consequences for
+module categories and parameter spaces.
+
+\input{local-ray-geometry}
+\input{primitive-ray-equations}
+\input{integral-partial-lifts}
+\input{integral-deformations}
+\input{binary-families}
+\input{main-theorems}
+\input{deformation-refinements}
+
+\addtocontents{toc}{\protect\medskip}
+\clearpage
+\appendix
+\input{periodic-mesh-calculations}
+\clearpage
+\input{characteristic-two-mesh-calculations}
+\clearpage
+\input{local-ray-restrictions}
+
+\begin{thebibliography}{99}
+
+\bibitem{ARS}
+M.~Auslander, I.~Reiten, and S.~O.~Smal\o,
+\emph{Representation theory of Artin algebras},
+Cambridge Studies in Advanced Mathematics, vol.~36,
+Cambridge University Press, Cambridge, 1995.
+
+\bibitem{BGRS}
+R.~Bautista, P.~Gabriel, A.~V.~Roiter, and L.~Salmer\'on,
+\emph{Representation-finite algebras and multiplicative bases},
+Invent. Math. \textbf{81} (1985), 217--285.
+
+\bibitem{BautistaSalmeron}
+R.~Bautista and L.~Salmer\'on,
+\emph{On non-standard algebras and their representations},
+Arch. Math. (Basel) \textbf{56} (1991), 16--34.
+
+\bibitem{BES}
+J.~Bia\l kowski, K.~Erdmann, and A.~Skowro\'nski,
+\emph{Deformed preprojective algebras of generalized Dynkin type},
+Trans. Amer. Math. Soc. \textbf{359} (2007), 2625--2650.
+
+\bibitem{BongartzMild}
+K.~Bongartz,
+\emph{On mild contours in ray categories},
+Algebr. Represent. Theory \textbf{17} (2014), 137--159.
+
+\bibitem{BongartzSurvey}
+K.~Bongartz,
+\emph{On representation-finite algebras and beyond},
+in \emph{Advances in representation theory of algebras},
+EMS Series of Congress Reports, European Mathematical Society, Z\"urich,
+2014, 65--101.
+
+\bibitem{BongartzGabriel}
+K.~Bongartz and P.~Gabriel,
+\emph{Covering spaces in representation-theory},
+Invent. Math. \textbf{65} (1982), 331--378.
+
+\bibitem{BretscherGabriel}
+O.~Bretscher and P.~Gabriel,
+\emph{The standard form of a representation-finite algebra},
+Bull. Soc. Math. France \textbf{111} (1983), 21--40.
+
+\bibitem{Gerstenhaber}
+M.~Gerstenhaber,
+\emph{On the deformation of rings and algebras},
+Ann. of Math. (2) \textbf{79} (1964), 59--103.
+
+\bibitem{GerstenhaberSchack}
+M.~Gerstenhaber and S.~D.~Schack,
+\emph{Relative Hochschild cohomology, rigid algebras, and the Bockstein},
+J. Pure Appl. Algebra \textbf{43} (1986), 53--74.
+
+\bibitem{IyamaRealization}
+O.~Iyama,
+\emph{A relationship between homological properties and
+representation-theoretic realization of artin algebras},
+Trans. Amer. Math. Soc. \textbf{357} (2005), 709--734.
+
+\bibitem{IyamaI}
+O.~Iyama,
+\emph{$\tau$-Categories I: Ladders},
+Algebr. Represent. Theory \textbf{8} (2005), 297--321.
+
+\bibitem{Jans}
+J.~P.~Jans,
+\emph{On the indecomposable representations of algebras},
+Ann. of Math. (2) \textbf{66} (1957), 418--429.
+
+\bibitem{Kaplan}
+D.~Kaplan,
+\emph{Multiplicative preprojective algebras of Dynkin quivers},
+J. Pure Appl. Algebra \textbf{227} (2023), article 107146.
+
+\bibitem{Kupisch}
+H.~Kupisch,
+\emph{Symmetrische Algebren mit endlich vielen unzerlegbaren
+Darstellungen. I}, J. Reine Angew. Math. \textbf{219} (1965), 1--25;
+\emph{II}, J. Reine Angew. Math. \textbf{245} (1970), 1--14.
+
+\bibitem{Linckelmann}
+M.~Linckelmann,
+\emph{Integrable derivations and stable equivalences of Morita type},
+Proc. Edinb. Math. Soc. (2) \textbf{61} (2018), 343--362.
+
+\bibitem{Lowen}
+W.~Lowen,
+\emph{Hochschild cohomology, the characteristic morphism and derived deformations},
+Compos. Math. \textbf{144} (2008), 1557--1580.
+
+\bibitem{Riedtmann1980}
+C.~Riedtmann,
+\emph{Algebren, Darstellungsk\"ocher, \"Uberlagerungen und zur\"uck},
+Comment. Math. Helv. \textbf{55} (1980), 199--224.
+
+\bibitem{Riedtmann1984}
+C.~Riedtmann,
+\emph{On stable blocks of Auslander-algebras},
+Trans. Amer. Math. Soc. \textbf{283} (1984), 485--505.
+
+\bibitem{RingelVossieck}
+C.~M.~Ringel,
+\emph{Dieter Vossieck and the development of the representation theory of
+Artin algebras}, lecture at the workshop \emph{Discrete Categories in
+Representation Theory}, Bielefeld, 2018,
+\href{https://arxiv.org/abs/1808.02301}{arXiv:1808.02301}.
+
+\bibitem{Schedler}
+T.~Schedler,
+\emph{Zeroth Hochschild homology of preprojective algebras over the integers},
+Adv. Math. \textbf{299} (2016), 451--542.
+
+\end{thebibliography}
+\end{document}

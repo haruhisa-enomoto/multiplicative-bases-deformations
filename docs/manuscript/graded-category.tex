@@ -1,0 +1,651 @@
+\section{Reduction to basic algebras and graded reconstruction}
+\label{sec:graded-category}
+
+We begin by reducing the existence of a normed multiplicative basis to the
+case of basic algebras. We then pass from the category of indecomposable
+modules to its radical grading and reconstruct the standard form $A_0$ from
+the graded projective objects. Both constructions, together with the
+normalization of $A_0$ in the next two sections, apply in arbitrary
+characteristic.
+
+\subsection{Multiplicative bases and matrix units}
+\label{subsec:nonbasic-basis}
+
+Using matrix units to account for the multiplicities of indecomposable
+projective summands, a normed multiplicative basis of a basic algebra lifts
+immediately to any Morita-equivalent finite-dimensional algebra.
+
+\begin{lemma}
+\label{lem:nonbasic-basis}
+Let $A$ be a finite-dimensional algebra over an arbitrary field, and let
+$B_0$ be its basic algebra. If $B_0$ has a normed multiplicative basis, then
+so does $A$.
+\end{lemma}
+\begin{proof}
+Let $\{e_i\}$ be the complete set of primitive orthogonal idempotents
+contained in the given normed multiplicative basis of $B_0$, and let $n_i$
+be the multiplicity of the corresponding indecomposable projective module in
+the right regular module $A_A$. Every element $b$ of the basis of $B_0$ lies
+in a unique corner $e_i B_0 e_j$: indeed, in the decomposition
+$b=\sum_{i,j} e_i b e_j$, each nonzero summand belongs to the basis by
+multiplicativity, and since basis elements in distinct corners are linearly
+independent, only one summand can be nonzero.
+
+Under Morita equivalence, the regular module $A_A$ corresponds to the
+$B_0$-module $\bigoplus_i (e_i B_0)^{n_i}$. Taking the opposite of its
+endomorphism algebra under our left-to-right composition convention
+identifies $A$ with the block matrix algebra whose $(i,j)$-block is
+$\operatorname{Mat}_{n_i\times n_j}(e_i B_0 e_j)$. For each basis element
+$b\in e_i B_0 e_j$, let $E_{i\alpha,j\beta}(b)$ ($1\leq\alpha\leq n_i$,
+$1\leq\beta\leq n_j$) denote the matrix having $b$ in entry $(\alpha,\beta)$
+of the $(i,j)$-block and zero elsewhere. These matrices form a basis of $A$
+and multiply according to the rule
+\[
+ E_{i\alpha,j\beta}(b)E_{l\gamma,m\delta}(c)
+ =\begin{cases}
+ E_{i\alpha,m\delta}(bc),&\text{if }(j,\beta)=(l,\gamma),\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\]
+Since the given basis of $B_0$ is multiplicative, each product is either
+zero or another basis element. Moreover, the diagonal elements
+$E_{i\alpha,i\alpha}(e_i)$ form a complete set of primitive orthogonal
+idempotents of $A$, and for each $n\geq1$ the $(i,j)$-block of $(\rad A)^n$
+is $\operatorname{Mat}_{n_i\times n_j}(e_i(\rad B_0)^n e_j)$. Thus the
+constructed basis intersects each radical power $(\rad A)^n$ in a basis.
+\end{proof}
+
+From now on we may therefore assume that $A$ is basic, invoking
+Lemma~\ref{lem:nonbasic-basis} at the conclusion of each characteristic
+branch to recover the general case.
+
+\subsection{Radical layers and mesh relations}
+
+We filter the morphisms in $\ind(\modu A)$ by powers of the categorical
+radical, that is, by sums of composites of nonisomorphisms between
+indecomposable modules. Because intermediate modules in such a composite need
+not be projective, the induced filtration on morphisms between indecomposable
+projective modules is in general finer than the ordinary radical filtration
+of $A$.
+
+Let $A$ be a basic representation-finite algebra over $k$, and let $\JJ$
+denote the categorical Jacobson radical of $\ind(\modu A)$. Since $A$ is
+representation-finite, the direct sum of a representative set of
+indecomposable modules is a finite-dimensional additive generator; its
+endomorphism algebra is finite-dimensional, and $\JJ$ consists of the matrix
+entries of its Jacobson radical, so $\JJ$ is nilpotent. We define the
+\emph{radical grading} of $\ind(\modu A)$ to be the graded category $\C$
+with the same objects as $\ind(\modu A)$ and morphism spaces
+\[
+ \C(X,Y)=\bigoplus_{n\geq0}\JJ^n(X,Y)/\JJ^{n+1}(X,Y),
+\]
+writing $\C_n(X,Y)=\JJ^n(X,Y)/\JJ^{n+1}(X,Y)$ for the homogeneous component of
+degree $n$. For a morphism $f\in \JJ^n(X,Y)\setminus \JJ^{n+1}(X,Y)$, its
+\emph{initial form} is its residue class in $\C_n(X,Y)$. Composition in $\C$
+is induced by composition in $\ind(\modu A)$. Since the endomorphism ring of
+each indecomposable module is local with residue field $k$, we have
+$\C_0(X,X)=k\cdot 1_X$ and $\C_0(X,Y)=0$ for $X\ne Y$.
+
+Let us recall how the Auslander--Reiten quiver $\Gamma_A$ and its mesh
+relations arise in this setting. The vertices of $\Gamma_A$ are the objects
+of $\ind(\modu A)$, and the arrows $X\to Y$ index a chosen basis of the
+space $\Irr(X,Y)=\JJ(X,Y)/\JJ^2(X,Y)$ of irreducible morphisms. For each
+nonprojective indecomposable module $Y$, choose an almost split sequence
+\[
+ 0\longrightarrow\tau Y\longrightarrow E_Y
+   \longrightarrow Y\longrightarrow0.
+\]
+Each indecomposable direct summand $X$ of $E_Y$ contributes a component map
+$X\to Y$ and a component map $\tau Y\to X$; modulo $\JJ^2$, the former
+components form a basis of $\Irr(X,Y)$ and the latter a basis of
+$\Irr(\tau Y,X)$ indexed by the multiplicity of $X$ in $E_Y$. The next
+well-known lemma ensures that each multiplicity is at most one, so that these
+components differ from the chosen arrows only by nonzero scalars.
+
+\begin{lemma}
+\label{lem:square-free}
+Let $A$ be a basic representation-finite algebra over an algebraically
+closed field. Its Auslander--Reiten quiver $\Gamma_A$ has no loops and at
+most one arrow between each ordered pair of vertices.
+\end{lemma}
+\begin{proof}
+Consider any irreducible morphism $f:X\to Y$ between indecomposable modules
+and factor $f$ through its image. By irreducibility, either the canonical
+surjection $X\twoheadrightarrow\im f$ is a split monomorphism or the
+inclusion $\im f\hookrightarrow Y$ is a split epimorphism; thus one of the
+two factors is an isomorphism, and $f$ is either a proper monomorphism or a
+proper epimorphism. In particular, $\dim X\ne\dim Y$, so $\Gamma_A$ has no
+loops.
+
+Suppose for a contradiction that there are at least two arrows $X\to Y$ in
+$\Gamma_A$. If $\dim X>\dim Y$, any irreducible morphism $X\to Y$ is an
+epimorphism, so $Y$ cannot be projective (otherwise the epimorphism would
+split). The middle term of the almost split sequence ending at $Y$ then
+contains $X^{\oplus 2}$ as a direct summand, which gives
+\[
+ \dim\tau Y\geq2\dim X-\dim Y>\dim X,
+\]
+and the first map of the sequence provides at least two arrows
+$\tau Y\to X$. Iterating this step produces indecomposable modules of
+strictly increasing dimensions, contradicting the assumption that $A$ is
+representation-finite. If $\dim X<\dim Y$, the dual argument applied to the
+almost split sequence starting at $X$ yields the same contradiction.
+\end{proof}
+
+Thanks to Lemma~\ref{lem:square-free}, we can formulate the mesh category of
+$\Gamma_A$ using scalar coefficients rather than matrices.
+
+\begin{definition}
+\label{def:translation-quiver}
+A \emph{translation quiver} is a quiver $Q$ equipped with a bijection $\tau$
+from a subset of vertices, called \emph{nonprojective}, onto a subset of
+vertices, called \emph{noninjective}, together with a bijection $\sigma$
+from the set of arrows ending at nonprojective vertices onto the set of
+arrows starting at noninjective vertices, such that $\sigma a:\tau x\to y$
+for every arrow $a:y\to x$ with $x$ nonprojective. We call $\sigma a$ the
+\emph{mate} of $a$. Vertices outside the domain (respectively, image) of
+$\tau$ are called \emph{projective} (respectively, \emph{injective}). When
+both $x$ and $y$ are nonprojective, we write
+$\tau a=\sigma^2a:\tau y\to\tau x$. The translation quiver $Q$ is
+\emph{stable} if every vertex is both nonprojective and noninjective.
+\end{definition}
+
+\begin{definition}
+\label{def:scalar-mesh-category}
+Let $Q$ be a translation quiver with at most one arrow between each ordered
+pair of vertices. Given a family $c=(c_{x,a})$ of nonzero scalars
+$c_{x,a}\in k^*$ indexed by nonprojective vertices $x$ and arrows $a:y\to x$
+ending at $x$, the associated \emph{scalar mesh category} is the path-length
+graded quotient category
+\[
+ C(Q,c)=kQ/\langle r_x:x\text{ nonprojective}\rangle,
+ \qquad r_x=\sum_{a:y\to x}c_{x,a}(\sigma a)a,
+\]
+where $kQ$ denotes the $k$-linear path category of $Q$.
+\end{definition}
+
+Multiplying a mesh relation $r_x$ by a nonzero scalar leaves the relation
+ideal unchanged, while rescaling the arrows of $Q$ rescales the coefficients
+$c_{x,a}$ and induces a graded isomorphism between the corresponding scalar
+mesh categories.
+
+For $Q=\Gamma_A$, choose a basis element in each one-dimensional space
+$\Irr(X,Y)$ to serve as the unique arrow $a:X\to Y$. For each nonprojective
+indecomposable module $Y$, the components of the first and second maps of
+the chosen almost split sequence ending at $Y$ take the form
+$u_a(\sigma a)$ and $v_a a$ modulo $\JJ^2$, with $u_a,v_a\in k^*$. Since the
+composite of the two maps in the almost split sequence is zero, passing to
+degree two in $\C$ yields the mesh relation
+\begin{equation}
+ r_Y=\sum_{a:X\to Y}c_{Y,a}(\sigma a)a,
+ \qquad c_{Y,a}=u_av_a.
+ \label{eq:scalar-mesh}
+\end{equation}
+We write $k(\Gamma_A)$ for the scalar mesh category $C(\Gamma_A,c)$ defined
+by these coefficients.
+
+Up to isomorphism fixing the objects, $k(\Gamma_A)$ is independent of both
+the chosen arrow representatives and the chosen almost split sequences.
+Indeed, any isomorphism between two almost split sequences ending at $Y$ acts
+by scalars $\xi,\eta\in k^*$ on the indecomposable end terms $\tau Y$ and
+$Y$. Because the indecomposable summands of the middle term are pairwise
+nonisomorphic by Lemma~\ref{lem:square-free}, the automorphism of the middle
+term acts by scalars $\lambda_a\in k^*$ on those summands modulo radical
+maps, whose composites with the maps of the sequence vanish modulo $\JJ^2$.
+The coefficients therefore transform according to
+\[
+ u'_a=\lambda_a u_a\xi^{-1},\qquad
+ v'_a=\eta v_a\lambda_a^{-1},\qquad
+ c'_{Y,a}=\eta\xi^{-1}c_{Y,a},
+\]
+which simply rescales the entire relation $r_Y$ by $\eta\xi^{-1}$. Moreover,
+Lemma~\ref{lem:unit-mesh-coefficients} will show that the arrows can always
+be rescaled so that $c_{Y,a}=1$ for all $Y$ and $a$.
+
+In Sections~\ref{sec:scalar-normalization} and~\ref{sec:mesh-deformations}
+we will restrict a scalar mesh category $C(Q,c)$ to a subset $S$ of vertices
+that is closed under $\tau$ and $\tau^{-1}$ wherever defined (such as the
+set of $\tau$-periodic vertices). Let $Q_S$ be the full translation
+subquiver on $S$. Quotienting $C(Q,c)$ by the ideal generated by the
+identity morphisms $1_x$ for $x\notin S$ and restricting to the objects in
+$S$ gives a canonical isomorphism
+\begin{equation}
+ \left(C(Q,c)/\langle 1_x:x\notin S\rangle\right)\big|_S
+       \cong C(Q_S,c|_S).
+ \label{eq:mesh-object-quotient}
+\end{equation}
+Indeed, in the path category $kQ$, killing $1_x$ for $x\notin S$ annihilates
+precisely those paths that pass through a vertex outside $S$. Under this
+quotient, a mesh relation $r_x$ with $x\notin S$ maps to zero, while a mesh
+relation $r_x$ with $x\in S$ retains precisely the terms $(\sigma a)a$ whose
+middle vertex lies in $S$, which is the mesh relation of $Q_S$ at $x$. In
+particular, if $C(Q,c)$ is finite-dimensional, then so is $C(Q_S,c|_S)$.
+
+\subsection{Exactness on radical layers}
+
+We next show that almost split sequences remain exact after passing to the
+associated graded category $\C$. This exactness is the key to identifying
+$\C$ with the mesh category $k(\Gamma_A)$ in
+Proposition~\ref{prop:graded-realization}(3) and to reconstructing the module
+category $\modu A_0$ in Proposition~\ref{prop:projective-evaluation}. Our
+argument adapts Iyama's complementary-monomorphism technique for
+$\tau$-categories \cite[Sections~3.3, 3.6 and~4.2]{IyamaI} directly to module
+categories.
+
+\begin{lemma}
+\label{lem:strict-radical-layers}
+Let $A$ be an Artin algebra, let $\JJ$ be the categorical radical of its
+category of finite-length modules, and let $a:U\to Y$ be a radical
+monomorphism. Suppose that $a+h$ is a monomorphism for every
+$h\in \JJ^2(U,Y)$. Then for every finite-length module $W$ and every
+$n\geq1$,
+\[
+             a\circ z\in \JJ^n(W,Y)\quad\Longleftrightarrow\quad
+             z\in \JJ^{n-1}(W,U).
+\]
+Furthermore, any finite direct sum of left almost split monomorphisms
+satisfies the hypothesis that all such $\JJ^2$-perturbations remain
+monomorphisms.
+\end{lemma}
+\begin{proof}
+\emph{Step 1: Almost split kernels and the perturbation property.}
+For any finite direct sum $Y$ of indecomposable modules, let $p:E_Y\to Y$ be
+the direct sum of the minimal right almost split morphisms into its
+indecomposable summands (using the radical inclusion $\rad P\hookrightarrow P$
+at projective summands). By the lifting property of right almost split maps,
+every radical morphism into $Y$ factors through $p$. For $n\geq0$, writing a
+morphism in $\JJ^{n+1}(W,Y)$ as a sum of composites of $n+1$ radical morphisms
+and factoring the last radical morphism through $p$ shows that
+\begin{equation}
+ p\circ \JJ^n(W,E_Y)=\JJ^{n+1}(W,Y)\qquad(n\geq0).
+ \label{eq:right-radical-surjection}
+\end{equation}
+At each nonprojective indecomposable summand of $Y$, the kernel of $p$ is
+the left almost split morphism of the corresponding almost split sequence,
+while at each projective summand the inclusion $\rad P\hookrightarrow P$ has
+zero kernel. Consequently, the kernel inclusion $i:T\to E_Y$ of $p$ is a
+finite direct sum of left almost split monomorphisms.
+
+More generally, let $i=\bigoplus_j i_j:T\to E$ be any finite direct sum of
+left almost split monomorphisms $i_j:T_j\to E_j$. Any morphism in
+$\JJ^2(T,Z)$ is a sum of composites $v\circ u$ with $u$ and $v$ radical. Since
+the restriction of $u$ to each $T_j$ is radical, it factors through $i_j$ as
+$u_j\circ i_j$, and $v\circ u_j$ remains radical. Thus
+\[
+ \JJ^2(T,Z)=\{q\circ i:q\in \JJ(E,Z)\}.
+\]
+Taking $Z=E$, any $h\in \JJ^2(T,E)$ has the form $h=q\circ i$ with
+$q\in \JJ(E,E)$. Since $1+q$ is an automorphism of $E$, the perturbation
+$i+h=(1+q)\circ i$ is again a monomorphism.
+
+\emph{Step 2: Splitting off the given monomorphism.}
+Returning to the given monomorphism $a:U\to Y$, since $a$ is radical and
+$p:E_Y\to Y$ is right almost split, we can write $a=p\circ u$ for some
+$u:U\to E_Y$. By performing row and column operations to split off any
+invertible components of $u$ between indecomposable summands, we obtain
+decompositions $U=U''\oplus U'$ and $E_Y=U''\oplus E'$ under which
+$u=1_{U''}\oplus u'$ with $u'\in \JJ(U',E')$. Since $p$ is radical, the
+restriction $a|_{U'}=p|_{E'}\circ u'$ lies in $\JJ^2(U',Y)$. Setting
+$h=-a|_{U'}\circ\operatorname{pr}_{U'}\in \JJ^2(U,Y)$, we find that $a+h$
+vanishes on $U'$. Since $a+h$ is a monomorphism by hypothesis, we must have
+$U'=0$, so $u$ is a split monomorphism. Replacing $p$ and $i$ by
+$p\circ\alpha^{-1}$ and $\alpha\circ i$ for a suitable automorphism $\alpha$
+of $E_Y$ preserves \eqref{eq:right-radical-surjection} and the factorization
+property of $i$, and allows us to write
+\[
+ E_Y=V\oplus U,\qquad p=(f,a),\qquad i=\binom b c.
+\]
+
+\emph{Step 3: The complementary monomorphism.}
+We claim that the first component $b:T\to V$ of $i$ is also a radical
+monomorphism satisfying the $\JJ^2$-perturbation hypothesis. First, $b$ and $c$
+are radical because $i$ is radical. If $x\in\ker b$, then $i(x)=(0,c(x))$
+and $0=p(i(x))=a(c(x))$; since $a$ is injective, $c(x)=0$ and hence
+$i(x)=0$, so $x=0$. Next, given any $h\in \JJ^2(T,V)$, Step~1 lets us write
+$h=q\circ i$ for a radical map $q=(q_V,q_U):V\oplus U\to V$. The upper
+triangular matrix
+\[
+ L=\begin{pmatrix}1+q_V&q_U\\0&1\end{pmatrix}
+\]
+is an automorphism of $V\oplus U$, and the kernel inclusion of
+$p\circ L^{-1}$ is $L\circ i=\binom{b+h}{c}$. On the other hand, the
+restriction of $p\circ L^{-1}$ to $U$ is
+$a-f\circ(1+q_V)^{-1}\circ q_U$, which differs from $a$ by a morphism in
+$\JJ^2(U,Y)$ and is therefore a monomorphism by hypothesis. As just shown for
+$p$ and $b$, the injectivity of the restriction of $p\circ L^{-1}$ to $U$
+implies that the first component $b+h$ of its kernel inclusion is a
+monomorphism.
+
+\emph{Step 4: Induction on the radical degree.}
+We now prove by induction on $n\geq1$, simultaneously for all radical
+monomorphisms $a$ satisfying the perturbation hypothesis, that
+$a\circ z\in \JJ^n(W,Y)$ if and only if $z\in \JJ^{n-1}(W,U)$. Since $a$ is
+radical, the ``if'' direction is immediate, as is the base case $n=1$. For
+ the induction step, suppose $a\circ z\in \JJ^{n+1}(W,Y)$ with $n\geq1$. By
+\eqref{eq:right-radical-surjection}, there exist $v\in \JJ^n(W,V)$ and
+$u\in \JJ^n(W,U)$ such that $a\circ z=p\circ\binom{v}{u}=f\circ v+a\circ u$.
+Thus $\binom{v}{u-z}$ lies in the kernel of $p$, so
+$\binom{v}{u-z}=\binom{b}{c}\circ s$ for some $s:W\to T$. In particular,
+$b\circ s=v\in \JJ^n(W,V)$. Applying the induction hypothesis to the
+complementary monomorphism $b$ yields $s\in \JJ^{n-1}(W,T)$. Since $c$ is
+radical, it follows that $u-z=c\circ s\in \JJ^n(W,U)$, and hence
+$z\in \JJ^n(W,U)$, completing the induction.
+\end{proof}
+
+Applying Lemma~\ref{lem:strict-radical-layers} and its dual to the maps in
+each almost split sequence yields the graded realization theorem below
+(compare Iyama \cite[Theorems~5.2 and~9.2]{IyamaI} in the setting of
+$\tau$-categories).
+
+\begin{proposition}
+\label{prop:graded-realization}
+Let $\C=\gr_\JJ\ind(\modu A)$. Then the following statements hold:
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item Let $0\to\tau Y\to E_Y\to Y\to0$ be an almost split sequence in
+$\modu A$, and let $\tau Y\xrightarrow{\bar\imath}E_Y\xrightarrow{\bar p}Y$
+be the sequence of initial forms of its morphisms in $\add\C$. We call
+$\bar p$ the \emph{right mesh map} at $Y$. For every object $W$ of $\C$, the
+induced sequences
+\[
+ 0\to\C(W,\tau Y)\to\C(W,E_Y)\to\C(W,Y),\qquad
+ 0\to\C(Y,W)\to\C(E_Y,W)\to\C(\tau Y,W)
+\]
+are exact; in particular, $\bar\imath$ is a monomorphism and $\bar p$ is an
+epimorphism in $\add\C$.
+\item For each indecomposable projective module $P$, the initial forms of
+the components of the inclusion $\rad P\hookrightarrow P$ define a
+monomorphism in $\add\C$. Dually, for each indecomposable injective module
+$I$, the initial forms of the components of $I\twoheadrightarrow I/\soc I$
+define an epimorphism in $\add\C$.
+\item The chosen arrow representatives in $\C_1$ induce an isomorphism of
+graded categories $k(\Gamma_A)\xrightarrow{\sim}\C$, where $k(\Gamma_A)$ has
+the scalar mesh relations \eqref{eq:scalar-mesh}.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Let $i:\tau Y\to E_Y$ and $p:E_Y\to Y$ be the maps in the almost split
+sequence ending at $Y$. By Lemma~\ref{lem:strict-radical-layers}, $i$ induces
+an injection $\C_{n-1}(W,\tau Y)\hookrightarrow\C_n(W,E_Y)$ for every
+$n\geq1$. Moreover, if $w\in \JJ^n(W,E_Y)$ ($n\geq1$) satisfies
+$p\circ w\in \JJ^{n+2}(W,Y)$, then \eqref{eq:right-radical-surjection} yields
+some $w'\in \JJ^{n+1}(W,E_Y)$ with $p\circ w'=p\circ w$. Since
+$p\circ(w-w')=0$, we have $w-w'=i\circ z$ for some $z:W\to\tau Y$, and
+$i\circ z\in \JJ^n(W,E_Y)$ implies $z\in \JJ^{n-1}(W,\tau Y)$ by
+Lemma~\ref{lem:strict-radical-layers}. In degree $n=0$, any
+$w\in\Hom_A(W,E_Y)$ with $p\circ w\in \JJ^2(W,Y)$ differs by an element of
+$\JJ(W,E_Y)$ from a morphism killed by $p$, which factors through the radical
+map $i$ and therefore also lies in $\JJ(W,E_Y)$; thus $\bar p$ is injective on
+$\C_0(W,E_Y)$. Since $p\circ i=0$, this proves exactness of the first
+sequence in (1).
+
+For an indecomposable projective module $P$, let $p:\rad P\hookrightarrow P$
+be the inclusion. If $z\in \JJ^n(W,\rad P)$ ($n\geq0$) satisfies
+$p\circ z\in \JJ^{n+2}(W,P)$, then \eqref{eq:right-radical-surjection} gives
+$z'\in \JJ^{n+1}(W,\rad P)$ with $p\circ z'=p\circ z$, and injectivity of $p$
+forces $z=z'\in \JJ^{n+1}(W,\rad P)$. Thus the initial form of $p$ is a
+monomorphism in $\add\C$. Applying the dual arguments in the opposite module
+category establishes exactness of the second sequence in (1) and the
+statement for injective modules in (2).
+
+Finally, sending each arrow of $\Gamma_A$ to its chosen class in $\C_1$
+defines a graded functor $k\Gamma_A\to\C$. By \eqref{eq:scalar-mesh}, the
+degree-two initial form of the relation $p\circ i=0$ is precisely the mesh
+relation $r_Y$, so this functor descends to $k(\Gamma_A)\to\C$. It is full
+because each radical power $\JJ^n$ is generated by products of $n$ morphisms
+in $\JJ$. To see that it is faithful, we show by induction on $n\geq0$ that any
+homogeneous combination $F$ of paths of length $n$ from $W$ to $Y$ whose
+image vanishes in $\C_n(W,Y)$ belongs to the mesh ideal; the cases $n=0,1$
+hold by definition of $\Gamma_A$. For $n\geq2$, group $F$ by its final arrow
+as $F=\sum_a F_a a$, where $a:X_a\to Y$. If $Y$ is nonprojective, the
+components of $\bar p:E_Y\to Y$ are $v_a a$, so the tuple
+$(F_a v_a^{-1})_a$ maps to zero under $\bar p:\C_{n-1}(W,E_Y)\to\C_n(W,Y)$.
+By the exactness proved in (1), there is a path combination $H$ of length
+$n-2$ from $W$ to $\tau Y$ whose image under $\bar\imath$ equals the image of
+$(F_a v_a^{-1})_a$ in $\C_{n-1}(W,E_Y)$. Since the $a$-component of
+$\bar\imath$ is $u_a(\sigma a)$ and $u_a v_a=c_{Y,a}$, each difference
+$F_a - H c_{Y,a}(\sigma a)$ has length $n-1$ and maps to zero in $\C$. By
+the induction hypothesis, each such difference lies in the mesh ideal, and
+hence so does
+\[
+ F = H r_Y + \sum_a \bigl(F_a - H c_{Y,a}(\sigma a)\bigr)a.
+\]
+If $Y$ is projective, then $\bar p$ is a monomorphism by (2), so each $F_a$
+maps to zero in $\C_{n-1}(W,X_a)$ and lies in the mesh ideal by induction.
+\end{proof}
+
+We also record the cokernels of the right mesh maps in $\C$, which provide
+minimal projective resolutions for the simple functors on $\C$.
+
+\begin{lemma}
+\label{lem:mesh-simple-tops}
+For every nonprojective object $X$ of $\C$, the image of the right mesh map
+$\bar p:\C(-,E_X)\to\C(-,X)$ is the radical $\bigoplus_{n\geq1}\C_n(-,X)$ of
+the representable functor $\C(-,X)$, and its cokernel is the simple functor
+$\C_0(-,X)$. The same conclusion holds at each projective object $P$ for the
+map $\C(-,\rad P)\to\C(-,P)$ of Proposition~\ref{prop:graded-realization}(2).
+\end{lemma}
+\begin{proof}
+Let $p:E_X\to X$ be the minimal right almost split map in $\modu A$ (or the
+inclusion $\rad X\hookrightarrow X$ when $X$ is projective). By
+\eqref{eq:right-radical-surjection}, $p\circ \JJ^n(W,E_X)=\JJ^{n+1}(W,X)$ for
+every $n\geq0$ and every object $W$. Passing to the associated graded spaces
+shows that the image of $\bar p$ on $\C(W,E_X)$ is precisely the
+positive-degree ideal $\bigoplus_{n\geq1}\C_n(W,X)$. Since this ideal is
+nilpotent and the degree-zero quotient has $\C_0(X,X)=k$ and $\C_0(W,X)=0$
+for $W\ne X$, the positive-degree part is the radical of $\C(-,X)$ and its
+cokernel is the simple functor $\C_0(-,X)$.
+\end{proof}
+
+\subsection{Evaluation on projective objects}
+
+Following Bretscher and Gabriel \cite[Section~3.1]{BretscherGabriel}, we now
+define the standard form $A_0$ as the opposite endomorphism algebra of the
+projective objects in $\C$, and we show using the graded exactness properties
+above that evaluating objects of $\add\C$ on the projectives gives an
+equivalence $\add\C\simeq\modu A_0$.
+
+\begin{construction}
+\label{con:projective-algebra}
+Let $\D$ be the full subcategory of $\C$ on the objects $P_x=e_x A$
+corresponding to the indecomposable projective $A$-modules. We define the
+graded algebra $A_0=\bigoplus_{x,y}A_0(x,y)$ by
+\[
+ A_0(x,y)=\D(P_y,P_x)
+       =\bigoplus_{n\geq0}\JJ^n(P_y,P_x)/\JJ^{n+1}(P_y,P_x),
+\]
+with multiplication $bc=b\circ c\in\D(P_z,P_x)$ for $b\in\D(P_y,P_x)$ and
+$c\in\D(P_z,P_y)$ (so that $c$ is applied first, then $b$). Equivalently,
+under our path-order convention for endomorphism algebras,
+$A_0=\End_{\C}(\bigoplus_x P_x)^{\op}$. The \emph{projective evaluation
+functor} sends each object $X\in\add\C$ to the right $A_0$-module
+$\bigoplus_x\C(P_x,X)$, on which $b\in A_0(x,y)$ acts on $m\in\C(P_x,X)$ by
+$mb=m\circ b\in\C(P_y,X)$.
+\end{construction}
+
+To prove that projective evaluation is an equivalence of categories, we use a
+standard homological realization criterion from the Auslander correspondence
+(compare \cite[Theorem~3.3]{IyamaRealization}).
+
+\begin{lemma}
+\label{lem:projective-evaluation-criterion}
+Let $\Lambda$ be a finite-dimensional algebra over a field, let $e\in\Lambda$
+be an idempotent, and set $\Lambda_e=e\Lambda e$. Suppose that
+\[
+ \Hom_\Lambda(T,\Lambda)=\Ext^1_\Lambda(T,\Lambda)=0
+ \qquad\text{for every simple $\Lambda$-module $T$ with }Te=0.
+\]
+Then the functor $P\mapsto Pe$ is fully faithful on $\proj\Lambda$. If, in
+addition, $\operatorname{gl.dim}\Lambda\leq2$ and every finite-dimensional
+injective $\Lambda_e$-module is isomorphic to $Qe$ for some
+$Q\in\proj\Lambda$, then $P\mapsto Pe$ is an equivalence of categories
+$\proj\Lambda\xrightarrow{\sim}\modu\Lambda_e$, and in particular
+$\Lambda_e$ is representation-finite.
+\end{lemma}
+\begin{proof}
+By induction on composition length using the long exact sequence for $\Ext$,
+the assumed vanishings hold for every finite-dimensional $\Lambda$-module $T$
+satisfying $Te=0$. For any right $\Lambda$-module $M$, the canonical
+multiplication map $(Me)\otimes_{\Lambda_e}e\Lambda\to M$ becomes an
+isomorphism upon multiplying on the right by $e$, so its kernel and cokernel
+are annihilated by $e$. For any $Q\in\proj\Lambda$, applying
+$\Hom_\Lambda(-,Q)$ and using the tensor--Hom adjunction therefore yields
+canonical isomorphisms
+\[
+ \Hom_\Lambda(M,Q)\xrightarrow{\sim}
+ \Hom_\Lambda((Me)\otimes_{\Lambda_e}e\Lambda,Q)
+ \xrightarrow{\sim}\Hom_{\Lambda_e}(Me,Qe)
+\]
+whose composite sends a homomorphism $f:M\to Q$ to its restriction
+$f|_{Me}:Me\to Qe$. Taking $M\in\proj\Lambda$ shows that $P\mapsto Pe$ is
+fully faithful on $\proj\Lambda$.
+
+Now suppose $\operatorname{gl.dim}\Lambda\leq2$ and every injective
+$\Lambda_e$-module lies in the essential image of $\proj\Lambda$. Given any
+$X\in\modu\Lambda_e$, choose the beginning of an injective coresolution
+$0\to X\to I^0\to I^1$ in $\modu\Lambda_e$. By full faithfulness and the
+assumption on injectives, we may lift $I^0\to I^1$ to a homomorphism
+$f:Q^0\to Q^1$ in $\proj\Lambda$. Because $\operatorname{gl.dim}\Lambda\leq2$,
+the kernel $\ker f$ is a second syzygy over $\Lambda$ and is therefore
+projective. Since the functor $M\mapsto Me$ is exact, we obtain
+$X\cong(\ker f)e$ with $\ker f\in\proj\Lambda$, proving essential
+surjectivity. Finally, since $\proj\Lambda$ has only finitely many
+indecomposable objects up to isomorphism, the equivalence implies that
+$\Lambda_e$ is representation-finite.
+\end{proof}
+
+We now verify the hypotheses of Lemma~\ref{lem:projective-evaluation-criterion}
+for $\add\C$ and $A_0$.
+
+\begin{proposition}
+\label{prop:projective-evaluation}
+Let $A$ be a basic representation-finite $k$-algebra, and set
+$\C=\gr_\JJ\ind(\modu A)$ and $A_0$ as in
+Construction~\ref{con:projective-algebra}.
+\begin{enumerate}[label={\upshape(\arabic*)}]
+\item The projective evaluation functor induces an equivalence of categories
+$\add\C\xrightarrow{\sim}\modu A_0$.
+\item The algebra $A_0$ is basic and representation-finite.
+\item If $X_0\in\modu A_0$ denotes the evaluation of an object $X\in\C$, then
+\[
+                         \dim_k X_0e_x=\dim_k Xe_x
+\]
+for every primitive idempotent $e_x$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Because the radical filtration on $\Hom_A(X,Y)$ is finite, passing to the
+associated graded vector space preserves total dimension:
+\begin{equation}
+ \dim_k\C(X,Y)=\sum_{n\geq0}\dim_k \JJ^n(X,Y)/\JJ^{n+1}(X,Y)
+             =\dim_k\Hom_A(X,Y).
+ \label{eq:graded-hom-dimensions}
+\end{equation}
+In particular, $\dim_k X_0 e_x=\dim_k\C(P_x,X)=\dim_k\Hom_A(P_x,X)=\dim_k Xe_x$,
+which proves (3).
+
+To prove (1) and (2), let $G=\bigoplus_{X\in\operatorname{ob}\C}X$ and set
+$\Lambda=\End_{\add\C}(G)^{\op}$. The Yoneda functor $X\mapsto R_X=\C(G,X)$
+is an equivalence $\add\C\xrightarrow{\sim}\proj\Lambda$, and as $X$ ranges
+over $\operatorname{ob}\C$, the modules $R_X$ form a complete set of
+pairwise nonisomorphic indecomposable projective $\Lambda$-modules with
+simple tops $L_X=\C_0(G,X)$. Let $e\in\Lambda$ be the sum of the idempotents
+corresponding to the projective objects $P_x$. Then $e\Lambda e=A_0$, and
+under the Yoneda equivalence, projective evaluation on $\add\C$ coincides
+with the functor $\operatorname{ev}(M)=Me$ on $\proj\Lambda$.
+
+\emph{Global dimension and full faithfulness.}
+For each nonprojective object $X\in\C$, Proposition~\ref{prop:graded-realization}(1)
+and Lemma~\ref{lem:mesh-simple-tops} yield a projective resolution in
+$\modu\Lambda$:
+\[
+ 0\longrightarrow R_{\tau X}\longrightarrow
+ \bigoplus_{Y\to X}R_Y\longrightarrow R_X\longrightarrow L_X
+ \longrightarrow0.
+\]
+For each projective object $P_x$, the same results yield a projective
+resolution $0\to R_{\rad P_x}\to R_{P_x}\to L_{P_x}\to0$ of length at most
+one. Consequently, every simple $\Lambda$-module has projective dimension at
+most two, so $\operatorname{gl.dim}\Lambda\leq2$. Moreover, when $X$ is
+nonprojective, applying $\Hom_\Lambda(-,\Lambda)$ to the resolution of $L_X$
+gives by Yoneda's lemma the sequence
+$0\to\C(X,G)\to\C(E_X,G)\to\C(\tau X,G)$, which is exact by
+Proposition~\ref{prop:graded-realization}(1). Thus
+$\Hom_\Lambda(L_X,\Lambda)=\Ext^1_\Lambda(L_X,\Lambda)=0$ for every simple
+module $L_X$ annihilated by $e$, and Lemma~\ref{lem:projective-evaluation-criterion}
+shows that $\operatorname{ev}$ is fully faithful on $\proj\Lambda$.
+
+\emph{Essential surjectivity.}
+Let $S_x=P_x/\rad P_x$ and $I_x=D_k(Ae_x)$ denote the simple and
+indecomposable injective $A$-modules at vertex $x$. By
+\eqref{eq:graded-hom-dimensions}, the evaluation $S_x^0=\operatorname{ev}(R_{S_x})$
+satisfies $\dim_k S_x^0 e_y=\dim_k\Hom_A(P_y,S_x)=\delta_{xy}$, so $S_x^0$ is
+the simple $A_0$-module at $x$. Set $N_x=\operatorname{ev}(R_{I_x})$. Since
+$\operatorname{ev}$ is fully faithful on $\proj\Lambda$, we have
+\[
+ \dim_k\Hom_{A_0}(S_y^0,N_x)=\dim_k\C(S_y,I_x)=\dim_k\Hom_A(S_y,I_x)=\delta_{xy},
+\]
+which shows that $\soc N_x\cong S_x^0$. On the other hand,
+\eqref{eq:graded-hom-dimensions} gives
+\[
+ \begin{aligned}
+ \dim_k N_xe_y&=\dim_k\C(P_y,I_x)=\dim_k I_xe_y=\dim_k e_yAe_x\\
+ &=\dim_k\C(P_x,P_y)=\dim_k e_yA_0e_x=\dim_k D_k(A_0 e_x)e_y.
+ \end{aligned}
+\]
+Since $N_x$ has simple socle $S_x^0$, it embeds into the injective hull
+$D_k(A_0 e_x)$, and equality of dimensions implies $N_x\cong D_k(A_0 e_x)$.
+Thus every indecomposable injective $A_0$-module lies in the image of
+$\operatorname{ev}$. Lemma~\ref{lem:projective-evaluation-criterion} now
+implies that $\add\C\xrightarrow{\sim}\modu A_0$ is an equivalence. Since
+the objects $P_x$ are pairwise nonisomorphic in $\C$, the algebra $A_0$ is
+basic as well as representation-finite.
+\end{proof}
+
+\begin{corollary}
+\label{cor:same-ar-quiver}
+The Auslander--Reiten quivers of $A_0$ and $A$ are isomorphic as translation
+quivers: $\Gamma_{A_0}\cong\Gamma_A$.
+\end{corollary}
+\begin{proof}
+By Proposition~\ref{prop:projective-evaluation}(1), we may compute
+$\Gamma_{A_0}$ directly inside $\add\C$. Since $\C$ is generated in degree
+one, the radical of $\add\C$ is its positive-degree ideal and the radical
+square is the ideal of degree at least two; hence the arrows of $\Gamma_A$
+form bases of the spaces of irreducible morphisms in $\add\C$. By
+Lemma~\ref{lem:mesh-simple-tops}, each right mesh map $\bar p:E_X\to X$ is
+right almost split in $\add\C$. Because the indecomposable summands of $E_X$
+are pairwise nonisomorphic by Lemma~\ref{lem:square-free}, any endomorphism
+of $E_X$ is diagonal modulo the radical, and if it commutes with $\bar p$,
+the linear independence of the arrow components modulo the radical square
+forces its diagonal entries to be $1$. Thus every such endomorphism is an
+automorphism, which means that $\bar p$ is right minimal. The mesh sequences
+in $\add\C$ are therefore the almost split sequences of $\modu A_0$, so the
+translation of $\Gamma_{A_0}$ agrees with that of $\Gamma_A$.
+\end{proof}
+
+We conclude this section with a simple example illustrating how the
+categorical filtration $\JJ^n(P_y,P_x)$ used to define $A_0$ can shift the
+degrees of generators of $\rad A$.
+
+\begin{example}
+\label{ex:dual-number-filtration}
+Let $A=k[t]/(t^2)$ be the algebra of dual numbers. Up to isomorphism, its
+indecomposable modules are $P=A$ and $S=A/(t)$, connected by the canonical
+projection $\pi:P\twoheadrightarrow S$ and the inclusion $\iota:S\hookrightarrow P$
+sending $1+(t)$ to $t$. In path order, the multiplication-by-$t$
+endomorphism of $P$ factors as
+\[
+ P\xrightarrow{\pi}S\xrightarrow{\iota}P,
+ \qquad \pi\iota=t,\qquad \iota\pi=0.
+\]
+Consequently, $\JJ$ is spanned by $\pi$, $\iota$, and $t$, while $\JJ^2$ is
+spanned by $t$ and $\JJ^3=0$. On the projective endomorphism ring $A=\End_A(P)^{\op}$,
+the categorical radical filtration is therefore
+\[
+ A\supset \JJ(P,P)=kt=\JJ^2(P,P)\supset \JJ^3(P,P)=0,
+\]
+whereas $(\rad A)^2=0$. The associated graded algebra $A_0$ is again
+isomorphic to $k[t]/(t^2)$, but its radical generator $t$ sits in
+categorical degree two, reflecting its factorization through the
+nonprojective simple module $S$.
+\end{example}
