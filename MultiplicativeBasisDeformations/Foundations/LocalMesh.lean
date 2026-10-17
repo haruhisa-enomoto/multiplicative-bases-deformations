@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
 # Local families with exact right meshes
 
 The structure of `C = gr_J ind(mod A)` used in the proof of Proposition 2.10
-(`graded-category.tex:383–398, 495–520`): the positive-degree ideal is the
+(`graded-category.tex`): the positive-degree ideal is the
 categorical radical, it is nilpotent, each degree-zero endomorphism ring is `k`,
 and degree-zero maps between distinct objects vanish (Lemma 2.7); the right
 mesh map at each label has image the radical (Lemma 2.7), and at a

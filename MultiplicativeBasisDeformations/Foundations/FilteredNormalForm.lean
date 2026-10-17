@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshCorrections
 /-!
 # Proposition 5.4: successive correction of irreducible representatives
 
-`mesh-deformations.tex:212–241`. Let `C = kQ/(r_1, …, r_t)` be a
+`mesh-deformations.tex`. Let `C = kQ/(r_1, …, r_t)` be a
 finite-dimensional graded category with homogeneous quadratic relations such
 that the derivatives `D_{q-1}` are surjective for `q ≥ 3`, and let `E` be a
 finite filtered category with a graded identification `gr E = C`. Choose lifts

@@ -3,14 +3,14 @@ import MultiplicativeBasisDeformations.Foundations.SameARQuiver
 /-!
 # Corollary 2.11: the translations of `Γ_{A₀}` and `Γ_A` agree
 
-`graded-category.tex:577–588` (proof of `cor:same-ar-quiver`): "every right mesh map is right
+`graded-category.tex` (proof of `cor:same-ar-quiver`): "every right mesh map is right
 almost split. ... Thus the meshes are the almost split sequences and give the translation."
 
 Evaluated at the projective labels, the right mesh map at `x` is
 `f_x : ⊕_a M_{mid a} → M_x` (`mesh0`), with kernel `M_{τ x}` at a nonprojective `x`
 (`tau0`) and injective at a projective `x`.
 
-Deviation (recorded in the concordance): instead of proving that `f_x` is right minimal by
+Deviation: instead of proving that `f_x` is right minimal by
 degrees, we compare `f_x` with the chosen minimal right almost split map `c` of the vendored
 library. Every component of `c` is radical, so `c` factors through `f_x` (`c = h' f_x`), and
 `f_x` is not split epi, so `f_x = h c`. Minimality of `c` makes `h' h` invertible, which

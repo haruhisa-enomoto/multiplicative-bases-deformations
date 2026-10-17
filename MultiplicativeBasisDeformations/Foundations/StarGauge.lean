@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.StarCorner
 /-!
 # The periodic gauge on a star model (Lemma A.1(1))
 
-`lem:periodic-scalar-gauges` (1), `periodic-mesh-calculations.tex:257–300`, for
+`lem:periodic-scalar-gauges` (1), `periodic-mesh-calculations.tex`, for
 `Q = ℤΔ / ⟨g⟩` with `Δ` a star rooted at its centre, `g (v, t) = (σ v, t + c₀)`
 and `σ` fixing the centre and permuting the arms by `θ`.
 

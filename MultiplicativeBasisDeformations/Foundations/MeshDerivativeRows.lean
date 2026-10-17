@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.PathGrading
 /-!
 # Rows and columns of the mesh derivative
 
-Subsection 5.1 of the frozen manuscript (`mesh-deformations.tex:24–162`).
+Subsection 5.1 of the manuscript (`mesh-deformations.tex`).
 
 For a scalar mesh category `C = C(Q, c)` the derivative `D_m` of
 `eq:mesh-derivative` is linear. Its target `V_{m+1}` is spanned by the *rows*

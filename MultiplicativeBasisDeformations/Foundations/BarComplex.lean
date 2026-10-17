@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # The bar cochain complex
 
-The normalized relative bar complexes of Section 6 (`positive-deformations.tex:268–282`,
+The normalized relative bar complexes of Section 6 (`positive-deformations.tex`,
 module bar complex) and Section 7 (Hochschild complex) are both cochains
 `f(a_1, …, a_n)` with values in a bimodule `X` and differential
 `df(a_1, …, a_{n+1}) = a_1 f(a_2, …) + Σ (-1)^i f(…, a_i a_{i+1}, …)

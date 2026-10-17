@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.FamilyCriterionA0
 /-!
 # Proposition 7.9 for a basic representation-finite algebra
 
-`prop:family-criterion` (`characteristic-two-construction.tex:88`), for `A` basic and
+`prop:family-criterion` (`characteristic-two-construction.tex`), for `A` basic and
 representation-finite over an algebraically closed field, `A₀` the projective corner of its
 Auslander–Reiten mesh category, and the rows and dual weights of Proposition 6.1: for any family
 `μ_i`, `i ∈ I₀`, satisfying (1)–(3), `A` is isomorphic to a binary fibre, the transported basis is

@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshComplex
 /-!
 # The depth function on periodic components
 
-For the proof of Lemma 4.2 (`lem:mesh-walk-free`, `scalar-normalization.tex:76–113`):
+For the proof of Lemma 4.2 (`lem:mesh-walk-free`, `scalar-normalization.tex`):
 "A periodic component containing arrows gives a mapping torus, which retracts
 onto its core circle." By Proposition 4.1 a periodic component is covered by
 `ℤΔ`, and the deck transformations have the form `(v, t) ↦ (ρ v, t + c₀)` for a

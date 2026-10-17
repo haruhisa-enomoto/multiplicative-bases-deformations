@@ -3,13 +3,13 @@ import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
 /-!
 # The path-length grading of a scalar mesh category
 
-`graded-category.tex:156–157`: "The quotient is graded by path length." The
+`graded-category.tex`: "The quotient is graded by path length." The
 mesh relations are homogeneous, so the degree projections of `kQ` descend to
 `C(Q, c)` and its degree parts are independent (`iSupIndep_degreePart`). If
 `C(Q, c)` is finite-dimensional, only finitely many degree parts are nonzero,
 so all sufficiently long paths vanish (`exists_pathMor_eq_zero`); this is the
 first step of the proof of Proposition 4.1
-(`periodic-mesh-calculations.tex:28–31`).
+(`periodic-mesh-calculations.tex`).
 -/
 
 set_option autoImplicit false

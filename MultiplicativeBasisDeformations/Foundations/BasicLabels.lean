@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.ProjectiveIdempotents
 /-!
 # Indecomposable projectives of a basic algebra
 
-For Corollary 5.5 (`mesh-deformations.tex:262–266`) we identify a basic algebra
+For Corollary 5.5 (`mesh-deformations.tex`) we identify a basic algebra
 `A` with the algebra `A₀` of its projective labels. Here: the right ideal `eA` of
 a primitive idempotent is isomorphic to `e_i A` for one idempotent of a complete
 set (`exists_iso_ideal`: some `e e_i e` is a unit of the local corner `eAe`, so

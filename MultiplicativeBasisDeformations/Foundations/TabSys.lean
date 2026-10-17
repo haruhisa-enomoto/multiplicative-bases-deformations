@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.GradedLayers
 /-!
 # Setting 8.4 from a representation-finite ray table
 
-Setting 8.4 (`local-ray-geometry.tex:46–55`) for a finite ray table `P` with
+Setting 8.4 (`local-ray-geometry.tex`) for a finite ray table `P` with
 representation-finite linearization: "Write `R_x = k[q_x]/(q_x^{N_x})` when `R_x ≠ k`,
 choosing `q_x` as its homogeneous radical generator", with the endpoint chains of
 Lemma 3.1(3). The identity vectors of `kP` are a complete set of primitive orthogonal

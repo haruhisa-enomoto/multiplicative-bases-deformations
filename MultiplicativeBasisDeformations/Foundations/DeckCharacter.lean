@@ -1,9 +1,10 @@
 import MultiplicativeBasisDeformations.Foundations.MeshWeights
 
 /-!
-# r37 Lemma 7.5: the deck weight character
+# The deck weight character (a lemma of an earlier draft)
 
-`weights-and-parameters.tex:264–286` (`lem:deck-weight-character`): "Define the character of a
+An earlier draft of the manuscript (`lem:deck-weight-character`, not in the current
+revision): "Define the character of a
 closed walk in `K` to be the element of `L = Hom_ℤ(H_ℤ, ℤ)` sending an integer ray weight `h`
 to the weight of the walk under a mesh-weight lift of `h`; by Lemma 7.4 this does not depend on
 the lift. A closed walk whose lift joins `X̃` to `gX̃` has character `−θ_g`."
@@ -69,7 +70,7 @@ theorem MeshWt.walkWt_one (W : MeshWt Q M) : W.walkWt v₀ 1 = 0 := by
 
 variable {x₀ : D.PV}
 
-/-- **r37 Lemma 7.5**: the weight of a closed walk `g` in the stabilizer of the base component
+/-- **The deck weight character** (an earlier draft's lemma): the weight of a closed walk `g` in the stabilizer of the base component
 under any mesh-weight lift `W` of an integer ray weight `h` is `h(θ_g)`, where
 `θ_g = ζ(g o₀) − ζ(o₀)` is the deck class of Proposition 7.2(1). -/
 theorem walkWt_eq {ζ : LObj Q c v₀ D → WP Q c v₀ D}
@@ -126,7 +127,7 @@ theorem walkWt_eq {ζ : LObj Q c v₀ D → WP Q c v₀ D}
   rw [this, map_sub]
   abel
 
-/-- The character does not depend on the mesh-weight lift (`weights-and-parameters.tex:267`). -/
+/-- The character does not depend on the mesh-weight lift (`weights-and-parameters.tex`). -/
 theorem walkWt_indep {ζ : LObj Q c v₀ D → WP Q c v₀ D}
     (hζ : ∀ o o', Thin.Line o o' → wtL Q c v₀ D o o' = ζ o' - ζ o)
     (W W' : MeshWt Q M) (hW : W.res (v₀ := v₀) c D = W'.res c D) (g : Deck Q v₀) (hg : g ∈ Hs Q c v₀ D x₀) :

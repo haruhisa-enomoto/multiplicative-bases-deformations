@@ -5,12 +5,12 @@ import MultiplicativeBasisDeformations.Foundations.MeshWeights
 /-!
 # The winding mesh weight of a periodic component (Proposition 7.5)
 
-`weights-and-parameters.tex:296–318` (`prop:primitive-parameter-characters`): "Lift `p_i`
+`weights-and-parameters.tex` (`prop:primitive-parameter-characters`): "Lift `p_i`
 to `ℤΔ`, starting at a vertex `(x, j)` over `τv_i`. Its endpoint lies over `v_i` […] The
 closed walk `p_i t_{v_i}⁻¹` winds once around the component."
 
-Deviation (recorded in the concordance): instead of identifying `χ_i` with a deck class
-and using r37 Lemma 4.3, we construct, on a periodic component covered by `ℤΔ` with deck
+Deviation: instead of identifying `χ_i` with a deck class
+and using a lemma on the periodic core, we construct, on a periodic component covered by `ℤΔ` with deck
 transformations `(v, t) ↦ (ρ v, t + c₀)`, an integer mesh weight measuring this winding:
 an arrow lifted to `X → Y` gets weight `⌊Y_t / c₀⌋ − ⌊X_t / c₀⌋`, which does not depend on
 the lift (`floorWt`). For the candidate row of a word of length `c₀/2 + 1` (Appendix B) the

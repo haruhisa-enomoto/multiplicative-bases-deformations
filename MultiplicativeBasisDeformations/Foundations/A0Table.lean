@@ -8,7 +8,7 @@ import MultiplicativeBasisDeformations.Foundations.RayBasis
 /-!
 # The ray table of `A₀`
 
-Setting 8.4 (`local-ray-geometry.tex:46–55`) for `A₀`: "`A₀ = kP` … identified with `kP` by
+Setting 8.4 (`local-ray-geometry.tex`) for `A₀`: "`A₀ = kP` … identified with `kP` by
 Proposition 4.14. We use its normed homogeneous ray basis." The basis of Proposition 4.14
 (`basisA0`) consists of one vector on each nonzero deck-homogeneous piece `A₀(x, y)_g`; its
 multiplication table is the ray table `P` (`A0Tab`), with the weight `[x, y, g] ∈ W(P)` of

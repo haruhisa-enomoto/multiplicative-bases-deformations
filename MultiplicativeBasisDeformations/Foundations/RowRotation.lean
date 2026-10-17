@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.StableTranslation
 # Rotation of rows with signed coefficients
 
 Proof of Lemma A.2 (`lem:twisted-trace-surjection`,
-`periodic-mesh-calculations.tex:322–330`): "In the signed meshes an arrow
+`periodic-mesh-calculations.tex`): "In the signed meshes an arrow
 correction identifies a row path `wa` with `(τa)w`, with coefficient one. Indeed,
 the correction column gives `c[wa] + c'[(τa)w] = 0`, where `c, c'` are the two
 mesh coefficients of the corresponding tree edge, and these are opposite."

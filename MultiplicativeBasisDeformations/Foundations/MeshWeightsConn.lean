@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.CharBasis
 /-!
 # Connectedness of the Auslander–Reiten quiver in Lemma 7.4 and Proposition 7.5
 
-`weights-and-parameters.tex:44–55`, `scalar-normalization.tex:23–26`: "we assume that `A` is
+`weights-and-parameters.tex`, `scalar-normalization.tex`: "we assume that `A` is
 connected. Then `Γ_A` is connected by [ARS, Theorem VII.2.1]." The generic statements of
 Lemma 7.4 and Proposition 7.5 (`exists_meshWt_lift`, `res_eq_zero_iff`, `eq_zero_of_diff`,
 `chars_part_of_basis`) assume that every vertex is reached from a base projective by a lifted

@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.NormedBasis
 /-!
 # A multiplicative basis of `A₀` from homogeneous vectors
 
-Proposition 4.14 (`scalar-normalization.tex:637–646`): the invariant basis
+Proposition 4.14 (`scalar-normalization.tex`): the invariant basis
 "descends to one vector on each homogeneous ray line of `A₀`: such a line lies
 in one deck degree […]. Products lift uniquely, so every nonzero coefficient
 downstairs is one."

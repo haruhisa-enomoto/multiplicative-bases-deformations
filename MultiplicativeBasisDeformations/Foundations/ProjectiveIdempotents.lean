@@ -5,7 +5,7 @@ import MBDVendor.Magnitude.Algebra.RightModulePrimitiveIdempotent
 # Indecomposable projectives are principal right ideals `eA`
 
 Construction 2.8 keeps "the original labels `P_x = e_xA`"
-(`graded-category.tex:411–413`). Every indecomposable projective label is
+(`graded-category.tex`). Every indecomposable projective label is
 isomorphic to `eA` for a primitive idempotent `e`: a finite dual basis writes
 `1_P` as a sum of composites `P → A → P`, one of them is invertible because
 `End(P)` is local, so `P` is a retract of `A_A`, and the corresponding

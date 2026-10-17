@@ -3,8 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.OppositeControls2
 /-!
 # Proposition 8.12: the stem product
 
-`def:stem-product` and `prop:intrinsic-stem-product` (`local-ray-geometry.tex:96–108,
-469–516`): for rays `r : x → y`, `s : y → z`, `r * s = r q_y^n s` for the least `n` with
+`def:stem-product` and `prop:intrinsic-stem-product` (`local-ray-geometry.tex`): for rays `r : x → y`, `s : y → z`, `r * s = r q_y^n s` for the least `n` with
 `r q_y^n s ≠ 0`, and `0` if there is none. In ray terms the endpoint subbimodule `U_r` is the
 set of rays `q^i r q^j`, and the product of the sets `U_r U_s` is `U_{r*s}` (`stem_U`). Hence
 the stem product is associative (`stem_assoc`), and it is the ray product when the latter is

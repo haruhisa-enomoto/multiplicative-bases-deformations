@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.PeriodicDepth
 /-!
 # Unit mesh coefficients
 
-Lemma 4.4 (`lem:unit-mesh-coefficients`, `scalar-normalization.tex:150–176`):
+Lemma 4.4 (`lem:unit-mesh-coefficients`, `scalar-normalization.tex`):
 "Regard its coefficients as a multiplicative cellular two-cochain on `K`,
 assigning `c_{X,a}` to the triangle with boundary `(σa) a t_X⁻¹`. […] Rescale the
 path arrow `a` by `φ(a)` and divide the whole mesh relation at `X` by `φ(t_X)`.

@@ -7,7 +7,7 @@ import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
 # The labels `P_x, S_x, I_x` of `k(Γ_A)`
 
 The data used in the paragraph "Injectives in the image" of the proof of
-Proposition 2.10 (`graded-category.tex:504–523`): for a projective label `P_x`,
+Proposition 2.10 (`graded-category.tex`): for a projective label `P_x`,
 the original simple `S_x = P_x / rad P_x` and the original injective
 `I_x = D(Ae_x)`, with
 

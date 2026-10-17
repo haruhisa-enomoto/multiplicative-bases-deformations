@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Refinements.PathRealize
 /-!
 # Homogeneous lifts of morphisms at `t = 1` (Proposition 12.8, morphisms)
 
-`deformation-refinements.tex:387–392`: "after lifting a homogeneous map of degree `r ≥ 0`
+`deformation-refinements.tex`: "after lifting a homogeneous map of degree `r ≥ 0`
 through correction degrees less than `q`, its next linearity defect is a one-cocycle of degree
 `r + q`. The positive `Ext¹` vanishing removes it with the chosen right inverse."
 

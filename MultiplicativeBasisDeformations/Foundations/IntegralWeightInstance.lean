@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.CoordGrading
 /-!
 # Weight-homogeneous lifts of the evaluated modules (Proposition 10.1)
 
-`integral-deformations.tex:63–67`: "All these constructions can be chosen to preserve the
+`integral-deformations.tex`: "All these constructions can be chosen to preserve the
 simultaneous integer weights: lifting a basis of `H_ℤ` to mesh weights by Lemma 7.4 gives the
 modules `M_i⁽²⁾` compatible weight gradings, and the corrections can be chosen in each weight
 component."

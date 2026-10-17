@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.A0Normed
 /-!
 # The radical degree of a ray
 
-Lemma 3.7 (`projective-rays.tex:216–240`). Write `F^d A(x,y)` for the radical
+Lemma 3.7 (`projective-rays.tex`). Write `F^d A(x,y)` for the radical
 filtration of a corner (`F^0 = A(x,y)`, `F^d = A(x,y) ∩ (rad A)^d`). "Every
 `F^dV` is one of these submodules. Since endpoint radicals belong to `J`,
 `F^dV = U_i ⟹ U_{i+1} ⊆ F^{d+1}V ⊆ U_i`. Thus the filtration stays at a layer

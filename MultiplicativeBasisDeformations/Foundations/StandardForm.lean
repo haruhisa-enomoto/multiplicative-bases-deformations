@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.NormedTransport
 /-!
 # A standard basic algebra is its projective algebra `A₀`
 
-Corollary 5.5 (`mesh-deformations.tex:262–270`): "Restrict the resulting
+Corollary 5.5 (`mesh-deformations.tex`): "Restrict the resulting
 isomorphism `ind(mod A) ≅ C` to the labelled projective objects and take
 opposite algebras. Construction 2.8 and Proposition 4.14 give `A ≅ A₀ ≅ kP`."
 

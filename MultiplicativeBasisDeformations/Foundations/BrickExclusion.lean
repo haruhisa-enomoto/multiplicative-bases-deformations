@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.DeletionTransfer
 /-!
 # Excluding periods by the brick hypothesis
 
-Appendix A (`periodic-mesh-calculations.tex:610–637, 868–876`): "Delete all lifts
+Appendix A (`periodic-mesh-calculations.tex`): "Delete all lifts
 of the two outer vertices of the long arms. The retained vertices are closed
 under translation, and (5.2) identifies the object quotient with the `D₄` mesh
 category of the same period. Its degree-four closed paths … remain nonzero, so

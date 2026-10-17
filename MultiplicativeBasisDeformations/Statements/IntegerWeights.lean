@@ -9,7 +9,7 @@ import MultiplicativeBasisDeformations.Refinements.LiftedCorner
 # Lemma 7.4 and Proposition 7.5 for a representation-finite algebra
 
 `lem:integer-weight-lifting` and `prop:primitive-parameter-characters`
-(`weights-and-parameters.tex:154–260`), for the algebra `A₀` of a basic representation-finite
+(`weights-and-parameters.tex`), for the algebra `A₀` of a basic representation-finite
 algebra `A`, connected as in the source (`IsConnectedRing`: only the central idempotents `0`
 and `1`). Connectedness passes to `A₀` (`a0Conn_ar`), which gives the lifted walks from a base
 projective used in the proofs (`hK_of_A0Conn`; the source cites [ARS, Theorem VII.2.1] for the

@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.A0RepFinite
 /-!
 # Corollary 12.1: all modules over a positive deformation
 
-`deformation-refinements.tex:17–33`: every positive filtered deformation `B` of `A₀` is
+`deformation-refinements.tex`: every positive filtered deformation `B` of `A₀` is
 representation-finite, and the lifted normalized modules `M_x^B` exhaust its indecomposables.
 
 Formalization. The lifted modules carry mesh data (`meshB`, `LiftedMeshData.lean`) with the

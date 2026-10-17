@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ScalarNormalization
 /-!
 # The scalar-weight group `W(P)` of `A₀` (Definition 7.1, Proposition 7.2)
 
-`weights-and-parameters.tex:44–152`. For a finite ray category `Q`,
+`weights-and-parameters.tex`. For a finite ray category `Q`,
 `W(Q) = ℤ⟨[r] : r ≠ 0, 1⟩ / ⟨[rs] − [r] − [s] : rs ≠ 0⟩` (`def:scalar-weight-group`).
 For `P = ray A₀` we use the deck-homogeneous pieces of `A₀` as the nonzero rays
 (Proposition 4.14: each homogeneous ray line lies in one deck degree and the

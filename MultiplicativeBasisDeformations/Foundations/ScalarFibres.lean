@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Refinements.FibreAlgebra
 /-!
 # Proposition 11.3(2): scalar fibres are positive filtered deformations
 
-`binary-families.tex:127–150` (`prop:zero-product-family`(2)): "Every scalar fibre is a
+`binary-families.tex` (`prop:zero-product-family`(2)): "Every scalar fibre is a
 positive filtered deformation of `A₀`." A scalar fibre of the family `m + Σ_E T_E μ_E` is the
 product `x · y = xy + Σ_E λ_E μ_E(x, y)`, that is `xy + coch_a(x, y)` for a coefficient
 function `a` constant on the classes (`EdgeOK`). For `Θ : kP ≅ Λ` carrying each ray to a

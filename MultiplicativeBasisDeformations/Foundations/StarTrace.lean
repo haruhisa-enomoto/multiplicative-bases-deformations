@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.PathShape
 # Twisted traces on a star (Lemmas A.2 and A.4)
 
 `lem:twisted-trace-surjection`, `lem:arm-trace-reduction`
-(`periodic-mesh-calculations.tex:322–421`). Let `π : ℤΔ → Q` be a covering of a
+(`periodic-mesh-calculations.tex`). Let `π : ℤΔ → Q` be a covering of a
 star model with signed coefficients, and let `(v, t) ↦ (σ v, t + s)` be a deck
 transformation with `σ` fixing the centre. In degree `d = m + 1 = 2 + s`, the row
 class of a closed path at a `σ`-fixed vertex `v` (`phiV`) is independent of the

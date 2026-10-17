@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.SkeletonExists
 /-!
 # The dimension induction (Proposition 8.3) in characteristic two
 
-`main-theorems.tex:7–51`. The induction is run on representation-finite ray tables `T`
+`main-theorems.tex`. The induction is run on representation-finite ray tables `T`
 (Definition 3.9: `kT` is its own ray linearization). Its conclusion is the weight lifting
 property of `T` (Proposition 8.3(3), in the form `hW` used by Theorem 9.1):
 

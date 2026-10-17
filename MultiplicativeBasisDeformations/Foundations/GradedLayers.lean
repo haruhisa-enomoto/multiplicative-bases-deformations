@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.CornerRepFinite
 /-!
 # Homogeneous layers of a graded representation-finite algebra
 
-Proposition 3.8(1) and Corollary 3.3 (`projective-rays.tex:118–131, 233–255`),
+Proposition 3.8(1) and Corollary 3.3 (`projective-rays.tex`),
 for an algebra graded by path length, as used for `A₀` in Proposition 4.14:
 "Every endpoint subbimodule is homogeneous: the automorphisms that multiply a
 degree-`d` vector by `a^d`, for `a ∈ k*`, preserve its dimension, and the chain

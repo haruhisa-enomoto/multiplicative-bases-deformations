@@ -4,7 +4,7 @@ import MBDVendor.Magnitude.Algebra.FiniteModuleDecomposition
 /-!
 # Representation-finite algebras: bounded modules and two-sided ideals
 
-Lemma 3.1(1), first part (`projective-rays.tex:22–48`): "The annihilator of
+Lemma 3.1(1), first part (`projective-rays.tex`): "The annihilator of
 the right module `A/I` is `I`. Finite representation type gives only finitely
 many isomorphism classes of modules of dimension at most `dim_k A`."
 -/

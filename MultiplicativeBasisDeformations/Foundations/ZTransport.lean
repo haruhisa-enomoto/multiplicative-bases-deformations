@@ -8,7 +8,7 @@ An isomorphism of trees `e : Δ₁ ≃ Δ₂` induces an isomorphism of their
 repetitions in height coordinates, `(v, t) ↦ (e v, t + δ)`, where the constant
 `δ` matches the two-colourings ("Changing the orientation of the tree changes its
 repetition quiver only by the corresponding vertex shifts",
-`periodic-mesh-calculations.tex:177–178`). It commutes with translation and
+`periodic-mesh-calculations.tex`). It commutes with translation and
 transports coverings.
 -/
 

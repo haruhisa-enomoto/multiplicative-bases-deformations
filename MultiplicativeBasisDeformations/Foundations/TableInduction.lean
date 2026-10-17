@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.IndicatorRel
 /-!
 # Tables for the dimension induction
 
-Support for the strong induction of Proposition 8.3 (`main-theorems.tex:7–11`: "disconnected
+Support for the strong induction of Proposition 8.3 (`main-theorems.tex`: "disconnected
 algebras reduce to their connected factors"; Lemma 9.2: "`W(Q_χ)` is free by the dimension
 induction … applied to each connected factor"):
 

@@ -4,8 +4,7 @@ import Mathlib.Algebra.Order.BigOperators.Group.Finset
 /-!
 # Automorphisms of a star fixing its centre permute the arms
 
-Used for the twists `θ = ρ^l` of Lemma A.2 (`periodic-mesh-calculations.tex:
-322–343`): an automorphism of a star model fixing the centre preserves depths
+Used for the twists `θ = ρ^l` of Lemma A.2 (`periodic-mesh-calculations.tex`): an automorphism of a star model fixing the centre preserves depths
 and maps arm `i` onto an arm `θ i` of the same length, vertex by vertex.
 -/
 

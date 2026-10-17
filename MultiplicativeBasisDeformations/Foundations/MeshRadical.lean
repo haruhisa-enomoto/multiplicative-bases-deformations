@@ -9,7 +9,7 @@ For a finite-dimensional scalar mesh category `C(Q, c)`, the morphisms of degree
 (`Ge m`) are closed under composition with degrees adding (`ge_comp`), vanish for `m` large
 (`exists_ge_eq_zero`), and a morphism is radical (`1 - fg` invertible for all `g`) exactly when
 its degree-zero part vanishes (`radical_iff`). This is the input `gr_J C = C` of the proof of
-Corollary 4.15 (`scalar-normalization.tex:658–659`).
+Corollary 4.15 (`scalar-normalization.tex`).
 -/
 
 set_option autoImplicit false

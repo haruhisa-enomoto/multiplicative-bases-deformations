@@ -5,8 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.SectionalCover
 /-!
 # Periodic components are connected stable translation quivers
 
-Proof of Proposition 5.3, reduction to components (`periodic-mesh-calculations.tex:
-232–236`): on a finite translation quiver, a periodic component `K` is closed
+Proof of Proposition 5.3, reduction to components (`periodic-mesh-calculations.tex`): on a finite translation quiver, a periodic component `K` is closed
 under `τ^{±1}` and every vertex of `K` is the translate of a vertex of `K`, so
 the full translation subquiver on `K` is stable; it is connected by arrows and
 translation edges.

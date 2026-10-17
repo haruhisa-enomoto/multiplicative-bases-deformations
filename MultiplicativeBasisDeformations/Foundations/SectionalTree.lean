@@ -5,7 +5,7 @@ import Mathlib.Data.Set.Finite.List
 /-!
 # The tree of sectional paths
 
-Proof of Proposition 4.1, Step 1 (`periodic-mesh-calculations.tex:24–56`).
+Proof of Proposition 4.1, Step 1 (`periodic-mesh-calculations.tex`).
 "Fix a vertex `x₀` in the component. Let `Δ` have as vertices all sectional
 paths starting at `x₀`, including the empty path. Join a path to each of its
 sectional one-arrow extensions, orienting the edge towards the extension. This

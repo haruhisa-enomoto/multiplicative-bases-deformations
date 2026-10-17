@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ZDeltaGauge
 /-!
 # Long paths vanish in `Π(Δ)`
 
-Proof of Proposition 4.1, Steps 1–2 (`periodic-mesh-calculations.tex:61–91`):
+Proof of Proposition 4.1, Steps 1–2 (`periodic-mesh-calculations.tex`):
 "In particular every upstairs path of length at least `N` is zero ... Forgetting
 the integer coordinate identifies the lifted mesh relations with its relations,
 and every path lifts. The uniform path bound makes `Π(Δ)` finite-dimensional."

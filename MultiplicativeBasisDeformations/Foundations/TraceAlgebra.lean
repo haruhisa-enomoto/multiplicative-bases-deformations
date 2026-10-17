@@ -7,8 +7,7 @@ import Mathlib.Tactic.NoncommRing
 /-!
 # The ring of centre words and its twisted traces
 
-Proof of Lemmas A.3–A.4 in algebraic form (`periodic-mesh-calculations.tex:
-369–421`). The centre corner of `Π(Δ)` for a star with arms of `L i + 1`
+Proof of Lemmas A.3–A.4 in algebraic form (`periodic-mesh-calculations.tex`). The centre corner of `Π(Δ)` for a star with arms of `L i + 1`
 vertices is a quotient of
 `ℤ⟨x_1, …, x_t⟩ / (∑ x_i, x_i^{L i + 2})` (`eq:star-corner-presentation`; the
 coefficients of all relations are integers). A *twisted trace* on words is an

@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Refinements.FamilyNormalForm
 /-!
 # The polynomial mesh relations (Proposition 12.8, `F_i(t) = a_i t_i`)
 
-`deformation-refinements.tex:418–423`: "Give `t_i` total weight `−χ_i` […] The choices above, made
+`deformation-refinements.tex`: "Give `t_i` total weight `−χ_i` […] The choices above, made
 separately in each weight, make `F_j` homogeneous of coefficient weight `χ_j`. […]
 Lemma 12.7 therefore gives `F_j = a_j t_j`."
 

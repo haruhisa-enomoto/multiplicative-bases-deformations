@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.WeightDivisibility
 /-!
 # Proposition 4.14: descent of a multiplicative basis along a free deck group
 
-`prop:scalar-normalization` (`scalar-normalization.tex:617–646`): "Let `b_{xy}`
+`prop:scalar-normalization` (`scalar-normalization.tex`): "Let `b_{xy}`
 be the multiplicative basis constructed on `L`. For a free deck generator `g`,
 write `g(b_{xy}) = d_g(x, y) b_{gx,gy}`. The coefficients form a multiplicative
 weight. By Lemma 4.13, write `d_g(x, y) = a_g(y)/a_g(x)`. On each orbit of

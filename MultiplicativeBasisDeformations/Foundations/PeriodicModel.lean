@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ModelDeck
 /-!
 # Proposition 4.1: the periodic tree model
 
-`prop:periodic-tree-model` (`scalar-normalization.tex:51–75`), parts (1) and (3):
+`prop:periodic-tree-model` (`scalar-normalization.tex`), parts (1) and (3):
 a finite connected stable translation quiver with at most one arrow between two
 vertices, containing an arrow and carrying a finite-dimensional scalar mesh
 category, is covered by the repetition `ℤΔ` of a Dynkin star model `Δ`; the

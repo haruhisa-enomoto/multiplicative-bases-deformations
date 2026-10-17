@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.GradedDecomp
 /-!
 # Higher `Ext` between normalized modules (Lemma 6.3(2))
 
-`positive-deformations.tex:172–185`: "In a minimal graded projective cover of a
+`positive-deformations.tex`: "In a minimal graded projective cover of a
 nonprojective `M_i`, every summand `P⟨a⟩` has `a ≥ 1` […] A nonzero component of a
 kernel inclusion `Z⟨b⟩ → P⟨a⟩` is also radical. […] Hence `b − a ≥ 1` and `b ≥ 2`.
 […] Dimension shifting gives `Ext^n(M_i, M_j)_t = Ext^1(Ω^{n−1}M_i, M_j)_t = 0`

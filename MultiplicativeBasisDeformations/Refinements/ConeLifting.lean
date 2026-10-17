@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Refinements.WeightCone
 /-!
 # Weight-homogeneous lifts of module actions (toward Proposition 12.8)
 
-`deformation-refinements.tex:378–392`: the degree-by-degree lifting of Proposition 6.5 with the
+`deformation-refinements.tex`: the degree-by-degree lifting of Proposition 6.5 with the
 choices "made separately in each degree and weight". If the deformation `μ_q` and the action of
 `M` have all relative weights in a monoid `C` (`ConeBil`), the corrections can be taken with
 relative weights in `C`: the error of the next degree has weights in `C`, and the cone part of

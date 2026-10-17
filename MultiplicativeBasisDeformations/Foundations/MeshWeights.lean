@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.RayWeights
 /-!
 # Integer mesh weights and their restriction to rays (Lemma 7.4)
 
-`weights-and-parameters.tex:154–239` (`def:integer-weights`,
+`weights-and-parameters.tex` (`def:integer-weights`,
 `lem:integer-weight-lifting`). An *integer mesh weight* assigns `w(a)` to arrows
 and `ν_v` to mesh rows with `w(σa) + w(a) = ν_v`; it restricts to an integer ray
 weight, and "this restriction gives an exact sequence

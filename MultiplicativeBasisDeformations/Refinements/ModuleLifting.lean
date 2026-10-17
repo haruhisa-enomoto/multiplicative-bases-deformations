@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.SquareZero
 /-!
 # Proposition 6.5: lifting modules to positive deformations
 
-`positive-deformations.tex:226–318` (`prop:positive-module-lifting`). After Lemma 6.4 the
+`positive-deformations.tex` (`prop:positive-module-lifting`). After Lemma 6.4 the
 multiplication of a positive filtered deformation `B` of `Λ` is `μ₀ + Σ_{q>0} μ_q` on the vector
 space `Λ`, with `μ₀` the product of `Λ` and `μ_q` raising internal degree by `q` (`PosDef`).
 "Seek an action `ν₀ + ν₁ + ⋯` on `M_i` […]. Suppose the action identity holds through internal

@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.FreeGroupoidVertex
 # Collapsing a 2-complex along an acyclic matching
 
 Combinatorial tool for Lemma 4.2 (`lem:mesh-walk-free`,
-`scalar-normalization.tex:89–119`). A 2-complex is given by edges `Ed` with
+`scalar-normalization.tex`). A 2-complex is given by edges `Ed` with
 endpoints and triangles `t` with relation `f_t g_t = h_t`; its fundamental
 groupoid `Π` is the free groupoid on the edges modulo these relations. Given
 an injective choice of one edge per triangle (a matching) with a potential

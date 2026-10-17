@@ -7,7 +7,7 @@ import MultiplicativeBasisDeformations.Foundations.NormedBasis
 For an algebra `Λ` with a multiplicative basis `b` containing a complete set of orthogonal
 idempotents `b (E v)`, every basis vector lying in one corner, the products of basis vectors
 define a ray table (`multOfBasis`): the table of Construction 3.? / Definition 3.9(2) read
-off from the basis (`projective-rays.tex:276–305`, "`b_r b_s = b_{rs}` or `0`"). Its
+off from the basis (`projective-rays.tex`, "`b_r b_s = b_{rs}` or `0`"). Its
 associativity comes from that of `Λ`, and its linearization is isomorphic to `Λ`
 (`linEquiv`).
 -/

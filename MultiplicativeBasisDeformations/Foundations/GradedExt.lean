@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.BarComplex
 /-!
 # Graded modules and graded `Ext` via the bar complex
 
-Section 6 (`positive-deformations.tex:85–90, 268–282`): "Internal degree `t` in
+Section 6 (`positive-deformations.tex`): "Internal degree `t` in
 `Hom` or `Ext` means maps from a graded projective resolution to the target which
 raise degree by `t`", computed by the bar resolution. Here graded `Ext^n_t(M, N)`
 is the cohomology of the bar complex `Hom_R(M ⊗ Λ^{⊗n}, N)` in internal degree
@@ -11,7 +11,7 @@ is the cohomology of the bar complex `Hom_R(M ⊗ Λ^{⊗n}, N)` in internal deg
 `Λ` (`R` a commutative ring: a field, or `ℤ/4` in Section 10).
 
 The bar complex is taken over `R` rather than relative to `S`; both compute `Ext`
-(`weights-and-parameters.tex:372–376` for the relative form). That it computes the manuscript's
+(`weights-and-parameters.tex` for the relative form). That it computes the manuscript's
 `Ext` is proved in `ExtResolutions.lean`: for every graded projective resolution, the `Ext`
 computed from it vanishes exactly when the bar `Ext` does (`GRes.extVanish_iff`).
 -/

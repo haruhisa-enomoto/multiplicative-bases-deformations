@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshCategory
 /-!
 # The mesh complex `K` and its collapse
 
-Subsection 4.1 (`subsec:mesh-walk-cover`, `scalar-normalization.tex:21–35`):
+Subsection 4.1 (`subsec:mesh-walk-cover`, `scalar-normalization.tex`):
 "For every nonprojective vertex `X`, adjoin an edge `t_X : τX → X` to the
 underlying graph of `Γ`. For each arrow `a : Y → X` with `X` nonprojective,
 attach a triangle with boundary `(σa) a t_X⁻¹`." Its fundamental groupoid is

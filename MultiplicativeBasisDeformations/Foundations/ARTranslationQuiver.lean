@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshCategory
 /-!
 # The Auslander--Reiten quiver as a translation quiver
 
-`graded-category.tex:84–96`: the vertices of `Γ_A` are the indecomposable
+`graded-category.tex`: the vertices of `Γ_A` are the indecomposable
 modules, and the arrows `X → Y` form a basis of `Irr(X, Y) = J(X, Y)/J²(X, Y)`.
 The translation `τ` sends a nonprojective indecomposable `Y` to the starting
 term of the almost split sequence ending at `Y`; it is a bijection from the

@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.PathMaps
 /-!
 # Full translation subquivers
 
-`graded-category.tex:194–212` (`eq:mesh-object-quotient`). Let `S` be a set of
+`graded-category.tex` (`eq:mesh-object-quotient`). Let `S` be a set of
 vertices closed under `τ` and `τ⁻¹` wherever defined, and `Q_S` the full
 translation subquiver on `S`. In the path category, killing the identities
 outside `S` kills exactly the paths through vertices outside `S`. A mesh

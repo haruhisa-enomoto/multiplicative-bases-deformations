@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.StarModel
 /-!
 # Parents, children and arms in a finite tree
 
-Proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex:118–140`):
+Proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex`):
 "The tree is consequently a path or has one trivalent vertex. In the latter
 case let `p ≤ q ≤ r` be its arm lengths."
 
@@ -121,7 +121,7 @@ theorem anc_dist (v : D) : anc G hG o (G.dist o v) v = o := by
   exact ((hG.dist_eq_zero_iff).1 h).symm
 
 include par hpar hG hA in
-/-- **At most one trivalent vertex** (`periodic-mesh-calculations.tex:122–125`). -/
+/-- **At most one trivalent vertex** (`periodic-mesh-calculations.tex`). -/
 theorem trivalent_unique {n : D → ℚ} (hn : ∀ i, 0 < n i)
     (hMn : ∀ i, 0 < 2 * n i - ∑ j ∈ G.neighborFinset i, n j) {u w : D}
     (hu : G.degree u = 3) (hw : G.degree w = 3) : u = w := by
@@ -564,7 +564,7 @@ include par hpar hG hA in
 /-- **Proposition 4.1, Step 2: the tree is Dynkin.** A finite tree carrying a
 vector `n > 0` with `Mn > 0` is a star with at most one arm (a path rooted at
 an end) or with three arms satisfying `∑ p_i/(p_i + 1) < 2`
-(`periodic-mesh-calculations.tex:118–140`). -/
+(`periodic-mesh-calculations.tex`). -/
 theorem classify_tree [Nonempty D] {n : D → ℚ}
     (hn : ∀ i, 0 < n i) (hMn : ∀ i, 0 < 2 * n i - ∑ j ∈ G.neighborFinset i, n j) :
     ∃ (t : ℕ) (L : Fin t → ℕ) (e : D ≃ StarV L),

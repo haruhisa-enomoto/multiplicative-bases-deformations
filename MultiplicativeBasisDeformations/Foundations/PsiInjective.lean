@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.HochschildMesh
 /-!
 # Injectivity of `Ψ` (Proposition 7.6)
 
-`weights-and-parameters.tex:381–392`: "If `Ψ[μ] = 0`, change the arrows to remove
+`weights-and-parameters.tex`: "If `Ψ[μ] = 0`, change the arrows to remove
 the errors. They give a functor from `C ⊗ k[ε]/(ε²)` to the Hom category of the
 lifted modules reducing to the identity. […] On the actual projective corner it
 trivializes the algebra deformation with leading identity, so `[μ] = 0`."
@@ -585,7 +585,7 @@ theorem stdL_act (J : D.InjData) (h1 : DegOne D) (hμ : IsHCocycle μ)
   rw [stdL, dif_pos p.2]
   exact CycProj.actLift_act hμdeg hμ _ m b
 
-/-- **Proposition 7.6, injectivity** (`weights-and-parameters.tex:381–392`): if `Ψ[μ] = 0`,
+/-- **Proposition 7.6, injectivity** (`weights-and-parameters.tex`): if `Ψ[μ] = 0`,
 then `μ` is the coboundary of a map of degree `q`. -/
 theorem eq_hcobdry_of_Ψc_eq_zero (J : D.InjData) (h1 : DegOne D) (hμ : IsHCocycle μ)
     (hμdeg : HDeg (galgA0 D hfin) μ (q : ℤ)) (Ld : LiftData D hfin q μ) (h : Ψc Ld = 0) :

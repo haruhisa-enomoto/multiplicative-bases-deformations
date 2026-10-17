@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.RowRotation
 /-!
 # Hochschild classes and mesh corrections (Proposition 7.6, the map `Ψ`)
 
-`weights-and-parameters.tex:350–380` (`prop:hochschild-mesh-restriction`): "Represent
+`weights-and-parameters.tex` (`prop:hochschild-mesh-restriction`): "Represent
 a homogeneous class by a normalized relative cocycle `μ`. Apply Lemma 6.6 with
 `R = k`, `Λ = A₀` and the normalized modules, using Lemma 6.3. Choose the actual
 projectives at their labels, give `ε` degree `−q`, and lift the arrows

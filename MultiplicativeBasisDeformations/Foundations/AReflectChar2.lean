@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.APaths
 /-!
 # The reflected models of type `A` in characteristic two (Appendix B)
 
-`characteristic-two-mesh-calculations.tex:46–57`: "For the reflected model
+`characteristic-two-mesh-calculations.tex`: "For the reflected model
 `ℤA_{2m+1}/⟨τ^s ρ⟩`, the brick hypothesis forces `s > m`. Otherwise, retaining the central
 vertex and the first `s` vertices of each arm gives the reflected `A_{2s+1}` model. The
 degree-`2s` paths just constructed go from each vertex to its reflection and increase

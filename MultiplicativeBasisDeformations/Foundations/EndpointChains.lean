@@ -6,7 +6,7 @@ import MBDVendor.Magnitude.LinearAlgebra.LocalAlgebraResidue
 /-!
 # Endpoint subbimodules form chains
 
-Lemma 3.1(3) (`lem:endpoint-chains`, `projective-rays.tex:58–83`). For a
+Lemma 3.1(3) (`lem:endpoint-chains`, `projective-rays.tex`). For a
 representation-finite algebra `A` over an algebraically closed field with
 primitive idempotents `e_x`, put `R_x = e_xAe_x`.
 

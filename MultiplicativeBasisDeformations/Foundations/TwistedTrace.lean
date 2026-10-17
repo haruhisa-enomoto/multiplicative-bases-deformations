@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.CoveringMesh
 /-!
 # Lifted paths and row classes (Lemma A.2)
 
-`lem:twisted-trace-surjection` (`periodic-mesh-calculations.tex:322–343`).
+`lem:twisted-trace-surjection` (`periodic-mesh-calculations.tex`).
 Let `π : ℤΔ → Q` be a covering commuting with translation, with signed mesh
 coefficients. A path `p` of the doubled tree `Δ̄` starting at `v` lifts to `ℤΔ`
 from `τ X` for any `X = (v, t)` (`liftZ`); the class of the image of the lift in

@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Refinements.SplitRelative
 /-!
 # Lemma 6.4 for a split semisimple `S = Λ₀`
 
-`lem:split-positive-deformation` (`positive-deformations.tex:180–193`): "Let `k` be any field, let
+`lem:split-positive-deformation` (`positive-deformations.tex`): "Let `k` be any field, let
 `Λ` be a finite-dimensional nonnegatively graded algebra with split semisimple `S = Λ₀`, and let
 `B` be a positive filtered deformation of `Λ`. Then `S` lifts to a unital subalgebra of `B`, and
 the filtration of `B` splits as `S`-bimodules. […] each `μ_q` raises internal degree by `q`, is

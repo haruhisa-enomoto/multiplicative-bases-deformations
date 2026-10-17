@@ -18,8 +18,10 @@ Auslander–Reiten translate, irreducible maps). The main library
 
 The record below is `MBDVendor/README.md`.
 
-These 120 files (plus one extracted glue file) are copied from `formalization/magnitude_conjecture` at
-repository commit `52fbbfa2b` (last change to that package), the dependency
+These 120 files (plus one extracted glue file) are copied from the Lean
+formalization of the magnitude conjecture
+(<https://github.com/haruhisa-enomoto/magnitude-conjecture>), as developed in
+the author's research repository at commit `52fbbfa2b`. They form the dependency
 cone of its right-module Auslander--Reiten theory: existence of almost split
 sequences on a finite skeleton of indecomposable right modules, the
 translation bijection between nonprojective and noninjective labels, the
@@ -30,8 +32,9 @@ The only change is a mechanical rename of module paths and namespaces:
 `MagnitudeConjecture` became `MBDVendor.Magnitude` and
 `QuotientSubmoduleEquidistribution` became `MBDVendor.QSE`. Statements and
 proofs are unchanged. This is general Auslander--Reiten theory, which the
-frozen manuscript assumes (`main.tex:399–400`); it is not a proof of any
-manuscript statement. The package `MultiplicativeBasisDeformations` uses it
+manuscript assumes; it is not a proof of any manuscript statement. Comments in
+these files keep their original wording, so references to "the manuscript"
+there mean the magnitude paper. The package `MultiplicativeBasisDeformations` uses it
 only through `MultiplicativeBasisDeformations/Foundations/`.
 
 The file list is the import closure of

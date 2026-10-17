@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.Contours
 # Proper products and external returns (Appendix C.2)
 
 `lem:nondeep-two-object-return` and `prop:proper-ray-products`
-(`local-ray-restrictions.tex:354–849`, `primitive-ray-equations.tex:442`).
+(`local-ray-restrictions.tex`, `primitive-ray-equations.tex`).
 -/
 
 set_option autoImplicit false
@@ -1345,7 +1345,7 @@ theorem LR_proper (hfin : IsRepresentationFinite k (S.P.Lin k)) (hχ : 0 < S.P.d
       ha, hs, a1, by rw [a2, t3], rfl, by rw [a2]; exact hyzS, hTa, hTs,
       by rw [hqz]; exact has, by rw [hqz]; exact hq3⟩⟩
 
-/-- **Proposition 8.25(2)**, return-corner form (`prop:proper-ray-products`(2), r41): in
+/-- **Proposition 8.25(2)**, return-corner form (`prop:proper-ray-products`(2)): in
 `BL_proper`, the first factor `r : x → y` reaches the primitive return corner, `y ∈ S_x`. -/
 theorem BL_proper_inS (hfin : IsRepresentationFinite k (S.P.Lin k)) (hχ : 0 < S.P.deg χ)
     (hprim : Prim χ) {r s t f : R} {n : ℕ} (hr : S.IsGen r) (hs : S.IsGen s) (hBr : S.TB χ r)
@@ -1363,7 +1363,7 @@ theorem BL_proper_inS (hfin : IsRepresentationFinite k (S.P.Lin k)) (hχ : 0 < S
       rw [← S.qh_of_supp χ (S.supp_of_qh hBr.2.1), ← S.qh_of_supp χ (S.supp_of_qh' hBr.2.2), e1, e2]
     exact Or.inr ⟨hc, r, h, hr, rfl, rfl, hrev, hcomm, hq⟩
 
-/-- **Lemma C.2** in the form of r41 (`lem:nondeep-two-object-return`): at a supporting
+/-- **Lemma C.2** (`lem:nondeep-two-object-return`): at a supporting
 vertex `b`, generating rays `e : b → y`, `l : y → b` with `y ∉ S_b`, `el = q̂_b^a` and
 `q̂_b^{a+1} ≠ 0` have types `L` and `R`, `N_b = 4`, `el = q̂_b²` and `le = 0`. -/
 theorem nondeep_return_types (hfin : IsRepresentationFinite k (S.P.Lin k)) (hprim : Prim χ)

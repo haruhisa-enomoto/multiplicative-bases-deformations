@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.HochschildMesh
 /-!
 # The lifted modules and arrows over `ℤ/4` (Proposition 10.1)
 
-`integral-deformations.tex:67–74`: "Lift the action matrices arbitrarily to free graded
+`integral-deformations.tex`: "Lift the action matrices arbitrarily to free graded
 `𝒪`-modules. […] Equation (prime-field-ext-vanishing) supplies a correction. […] The same bar
 calculation, using `Ext¹`, gives uniqueness and lifts all homogeneous maps of nonnegative
 degree."

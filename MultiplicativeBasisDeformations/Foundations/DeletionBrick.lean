@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
 /-!
 # Lemma 5.2: object quotients have bricks
 
-`lem:deletion-brick` (`mesh-deformations.tex:157–178`): "Among the objects
+`lem:deletion-brick` (`mesh-deformations.tex`): "Among the objects
 outside `Σ`, choose `X` of least composition length. Every radical endomorphism
 of `X` factors through its proper image. Each indecomposable summand of that
 image has smaller length, belongs to `D` by image-closure, and therefore belongs

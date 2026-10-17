@@ -2,7 +2,7 @@
 
 This table maps every numbered statement of *Multiplicative bases and
 deformations of representation-finite algebras* to the Lean declarations that
-formalize it. It refers to the revision of October 17, 2026 (r41), 105 pages,
+formalize it. It refers to the revision of October 17, 2026, 105 pages,
 whose TeX, PDF and hashes are in [`manuscript/`](manuscript/README.md).
 
 Lean is `v4.33.1`, with Mathlib `0df444a360eaa60ab8c11dca51a86af692955474` as

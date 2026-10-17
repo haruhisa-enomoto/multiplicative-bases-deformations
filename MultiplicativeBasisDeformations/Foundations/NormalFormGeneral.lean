@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.FilteredNormalForm
 /-!
 # Proposition 5.4 in its general form
 
-`mesh-deformations.tex:212–241` (`prop:filtered-normal-form`): "Let `C = kQ/(r_1, …, r_t)` be a
+`mesh-deformations.tex` (`prop:filtered-normal-form`): "Let `C = kQ/(r_1, …, r_t)` be a
 finite-dimensional graded algebra over any field, with `Q` finite and each `r_i` homogeneous
 quadratic. For `q ≥ 3`, let `D_{q-1}` send a family `(f_a)_a`, where `f_a ∈ C_{q-1}` is parallel
 to the arrow `a`, to the family whose `i`th entry is the sum, over the arrow occurrences in `r_i`,

@@ -7,7 +7,7 @@ import MultiplicativeBasisDeformations.Foundations.EvenLineTop
 /-!
 # The odd quotients of even `A` in characteristic two (Appendix B)
 
-`characteristic-two-mesh-calculations.tex:59–68`: "For the odd quotient of `A_{2n}` with
+`characteristic-two-mesh-calculations.tex`: "For the odd quotient of `A_{2n}` with
 period `r`, … If `r ≤ 2n − 1`, retain the first `(r+1)/2` levels. The top paths of the
 resulting even-`A` tree have degree `r`, go to reflected vertices, and increase the
 repetition coordinate by `r`. They are nonzero radical endomorphisms at every quotient

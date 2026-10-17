@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.PeriodicIso
 /-!
 # Proposition 6.1: residual correction spaces
 
-`positive-deformations.tex:23–48` (`prop:residual-correction-spaces`). In characteristic two,
+`positive-deformations.tex` (`prop:residual-correction-spaces`). In characteristic two,
 under the brick hypothesis, call a periodic component *residual* if `⊕_m coker D_m(C)` has a
 nonzero class supported on it. Then each residual component is `ℤΔ/⟨τ^{s_i}ρ⟩` with `Δ` of
 type `D` or `E`, there is a path `p_i : τ v_i → v_i` of degree `d_i = 2s_i + 2`, and

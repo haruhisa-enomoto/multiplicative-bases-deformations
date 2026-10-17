@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # Lemma 11.1: two associative tables
 
-`binary-families.tex:23–70` (`lem:two-associative-tables`): "Let `S` be a finite set with an
+`binary-families.tex` (`lem:two-associative-tables`): "Let `S` be a finite set with an
 absorbing zero, and let `m, m_*` be associative products on `S` […] Suppose
 `m_*(a,b) = m(a,b)` whenever `m(a,b) ≠ 0`. Put `Z = {(a,b) : m(a,b) = 0, m_*(a,b) ≠ 0}` and
 let `ε_z` be the bilinear map supported at `z = (a,b)` with value `m_*(a,b)` […] Assume all

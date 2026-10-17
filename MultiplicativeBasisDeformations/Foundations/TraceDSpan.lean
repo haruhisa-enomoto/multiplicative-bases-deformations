@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.TraceTypesAD
 /-!
 # Type `D` traces in every characteristic (Appendix B)
 
-`characteristic-two-mesh-calculations.tex:80–100`: "In word degree `j < N` the
+`characteristic-two-mesh-calculations.tex`: "In word degree `j < N` the
 alternating words `w_j, w'_j`, starting with `x, y`, span; in degree `N` they satisfy
 `w_N + w'_N = 0`. Multiplying this relation by `x` and `y` shows that both
 alternating words of degree `N + 1` are zero. … In the ordinary trace, the

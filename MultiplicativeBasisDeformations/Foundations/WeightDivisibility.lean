@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.Exhaustion
 /-!
 # Lemma 4.11(2): weights on finite subcategories are divisible
 
-`lem:source-basis-extension`(2) (`scalar-normalization.tex:470–518`): "Let
+`lem:source-basis-extension`(2) (`scalar-normalization.tex`): "Let
 `Scal(T)` denote the group of multiplicative `k*`-valued weights on the nonzero
 morphism lines of `T` […]. Restriction gives a split surjection
 `Scal(T) → Scal(T')`, whose kernel is a product of copies of `k*`, one for each

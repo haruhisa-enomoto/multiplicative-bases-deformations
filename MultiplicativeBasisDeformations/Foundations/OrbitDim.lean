@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.KrullTrdeg
 /-!
 # Lemma 8.8, geometric part: finitely many orbits cannot cover a large zero set
 
-`local-ray-geometry.tex:170–190` (`lem:dimension-infinity`): "The representation variety is
+`local-ray-geometry.tex` (`lem:dimension-infinity`): "The representation variety is
 a nonempty zero set of at most `F` scalar polynomial equations in affine `N`-space; the zero
 arrow assignment is a point. Every component of such a zero set has dimension at least
 `N − F`. The change-of-basis group has dimension `D`, and its simultaneous scalar subgroup

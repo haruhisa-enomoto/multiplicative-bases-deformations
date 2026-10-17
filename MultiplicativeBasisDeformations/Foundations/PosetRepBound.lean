@@ -8,7 +8,7 @@ import MultiplicativeBasisDeformations.Foundations.TableBound
 two in a poset with unique paths: the linearization of the bound incidence table
 (`RaySys.incZ`, zero set `{(x, z) | x ≤ p, r ≤ z}`) is representation-infinite when
 `∑ d_v² + d_p d_r ≤ ∑_{x → y} d_x d_y` and `d ≠ 0`. This is the form needed for Case 2 of
-Lemma 8.11 (`local-ray-geometry.tex:396–451`, `N = 22`, `D = 21`, `F = 1`).
+Lemma 8.11 (`local-ray-geometry.tex`, `N = 22`, `D = 21`, `F = 1`).
 
 The module of a point of the zero set is a module over the bound algebra, through the
 matrix units of the incidence algebra; isomorphisms of such modules are conjugations

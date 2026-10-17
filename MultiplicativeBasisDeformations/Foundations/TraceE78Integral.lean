@@ -4,7 +4,7 @@ import Mathlib.Tactic.IntervalCases
 /-!
 # Lemma A.6 over any coefficient ring
 
-`lem:e78-traces` (`periodic-mesh-calculations.tex:653–760`). Over any commutative coefficient
+`lem:e78-traces` (`periodic-mesh-calculations.tex`). Over any commutative coefficient
 ring, with `a = yx³`, `b = yx⁴`, `t_j = [yx^j]`:
 
 (1) the positive part of `T₅` is spanned by `t₁, t₂, t₃, t₄, [a²], [abʳ] (r ≥ 1)`

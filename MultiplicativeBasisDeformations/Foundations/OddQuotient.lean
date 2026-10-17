@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.StarCase
 /-!
 # The odd quotients of even `A` (Appendix A)
 
-`periodic-mesh-calculations.tex:478–524`, "The odd quotients of even A": with all
+`periodic-mesh-calculations.tex`, "The odd quotients of even A": with all
 mesh coefficients one, "a correction to an arrow gives a relation between a row
 path and its one-arrow rotation, with opposite classes"; rows are reduced by the
 sum of their levels to words in the middle arrows `ε`, and "going around the
@@ -379,7 +379,7 @@ variable {V : Type v'} [Quiver.{w} V] [∀ x y : V, Subsingleton (x ⟶ y)] {Q :
   (hdeck : ∀ Z, π.obj (((starTree L).zAct σ hσ s hσp).obj Z) = π.obj Z)
 
 include hh hL hπ hτ hone hc hdeck hσlev in
-/-- **Reduction by the sum of levels** (`periodic-mesh-calculations.tex:494–513`):
+/-- **Reduction by the sum of levels** (`periodic-mesh-calculations.tex`):
 if every row whose vertices all have level one (a word in the middle arrows) has
 zero class, every row of length `m + 1` has zero class. -/
 theorem reduce (m : ℕ) (hm : 1 ≤ m) (hs : (m : ℤ) + 1 = 2 + s)
@@ -572,7 +572,7 @@ theorem eps_rotate (m : ℕ) (j : ℕ) : ∀ (Z : (starTree L).ZVert)
       · rw [hrow, hPB, hrot, Quiver.Path.length_toPath, pow_one, smul_smul, pow_succ]
 
 include hh hτ hc hdeck hσlev in
-/-- **Middle words vanish** (`periodic-mesh-calculations.tex:515–524`): rotating
+/-- **Middle words vanish** (`periodic-mesh-calculations.tex`): rotating
 a word in the middle arrows `c₀` times gives its image under the deck generator
 with the sign `(-1)^{c₀} = -1`, so twice its class is zero. -/
 theorem eps_zero (ρ : StarV L ≃ StarV L)

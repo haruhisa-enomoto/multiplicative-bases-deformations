@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
 /-!
 # The degree-two part of the mesh ideal
 
-Lemma 4.13 (`scalar-normalization.tex:588–592`): "Since `Φ` preserves the mesh
+Lemma 4.13 (`scalar-normalization.tex`): "Since `Φ` preserves the mesh
 ideal, whose degree-two part from `τX` to `X` is spanned by the mesh relation at
 `X`, it multiplies that relation by some `ν_X ∈ k*`. Comparing coefficients
 gives `w(σa) w(a) = ν_X` for every mate pair at that mesh."

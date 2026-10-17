@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.IntegralCoker
 /-!
 # Lifting graded modules and maps to `ℤ/4` (Proposition 10.1, the lifting steps)
 
-`integral-deformations.tex:76–90` (proof of `prop:fixed-integral-companion`): "Lift the action
+`integral-deformations.tex` (proof of `prop:fixed-integral-companion`): "Lift the action
 matrices arbitrarily to free graded `𝒪`-modules. Their associativity defect is even. Division
 by two, followed by reduction, gives an `Ext²` class of degree zero. Equation
 (prime-field-ext-vanishing) supplies a correction. Since `(2𝒪)² = 0`, this single correction

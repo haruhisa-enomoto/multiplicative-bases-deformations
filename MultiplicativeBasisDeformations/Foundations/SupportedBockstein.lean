@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # Lemma 11.4: a coefficient criterion for supported representatives
 
-`integral-deformations.tex:205–228` (`lem:supported-bockstein`): "Let `p` be a prime, let
+`integral-deformations.tex` (`lem:supported-bockstein`): "Let `p` be a prime, let
 `C^*` be a complex of free `ℤ/p²`-modules, and put `C̄^* = C^*/pC^*`. Let `U ⊆ C²` be
 spanned by a subset of a fixed basis. Assume: (1) the coefficient-inclusion map
 `H²(C̄^*) → H²(C^*)`, induced by multiplication by `p`, is zero; (2) every

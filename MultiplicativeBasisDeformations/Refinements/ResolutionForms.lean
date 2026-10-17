@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Refinements.GeneralLift
 # Proposition 6.5 and Lemma 6.6 with `Ext` from graded projective resolutions
 
 The `Ext` hypotheses of `prop:positive-module-lifting` and `lem:square-zero-selected-lifts` are
-stated in the manuscript with `Ext` in its own sense (`positive-deformations.tex:85`: degree-`t`
+stated in the manuscript with `Ext` in its own sense (`positive-deformations.tex`: degree-`t`
 maps from a graded projective resolution). Here the Lean statements are given with exactly these
 hypotheses, for a chosen graded projective resolution of the source module, through the
 comparison `GRes.extVanish_iff`:

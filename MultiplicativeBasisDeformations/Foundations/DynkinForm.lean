@@ -9,7 +9,7 @@ import Mathlib.Algebra.BigOperators.Ring.Finset
 /-!
 # Positive definiteness of `2I - Adj(Δ)`
 
-Proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex:112–118`):
+Proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex`):
 "For `M = 2I - Adj(Δ)`, direct expansion gives, for any real vector `z`,
 `zᵀMz = ∑_{{i,j}} n_i n_j (z_i/n_i - z_j/n_j)² + ∑_i ((Mn)_i/n_i) z_i²`.
 Thus `M` is positive definite."

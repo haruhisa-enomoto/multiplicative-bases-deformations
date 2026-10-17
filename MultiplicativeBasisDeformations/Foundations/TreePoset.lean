@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.PosetRepInfinite
 /-!
 # Lemma 8.8 for tree posets
 
-`local-ray-geometry.tex:192–198`: "These counts depend only on the underlying graphs; for a
+`local-ray-geometry.tex`: "These counts depend only on the underlying graphs; for a
 tree any orientation is allowed." For a finite poset whose cover graph is acyclic, paths
 along covering relations are unique (`subsingleton_ePath`) and exist between comparable
 points (`nonempty_ePath`), so the incidence algebra is the path algebra of the oriented

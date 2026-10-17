@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.TwistedTrace
 /-!
 # Lemma A.1(1): signed coefficients on a periodic star model
 
-`lem:periodic-scalar-gauges` (1) (`periodic-mesh-calculations.tex:257–300`).
+`lem:periodic-scalar-gauges` (1) (`periodic-mesh-calculations.tex`).
 Let `π : ℤΔ → Q` be a covering of a star model commuting with translation, whose
 fibres are the orbits of `g (v, t) = (σ v, t + c₀)`, with `σ` fixing the centre.
 Every coefficient system `c` on `Q` becomes the signed preprojective one after

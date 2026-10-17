@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.WeightExtGroup
 /-!
 # Lemma 6.6, the additional gradings
 
-`lem:square-zero-selected-lifts` (`positive-deformations.tex:339–355`), last sentence: "If `Λ` and
+`lem:square-zero-selected-lifts` (`positive-deformations.tex`), last sentence: "If `Λ` and
 the `M_i` carry an additional grading by an abelian group, preserved by the multiplication and the
 actions, and `μ` is homogeneous for it, then all these choices may be made homogeneous for this
 grading."

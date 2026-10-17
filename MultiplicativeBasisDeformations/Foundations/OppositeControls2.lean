@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.BoundConfigs
 /-!
 # Lemma 8.11, Case 2 and the statement
 
-Case 2 of `lem:opposite-controls` (`local-ray-geometry.tex:396–451`): `fg = 0` with
+Case 2 of `lem:opposite-controls` (`local-ray-geometry.tex`): `fg = 0` with
 `f q², q² g ≠ 0` is excluded by the seven-object category with arrows
 `u → c → d`, `u → u'`, `l → c → r`, `l_d → d` and the relation `l → c → r = 0`
 (dimensions `3` at `c`, `2` at `u, d`, `1` elsewhere: `N = 22`, `D = 21`, `F = 1`).

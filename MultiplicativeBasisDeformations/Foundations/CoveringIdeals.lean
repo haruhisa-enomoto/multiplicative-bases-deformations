@@ -5,7 +5,7 @@ import Mathlib.Combinatorics.Quiver.Covering
 /-!
 # Relations along quiver coverings
 
-Proof of Proposition 4.1, Step 1 (`periodic-mesh-calculations.tex:57–63`):
+Proof of Proposition 4.1, Step 1 (`periodic-mesh-calculations.tex`):
 "Paths lift uniquely from a chosen start. Contextual mesh relations lift to
 contextual mesh relations with a common endpoint for all terms. Conversely every
 upstairs relation projects to one downstairs. The direct sum of the upstairs

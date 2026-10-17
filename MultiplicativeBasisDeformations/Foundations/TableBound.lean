@@ -3,11 +3,11 @@ import MultiplicativeBasisDeformations.Foundations.TableConf
 /-!
 # Incidence tables with zero relations
 
-For Case 2 of Lemma 8.11 (`local-ray-geometry.tex:396–451`) the paper uses a tree category with
+For Case 2 of Lemma 8.11 (`local-ray-geometry.tex`) the paper uses a tree category with
 one zero relation (`F = 1` in Lemma 8.8). Here: the incidence table of a finite poset with a
 set `Z` of comparable pairs declared zero, closed under extension (`incZ`), and configurations
 of it in a ray table (`ConfZ`), which make its linearization representation-finite when `kP`
-is (Lemmas 8.9 and r37 C.1 as in `TableConf`).
+is (Lemmas 8.9 and C.1 as in `TableConf`).
 -/
 
 set_option autoImplicit false

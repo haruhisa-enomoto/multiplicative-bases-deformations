@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.HochschildCochains
 # Indicator cocycles on zero products (Section 11)
 
 `lem:two-associative-tables`, `prop:indicator-cocycles` and the associativity part of
-`prop:zero-product-family` (`binary-families.tex:20–186`), for `A₀ = kP`.
+`prop:zero-product-family` (`binary-families.tex`), for `A₀ = kP`.
 
 The correction `ε(r, s) = r * s` on pairs with `rs = 0` (and `0` otherwise) is the difference
 of the stem product (associative, Prop 8.12) and the ray product. The identity `dε = 0` of

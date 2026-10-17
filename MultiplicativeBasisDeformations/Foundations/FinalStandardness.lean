@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Statements.MainTheorems
 /-!
 # Theorem 11.8(1): initial forms identify `ray A` with `ray A₀`
 
-`main-theorems.tex:74–98` (`thm:final-standardness`(1)): for a basic representation-finite `A`,
+`main-theorems.tex` (`thm:final-standardness`(1)): for a basic representation-finite `A`,
 in every characteristic, "initial forms identify `ray A` with `ray A₀`. In particular `ray A`
 is associative, `A₀ ≅ k ray A` is representation-finite".
 

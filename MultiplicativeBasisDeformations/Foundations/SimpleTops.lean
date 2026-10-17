@@ -7,9 +7,9 @@ import Mathlib.Algebra.Category.ModuleCat.Simple
 # Simple tops of indecomposable projective modules
 
 The original simple module `S_x = P_x / rad P_x` of a projective label
-(`graded-category.tex:504–507`) and the identity
+(`graded-category.tex`) and the identity
 `dim Hom_A(P_y, S_x) = δ_{xy}` used in the proof of Proposition 2.10. The
-code adapts general module theory from `formalization/magnitude_conjecture`
+code adapts general module theory from the magnitude-conjecture formalization
 (`Algebra/RightModuleSimpleTop.lean` and
 `Algebra/RightModuleBasicSimpleDimension.lean`), stated here for an
 `IndSkeleton`.

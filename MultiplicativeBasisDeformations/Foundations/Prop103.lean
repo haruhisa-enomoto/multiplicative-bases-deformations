@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.PrimeCoker
 /-!
 # Proposition 10.3 in coefficients
 
-`integral-deformations.tex:188–210` (`prop:integral-bockstein`): "In Lemma 10.2, the map `j` is
+`integral-deformations.tex` (`prop:integral-bockstein`): "In Lemma 10.2, the map `j` is
 zero by (mod-four-mesh-annihilator). Injectivity of `Ψ₄` gives `i_* = 0`."
 
 In coefficients (`RaySys.Sys.IStar`): for a cochain `z` of character `χ` over `𝒪 = ℤ/4` with

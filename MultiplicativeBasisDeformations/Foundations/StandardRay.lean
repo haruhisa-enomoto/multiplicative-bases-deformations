@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.TableOfBasis
 /-!
 # `A ≅ k ray A` implies that `A` is standard in characteristic two (Theorem 11.8(2))
 
-`main-theorems.tex:92–96`: "Proposition 8.3(2) and (3) give the initial-form comparison […]
+`main-theorems.tex`: "Proposition 8.3(2) and (3) give the initial-form comparison […]
 Combine them with Proposition 4.14 and Corollary 4.15 to obtain (1) and (2)."
 
 A multiplicative ray transversal killing the zero ray products (`A ≅ k ray A`) is a basis whose

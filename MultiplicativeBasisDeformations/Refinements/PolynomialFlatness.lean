@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Refinements.FlatPerturbationDim
 /-!
 # Corollary 12.4: polynomial mesh flatness
 
-`deformation-refinements.tex:228–245` (`cor:polynomial-mesh-flatness`). Replace the higher
+`deformation-refinements.tex` (`cor:polynomial-mesh-flatness`). Replace the higher
 coefficients in Lemma 12.3 by elements of a polynomial ring. Every fixed path basis of `C` is a
 basis of the resulting family over the polynomial ring, and it remains a basis after arbitrary
 base change.

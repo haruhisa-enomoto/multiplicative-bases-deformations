@@ -4,11 +4,11 @@ import MultiplicativeBasisDeformations.Foundations.ARBridge
 # The radical filtration of `ind(mod A)`
 
 The powers `J^n` of the categorical radical of `ind(mod A)`
-(`graded-category.tex:60–80`) form a decreasing multiplicative filtration:
+(`graded-category.tex`) form a decreasing multiplicative filtration:
 `J^{n+1} ⊆ J^n` and `J^m ∘ J^n ⊆ J^{m+n}`. For a representation-finite algebra
 the radical is nilpotent: the manuscript argues that `J` consists of the
 matrix entries of the Jacobson radical of the endomorphism algebra of a finite
-additive generator (`graded-category.tex:65–70`). The formal nilpotence uses
+additive generator (`graded-category.tex`). The formal nilpotence uses
 the vendored nilpotence of the categorical radical of `mod A`, which is proved
 by that argument (`MBDVendor.Magnitude.Algebra.RightModuleRadical`,
 `nilpotentRadicalDataOfArtinianGenerator`).

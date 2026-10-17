@@ -8,7 +8,7 @@ biproduct is a retract of one of the summands; a retract with nonzero source
 of an object with local endomorphism ring is an isomorphism. These are used
 in Lemma 4.6 ("Decomposing the latter over the finitely many indecomposable
 `B`-modules shows that only finitely many isomorphism classes can occur",
-`scalar-normalization.tex:296–299`).
+`scalar-normalization.tex`).
 -/
 
 set_option autoImplicit false

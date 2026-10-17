@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.WeightExt
 /-!
 # Weight-homogeneous lifts (Proposition 10.1, weight refinement)
 
-`integral-deformations.tex:63–67`: "All these constructions can be chosen to preserve the
+`integral-deformations.tex`: "All these constructions can be chosen to preserve the
 simultaneous integer weights: […] the corrections can be chosen in each weight component."
 
 Given finitely many integer weight gradings on `Λ = A⁽²⁾`, `Λ' = A⁽⁴⁾` and a module `M`,

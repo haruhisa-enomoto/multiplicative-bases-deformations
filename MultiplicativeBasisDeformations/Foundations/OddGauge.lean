@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.PeriodicGauge
 /-!
 # The gauge on odd quotients of even `A` (Lemma A.1(2))
 
-`lem:periodic-scalar-gauges` (2), `periodic-mesh-calculations.tex:292–300`:
+`lem:periodic-scalar-gauges` (2), `periodic-mesh-calculations.tex`:
 "For the odd even-`A` quotient, first keep the scales of the arrows `ε_j` equal
 to one and choose the root mesh scales to normalize the coefficients of
 `ε_{j-2} ε_{j-1}`. The recurrence on each arm edge advances `j` by two. … Its

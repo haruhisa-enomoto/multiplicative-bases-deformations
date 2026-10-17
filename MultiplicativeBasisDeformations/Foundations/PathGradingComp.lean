@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.PathGrading
 Composition with a homogeneous morphism of degree `m` shifts homogeneous
 components by `m`. Together with the finiteness of the decomposition into
 components, this reduces statements about the mesh sequences of `C(Q, c)` to
-homogeneous families (`graded-category.tex:156–157`).
+homogeneous families (`graded-category.tex`).
 -/
 
 set_option autoImplicit false

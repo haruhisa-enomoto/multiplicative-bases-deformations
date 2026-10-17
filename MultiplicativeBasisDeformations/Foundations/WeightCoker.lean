@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.RowSpan
 /-!
 # Weights of mesh corrections (Proposition 7.6, weights)
 
-`weights-and-parameters.tex:248–258`: "a mesh weight `w` grades `V_{m+1}(C)` by giving a
+`weights-and-parameters.tex`: "a mesh weight `w` grades `V_{m+1}(C)` by giving a
 path at row `v` the weight `w(path) − ν_v`, and grades `U_m(C)` by giving a path parallel
 to an arrow `a` the weight `w(path) − w(a)`. The map `D_m` preserves these gradings,
 because each term `(σa)a` of the mesh at `v` has weight `ν_v`. Hence `coker D_m` is
@@ -149,7 +149,7 @@ variable {L : LocalFamily (k := k) (meshFam Q c)} {D : MeshData (meshFam Q c) L}
   [hfd : ∀ x y : V, FiniteDimensional k (meshFam Q c x ⟶ meshFam Q c y)]
   {q : ℕ} {μ : (Alg D.F0)ᵐᵒᵖ →ₗ[k] (Alg D.F0)ᵐᵒᵖ →ₗ[k] (Alg D.F0)ᵐᵒᵖ}
 
-/-- **Proposition 7.6, weights** (`weights-and-parameters.tex:396–410`): the class `Ψ[μ]`
+/-- **Proposition 7.6, weights** (`weights-and-parameters.tex`): the class `Ψ[μ]`
 of a cocycle of character `χ` lies in the span of the spanning rows of relative weight
 `χ`. -/
 theorem Ψc_mem_rowSpan_char (J : D.InjData) (h1 : DegOne D)

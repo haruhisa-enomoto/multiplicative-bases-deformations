@@ -7,7 +7,7 @@ import Mathlib.Data.List.Induction
 /-!
 # The centre corner of `E₈` in characteristic two (Appendix B)
 
-`characteristic-two-mesh-calculations.tex:225–276`. In
+`characteristic-two-mesh-calculations.tex`. In
 `R₅ = k⟨x, y⟩/(x⁵, y³, (x + y)²)` over a ring with `2 = 0`, put
 `ω₃ = yx³y`, `ω₄ = yx⁴y`, `ω₅ = ω₄x³y`. "The following words span `R₅`:
 `xⁱ`, `xⁱyxʲ` (`j ≤ 4`), `xⁱω₃`, `xⁱω₄xʲ` (`j ≤ 3`), `xⁱω₅`. Their span contains `1`

@@ -8,7 +8,7 @@ import MultiplicativeBasisDeformations.Foundations.HochschildMesh
 /-!
 # Normed bases of basic algebras in characteristic two (given Corollary 10.5)
 
-The proof of Proposition 8.3(1) in characteristic two (`main-theorems.tex:12–35`), for a
+The proof of Proposition 8.3(1) in characteristic two (`main-theorems.tex`), for a
 basic representation-finite algebra `A`: the rows of Proposition 6.1 with their dual mesh
 weights (`residual_dual`), the filtered structure of `A` over `A₀` (`posFiltA`), and the
 characteristic-two step on `A₀` (`char2_A0`). Corollary 10.5 is a hypothesis here; it is
@@ -69,7 +69,7 @@ def A0MultAR (v₀ : S.ARVertex)
   MeshWalk.A0Mult (S.arMeshData b) v₀ hF
 
 /-- **A basic algebra in characteristic two has a normed multiplicative ray basis**, given
-Corollary 10.5 for its algebra `A₀` (proof of Proposition 8.3(1), `main-theorems.tex:12–35`). -/
+Corollary 10.5 for its algebra `A₀` (proof of Proposition 8.3(1), `main-theorems.tex`). -/
 theorem exists_normedRayBasis_char2 (h2 : (2 : k) = 0) (hA : IsRepresentationFinite k A)
     {n : ℕ} {e : Fin n → A} (he : CompleteOrthogonalIdempotents e)
     (hprim : ∀ i, IsPrimitiveIdempotent (e i))

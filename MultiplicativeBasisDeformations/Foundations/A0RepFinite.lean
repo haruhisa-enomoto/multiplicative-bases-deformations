@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
 /-!
 # Proposition 2.10(2): `A₀` is representation-finite
 
-`prop:projective-evaluation`(2) (`graded-category.tex:484–530`): evaluation
+`prop:projective-evaluation`(2) (`graded-category.tex`): evaluation
 `add C → mod A₀` is an equivalence, so the indecomposable `A₀`-modules are the
 evaluations of the finitely many objects of `C`.
 

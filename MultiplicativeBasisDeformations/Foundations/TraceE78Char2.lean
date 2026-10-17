@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.TraceAlgebraChar2
 /-!
 # Ordinary traces of `E_7` and `E_8` in characteristic two (Appendix B)
 
-`characteristic-two-mesh-calculations.tex:278–302`: "Apply Lemma A.6(1) in
+`characteristic-two-mesh-calculations.tex`: "Apply Lemma A.6(1) in
 characteristic two. For `a = yx³` and `b = yx⁴`, its block relations and `3[ab] = 0`
 give `[a²W] = 0` (`W ≠ 1`), `[abW] = [baW]` (`W ≠ 1`), `[ab] = 0`, `[b^q] = 0`
 (`q ≥ 2`). Words with two `a`'s and at least three blocks vanish by bringing the `a`'s

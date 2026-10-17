@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.RepFinite
 # Thinness of the graded covering category
 
 Lemma 4.8, first part (`lem:lifted-projective-evaluation`,
-`scalar-normalization.tex:338–344`): "Height gives `End_L(x) = k`. By
+`scalar-normalization.tex`): "Height gives `End_L(x) = k`. By
 Lemma 4.7, every full subcategory on two objects is representation-finite. It
 is directed. Every subspace of its nonidentity morphism space is an ideal. By
 Lemma 3.1(1), there are only finitely many such ideals. A space of dimension at

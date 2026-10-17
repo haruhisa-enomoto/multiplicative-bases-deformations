@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.RayBasis
 /-!
 # Ray products
 
-Lemma 3.6 (`projective-rays.tex:180–196`): "Every unit of `R_y` is a nonzero
+Lemma 3.6 (`projective-rays.tex`): "Every unit of `R_y` is a nonzero
 scalar times `1 + n` with `n ∈ rad R_y`. Thus changing representatives replaces
 their product, up to a nonzero scalar and endpoint units, by `fh + fnh`. The
 subbimodule `M(f,h)` is unchanged. If `fh ∉ M(f,h)`, the chain property forces

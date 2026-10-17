@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.Prop103
 /-!
 # Corollary 10.5 with the residual characters in `W(P)`
 
-`cor:zero-supported-coverage` (`integral-deformations.tex:238`): "Assume the smaller-table lifting
+`cor:zero-supported-coverage` (`integral-deformations.tex`): "Assume the smaller-table lifting
 hypothesis of Theorem 9.1. Then every nonzero line `HH²(A₀)_{χ_i}`, with `i ∈ I₀`, has a nonzero
 representative supported on composable pairs `(r, s)` with `rs = 0` and `r * s ≠ 0` […]. Its
 value at such a pair lies in the line `U_{r*s}`."

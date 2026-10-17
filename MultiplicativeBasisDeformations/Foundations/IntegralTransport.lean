@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.GModLemmas
 /-!
 # Twice a first-order lift
 
-`integral-deformations.tex:173–177` (proof of Lemma 10.2): "take module and map corrections for
+`integral-deformations.tex` (proof of Lemma 10.2): "take module and map corrections for
 a first-order `𝔽₂`-cocycle and use twice their lifts over `𝒪`. Every equation is linear in `ε`;
 multiplication by two makes it depend only on the modulo-two base matrices."
 
@@ -116,7 +116,7 @@ theorem πs_single (b : Λ') : πs (π := π) (single b) = single (π b) := by
   funext i; simp only [πs, single, Bar.cons]; split_ifs <;> simp
 
 include hπ hμ' in
-/-- **Twice a lifted action** (`integral-deformations.tex:173–177`). -/
+/-- **Twice a lifted action** (`integral-deformations.tex`). -/
 def actLiftTw (L : ActLift μ q MM) : ActLift μ' q MM' where
   ν a := twMap HM HM (L.ν (πs (π := π) a))
   good :=

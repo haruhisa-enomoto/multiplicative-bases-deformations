@@ -3,8 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.DegreeDeck
 /-!
 # Mesh corrections on the odd quotients of even `A`
 
-Appendix A, "The odd quotients of even A" (`periodic-mesh-calculations.tex:
-478–524`): after normalizing all mesh coefficients to one (Lemma A.1(2)), rows are
+Appendix A, "The odd quotients of even A" (`periodic-mesh-calculations.tex`): after normalizing all mesh coefficients to one (Lemma A.1(2)), rows are
 reduced by the sum of their levels to words in the middle arrows, which vanish
 when two is invertible.
 -/

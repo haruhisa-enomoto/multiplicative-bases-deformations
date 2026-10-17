@@ -4,12 +4,12 @@ import MultiplicativeBasisDeformations.Foundations.GeneratingPaths
 # Section 9: successors and endpoint types
 
 `def:primitive-characters`, `set:fixed-character`, `def:successor-types`
-(`primitive-ray-equations.tex:18–109`): for a positive primitive character `χ ∈ L`,
+(`primitive-ray-equations.tex`): for a positive primitive character `χ ∈ L`,
 `q̂_x = q_x` if `q_x ≠ 0` and `ℓ(q_x) = χ`, and `0` otherwise. A nonidentity ray is
 shiftable if a ray with the same endpoints has weight `ℓ(r) + χ` (its successor `r⁺`). The
 successor is obtained by one local generator of character `χ` (`succ_by_gen`), which gives the
 three endpoint types `L`, `R`, `B`. Also `lem:primitive-action-generation`
-(`primitive-ray-equations.tex:129–150`).
+(`primitive-ray-equations.tex`).
 -/
 
 set_option autoImplicit false

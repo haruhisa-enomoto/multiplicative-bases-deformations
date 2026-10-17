@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.ExtUnique
 /-!
 # Graded `Ext` from graded projective resolutions (Lemma 6.3)
 
-`positive-deformations.tex:85`: "Internal degree `t` in `Hom` or `Ext` means maps from a graded
+`positive-deformations.tex`: "Internal degree `t` in `Hom` or `Ext` means maps from a graded
 projective resolution to the target which raise degree by `t`." This file defines that `Ext`
 and compares it with the bar `Ext` (`ExtVanish`) used in the rest of the formalization.
 

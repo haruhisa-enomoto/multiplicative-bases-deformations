@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.StemProduct
 /-!
 # Corollary 8.13: active zero pairs
 
-`cor:active-zero-pairs` (`local-ray-geometry.tex:518–542`): for rays `r : x → y`,
+`cor:active-zero-pairs` (`local-ray-geometry.tex`): for rays `r : x → y`,
 `s : y → z` with `rs = 0` and `r * s ≠ 0`, both are generating, `r * s = r q_y s`, and this
 ray is annihilated by both endpoint radicals.
 -/

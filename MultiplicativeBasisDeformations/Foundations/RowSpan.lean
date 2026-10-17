@@ -5,11 +5,11 @@ import MultiplicativeBasisDeformations.Foundations.RowRotation
 # Cokernels spanned by given rows
 
 In characteristic two the derivative cokernels need not vanish
-(`prop:residual-correction-spaces`, `positive-deformations.tex:23–48`): each periodic
+(`prop:residual-correction-spaces`, `positive-deformations.tex`): each periodic
 component contributes at most one line, spanned by a single row. We record "the
 cokernel classes of all rows of degree at least three lie in the span of the
 classes of the rows in `S`" (`CokerSpan`), and show that it is preserved by
-rescaling arrows and entire mesh relations (`periodic-mesh-calculations.tex:236–241`:
+rescaling arrows and entire mesh relations (`periodic-mesh-calculations.tex`:
 "rescaling arrows and entire relations changes the mesh derivative by invertible
 diagonal maps, so it changes neither its cokernel …").
 -/

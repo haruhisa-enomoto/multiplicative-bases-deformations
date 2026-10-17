@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.ProjectiveEvaluation
 /-!
 # Proposition 10.1(1) in all degrees and 10.1(3): the presentation of `E₄`
 
-`prop:fixed-integral-companion` (`integral-deformations.tex:46–60`): (1) the Hom modules of
+`prop:fixed-integral-companion` (`integral-deformations.tex`): (1) the Hom modules of
 `E₄` are free over `𝒪` and `E₄/2E₄ = C⁽²⁾`; "the same two reductions exclude negative-degree Hom
 spaces"; (3) "`E₄` has a quadratic scalar mesh presentation with unit coefficients reducing to
 the all-one presentation of `C⁽²⁾`".

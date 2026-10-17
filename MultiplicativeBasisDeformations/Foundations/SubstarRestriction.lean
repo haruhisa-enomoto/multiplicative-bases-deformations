@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.StarCorner
 /-!
 # Restricting `Π` of a star to a substar
 
-`periodic-mesh-calculations.tex:871–876`: "Removing the outer vertex of the long
+`periodic-mesh-calculations.tex`: "Removing the outer vertex of the long
 `E₈` arm at every repetition coordinate gives exactly this mesh category by
 (5.2)." On `Π` this is the identification of `Π(Δ)` modulo the deleted vertices
 with `Π(Δ')` of the retained substar `Δ'`: paths through deleted vertices vanish,

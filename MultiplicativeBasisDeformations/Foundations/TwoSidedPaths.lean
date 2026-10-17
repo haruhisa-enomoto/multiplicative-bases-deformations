@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.CrownRows
 /-!
 # Lemma 9.3: two-sided factor paths
 
-`integral-partial-lifts.tex:126–150` (`lem:two-sided-factor-paths`): "let `b` be a two-sided
+`integral-partial-lifts.tex` (`lem:two-sided-factor-paths`): "let `b` be a two-sided
 ray. If `s` has type `L` and `bs` is nonzero and shiftable, then every ordinary path
 representing `b` consists of two-sided arrows. Dually, the same conclusion holds if `r` has
 type `R` and `rb` is nonzero and shiftable."

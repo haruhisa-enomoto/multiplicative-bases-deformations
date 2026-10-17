@@ -8,7 +8,7 @@ import MultiplicativeBasisDeformations.Foundations.PsiInjective
 /-!
 # Retained mesh coefficients at `t = 1` (Proposition 12.8, mesh presentations)
 
-`deformation-refinements.tex:403–412`: "Lift the arrows using these bases. In each path degree
+`deformation-refinements.tex`: "Lift the arrows using these bases. In each path degree
 `q ≥ 3`, decompose their current mesh errors into the image of the original derivative and the
 span of the retained `p_i` of that degree. The chosen splitting removes the image part by an arrow
 correction of degree `q − 1`. […] these corrections do not change earlier coefficients, so the

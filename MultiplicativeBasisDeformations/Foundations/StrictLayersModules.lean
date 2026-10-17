@@ -11,7 +11,7 @@ The hypotheses of the abstract Lemma 2.5 (`StrictLayers.strict`) hold in
 * the right radical approximation of a module `Y` is the right mesh of `Y`:
   the biproduct of the minimal right almost split maps of the indecomposable
   summands of `Y` (with `rad P → P` at projective summands) and its kernel, a
-  biproduct of left almost split maps (`graded-category.tex:238–258`);
+  biproduct of left almost split maps (`graded-category.tex`);
 * the Krull–Schmidt split–radical normal form.
 
 Both are supplied by the vendored Auslander--Reiten library

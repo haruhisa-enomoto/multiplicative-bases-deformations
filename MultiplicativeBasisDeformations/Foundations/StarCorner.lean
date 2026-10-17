@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
 /-!
 # The centre corner of the preprojective category of a star (Lemma A.3)
 
-`lem:star-return-reduction` (`periodic-mesh-calculations.tex:372–393`). For a
+`lem:star-return-reduction` (`periodic-mesh-calculations.tex`). For a
 star rooted at its centre `o`, oriented away from `o`, let `x_i` be the closed
 path of length two along arm `i`. The vertices of arm `i` are `v_0 = o, v_1, …`.
 "For `j ≥ 2`, the mesh at `v_{j-1}` replaces the backtrack `v_{j-1} v_j v_{j-1}`

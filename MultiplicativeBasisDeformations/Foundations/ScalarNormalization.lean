@@ -8,7 +8,7 @@ import MultiplicativeBasisDeformations.Foundations.ProjectiveIdempotents
 /-!
 # Proposition 4.14 for a scalar mesh category
 
-`prop:scalar-normalization` (`scalar-normalization.tex:617–646`), for the deck
+`prop:scalar-normalization` (`scalar-normalization.tex`), for the deck
 grading of a scalar mesh category with at most one arrow between vertices and
 mesh data (in the application, `k(Γ_A)` with `arMeshData`). The cover `L` of the
 projective labels is thin with a multiplicative basis (Lemmas 4.8–4.12), the

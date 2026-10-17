@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.RelativeHochschild
 /-!
 # Remark 11.5: the indicator cocycles span `HH²(A₀)_{>0}`
 
-`rem:classical-mixtures` (`binary-families.tex:215`): if `V` is the span of the indicator cocycles
+`rem:classical-mixtures` (`binary-families.tex`): if `V` is the span of the indicator cocycles
 of Proposition 11.2, Corollary 10.5 gives the exact sequence
 `0 → V ∩ B²(A₀) → V → HH²(A₀)_{>0} → 0`.
 

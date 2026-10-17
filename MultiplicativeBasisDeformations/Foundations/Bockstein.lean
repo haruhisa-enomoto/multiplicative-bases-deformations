@@ -8,7 +8,7 @@ import MultiplicativeBasisDeformations.Foundations.IndicatorRel
 /-!
 # Supported representatives through the connecting map (Corollary 10.5, coefficient form)
 
-`cor:zero-supported-coverage` (`integral-deformations.tex:238–277`) on the coefficient complexes
+`cor:zero-supported-coverage` (`integral-deformations.tex`) on the coefficient complexes
 of `CharComplex`, with `𝒪 = ℤ/4` and the sequence `0 → 𝔽₂ → 𝒪 → 𝔽₂ → 0`: Lemma 10.4
 (`supported_bockstein`) applies to `C¹ → C² → C³` of character `χ` with `U` the pairs `(u, v)`
 with `uv = 0` whose stem product is the ray `w₂(u, v)`. Condition (2) is Theorem 9.1(3): a

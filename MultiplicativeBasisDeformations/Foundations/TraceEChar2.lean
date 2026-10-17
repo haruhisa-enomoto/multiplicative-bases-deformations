@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.TraceE78Char2
 /-!
 # Exceptional twisted traces in characteristic two (Appendix B)
 
-`characteristic-two-mesh-calculations.tex:278–330`. For a star of type `E` with short
+`characteristic-two-mesh-calculations.tex`. For a star of type `E` with short
 arm `a` (`L a = 0`), medium arm `b` (`L b = 1`) and long arm `c`, write `x, y` for the
 closed paths along `c, b`; then `x^m = y³ = (x + y)² = 0` with `m = L c + 2`.
 

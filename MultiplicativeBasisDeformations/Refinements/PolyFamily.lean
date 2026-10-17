@@ -5,7 +5,7 @@ import Mathlib
 
 A family `t ↦ f t` of vectors indexed by parameter values `t : I → k` is *polynomial*
 (`IsPoly`) if it is a finite sum `Σ_j t^{e_j} v_j` of monomials with vector coefficients. These
-are the specializations of the `k[t_i]`-valued data of `deformation-refinements.tex:375–400`.
+are the specializations of the `k[t_i]`-valued data of `deformation-refinements.tex`.
 Polynomial families are closed under sums, linear and bilinear maps; over an infinite field a
 polynomial family vanishing on the torus `t_i ≠ 0` vanishes identically
 (`IsPoly.eq_zero_of_torus`).

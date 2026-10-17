@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Refinements.LiftedRadical
 /-!
 # Proposition 6.5(3): regular lifts at projective labels
 
-`positive-deformations.tex:308–312`: "If `M_i = e_xΛ` for a primitive idempotent `e_x` of `Λ₀`,
+`positive-deformations.tex`: "If `M_i = e_xΛ` for a primitive idempotent `e_x` of `Λ₀`,
 we may choose `M_i^B = e_xB` for a lift `e_x ∈ B` of that idempotent. […] At a projective
 label, the actual regular module `e_xB` has the required associated grading."
 

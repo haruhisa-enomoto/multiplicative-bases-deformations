@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.IntegralTransport
 /-!
 # Regular lifts of cyclic projectives
 
-`integral-deformations.tex:52–54, 72–74`: "At projective labels the modules are `e_xA^{(4)}`."
+`integral-deformations.tex`: "At projective labels the modules are `e_xA^{(4)}`."
 
 If a graded module `M` over `Λ` is cyclic projective, `M ≅ e Λ` through a generator `u` and an
 inverse `ψ`, and `e = π ẽ` for an idempotent `ẽ` of `Λ̃`, then every lift `M̃` of `M` is

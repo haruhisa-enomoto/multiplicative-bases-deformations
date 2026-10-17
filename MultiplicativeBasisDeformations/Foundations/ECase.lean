@@ -9,7 +9,7 @@ import MultiplicativeBasisDeformations.Foundations.TraceE78
 /-!
 # The types `E`: traces and the brick hypothesis
 
-Appendix A, `periodic-mesh-calculations.tex:631–643, 863–880`: the possible
+Appendix A, `periodic-mesh-calculations.tex`: the possible
 correction classes of `E₆`, `E₇`, `E₈` live in path degrees six, ten and
 eighteen; their periods are excluded by deletion to `D₄` (Lemma A.5) or to `E₇`
 (Lemma A.7) and the brick hypothesis.
@@ -116,7 +116,7 @@ variable {V : Type v'} [Quiver.{w} V] [∀ x y : V, Subsingleton (x ⟶ y)] {Q :
 
 include hπ hτ hsurj hdeck hfib h0 hθ in
 /-- **Periods dividing two: deletion to `D₄`** (Lemma A.5 and
-`periodic-mesh-calculations.tex:631–643`). -/
+`periodic-mesh-calculations.tex`). -/
 theorem not_brick_D4 (n : ℕ) (hn : n * c0 = 4) (hθn : ∀ i, (θ ^ n) i = i) :
     ¬ BrickHypothesis c := by
   refine not_brick_star hQ π c hπ hτ hsurj ρ hρ c0 hρp hdeck hfib
@@ -139,7 +139,7 @@ theorem not_brick_D4 (n : ℕ) (hn : n * c0 = 4) (hθn : ∀ i, (θ ^ n) i = i) 
 
 include hπ hτ hsurj hdeck hfib in
 /-- **Periods four and eight of `E₈`: deletion to `E₇`** (Lemma A.7 and
-`periodic-mesh-calculations.tex:871–876`). -/
+`periodic-mesh-calculations.tex`). -/
 theorem not_brick_E7 {a b c' : Fin 3} (hab : a ≠ b) (hac : a ≠ c') (hbc : b ≠ c') (hLa : L a = 0)
     (hLb : L b = 1) (hLc : L c' = 3) (hρid : ∀ v, ρ v = v) (n : ℕ) (hn : n * c0 = 16) :
     ¬ BrickHypothesis c := by
@@ -209,7 +209,7 @@ variable {V : Type v'} [Quiver.{w} V] [Fintype V] [DecidableEq V] [∀ x y : V, 
   {k : Type u} [Field k] (c : MeshCoefficients k Q)
 
 /-- **Mesh corrections vanish for the types `E`** under the brick hypothesis,
-when two is invertible (`periodic-mesh-calculations.tex:544–880`). -/
+when two is invertible (`periodic-mesh-calculations.tex`). -/
 theorem e_surjective (hbrick : BrickHypothesis c) (h2 : (2 : k) ≠ 0) (L : Fin 3 → ℕ)
     (π : (starTree L).ZVert ⥤q V) (hπ : π.IsCovering)
     (hτ : ∀ Y, π.obj ((starTree L).ztau Y) = hQ.tauE (π.obj Y)) (hsurj : ∀ x : V, ∃ X, π.obj X = x)

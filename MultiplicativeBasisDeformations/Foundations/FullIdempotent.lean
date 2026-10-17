@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.CornerRepFinite
 /-!
 # Full idempotents: Morita equivalence for representation-finiteness
 
-For Lemma 4.7 (`lem:homogeneous-projection`, `scalar-normalization.tex:305–320`):
+For Lemma 4.7 (`lem:homogeneous-projection`, `scalar-normalization.tex`):
 "Repeated labels give matrix multiplicities, and the distinct labels give an
 idempotent corner of `B`. Thus `B'` is representation-finite by Morita
 equivalence and Lemma 3.1(1)."

@@ -8,7 +8,7 @@ import MultiplicativeBasisDeformations.Foundations.LocalMesh
 # The mesh data of `k(Γ_A)`
 
 Lemma 2.7 and Proposition 2.6(1)(2) for `C = k(Γ_A)` in the form used by the
-proof of Proposition 2.10 (`graded-category.tex:484–502`): the categorical
+proof of Proposition 2.10 (`graded-category.tex`): the categorical
 radical of `C` is its positive-degree part (`ScalarMeshCategory.localFamily`),
 the right mesh maps at `x` are the arrows ending at `x`, and at a nonprojective
 `x` the sequences

@@ -5,10 +5,10 @@ import Mathlib.Combinatorics.SimpleGraph.Acyclic
 /-!
 # The repetition `ℤΔ` of a tree and the signed preprojective category `Π(Δ)`
 
-`scalar-normalization.tex:44–49` and `periodic-mesh-calculations.tex:65–91`.
+`scalar-normalization.tex` and `periodic-mesh-calculations.tex`.
 
 We use the height coordinates of Proposition 4.1(2)
-(`periodic-mesh-calculations.tex:190–204`). Fix a finite graph `Δ` with a proper
+(`periodic-mesh-calculations.tex`). Fix a finite graph `Δ` with a proper
 two-colouring `par`. A vertex of `ℤΔ` is a pair `(v, t)` with `t ≡ par v`
 (mod 2), its height being `t`; there is an arrow `(u, t) → (v, t + 1)` for every
 edge `u — v`. Translation is `(v, t) ↦ (v, t - 2)`. For an orientation of `Δ`

@@ -3,14 +3,14 @@ import MultiplicativeBasisDeformations.Foundations.NormedBasis
 /-!
 # Right modules, representation-finite algebras, and the radical of `ind(mod A)`
 
-Conventions of the frozen manuscript (`main.tex:376–400`): modules are
+Conventions of the manuscript (`main.tex`): modules are
 finite-dimensional right modules, and maps compose from left to right, so the
 manuscript's `fg` is Lean's `f ≫ g`.
 
 * Right `A`-modules are modelled as `ModuleCat Aᵐᵒᵖ`.
 * `IsRepresentationFinite k A`: finitely many isomorphism classes of
   finite-dimensional indecomposable right modules. Borrowed from
-  `formalization/magnitude_conjecture`,
+  the magnitude-conjecture formalization,
   `MagnitudeConjecture/Algebra/RightModuleFiniteType.lean` (commit
   `3ac9f6a22`).
 * `IndSkeleton k A`: one representative of each isomorphism class of
@@ -20,7 +20,7 @@ manuscript's `fg` is Lean's `f ≫ g`.
   spanned by the radical morphisms `f` (those with `1 - f g` invertible for all
   `g : Y ⟶ X`), and `J^{n+1}(X, Y)` is spanned by composites `f g` with `f`
   radical and `g ∈ J^n`, all intermediate objects being indecomposable
-  (`graded-category.tex:60–70`).
+  (`graded-category.tex`).
 * `Irr(X, Y) = J(X, Y) / J²(X, Y)`.
 * Almost split sequences.
 -/
@@ -118,8 +118,8 @@ variable {C : Type*} [Category C]
 
 /-- A right almost split morphism: not a split epimorphism, and every
 morphism into its target that is not a split epimorphism factors through it.
-Borrowed from `formalization/op_conjecture`,
-`OpConjecture/RepresentationTheory/AlmostSplitCofinite.lean`. -/
+The same definition appears in the vendored library as
+`MBDVendor.QSE.IsRightAlmostSplit`. -/
 structure IsRightAlmostSplit {E Z : C} (f : E ⟶ Z) : Prop where
   not_isSplitEpi : ¬ IsSplitEpi f
   factors : ∀ {X : C} (g : X ⟶ Z), ¬ IsSplitEpi g → ∃ h : X ⟶ E, h ≫ f = g

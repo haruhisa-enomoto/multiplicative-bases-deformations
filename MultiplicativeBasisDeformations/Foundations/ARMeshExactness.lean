@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.LayerExactnessDual
 # The mesh sequences of `k(Γ_A)` on homogeneous paths
 
 Proposition 2.6(1)(2) transported to `k(Γ_A) = C(Γ_A, c)` through the
-realization of Proposition 2.6(3) (`graded-category.tex:328–363`). For a
+realization of Proposition 2.6(3) (`graded-category.tex`). For a
 homogeneous family of morphisms of `kQ` the statements read, modulo the mesh
 ideal:
 

@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.A0Graded
 /-!
 # Lemma 3.7 for the categorical filtration
 
-`projective-rays.tex:205–244` (`lem:ray-degree`): "Write `F^nA(x,y) = J^n(P_y,P_x)` […] Every
+`projective-rays.tex` (`lem:ray-degree`): "Write `F^nA(x,y) = J^n(P_y,P_x)` […] Every
 space `A₀(x,y)_d` of degree `d` has dimension at most one, and initial forms give a bijection
 between the nonzero rays of `A` and the nonzero spaces `A₀(x,y)_d`. If the endpoint
 subbimodules satisfy `U_{r'} ⊊ U_r`, then `deg_J(r') > deg_J(r)`."

@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ASort
 /-!
 # Top paths of `Π(A_M)` for a path rooted at an end
 
-`characteristic-two-mesh-calculations.tex:150–172`: for the line on `1, …, M`,
+`characteristic-two-mesh-calculations.tex`: for the line on `1, …, M`,
 `(V_d)_{ij} = 1` exactly when `|i − j| ≤ d ≤ min(i + j − 2, 2M − i − j)` and
 `d ≡ i − j (mod 2)`, for `0 ≤ d ≤ M − 1`; "`V_{M−1}` is reflection". With the lower bound
 `eq:preprojective-lower-bound`, every vertex of `Π(A_M)` has a nonzero path of degree

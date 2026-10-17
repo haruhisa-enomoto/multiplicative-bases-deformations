@@ -7,7 +7,7 @@ import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
 /-!
 # Lemma 5.2 in its abstract form
 
-`mesh-deformations.tex:157–178` (`lem:deletion-brick`): "Let `𝒟` be a full additive subcategory
+`mesh-deformations.tex` (`lem:deletion-brick`): "Let `𝒟` be a full additive subcategory
 of a finite-length `k`-linear abelian category, closed under images and direct summands. Assume
 finite-dimensional Hom spaces and Krull–Schmidt decomposition. For any set `Σ` of indecomposable
 isomorphism classes, every nonempty quotient `ind 𝒟/[Σ]` has an object whose endomorphism ring

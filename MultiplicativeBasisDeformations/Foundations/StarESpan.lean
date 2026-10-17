@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.TraceEChar2
 /-!
 # The types `E` in characteristic two (Appendix B)
 
-`characteristic-two-mesh-calculations.tex:330–352`: "Lemma A.2 now bounds the possible
+`characteristic-two-mesh-calculations.tex`: "Lemma A.2 now bounds the possible
 positive correction degrees. Ordinary degree `d` requires `s ∣ (d/2 − 1)`; for
 `d = 4, 8, 16, 28` these integers are `1, 3, 7, 13`. … Period one is excluded in every
 case by the central `D₄` deletion and Lemma A.5. … For each fixed component, the list

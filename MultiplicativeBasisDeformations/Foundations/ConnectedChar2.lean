@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.ConnectedCase
 /-!
 # Mesh corrections on a connected periodic quiver in characteristic two
 
-`characteristic-two-mesh-calculations.tex:13–20`: "We will show that each periodic
+`characteristic-two-mesh-calculations.tex`: "We will show that each periodic
 component contributes at most one correction line, represented by a single path."
 On a finite connected stable translation quiver with a finite-dimensional scalar mesh
 category satisfying the brick hypothesis, in characteristic two, the cokernels of the

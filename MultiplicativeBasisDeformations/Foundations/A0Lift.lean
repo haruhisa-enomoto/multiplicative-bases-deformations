@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.RayPres
 /-!
 # Weight lifting for the ray table of `A₀`
 
-Proposition 8.3(3) for `P = ray A₀` (`local-ray-geometry.tex:36–39`: "For the present
+Proposition 8.3(3) for `P = ray A₀` (`local-ray-geometry.tex`: "For the present
 `P = ray A₀`, freeness already follows directly from Proposition 7.2"): an additive weight of
 `P` modulo two factors through `W(P) ⊗ 𝔽₂`; since `W(P)` is free (`WP_free`), it lifts to an
 integer additive weight (`A0Mult_lift2`).

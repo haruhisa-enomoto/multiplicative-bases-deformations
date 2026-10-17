@@ -6,9 +6,9 @@ import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
 For a length-graded algebra `Λ` with vertex idempotents `e_i` spanning
 `S = Λ₀`: normalized `S`-relative one- and two-cochains of internal degree `q`,
 the coboundary `df(a,b) = af(b) - f(ab) + f(a)b`
-(`characteristic-two-construction.tex:46`) and the cocycle equation
+(`characteristic-two-construction.tex`) and the cocycle equation
 `dμ(a,b,c) = aμ(b,c) - μ(ab,c) + μ(a,bc) - μ(a,b)c = 0`
-(`binary-families.tex:48`). Classes in `HH²(Λ)_q` are cocycles of degree `q`
+(`binary-families.tex`). Classes in `HH²(Λ)_q` are cocycles of degree `q`
 modulo coboundaries of degree-`q` one-cochains.
 
 Also: a degree calculus for maps raising the length grading (`Raises₁`,

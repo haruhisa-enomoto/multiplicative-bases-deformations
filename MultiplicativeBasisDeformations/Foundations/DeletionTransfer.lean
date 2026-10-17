@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.CoveringMesh
 /-!
 # Deleting vertices along a covering
 
-Appendix A, `periodic-mesh-calculations.tex:57–66, 616–637`: "Paths lift uniquely
+Appendix A, `periodic-mesh-calculations.tex`: "Paths lift uniquely
 from a chosen start. Contextual mesh relations lift to contextual mesh relations
 … The fixed-start lifting of paths and relations preserves nonvanishing", and
 "Delete all lifts of the two outer vertices of the long arms … (5.2) identifies

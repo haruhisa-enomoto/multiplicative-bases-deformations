@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.CoverCategory
 /-!
 # Lemma 4.10: the support poset of a thin module
 
-`lem:thin-module-incidence` (`scalar-normalization.tex:428–456`): "Let `T` be a
+`lem:thin-module-incidence` (`scalar-normalization.tex`): "Let `T` be a
 finite directed category, and let `M` be a covariant or contravariant `k`-linear
 functor from `T` to vector spaces with `dim M(y) ≤ 1` for every object `y`. Let
 `R` be the category obtained from `T` by passing to the quotient by the

@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.IntegralA0
 /-!
 # `A⁽²⁾ = 𝔽₂P` (Section 10)
 
-`integral-deformations.tex:29–31`: "Its projective corner `End(⊕_x P_x)^op` is `A⁽²⁾`: a nonzero
+`integral-deformations.tex`: "Its projective corner `End(⊕_x P_x)^op` is `A⁽²⁾`: a nonzero
 homogeneous projective Hom is one-dimensional over `𝔽₂`, and every nonzero product coefficient is
 one."
 
@@ -456,7 +456,7 @@ def basisT : Module.Basis (RayA0 (S.arMeshData b) v₀) (ZMod 2) (S.A2 b) :=
 theorem basisT_apply (r : RayA0 (S.arMeshData b) v₀) :
     S.basisT b v₀ hF Wd r = S.eT b v₀ hF Wd r := Module.Basis.mk_apply _ _ _
 
-/-- **`𝔽₂P ≅ A⁽²⁾`** (`integral-deformations.tex:29–31`). -/
+/-- **`𝔽₂P ≅ A⁽²⁾`** (`integral-deformations.tex`). -/
 def Θ₂ : (SysD (S.arMeshData b) v₀ hF Wd).P.Lin (ZMod 2) ≃ₐ[ZMod 2] S.A2 b :=
   (SysD (S.arMeshData b) v₀ hF Wd).P.toMult.algOf (S.basisT b v₀ hF Wd)
     (fun r s ↦ by

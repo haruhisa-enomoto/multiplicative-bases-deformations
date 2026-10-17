@@ -8,7 +8,7 @@ import MultiplicativeBasisDeformations.Foundations.GradedBasis
 /-!
 # `A⁽⁴⁾ = 𝒪P` and its reduction to `A⁽²⁾` (Proposition 10.1, the algebra)
 
-`integral-deformations.tex:29–31, 45–60`: "Its projective corner is `A⁽²⁾` […]. Put
+`integral-deformations.tex`: "Its projective corner is `A⁽²⁾` […]. Put
 `A⁽⁴⁾ = 𝒪P`, graded by length."
 
 Setting (`TabIso`): a scalar mesh category over `𝔽₂` with mesh data `D` and a ray table `P`

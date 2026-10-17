@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Refinements.CocycleLift
 /-!
 # Lifted mesh sequences over a positive deformation (toward Corollary 12.1)
 
-`deformation-refinements.tex:17–94` (`cor:positive-deformation-completeness`). Let `B` be a
+`deformation-refinements.tex` (`cor:positive-deformation-completeness`). Let `B` be a
 positive filtered deformation of `A₀` and `M_X^B` the filtered lifts of the evaluated modules
 (Proposition 6.5). Lifting the mesh maps gives, at a nonprojective `x`, a surjection
 `π : ⊕_a M_{y_a}^B → M_x^B` whose leading term is the graded mesh map, with kernel the image of

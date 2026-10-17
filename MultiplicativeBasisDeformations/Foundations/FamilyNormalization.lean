@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.HochschildCochains
 # Finite normalization of an associative family
 
 Theorem 7.7 (`thm:finite-family-normalization`,
-`characteristic-two-construction.tex:9–58`). Let `Λ` be graded with `Λ₀ = S`
+`characteristic-two-construction.tex`). Let `Λ` be graded with `Λ₀ = S`
 spanned by vertex idempotents, `μ_i` normalized `S`-relative two-cocycles of
 positive degrees whose classes span `HH²(Λ)_{>0}`, and `m_t = m + Σ t_i μ_i`
 associative. Then every positive filtered deformation of `Λ` is isomorphic to a

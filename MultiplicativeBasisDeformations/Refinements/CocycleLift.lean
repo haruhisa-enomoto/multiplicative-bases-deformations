@@ -8,7 +8,7 @@ deformation of `C`; restricted to the projective corner it is a cocycle `μ` of 
 other restrictions are lifts of the actions on the evaluated modules (`ν(m, a) = φ(a, m)`) and
 of the arrow maps (`g_a(m) = φ(m, a)`). The mesh error of these lifts is
 `Σ_a c_{x,a} φ(σa, a)` (`Ψc_catLift`): this is how `Ψ` reads off the class of the deformation
-(`deformation-refinements.tex:261–275`: "Evaluation of every object at those projectives gives a
+(`deformation-refinements.tex`: "Evaluation of every object at those projectives gives a
 free lift of its normalized module").
 -/
 

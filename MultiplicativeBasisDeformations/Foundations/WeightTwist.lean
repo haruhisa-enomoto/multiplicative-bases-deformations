@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.Twist
 /-!
 # Scalar automorphisms act trivially on module classes
 
-Lemma 4.13, first step (`scalar-normalization.tex:566–583`): "A weight scales
+Lemma 4.13, first step (`scalar-normalization.tex`): "A weight scales
 morphism lines and thus defines an automorphism of `L`. These automorphisms act
 on the indecomposable module classes with any fixed finite support […]. Their
 permutation image is finite, abelian and divisible, hence trivial. Every scalar

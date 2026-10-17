@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.FiltrationDim
 /-!
 # Corollary 10.5 for `A₀`, given Proposition 10.3
 
-`cor:zero-supported-coverage` (`integral-deformations.tex:238–277`) for the ray system of
+`cor:zero-supported-coverage` (`integral-deformations.tex`) for the ray system of
 `A₀` with the dual weights (`Char2A0.Cor105`): the hypotheses of Theorem 9.1(3) come from the
 induction hypothesis of Proposition 8.3 through Lemma 9.2 (`hWl_of_liftBelow`), and the only
 remaining input is Proposition 10.3 in coefficients (`IStar`).
@@ -50,7 +50,7 @@ theorem hWl_of_liftBelow (k : Type u) [Field k] [IsAlgClosed k]
       rw [S.qh_of_not_supp χ (fun h ↦ hx ⟨_, h⟩), zero_mul]
     exact ⟨0, fun r _ _ hr _ _ _ ↦ absurd hr (hTB r), fun r hr ↦ absurd hr (hTB r)⟩
 
-/-- **Theorem 9.1** (`thm:integral-partial-lifting`), as stated in r38: if the lifting assertion
+/-- **Theorem 9.1** (`thm:integral-partial-lifting`): if the lifting assertion
 of Proposition 8.2 holds for every table with representation-finite linearization and fewer
 than `dim A₀` rays, every solution modulo two of the Leibniz equations lifts to an integer
 solution (and hence to `ℤ/4`). -/

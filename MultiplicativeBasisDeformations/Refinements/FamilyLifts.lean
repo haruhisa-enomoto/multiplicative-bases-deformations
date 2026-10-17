@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.WeightLift
 /-!
 # Polynomial lifts of the evaluated modules (Proposition 12.8, first part)
 
-`deformation-refinements.tex:375–398`: for the family `m + Σ_i t_i μ_i`, "keep the underlying
+`deformation-refinements.tex`: for the family `m + Σ_i t_i μ_i`, "keep the underlying
 modules `M_i ⊗ K` and their vertex actions fixed", and lift the actions degree by degree, with the
 choices made separately in each degree and weight; all entries are polynomials.
 

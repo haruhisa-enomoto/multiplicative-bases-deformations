@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ReRoot
 /-!
 # Mesh corrections for periodic models of type `A`
 
-Appendix A, "Types A and D" (`periodic-mesh-calculations.tex:425–440`):
+Appendix A, "Types A and D" (`periodic-mesh-calculations.tex`):
 "When the twist is trivial … we may root the path at an endpoint and regard it
 as a star with one arm … For the reflection of `A_{2n-1}`, rooted at its middle
 vertex, the two closed paths at the centre are `x` and `-x`, and reflection sends

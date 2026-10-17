@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.BinaryNormalization
 /-!
 # Character decomposition of Hochschild cochains
 
-`weights-and-parameters.tex:338–343`: "Integer ray weights also grade `A₀` and its
+`weights-and-parameters.tex`: "Integer ray weights also grade `A₀` and its
 Hochschild complex, and we write `HH²(A₀)_χ` for the component of weight `χ ∈ L`. Since
 `deg_J ∈ H_ℤ`, this decomposition refines the decomposition by internal degree."
 
@@ -15,7 +15,7 @@ commutes with the character parts (`cobdry_cpr1`).
 
 Also (`exists_rel_cobdry`): "Inserting the primitive idempotents contracts the
 complementary summands of the bar complex, so these relative cochains compute ordinary
-Hochschild cohomology" (`weights-and-parameters.tex:333–336`), in the form used: a
+Hochschild cohomology" (`weights-and-parameters.tex`), in the form used: a
 normalized relative cocycle which is the coboundary of some one-cochain of degree `q` is
 the coboundary of a normalized relative one-cochain of degree `q`. The correction is the
 inner derivation of `u = ∑ f(e_j) e_j`.

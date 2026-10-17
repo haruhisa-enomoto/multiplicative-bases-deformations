@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.A0RepFinite
 /-!
 # Proposition 2.10(1): evaluation is an equivalence `add C ≃ mod A₀`
 
-`prop:projective-evaluation`(1) (`graded-category.tex:493–494`): "Evaluation induces an equivalence
+`prop:projective-evaluation`(1) (`graded-category.tex`): "Evaluation induces an equivalence
 `add C ≃ mod A₀`."
 
 `add C` is the category of finite families of labels with matrices of morphisms (`AddC`), and

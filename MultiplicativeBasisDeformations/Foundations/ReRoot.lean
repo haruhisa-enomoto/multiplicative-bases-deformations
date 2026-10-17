@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ZTransport
 /-!
 # Changing the root of a star model
 
-`periodic-mesh-calculations.tex:179–185`: "for odd `A`, root it at its middle
+`periodic-mesh-calculations.tex`: "for odd `A`, root it at its middle
 vertex". A covering `π : ℤΔ → Q` and its deck data transport along an
 isomorphism `e : Δ ≃ Δ'` of star models (any graph isomorphism; the heights
 shift by `δ` to match the two-colourings).

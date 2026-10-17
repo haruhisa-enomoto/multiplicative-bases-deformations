@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.SplitTransfer
 /-!
 # Lemma 9.2: the centralizer ray algebra `B_χ`
 
-`lem:centralizer-ray-algebra` (`integral-partial-lifts.tex:66–113`). The centralizer
+`lem:centralizer-ray-algebra` (`integral-partial-lifts.tex`). The centralizer
 `C_χ = Cent_{A₀}(q̂)` is spanned by the identities, the two-sided rays and the unshiftable
 rays; `B_χ = C_χ/𝔞_χ` has basis the supporting identities and the two-sided rays, with the
 products of `A₀` (zero when the product leaves the basis). We record these as ray tables
@@ -167,7 +167,7 @@ def InC (χ : L) (r : R) : Prop := S.TB χ r ∨ ¬ S.Shift χ r
 
 theorem e_inC (x : V) : S.InC χ (S.P.e x) := Or.inr fun h ↦ h.1 (by rw [S.P.src_e])
 
-/-- **The centralizer is closed under products** (`integral-partial-lifts.tex:83–86`). -/
+/-- **The centralizer is closed under products** (`integral-partial-lifts.tex`). -/
 theorem inC_mul (hχ : 0 < S.P.deg χ) (hprim : Prim χ) {r s t : R} (hr : S.InC χ r)
     (hs : S.InC χ s) (h : ⌜r⌝ * ⌜s⌝ = ⌜t⌝) : S.InC χ t := by
   by_cases ht : S.Shift χ t
@@ -219,7 +219,7 @@ theorem inQ_inC {r : R} (h : S.InQ χ r) : S.InC χ r := by
   · rw [h1]; exact S.e_inC _
 
 /-- A retained product has retained factors when one factor lies in the centralizer
-(`integral-partial-lifts.tex:89–96`). -/
+(`integral-partial-lifts.tex`). -/
 theorem inQ_of_mul (hχ : 0 < S.P.deg χ) (hprim : Prim χ) {r s t : R} (hrs : S.InC χ r ∨ S.InC χ s)
     (h : ⌜r⌝ * ⌜s⌝ = ⌜t⌝) (ht : S.InQ χ t) : S.InQ χ r ∧ S.InQ χ s := by
   obtain ⟨t1, t2, t3, t4⟩ := S.prod_of h

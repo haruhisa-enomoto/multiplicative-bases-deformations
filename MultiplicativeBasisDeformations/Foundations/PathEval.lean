@@ -10,7 +10,7 @@ linearly to `RQ` (`evL`). Arrow corrections `g_a` give the `ε`-part `δ` of the
 (`evL_ideal`), and also to first order (`δL_ideal`), both kill the mesh ideal.
 
 This is the ring-generic part of the proof of Proposition 7.6 (`PsiInjective`), used over
-`ℤ/4` for Lemma 10.2 (`integral-deformations.tex:144–171`).
+`ℤ/4` for Lemma 10.2 (`integral-deformations.tex`).
 -/
 
 set_option autoImplicit false

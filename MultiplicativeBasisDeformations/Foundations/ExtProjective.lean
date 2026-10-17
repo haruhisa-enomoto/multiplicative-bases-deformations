@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.ExtOne
 /-!
 # Evaluated projectives (Lemma 6.3)
 
-`positive-deformations.tex:122, 182–183`: "The projectives are included with their
+`positive-deformations.tex`: "The projectives are included with their
 regular gradings. […] Projective summands contribute zero." At a projective label
 `p`, the evaluated module `M_p = R⁰_{F p}` is the cyclic graded projective
 `e_p A₀` generated in degree `0` by `1_p` (Yoneda: `colAlg`, `colAlg_smul_unit`),

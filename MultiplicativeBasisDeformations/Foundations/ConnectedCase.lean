@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.StarTypes
 /-!
 # Mesh corrections on a connected stable translation quiver
 
-Appendix A, `periodic-mesh-calculations.tex:226–236`: "By Proposition 5.1 we
+Appendix A, `periodic-mesh-calculations.tex`: "By Proposition 5.1 we
 may restrict to periodic components; … a periodic component without arrows has
 no rows of degree at least three. Proposition 4.1 then allows us to work with the
 finite tree models." This file treats a finite connected stable translation

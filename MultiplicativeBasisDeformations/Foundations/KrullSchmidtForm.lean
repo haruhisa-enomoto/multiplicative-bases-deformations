@@ -7,7 +7,7 @@ import MBDVendor.QSE.RepresentationTheory.AlmostSplitCofinite
 # The Krull–Schmidt split–radical normal form
 
 Proof of Lemma 2.5, "Split off the invertible blocks of `u` by Krull–Schmidt decomposition and
-elementary row and column operations" (`graded-category.tex:264–266`), in any preadditive category
+elementary row and column operations" (`graded-category.tex`), in any preadditive category
 with finite biproducts whose objects are finite biproducts of nonzero objects with local
 endomorphism rings (`hasSplitRadicalNormalForm_of_decomp`). The argument is the vendored one for
 finite `τ`-categories (`MBDVendor.QSE.Iyama.splitRadicalForm_finBiproduct`), with the finite
@@ -275,7 +275,7 @@ theorem sq_of_factor {T E : C} (i : T ⟶ E)
       exact ⟨-q, isRadicalMorphism_neg hq, by rw [Preadditive.comp_neg]⟩
 
 /-- **Auslander–Reiten data at an indecomposable** (ordinary Auslander–Reiten theory, assumed by
-the manuscript, `main.tex:403`): a right almost split map `p : E → Y` with kernel `i : T → E`,
+the manuscript, `main.tex`): a right almost split map `p : E → Y` with kernel `i : T → E`,
 where `T = 0` (projective `Y`, `p : rad P → P`) or `i` is left almost split from an
 indecomposable `T` (the almost split sequence). -/
 structure ARData (Y : C) where

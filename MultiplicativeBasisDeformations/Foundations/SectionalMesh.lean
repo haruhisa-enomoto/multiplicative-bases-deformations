@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.SectionalCover
 /-!
 # Mesh relations along the covering `ℤΔ → Q`
 
-Proof of Proposition 4.1, Step 1 (`periodic-mesh-calculations.tex:57–63`).
+Proof of Proposition 4.1, Step 1 (`periodic-mesh-calculations.tex`).
 Pull the coefficients of `Q` back along `π`. The mesh relation of `ℤΔ` at `X`
 maps to the mesh relation of `Q` at `π X`, so `π` preserves the mesh ideal; and
 every mesh relation of `Q` starting at `π Z` lifts to one starting at `Z`, so

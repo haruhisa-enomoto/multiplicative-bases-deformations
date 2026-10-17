@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.LocalMesh
 /-!
 # Lemma 2.9: vanishing on modules killed by `e`
 
-`lem:projective-evaluation-criterion` (`graded-category.tex:440–487`): "Assume
+`lem:projective-evaluation-criterion` (`graded-category.tex`): "Assume
 `Hom_Λ(T, Λ) = Ext¹_Λ(T, Λ) = 0` whenever `Te = 0`. … It suffices to check the
 two vanishings on the simple `Λ`-modules killed by `e`. … composition series and
 the long exact sequences extend the two vanishings from the simples to every

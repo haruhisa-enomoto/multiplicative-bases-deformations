@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.PrimeWeight
 /-!
 # Proposition 10.1 for a basic representation-finite algebra
 
-`prop:fixed-integral-companion` (`integral-deformations.tex:46–60`), for `A` basic and
+`prop:fixed-integral-companion` (`integral-deformations.tex`), for `A` basic and
 representation-finite over an algebraically closed field of characteristic two, `C⁽²⁾` the
 all-one mesh category of `Γ_A` over `𝔽₂`, `A⁽²⁾` its projective corner and `A⁽⁴⁾ = 𝒪P`
 (`tab₂`): the statement `Prop101Stmt` (module and arrow lifts; (1) free Hom modules in every

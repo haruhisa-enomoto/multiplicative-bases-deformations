@@ -6,7 +6,7 @@ import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
 /-!
 # Lemma 4.6: split representation transfer
 
-`lem:split-representation-transfer` (`scalar-normalization.tex:288–303`): let
+`lem:split-representation-transfer` (`scalar-normalization.tex`): let
 `C ⊆ B` be a unital inclusion of finite-dimensional algebras, `q : C ↠ D` a
 quotient and `π : B → D` a `C`-bimodule map with `π|_C = q`. If `B` is
 representation-finite, so is `D`.

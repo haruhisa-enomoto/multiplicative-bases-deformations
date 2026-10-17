@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.WeightEv
 /-!
 # Homogeneous module and arrow lifts (Proposition 7.6, weights)
 
-`weights-and-parameters.tex:396–404`: "Lift a basis of the integer ray weights to mesh
+`weights-and-parameters.tex`: "Lift a basis of the integer ray weights to mesh
 weights using Lemma 7.4. These give simultaneous gradings on the lifted modules. If `μ`
 has character `χ`, give `ε` weight `−χ` and choose the homogeneous solutions in the
 lemma. Then `z_v` has weight `χ` relative to its row."

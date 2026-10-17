@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ARInjData
 /-!
 # Corollary 2.11: `Γ_{A₀} ≅ Γ_A`
 
-`graded-category.tex:571–588` (`cor:same-ar-quiver`): "The Auslander–Reiten quivers of `A₀` and
+`graded-category.tex` (`cor:same-ar-quiver`): "The Auslander–Reiten quivers of `A₀` and
 `A` are isomorphic as translation quivers."
 
 The evaluated modules `M_x` form a skeleton of `ind(mod A₀)` (`skelA0`): they are

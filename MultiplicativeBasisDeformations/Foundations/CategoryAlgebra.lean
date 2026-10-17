@@ -4,7 +4,7 @@ import Mathlib
 # The category algebra of a finite family of objects
 
 Construction 2.8 and the proof of Proposition 2.10
-(`graded-category.tex:412–432, 495–503`): "Put `G = ⊕_{X ∈ ob C} X` and
+(`graded-category.tex`): "Put `G = ⊕_{X ∈ ob C} X` and
 `Λ = End_{add C}(G)^{op}`. For `X` in `add C`, the right `Λ`-modules
 `R_X = C(G, X)` are projective". For objects `F x` (`x ∈ ι`) of a `k`-linear
 category we realize `Λ` as `⊕_{x,y} C(F x, F y)` with the product in path order

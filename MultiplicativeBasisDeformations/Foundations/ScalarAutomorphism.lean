@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.LiftedModules
 /-!
 # The automorphism `Φ` of the cover induced by a weight
 
-Lemma 4.13 (`lem:scalar-object-values`, `scalar-normalization.tex:566–592`):
+Lemma 4.13 (`lem:scalar-object-values`, `scalar-normalization.tex`):
 "Every scalar automorphism consequently fixes each `V_X̃` up to isomorphism.
 Choose such isomorphisms, using the natural ones on projectives, in the
 direction for which the following automorphism agrees with the given scalar

@@ -10,7 +10,7 @@ For `Θ : kP ≅ Λ` carrying ray vectors to homogeneous elements (degree `deg �
 cocycles; they are normalized relative to the transported identities; an indicator of a class
 of character `χ` has character `χ` and internal degree `deg χ`; and the family
 `m + Σ t_E μ_E` is associative (Proposition 11.3(1)). These are the hypotheses of
-Theorem 7.7 other than spanning (`binary-families.tex:130–150`).
+Theorem 7.7 other than spanning (`binary-families.tex`).
 -/
 
 set_option autoImplicit false

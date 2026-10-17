@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Refinements.PolyFamily
 /-!
 # Twisting weight-homogeneous data by parameters (toward Proposition 12.8)
 
-`deformation-refinements.tex:418–423`: "Give `t_i` total weight `−χ_i`, or equivalently
+`deformation-refinements.tex`: "Give `t_i` total weight `−χ_i`, or equivalently
 coefficient weight `χ_i`. The choices above, made separately in each weight, make `F_j`
 homogeneous". Conversely, data at `t = 1` whose components have relative weights in the monoid
 `C` of the `χ_i` define polynomial families: the component of relative weight `γ` is multiplied by

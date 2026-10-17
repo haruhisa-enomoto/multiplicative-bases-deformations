@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Refinements.MeshNormalForm
 /-!
 # The mesh presentation of every fibre (Proposition 12.8, presentations)
 
-`deformation-refinements.tex:409–416`: "Let `ℬ` be that mesh presentation with a path cutoff
+`deformation-refinements.tex`: "Let `ℬ` be that mesh presentation with a path cutoff
 above the top degree of `C`. Its arrow map to `ℳ` is surjective by degree induction. Leading
 relations give surjections `C ⊗ K → gr ℬ → gr ℳ = C ⊗ K` whose composite fixes every arrow and
 object, hence is the identity. Both maps are isomorphisms."

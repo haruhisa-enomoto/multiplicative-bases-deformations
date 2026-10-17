@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.CoverCategory
 /-!
 # Lemma 4.8: evaluation of lifted objects is fully faithful
 
-`lem:lifted-projective-evaluation` (`scalar-normalization.tex:327–390`). For a
+`lem:lifted-projective-evaluation` (`scalar-normalization.tex`). For a
 lifted object `X̃` put `V_X̃(z) = C̃(P_z, X̃)` on the lifted projective vertices
 `z`. "By `eq:walk-hom-sum`, for each projective label `x`,
 `C(P_x, X) = ⊕_g V_X̃(g x̃)`. Thus `ev(X)` is the direct sum of the components

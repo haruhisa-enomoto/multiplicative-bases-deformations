@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.RepFinite
 /-!
 # Lemma 8.8 for bound quiver algebras
 
-`lem:dimension-infinity` (`local-ray-geometry.tex:162–198`): "Let `kQ/(ρ_1, …, ρ_t)` be a
+`lem:dimension-infinity` (`local-ray-geometry.tex`): "Let `kQ/(ρ_1, …, ρ_t)` be a
 finite-dimensional bound quiver algebra, with each relation between radical paths with specified
 endpoints. For a nonzero dimension vector `d`, put `D = Σ_v d_v²`, `N = Σ_{a : v → w} d_v d_w`,
 `F = Σ_i d_{source(ρ_i)} d_{target(ρ_i)}`. If `N − F ≥ D`, the algebra is representation-infinite."

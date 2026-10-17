@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # Krull dimension bounds for finitely generated algebras (for Lemma 8.8)
 
-`local-ray-geometry.tex:174–190` (`lem:dimension-infinity`): "Every component of such a zero
+`local-ray-geometry.tex` (`lem:dimension-infinity`): "Every component of such a zero
 set has dimension at least `N − F`. The change-of-basis group has dimension `D`, and its
 simultaneous scalar subgroup stabilizes every representation. An orbit has dimension equal
 to that of the group minus that of the stabilizer, so each orbit has dimension at most

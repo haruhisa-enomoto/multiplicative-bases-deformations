@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.TreeRepetition
 /-!
 # Rescaling the meshes of `ℤΔ` to the signed coefficients
 
-Proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex:67–77`):
+Proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex`):
 "We first rescale the meshes on `ℤΔ` to the coefficients `±1` ... On a tree
 edge `u → v`, write the repetition arrows as `a_j : u_j → v_j` and
 `b_j : v_j → u_{j+1}`. The two coefficients at its endpoints prescribe nonzero

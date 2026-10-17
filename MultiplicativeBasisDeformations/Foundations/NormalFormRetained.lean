@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.NormalFormGeneral
 /-!
 # Proposition 12.2 in its general form
 
-`deformation-refinements.tex:99–116` (`prop:characteristic-two-normal-form`): "Let
+`deformation-refinements.tex` (`prop:characteristic-two-normal-form`): "Let
 `C = kQ/(r_v : v ∈ V)` be a finite-dimensional graded algebra over any field, with `Q` finite and
 the `r_v` homogeneous quadratic relations. For each `q ≥ 3`, choose homogeneous path tuples `p_i`
 of degree `d_i = q` whose classes form a basis of `coker D_{q-1}`. […] Every algebra `E` with a

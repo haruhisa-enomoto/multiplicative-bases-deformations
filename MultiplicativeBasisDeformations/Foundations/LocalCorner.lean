@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.GradedLayers
 /-!
 # Local corners are truncated polynomial algebras
 
-Lemma 3.1(2) (`projective-rays.tex:45–52`): "Every subspace of `rad C/(rad C)²`
+Lemma 3.1(2) (`projective-rays.tex`): "Every subspace of `rad C/(rad C)²`
 lifts to an ideal, so this space has dimension at most one […]. A lift `t` of a
 generator generates successive radical powers, by Nakayama's lemma. Nilpotence
 then writes every element as a polynomial in `t`, giving `C ≅ k[t]/(t^N)`."

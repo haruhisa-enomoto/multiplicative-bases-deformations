@@ -6,8 +6,8 @@ import MultiplicativeBasisDeformations.Foundations.StandardConverse
 /-!
 # Propositions 3.8 and 4.14 for the algebra `A₀` of Construction 2.8
 
-`prop:projective-ray-product` (`projective-rays.tex:241`) and `prop:scalar-normalization`
-(`scalar-normalization.tex:620`) are stated for `A₀`, the projective corner of
+`prop:projective-ray-product` (`projective-rays.tex`) and `prop:scalar-normalization`
+(`scalar-normalization.tex`) are stated for `A₀`, the projective corner of
 `C = gr_J ind(mod A) ≅ k(Γ_A)` for a basic representation-finite algebra `A` over an
 algebraically closed field. The general theorems (`projectiveRayProduct` for length-graded
 algebras with degree-zero local corners; `MeshWalk.scalarNormalization` for scalar mesh categories

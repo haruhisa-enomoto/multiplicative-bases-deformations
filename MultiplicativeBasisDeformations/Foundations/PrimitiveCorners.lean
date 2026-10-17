@@ -1,10 +1,10 @@
 import MultiplicativeBasisDeformations.Foundations.Successor
 
 /-!
-# r37 Lemma 9.7: primitive cyclic corners
+# Primitive cyclic corners (Lemma 8.21)
 
 `def:primitive-return-corner` and `lem:primitive-cyclic-corners`
-(`primitive-ray-equations.tex:235–370`). Part (1): a generating ray `f : x → y`, `x ≠ y`,
+(`primitive-ray-equations.tex`). Part (1): a generating ray `f : x → y`, `x ≠ y`,
 cyclic at both endpoints with `q_x f = f q_y ≠ 0` and `ℓ(q_x)` primitive, has a primitive
 reverse whenever `f A₀(y, x) ≠ 0`: the generating ray `h` of `A₀(y, x)` satisfies `fh = q_x`,
 `hf = q_y`. A higher least return exponent gives a four-point crown in the faithful projective
@@ -42,7 +42,7 @@ theorem comm_pow {f : R} (h : S.q (S.P.src f) * ⌜f⌝ = ⌜f⌝ * S.q (S.P.tgt
 
 variable (k : Type u) [Field k] [IsAlgClosed k]
 
-/-- **r37 Lemma 9.7(1)** (`lem:primitive-cyclic-corners`): the generating reverse is primitive. -/
+/-- **Lemma 8.21(1)** (`lem:primitive-cyclic-corners`): the generating reverse is primitive. -/
 theorem prim_reverse (hfin : IsRepresentationFinite k (S.P.Lin k)) {f h0 : R}
     (hf : S.IsGen f) (hxy : S.P.src f ≠ S.P.tgt f) (hL : S.CycL f) (hR : S.CycR f)
     (hqf : S.q (S.P.src f) * ⌜f⌝ = ⌜f⌝ * S.q (S.P.tgt f)) (hqf0 : S.q (S.P.src f) * ⌜f⌝ ≠ 0)

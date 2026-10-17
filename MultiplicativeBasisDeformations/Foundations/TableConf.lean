@@ -2,7 +2,7 @@ import MultiplicativeBasisDeformations.Foundations.TableRetract
 import MultiplicativeBasisDeformations.Foundations.TableSupport
 
 /-!
-# Poset configurations in a ray table (Lemmas 8.9 and r37 C.1)
+# Poset configurations in a ray table (Lemmas 8.9 and C.1)
 
 A *configuration* of a finite poset `Q` in a ray table: objects `(v a, g a)` of the graded
 covering category, and rays `ρ a b` for `a ≤ b` of weight `g b - g a`, composing as the poset.
@@ -183,7 +183,7 @@ theorem hR (s : IP Q) (t : Mult.CR P.toMult C.v P.wt C.g) (t' : IP Q)
 
 include C in
 /-- **A configuration makes the incidence algebra of the poset representation-finite**
-(Lemmas 8.9 and r37 C.1). -/
+(Lemmas 8.9 and C.1). -/
 theorem isRepresentationFinite (k : Type u) [Field k] (h : IsRepresentationFinite k (P.Lin k)) :
     IsRepresentationFinite k ((inc Q).Lin k) :=
   Mor.retract_isRepresentationFinite C.mor C.emb (fun _ ↦ rfl) C.emb_injective C.hL C.hR k

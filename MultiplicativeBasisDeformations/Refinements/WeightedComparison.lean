@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.WeightLift
 /-!
 # Proposition 12.5: weights, and `I₀ = I`
 
-`deformation-refinements.tex:267–283`: "Giving `ε` internal degree `−q` and the opposite weight
+`deformation-refinements.tex`: "Giving `ε` internal degree `−q` and the opposite weight
 makes the corner deformation homogeneous of the required degree and weight. […] In
 characteristic two, each residual line `k[p_i]` of Proposition 6.1 has weight `χ_i` and is now
 in the image, so `HH²(A₀)_{χ_i} ≠ 0` and `I₀ = I`."
@@ -216,7 +216,7 @@ theorem Ψc_surjective_char
     catMu_hasChar W hfin D Φ χ, catLift D hfin _, (Ψc_catLift D hfin _).trans (congrArg _ hval)⟩
 
 include hfin hfd in
-/-- **`I ⊆ I₀`** (`deformation-refinements.tex:278–283`): a row `p : τx → x` of length
+/-- **`I ⊆ I₀`** (`deformation-refinements.tex`): a row `p : τx → x` of length
 `q + 2 ≥ 3` whose class in `coker D_{q+1}` is nonzero gives a Hochschild cocycle of `A₀` of
 internal degree `q` and of the row's character `χ = w(p) − ν_x` which is not a coboundary of
 degree `q`, with `Ψ[μ] = [p]`. -/
@@ -276,7 +276,7 @@ variable {k A : Type w} [Field k] [IsAlgClosed k] [Ring A] [Algebra k A] [Finite
   [IsNoetherianRing Aᵐᵒᵖ] (S : IndSkeleton k A) (b : S.ArrowBases)
   {M : Type} [AddCommGroup M] (W : MeshWalk.MeshWt S.arTranslationQuiver M)
 
-/-- **`I ⊆ I₀` for `A₀`** (Proposition 12.5, `deformation-refinements.tex:278–283`): a row of
+/-- **`I ⊆ I₀` for `A₀`** (Proposition 12.5, `deformation-refinements.tex`): a row of
 `Γ_A` of length `q + 2 ≥ 3` with nonzero cokernel class gives a non-trivial Hochschild class of
 `A₀` of the row's character. -/
 theorem exists_not_cobdry_ar {q : ℕ} (hq : 1 ≤ q) (x : S.arTranslationQuiver.nonprojective)

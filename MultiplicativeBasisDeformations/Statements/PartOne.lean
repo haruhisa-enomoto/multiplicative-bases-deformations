@@ -19,11 +19,9 @@ import MultiplicativeBasisDeformations.Foundations.FiltrationRays
 /-!
 # Part I statements
 
-Statements of the Part I results of the frozen manuscript that are expressible
-with the foundations built so far. Proofs are pending (milestone M3). The
-remaining Part I statements need the radical grading `gr_J ind(mod A)`, the
-algebra `A_0`, Ext groups, the mesh-walk complex and its cover, or Dynkin
-repetitions; they are listed as pending in `CONCORDANCE.md`.
+Statements of Part I results of the manuscript (Sections 2--5), with their proofs
+from the foundations. The remaining Part I results are proved in the foundation
+files listed in `docs/PAPER-CORRESPONDENCE.md`.
 -/
 
 set_option autoImplicit false

@@ -4,7 +4,7 @@ import Mathlib
 /-!
 # Lemma 12.3: flat mesh perturbations
 
-`deformation-refinements.tex:165–211` (`lem:flat-mesh-perturbations`). Let `C = kQ/(r₁, …, r_t)`
+`deformation-refinements.tex` (`lem:flat-mesh-perturbations`). Let `C = kQ/(r₁, …, r_t)`
 be finite-dimensional and graded, with homogeneous relations of degree at least two, and assume
 that the presentations of the simple modules obtained by splitting each relation according to its
 arrows are projective resolutions of length at most two. Choose `N` with `C_d = 0` for `d ≥ N`
@@ -550,7 +550,7 @@ theorem hctx_le_B {d : ℕ} (hd : N ≤ d) (w y : V) : hctx P d w y ≤ (idealB 
   exact geSpan_anti (by omega) _ _ (path_comp_geSpan u v (hf x t))
 
 include hf in
-/-- **`𝔪^N B = 0`** (`deformation-refinements.tex:186–188`). -/
+/-- **`𝔪^N B = 0`** (`deformation-refinements.tex`). -/
 theorem path_mem_B (hN : ∀ w y (p : Quiver.Path w y), N ≤ p.length → path (k := k) p ∈ ctxSpan P P.r w y)
     {w y : V} (p : Quiver.Path w y) (hp : N ≤ p.length) : path (k := k) p ∈ (idealB P f hf N).I w y := by
   have := proj_ctx P p.length (hN w y p hp)
@@ -564,7 +564,7 @@ theorem rf_proj0 (x : V) (t : P.T x) (hf : ∀ x t, f x t ∈ geSpan k (P.deg x 
   proj_eq_zero_of_geSpan (by norm_num) (rf_mem_ge2 P f hf x t)
 
 include hf in
-/-- **Sorting contextual relations by their last factor** (`deformation-refinements.tex:197–203`):
+/-- **Sorting contextual relations by their last factor** (`deformation-refinements.tex`):
 the last-arrow components of an element of the ideal of `B` are, modulo the ideal, the
 components of a combination of the perturbed relations ending at `x`. -/
 theorem lastComp_B (hN : ∀ w y (p : Quiver.Path w y), N ≤ p.length →

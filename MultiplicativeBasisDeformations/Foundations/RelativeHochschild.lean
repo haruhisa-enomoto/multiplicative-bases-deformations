@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.FamilyNormalization
 /-!
 # Relative cochains compute ordinary Hochschild cohomology in degree two
 
-`weights-and-parameters.tex:325–328`: "we use normalized cochains relative to the split vertex
+`weights-and-parameters.tex`: "we use normalized cochains relative to the split vertex
 algebra […] these relative cochains compute ordinary Hochschild cohomology." The formalization
 works with normalized `S`-relative cochains (`IsRel₁`, `IsRel₂`). This file proves the claim for
 `HH²(Λ)_q`, the only Hochschild group the paper uses:

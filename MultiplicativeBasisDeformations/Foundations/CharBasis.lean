@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.WeightHH
 /-!
 # Proposition 7.5: the residual characters are part of an integer basis
 
-`weights-and-parameters.tex:287–325` (`prop:primitive-parameter-characters`): "In the
+`weights-and-parameters.tex` (`prop:primitive-parameter-characters`): "In the
 weight lattice `L = W(P)`, the residual characters `χ_i` form part of an integer basis."
 
 Here `χ_i = w(p_i) − ν_{v_i}` for a mesh weight `W_u` with values in `W(P)` restricting to
@@ -16,8 +16,8 @@ so by Lemma 7.4 they differ by object values vanishing at the projectives, which
 change the weight of a row relative to its mesh (`rowWt_eq_of_res`). As `W(P)` is free of
 finite rank, the `χ_i` are part of a basis (`exists_basis_of_dual`).
 
-Deviation: the source identifies `χ_i` with the deck class `±θ_{g_i}` and uses r37 Lemma 4.3;
-we use the dual mesh weights instead (recorded in the concordance).
+Deviation: the source identifies `χ_i` with the deck class `±θ_{g_i}` and uses a lemma on the
+periodic core; we use the dual mesh weights instead.
 -/
 
 set_option autoImplicit false

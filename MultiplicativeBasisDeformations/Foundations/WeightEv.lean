@@ -6,9 +6,9 @@ import MultiplicativeBasisDeformations.Foundations.BinaryNormalization
 /-!
 # Mesh-weight gradings of `A₀` and of its evaluated modules
 
-`weights-and-parameters.tex:248–262`: "a mesh weight `w` grades `V_{m+1}(C)` by giving a
+`weights-and-parameters.tex`: "a mesh weight `w` grades `V_{m+1}(C)` by giving a
 path at row `v` the weight `w(path) − ν_v`, and grades `U_m(C)` …", and
-`weights-and-parameters.tex:396–400`: "Lift a basis of the integer ray weights to mesh
+`weights-and-parameters.tex`: "Lift a basis of the integer ray weights to mesh
 weights using Lemma 7.4. These give simultaneous gradings on the lifted modules."
 
 A mesh weight `W` with values in an abelian group `M` is a path weight for which all

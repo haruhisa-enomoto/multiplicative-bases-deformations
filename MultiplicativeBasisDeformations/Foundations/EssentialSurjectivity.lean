@@ -3,11 +3,11 @@ import MultiplicativeBasisDeformations.Foundations.GlobalDimension
 /-!
 # Evaluation at the projective labels: essential surjectivity
 
-Lemma 2.9 (second part, `graded-category.tex:470–480`): "Given
+Lemma 2.9 (second part, `graded-category.tex`): "Given
 `0 → X → I⁰ → I¹` over `Λ_e`, lift its injectives to projectives `Q⁰, Q¹` and
 their map to `f : Q⁰ → Q¹`. Its kernel is a second syzygy and hence projective,
 since `gl.dim Λ ≤ 2`. Exactness of `M ↦ Me` gives `X ≅ (ker f)e`."
-Proposition 2.10 (`graded-category.tex:524–545`): the injective `A₀`-modules
+Proposition 2.10 (`graded-category.tex`): the injective `A₀`-modules
 `D(A₀ e_x)` are the evaluations of the injective labels `I_x`, by the socle
 and a dimension count.
 

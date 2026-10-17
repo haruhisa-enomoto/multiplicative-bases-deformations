@@ -4,8 +4,8 @@ import MultiplicativeBasisDeformations.Foundations.BinaryNormalization
 /-!
 # The family criterion with indicator cocycles
 
-Proposition 7.9 (`characteristic-two-construction.tex:87–118`) for the selected binary
-family of the proof of Proposition 8.3 (`main-theorems.tex:7–40`): with `A₀ ≅ kP` through
+Proposition 7.9 (`characteristic-two-construction.tex`) for the selected binary
+family of the proof of Proposition 8.3 (`main-theorems.tex`): with `A₀ ≅ kP` through
 `Θ`, chosen indicator cocycles `μ_i = μ_{E_i}` of distinct classes satisfying the hypotheses
 of Theorem 7.7 and characters forming part of an integer basis, Corollary 7.8 gives a binary
 fibre isomorphic to `A`; by Proposition 11.3(3) the transported rays are a normed

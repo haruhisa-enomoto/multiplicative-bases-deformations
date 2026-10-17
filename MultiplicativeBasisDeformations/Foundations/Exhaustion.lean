@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.ThinCategory
 /-!
 # Lemma 4.12: exhaustion by sources and sinks
 
-`lem:cover-exhaustion` (`scalar-normalization.tex:522–558`): "There is an
+`lem:cover-exhaustion` (`scalar-normalization.tex`): "There is an
 increasing sequence of finite convex full subcategories of `L` with union `L`,
 each obtained from the previous one by adding a source or a sink. […]
 Consequently `L` has a multiplicative basis."
@@ -329,7 +329,7 @@ variable [Infinite k] (hT : IsThin k O) (hgt : O → ℤ) (hR : ∀ o o', Rl o o
 
 include hR hsrcRep hsnkRep in
 /-- **One step**: add a source, a sink, or an isolated object, keeping convexity
-(`scalar-normalization.tex:539–548`). -/
+(`scalar-normalization.tex`). -/
 theorem step (T T' : Finset O) (hTT' : T ⊆ T') (hne : T ≠ T') (hT1 : Convex (T : Set O))
     (hT2 : Convex (T' : Set O)) (β : ∀ o o' : O, o ⟶ o') (hβ : MultBasis (T : Set O) β) :
     ∃ c ∈ T', c ∉ T ∧ Convex (insert c (T : Set O)) ∧

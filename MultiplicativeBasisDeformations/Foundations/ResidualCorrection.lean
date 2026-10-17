@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.ObjectQuotients
 /-!
 # Proposition 6.1: residual correction spaces (spanning form)
 
-`prop:residual-correction-spaces` (`positive-deformations.tex:23–48`) and Appendix B: in
+`prop:residual-correction-spaces` (`positive-deformations.tex`) and Appendix B: in
 characteristic two, under the brick hypothesis, "each periodic component contributes at
 most one correction line, represented by a single path". We record: there is a set `S`
 of rows at periodic vertices, at most one in each periodic component, whose classes

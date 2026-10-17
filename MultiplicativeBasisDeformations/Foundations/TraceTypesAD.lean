@@ -5,7 +5,7 @@ import Mathlib.Tactic.FinCases
 /-!
 # Twisted traces of types `A` and `D` (Appendix A, "Types A and D")
 
-`periodic-mesh-calculations.tex:423–476`, assuming `char k ≠ 2` in the form
+`periodic-mesh-calculations.tex`, assuming `char k ≠ 2` in the form
 "`m + m = 0` implies `m = 0`" on the target group:
 
 * a path rooted at an end (one arm): `x_1 = 0` by the centre relation;

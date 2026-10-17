@@ -9,7 +9,7 @@ import Mathlib.Algebra.BigOperators.Intervals
 /-!
 # Forbidden configurations
 
-Proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex:118–131`):
+Proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex`):
 "A vertex of degree at least four would contain a four-leaf star, and the
 vector `z` with entries two at the centre and one at the leaves satisfies
 `zᵀMz = 0` on it. Two trivalent vertices would contain their connecting path
@@ -173,7 +173,7 @@ theorem sigma_fin_eq_iff {t : ℕ} {L : Fin t → ℕ} {a b : Fin t} {k : Fin (L
 
 include hn hMn in
 /-- **The arm inequality** (Schur complement at the centre,
-`periodic-mesh-calculations.tex:132–140`): a centre with `t` arms of lengths
+`periodic-mesh-calculations.tex`): a centre with `t` arms of lengths
 `L_i + 1` satisfies `∑_i (L_i + 1)/(L_i + 2) < 2`, i.e.
 `2 - ∑ p_i/(p_i + 1) > 0` for arm lengths `p_i`. -/
 theorem arm_inequality {t : ℕ} (L : Fin t → ℕ) (c : D) (a : ∀ i, Fin (L i + 1) → D)

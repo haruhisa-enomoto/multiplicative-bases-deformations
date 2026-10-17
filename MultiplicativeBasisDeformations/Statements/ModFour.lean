@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.PrimeCoker
 /-!
 # Lemma 10.2 for a basic representation-finite algebra
 
-`lem:mod-four-comparison` (`integral-deformations.tex:112–116`), for `A` basic and
+`lem:mod-four-comparison` (`integral-deformations.tex`), for `A` basic and
 representation-finite over an algebraically closed field of characteristic two, `A⁽²⁾` the
 projective corner of the prime-field mesh category and `A⁽⁴⁾ = 𝒪P` (`tab₂`): for a normalized
 Hochschild two-cocycle `μ̄` of `A⁽²⁾` of internal degree `q > 0`, `2μ̃` is a coboundary in the

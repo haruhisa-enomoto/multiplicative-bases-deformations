@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.Criterion
 Construction 2.8 (`con:projective-algebra`): `A₀ = ⊕_{x,y} D(P_y, P_x)`, the
 category algebra of the projective labels, and evaluation sends `X` to the
 module with components `C(P_x, X)`. Lemma 2.9 (first part,
-`graded-category.tex:440–470`): under the vanishings for modules killed by `e`,
+`graded-category.tex`): under the vanishings for modules killed by `e`,
 "`P ↦ Pe` is fully faithful on `proj Λ`". The manuscript proves this with the
 multiplication map `(Me) ⊗_{Λ_e} eΛ → M`, whose kernel and cokernel are killed
 by `e`, and the vanishings. We use the same two steps without the tensor

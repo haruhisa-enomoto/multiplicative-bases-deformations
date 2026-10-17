@@ -6,7 +6,7 @@ import Mathlib.Tactic.FinCases
 /-!
 # Three-armed stars with positive definite form
 
-Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex:118–131`): a star with
+Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex`): a star with
 three arms of `L i + 1` vertices and `∑ (L i + 1)/(L i + 2) < 2` is `D_n`
 (two arms of one vertex) or `E_6, E_7, E_8` (arms of `1, 2, 2`, `1, 2, 3`,
 `1, 2, 4` vertices).

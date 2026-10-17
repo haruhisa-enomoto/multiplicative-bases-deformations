@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.ARMeshFinite
 /-!
 # Graded Hom dimensions
 
-`eq:graded-hom-dimensions` (`graded-category.tex:465–473`):
+`eq:graded-hom-dimensions` (`graded-category.tex`):
 `dim C(X, Y) = ∑_n dim J^n(X, Y)/J^{n+1}(X, Y) = dim Hom_A(X, Y)`, "from the
 finite radical filtration". The first equality is the decomposition of the
 Hom spaces of `k(Γ_A)` into finitely many degree parts together with

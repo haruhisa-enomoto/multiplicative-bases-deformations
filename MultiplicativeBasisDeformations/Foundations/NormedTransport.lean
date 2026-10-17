@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.NormedBasis
 /-!
 # Normed multiplicative bases along algebra isomorphisms
 
-Corollary 5.5(2) (`mesh-deformations.tex:249–251`): "The ray basis transports to
+Corollary 5.5(2) (`mesh-deformations.tex`): "The ray basis transports to
 a normed multiplicative basis of `A`." An algebra isomorphism preserves
 products, idempotents, primitivity and the radical powers, so it transports
 normed multiplicative bases (`HasNormedMultiplicativeBasis.of_algEquiv`).

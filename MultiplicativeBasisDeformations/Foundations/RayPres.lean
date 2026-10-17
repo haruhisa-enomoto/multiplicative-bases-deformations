@@ -9,7 +9,7 @@ A *ray presentation* of an algebra `B` (with primitive idempotents `F`) by a ray
 is a family of vectors `β r`, one in each nonzero ray, such that the ray products of `B`
 (Definition 3.4: `[f][h] = [fh]` unless `fh ∈ M(f, h)`) are the products of `T`. This is the
 content of "`ray A_t = P` with the specified representatives" (Proposition 11.3(3),
-`binary-families.tex:166–179`) and of Definition 3.9(3).
+`binary-families.tex`) and of Definition 3.9(3).
 
 The transported rays of a fibre of the zero-product family present `B` by `P` (`fibre_rayPres`):
 "If `n ∈ rad R_y`, the product `rn` is a combination of proper rays, so `(rn)·s = (rn)s` …

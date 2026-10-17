@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.A0Graded
 /-!
 # `Ext¹` between normalized modules (Lemma 6.3, `n = 1`)
 
-`positive-deformations.tex:132–165`: "At a nonprojective label `i`, Lemma 2.9 and
+`positive-deformations.tex`: "At a nonprojective label `i`, Lemma 2.9 and
 Proposition 2.6 give an exact sequence of representable functors […] We obtain a
 short exact sequence with terms `M_{τi}`, the middle mesh summands, and `M_i`,
 and both maps have degree one. […] It is right almost split […] Shifting its

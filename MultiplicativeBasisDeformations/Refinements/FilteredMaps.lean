@@ -8,7 +8,7 @@ A filtered map whose leading term is surjective (injective) is itself surjective
 and has a filtered right inverse; a graded map killed by the leading term of a filtered map
 with surjective leading term corrects to a filtered map killed by the map itself
 (`exists_kernel_lift`). These are the finite-filtration arguments of
-`deformation-refinements.tex:43–71` ("graded surjectivity supplies `p_d`... The finite
+`deformation-refinements.tex` ("graded surjectivity supplies `p_d`... The finite
 filtration makes the process terminate").
 -/
 

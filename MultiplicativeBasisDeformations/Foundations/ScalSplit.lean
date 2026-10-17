@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.WeightDivisibility
 /-!
 # Lemma 4.11(2): restriction of multiplicative weights over a source
 
-`lem:source-basis-extension` (2) (`scalar-normalization.tex:474–483`): "Let `Scal(T)` denote the
+`lem:source-basis-extension` (2) (`scalar-normalization.tex`): "Let `Scal(T)` denote the
 group of multiplicative `k*`-valued weights on the nonzero morphism lines of `T`, meaning
 assignments `d(r)` with `d(rr') = d(r)d(r')` whenever `rr' ≠ 0`. Restriction gives a split
 surjection `Scal(T) → Scal(T')`, whose kernel is a product of copies of `k*`, one for each

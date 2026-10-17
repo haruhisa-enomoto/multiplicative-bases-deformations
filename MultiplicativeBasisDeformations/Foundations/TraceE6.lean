@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.TraceTypesAD
 # Twisted traces of type `E_6`
 
 Appendix A, "Type `E_6` and the small-period exclusion"
-(`periodic-mesh-calculations.tex:544–608`). The arms have one, two and two
+(`periodic-mesh-calculations.tex`). The arms have one, two and two
 vertices; `x` is the closed path along the short arm and `p, q` the others, so
 `x + p + q = 0` and `x² = p³ = q³ = 0`. With `v = p - q = x + 2p`, "adding and
 subtracting the cubic relations gives `x² = 0`, `v³ = -xvx`,
@@ -64,7 +64,7 @@ def e6Table : ℕ → Set S
 abbrev e6Span (n : ℕ) : AddSubgroup S := AddSubgroup.closure (e6Table x v n)
 
 include hx hv3 hrel in
-/-- **Closure under right multiplication** (`periodic-mesh-calculations.tex:572–586`). -/
+/-- **Closure under right multiplication** (`periodic-mesh-calculations.tex`). -/
 theorem e6_closed (n : ℕ) (w : S) (hw : w ∈ e6Table x v n) :
     w * x ∈ e6Span x v (n + 1) ∧ w * v ∈ e6Span x v (n + 1) := by
   have mem : ∀ {m : ℕ} {u : S}, u ∈ e6Table x v m → u ∈ e6Span x v m :=
@@ -165,8 +165,7 @@ theorem e6_psi4'x : v * x * v ^ 2 * x = -(x * v * x * v ^ 2) := by
     show v * -(x * v * x * v) = -((v * x * v * x) * v) by noncomm_ring, e6_vxvx x v hx hrel]
   noncomm_ring
 
-/-- **Adding and subtracting the cubic relations** (`periodic-mesh-calculations.tex:
-546–557`). -/
+/-- **Adding and subtracting the cubic relations** (`periodic-mesh-calculations.tex`). -/
 theorem e6_derive (p q : S) (hp : p ^ 3 = 0) (hq : q ^ 3 = 0) (hs : x + p + q = 0)
     (c2 : ∀ r : S, 2 * r = 0 → r = 0) (hx' : x * x = 0) :
     (p - q) ^ 3 = -(x * (p - q) * x) ∧
@@ -312,8 +311,7 @@ theorem tr2_span_zero {X V : R2 L} (n : ℕ)
   | neg a _ ha => rw [map_neg, ha, neg_zero]
 
 include h2 hab hac hbc hLa hLb hLc in
-/-- **The reflection-twisted traces of `E_6` vanish** (`periodic-mesh-calculations.tex:
-588–596`). -/
+/-- **The reflection-twisted traces of `E_6` vanish** (`periodic-mesh-calculations.tex`). -/
 theorem trace_E6_swap (hθa : D.θ a = a) (hθb : D.θ b = c) (hθc : D.θ c = b)
     (w : List (Fin 3)) (hw : 1 ≤ w.length) : D.tr w = 0 := by
   have hx := e6_hx (L := L) hLa
@@ -368,7 +366,7 @@ theorem trace_E6_swap (hθa : D.θ a = a) (hθb : D.θ b = c) (hθc : D.θ c = b
     (fun n m hm ↦ cancel_two_pow h2 n hm) w (fun r hr ↦ tr2_span_zero D h2 _ (hgen _ hw) hr)
 
 include h2 hab hac hbc hLa hLb hLc in
-/-- **The ordinary traces of `E_6`** (`periodic-mesh-calculations.tex:598–608`): all
+/-- **The ordinary traces of `E_6`** (`periodic-mesh-calculations.tex`): all
 positive traces vanish except possibly in word degree three, where they are
 killed by `3`. -/
 theorem trace_E6_id (hθa : D.θ a = a) (hθb : D.θ b = b) (hθc : D.θ c = c)

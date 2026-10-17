@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.GradedBasis
 /-!
 # Relative cochains of character `χ` and their coefficients
 
-`integral-deformations.tex:17–20`: "all cochains are normalized relative to the vertex
+`integral-deformations.tex`: "all cochains are normalized relative to the vertex
 identities and respect the categorical grading and the integer ray weights." A normalized
 relative two-cochain of character `χ` on `Λ ≅ kP` is `Φ₂` of its coefficients (`realize`);
 it is a coboundary exactly when its coefficients are `d₁` of coefficients (`coef_of_isCobdry`,

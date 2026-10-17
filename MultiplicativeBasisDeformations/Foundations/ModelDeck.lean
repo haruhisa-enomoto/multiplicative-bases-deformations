@@ -5,7 +5,7 @@ import Mathlib.GroupTheory.Archimedean
 /-!
 # Deck transformations for star models
 
-Proof of Proposition 4.1, Step 3 (`periodic-mesh-calculations.tex:142–166`), for
+Proof of Proposition 4.1, Step 3 (`periodic-mesh-calculations.tex`), for
 the repetition of a star model `Δ` covering a finite stable translation quiver
 `Q` by `π`:
 
@@ -237,7 +237,7 @@ theorem Lz_child (z : (starTree L).ZVert) (hz : π.obj z = π.obj (o L)) {x y : 
     obtain rfl : l = k + 1 := by omega
     exact liftArm_succ_arrow L π hπ z hz i k hl
 
-/-- **The deck transformation `H_z`** (`periodic-mesh-calculations.tex:146–149`):
+/-- **The deck transformation `H_z`** (`periodic-mesh-calculations.tex`):
 lift the arms from `z`, then extend by translation. -/
 def Hz (z : (starTree L).ZVert) (hz : π.obj z = π.obj (o L)) (X : (starTree L).ZVert) :
     (starTree L).ZVert :=
@@ -432,7 +432,7 @@ theorem fibre_B_arm (i : Fin t) : ∀ (k : ℕ) (hk : k < L i + 1) (Y : (starTre
       exact eq_of_star_bijective π (hπ.1 Y₀) h1 hY₀Y (by rw [π_Hz L hQ π hπ hτ, hY])
 
 include hτ in
-/-- **The deck group is transitive on fibres** (`periodic-mesh-calculations.tex:162–166`). -/
+/-- **The deck group is transitive on fibres** (`periodic-mesh-calculations.tex`). -/
 theorem fibre_transitive {X Y : (starTree L).ZVert} (h : π.obj X = π.obj Y) :
     ∃ (z : (starTree L).ZVert) (hz : π.obj z = π.obj (o L)), Hz L π hπ z hz X = Y := by
   set j := jco L X
@@ -591,7 +591,7 @@ theorem eq_of_t_eq (ht : 0 < t) (hcl : t = 1 ∨ t = 3) {w w' : (starTree L).ZVe
 
 include hτ in
 /-- **Step 4: the deck group is infinite cyclic**, and the fibres of `π` are its
-orbits (`periodic-mesh-calculations.tex:179–188`). -/
+orbits (`periodic-mesh-calculations.tex`). -/
 theorem deck_cyclic (ht : 0 < t) (hcl : t = 1 ∨ t = 3)
     (hnt : ∃ X Y : (starTree L).ZVert, X ≠ Y ∧ π.obj X = π.obj Y) :
     ∃ (z₀ : (starTree L).ZVert) (hz₀ : π.obj z₀ = π.obj (o L)), 0 < z₀.t ∧

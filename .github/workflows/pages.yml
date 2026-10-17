@@ -1,0 +1,54 @@
+name: Deploy Pages
+
+on:
+  push:
+    branches: [gh-pages]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the validated website
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: gh-pages
+          persist-credentials: false
+      - name: Require complete generated documentation
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          site = Path('_site')
+          state = json.loads((site / 'build.json').read_text())
+          assert not state['dirty'], 'Publish from a clean source commit'
+          assert state['api_generated'], 'The complete Lean API is required'
+          assert (site / 'api/index.html').is_file()
+          assert (site / 'index.html').is_file()
+          assert not any(p.is_symlink() for p in site.rglob('*'))
+          print('Website source:', state['commit'])
+          print('API source:', state['api_source_commit'])
+          PY
+      - name: Configure Pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+      - name: Upload website and API
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e

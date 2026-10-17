@@ -7,7 +7,7 @@ import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
 /-!
 # The projective corner of the lifted modules is `B` (toward Corollary 12.1)
 
-`deformation-refinements.tex:28–33`: "At projective labels choose the regular `B`-projectives."
+`deformation-refinements.tex`: "At projective labels choose the regular `B`-projectives."
 The vertex idempotents `e_p` of `A₀` give vertices of the length grading (`vxIdem`), and a
 splitting of `B` respecting them (Lemma 6.4). The lift `M_p^B` at a projective label is the
 regular module `φ(e_p) B` (Proposition 6.5(3)), by uniqueness of lifts; the corner algebra of

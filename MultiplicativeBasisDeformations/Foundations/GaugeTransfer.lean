@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
 /-!
 # Gauge transformations preserve derivative surjectivity
 
-Appendix A (`periodic-mesh-calculations.tex:236–241`): "rescaling arrows and
+Appendix A (`periodic-mesh-calculations.tex`): "rescaling arrows and
 entire relations changes the mesh derivative by invertible diagonal maps, so it
 changes neither its cokernel nor the brick property." For
 `c'_{x,a} = η_x c_{x,a} μ_{σ a} μ_a`, the gauge functor `kQ → kQ` descends to a

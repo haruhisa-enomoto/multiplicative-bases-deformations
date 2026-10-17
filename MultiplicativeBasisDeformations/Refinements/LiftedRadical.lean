@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Refinements.SplitDeformation
 /-!
 # Proposition 6.5(3): the radical filtration of the lifted category
 
-`positive-deformations.tex:300–309`: "Let `E` be the full category on the lifted modules. The
+`positive-deformations.tex`: "Let `E` be the full category on the lifted modules. The
 map-degree filtration has nilpotent positive part, and its degree-zero part is a product of
 copies of `k`, one for each lifted module. Its first term is therefore the categorical radical.
 Since the original graded Hom category is generated in degree one, descending induction

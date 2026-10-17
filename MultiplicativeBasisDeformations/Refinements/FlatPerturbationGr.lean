@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Refinements.FlatPerturbationDim
 /-!
 # Lemma 12.3: `gr_𝔪 B ≅ C`
 
-`lem:flat-mesh-perturbations` (`deformation-refinements.tex:165–180`): "Then `gr_𝔪 B ≅ C`."
+`lem:flat-mesh-perturbations` (`deformation-refinements.tex`): "Then `gr_𝔪 B ≅ C`."
 In each degree `d`, paths induce a linear isomorphism from `C_d(w, y)` (the image of the degree-`d`
 paths in `C`) onto `𝔪^d B(w, y)/𝔪^{d+1} B(w, y)` (`grIso`); composition is induced by composition of
 paths on both sides. The map is well defined since a homogeneous relation `u r v` of degree `d`

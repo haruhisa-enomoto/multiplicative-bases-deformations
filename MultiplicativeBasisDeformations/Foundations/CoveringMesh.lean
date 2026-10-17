@@ -7,7 +7,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
 The general form of `SectionalMesh`: for any covering `π : ℤΔ → Q` commuting
 with translation, pulling the coefficients of `Q` back along `π` makes `π` map
 the mesh relation at `X` to the mesh relation at `π X`, so `π` preserves the
-mesh ideal (`periodic-mesh-calculations.tex:57–63`). This is how the twisted
+mesh ideal (`periodic-mesh-calculations.tex`). This is how the twisted
 trace calculation (Lemma A.2) passes relations downstairs.
 -/
 

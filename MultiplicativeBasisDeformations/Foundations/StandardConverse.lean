@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.StandardForm
 /-!
 # The converse of Corollary 4.15: `A ≅ A₀` implies that `A` is standard
 
-`scalar-normalization.tex:657–662`: "Conversely an isomorphism `A ≅ A₀` gives an equivalence
+`scalar-normalization.tex`: "Conversely an isomorphism `A ≅ A₀` gives an equivalence
 `F : ind(mod A) → C`, possibly permuting labels. Since `C` is generated in degree one with
 homogeneous relations, `gr_J C = C`. Thus `gr F` is a graded automorphism of `C` with the same
 permutation. Applying `(gr F)⁻¹` after `F` gives the required object-preserving equivalence."

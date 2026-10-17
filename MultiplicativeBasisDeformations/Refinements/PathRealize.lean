@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.PathMaps
 Given morphisms `g a : F y ⟶ F x` of a `k`-linear category for the arrows `a : y ⟶ x` of a
 quiver, paths are realized by composition (`pathR`) and the `k`-linear path category `kQ` by
 linear extension (`realizeR`); the realization is a functor (`realizeR_comp`). This is the
-realization `kQ → ℳ` by lifted arrows of `deformation-refinements.tex:409–417`.
+realization `kQ → ℳ` by lifted arrows of `deformation-refinements.tex`.
 -/
 
 set_option autoImplicit false

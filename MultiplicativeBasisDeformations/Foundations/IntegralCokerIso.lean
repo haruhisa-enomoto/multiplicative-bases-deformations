@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.ResidualSpaces
 /-!
 # Lemma B.2 as an isomorphism: `⊕ coker D_m(E₄) ≅ ⊕_{i∈I} 𝒪/(2)`
 
-`characteristic-two-mesh-calculations.tex:372–501` (`lem:integral-mesh-cokernels`): with
+`characteristic-two-mesh-calculations.tex` (`lem:integral-mesh-cokernels`): with
 `𝒪 = ℤ/4` and `E₄` the mesh category with unit coefficients `u` reducing to the all-one
 coefficients of `C⁽²⁾`, `⊕_{m≥2} coker D_m(E₄) ≅ ⊕_{i∈I} (𝒪/(2))_{χ_i}`, the summand `i` lying
 in `coker D_{d_i−1}`, `d_i = 2s_i + 2`.

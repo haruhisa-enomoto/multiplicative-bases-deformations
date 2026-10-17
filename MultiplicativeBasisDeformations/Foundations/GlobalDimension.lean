@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.ProjectiveEvaluation
 /-!
 # Global dimension at most two (proof of Proposition 2.10)
 
-`graded-category.tex:509–520`: "At a nonprojective label `X`, the exact right
+`graded-category.tex`: "At a nonprojective label `X`, the exact right
 mesh … give `0 → R_{τX} → ⊕_{Y→X} R_Y → R_X → L_X → 0`. At a projective label
 `P`, the same lemma gives a resolution `0 → R_{rad P} → R_P → L_P → 0` of length
 at most one. Hence `gl.dim Λ ≤ 2`." The proof of Lemma 2.9 uses this in the form

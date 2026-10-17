@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.IndicatorCocycles
 /-!
 # Indicator cochains: relativity and characters
 
-Two facts used in the proofs of Propositions 11.2 and 11.3 (`binary-families.tex:110–150`):
+Two facts used in the proofs of Propositions 11.2 and 11.3 (`binary-families.tex`):
 
 * the supported cochains are normalized `S`-relative (their values vanish on identity inputs
   and they commute with the vertex idempotents);

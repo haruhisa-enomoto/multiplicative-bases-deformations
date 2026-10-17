@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.OddQuotient
 /-!
 # The deck transformation of the degree of a row
 
-Proof of Lemma A.2(1) (`periodic-mesh-calculations.tex:337–340`): "Lift a row
+Proof of Lemma A.2(1) (`periodic-mesh-calculations.tex`): "Lift a row
 path from `τ(x, j)`. Its endpoint has the form `(ρ^l x, j - sl)`." For a deck
 generator `g (v, t) = (ρ v, t + c₀)`, a row of length `m + 1` lifts to a path
 from `τ X` to `g^n X` with `n c₀ = m - 1`.

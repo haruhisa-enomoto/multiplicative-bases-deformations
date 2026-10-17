@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.StarCase
 /-!
 # Twisted traces killed by two (Lemma B.2, the trace calculations)
 
-`characteristic-two-mesh-calculations.tex:430–490` (proof of `lem:integral-mesh-cokernels`),
+`characteristic-two-mesh-calculations.tex` (proof of `lem:integral-mesh-cokernels`),
 over an arbitrary coefficient group (no division by two):
 
 * type `D`: "In either case the fixed long-arm power gives `0 = [(-x-y)^j] = ±2[w_j]`.

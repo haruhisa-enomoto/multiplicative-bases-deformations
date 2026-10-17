@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.TableInduction
 /-!
 # Lemma 9.2 as stated: `B_χ = C_χ/𝔞_χ ≅ kQ_χ`
 
-`integral-partial-lifts.tex:52–113` (`lem:centralizer-ray-algebra`). Put `q̂ = ∑_x q̂_x`,
+`integral-partial-lifts.tex` (`lem:centralizer-ray-algebra`). Put `q̂ = ∑_x q̂_x`,
 `C_χ = Cent_{A₀}(q̂)`, `𝔞_χ = {c ∈ C_χ : q̂c = 0}` and `B_χ = C_χ/𝔞_χ`. "The algebra `B_χ` is
 basic and representation-finite. Its basis consists of the supporting identities and the
 two-sided rays of `A₀`, and its products define a weighted multiplication table `Q_χ` ...

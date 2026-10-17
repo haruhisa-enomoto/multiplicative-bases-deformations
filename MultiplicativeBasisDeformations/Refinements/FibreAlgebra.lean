@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
 /-!
 # Fibre algebras of deformation families (toward Proposition 12.8)
 
-A scalar fibre of a family `m + Σ_i t_i μ_i` (`characteristic-two-construction.tex:83–86`) is
+A scalar fibre of a family `m + Σ_i t_i μ_i` (`characteristic-two-construction.tex`) is
 the underlying space of `Λ` with an associative unital bilinear product. `Fib A` is that algebra
 (`AssocMul`). When the product agrees with that of `Λ` up to terms raising the length degree,
 the length filtration of `Λ` makes `Fib A` a positive filtered deformation of `Λ`

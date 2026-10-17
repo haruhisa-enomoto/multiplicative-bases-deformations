@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.HochschildCochains
 /-!
 # Lemma 6.4 as stated
 
-`lem:split-positive-deformation` (`positive-deformations.tex:180–193`): "`S` lifts to a unital
+`lem:split-positive-deformation` (`positive-deformations.tex`): "`S` lifts to a unital
 subalgebra of `B`, and the filtration of `B` splits as `S`-bimodules. The resulting
 identification of `B` with `Λ` as filtered vector spaces induces the prescribed identification
 `gr B = Λ`, and the multiplication of `B` becomes `μ₀ + Σ_{q>0} μ_q`, where `μ₀` is the

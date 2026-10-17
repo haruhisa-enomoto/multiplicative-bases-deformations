@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.StarTree
 /-!
 # Deck transformations of `ℤΔ → Q`
 
-Proof of Proposition 4.1, Steps 3 and 4 (`periodic-mesh-calculations.tex:142–212`).
+Proof of Proposition 4.1, Steps 3 and 4 (`periodic-mesh-calculations.tex`).
 
 * A map over `π` preserving arrows is determined by its value at one vertex
   ("by unique lifting of undirected walks") — `eq_of_over`.
@@ -128,7 +128,7 @@ theorem nonempty_hom_aboveZ (X : T.ZVert) (b : D) (h : T.G.Adj X.v b) :
 
 include hτ in
 /-- **Step 4: height coordinates of a translation-commuting automorphism**
-(`periodic-mesh-calculations.tex:196–204`). -/
+(`periodic-mesh-calculations.tex`). -/
 theorem height_form [Nonempty D] (hW : T.ZConnected)
     (hF : ∀ X Y, Nonempty (X ⟶ Y) ↔ Nonempty (F X ⟶ F Y)) :
     ∃ (c₀ : ℤ) (ρ : D ≃ D), (∀ a b, T.G.Adj a b ↔ T.G.Adj (ρ a) (ρ b)) ∧

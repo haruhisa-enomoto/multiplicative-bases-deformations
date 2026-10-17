@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.StarTrace
 # Every row class is a word trace (Lemmas A.2 and A.4)
 
 `lem:twisted-trace-surjection` (surjectivity) and `lem:arm-trace-reduction`
-(first part), `periodic-mesh-calculations.tex:322–421`: "Lift a row path from
+(first part), `periodic-mesh-calculations.tex`: "Lift a row path from
 `τ(x, j)`. … The map from twisted paths to row classes is well defined and
 surjective." and "If a path from `v` to `θ v` meets the centre `o`, cut it there.
 Twisted rotation gives a path from `o` to `θ o = o`, and Lemma A.3 expresses it

@@ -6,7 +6,7 @@ import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
 /-!
 # Idempotent corners of representation-finite algebras
 
-Lemma 3.1(1), second part (`projective-rays.tex:38–45`): for `C = eAe`, the
+Lemma 3.1(1), second part (`projective-rays.tex`): for `C = eAe`, the
 extension of `C`-modules to `A`-modules is fully faithful and preserves finite
 dimension, indecomposability and isomorphism classes; hence `C` is
 representation-finite. The source uses induction `V ↦ V ⊗_C eA`, whose unit

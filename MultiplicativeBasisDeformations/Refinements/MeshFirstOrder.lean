@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Refinements.MeshNormalForm
 /-!
 # First-order mesh deformations (toward Proposition 12.5)
 
-`deformation-refinements.tex:261–266`: "Given a correction tuple `z_v ∈ C_{q+2}(τv, v)`, impose
+`deformation-refinements.tex`: "Given a correction tuple `z_v ∈ C_{q+2}(τv, v)`, impose
 `r_v − εz_v` over `k[ε]/(ε²)`. Corollary 12.4 makes this a free deformation of `C`."
 
 Here `C = kQ/(r)` is the scalar mesh category, assumed to satisfy the hypothesis of Lemma 12.3

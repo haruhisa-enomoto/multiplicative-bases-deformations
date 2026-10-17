@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # The coefficient ring `𝒪 = ℤ/4` (Section 10)
 
-`integral-deformations.tex:6–9`: "Let `𝒪 = ℤ/4`. […] the coefficient sequence
+`integral-deformations.tex`: "Let `𝒪 = ℤ/4`. […] the coefficient sequence
 `0 → 𝔽₂ → 𝒪 → 𝔽₂ → 0`."
 
 The reduction `red : ℤ/4 → 𝔽₂`, the set-theoretic section `lift`, and the additive embedding

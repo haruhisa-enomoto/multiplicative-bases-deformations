@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
 /-!
 # Long paths of `Π(A_N)` vanish
 
-`characteristic-two-mesh-calculations.tex:24–37`: "For the preprojective category of
+`characteristic-two-mesh-calculations.tex`: "For the preprojective category of
 `A_N`, … the interior relations interchange `s₊s₋` and `s₋s₊`, while the endpoint
 backtracks are zero. For paths starting at `i`, sorting the steps in either order
 shows that the paths `s₊^a s₋^b`, `0 ≤ a ≤ N − i`, `0 ≤ b ≤ i − 1`, span. An

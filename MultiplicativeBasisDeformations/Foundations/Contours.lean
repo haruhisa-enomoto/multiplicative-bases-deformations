@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.ContourTrees
 
 `def:generating-rays`(3), the path part of `lem:generating-paths`, and
 `prop:controlled-contours` (`primitive-ray-equations.tex`, Appendix C.1 in
-`local-ray-restrictions.tex:15–352`).
+`local-ray-restrictions.tex`).
 
 An ordinary path for a ray `f` starts with an ordinary left divisor of `f`, and every
 ordinary left divisor starts such a path. We prove `prop:controlled-contours` in the form

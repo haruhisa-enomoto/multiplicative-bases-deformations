@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.DeletionTransfer
 # Functionals on `Π(Δ)` modulo deleted vertices
 
 Tools for the nonvanishing statements of Appendix A
-(`periodic-mesh-calculations.tex:610–630`: "Assigning these values in `k` gives a
+(`periodic-mesh-calculations.tex`: "Assigning these values in `k` gives a
 nonzero functional annihilating all the relations"). A function `g` on vertex
 lists gives a functional on paths (`vfun`); it annihilates the ideal of `Π(Δ)`
 modulo the deleted vertices when its values on the terms of each contextual

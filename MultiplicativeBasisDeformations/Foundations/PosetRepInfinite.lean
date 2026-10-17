@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.RepFinite
 /-!
 # Lemma 8.8 for incidence algebras of posets with unique paths
 
-`local-ray-geometry.tex:162–198` (`lem:dimension-infinity` and the table after it): "For the
+`local-ray-geometry.tex` (`lem:dimension-infinity` and the table after it): "For the
 relation-free diagrams used below the required vectors are […] These counts depend only on
 the underlying graphs; for a tree any orientation is allowed."
 

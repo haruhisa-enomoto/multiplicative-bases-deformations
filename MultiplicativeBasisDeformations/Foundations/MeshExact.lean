@@ -9,7 +9,7 @@ The mesh data of a scalar mesh category `C(Q, c)` (`CatAlg.MeshData`): the right
 the arrows into each vertex, the left ones the coefficient-scaled mates, and the mesh sequences
 are exact (`MeshExact`). For `k(Γ_A)` this is Proposition 2.6(1)(2) (`IndSkeleton.arMeshData`).
 
-`integral-deformations.tex:31–34`: the prime-field model `C⁽²⁾` inherits these properties
+`integral-deformations.tex`: the prime-field model `C⁽²⁾` inherits these properties
 "since it does so after the faithful field extension to `k`". Here (`MeshExact.descend`):
 exactness of the meshes of `C(Q, c)` over `k`, for a gauge `c = η · (ι ∘ u) · μ μ`, implies that of
 `C(Q, u)` over the subfield `K`, through the form functor and its retractions (`FormFunctor`).

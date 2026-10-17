@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshCategory
 
 The linear path category `kQ = Free k (Paths Q)` is graded by path length:
 every morphism is the finite sum of its homogeneous components, and
-composition adds degrees (`graded-category.tex:156–157`: "The quotient is
+composition adds degrees (`graded-category.tex`: "The quotient is
 graded by path length").
 -/
 

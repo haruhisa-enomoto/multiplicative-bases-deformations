@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.ECase
 /-!
 # Type `D` in characteristic two (Appendix B)
 
-`characteristic-two-mesh-calculations.tex:80–127, 205–211`. On a periodic star model
+`characteristic-two-mesh-calculations.tex`. On a periodic star model
 of type `D_n` (`N = n − 2`) with period `c₀ = 2s`, a row of path degree `2j` exists
 only for `j = 1 + n s` with twist `θ^n` (Lemma A.2(1)), and its class is an integer
 multiple of the alternating word `w_j` (`trace_D_span`), which vanishes for `j > N`.

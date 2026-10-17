@@ -6,9 +6,9 @@ import Mathlib.RingTheory.Length
 /-!
 # Lemma 2.5 for an Artin algebra
 
-`lem:strict-radical-layers` (`graded-category.tex:226`): "Let `A` be any Artin algebra, let `J` be
+`lem:strict-radical-layers` (`graded-category.tex`): "Let `A` be any Artin algebra, let `J` be
 the radical of its category of finite-length modules […]". The manuscript assumes ordinary
-Auslander–Reiten theory (`main.tex:403`): every indecomposable module `Y` has a right almost split
+Auslander–Reiten theory (`main.tex`): every indecomposable module `Y` has a right almost split
 map `E → Y`, with kernel `0` (`rad P → P` at projectives) or a left almost split map out of the
 indecomposable `τY` (the almost split sequence). With this input (`ARData`), Lemma 2.5 holds in
 the category of finitely generated modules over an Artin algebra (`strict_radical_layers_artin`).
@@ -168,7 +168,7 @@ theorem decomp_artin [IsNoetherianRing A] (X : FGModuleCat.{u} A) : ∃ (n : ℕ
 include R in
 /-- **Lemma 2.5** (`lem:strict-radical-layers`) **for an Artin algebra** `A` over a commutative
 Artinian ring `R`, in the category of finitely generated (finite-length) modules, with ordinary
-Auslander–Reiten theory as input (`hAR`, assumed by the manuscript, `main.tex:403`): for a radical
+Auslander–Reiten theory as input (`hAR`, assumed by the manuscript, `main.tex`): for a radical
 monomorphism-type map `a : U → Y` with `a + h` monic for all `h ∈ J²(U, Y)`, `z ≫ a ∈ J^{n+1}`
 implies `z ∈ J^n`. -/
 theorem strict_radical_layers_artin [IsNoetherianRing A]

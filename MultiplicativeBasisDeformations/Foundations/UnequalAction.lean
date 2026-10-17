@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.RayConfigs
 /-!
 # Lemma 8.10: unequal endpoint actions
 
-`lem:unequal-endpoint-action` (`local-ray-geometry.tex:228–299`): "suppose `A₀(x,y) = R_x f`
+`lem:unequal-endpoint-action` (`local-ray-geometry.tex`): "suppose `A₀(x,y) = R_x f`
 has dimension `l`, where `f` is generating. If `f q_y = q_x^a f ≠ 0` with `a ≥ 2`, then
 `l = a+1`, and `f q_y` lies in the endpoint socle of `A₀(x,y)`."
 

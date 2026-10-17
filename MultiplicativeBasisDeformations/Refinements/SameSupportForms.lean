@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.PeriodicComponents
 /-!
 # Lemma 12.6: mesh normal forms with the same support
 
-`deformation-refinements.tex:292–328` (`lem:same-support-forms`). Let `C(λ)` be the mesh normal
+`deformation-refinements.tex` (`lem:same-support-forms`). Let `C(λ)` be the mesh normal
 forms `kQ/(𝔪^{N+1}, r_v − Σ_i λ_i (p_i)_v)` of Proposition 12.2, with the residual paths `p_i`,
 each internal to its own periodic component. If `λ_i = 0` exactly when `λ'_i = 0`, then
 `C(λ) ≅ C(λ')` by an object-preserving isomorphism.

@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.PsiInjective
 /-!
 # The characteristic-two decomposition of `HH²(A₀)_{>0}` (Proposition 7.6)
 
-`weights-and-parameters.tex:405–410`: "Proposition 6.1 and the distinct characters `χ_i`
+`weights-and-parameters.tex`: "Proposition 6.1 and the distinct characters `χ_i`
 now give the asserted decomposition and the one-dimensionality of every nonzero summand,
 with `I₀` the set of `i` for which `HH²(A₀)_{χ_i} ≠ 0`."
 

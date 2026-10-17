@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # Normed multiplicative bases and basic algebras
 
-Definition 1.1 of the frozen manuscript (`main.tex:135`): a basis `𝓑` of a
+Definition 1.1 of the manuscript (`main.tex`): a basis `𝓑` of a
 finite-dimensional algebra `A` is *multiplicative* if `bc ∈ 𝓑 ∪ {0}` for all
 `b, c ∈ 𝓑`; it is *normed* if it contains a complete set of primitive
 orthogonal idempotents and `𝓑 ∩ (rad A)^n` is a basis of `(rad A)^n` for every

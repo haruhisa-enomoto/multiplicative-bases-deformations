@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.RowSpan
 /-!
 # Cokernels on a periodic star model spanned by one row (Appendix B)
 
-`characteristic-two-mesh-calculations.tex:13–20`: "We will show that each periodic
+`characteristic-two-mesh-calculations.tex`: "We will show that each periodic
 component contributes at most one correction line, represented by a single path."
 On a periodic star model, the twisted-trace surjection of Lemma A.2 (`rowClass_mem_span`)
 sends words at the centre onto the row classes. If every twisted trace of a word in

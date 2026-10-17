@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.Thinness
 /-!
 # The deck grading of a scalar mesh category, as a graded family
 
-Subsection 4.2 (`scalar-normalization.tex:182–236`): the covering formula
+Subsection 4.2 (`scalar-normalization.tex`): the covering formula
 `eq:walk-hom-sum` and the height. For a translation quiver with
 homogeneous meshes, the walk-class weight `deg` of `DeckGrading.lean` grades the
 Hom spaces of `C(Q, c)` between all vertices (`deckGrading`), and the length of

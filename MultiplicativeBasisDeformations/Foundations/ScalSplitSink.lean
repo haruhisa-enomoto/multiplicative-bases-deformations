@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.ScalSplit
 /-!
 # Lemma 4.11(2) for a sink
 
-`lem:source-basis-extension` (`scalar-normalization.tex:474–486`): "Both assertions hold dually for
+`lem:source-basis-extension` (`scalar-normalization.tex`): "Both assertions hold dually for
 a sink." For a sink `t` of `T = T' ∪ {t}`, `op t` is a source of the opposite category. Weights
 on `S ⊆ O` and on the corresponding set of `Oᵒᵖ` correspond (`opScal`: a line `f : o → o'` is the
 line `f.op : op o' → op o`), compatibly with restriction (`res_opScal`), so the split surjection

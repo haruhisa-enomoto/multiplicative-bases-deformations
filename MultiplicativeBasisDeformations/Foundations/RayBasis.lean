@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.LocalCorner
 /-!
 # Rays and ray transversals
 
-Definition 3.2 and Corollary 3.3 (`projective-rays.tex:85–124`). For
+Definition 3.2 and Corollary 3.3 (`projective-rays.tex`). For
 `0 ≠ f ∈ A(x, y)`, `U(f) = R_x f R_y` is uniserial with radical `R(f)`, its unique
 maximal subbimodule (`le_endpointRadical`), and "`[f] = U(f) ∖ R(f)`"
 (`eq:ray-layer`; here `mem_ray_iff`). Corollary 3.3: "In each corner, the chosen

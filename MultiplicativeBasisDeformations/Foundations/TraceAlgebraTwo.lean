@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.TraceAlgebra
 /-!
 # Twisted traces when two is invertible
 
-Appendix A, `periodic-mesh-calculations.tex:546–548` ("Assume two is invertible
+Appendix A, `periodic-mesh-calculations.tex` ("Assume two is invertible
 and put `v = y - z = x + 2y`"): when `m + m = 0` forces `m = 0` on the target,
 a twisted trace kills every element `r` with `2^n r` in the ideal of relations.
 It therefore factors through the quotient `R₂` of the free ring by the

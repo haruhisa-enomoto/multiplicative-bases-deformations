@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # Vertex groups of free groupoids are free
 
-The last step of Lemma 4.2 (`lem:mesh-walk-free`, `scalar-normalization.tex:110–113`):
+The last step of Lemma 4.2 (`lem:mesh-walk-free`, `scalar-normalization.tex`):
 "Contracting spanning trees gives a graph. Its edges outside a spanning tree
 freely generate the fundamental group." Mathlib proves this for a connected
 free groupoid (`IsFreeGroupoid.endIsFreeOfConnectedFree`, by a spanning tree).

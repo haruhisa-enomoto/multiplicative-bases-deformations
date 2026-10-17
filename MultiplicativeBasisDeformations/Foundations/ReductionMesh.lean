@@ -10,7 +10,7 @@ For a ring map `red : 𝒪 → k`, reduction of coefficients on the linear path 
 coefficients `ũ` to those of `c` when `red ∘ ũ = c`, maps the mesh ideal into the mesh
 ideal, and (for surjective `red`) every element of the mesh ideal over `k` lifts to one
 over `𝒪`. This is the right exactness used in Lemma B.2
-(`characteristic-two-mesh-calculations.tex:449–453`: "Right exactness of tensor product
+(`characteristic-two-mesh-calculations.tex`: "Right exactness of tensor product
 gives `coker D_m(E₄) ⊗ 𝔽₂ ≅ coker D_m(C⁽²⁾)`").
 -/
 

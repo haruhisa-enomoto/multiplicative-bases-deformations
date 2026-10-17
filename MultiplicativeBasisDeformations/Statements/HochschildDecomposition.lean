@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Refinements.LiftedCorner
 /-!
 # Proposition 7.6, the characteristic-two decomposition, for a representation-finite algebra
 
-`prop:hochschild-mesh-restriction` (`weights-and-parameters.tex:296–312`): "In characteristic two,
+`prop:hochschild-mesh-restriction` (`weights-and-parameters.tex`): "In characteristic two,
 there is a subset `I₀ ⊆ I` such that `HH²(A₀)_{>0} = ⊕_{i ∈ I₀} HH²(A₀)_{χ_i}`,
 `dim_k HH²(A₀)_{χ_i} = 1`." Here `HH²(A₀)_{>0}` is computed by normalized relative cocycles
 modulo coboundaries in each internal degree `q > 0` (`exists_rel_cobdry`), the characters are

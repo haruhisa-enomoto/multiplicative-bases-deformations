@@ -7,7 +7,7 @@ import MBDVendor.Magnitude.Algebra.RightModuleLeftTau
 /-!
 # Lemma 2.2: the Auslander--Reiten quiver is square-free
 
-Lemma 2.2 (`lem:square-free`, `graded-category.tex:98–124`): for a basic
+Lemma 2.2 (`lem:square-free`, `graded-category.tex`): for a basic
 representation-finite algebra over an algebraically closed field, `Γ_A` has
 no loops and at most one arrow between each ordered pair of vertices.
 
@@ -20,7 +20,7 @@ arrows `τY → X`. Repeating gives indecomposables of strictly increasing
 dimension, contrary to finite representation type. The case `dim X < dim Y`
 is dual.
 
-The formal proof is borrowed from `formalization/magnitude_conjecture`,
+The formal proof is borrowed from the magnitude-conjecture formalization,
 `Algebra/RightModuleRepresentationFiniteSquareFree.lean` (commit
 `52fbbfa2b`), whose argument is the same: the dimension-growth step
 `exists_multipleArrow_pair_of_multipleArrow`, and the finiteness argument

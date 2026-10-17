@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Refinements.LiftedLayers
 /-!
 # Proposition 12.8: the polynomial mesh comparison
 
-`deformation-refinements.tex:347–352` (`prop:polynomial-mesh-comparison`): "Let `m + Σ_{i∈I} t_i μ_i`
+`deformation-refinements.tex` (`prop:polynomial-mesh-comparison`): "Let `m + Σ_{i∈I} t_i μ_i`
 be an associative family satisfying the hypotheses of Proposition 7.9 […], now indexed by
 `I = I₀`. There are polynomial lifts of the normalized modules, their morphisms, and their mesh
 presentations for which the retained mesh coefficients are `F_i(t) = a_i t_i`, `a_i ∈ k^*`. After

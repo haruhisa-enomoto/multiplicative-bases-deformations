@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.DualRepresentables
 /-!
 # Injective labels and essential surjectivity (Proposition 2.10)
 
-`graded-category.tex:527–545`: "Write `S_x = P_x/rad P_x` … Since
+`graded-category.tex`: "Write `S_x = P_x/rad P_x` … Since
 `dim C(P_y, S_x) = dim Hom_A(P_y, S_x) = δ_{xy}`, its evaluation is the simple
 `A₀`-module `S_x⁰`. For the original injective `I_x = D_k(Ae_x)`, put
 `N_x = ev(R_{I_x})`. … full faithfulness gives
@@ -73,7 +73,7 @@ def L0 : LocalFamily (k := k) D.F0 where
       · exact zero_mem _
 
 /-- The simple and injective labels at the projective labels, with the Hom
-dimensions of `graded-category.tex:527–537`. -/
+dimensions of `graded-category.tex`. -/
 structure InjData where
   S : D.PV → ι
   I : D.PV → ι
@@ -161,7 +161,7 @@ theorem repMap_eq_zero (x y : ι) (h : F x ⟶ F y) (hz : ∀ m : Rep D.F0 (F x)
 
 namespace InjData
 
-/-- **`ev(I_p) ≅ D(A₀ e_p)`** (`graded-category.tex:537–545`). -/
+/-- **`ev(I_p) ≅ D(A₀ e_p)`** (`graded-category.tex`). -/
 theorem N0_equiv (p : D.PV) : Nonempty (J.N0 p ≃ₗ[Alg D.F0] DRep (k := k) D.F0 p) := by
   -- the socle map `S_p⁰ → N_p`
   have h1 : Module.finrank k (F (J.S p) ⟶ F (J.I p)) = 1 := by rw [J.dimSI p p, if_pos rfl]

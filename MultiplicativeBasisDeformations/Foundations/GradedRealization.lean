@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.LayerExactness
 /-!
 # Proposition 2.6(3): `k(Γ_A)` is the radical grading of `ind(mod A)`
 
-`graded-category.tex:349–367`. Sending each arrow to its chosen class in
+`graded-category.tex`. Sending each arrow to its chosen class in
 `C_1 = Irr` defines a functor from the path category; it kills each mesh
 relation, because the degree-two part of `p ∘ i = 0` is the image of `r_Y`;
 the resulting graded functor `k(Γ_A) → gr_J ind(mod A)` is surjective because

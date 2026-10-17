@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
 /-!
 # Periodic localization of the mesh derivative
 
-Proposition 5.1 (`prop:periodic-localization`, `mesh-deformations.tex:83–160`).
+Proposition 5.1 (`prop:periodic-localization`, `mesh-deformations.tex`).
 
 A correction column has at most two entries (`column_eq`). On a row `(x, w)`
 with `w = p a` and `a : y → x`, the column `(σ a, p)` connects the row to its

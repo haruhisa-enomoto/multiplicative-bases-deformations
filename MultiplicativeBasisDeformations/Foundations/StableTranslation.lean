@@ -7,7 +7,7 @@ For a stable translation quiver (every vertex nonprojective and noninjective,
 `TranslationQuiver.IsStable`) the translation is a permutation `τ` of the
 vertices. The mate bijections give `y → x` iff `τ x → y`, and `τ` preserves
 arrows. These facts are used throughout the proof of Proposition 4.1
-(`periodic-mesh-calculations.tex:22–212`).
+(`periodic-mesh-calculations.tex`).
 -/
 
 set_option autoImplicit false

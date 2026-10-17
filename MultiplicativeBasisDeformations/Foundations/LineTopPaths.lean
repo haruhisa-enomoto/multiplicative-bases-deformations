@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ReRoot
 /-!
 # Top paths of `Π(A_{2N+1})`
 
-`characteristic-two-mesh-calculations.tex:24–42, 150–172`: for a line, "`V_{d+1} = 𝒜V_d − V_{d−1}`
+`characteristic-two-mesh-calculations.tex`: for a line, "`V_{d+1} = 𝒜V_d − V_{d−1}`
 … the remaining parity interval is exactly `|i − j| ≤ d ≤ min(i + j − 2, 2M − i − j)`,
 `d ≡ i − j (mod 2)`. This proves the claimed formula and `V_{M−1}` is reflection."
 With the lower bound `eq:preprojective-lower-bound`, every vertex of `Π(A_{2N+1})` has a

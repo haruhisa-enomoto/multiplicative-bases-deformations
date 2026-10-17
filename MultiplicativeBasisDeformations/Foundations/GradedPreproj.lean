@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.UBound
 /-!
 # The graded first-arrow sequence of `Π(Δ)`
 
-`periodic-mesh-calculations.tex:786–804` (proof of the bound by the `U_d`): "The
+`periodic-mesh-calculations.tex` (proof of the bound by the `U_d`): "The
 first-arrow presentation of each simple gives, as in (A.1), an exact sequence
 `e_iΠ⟨2⟩ → ⊕_{j∼i} e_jΠ⟨1⟩ → e_iΠ → S_i → 0`. Exactness at the middle term is
 proved as for (A.1)."
@@ -325,7 +325,7 @@ theorem sum_outArrow (i : T.Dbl) (f : T.Dbl → ℤ) :
   split_ifs <;> simp
 
 /-- **The lower bound** `(dim e_i Π_N e_j)_{ij} ≥ U_N` when `U_0, …, U_N ≥ 0`
-(`periodic-mesh-calculations.tex:777–804`). -/
+(`periodic-mesh-calculations.tex`). -/
 theorem U_le_finrank (j : T.Dbl) (N : ℕ) (hU : ∀ d ≤ N, ∀ a b, 0 ≤ UBound.U T.adjM d a b)
     (i : T.Dbl) : UBound.U T.adjM N i j ≤ (Module.finrank k (T.Wsp k i j N) : ℤ) := by
   set h : ℕ → T.Dbl → ℤ := fun d i ↦ (Module.finrank k (T.Wsp k i j d) : ℤ)

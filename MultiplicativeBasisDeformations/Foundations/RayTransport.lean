@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.BasicCorner
 /-!
 # Transport of ray bases
 
-Corollary 5.5 (`mesh-deformations.tex:265–268`): the isomorphism `A ≅ A₀`
+Corollary 5.5 (`mesh-deformations.tex`): the isomorphism `A ≅ A₀`
 "preserves endpoint actions and the subspaces `M(f,h)` of Definition 3.4, and
 therefore identifies `ray A` with `P`". Here: an algebra isomorphism matching
 the chosen primitive idempotents carries corners, corner radicals, corner units,

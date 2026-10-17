@@ -3,8 +3,8 @@ import MultiplicativeBasisDeformations.Foundations.PeriodicComponents
 /-!
 # Object quotients of scalar mesh categories
 
-`graded-category.tex:194–212` (`eq:mesh-object-quotient`) and Subsection 5.2
-(`mesh-deformations.tex:162–200`).
+`graded-category.tex` (`eq:mesh-object-quotient`) and Subsection 5.2
+(`mesh-deformations.tex`).
 
 * The retraction `kQ → kQ_S` maps the mesh ideal of `Q` into that of `Q_S`
   (`restrict_mem_meshIdealSub`): a mesh relation based in `S` restricts to the
@@ -345,7 +345,7 @@ theorem brickHypothesis_restrict (h : BrickHypothesis c) : BrickHypothesis (c.re
     exact zero_ne_one hy
 
 /-- The scalar mesh category of a `τ`-closed full subquiver is finite-dimensional
-if `C(Q, c)` is (`graded-category.tex:211–212`). -/
+if `C(Q, c)` is (`graded-category.tex`). -/
 theorem finiteDimensional_restrict
     (hfin : ∀ x y : V, FiniteDimensional k (ScalarMeshCategory.obj c x ⟶ ScalarMeshCategory.obj c y))
     (a b : FullSub S) :

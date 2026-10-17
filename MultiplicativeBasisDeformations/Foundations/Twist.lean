@@ -5,7 +5,7 @@ import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
 /-!
 # Twisting modules by automorphisms
 
-For Lemma 4.13 (`lem:scalar-object-values`, `scalar-normalization.tex:566–576`):
+For Lemma 4.13 (`lem:scalar-object-values`, `scalar-normalization.tex`):
 "A weight scales morphism lines and thus defines an automorphism of `L`. These
 automorphisms act on the indecomposable module classes with any fixed finite
 support, by precomposing their actions with the scalar automorphism. […] only

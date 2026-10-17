@@ -4,7 +4,7 @@ import MBDVendor.Magnitude.CategoryTheory.FiniteTauIrreducible
 /-!
 # Exactness of almost split sequences on radical layers
 
-Proposition 2.6(1)(2) (`prop:graded-realization`, `graded-category.tex:305–347`),
+Proposition 2.6(1)(2) (`prop:graded-realization`, `graded-category.tex`),
 in filtered form, at the canonical right mesh of a vertex `x` of `Γ_A`: the
 minimal right almost split map `E_x → x` (with `E_x` decomposed into chosen
 indecomposables, and `rad P → P` at a projective vertex) and its kernel `τx`

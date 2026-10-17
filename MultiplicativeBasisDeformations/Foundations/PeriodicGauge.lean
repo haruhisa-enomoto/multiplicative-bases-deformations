@@ -4,7 +4,7 @@ import Mathlib.Algebra.BigOperators.Intervals
 /-!
 # Periodic scalar gauges (Lemma A.1)
 
-`lem:periodic-scalar-gauges` (`periodic-mesh-calculations.tex:257–300`):
+`lem:periodic-scalar-gauges` (`periodic-mesh-calculations.tex`):
 "The required coefficient ratios prescribe … equations
 `μ_{a,j} μ_{b,j-1} = t_{v,j} η_{v,j}`, `μ_{a,j-1} μ_{b,j-1} = t_{u,j} η_{u,j}`.
 Dividing the two equations gives a recurrence for `μ_a`. It closes around the

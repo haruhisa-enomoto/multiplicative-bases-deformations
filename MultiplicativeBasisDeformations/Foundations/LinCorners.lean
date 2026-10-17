@@ -9,7 +9,7 @@ nonzero identity coefficient is a unit, and the only idempotents of a local corn
 and `e_x`. Every nonzero corner element is `u b_r w` with endpoint units `u, w` and a ray
 `r` (the top of its support in the endpoint chain), and `R_x b_s R_y` is spanned by the
 rays of `U(s)`. These are the facts behind "the basis vectors represent exactly the same
-endpoint-unit orbits" in the proof of Proposition 11.3(3) (`binary-families.tex:160–164`).
+endpoint-unit orbits" in the proof of Proposition 11.3(3) (`binary-families.tex`).
 -/
 
 set_option autoImplicit false

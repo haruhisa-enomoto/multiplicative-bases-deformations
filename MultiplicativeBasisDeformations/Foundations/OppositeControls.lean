@@ -5,14 +5,14 @@ import MultiplicativeBasisDeformations.Foundations.RayOp
 /-!
 # Lemma 8.11: opposite controls
 
-`lem:opposite-controls` (`local-ray-geometry.tex:301–466`): generating rays `f : b → c` and
+`lem:opposite-controls` (`local-ray-geometry.tex`): generating rays `f : b → c` and
 `g : c → a` whose Homs are cyclic at `c` but not at their other endpoints. Here: the setting,
 the inclusions (`eq:opposite-control-inclusions`)
 
 `(rad R_b) f ⊆ f q² R_c`, `A₀(c, b) f ⊆ (q²)`, and their duals for `g`,
 
 and the four-leaf star of Case 1, which gives the strong star vanishing
-(`eq:strong-star-vanishing`, `local-ray-restrictions.tex:347–360`): if `fq, qg, q² ≠ 0` then
+(`eq:strong-star-vanishing`, `local-ray-restrictions.tex`): if `fq, qg, q² ≠ 0` then
 `fg = 0`.
 -/
 

@@ -10,7 +10,7 @@ with the maps between them recover `A`: `Hom_A(e_i A, e_j A) ≅ e_j A e_i` by l
 multiplication, and `A = ⊕ e_j A e_i`. In our path-order convention for category
 algebras this is an algebra isomorphism `A ≅ (Alg (i ↦ e_i A))ᵒᵖ` (`peirceEquiv`).
 It is used to identify a basic algebra with the algebra `A₀` of its projective
-labels (Corollary 5.5, `mesh-deformations.tex:262–266`: "Restrict the resulting
+labels (Corollary 5.5, `mesh-deformations.tex`: "Restrict the resulting
 isomorphism `ind(mod A) ≅ C` to the labelled projective objects and take
 opposite algebras").
 -/

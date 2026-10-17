@@ -1,5 +1,6 @@
 # Multiplicative bases and deformations of representation-finite algebras
 
+[Website](https://haruhisa-enomoto.github.io/multiplicative-bases-deformations/) ·
 [Paper](docs/manuscript/main.pdf) ·
 [Main theorems in Lean](MultiplicativeBasisDeformations/Statements/MainTheorems.lean) ·
 [Paper correspondence](docs/PAPER-CORRESPONDENCE.md)
@@ -83,8 +84,10 @@ Independent replay with Comparator is described in
 
 ## Website
 
-The `website/` pages and the generated API form a mathematical website. Build
-it locally with the commands in [docs/VERIFICATION.md](docs/VERIFICATION.md).
+The [website](https://haruhisa-enomoto.github.io/multiplicative-bases-deformations/)
+presents the theorems, the independent statement, a proof guide and the
+searchable Lean API. See [website/README.md](website/README.md) for building
+and publishing it.
 
 ## Provenance
 

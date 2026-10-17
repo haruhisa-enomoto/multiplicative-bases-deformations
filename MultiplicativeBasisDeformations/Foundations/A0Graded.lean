@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
 /-!
 # `A₀` and its evaluated modules as graded objects
 
-Section 6 (`positive-deformations.tex:91–98`): "Let `M_1, …, M_h` be the
+Section 6 (`positive-deformations.tex`): "Let `M_1, …, M_h` be the
 degree-normalized graded indecomposable `A₀`-modules obtained by evaluating the
 objects of `C`: the degree-`d` part at `x` is `C_d(P_x, X_i)`." Here `A₀ =
 (Alg F₀)ᵒᵖ` is `ℤ`-graded through `lenA0` (`galgA0`), and the evaluation

@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.IntegralCokerIso
 /-!
 # Weight gradings of the mesh derivative cokernels
 
-`weights-and-parameters.tex:247–256`: "a mesh weight `w` grades `V_{m+1}(C)` by giving a path at
+`weights-and-parameters.tex`: "a mesh weight `w` grades `V_{m+1}(C)` by giving a path at
 row `v` the weight `w(path) − ν_v`, and grades `U_m(C)` by giving a path parallel to an arrow
 `a` the weight `w(path) − w(a)`. The map `D_m` preserves these gradings, because each term
 `(σa)a` of the mesh at `v` has weight `ν_v`. Hence `coker D_m` is graded by `L`, and the line

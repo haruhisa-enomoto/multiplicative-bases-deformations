@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.TableTree
 # The six-lift and eight-lift trees of Appendix C.1
 
 `eq:six-lift-tree` with the lifts `eq:six-lift-coordinates`, and `eq:eight-lift-tree` with the
-lifts `eq:eight-lift-coordinates` (`local-ray-restrictions.tex:104–352`). Each is given as a
+lifts `eq:eight-lift-coordinates` (`local-ray-restrictions.tex`). Each is given as a
 table poset with its rays; the factorization checks of `lem:tree-quotient` enter only through
 the retraction conditions on cover relations (Lemma 8.9), as hypotheses `X*`/`Y*` naming the
 excluded factorizations. Lemma 8.8 then excludes both trees.

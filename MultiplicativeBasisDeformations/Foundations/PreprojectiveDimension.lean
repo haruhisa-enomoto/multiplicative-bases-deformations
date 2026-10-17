@@ -5,7 +5,7 @@ import Mathlib.Data.Set.Finite.List
 /-!
 # The dimension inequality for `Π(Δ)`
 
-Proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex:91–112`):
+Proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex`):
 "For each vertex `i` of `Δ`, put `P_i = e_i Π(Δ)`, `n_i = dim_k P_i` ... There is
 an exact sequence `P_i → ⊕_{j∼i} P_j → P_i → S_i → 0`. The map onto `rad P_i`
 prefixes outgoing arrows. To identify its kernel, express a relation among the
@@ -418,7 +418,7 @@ theorem finiteDimensional_Pq (N : ℕ)
 
 
 /-- **The dimension inequality** `∑_{j∼i} n_j ≤ 2 n_i - 1`
-(`periodic-mesh-calculations.tex:109–112`). -/
+(`periodic-mesh-calculations.tex`). -/
 theorem sum_finrank_add_one_le (N : ℕ)
     (hN : ∀ (v Y : T.Dbl) (P : Quiver.Path v Y), N ≤ P.length →
       LinearPaths.path (k := k) P ∈ (T.preproj k).ideal _ _) (i : T.Dbl) :

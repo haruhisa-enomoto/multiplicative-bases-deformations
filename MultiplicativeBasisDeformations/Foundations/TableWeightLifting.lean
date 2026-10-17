@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.InitialFormProducts
 /-!
 # Proposition 8.2 in every characteristic
 
-`local-ray-geometry.tex:32–36` (`prop:table-weight-lifting`): "Let `T` be a weighted
+`local-ray-geometry.tex` (`prop:table-weight-lifting`): "Let `T` be a weighted
 multiplication table whose linearization `kT` is representation-finite over the algebraically
 closed field `k`. Every additive weight `T → ℤ/2` lifts to an additive weight `T → ℤ`."
 

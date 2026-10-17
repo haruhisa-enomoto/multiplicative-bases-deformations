@@ -117,7 +117,7 @@ theorem finrank_B_le (hN : ∀ w y (p : Quiver.Path w y), N ≤ p.length →
 
 /-! ### The dimension matrices -/
 
-/-- **The matrix argument** (`deformation-refinements.tex:205–211`): `ZH = I`, `ZH_B ≥ I` and
+/-- **The matrix argument** (`deformation-refinements.tex`): `ZH = I`, `ZH_B ≥ I` and
 `H_B ≤ H` force `H_B = H` and `ZH_B = I`. -/
 theorem matrix_arg {W : Type} [Fintype W] [DecidableEq W] (A R H HB : W → W → ℕ)
     (hC : ∀ w x, ∑ y, R y x * H w y + H w x = ∑ y, A y x * H w y + if w = x then 1 else 0)

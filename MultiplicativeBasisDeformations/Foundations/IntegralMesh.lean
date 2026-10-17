@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.GModLemmas
 /-!
 # Exact mesh relations for the lifted arrows (Proposition 10.1(3))
 
-`integral-deformations.tex:84–96`: "The category `E₄` has a quadratic scalar mesh
+`integral-deformations.tex`: "The category `E₄` has a quadratic scalar mesh
 presentation with unit coefficients reducing to the all-one presentation."
 
 We use only the part needed later: the lifted arrows satisfy the mesh relations exactly for

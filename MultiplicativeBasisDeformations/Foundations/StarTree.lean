@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.StarModel
 # The star model as an oriented tree
 
 The star model with its two-colouring by depth and the orientation away from
-the centre (`periodic-mesh-calculations.tex:179–185`: "For `D` and `E`, root the
+the centre (`periodic-mesh-calculations.tex`: "For `D` and `E`, root the
 tree at the trivalent vertex; for odd `A`, root it at its middle vertex ...
 With the orientation away from the root ...").
 -/

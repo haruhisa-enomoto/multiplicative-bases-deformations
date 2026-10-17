@@ -3,8 +3,8 @@ import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
 /-!
 # Rescaling arrows and mesh relations
 
-`graded-category.tex:174–190` and Appendix A
-(`periodic-mesh-calculations.tex:65–79, 236–241`): "rescaling arrows and entire
+`graded-category.tex` and Appendix A
+(`periodic-mesh-calculations.tex`): "rescaling arrows and entire
 mesh relations changes the mesh derivative by invertible diagonal maps". Given
 arrow scalars `μ` and relation scalars `η` with
 `c'_{x,a} = η_x c_{x,a} μ_{σ a} μ_a`, the linear functor `kQ → kQ` multiplying

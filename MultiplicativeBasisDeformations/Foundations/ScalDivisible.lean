@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ScalSplit
 /-!
 # Lemma 4.12, last clause: `Scal(L)` is an abelian divisible group
 
-`lem:cover-exhaustion` (`scalar-normalization.tex:517–560`): "Consequently `L` has a
+`lem:cover-exhaustion` (`scalar-normalization.tex`): "Consequently `L` has a
 multiplicative basis, and `Scal(L)` is an abelian divisible group."
 
 `Scal(L)` is the group of multiplicative `k*`-valued weights on the nonzero morphism lines of `L`

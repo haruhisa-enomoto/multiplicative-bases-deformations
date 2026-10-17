@@ -5,7 +5,7 @@ import Mathlib.Combinatorics.Enumerative.IncidenceAlgebra
 /-!
 # Lemma 4.9: weights on representation-finite posets
 
-`lem:poset-weights` (`scalar-normalization.tex:392–420`): "If the incidence
+`lem:poset-weights` (`scalar-normalization.tex`): "If the incidence
 algebra of a finite poset `R` is representation-finite, every additive weight,
 with values in any abelian group, has the form `w(x,y) = ζ_y − ζ_x`."
 
@@ -399,7 +399,7 @@ theorem connIn_restrict {Q D : Set P} (hDQ : D ⊆ Q)
 variable [Infinite k]
 
 /-- **Distinct components of `U` lie in distinct components of `Q ∖ {s}`**
-(`scalar-normalization.tex:401–410`), for an up-set `Q` and a minimal `s ∈ Q`. -/
+(`scalar-normalization.tex`), for an up-set `Q` and a minimal `s ∈ Q`. -/
 theorem sep (hrep : IsRepresentationFinite k (IncidenceAlgebra k P)) (Q : Set P)
     (hQ : IsUpperSet Q) (s : P) (hs : s ∈ Q) (hmin : ∀ x ∈ Q, ¬ x < s) (y₁ y₂ : P)
     (h₁ : s < y₁) (h₂ : s < y₂) (hc : ConnIn (Q \ {s}) y₁ y₂) : ConnIn {y | s < y} y₁ y₂ := by

@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # The lower bound by the matrices `U_d`
 
-`periodic-mesh-calculations.tex:772–804`: "For a finite graph with adjacency
+`periodic-mesh-calculations.tex`: "For a finite graph with adjacency
 matrix `M`, define integer matrices `U_0 = I`, `U_1 = M`,
 `U_{d+1} = M U_d - U_{d-1}`. If `U_0, …, U_N` are entrywise nonnegative, then
 `(dim_k e_i Π(Δ)_N e_j)_{ij} ≥ U_N`. … If `K(t)` records the kernels of the

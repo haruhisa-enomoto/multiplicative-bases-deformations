@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.IntegralWeightInstance
 /-!
 # Lemma 10.2 as stated: normalized, and in every weight
 
-`lem:mod-four-comparison` (`integral-deformations.tex:112–116`): "Let `μ̄` be a normalized
+`lem:mod-four-comparison` (`integral-deformations.tex`): "Let `μ̄` be a normalized
 Hochschild two-cocycle of `A⁽²⁾` of internal degree `q > 0`. Then `2μ̃` is a coboundary in the
 normalized Hochschild complex of `A⁽⁴⁾`. The assertion holds separately in every simultaneous
 integer weight."

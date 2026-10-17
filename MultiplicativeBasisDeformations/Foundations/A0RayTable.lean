@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.InitialFormProducts
 /-!
 # Proposition 4.14: `A₀ ≅ kP` with `P = ray A₀`
 
-`scalar-normalization.tex:620–625` (`prop:scalar-normalization`): "For `A₀` of
+`scalar-normalization.tex` (`prop:scalar-normalization`): "For `A₀` of
 Construction 2.8 and `P = ray A₀`, there is an isomorphism `A₀ ≅ kP` preserving the labelled
 primitive idempotents and homogeneous ray lines. In particular `A₀` has a normed multiplicative
 basis."

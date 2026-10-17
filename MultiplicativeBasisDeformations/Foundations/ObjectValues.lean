@@ -7,7 +7,7 @@ import MultiplicativeBasisDeformations.Foundations.SectionalPaths
 /-!
 # Lemma 4.13: weights on `L` are ratios of object values
 
-`lem:scalar-object-values` (`scalar-normalization.tex:566–604`). For the deck
+`lem:scalar-object-values` (`scalar-normalization.tex`). For the deck
 grading of a scalar mesh category with at most one arrow between two vertices,
 a weight `d` on `L` gives the automorphism `Φ` of the cover
 (`ScalarAutomorphism.lean`). "The endpoints of an arrow differ in height by one,

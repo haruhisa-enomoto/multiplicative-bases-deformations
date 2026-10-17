@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.RayStandard
 /-!
 # Rays of the fibres of the zero-product family
 
-Proposition 11.3(3) (`binary-families.tex:156–186`), in the form used by Proposition 7.9:
+Proposition 11.3(3) (`binary-families.tex`), in the form used by Proposition 7.9:
 let `B` be an algebra with a linear isomorphism `Ψ : kP → B` carrying a fibre product
 `m_c = m + Σ c_z ε_z` to the product of `B`. "Corrections involve only generating nonlocal
 inputs. Products with local basis vectors […] are unchanged. Thus the local rings and both

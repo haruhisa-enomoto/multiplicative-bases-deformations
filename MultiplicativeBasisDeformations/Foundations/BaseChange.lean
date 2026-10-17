@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.ReductionMesh
 /-!
 # Base change of scalar mesh categories along a field extension
 
-`integral-deformations.tex:25–34` (Section 10): "The all-one meshes […] define a graded category
+`integral-deformations.tex` (Section 10): "The all-one meshes […] define a graded category
 `C⁽²⁾` with `k ⊗_{𝔽₂} C⁽²⁾ = C`. […] Evaluation identifies `C⁽²⁾` with their full Hom category,
 since it does so after the faithful field extension to `k`."
 

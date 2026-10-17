@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.SectionalTree
 /-!
 # The covering `ℤΔ → Q` of a periodic component
 
-Proof of Proposition 4.1, Step 1 (`periodic-mesh-calculations.tex:33–56`):
+Proof of Proposition 4.1, Step 1 (`periodic-mesh-calculations.tex`):
 "Define `π(p, j) = τ^{-j}(end p)`. ... At the root the children give all
 outgoing arrows. At a nonroot path ending in `a`, the children give all
 outgoing arrows except `σ^{-1} a`; the repetition edge towards the parent gives

@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.IntegralModules
 /-!
 # Lifting a graded module to `ℤ/4` (Proposition 10.1)
 
-`integral-deformations.tex:76–81`: "Lift the action matrices arbitrarily to free graded
+`integral-deformations.tex`: "Lift the action matrices arbitrarily to free graded
 `𝒪`-modules. Their associativity defect is even. Division by two, followed by reduction, gives
 an `Ext²` class of degree zero. … Since `(2𝒪)² = 0`, this single correction makes the action
 associative."

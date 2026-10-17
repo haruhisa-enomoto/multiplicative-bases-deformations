@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshGrading
 /-!
 # Gradings of mesh categories by path weights
 
-For the covering formula `eq:walk-hom-sum` (`scalar-normalization.tex:203–209`):
+For the covering formula `eq:walk-hom-sum` (`scalar-normalization.tex`):
 "Paths lift uniquely from a chosen starting vertex. Contextual mesh relations
 lift uniquely as well: all terms of a mesh have the same lifted endpoints […]
 The relation ideal therefore decomposes by lifted endpoints, just as the path

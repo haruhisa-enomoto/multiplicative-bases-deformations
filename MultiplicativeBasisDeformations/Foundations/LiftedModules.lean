@@ -5,8 +5,7 @@ import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
 /-!
 # The modules `V_X̃` over finite subcategories of `L`
 
-Lemma 4.8 and the first step of Lemma 4.13 (`scalar-normalization.tex:
-327–390, 566–583`). `L` is the graded covering category on the lifted
+Lemma 4.8 and the first step of Lemma 4.13 (`scalar-normalization.tex`). `L` is the graded covering category on the lifted
 projective vertices (`grading0`). For a lifted object `X̃ = (X, h)` and a finite
 set `T` of lifted projective vertices, `V_X̃` restricted to `T` is a module over
 the covering algebra `cov T` (`VM`): its value at `z = (p, g)` is the degree

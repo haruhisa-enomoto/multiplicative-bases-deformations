@@ -7,7 +7,7 @@ import MultiplicativeBasisDeformations.Foundations.HochschildMesh
 /-!
 # The prime-field model `C⁽²⁾` of `k(Γ_A)` (Section 10)
 
-`integral-deformations.tex:25–40`: "The all-one meshes of Section 7 define a graded category
+`integral-deformations.tex`: "The all-one meshes of Section 7 define a graded category
 `C⁽²⁾` with `k ⊗_{𝔽₂} C⁽²⁾ = C`. […] Evaluation identifies `C⁽²⁾` with their full Hom category,
 since it does so after the faithful field extension to `k`. The same extension commutes with
 graded Ext […]. Lemma 6.3 therefore gives `Ext^n_{A⁽²⁾}(M_i⁽²⁾, M_j⁽²⁾)_d = 0` (`n ≥ 1`,

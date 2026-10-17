@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.RayDegree
 /-!
 # Homogeneous rays of a length-graded algebra
 
-Proposition 3.8 (`projective-rays.tex:240–262`), for a length-graded
+Proposition 3.8 (`projective-rays.tex`), for a length-graded
 representation-finite algebra with idempotents in degree zero and
 `deg 0` corners `k e_x` (the case of `A₀`):
 

@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
 /-!
 # Repeated labels in category algebras
 
-For Lemma 4.7 (`lem:homogeneous-projection`, `scalar-normalization.tex:305–320`):
+For Lemma 4.7 (`lem:homogeneous-projection`, `scalar-normalization.tex`):
 "Enlarge it to the category `B'` on the same labels with `B'(i,j) = B(x_i,x_j)`.
 Repeated labels give matrix multiplicities, and the distinct labels give an
 idempotent corner of `B`. Thus `B'` is representation-finite by Morita

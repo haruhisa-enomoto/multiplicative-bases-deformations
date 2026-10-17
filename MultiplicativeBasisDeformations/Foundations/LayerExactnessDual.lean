@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.StrictLayersDual
 /-!
 # Exactness of the second sequence of Proposition 2.6(1)
 
-`graded-category.tex:346–347`: "Applying these arguments to the opposite module
+`graded-category.tex`: "Applying these arguments to the opposite module
 category proves exactness of the second sequence in (1)." In `(mod A)ᵒᵖ` the
 right radical approximations are the left meshes of `mod A` (biproducts of the
 left almost split maps of the summands, with `I → I/soc I` at injective

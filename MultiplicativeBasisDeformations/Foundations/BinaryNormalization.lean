@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.FamilyNormalization
 /-!
 # Binary normalization
 
-Corollary 7.8 (`cor:binary-normalization`, `characteristic-two-construction.tex:64–86`):
+Corollary 7.8 (`cor:binary-normalization`, `characteristic-two-construction.tex`):
 if `Λ` also has a compatible grading by a lattice `L`, with `S` in degree zero,
 `μ_i` raising `L`-degree by `χ_i`, and the `χ_i` part of an integer basis of
 `L`, then every positive filtered deformation is isomorphic to a fibre with all

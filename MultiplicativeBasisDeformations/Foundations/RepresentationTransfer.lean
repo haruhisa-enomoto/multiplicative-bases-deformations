@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
 /-!
 # Lemma 8.9: representation transfer along a functor with a bimodule retraction
 
-`local-ray-geometry.tex:229–252` (`lem:representation-transfer`): "Let `F : S → B` be a
+`local-ray-geometry.tex` (`lem:representation-transfer`): "Let `F : S → B` be a
 functor between finite categories. Let `B_F` be the category with the objects of `S` and
 morphisms `B_F(x, y) = B(Fx, Fy)`, so that `F` gives a functor `S → B_F`, which we assume
 injective on morphisms. Suppose that there is an `S`-bimodule map `π : B_F → S` retracting

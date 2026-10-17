@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.GradedLayers
 /-!
 # Positive filtered deformations
 
-Definition 6.2 (`def:positive-deformation`, `positive-deformations.tex:69–72`):
+Definition 6.2 (`def:positive-deformation`, `positive-deformations.tex`):
 "A positive filtered deformation of a finite-dimensional nonnegatively graded
 algebra `Λ` is an algebra `B` with a finite decreasing multiplicative filtration
 and an identification `gr B = Λ`." The identification is recorded by the

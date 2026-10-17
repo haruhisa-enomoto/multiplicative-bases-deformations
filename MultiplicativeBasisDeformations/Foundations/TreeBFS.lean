@@ -8,7 +8,7 @@ import Mathlib.Tactic.LinearCombination
 # Trees seen from a root
 
 Elementary facts about a finite tree with a proper two-colouring, used in the
-proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex:118–131`):
+proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex`):
 seen from a root `o`, adjacent vertices have distances differing by one, and
 every other vertex has a unique neighbour closer to `o` (its parent).
 -/

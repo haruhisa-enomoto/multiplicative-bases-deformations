@@ -6,7 +6,7 @@ import Mathlib.Tactic.Positivity
 /-!
 # Automorphisms of star models
 
-Proof of Proposition 4.1, Step 4 (`periodic-mesh-calculations.tex:179–185`):
+Proof of Proposition 4.1, Step 4 (`periodic-mesh-calculations.tex`):
 "For `D` and `E`, root the tree at the trivalent vertex; for odd `A`, root it at
 its middle vertex. Every tree automorphism fixes that root."
 

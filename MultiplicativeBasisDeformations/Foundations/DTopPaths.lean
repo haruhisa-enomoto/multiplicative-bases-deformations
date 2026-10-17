@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.TraceTypesAD
 /-!
 # Lemma B.1: top paths of `Π(D_n)`
 
-`lem:d-top-paths` (`characteristic-two-mesh-calculations.tex:128–203`): "Let `Π(D_n)`
+`lem:d-top-paths` (`characteristic-two-mesh-calculations.tex`): "Let `Π(D_n)`
 be the preprojective algebra of type `D_n`, and put `N = n − 2`. Let `ν` be the
 identity if `N` is even and the short-arm interchange if `N` is odd. At every
 vertex `x`, there is a nonzero path of degree `2N` from `x` to `ν x`. This holds over

@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.StandardForm
 /-!
 # Proposition 2.10(3): dimensions of evaluated modules
 
-`graded-category.tex:497–507` (`prop:projective-evaluation`(3)): "If `X₀` is the evaluation of
+`graded-category.tex` (`prop:projective-evaluation`(3)): "If `X₀` is the evaluation of
 the object labelled by an indecomposable `A`-module `X`, then `dim_k X₀e_x = dim_k Xe_x` […]
 `dim X₀e_x = dim C(P_x, X) = dim Xe_x`."
 

@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.StarCorner
 /-!
 # Lemma A.5: closed paths of degree four in `Π(D₄)`
 
-`lem:d4-four-return` (`periodic-mesh-calculations.tex:610–630`): "At the centre,
+`lem:d4-four-return` (`periodic-mesh-calculations.tex`): "At the centre,
 degree-four paths are the six `x_i x_j` with `i ≠ j`, and their remaining
 relations are the row and column sums. In the order `12, 13, 21, 23, 31, 32`,
 their classes are `z, -z, -z, z, z, -z`. Assigning these values in `k` gives a

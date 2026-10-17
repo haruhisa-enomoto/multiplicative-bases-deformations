@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.GModLemmas
 /-!
 # A first-order functor on the projective corner trivializes the deformation
 
-`integral-deformations.tex:168–171` (proof of Lemma 10.2): "If its value is zero, arrow changes
+`integral-deformations.tex` (proof of Lemma 10.2): "If its value is zero, arrow changes
 remove all first-order mesh errors. The Hom category of the lifted modules becomes constant.
 Restricting to its actual projective corner trivializes the algebra deformation."
 

@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.RayWeights
 /-!
 # Proposition 7.2(1): `W(P) ≅ ℤ^{n−1} ⊕ G_ab`
 
-`weights-and-parameters.tex:86–98` (`prop:integral-ray-weights`(1)): "There is an identification
+`weights-and-parameters.tex` (`prop:integral-ray-weights`(1)): "There is an identification
 `W(P) = (I_𝓛)_G` […] the class `θ_g` of `e_{gx} − e_x` is independent of the object `x`, and
 `g ↦ θ_g` identifies `G_ab` with a direct summand of `W(P)` with complement `ℤ^{n−1}`:
 `W(P) ≅ ℤ^{n−1} ⊕ G_ab`."
@@ -569,7 +569,7 @@ def coinvEquiv : Coinv Q c v₀ D x₀ ≃+ WP Q c v₀ D where
   map_add' := map_add _
 
 include hζ in
-/-- **The identification on rays** (Proposition 7.2(1), r41 form): the class of
+/-- **The identification on rays** (Proposition 7.2(1)): the class of
 `e_{o'} − e_o = (e_{o'} − e_{o₀}) − (e_o − e_{o₀})` for a lifted ray `o → o'` corresponds to the
 weight class of that ray. -/
 theorem coinvEquiv_line (o o' : L0 Q c v₀ D x₀) (h : Thin.Line o.1 o'.1) :

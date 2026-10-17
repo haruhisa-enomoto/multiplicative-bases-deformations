@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ProperProducts
 /-!
 # Lemma 8.21(2): the primitive return corner is cyclic Nakayama
 
-`primitive-ray-equations.tex:243–262` (`lem:primitive-cyclic-corners`(2)): "the full corner
+`primitive-ray-equations.tex` (`lem:primitive-cyclic-corners`(2)): "the full corner
 `S_x` … is a cyclic Nakayama algebra. … List them as `y_1, …, y_t`. The comparison maps satisfy
 `f_i h_{ij} = f_j`, `h_{ij} h_j = h_i`, `h_{ji} = h_j f_i`. … Hence the full corner is generated
 by the cycle `x → y_1 → ⋯ → y_t → x`. Every simple forward or wraparound path is a generating

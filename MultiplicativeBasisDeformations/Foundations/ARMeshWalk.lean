@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.PeriodicDepth
 /-!
 # Lemma 4.2 for the Auslander--Reiten quiver
 
-`lem:mesh-walk-free` (`scalar-normalization.tex:89–113`): the complex `K` of
+`lem:mesh-walk-free` (`scalar-normalization.tex`): the complex `K` of
 `Γ_A` has free vertex groups. The hypotheses of `MeshWalk.isFreeGroup_end` are
 Lemma 2.2 (at most one arrow, `hasAtMostOneArrow`) and the finite-dimensionality
 of `k(Γ_A)` (`finiteDimensional_meshHom`), which is what Proposition 4.1 needs.

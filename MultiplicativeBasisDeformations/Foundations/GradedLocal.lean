@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshGrading
 /-!
 # The local structure of a finite-dimensional scalar mesh category
 
-Proof of Lemma 2.7 (`graded-category.tex:396–398`): "The positive-degree ideal
+Proof of Lemma 2.7 (`graded-category.tex`): "The positive-degree ideal
 is nilpotent, each degree-zero endomorphism ring is `k`, and degree-zero maps
 between distinct objects vanish; so this ideal is the categorical radical."
 For a finite-dimensional scalar mesh category on a finite translation quiver we
@@ -173,7 +173,7 @@ theorem prod_mem_radN (l : List (CatAlg.Alg (fun x : V ↦ obj c x)))
         (ih (fun b hb ↦ hl b (List.mem_cons_of_mem _ hb)) t z)
       rwa [add_comm] at this
 
-/-- `graded-category.tex:383–390`: every positive-degree morphism into `x` is a
+/-- `graded-category.tex`: every positive-degree morphism into `x` is a
 sum of composites with the arrows ending at `x`. -/
 theorem exists_lastArrow {w x : V} {f : obj c w ⟶ obj c x} (hf : f ∈ radN c 1 w x) :
     ∃ g : ∀ a : Σ y : V, y ⟶ x, obj c w ⟶ obj c a.1, f = ∑ a, g a ≫ arrowMor c a.2 := by

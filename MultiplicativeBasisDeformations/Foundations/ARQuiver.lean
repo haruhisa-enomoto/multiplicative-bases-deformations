@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.SquareFree
 /-!
 # The mesh category `k(Γ_A)` and standardness
 
-`graded-category.tex:164–173`: for `Q = Γ_A`, choose bases in the
+`graded-category.tex`: for `Q = Γ_A`, choose bases in the
 one-dimensional irreducible spaces. The first and second maps of the almost
 split sequence ending at a nonprojective `Y` have components `u_a (σ a)` and
 `v_a a` modulo `J²`, with `u_a, v_a ≠ 0`; the mesh relation is
@@ -33,7 +33,7 @@ Formalization:
 
 The manuscript shows that a different choice of bases or almost split
 sequences changes `k(Γ_A)` only by an object-fixing isomorphism
-(`graded-category.tex:175–190`); Definition 1.2 is formalized with an
+(`graded-category.tex`); Definition 1.2 is formalized with an
 existential choice of bases.
 -/
 

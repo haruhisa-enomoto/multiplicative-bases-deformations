@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.IntegralWeightInstance
 /-!
 # Weight-homogeneous lifts for `A⁽²⁾ = 𝔽₂P` (Proposition 10.1)
 
-`integral-deformations.tex:63–67`: "lifting a basis of `H_ℤ` to mesh weights by Lemma 7.4 gives
+`integral-deformations.tex`: "lifting a basis of `H_ℤ` to mesh weights by Lemma 7.4 gives
 the modules `M_i⁽²⁾` compatible weight gradings, and the corrections can be chosen in each weight
 component."
 

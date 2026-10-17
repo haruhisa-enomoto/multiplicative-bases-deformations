@@ -5,7 +5,7 @@ import MBDVendor.QSE.RepresentationTheory.AlmostSplitKernel
 /-!
 # Lemma 2.5: strict radical layers
 
-Lemma 2.5 (`lem:strict-radical-layers`, `graded-category.tex:225–298`). Let
+Lemma 2.5 (`lem:strict-radical-layers`, `graded-category.tex`). Let
 `J` be the radical of the category of finite-length modules and let
 `a : U → Y` be a radical monomorphism such that `a + h` is monic for every
 `h ∈ J²(U, Y)`. Then for every `W` and `n ≥ 1`,

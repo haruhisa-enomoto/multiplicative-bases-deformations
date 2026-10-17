@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.WeightEv
 /-!
 # Weighted decomposition of mesh errors (toward Proposition 12.8)
 
-`deformation-refinements.tex:404–408`: "In each path degree `q ≥ 3`, decompose their current mesh
+`deformation-refinements.tex`: "In each path degree `q ≥ 3`, decompose their current mesh
 errors into the image of the original derivative and the span of the retained `p_i` of that
 degree", with the choices made "separately in each degree and weight".
 

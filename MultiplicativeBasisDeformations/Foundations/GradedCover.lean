@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
 /-!
 # Graded covering categories and Lemma 4.7
 
-Definition 4.5 (`def:graded-covering-category`, `scalar-normalization.tex:255–262`):
+Definition 4.5 (`def:graded-covering-category`, `scalar-normalization.tex`):
 for an algebra graded by a group `𝒢`, with chosen primitive idempotents of
 identity degree, the graded covering category has objects `(x, g)` and
 morphisms `B(x, y)_{g⁻¹h}` from `(x, g)` to `(y, h)`.

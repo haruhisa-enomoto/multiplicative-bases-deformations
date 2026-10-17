@@ -2,7 +2,7 @@
 
 Source: the files listed in [source-sync.json](source-sync.json), identical to
 `formalization/multiplicative_basis_deformations` at research commit
-`36f7a0d5700c6c072e59d56e7bb1feec56149e4c` (the build and axiom check below); the current manifest is for commit `83da26adada5490dfd41e1fe233ef6b1c13509ce`, which adds the independent statement. Lean `v4.33.1`, Mathlib
+`36f7a0d5700c6c072e59d56e7bb1feec56149e4c` (the build and axiom check below); the current manifest is for commit `12182c4c29f0bf6d4ee499305eeba1c8466151ca`, which adds the independent statement and cleans up comments for release; the library was rebuilt from it (9261 jobs, 21 min 18 s). Lean `v4.33.1`, Mathlib
 `0df444a360eaa60ab8c11dca51a86af692955474`.
 
 ## Build

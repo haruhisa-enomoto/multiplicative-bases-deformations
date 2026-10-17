@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.Char2Basic
 /-!
 # Corollary 12.1: the radical grading of `ind(mod B)` is `C`
 
-`deformation-refinements.tex:86–88`: "The Hom normalization makes the `M_i^B` indecomposable and
+`deformation-refinements.tex`: "The Hom normalization makes the `M_i^B` indecomposable and
 pairwise nonisomorphic. Proposition 6.5(3) identifies their categorical radical grading with `C`."
 
 Formalization. The hypotheses of Proposition 6.5(3) hold for the evaluated modules of `A₀`

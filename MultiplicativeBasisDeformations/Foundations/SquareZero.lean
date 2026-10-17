@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.GradedExt
 /-!
 # Square-zero lifts of modules and maps (Lemma 6.6)
 
-`positive-deformations.tex:339–404` (`lem:square-zero-selected-lifts`): for a
+`positive-deformations.tex` (`lem:square-zero-selected-lifts`): for a
 Hochschild two-cocycle `μ` of internal degree `q > 0` of a graded algebra `Λ`
 over `R` (a field or `ℤ/4`), put `Λ_μ = (Λ ⊗ R[ε]/(ε²), m + εμ)`. "Write a
 lifted action as `ma + εν_i(m,a)`. Its equation is
@@ -407,7 +407,7 @@ theorem liftHom_basis {q : ℤ} {L : ActLift μ q MM} {L' : ActLift μ q NN} {ι
 
 /-! ### Trivializing derivations
 
-The algebra step of the injectivity in Proposition 7.6 (`weights-and-parameters.tex:381–392`):
+The algebra step of the injectivity in Proposition 7.6 (`weights-and-parameters.tex`):
 a lift of the left multiplications to the lifted regular module, written through its value
 `Δ` on the regular module and split by a complete family of idempotents, makes `μ` a
 coboundary. -/

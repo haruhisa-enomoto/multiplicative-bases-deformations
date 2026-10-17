@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Refinements.FilteredMaps
 Filtered lifts in the sense of Proposition 6.5 (`FLift`) are stable under finite products with
 shifted gradings (`FLift.pi`), and a `B`-stable subspace which is the image of an injective
 filtered map with injective `Λ`-linear leading term carries a transported filtered lift
-(`FLift.transport`): the leading-term arguments of `deformation-refinements.tex:50–62`.
+(`FLift.transport`): the leading-term arguments of `deformation-refinements.tex`.
 -/
 
 set_option autoImplicit false

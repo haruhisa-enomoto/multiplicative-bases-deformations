@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.MGrading
 /-!
 # Weights in a cone (toward Proposition 12.8)
 
-`deformation-refinements.tex:378–385`: "For each bar differential choose a `k`-linear right
+`deformation-refinements.tex`: "For each bar differential choose a `k`-linear right
 inverse on its image; […] Make these choices separately in each degree and weight". In the family
 `m + Σ_i t_i μ_i` the parameter `t_i` carries the weight `χ_i` of `μ_i`, so the lifts are
 homogeneous when every component has relative weight in the monoid `C` spanned by the `χ_i`.

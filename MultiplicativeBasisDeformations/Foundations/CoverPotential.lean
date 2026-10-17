@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.DeckGrading
 /-!
 # Weights on the universal cover are ratios of object values
 
-Lemma 4.13 (`scalar-normalization.tex:592–597`): "Assign `ν_X` to `t_X`. These
+Lemma 4.13 (`scalar-normalization.tex`): "Assign `ν_X` to `t_X`. These
 weights respect the triangles of `K̃`. Since this complex is simply connected,
 multiplying along walks gives object values `ζ_X` with
 `w(a) = ζ_{target(a)} / ζ_{source(a)}`."

@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.NormedBasis
 /-!
 # Rays of an algebra
 
-Section 3 of the frozen manuscript (`projective-rays.tex`). Fix a complete set
+Section 3 of the manuscript (`projective-rays.tex`). Fix a complete set
 of primitive orthogonal idempotents `e_x` and put `A(x, y) = e_x A e_y` and
 `R_x = e_x A e_x`.
 

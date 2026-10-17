@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ComponentTransfer
 # Periodic components and the reduction of `D_m` to them
 
 Proposition 5.1 (`prop:periodic-localization`) and the first paragraph of
-Appendix A.2 (`periodic-mesh-calculations.tex:232–236`): the cokernel of `D_m`
+Appendix A.2 (`periodic-mesh-calculations.tex`): the cokernel of `D_m`
 is computed on the periodic components.
 
 `T` is the set of `τ`-periodic vertices. A *periodic component* is a class of

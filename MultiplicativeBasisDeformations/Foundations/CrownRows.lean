@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ProperProducts
 # Two-sided segments, crown rows and nondeep boundary arrows
 
 `lem:two-sided-factor-paths`, `lem:crown-output-comparison` and
-`lem:nondeep-boundary-arrows` (`integral-partial-lifts.tex:126–335`), in path-free form: an
+`lem:nondeep-boundary-arrows` (`integral-partial-lifts.tex`), in path-free form: an
 ordinary path is recorded by its first (last) arrow, an ordinary left (right) divisor.
 -/
 
@@ -434,7 +434,7 @@ theorem prim_rev_of_TB (hfin : IsRepresentationFinite k (S.P.Lin k)) (hprim : Pr
     (by rw [hsb.2]; exact hprim) w1 w2 hw hg (by rw [g1, w1]) (by rw [g2, w2])⟩
 
 /-- The variable `X_a` of a nondeep row occurs in no crown row
-(`integral-partial-lifts.tex:335–341`). -/
+(`integral-partial-lifts.tex`). -/
 theorem crown_nd_disjoint_a (hfin : IsRepresentationFinite k (S.P.Lin k)) (hχ : 0 < S.P.deg χ)
     (hprim : Prim χ) {a b b' f : R} {x : V} (hf : S.CrownRow χ a b f) (hn : S.NdRow χ a b' x) :
     False := by

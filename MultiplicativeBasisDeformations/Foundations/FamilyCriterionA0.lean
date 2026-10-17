@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Refinements.FibreAlgebra
 /-!
 # Proposition 7.9 on `A₀` for an arbitrary family
 
-`prop:family-criterion` (`characteristic-two-construction.tex:88`): let `I₀` index the nonzero
+`prop:family-criterion` (`characteristic-two-construction.tex`): let `I₀` index the nonzero
 spaces `HH²(A₀)_{χ_i}` of Proposition 6.1, and let normalized `S`-relative two-cochains `μ_i`,
 `i ∈ I₀`, satisfy (1) each `μ_i` is homogeneous of character `χ_i` with nonzero class, (2) the
 family product `m + Σ t_i μ_i` is associative, (3) every binary fibre has the basis of `kP` as a

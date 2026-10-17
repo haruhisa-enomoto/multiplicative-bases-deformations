@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
 /-!
 # `A` is a positive filtered deformation of `A₀`
 
-`positive-deformations.tex:74–77`: "the filtration `F^nA(x, y) = J^n(P_y, P_x)` of
+`positive-deformations.tex`: "the filtration `F^nA(x, y) = J^n(P_y, P_x)` of
 Section 3 makes `A` a positive filtered deformation of `A₀`: by Construction 2.8, its
 associated graded algebra is `A₀`."
 
@@ -253,7 +253,7 @@ def algEquivProj : A ≃ₐ[k] S.Aproj b := by
   have he' : CompleteOrthogonalIdempotents (e ∘ σE) := (CompleteOrthogonalIdempotents.equiv σE).2 he
   exact (peirceEquiv he').trans (AlgEquiv.op (CatAlg.algEquivOfFunctor S.incl α).symm)
 
-/-- **`A` is a positive filtered deformation of `A₀`** (`positive-deformations.tex:74–77`). -/
+/-- **`A` is a positive filtered deformation of `A₀`** (`positive-deformations.tex`). -/
 def posFiltA : PosFiltration (MeshWalk.lenA0 (S.arMeshData b) (S.hfinA0 b)) A :=
   (S.posFiltProj b).transport (S.algEquivProj b he hprim hbasic).symm
 

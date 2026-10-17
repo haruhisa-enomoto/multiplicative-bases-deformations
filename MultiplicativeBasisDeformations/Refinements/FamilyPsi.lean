@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Refinements.FamilyTwist
 /-!
 # The retained coefficients are nonzero (Proposition 12.8, `a_i ∈ k^*`)
 
-`deformation-refinements.tex:427–431`: "Specializing `t_j = ε`, all other parameters zero and
+`deformation-refinements.tex`: "Specializing `t_j = ε`, all other parameters zero and
 `ε² = 0`, identifies `a_j[p_j]` with `Ψ[μ_j]`. This is nonzero because `Ψ` is injective
 (Proposition 7.6). Hence `a_j ≠ 0`."
 

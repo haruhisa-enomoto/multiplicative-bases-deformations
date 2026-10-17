@@ -6,7 +6,7 @@ import MBDVendor.Magnitude.CategoryTheory.AlmostSplitSummandIrreducible
 # Bridge to the vendored Auslander--Reiten theory
 
 The vendored library `MBDVendor` (general Auslander--Reiten theory, copied
-from `formalization/magnitude_conjecture`) works with finitely generated right
+from the magnitude-conjecture formalization) works with finitely generated right
 modules `FGModuleCat Aᵐᵒᵖ` and with the radical of that whole category. This
 file connects it with the manuscript-literal objects of
 `Foundations/RightModules.lean`:

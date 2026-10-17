@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.TwistedTrace
 /-!
 # Lemma A.1(1) for an arbitrary rooted tree
 
-`lem:periodic-scalar-gauges` (1), `periodic-mesh-calculations.tex:257–300`: "Let
+`lem:periodic-scalar-gauges` (1), `periodic-mesh-calculations.tex`: "Let
 `Q = ℤΔ/⟨τ^s ρ⟩`, where `Δ` is a finite tree oriented away from a root fixed by `ρ`. Every
 nonzero coefficient system `c` can be changed to the signed preprojective coefficients."
 Proof: "Label the arrows over a parent-child edge orbit […] Such labels can be assigned

@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.HomIdeal
 /-!
 # Sectional paths
 
-Proof of Proposition 4.1, Step 1 (`periodic-mesh-calculations.tex:24–31`):
+Proof of Proposition 4.1, Step 1 (`periodic-mesh-calculations.tex`):
 "A path is sectional if it contains no consecutive pair `(σa)a`. A sectional
 path cannot occur as a monomial term in a contextual mesh relation. Its
 coefficient therefore defines a linear functional annihilating the mesh ideal,

@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.A0Graded
 /-!
 # The split form of a positive filtered deformation (Lemma 6.4, as used in Proposition 6.5)
 
-`positive-deformations.tex:189–200, 254–256`: "The resulting identification of `B` with `Λ` as
+`positive-deformations.tex`: "The resulting identification of `B` with `Λ` as
 filtered vector spaces induces the prescribed identification `gr B = Λ`, and the multiplication
 of `B` becomes `μ₀ + Σ_{q>0} μ_q`, where `μ₀` is the multiplication of `Λ` and each `μ_q` raises
 internal degree by `q`, […] and vanishes when an input belongs to `S`."
@@ -349,7 +349,7 @@ variable {M : Type*} [AddCommGroup M] [Module k M] (h1 : G.IsHom 0 (1 : Λ))
   (MM : GExt.GMod (GExt.GAlg.ofLen G h1) M)
 
 /-- **A filtered lift of `M` to `B` with associated graded module `M`**
-(`positive-deformations.tex:247`): a right `B`-action on the graded space `M` such that `F^d B`
+(`positive-deformations.tex`): a right `B`-action on the graded space `M` such that `F^d B`
 raises internal degree by at least `d`, with leading term the action of `Λ` through `σ_d`. -/
 structure FLift where
   act : M →ₗ[k] B →ₗ[k] M

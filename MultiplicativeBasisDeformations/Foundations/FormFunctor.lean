@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.GaugeTransfer
 /-!
 # The prime-field form of a scalar mesh category
 
-`integral-deformations.tex:25–34`: "The all-one meshes […] define a graded category `C⁽²⁾`
+`integral-deformations.tex`: "The all-one meshes […] define a graded category `C⁽²⁾`
 with `k ⊗_{𝔽₂} C⁽²⁾ = C`." The coefficients of `C = C(Q, c)` are normalized to one by
 Lemma 4.4 (a gauge `c_{x,a} = η_x μ_{σa} μ_a`), and the all-one category over the prime field
 is a form of the all-one category over `k`.

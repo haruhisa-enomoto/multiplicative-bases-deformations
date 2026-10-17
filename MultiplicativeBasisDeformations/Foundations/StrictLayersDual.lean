@@ -5,7 +5,7 @@ import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
 /-!
 # Lemma 2.5 in the opposite category
 
-`graded-category.tex:346–347`: "Applying these arguments to the opposite module
+`graded-category.tex`: "Applying these arguments to the opposite module
 category proves exactness of the second sequence in (1) and the assertion at
 injective labels." This file transfers the hypotheses of the abstract Lemma 2.5
 (`StrictLayers.strict`) to `Cᵒᵖ`:

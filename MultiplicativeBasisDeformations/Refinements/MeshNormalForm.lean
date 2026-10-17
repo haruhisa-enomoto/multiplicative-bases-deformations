@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Refinements.FlatPerturbation
 /-!
 # Proposition 12.2: normal forms for filtered mesh categories
 
-`deformation-refinements.tex:98–155` (`prop:characteristic-two-normal-form`). Let `C = kQ/(r_v)`
+`deformation-refinements.tex` (`prop:characteristic-two-normal-form`). Let `C = kQ/(r_v)`
 be a finite-dimensional graded category with homogeneous quadratic relations, and choose, in each
 degree `q ≥ 3`, homogeneous tuples `p_i` of degree `d_i = q` whose classes represent the cokernel
 of `D_{q-1}`. Every finite filtered `E` with `gr E = C` has a presentation

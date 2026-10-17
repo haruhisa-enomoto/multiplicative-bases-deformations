@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.ZModFour
 /-!
 # Lemma B.2: the derivative cokernels over `ℤ/4` are killed by two
 
-`lem:integral-mesh-cokernels` (`characteristic-two-mesh-calculations.tex:372–501`): "Each
+`lem:integral-mesh-cokernels` (`characteristic-two-mesh-calculations.tex`): "Each
 retained derivative cokernel is thus killed by two. … All other degree and weight components
 vanish by their zero reduction."
 

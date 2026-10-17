@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.TraceTwoTorsion
 /-!
 # Candidate rows killed by two (Lemma B.2 on a periodic star model)
 
-`characteristic-two-mesh-calculations.tex:396–417` (proof of `lem:integral-mesh-cokernels`):
+`characteristic-two-mesh-calculations.tex` (proof of `lem:integral-mesh-cokernels`):
 "The proofs of Lemmas A.1 and A.2 apply over `𝒪` without change … Lemma A.2 gives a
 surjection from the twisted trace module over `𝒪` onto the integral derivative cokernel."
 

@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.IntegralLifts
 /-!
 # Proposition 10.1(1): the Hom modules of `E₄` are free, and `E₄/2E₄ = C⁽²⁾`
 
-`integral-deformations.tex:46–90` (`prop:fixed-integral-companion`(1)): "Its Hom modules are
+`integral-deformations.tex` (`prop:fixed-integral-companion`(1)): "Its Hom modules are
 free over `𝒪`, and `E₄/2E₄ = C⁽²⁾`." Here `E₄` is the graded Hom category of the lifts
 `M̃_i` of the modules `M_i` of `C⁽²⁾` (`ModLift`).
 

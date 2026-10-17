@@ -3,8 +3,8 @@ import MultiplicativeBasisDeformations.Foundations.HomIdeal
 /-!
 # Translation quivers and scalar mesh categories
 
-Definitions 2.3 and 2.4 of the frozen manuscript
-(`graded-category.tex:130–158`).
+Definitions 2.3 and 2.4 of the manuscript
+(`graded-category.tex`).
 
 * The `k`-linear path category of a quiver is `Free k (Paths Q)`: morphisms
   `x ⟶ y` are finite linear combinations of paths from `x` to `y`, and

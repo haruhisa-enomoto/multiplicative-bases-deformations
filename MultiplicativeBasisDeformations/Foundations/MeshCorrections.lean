@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.MeshCategory
 /-!
 # The mesh derivative and the brick hypothesis
 
-Section 5 of the frozen manuscript (`mesh-deformations.tex`).
+Section 5 of the manuscript (`mesh-deformations.tex`).
 
 * The derivative `D_m` (`eq:mesh-derivative`): for a family `f = (f_a)_a` of
   morphisms parallel to the arrows,

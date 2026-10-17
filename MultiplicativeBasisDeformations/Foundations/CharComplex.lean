@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.SquareZero
 /-!
 # The Hochschild complex of `OP` in one character
 
-`integral-deformations.tex:17–25`: "We put `A^{(2)} = 𝔽₂P` and `A^{(4)} = 𝒪P`; all cochains are
+`integral-deformations.tex`: "We put `A^{(2)} = 𝔽₂P` and `A^{(4)} = 𝒪P`; all cochains are
 normalized relative to the vertex identities and respect the categorical grading and the
 integer ray weights."
 

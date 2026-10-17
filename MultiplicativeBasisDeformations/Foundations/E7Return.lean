@@ -6,7 +6,7 @@ import Mathlib.Tactic.IntervalCases
 /-!
 # Lemma A.7: closed paths of degree sixteen in `Π(E₇)`
 
-`lem:e7-sixteen-return` (`periodic-mesh-calculations.tex:810–862`): "Every vertex
+`lem:e7-sixteen-return` (`periodic-mesh-calculations.tex`): "Every vertex
 of `Π(E₇)` has a nonzero closed path of path degree sixteen, over every field.
 … Thus `U_0, …, U_8` are nonnegative. The same recurrence gives `U_9 = U_7`. Its
 reversibility implies `U_{8+j} = U_{8-j}` for `0 ≤ j ≤ 8`. In particular

@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.RayTransport
 /-!
 # The ray basis of a standard basic algebra
 
-Corollary 5.5 (`mesh-deformations.tex:262–270`): "Construction 2.8 and
+Corollary 5.5 (`mesh-deformations.tex`): "Construction 2.8 and
 Proposition 4.14 give `A ≅ A₀ ≅ kP`, where `P = ray A₀`. This isomorphism
 preserves endpoint actions and the subspaces `M(f,h)` of Definition 3.4, and
 therefore identifies `ray A` with `P`. The ray basis is multiplicative, contains

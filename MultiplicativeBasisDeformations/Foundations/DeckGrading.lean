@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.WeightGrading
 /-!
 # The deck group and the walk-class grading
 
-Subsection 4.2 (`subsec:universal-cover`, `scalar-normalization.tex:182–236`):
+Subsection 4.2 (`subsec:universal-cover`, `scalar-normalization.tex`):
 "Let `K̃` be the universal cover of `K`, constructed from walks starting at a
 basepoint, modulo edge cancellation and the triangle relations. The fundamental
 group `G` acts on this cover by deck transformations." A lifted vertex is a

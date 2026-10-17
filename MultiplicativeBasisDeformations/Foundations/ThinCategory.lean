@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.PosetWeights
 /-!
 # Thin directed categories and the extension of multiplicative bases
 
-Abstract form of Subsection 4.4 (`scalar-normalization.tex:375–520`). A
+Abstract form of Subsection 4.4 (`scalar-normalization.tex`). A
 `k`-linear category is *thin* if its Hom spaces have dimension at most one,
 its endomorphisms are scalars, and it is directed (no nonzero morphisms both
 ways between distinct objects). A *multiplicative basis* on a set of objects

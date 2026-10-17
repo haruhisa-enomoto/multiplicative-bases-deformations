@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.Char2Basic
 /-!
 # Proposition 12.8 for `A₀` and for a representation-finite algebra
 
-`prop:polynomial-mesh-comparison` (`deformation-refinements.tex:347–352`): "Let `m + Σ_{i∈I} t_i μ_i`
+`prop:polynomial-mesh-comparison` (`deformation-refinements.tex`): "Let `m + Σ_{i∈I} t_i μ_i`
 be an associative family satisfying the hypotheses of Proposition 7.9, such as
 eq. selected-binary-family, now indexed by `I = I₀`. There are polynomial lifts […] for which the
 retained mesh coefficients are `F_i(t) = a_i t_i`, `a_i ∈ k^*`. After every specialization to

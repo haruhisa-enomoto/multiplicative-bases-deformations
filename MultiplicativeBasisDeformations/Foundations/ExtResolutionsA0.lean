@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.ExtResolutions
 /-!
 # Lemma 6.3(2) with `Ext` from graded projective resolutions
 
-`positive-deformations.tex:85, 105–115`: internal degree `t` in `Ext` means degree-`t` maps from a
+`positive-deformations.tex`: internal degree `t` in `Ext` means degree-`t` maps from a
 graded projective resolution, and `Ext^n_{A₀}(M_i, M_j)_t = 0` for `n ≥ 1`, `t > −2n`. Every
 `M_i` has a graded projective resolution (`exists_gres_ev`), and for every one of them the `Ext`
 computed from it vanishes in the stated range (`extVanish_ev_res`), by the comparison with the

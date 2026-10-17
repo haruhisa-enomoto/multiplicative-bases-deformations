@@ -8,7 +8,7 @@ primitive idempotents: split a nonprimitive idempotent `f` as `g + (f - g)` with
 `g` an idempotent of the corner `fAf`, and induct on `dim fA`. In particular a
 finite-dimensional algebra has a complete set of primitive orthogonal
 idempotents (`exists_primitive_decomposition`), as used in Lemma 2.1
-(`graded-category.tex:24`).
+(`graded-category.tex`).
 -/
 
 set_option autoImplicit false

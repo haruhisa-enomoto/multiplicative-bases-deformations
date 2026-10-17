@@ -4,7 +4,7 @@ import MBDVendor.QSE.Foundation.RingTheory.KrullSchmidt.Indecomposable
 /-!
 # Lemma 2.9 for an arbitrary finite-dimensional algebra
 
-`lem:projective-evaluation-criterion` (`graded-category.tex:443–487`): "Let `Λ` be a
+`lem:projective-evaluation-criterion` (`graded-category.tex`): "Let `Λ` be a
 finite-dimensional algebra over any field, let `e` be an idempotent, and put `Λ_e = eΛe`. Assume
 `Hom_Λ(T, Λ) = Ext¹_Λ(T, Λ) = 0` whenever `Te = 0`. Then `P ↦ Pe` is fully faithful on `proj Λ`.
 If `gl.dim Λ ≤ 2` and every finite-dimensional injective `Λ_e`-module is `Qe` for some projective
@@ -343,7 +343,7 @@ theorem EPmap_injective (hQ0 : HomVan k ε Q) :
 
 include hε in
 /-- **Evaluation is full** when moreover `Ext¹_R(T, Q) = 0` for `T` killed by `ε`
-(`graded-category.tex:458–470`, without the tensor product). -/
+(`graded-category.tex`, without the tensor product). -/
 theorem EPmap_surjective (hQ0 : HomVan k ε Q) (hQ1 : ExtExt k ε Q)
     (g : EP hε M →ₗ[hε.Corner] EP hε Q) : ∃ f : M →ₗ[R] Q, EPmap hε f = g := by
   classical
@@ -659,7 +659,7 @@ theorem exists_embed : ∃ (n : ℕ) (ι : X →ₗ[hε.Corner] (Fin n → DC k 
 
 end Embed
 
-/-- **Essential surjectivity** (`graded-category.tex:470–480`): under the vanishings, if
+/-- **Essential surjectivity** (`graded-category.tex`): under the vanishings, if
 `gl.dim R ≤ 2` (kernels of maps between finitely generated projectives are projective) and every
 finite-dimensional injective `Λ_e`-module is `εQ` for a projective `Q`, every
 finite-dimensional `Λ_e`-module is `εP` for a finite-dimensional projective `P`. -/

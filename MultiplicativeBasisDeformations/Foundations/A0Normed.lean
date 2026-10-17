@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.GradedLayers
 /-!
 # `A₀` has a normed multiplicative basis
 
-Proposition 4.14 (`scalar-normalization.tex:644–646`): "The endpoint chains and
+Proposition 4.14 (`scalar-normalization.tex`): "The endpoint chains and
 Corollary 3.3 show that the intersection of the resulting basis with each radical
 power is a basis of that power."
 

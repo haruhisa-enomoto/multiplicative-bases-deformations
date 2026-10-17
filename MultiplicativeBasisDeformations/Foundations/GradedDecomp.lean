@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.ExtProjective
 /-!
 # Graded decomposition (Lemma 6.3(1))
 
-`positive-deformations.tex:126–140`: "Every finite graded `A₀`-module is a sum of
+`positive-deformations.tex`: "Every finite graded `A₀`-module is a sum of
 shifts of the `M_i`. […] Decompose its underlying ungraded module into normalized
 modules `M_i`. Write the projections and inclusions as `p_a` and `j_a`, so
 `1_X = Σ_a p_a j_a`. Taking homogeneous degree-zero parts gives

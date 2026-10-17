@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.CornerRadical
 /-!
 # The basic algebra as a full corner
 
-Lemma 2.1 (`graded-category.tex:17–20`) works with "the basic algebra `B₀ = eAe`
+Lemma 2.1 (`graded-category.tex`) works with "the basic algebra `B₀ = eAe`
 of `A`, where `e = e_1 + ⋯ + e_n` is a sum of primitive orthogonal idempotents,
 one from each isomorphism class of indecomposable projectives". Here: take a
 complete set `f_s` of primitive orthogonal idempotents, one representative `f_r`

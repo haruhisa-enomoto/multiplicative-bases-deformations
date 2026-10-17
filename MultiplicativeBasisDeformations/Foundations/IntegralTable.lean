@@ -7,7 +7,7 @@ import MultiplicativeBasisDeformations.Foundations.TableAlg
 For a ray table `P` with a degree function on the rays, the linearization `𝒪P` over any
 commutative ring is graded by the degrees of the rays (`galgLin`), and reduction of
 coefficients along a ring map is a ring map `𝒪P → kP` (`redLin`). This is the algebra
-`A^{(4)} = 𝒪P` of `integral-deformations.tex:17`.
+`A^{(4)} = 𝒪P` of `integral-deformations.tex`.
 -/
 
 set_option autoImplicit false

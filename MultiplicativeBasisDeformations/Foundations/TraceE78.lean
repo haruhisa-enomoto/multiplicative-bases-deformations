@@ -4,7 +4,7 @@ import Mathlib.Tactic.IntervalCases
 /-!
 # Ordinary traces of types `E_7` and `E_8` (Lemma A.6)
 
-`lem:e78-traces` (`periodic-mesh-calculations.tex:668–760`). Write `x, y` for
+`lem:e78-traces` (`periodic-mesh-calculations.tex`). Write `x, y` for
 the closed paths along the long and medium arms; the short arm gives
 `(x + y)² = 0`, and `x⁵ = y³ = 0`. The word identities
 `y² = -yx - xy - x²`, `yxy = xyx + x³`,

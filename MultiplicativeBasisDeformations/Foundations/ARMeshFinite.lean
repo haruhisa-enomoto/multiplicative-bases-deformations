@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.GradedRealizationIso
 /-!
 # `k(Γ_A)` is finite-dimensional
 
-`graded-category.tex:211–212`, eq. (2.15) of the proof of Proposition 2.10:
+`graded-category.tex`, eq. (2.15) of the proof of Proposition 2.10:
 "`dim C(X, Y) = ∑_n dim J^n(X, Y)/J^{n+1}(X, Y) = dim Hom_A(X, Y)`. It follows
 from the finite radical filtration." By Proposition 2.6(3) the Hom spaces of
 `k(Γ_A)` are the direct sums of their degree parts, which are the radical

@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.CharDecomp
 /-!
 # Independence of character summands of `HH²` (Proposition 7.6)
 
-`weights-and-parameters.tex:405–410`: "Proposition 6.1 and the distinct characters `χ_i` now give
+`weights-and-parameters.tex`: "Proposition 6.1 and the distinct characters `χ_i` now give
 the asserted decomposition and the one-dimensionality of every nonzero summand." For cocycles
 `μ_i` of pairwise distinct characters `χ_i`, the character-`χ_i` part of `Σ_j c_j μ_j` is
 `c_i μ_i` (`cpr2_sum_char`), and the coboundary commutes with character parts

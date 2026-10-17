@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.ResidualSpaces
 /-!
 # Lemma A.2 for an arbitrary tree
 
-`lem:twisted-trace-surjection` (`periodic-mesh-calculations.tex:309–343`): "Let
+`lem:twisted-trace-surjection` (`periodic-mesh-calculations.tex`): "Let
 `Q = Q(Δ, s, ρ) = ℤΔ/⟨τ^s ρ⟩` be a rooted periodic model with signed mesh coefficients, and put
 `Π = Π(Δ)`. (1) The cokernel class of a correction in a row of degree `d ≥ 3` is zero unless `d` is
 even and `s ∣ (d/2 − 1)`. (2) In an allowed degree, put `l = (1 − d/2)/s` and `θ = ρ^l`. There is a

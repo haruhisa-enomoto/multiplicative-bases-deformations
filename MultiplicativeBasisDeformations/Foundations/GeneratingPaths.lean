@@ -3,7 +3,7 @@ import MultiplicativeBasisDeformations.Foundations.ActiveZero
 /-!
 # Lemma 8.14: generating rays have no radical factorization
 
-`lem:generating-paths` (`local-ray-geometry.tex:544–569`), first assertion: a generating ray
+`lem:generating-paths` (`local-ray-geometry.tex`), first assertion: a generating ray
 in a Hom of dimension at least two does not factor as `a q_y b` through a nonidentity local
 radical.
 -/

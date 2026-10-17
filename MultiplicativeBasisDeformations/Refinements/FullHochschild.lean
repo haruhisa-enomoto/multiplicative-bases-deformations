@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.Char2Basic
 /-!
 # Proposition 12.5 for the algebra `A₀` of a representation-finite algebra
 
-`deformation-refinements.tex:254–289` (`prop:full-hochschild-comparison`). For the mesh
+`deformation-refinements.tex` (`prop:full-hochschild-comparison`). For the mesh
 category `C = k(Γ_A)` of a basic representation-finite algebra `A`, the mesh presentations are
 resolutions (they come from the almost split sequences; the paragraph after Lemma 12.3), so
 `Ψ : HH²(A₀)_q → coker D_{q+1}` is an isomorphism in every internal degree `q ≥ 1`
@@ -28,7 +28,7 @@ variable {k A : Type w} [Field k] [IsAlgClosed k] [Ring A] [Algebra k A] [Finite
   [IsNoetherianRing Aᵐᵒᵖ] (S : IndSkeleton k A) (b : S.ArrowBases)
 
 /-- **The mesh presentations of `k(Γ_A)` are resolutions**: the representables applied to the
-almost split sequences (`deformation-refinements.tex:213–226`). -/
+almost split sequences (`deformation-refinements.tex`). -/
 theorem hres_ar (w x : S.ARVertex) :
     Function.Injective (relMap (meshPres (S.arCoefficients b))
       (idealC (meshPres (S.arCoefficients b))) (meshPres (S.arCoefficients b)).r w x) ∧

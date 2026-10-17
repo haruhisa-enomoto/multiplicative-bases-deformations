@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.A0Normed
 /-!
 # Proposition 5.1: the periodic localization of the derivative cokernels
 
-`mesh-deformations.tex:67–141` (`prop:periodic-localization`): "Let `T` be the set of vertices
+`mesh-deformations.tex` (`prop:periodic-localization`): "Let `T` be the set of vertices
 periodic under `τ`, and let `C_T` be the quotient by the identities outside `T`. For the
 derivative `D_m`, the quotient induces isomorphisms `coker D_m(C) ≅ coker D_m(C_T)`
 (`m ≥ 2`)."

@@ -5,7 +5,7 @@ import MultiplicativeBasisDeformations.Foundations.A0Normed
 /-!
 # Lemma 2.1: normed bases from the basic algebra
 
-`lem:nonbasic-basis` (`graded-category.tex:17–52`). Let `B₀ = eAe` with
+`lem:nonbasic-basis` (`graded-category.tex`). Let `B₀ = eAe` with
 `AeA = A` have a normed multiplicative basis with primitive idempotents `e_i`.
 "Every basis element `b` belongs to one corner: in `b = Σ e_i b e_j`, each nonzero
 summand is a basis element by multiplicativity […]." Each primitive idempotent

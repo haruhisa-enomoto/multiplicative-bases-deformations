@@ -4,7 +4,7 @@ import MultiplicativeBasisDeformations.Foundations.BasicLabels
 /-!
 # The radical of a corner
 
-For Lemma 2.1 (`graded-category.tex:49–51`): "The radical powers of `A` have
+For Lemma 2.1 (`graded-category.tex`): "The radical powers of `A` have
 the same block description with `e_i (rad B₀)^n e_j` in each block." For an
 idempotent `e` the radical of `eAe` is `e (rad A) e` (`cornerVal_mem_jacobson`,
 `cornerMk_mem_jacobson`); when `AeA = A` the same holds for all radical powers

@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # Lemma 12.7: nonresonant polynomials
 
-`deformation-refinements.tex:332–346` (`lem:nonresonant-polynomials`): grade `k[t_1, …, t_s]` by
+`deformation-refinements.tex` (`lem:nonresonant-polynomials`): grade `k[t_1, …, t_s]` by
 `deg t_i = χ_i` in an abelian group `L`. If the `χ_i` are pairwise distinct and no `χ_j` is a
 sum `∑ n_i χ_i` with `n_i ≥ 0` and `∑ n_i ≥ 2`, then a homogeneous polynomial of weight `χ_j`
 with zero constant term is `a_j t_j`.

@@ -3,8 +3,7 @@ import Mathlib
 /-!
 # Gradings of modules by an abelian group
 
-Used for the integer weights of Section 7 (`weights-and-parameters.tex:248–262,
-330–410`): "a mesh weight `w` grades `V_{m+1}(C)` … and grades `U_m(C)` …; the map `D_m`
+Used for the integer weights of Section 7 (`weights-and-parameters.tex`): "a mesh weight `w` grades `V_{m+1}(C)` … and grades `U_m(C)` …; the map `D_m`
 preserves these gradings", and "Lift a basis of the integer ray weights to mesh weights
 … These give simultaneous gradings on the lifted modules. If `μ` has character `χ`, give
 `ε` weight `−χ` and choose the homogeneous solutions in the lemma."

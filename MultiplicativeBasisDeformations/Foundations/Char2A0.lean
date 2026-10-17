@@ -6,7 +6,7 @@ import MultiplicativeBasisDeformations.Foundations.CharBasis
 /-!
 # The characteristic-two step for `A₀`
 
-The proof of Proposition 8.3(1) (`main-theorems.tex:7–35`) on `A₀`: with the rows `S` of
+The proof of Proposition 8.3(1) (`main-theorems.tex`) on `A₀`: with the rows `S` of
 Proposition 6.1 and their dual mesh weights, choose for each row with a nonzero class the
 indicator of Proposition 11.2 supplied by Corollary 10.5, form the binary family and apply
 Proposition 7.9 (`char2_core`).

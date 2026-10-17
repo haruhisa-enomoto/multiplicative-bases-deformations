@@ -13,7 +13,7 @@ import MultiplicativeBasisDeformations.Foundations.StandardRay
 /-!
 # Main theorems (statements)
 
-Theorems A and B of the introduction (`main.tex:155,196` in r41), Theorem 11.7
+Theorems A and B of the introduction (`main.tex`), Theorem 11.7
 (`thm:final-basis`), Corollary 5.5 (`cor:away-from-two-basis`), and
 Theorem 11.8(2) (`thm:final-standardness`).
 
@@ -31,7 +31,7 @@ universe u
 variable (k : Type u) [Field k] [IsAlgClosed k]
   (A : Type u) [Ring A] [Algebra k A] [FiniteDimensional k A]
 
-/-- **Theorem B** (`main.tex:196`; Corollary 5.5, `cor:away-from-two-basis`).
+/-- **Theorem B** (`main.tex`; Corollary 5.5, `cor:away-from-two-basis`).
 Every basic finite-dimensional representation-finite algebra over an
 algebraically closed field of characteristic different from two is
 standard. -/
@@ -62,7 +62,7 @@ theorem basic_hasNormedBasis (hbasic : IsBasicAlgebra A) (hA : IsRepresentationF
   obtain ⟨n, e, he, hprim, hb⟩ := hbasic
   exact S.hasNormedBasis_of_isStandard he hprim hb hstd
 
-/-- **Theorem A away from characteristic two** (`main.tex:155`; Theorem 11.7(1)
+/-- **Theorem A away from characteristic two** (`main.tex`; Theorem 11.7(1)
 for `char k ≠ 2`, via Corollary 5.5(2) and Lemma 2.1): the basic algebra `eAe`
 is a representation-finite full corner, it has a normed multiplicative basis,
 and Lemma 2.1 lifts it to `A`. -/
@@ -73,7 +73,7 @@ theorem theoremA_of_ringChar_ne_two (hA : IsRepresentationFinite k A) (hchar : r
   exact nonbasicBasis he hfull hbasic
     (basic_hasNormedBasis k he.Corner hbasic (corner_isRepresentationFinite hA he) hchar)
 
-/-- **Theorem A** (`main.tex:155`; Theorem 11.7(1), `thm:final-basis`). Every
+/-- **Theorem A** (`main.tex`; Theorem 11.7(1), `thm:final-basis`). Every
 finite-dimensional representation-finite algebra over an algebraically closed
 field has a normed multiplicative basis. Outside characteristic two this is
 `theoremA_of_ringChar_ne_two`; in characteristic two the basic corner has one by
