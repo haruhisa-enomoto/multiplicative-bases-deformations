@@ -1,5 +1,7 @@
-import MBDVendor.QSE.CategoryTheory.CategoricalRadical
-import MBDVendor.QSE.RepresentationTheory.FiniteTypeAlmostSplit
+module
+
+public import MBDVendor.QSE.CategoryTheory.CategoricalRadical
+public import MBDVendor.QSE.RepresentationTheory.FiniteTypeAlmostSplit
 
 /-!
 # Irreducible morphisms and the categorical radical quotient
@@ -19,6 +21,8 @@ ring.
 
 No algebra presentation or classification of modules is used.
 -/
+
+@[expose] public section
 
 noncomputable section
 

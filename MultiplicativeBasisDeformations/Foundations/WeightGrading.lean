@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.MeshGrading
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshGrading
 
 /-!
 # Gradings of mesh categories by path weights
@@ -17,6 +19,8 @@ composition (`comp_mem_wPart`). For the walk-class weight of the cover
 (`DeckGrading.lean`) the weight part of degree `g` is the space
 `C̃(X̃, gỸ)`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

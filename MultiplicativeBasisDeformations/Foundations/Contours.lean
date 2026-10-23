@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PrimitiveCorners
-import MultiplicativeBasisDeformations.Foundations.ContourTrees
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PrimitiveCorners
+public import MultiplicativeBasisDeformations.Foundations.ContourTrees
 
 /-!
 # Ordinary arrows and one-sided generating contours
@@ -16,6 +18,8 @@ type `R`. The proof is that of Appendix C.1 applied to two paths with distinct f
 (respectively last) arrows: the crown and the six-point tree fix their types, and the
 six-lift and eight-lift trees exclude the remaining case.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

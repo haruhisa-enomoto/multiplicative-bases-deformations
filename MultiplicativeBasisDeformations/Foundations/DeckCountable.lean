@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.DeckGrading
-import MultiplicativeBasisDeformations.Foundations.SectionalPaths
+module
+
+public import MultiplicativeBasisDeformations.Foundations.DeckGrading
+public import MultiplicativeBasisDeformations.Foundations.SectionalPaths
 
 /-!
 # The deck group is countable
@@ -10,6 +12,8 @@ paths in the symmetrized edge quiver are determined by their lists of edges
 (`arrowList_injective`), and the fundamental groupoid is a quotient of the path
 category.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

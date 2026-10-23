@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Krull dimension bounds for finitely generated algebras (for Lemma 8.8)
@@ -19,6 +21,8 @@ The dimension theory used:
   polynomial ring in `n` variables has at most `n` variables (transcendence degree);
 * `height_ge_of_chain`: a chain of primes bounds the height from below.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 
@@ -46,7 +50,7 @@ theorem ringKrullDim_le_of_noether (A : Type*) [CommRing A] [Nontrivial A] [Alge
   haveI : Algebra.IsIntegral (MvPolynomial (Fin s) k) A := ⟨fun x ↦ hint x⟩
   calc ringKrullDim A ≤ ringKrullDim (MvPolynomial (Fin s) k) := ringKrullDim_le_of_isIntegral _ _
     _ = s := by
-      rw [MvPolynomial.ringKrullDim_of_isNoetherianRing, ringKrullDim_eq_zero_of_field, Nat.card_fin]
+      rw [MvPolynomial.ringKrullDim_of_isNoetherianRing, ringKrullDim_eq_zero_of_field]
       simp
     _ ≤ n := by exact_mod_cast h s g hg
 

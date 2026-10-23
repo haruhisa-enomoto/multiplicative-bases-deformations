@@ -1,4 +1,6 @@
-import MBDVendor.QSE.CategoryTheory.IyamaReversedDomination
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaReversedDomination
 
 /-!
 # Reversing a genuine finite right-ladder window over `Fin.rev`
@@ -6,6 +8,8 @@ import MBDVendor.QSE.CategoryTheory.IyamaReversedDomination
 This file is a pure dependent-reindexing adapter.  It introduces no new
 representation-theoretic or concrete-module input.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

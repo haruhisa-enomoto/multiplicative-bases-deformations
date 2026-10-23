@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.MeshWeights
-import MultiplicativeBasisDeformations.Foundations.BasisExt
-import MultiplicativeBasisDeformations.Foundations.WeightHH
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshWeights
+public import MultiplicativeBasisDeformations.Foundations.BasisExt
+public import MultiplicativeBasisDeformations.Foundations.WeightHH
 
 /-!
 # Proposition 7.5: the residual characters are part of an integer basis
@@ -19,6 +21,8 @@ finite rank, the `χ_i` are part of a basis (`exists_basis_of_dual`).
 Deviation: the source identifies `χ_i` with the deck class `±θ_{g_i}` and uses a lemma on the
 periodic core; we use the dual mesh weights instead.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

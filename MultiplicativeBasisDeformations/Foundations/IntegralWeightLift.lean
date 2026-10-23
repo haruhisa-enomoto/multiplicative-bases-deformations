@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralModuleLift
-import MultiplicativeBasisDeformations.Foundations.IntegralModules
-import MultiplicativeBasisDeformations.Foundations.WeightExt
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralModuleLift
+public import MultiplicativeBasisDeformations.Foundations.IntegralModules
+public import MultiplicativeBasisDeformations.Foundations.WeightExt
 
 /-!
 # Weight-homogeneous lifts (Proposition 10.1, weight refinement)
@@ -16,6 +18,8 @@ module lift of `exists_liftMod` can be chosen with an action homogeneous for eve
 `extVanish_weights0`; the arbitrary lifts through homogeneous bases are homogeneous for every
 weight by the same computation as for the degree.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

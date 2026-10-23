@@ -1,4 +1,6 @@
-import MBDVendor.Magnitude.CategoryTheory.PositiveWeightStrictness
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.PositiveWeightStrictness
 
 /-!
 # Mesh-matrix evaluation of additive label weights
@@ -8,6 +10,8 @@ corresponding weighted column sum of the mesh matrix.  This identifies the
 matrix unit equations in the frozen manuscript with Iyama's positive
 right-additivity hypothesis.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

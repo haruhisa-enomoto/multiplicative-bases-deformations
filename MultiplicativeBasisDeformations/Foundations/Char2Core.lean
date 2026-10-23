@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.RayPres
-import MultiplicativeBasisDeformations.Foundations.BinaryNormalization
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayPres
+public import MultiplicativeBasisDeformations.Foundations.BinaryNormalization
 
 /-!
 # The family criterion with indicator cocycles
@@ -15,6 +17,8 @@ The hypotheses on `μ_i` (relative, homogeneous, associative family, spanning) a
 the `FamilyHyp` of Theorem 7.7; they are discharged where `A₀`, its gradings and the
 indicator classes are constructed.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.OddQuotient
+module
+
+public import MultiplicativeBasisDeformations.Foundations.OddQuotient
 
 /-!
 # The deck transformation of the degree of a row
@@ -8,6 +10,8 @@ path from `τ(x, j)`. Its endpoint has the form `(ρ^l x, j - sl)`." For a deck
 generator `g (v, t) = (ρ v, t + c₀)`, a row of length `m + 1` lifts to a path
 from `τ X` to `g^n X` with `n c₀ = m - 1`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

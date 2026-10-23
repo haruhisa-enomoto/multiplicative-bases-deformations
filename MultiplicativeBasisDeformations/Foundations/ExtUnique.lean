@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.ExtExtensions
-import MultiplicativeBasisDeformations.Foundations.ExtHigher
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ExtExtensions
+public import MultiplicativeBasisDeformations.Foundations.ExtHigher
 
 /-!
 # Uniqueness of the graded `Ext` of Lemma 6.3
@@ -19,6 +21,8 @@ The bar `Ext` has them all: extensions (`extVanish_zero_iff`), projectives (`ext
 dimension shifting in both directions (`extVanish_shift`, `extVanish_unshift`), additivity in
 both directions (`extVanish_of_decomp`, `extVanish_of_retract`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

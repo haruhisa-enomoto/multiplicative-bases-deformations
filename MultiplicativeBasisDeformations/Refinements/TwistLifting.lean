@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Refinements.ConeLifting
-import MultiplicativeBasisDeformations.Refinements.Twist
+module
+
+public import MultiplicativeBasisDeformations.Refinements.ConeLifting
+public import MultiplicativeBasisDeformations.Refinements.Twist
 
 /-!
 # Twisted lifts satisfy the lifting identities (toward Proposition 12.8)
@@ -9,6 +11,8 @@ If a family of lifted actions (`assocErr`) or of lifted maps (`interErr`) built 
 for the twisted deformation at every parameter `t`: on the torus the twist is conjugation by the
 diagonal scalings, and the identities are polynomial in `t` (`IsPoly.eq_zero_of_torus`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

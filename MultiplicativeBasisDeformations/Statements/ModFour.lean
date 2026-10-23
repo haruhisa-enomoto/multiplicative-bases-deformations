@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.ModFourComparison
-import MultiplicativeBasisDeformations.Foundations.PrimeWeight
-import MultiplicativeBasisDeformations.Foundations.PrimeCoker
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ModFourComparison
+public import MultiplicativeBasisDeformations.Foundations.PrimeWeight
+public import MultiplicativeBasisDeformations.Foundations.PrimeCoker
 
 /-!
 # Lemma 10.2 for a basic representation-finite algebra
@@ -15,6 +17,8 @@ coboundary can be chosen homogeneous of weight `χ` for the restricted ray weigh
 The instance arguments are those of the Auslander–Reiten quiver (`S.hasAtMostOneArrow`,
 `S.finiteDimensional_meshHom`, `S.prime_fd`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

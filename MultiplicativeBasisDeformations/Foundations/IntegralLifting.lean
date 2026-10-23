@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CrownRows
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CrownRows
 
 /-!
 # Integral lifting of the nonzero-product Leibniz equations (Theorem 9.1(3))
@@ -17,8 +19,14 @@ the coefficients of generating one-sided rays by the first-arrow recursion
 integer lifts `X_a`, and `Y_b` read off from the rows (Lemma 9.5).
 -/
 
+@[expose] public section
+
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
+
+-- Keep `ZMod 2` on its ring structure: Mathlib's instance making simple nilpotent groups
+-- commutative would otherwise give `ZMod 2` a second, non-reducibly-equal additive structure.
+attribute [-instance] instAddCommGroupOfIsSimpleAddGroupOfIsNilpotent
 
 noncomputable section
 

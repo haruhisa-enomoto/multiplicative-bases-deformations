@@ -1,14 +1,16 @@
-import MultiplicativeBasisDeformations.Foundations.ARQuiver
-import MultiplicativeBasisDeformations.Foundations.Rays
-import MultiplicativeBasisDeformations.Foundations.ARBrick
-import MultiplicativeBasisDeformations.Foundations.FilteredNormalForm
-import MultiplicativeBasisDeformations.Statements.PartOne
-import MultiplicativeBasisDeformations.Foundations.StandardForm
-import MultiplicativeBasisDeformations.Foundations.SkeletonExists
-import MultiplicativeBasisDeformations.Foundations.BasicCorner
-import MultiplicativeBasisDeformations.Foundations.RayStandard
-import MultiplicativeBasisDeformations.Foundations.FinalBasis
-import MultiplicativeBasisDeformations.Foundations.StandardRay
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARQuiver
+public import MultiplicativeBasisDeformations.Foundations.Rays
+public import MultiplicativeBasisDeformations.Foundations.ARBrick
+public import MultiplicativeBasisDeformations.Foundations.FilteredNormalForm
+public import MultiplicativeBasisDeformations.Statements.PartOne
+public import MultiplicativeBasisDeformations.Foundations.StandardForm
+public import MultiplicativeBasisDeformations.Foundations.SkeletonExists
+public import MultiplicativeBasisDeformations.Foundations.BasicCorner
+public import MultiplicativeBasisDeformations.Foundations.RayStandard
+public import MultiplicativeBasisDeformations.Foundations.FinalBasis
+public import MultiplicativeBasisDeformations.Foundations.StandardRay
 
 /-!
 # Main theorems (statements)
@@ -21,6 +23,8 @@ Throughout, `k` is algebraically closed and `A` is a finite-dimensional
 `k`-algebra, in the same universe (the vendored Auslander--Reiten library
 works in one universe). "Characteristic different from two" is `ringChar k ≠ 2`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

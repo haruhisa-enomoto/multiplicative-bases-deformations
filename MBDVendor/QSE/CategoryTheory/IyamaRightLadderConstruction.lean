@@ -1,8 +1,10 @@
-import MBDVendor.QSE.CategoryTheory.IyamaRightLadderPropagation
-import MBDVendor.QSE.CategoryTheory.IyamaSpecialMorphism
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
-import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
-import MBDVendor.QSE.CategoryTheory.FiniteTauCategory
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaRightLadderPropagation
+public import MBDVendor.QSE.CategoryTheory.IyamaSpecialMorphism
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
+public import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
+public import MBDVendor.QSE.CategoryTheory.FiniteTauCategory
 
 /-!
 # The split-complement step in Iyama right ladders
@@ -12,6 +14,8 @@ This file isolates the categorical diagram behind Iyama,
 through a right mesh, together with a padded decomposition of the next raw
 arrow, determines all maps and relations in one explicit right-ladder step.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

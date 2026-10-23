@@ -1,6 +1,8 @@
-import MBDVendor.QSE.CategoryTheory.IyamaFiniteLadderComparison
-import MBDVendor.QSE.CategoryTheory.IyamaRightLadderRadicalWitness
-import MBDVendor.QSE.CategoryTheory.IyamaLadderComparisonEndpoint
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaFiniteLadderComparison
+public import MBDVendor.QSE.CategoryTheory.IyamaRightLadderRadicalWitness
+public import MBDVendor.QSE.CategoryTheory.IyamaLadderComparisonEndpoint
 
 /-!
 # Nakayama-pair extraction from Iyama's finite ladder comparison
@@ -11,6 +13,8 @@ summand, the reversed comparison identifies the terminal essential arrow,
 and the resulting positive-length certificate is truncated by one rung to
 produce a Nakayama pair.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.TableAlg
-import MultiplicativeBasisDeformations.Foundations.NormedBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TableAlg
+public import MultiplicativeBasisDeformations.Foundations.NormedBasis
 
 /-!
 # The multiplication table of a multiplicative basis
@@ -11,6 +13,8 @@ off from the basis (`projective-rays.tex`, "`b_r b_s = b_{rs}` or `0`"). Its
 associativity comes from that of `Λ`, and its linearization is isomorphic to `Λ`
 (`linEquiv`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

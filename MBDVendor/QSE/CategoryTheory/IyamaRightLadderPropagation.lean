@@ -1,7 +1,9 @@
-import Mathlib.CategoryTheory.Preadditive.Biproducts
-import MBDVendor.QSE.CategoryTheory.HomIdealPowers
-import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
-import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
+module
+
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
+public import MBDVendor.QSE.CategoryTheory.HomIdealPowers
+public import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
+public import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
 
 /-!
 # Radical-power propagation in Iyama right ladders
@@ -12,6 +14,8 @@ an annihilator to the next rung up to its complementary term.  Iteration and
 nilpotence then force one complementary composite to be nonzero in the
 corresponding radical power.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

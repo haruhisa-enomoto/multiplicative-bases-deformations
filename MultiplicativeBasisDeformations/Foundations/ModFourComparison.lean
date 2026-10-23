@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralPsi
-import MultiplicativeBasisDeformations.Foundations.IntegralWeightInstance
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralPsi
+public import MultiplicativeBasisDeformations.Foundations.IntegralWeightInstance
 
 /-!
 # Lemma 10.2 as stated: normalized, and in every weight
@@ -18,6 +20,8 @@ weight projections `wProjO m` of `𝒪P` shift along products of ray vectors (`w
 weight-`χ` part of the coboundary is again a normalized coboundary of `2μ̃`
 (`exists_normalized_cobdry_weight`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

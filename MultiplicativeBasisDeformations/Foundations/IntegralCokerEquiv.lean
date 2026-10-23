@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralCokerIso
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralCokerIso
 
 /-!
 # Lemma B.2 as a linear isomorphism
@@ -14,6 +16,8 @@ of degree `m + 1`, sending the class of the row `R` to the generator of its summ
 (`integralMeshCokernels_equiv`). Summing over `m ≥ 2` gives the displayed isomorphism, the row `i`
 lying in degree `m = d_i − 1`. The weight labels `χ_i` are `integralMeshCokernels_weights`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

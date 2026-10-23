@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.LiftedModules
+module
+
+public import MultiplicativeBasisDeformations.Foundations.LiftedModules
 
 /-!
 # The automorphism `Φ` of the cover induced by a weight
@@ -19,6 +21,8 @@ with `f : X̃ → Ỹ` by these gives a natural family, hence by Lemma 4.8 a mor
 `Φ f` (`Φ`). `Φ` is linear, multiplicative, injective, and multiplies a
 morphism `z₁ → z₂` of `L` by `d(z₁, z₂)` (`Φ_proj`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

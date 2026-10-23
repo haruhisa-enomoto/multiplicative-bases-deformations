@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.Exhaustion
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Exhaustion
 
 /-!
 # Lemma 4.11(2): weights on finite subcategories are divisible
@@ -18,6 +20,8 @@ extends over the source `s` by Lemma 4.9 (`ratio_of_mult`), and the defect on
 the new lines is constant along comparabilities of the support poset (the
 kernel), so it has a consistent `n`-th root.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

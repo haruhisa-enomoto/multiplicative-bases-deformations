@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.SectionalCover
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SectionalCover
 
 /-!
 # Mesh relations along the covering `ℤΔ → Q`
@@ -10,6 +12,8 @@ every mesh relation of `Q` starting at `π Z` lifts to one starting at `Z`, so
 `π` reflects it (`RelSystem.mem_ideal_of_mapPaths_mem`). In particular, if
 paths of length at least `N` vanish in `C(Q, c)`, they vanish upstairs.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

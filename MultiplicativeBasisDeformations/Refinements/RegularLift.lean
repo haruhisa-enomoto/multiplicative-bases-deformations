@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.LiftedRadical
+module
+
+public import MultiplicativeBasisDeformations.Refinements.LiftedRadical
 
 /-!
 # Proposition 6.5(3): regular lifts at projective labels
@@ -12,6 +14,8 @@ that the regular module `e B`, identified with `eΛ` through a splitting `φ` mu
 the left by `e` (Lemma 6.4), is a filtered lift of `eΛ` (`regularLift`). By the uniqueness of
 Proposition 6.5(1) it is then isomorphic to any other filtered lift.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

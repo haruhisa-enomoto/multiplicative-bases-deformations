@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.PeriodicGauge
-import MultiplicativeBasisDeformations.Foundations.OrbitReps
-import MultiplicativeBasisDeformations.Foundations.StarCorner
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PeriodicGauge
+public import MultiplicativeBasisDeformations.Foundations.OrbitReps
+public import MultiplicativeBasisDeformations.Foundations.StarCorner
 
 /-!
 # The periodic gauge on a star model (Lemma A.1(1))
@@ -18,6 +20,8 @@ scales are known, and `exists_periodic_line_vertex` gives the arrow scales and
 the child's relation scales, with period `per · c₀`. The other arms of the orbit
 are obtained by applying `g`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 
@@ -136,7 +140,7 @@ theorem pa_congr {i i' : Fin t} (e : i = i') (j : ℕ) (h : j ≤ L i) (h' : j �
 
 variable (θ : Equiv.Perm (Fin t)) (hL : ∀ i, L (θ i) = L i)
   (σ : StarV L ≃ StarV L) (hσo : σ none = none)
-  (hθ : ∀ i j (h : j ≤ L i), σ (ch i j h) = ch (θ i) j (by rw [hL]; exact h))
+  (hθ : ∀ i j (h : j ≤ L i), σ (ch i j h) = ch (θ i) j (h.trans (hL i).ge))
 
 include hL in
 theorem L_pow (n : ℕ) (i : Fin t) : L ((θ ^ n) i) = L i := by
@@ -230,7 +234,7 @@ theorem edge_eq (hc0 : 0 < c0) (hc0e : Even c0) (i : Fin t) (j : ℕ) (h : j ≤
   have hpar : ((s - n * c0 : ℤ) : ZMod 2) = (s : ZMod 2) := by
     obtain ⟨r, hr⟩ := hc0e
     push_cast; rw [hr]; push_cast
-    rw [← two_mul, show (2 : ZMod 2) = 0 from rfl, zero_mul, mul_zero, sub_zero]
+    rw [← two_mul, show (2 : ZMod 2) = 0 from rfl, zero_mul, mul_zero]; exact sub_zero _
   -- the left side
   have eL : Mf Cf sg θ c0 (ch i j h) s * Mf Cf sg θ c0 (ch i j h) (s + 1) *
       (if (s : ZMod 2) = ((j + 1 : ℕ) : ZMod 2) then Nf Cf sg θ c0 (ch i j h) (s + 2) else 1) =

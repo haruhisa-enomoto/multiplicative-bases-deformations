@@ -1,5 +1,7 @@
-import MBDVendor.QSE.RepresentationTheory.IrreducibleRadicalQuotient
-import Mathlib.Algebra.Category.ModuleCat.Algebra
+module
+
+public import MBDVendor.QSE.RepresentationTheory.IrreducibleRadicalQuotient
+public import Mathlib.Algebra.Category.ModuleCat.Algebra
 /-!
 # The linear irreducible-morphism space
 
@@ -11,6 +13,8 @@ representation-finite algebra.
 No finite-dimensionality, directedness, algebra presentation, or module
 classification is used in the construction.
 -/
+
+@[expose] public section
 
 noncomputable section
 

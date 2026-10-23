@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.OppositeControls
-import MultiplicativeBasisDeformations.Foundations.BoundConfigs
+module
+
+public import MultiplicativeBasisDeformations.Foundations.OppositeControls
+public import MultiplicativeBasisDeformations.Foundations.BoundConfigs
 
 /-!
 # Lemma 8.11, Case 2 and the statement
@@ -10,6 +12,8 @@ Case 2 of `lem:opposite-controls` (`local-ray-geometry.tex`): `fg = 0` with
 (dimensions `3` at `c`, `2` at `u, d`, `1` elsewhere: `N = 22`, `D = 21`, `F = 1`).
 Indices `0..6` are `u' u c d l r l_d`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

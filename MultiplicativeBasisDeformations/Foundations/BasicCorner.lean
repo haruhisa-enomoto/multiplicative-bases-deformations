@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PrimitiveDecomposition
-import MultiplicativeBasisDeformations.Foundations.CornerRadical
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PrimitiveDecomposition
+public import MultiplicativeBasisDeformations.Foundations.CornerRadical
 
 /-!
 # The basic algebra as a full corner
@@ -11,6 +13,8 @@ complete set `f_s` of primitive orthogonal idempotents, one representative `f_r`
 in each class of `f_s A ≅ f_t A`, and `e = Σ f_r`. Then `AeA = A`
 (`full_basicCorner`) and `eAe` is basic (`isBasicAlgebra_basicCorner`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

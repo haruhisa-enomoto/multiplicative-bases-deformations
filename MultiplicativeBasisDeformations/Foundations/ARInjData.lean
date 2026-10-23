@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.ARMeshData
-import MultiplicativeBasisDeformations.Foundations.GradedHomDimension
-import MultiplicativeBasisDeformations.Foundations.ProjectiveIdempotents
-import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARMeshData
+public import MultiplicativeBasisDeformations.Foundations.GradedHomDimension
+public import MultiplicativeBasisDeformations.Foundations.ProjectiveIdempotents
+public import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
 
 /-!
 # The labels `P_x, S_x, I_x` of `k(Γ_A)`
@@ -17,6 +19,8 @@ the original simple `S_x = P_x / rad P_x` and the original injective
 
 all through `eq:graded-hom-dimensions` (`finrank_meshHom`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

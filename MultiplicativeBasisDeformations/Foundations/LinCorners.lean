@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.IndicatorCocycles
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IndicatorCocycles
 
 /-!
 # Corners of the ray linearization
@@ -11,6 +13,8 @@ and `e_x`. Every nonzero corner element is `u b_r w` with endpoint units `u, w` 
 rays of `U(s)`. These are the facts behind "the basis vectors represent exactly the same
 endpoint-unit orbits" in the proof of Proposition 11.3(3) (`binary-families.tex`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

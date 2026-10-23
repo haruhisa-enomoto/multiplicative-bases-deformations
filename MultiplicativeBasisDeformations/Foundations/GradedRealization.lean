@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.ARQuiver
-import MultiplicativeBasisDeformations.Foundations.PathGrading
-import MultiplicativeBasisDeformations.Foundations.LayerExactness
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARQuiver
+public import MultiplicativeBasisDeformations.Foundations.PathGrading
+public import MultiplicativeBasisDeformations.Foundations.LayerExactness
 
 /-!
 # Proposition 2.6(3): `k(Γ_A)` is the radical grading of `ind(mod A)`
@@ -18,6 +20,8 @@ of the representatives (`pathMap`), and a morphism of `kQ` by linear extension
 (`realize`). A path of length `d` lands in `J^d`, so a homogeneous morphism of
 degree `d` has a class in the radical layer `J^d/J^{d+1}`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

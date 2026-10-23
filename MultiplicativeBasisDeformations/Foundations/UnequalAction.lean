@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.RayConfigs
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayConfigs
 
 /-!
 # Lemma 8.10: unequal endpoint actions
@@ -11,6 +13,8 @@ Deviation: the paper's seven-point support poset has one commuting relation (`F 
 Lemma 8.8); we use its full subposet without `v₀ = f`, the Euclidean tree `D̃₅` with two
 adjacent trivalent vertices (`N = D = 12`), which needs no relation.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

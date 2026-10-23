@@ -1,4 +1,6 @@
-import MBDVendor.QSE.CategoryTheory.FiniteTauCategory
+module
+
+public import MBDVendor.QSE.CategoryTheory.FiniteTauCategory
 
 /-!
 # Radical and nonmonicity foundations for Iyama ladders
@@ -9,6 +11,8 @@ nilpotence lets that annihilator escape some radical power; and, on a chosen
 indecomposable with local endomorphism ring, categorical-radical membership
 is equivalent to failure of split monicity.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

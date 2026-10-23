@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PosetRepBound
-import MultiplicativeBasisDeformations.Foundations.RayConfigs
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PosetRepBound
+public import MultiplicativeBasisDeformations.Foundations.RayConfigs
 
 /-!
 # Forbidden bound configurations
@@ -8,6 +10,8 @@ A configuration (`Tab.ConfZ`) of a table poset with one zero relation `p → m �
 two, whose dimension count `∑ d_v² + d_p d_r ≤ ∑_{x → y} d_x d_y` holds (checked by
 `decide`), contradicts finite representation type (Lemmas 8.8 and 8.9).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Independent.MeshComparison
-import MultiplicativeBasisDeformations.Statements.MainTheorems
+module
+
+public import MultiplicativeBasisDeformations.Independent.MeshComparison
+public import MultiplicativeBasisDeformations.Statements.MainTheorems
 
 /-!
 # Standardness in the independent vocabulary
@@ -13,6 +15,8 @@ the proof library gives standardness of an independent family:
   category with the one whose coefficients come from almost split sequences;
 * the proof library supplies the equivalence of the latter with `ind(mod A)`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -64,9 +68,10 @@ abbrev OneMesh (S : IndecomposableFamily k A) :=
 set_option maxHeartbeats 4000000 in
 /-- The independent `k(Γ_A)` and the all-one scalar mesh category. -/
 def toOneMesh (hτ : TranslateCompatible S) : MeshCategory S ≌ OneMesh S :=
-  quotientEquivOfIff (meshRel S)
+  @quotientEquivOfIff _ _ (meshRel S)
     (HomIdeal.linearSpan k
-      (MultiplicativeBasisDeformations.meshRelations (k := k) (oneCoeff S))).rel
+      (MultiplicativeBasisDeformations.meshRelations (k := k) (oneCoeff S))).rel _
+    (HomIdeal.instCongruenceRel _)
     (fun _ _ f g ↦ meshRel_iff hτ f g)
 
 set_option maxHeartbeats 4000000 in

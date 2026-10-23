@@ -1,0 +1,149 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Multiplicative bases and standardness of representation-finite algebras"
+  description: >-
+    A complete Lean 4 formalization, built on Mathlib, of two classical
+    theorems of Bautista, Gabriel, Roiter and Salmerón on finite-dimensional
+    representation-finite algebras over an algebraically closed field.
+    Theorem A: every such algebra, in any characteristic, has a normed
+    multiplicative basis, that is, a basis containing a complete set of
+    primitive orthogonal idempotents, closed under products up to zero, and
+    meeting every power of the Jacobson radical in a basis of that power.
+    Theorem B: every basic such algebra over a field of characteristic
+    different from two is standard, that is, its category of indecomposable
+    modules is equivalent to the mesh category of its Auslander–Reiten quiver
+    by an equivalence sending each vertex to its module. The proof follows the
+    deformation-theoretic approach of the formalized manuscript: the standard
+    form is the graded algebra of the radical filtration of the category of
+    indecomposable modules, and the original algebra is recovered as a filtered
+    deformation of it. The Auslander–Reiten theory used is proved in the
+    library.
+  authors: ["Haruhisa Enomoto"]
+  responsible_maintainers: ["Haruhisa Enomoto"]
+  license: "Apache-2.0"
+
+classification:
+  arxiv: ["math.RT", "math.RA"]
+  msc2020: ["16G60", "16G70", "16G20", "16S80", "16E40"]
+
+sources:
+  - title: "Representation-finite algebras and multiplicative bases"
+    authors:
+      - "R. Bautista"
+      - "P. Gabriel"
+      - "A. V. Roiter"
+      - "L. Salmerón"
+    type: "paper"
+    location: "Invent. Math. 81 (1985), 217–285"
+    relationship: "independently-proves"
+    note: >-
+      Original source of Theorems A and B. The formalization does not follow
+      this paper's proof; it follows the deformation-theoretic proof of the
+      manuscript below.
+    author_endorsement: "not-contacted"
+  - title: "Multiplicative bases and deformations of representation-finite algebras"
+    authors: ["Haruhisa Enomoto"]
+    type: "paper"
+    location: "docs/manuscript/ (revision of October 17, 2026, unpublished manuscript)"
+    relationship: "formalizes"
+    note: >-
+      The formalized manuscript, a new proof of Theorems A and B. Statements
+      are matched with Lean declarations in docs/PAPER-CORRESPONDENCE.md. Some
+      Lean proofs take shorter routes than the manuscript; the correspondence
+      records them.
+    author_endorsement: "participated"
+  - title: "The standard form of a representation-finite algebra"
+    authors:
+      - "O. Bretscher"
+      - "P. Gabriel"
+    type: "paper"
+    location: "Bull. Soc. Math. France 111 (1983), 21–40"
+    relationship: "background"
+    note: "Origin of the standard form, which the manuscript reconstructs from the radical filtration."
+    author_endorsement: "not-contacted"
+
+related_formalizations:
+  - id: "https://github.com/haruhisa-enomoto/magnitude-conjecture"
+    relationship: "adapts"
+    note: >-
+      The library MBDVendor copies, with renamed namespaces only, the
+      Auslander–Reiten theory of this formalization (existence of almost split
+      sequences, the translate, irreducible maps). See VENDORED.md.
+
+status:
+  scope: >-
+    Theorems A and B as stated in the manuscript, for arbitrary algebraically
+    closed fields, with Theorem A in every characteristic including two and
+    for nonbasic algebras. The compared statements in Challenge.lean use only
+    Mathlib definitions: complete families of finite-dimensional
+    indecomposable right modules, the Jacobson radical, the radical of the
+    category of indecomposable modules, irreducible maps as J/J², the
+    translate from almost split sequences, and the mesh category as the free
+    linear path category modulo the sums of all paths τX → Y → X. The library
+    also proves every numbered theorem, proposition, lemma, corollary and
+    remark of the October 17 manuscript; its three examples are not
+    formalized.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["GPT-6-Astra", "Claude Opus 5.5"]
+      framework: "Codex, Claude Code, pi"
+      tool_setup: >-
+        AI coding agents working in a local Lean project with compiler
+        feedback, explicit axiom audits and a statement-by-statement
+        correspondence with the manuscript, under the author's direction.
+      cost:
+        wall_time: "About two weeks of development (October 10–23, 2026)"
+        spend_usd: "subscription-based"
+        hardware: "Local Linux workstation"
+      prompting_notes: >-
+        The author set milestones and required every result of the manuscript
+        to be proved, including Auslander–Reiten theory, with gaps found in the
+        manuscript recorded rather than assumed.
+  spend_usd: "subscription-based"
+  notes: >-
+    The mathematics and the manuscript were developed by the author with AI
+    assistance, as described in the manuscript's Use of AI paragraph. The
+    formalization was written by AI coding agents under the author's
+    direction. A complete model-by-model history has not been reconstructed.
+
+fidelity:
+  divergences: >-
+    Theorems A and B are stated as in the manuscript. Modules are right
+    modules, formalized as modules over the opposite algebra, and the field and
+    algebra lie in one universe. Some intermediate results are proved in an
+    equivalent or more general form, and some proofs take a shorter route than
+    the manuscript; docs/PAPER-CORRESPONDENCE.md lists these. No weakening of
+    the hypotheses or conclusions of Theorems A and B is known.
+
+review:
+  status: "agent-reviewed"
+  reviewers: ["OpenAI model agent (pi)", "Claude Opus 5.5 agent"]
+  notes: >-
+    A separate agent audited the library's main endpoints, the build, the
+    import closure and the axiom closure, and compared the formalizing agent's
+    statement correspondence at selected points. No independent review of the
+    fidelity of Challenge.lean has been made, and no human expert has checked
+    the Lean statements.
+
+alignment:
+  namespace: "MultiplicativeBasisDeformations"
+  statements:
+    - source: "Multiplicative bases and deformations of representation-finite algebras, Theorem A"
+      lean: "MultiplicativeBasisDeformations.Challenge.theoremA"
+      module: "Challenge"
+      status: "proved"
+      note: "Proved in Solution.lean from MultiplicativeBasisDeformations.Statement.theoremA."
+    - source: "Multiplicative bases and deformations of representation-finite algebras, Theorem B"
+      lean: "MultiplicativeBasisDeformations.Challenge.theoremB"
+      module: "Challenge"
+      status: "proved"
+      note: "Proved in Solution.lean from MultiplicativeBasisDeformations.Statement.theoremB."
+
+acknowledgements: "Lean, Mathlib, and the magnitude-conjecture formalization; see VENDORED.md."

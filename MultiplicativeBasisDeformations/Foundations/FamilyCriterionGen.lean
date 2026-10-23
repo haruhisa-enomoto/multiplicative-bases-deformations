@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.FamilyCriterionA0
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FamilyCriterionA0
 
 /-!
 # Proposition 7.9 on `A₀` for characters in any lattice
@@ -11,6 +13,8 @@ of an integer basis of `Lt` (Proposition 7.5 for `Lt = W(P)`). The definitions a
 those of the dual-weight case (`SysG`, `ΘG`, `VxG`, `HH2NonzeroG`, `I0G`, `famMulG`, `fibAMG`,
 `familyCriterion_G`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

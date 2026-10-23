@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.LocalCorner
+module
+
+public import MultiplicativeBasisDeformations.Foundations.LocalCorner
 
 /-!
 # Rays and ray transversals
@@ -10,6 +12,8 @@ maximal subbimodule (`le_endpointRadical`), and "`[f] = U(f) ∖ R(f)`"
 vectors represent the consecutive one-dimensional quotients of a finite chain.
 They therefore form a basis adapted to every member of that chain."
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.RayWeightsIso
-import MultiplicativeBasisDeformations.Foundations.MeshWeightsConn
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayWeightsIso
+public import MultiplicativeBasisDeformations.Foundations.MeshWeightsConn
 
 /-!
 # The deck group of Proposition 7.2 is `π₁(K)`
@@ -28,6 +30,8 @@ connected `A` (`IndSkeleton.a0Conn_ar`). Hence Proposition 7.2(1) holds with `G 
 projective category of the universal cover, equivariantly (`liftEquiv`, `liftEquiv_act`), so the
 coinvariants `(I_𝓛₀)_H` of `coinvEquiv` are `(I_𝓛)_G`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

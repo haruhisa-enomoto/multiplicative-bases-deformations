@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.ARBridge
-import MBDVendor.Magnitude.Algebra.RightModuleProjectiveBoundary
-import MBDVendor.Magnitude.CategoryTheory.AlgebraicallyClosedOccurrenceBasis
-import Mathlib.Algebra.Category.ModuleCat.Simple
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARBridge
+public import MBDVendor.Magnitude.Algebra.RightModuleProjectiveBoundary
+public import MBDVendor.Magnitude.CategoryTheory.AlgebraicallyClosedOccurrenceBasis
+public import Mathlib.Algebra.Category.ModuleCat.Simple
 
 /-!
 # Simple tops of indecomposable projective modules
@@ -14,6 +16,8 @@ code adapts general module theory from the magnitude-conjecture formalization
 `Algebra/RightModuleBasicSimpleDimension.lean`), stated here for an
 `IndSkeleton`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PathGradingComp
-import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PathGradingComp
+public import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
 
 /-!
 # The degree-two part of the mesh ideal
@@ -15,6 +17,8 @@ The mesh ideal is spanned by composites `u r_Y v`; their degree-two parts from
 `(σa) a` in `C(Q, c)` is therefore proportional to the mesh coefficients
 (`mesh_coeffs`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

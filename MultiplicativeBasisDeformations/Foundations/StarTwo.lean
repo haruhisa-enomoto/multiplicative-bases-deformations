@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.StarSpan
-import MultiplicativeBasisDeformations.Foundations.TraceTwoTorsion
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarSpan
+public import MultiplicativeBasisDeformations.Foundations.TraceTwoTorsion
 
 /-!
 # Candidate rows killed by two (Lemma B.2 on a periodic star model)
@@ -13,6 +15,8 @@ word `W₀` is killed by two in every twisted trace module, then so is the class
 candidate row (`star_two`). The coefficients are first normalized (Lemma A.1, which divides
 only by units); the candidate row is then the trace of `W₀`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -75,7 +79,7 @@ variable (hπ : π.IsCovering) (hτ : ∀ Y, π.obj ((starTree L).ztau Y) = hQ.t
   (hsurj : ∀ x : V, ∃ X, π.obj X = x)
   (ρ : StarV L ≃ StarV L) (hρ : ∀ a b, (starTree L).G.Adj (ρ a) (ρ b) ↔ (starTree L).G.Adj a b)
   (h0 : ρ none = none) (θ : Equiv.Perm (Fin t)) (hL : ∀ i, L (θ i) = L i)
-  (hθ : ∀ i j (hj : j ≤ L i), ρ (ch i j hj) = ch (θ i) j (by rw [hL]; exact hj))
+  (hθ : ∀ i j (hj : j ≤ L i), ρ (ch i j hj) = ch (θ i) j (hj.trans (hL i).ge))
   (c0 : ℕ) (hρp : ∀ v, (starTree L).par (ρ v) = (starTree L).par v + ((c0 : ℤ) : ZMod 2))
   (hdeck : ∀ Z, π.obj (((starTree L).zAct ρ hρ (c0 : ℤ) hρp).obj Z) = π.obj Z)
   (hfib : ∀ X Y : (starTree L).ZVert, π.obj X = π.obj Y →

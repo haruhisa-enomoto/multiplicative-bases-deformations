@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.SectionalDynkin
-import MultiplicativeBasisDeformations.Foundations.ModelDeck
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SectionalDynkin
+public import MultiplicativeBasisDeformations.Foundations.ModelDeck
 
 /-!
 # Proposition 4.1: the periodic tree model
@@ -16,6 +18,8 @@ The proof assembles Steps 1–4 (`SectionalCover`, `SectionalDynkin`,
 `ModelDeck`), transporting the covering from the tree of sectional paths to the
 star model along the isomorphism of Step 2 (`ZTransport`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

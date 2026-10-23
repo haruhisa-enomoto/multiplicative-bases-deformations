@@ -60,8 +60,9 @@ and the algebra `A` live in one universe.
 
 ## Build and verify
 
-Lean is pinned to `v4.33.1` and Mathlib to commit
-`0df444a360eaa60ab8c11dca51a86af692955474`, the only external dependency.
+Lean is pinned to `v4.35.0-rc3` and Mathlib to its `v4.35.0-rc3` tag, commit
+`c55e6e786f49471c72fbddbec5415808896aec1e`, the only external dependency.
+Every Lean file uses the Lean module system.
 
 ```sh
 lake exe cache get
@@ -78,9 +79,29 @@ python3 scripts/audit_axioms.py
 ```
 
 A fresh full build is substantial; use a machine with at least 16 GiB RAM.
-Independent replay with Comparator is described in
-[docs/VERIFICATION.md](docs/VERIFICATION.md), and the records are in
-[verification](verification/).
+
+The statement check uses the `lake comparator` shipped with the toolchain,
+with the Lean kernel and the bundled NanoDa and con-ron checkers. It needs
+`bwrap` (bubblewrap) on the path:
+
+```sh
+python3 scripts/check-lean-sources.py
+./scripts/verify-comparator.sh
+```
+
+[docs/VERIFICATION.md](docs/VERIFICATION.md) describes the checks, and the
+records are in [verification](verification/).
+
+## Palomar
+
+The repository follows the layout of the
+[Palomar registry](https://palomar-registry.org): the statement of record is
+[Challenge.lean](Challenge.lean), proved in [Solution.lean](Solution.lean),
+with [comparator.json](comparator.json) and the metadata in
+[formalization.yaml](formalization.yaml). The workflow
+[Palomar preflight](.github/workflows/palomar-preflight.yml) runs Palomar's
+mechanical verification for a chosen commit. Submissions go to
+<https://submit.palomar-registry.org/>.
 
 ## Website
 

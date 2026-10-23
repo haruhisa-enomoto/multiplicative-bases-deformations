@@ -1,5 +1,7 @@
-import MBDVendor.QSE.CategoryTheory.IyamaLadderRadical
-import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaLadderRadical
+public import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
 
 /-!
 # Krull--Schmidt split--radical normal form
@@ -14,6 +16,8 @@ radical remainder.
 This is the classification-free normal-form input in Iyama's special-arrow
 right-ladder construction.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

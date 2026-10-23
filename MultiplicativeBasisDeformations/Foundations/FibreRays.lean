@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.LinCorners
-import MultiplicativeBasisDeformations.Foundations.RayBasis
-import MultiplicativeBasisDeformations.Foundations.A0Normed
-import MultiplicativeBasisDeformations.Foundations.RayStandard
+module
+
+public import MultiplicativeBasisDeformations.Foundations.LinCorners
+public import MultiplicativeBasisDeformations.Foundations.RayBasis
+public import MultiplicativeBasisDeformations.Foundations.A0Normed
+public import MultiplicativeBasisDeformations.Foundations.RayStandard
 
 /-!
 # Rays of the fibres of the zero-product family
@@ -19,6 +21,8 @@ Corollary 3.3 the transversal is a normed multiplicative basis.
 Deviation: the fibre is not formed as a separate algebra; everything is read in `B` through
 `Ψ`, which is how Proposition 7.9 uses it.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

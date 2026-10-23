@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.MeshCategory
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshCategory
 
 /-!
 # Stable translation quivers
@@ -9,6 +11,8 @@ vertices. The mate bijections give `y → x` iff `τ x → y`, and `τ` preserve
 arrows. These facts are used throughout the proof of Proposition 4.1
 (`periodic-mesh-calculations.tex`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

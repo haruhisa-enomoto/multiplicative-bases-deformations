@@ -1,8 +1,10 @@
-import MultiplicativeBasisDeformations.Foundations.MeshExact
-import MultiplicativeBasisDeformations.Foundations.ARInjData
-import MultiplicativeBasisDeformations.Foundations.UnitCoefficients
-import MultiplicativeBasisDeformations.Foundations.ExtHigher
-import MultiplicativeBasisDeformations.Foundations.HochschildMesh
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshExact
+public import MultiplicativeBasisDeformations.Foundations.ARInjData
+public import MultiplicativeBasisDeformations.Foundations.UnitCoefficients
+public import MultiplicativeBasisDeformations.Foundations.ExtHigher
+public import MultiplicativeBasisDeformations.Foundations.HochschildMesh
 
 /-!
 # The prime-field model `C⁽²⁾` of `k(Γ_A)` (Section 10)
@@ -20,6 +22,8 @@ mesh data of `C⁽²⁾` (`primeMeshData`) obtained by descent of the exact mesh
 Lemma 6.3 then holds for `C⁽²⁾` (`primeExtVanish`): the same proof, for the descended mesh data,
 replaces the base change of `Ext`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

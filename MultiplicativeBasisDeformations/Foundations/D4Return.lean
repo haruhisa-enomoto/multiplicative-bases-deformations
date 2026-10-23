@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PreprojFunctionals
-import MultiplicativeBasisDeformations.Foundations.StarCorner
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PreprojFunctionals
+public import MultiplicativeBasisDeformations.Foundations.StarCorner
 
 /-!
 # Lemma A.5: closed paths of degree four in `Π(D₄)`
@@ -17,6 +19,8 @@ the retained vertices form the `D₄` with centre `o` and leaves `a_i`. The
 functional takes the value `M i j` on `o a_i o a_j o` and on `a_i o a_j o a_i`,
 where `M` is the cyclic matrix with rows and columns summing to zero.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

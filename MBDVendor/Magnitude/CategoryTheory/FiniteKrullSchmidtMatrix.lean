@@ -1,7 +1,9 @@
-import Mathlib.CategoryTheory.Preadditive.Biproducts
-import Mathlib.RingTheory.LocalRing.Basic
-import MBDVendor.Magnitude.CategoryTheory.RadicalMinimality
-import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
+module
+
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
+public import Mathlib.RingTheory.LocalRing.Basic
+public import MBDVendor.Magnitude.CategoryTheory.RadicalMinimality
+public import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
 
 /-!
 # Finite Krull--Schmidt matrices
@@ -11,6 +13,8 @@ indecomposables with local endomorphism rings is invertible as soon as every
 diagonal component is invertible.  This is the finite-support matrix lemma in
 the Krull--Schmidt--Warfield argument used by Gabriel's Lemma 3.5.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

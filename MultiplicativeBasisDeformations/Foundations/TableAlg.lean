@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.RayTable
-import MultiplicativeBasisDeformations.Foundations.SplitTransfer
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayTable
+public import MultiplicativeBasisDeformations.Foundations.SplitTransfer
 
 /-!
 # The linearization `kP` of a ray table
@@ -13,6 +15,8 @@ the identities onto the identities, each hit once. It induces an algebra map `kP
 surjective when every ray is hit; representation-finiteness passes along such maps
 (`isRepresentationFinite_of_surjective`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

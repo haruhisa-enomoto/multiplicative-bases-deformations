@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.SquareZero
-import MultiplicativeBasisDeformations.Foundations.WeightExt
-import MultiplicativeBasisDeformations.Foundations.WeightExtGroup
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SquareZero
+public import MultiplicativeBasisDeformations.Foundations.WeightExt
+public import MultiplicativeBasisDeformations.Foundations.WeightExtGroup
 
 /-!
 # Lemma 6.6, the additional gradings
@@ -20,6 +22,8 @@ integer weights of Section 7), compatible with the actions and the internal degr
 (`exists_mapLiftW`). The corrections are the weight components of `WeightExt.lean`
 (`extVanish_weights1`, `extVanish_weights0`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

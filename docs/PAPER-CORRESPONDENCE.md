@@ -5,8 +5,8 @@ deformations of representation-finite algebras* to the Lean declarations that
 formalize it. It refers to the revision of October 17, 2026, 105 pages,
 whose TeX, PDF and hashes are in [`manuscript/`](manuscript/README.md).
 
-Lean is `v4.33.1`, with Mathlib `0df444a360eaa60ab8c11dca51a86af692955474` as
-the only external Lake dependency. Declaration names are relative to the
+Lean is `v4.35.0-rc3`, with Mathlib `c55e6e786f49471c72fbddbec5415808896aec1e`
+(tag `v4.35.0-rc3`) as the only external Lake dependency. Declaration names are relative to the
 namespace `MultiplicativeBasisDeformations`; files are relative to
 `MultiplicativeBasisDeformations/` unless they start with `Statements/`,
 `Foundations/` or `Refinements/` (also in that directory).

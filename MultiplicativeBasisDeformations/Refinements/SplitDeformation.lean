@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Refinements.ModuleLifting
-import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
-import MultiplicativeBasisDeformations.Foundations.A0Graded
+module
+
+public import MultiplicativeBasisDeformations.Refinements.ModuleLifting
+public import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
+public import MultiplicativeBasisDeformations.Foundations.A0Graded
 
 /-!
 # The split form of a positive filtered deformation (Lemma 6.4, as used in Proposition 6.5)
@@ -14,6 +16,8 @@ From a splitting `φ : Λ ≅ B` (`Split`, given by `PosFiltration.exists_split`
 product `a ⋆ b = φ⁻¹(φa φb)` decomposes into homogeneous parts `μ_q` (`Split.μ`), which form a
 positive deformation in split form (`Split.posDef`) with total product `⋆` (`Split.tot_eq_star`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

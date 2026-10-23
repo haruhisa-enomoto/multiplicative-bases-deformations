@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.GradedExt
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedExt
 
 /-!
 # Graded `Ext` by the bar complex and graded extensions
@@ -21,6 +23,8 @@ extension form the paper uses.
   (`extVanish_shift`), and graded cyclic projectives have no higher `Ext` (`CycProj.extVanish`);
   these are the two properties used in the paper's proof of Lemma 6.3(2) (`ExtHigher.lean`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

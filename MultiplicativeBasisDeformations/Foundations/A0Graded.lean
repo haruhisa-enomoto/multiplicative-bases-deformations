@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.A0Normed
-import MultiplicativeBasisDeformations.Foundations.GradedExt
-import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
+module
+
+public import MultiplicativeBasisDeformations.Foundations.A0Normed
+public import MultiplicativeBasisDeformations.Foundations.GradedExt
+public import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
 
 /-!
 # `A₀` and its evaluated modules as graded objects
@@ -12,6 +14,8 @@ objects of `C`: the degree-`d` part at `x` is `C_d(P_x, X_i)`." Here `A₀ =
 `M_X = Rep F₀ X` of an object `X` of the mesh category is a graded right
 `A₀`-module (`gmodEv`), with `m·a = a.unop • m`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

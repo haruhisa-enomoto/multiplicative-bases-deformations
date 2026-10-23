@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.BasicLabels
-import MultiplicativeBasisDeformations.Foundations.A0Normed
-import MultiplicativeBasisDeformations.Foundations.ARInjData
-import MultiplicativeBasisDeformations.Foundations.NormedTransport
+module
+
+public import MultiplicativeBasisDeformations.Foundations.BasicLabels
+public import MultiplicativeBasisDeformations.Foundations.A0Normed
+public import MultiplicativeBasisDeformations.Foundations.ARInjData
+public import MultiplicativeBasisDeformations.Foundations.NormedTransport
 
 /-!
 # A standard basic algebra is its projective algebra `A₀`
@@ -15,6 +17,8 @@ correspond to the `e_i` (`pvEquiv`, with `S.obj p ≅ e_{σ p} A`). A standard
 equivalence `k(Γ_A) ≃ ind(mod A)` then gives `A₀ = (Alg F₀)ᵒᵖ ≅
 (Alg (e_{σ p} A))ᵒᵖ ≅ A` (`algEquivA0`, with the Peirce isomorphism).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

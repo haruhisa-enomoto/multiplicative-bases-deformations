@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.HomIdeal
+module
+
+public import MultiplicativeBasisDeformations.Foundations.HomIdeal
 
 /-!
 # Translation quivers and scalar mesh categories
@@ -21,6 +23,8 @@ Definitions 2.3 and 2.4 of the manuscript
 * The scalar mesh category `C(Q,c)` is the quotient by the mesh relations
   `r_x = ∑_{a : y → x} c_{x,a} (σ a) a`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

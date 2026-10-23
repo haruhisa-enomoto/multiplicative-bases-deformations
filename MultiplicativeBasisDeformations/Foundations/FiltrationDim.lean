@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
 
 /-!
 # The dimension of a positive filtered deformation
@@ -6,6 +8,8 @@ import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
 A positive filtered deformation `B` of `Λ` (Definition 6.2) has `dim B = dim Λ`: each layer
 `F^d/F^{d+1}` is identified with `Λ_d` by the leading-term map.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

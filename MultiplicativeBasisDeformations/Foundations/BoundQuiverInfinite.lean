@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.NormalFormAlgebra
-import MultiplicativeBasisDeformations.Foundations.OrbitDim
-import MultiplicativeBasisDeformations.Foundations.RepFinite
+module
+
+public import MultiplicativeBasisDeformations.Foundations.NormalFormAlgebra
+public import MultiplicativeBasisDeformations.Foundations.OrbitDim
+public import MultiplicativeBasisDeformations.Foundations.RepFinite
 
 /-!
 # Lemma 8.8 for bound quiver algebras
@@ -20,6 +22,8 @@ isomorphic modules come from conjugate points (`conj_of_iso`). Finite representa
 give finitely many orbits, contradicting `OrbitDim.orbits_not_finite`
 (`not_isRepresentationFinite_bound`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

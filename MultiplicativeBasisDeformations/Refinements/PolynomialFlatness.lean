@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.FlatPerturbationDim
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FlatPerturbationDim
 
 /-!
 # Corollary 12.4: polynomial mesh flatness
@@ -16,6 +18,8 @@ integral domain `K` receiving `k`, and base change along any ring map `K → R`.
 Coefficients are changed by `cmap φ`, which applies a ring map to every coefficient of a
 morphism of the path category.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

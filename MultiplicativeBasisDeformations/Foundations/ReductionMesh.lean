@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
-import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
-import MultiplicativeBasisDeformations.Foundations.PathGrading
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
+public import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
+public import MultiplicativeBasisDeformations.Foundations.PathGrading
 
 /-!
 # Reduction of path categories and mesh relations along a ring map
@@ -13,6 +15,8 @@ over `𝒪`. This is the right exactness used in Lemma B.2
 (`characteristic-two-mesh-calculations.tex`: "Right exactness of tensor product
 gives `coker D_m(E₄) ⊗ 𝔽₂ ≅ coker D_m(C⁽²⁾)`").
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

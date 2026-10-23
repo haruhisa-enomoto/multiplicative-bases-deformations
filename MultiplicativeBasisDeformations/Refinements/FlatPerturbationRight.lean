@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.FlatPerturbationGr
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FlatPerturbationGr
 
 /-!
 # Lemma 12.3 for right modules and first arrows
@@ -10,6 +12,8 @@ gives isomorphisms `kQ(w, y) ≅ kQᵒᵖ(y, w)` reversing composition (`opE`), 
 `C` and `B` to those of the opposite presentation, and the first-arrow presentations of the right
 simple modules to the last-arrow presentations of the representables of `Qᵒᵖ`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

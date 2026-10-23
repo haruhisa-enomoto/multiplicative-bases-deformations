@@ -1,4 +1,6 @@
-import MBDVendor.QSE.CategoryTheory.IyamaReversedRightPrefix
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaReversedRightPrefix
 
 /-!
 # Actual-index certificate assembly for a genuine right ladder
@@ -6,6 +8,8 @@ import MBDVendor.QSE.CategoryTheory.IyamaReversedRightPrefix
 This file combines the pure `Fin.rev` adapter with the abstract reversed-rung
 propagation.  It remains entirely categorical.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

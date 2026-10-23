@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.ResidualCorrection
-import MultiplicativeBasisDeformations.Foundations.ConnectedWt
-import MultiplicativeBasisDeformations.Foundations.DualWeight
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ResidualCorrection
+public import MultiplicativeBasisDeformations.Foundations.ConnectedWt
+public import MultiplicativeBasisDeformations.Foundations.DualWeight
 
 /-!
 # Proposition 6.1 with dual mesh weights (for Proposition 7.5)
@@ -11,6 +13,8 @@ mesh weights `W_R` (`R ∈ S`) such that the weight of the row `R'` minus `ν` o
 is `1` if `R' = R` and `0` otherwise. This is the input of Proposition 7.5: by Lemma 7.4
 these give integer ray weights dual to the residual characters.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

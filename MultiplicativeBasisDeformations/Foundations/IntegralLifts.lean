@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralA0
-import MultiplicativeBasisDeformations.Foundations.HochschildMesh
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralA0
+public import MultiplicativeBasisDeformations.Foundations.HochschildMesh
 
 /-!
 # The lifted modules and arrows over `ℤ/4` (Proposition 10.1)
@@ -13,6 +15,8 @@ Every evaluated module `M_X` of `A⁽²⁾` lifts to a graded `𝒪P`-module on 
 (`exists_modLift`), and every arrow map `M_y → M_x` lifts to a degree-one `𝒪P`-linear map
 between the lifts (`exists_arrowLift`). These data are bundled in `WData`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

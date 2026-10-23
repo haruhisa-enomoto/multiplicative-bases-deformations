@@ -1,6 +1,8 @@
-import Mathlib.Algebra.BigOperators.Fin
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
-import MBDVendor.QSE.CategoryTheory.IyamaNakayamaPair
+module
+
+public import Mathlib.Algebra.BigOperators.Fin
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
+public import MBDVendor.QSE.CategoryTheory.IyamaNakayamaPair
 
 /-!
 # Weight transport along Iyama's invertible ladders
@@ -11,6 +13,8 @@ right-mesh Euler identity holds.  A global Euler hypothesis then gives
 constancy along a whole ladder and equality at the two boundary maps of a
 Nakayama pair.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

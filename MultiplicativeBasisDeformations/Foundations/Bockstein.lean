@@ -1,9 +1,11 @@
-import MultiplicativeBasisDeformations.Foundations.CharComplex
-import MultiplicativeBasisDeformations.Foundations.ZModFour
-import MultiplicativeBasisDeformations.Foundations.BaseChange
-import MultiplicativeBasisDeformations.Foundations.SupportedBockstein
-import MultiplicativeBasisDeformations.Foundations.CentralizerTable
-import MultiplicativeBasisDeformations.Foundations.IndicatorRel
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CharComplex
+public import MultiplicativeBasisDeformations.Foundations.ZModFour
+public import MultiplicativeBasisDeformations.Foundations.BaseChange
+public import MultiplicativeBasisDeformations.Foundations.SupportedBockstein
+public import MultiplicativeBasisDeformations.Foundations.CentralizerTable
+public import MultiplicativeBasisDeformations.Foundations.IndicatorRel
 
 /-!
 # Supported representatives through the connecting map (Corollary 10.5, coefficient form)
@@ -21,8 +23,14 @@ retraction `k → 𝔽₂` shows that its supported representative stays a non-c
 (`cor105_coeff`).
 -/
 
+@[expose] public section
+
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
+
+-- Keep `ZMod 2` on its ring structure: Mathlib's instance making simple nilpotent groups
+-- commutative would otherwise give `ZMod 2` a second, non-reducibly-equal additive structure.
+attribute [-instance] instAddCommGroupOfIsSimpleAddGroupOfIsNilpotent
 
 noncomputable section
 

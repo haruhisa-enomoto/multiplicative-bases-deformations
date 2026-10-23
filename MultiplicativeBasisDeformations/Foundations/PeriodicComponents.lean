@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ComponentTransfer
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ComponentTransfer
 
 /-!
 # Periodic components and the reduction of `D_m` to them
@@ -16,6 +18,8 @@ and a path with all vertices in `T` stays in one component.
 `meshDerivativeSurjective_of_components`: if `D_m` is surjective on every
 periodic component, it is surjective on `C(Q, c)`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

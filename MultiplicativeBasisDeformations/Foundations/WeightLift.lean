@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.WeightEv
+module
+
+public import MultiplicativeBasisDeformations.Foundations.WeightEv
 
 /-!
 # Homogeneous module and arrow lifts (Proposition 7.6, weights)
@@ -14,6 +16,8 @@ in them shift weights, so the weight-`χ` parts of the corrections are again sol
 (`wLift`, `wLiftData`). Their mesh errors shift by `ν_x + χ` (`zE_wshift`), hence lie in
 `C(τx, x)` of weight `ν_x + χ` (`exists_liftData_wt`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

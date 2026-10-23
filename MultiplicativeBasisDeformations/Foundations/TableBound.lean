@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.TableConf
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TableConf
 
 /-!
 # Incidence tables with zero relations
@@ -9,6 +11,8 @@ set `Z` of comparable pairs declared zero, closed under extension (`incZ`), and 
 of it in a ray table (`ConfZ`), which make its linearization representation-finite when `kP`
 is (Lemmas 8.9 and C.1 as in `TableConf`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # The bar cochain complex
@@ -16,6 +18,8 @@ entries matter for the cochains used later); the coface maps then satisfy the
 cosimplicial identities as identities of sequence operations (`coface_comm`),
 and `d ∘ d = 0` (`d_d`) follows by the usual pairing of terms.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

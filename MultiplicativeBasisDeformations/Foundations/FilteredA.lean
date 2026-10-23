@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.StandardForm
-import MultiplicativeBasisDeformations.Foundations.GradedRealizationIso
-import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StandardForm
+public import MultiplicativeBasisDeformations.Foundations.GradedRealizationIso
+public import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
 
 /-!
 # `A` is a positive filtered deformation of `A₀`
@@ -15,8 +17,11 @@ the length-graded pieces of `A₀` multiplicatively (`posFiltProj`). The Peirce 
 transports this to `A` (`posFiltA`).
 -/
 
+@[expose] public section
+
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
+set_option synthInstance.maxHeartbeats 100000
 
 noncomputable section
 

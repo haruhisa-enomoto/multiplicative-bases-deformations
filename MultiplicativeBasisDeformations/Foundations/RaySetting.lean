@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.TableConf
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TableConf
 
 /-!
 # Setting 8.4: local generators and endpoint chains of a ray table
@@ -16,6 +18,8 @@ endpoint ring (`lem:endpoint-chains`). In ray terms:
 `Sys` bundles a ray table with this structure. Products are computed in the monoid with zero
 `M P`; we write `⌜r⌝` for a ray in it.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

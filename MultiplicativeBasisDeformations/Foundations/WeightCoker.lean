@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.WeightLift
-import MultiplicativeBasisDeformations.Foundations.RowSpan
+module
+
+public import MultiplicativeBasisDeformations.Foundations.WeightLift
+public import MultiplicativeBasisDeformations.Foundations.RowSpan
 
 /-!
 # Weights of mesh corrections (Proposition 7.6, weights)
@@ -17,6 +19,8 @@ relative weight `χ` lies in the span of the rows of `S` of relative weight `χ`
 (`mem_rowSpan_char`), and so does the class `Ψ[μ]` of a cocycle of character `χ`
 (`Ψc_mem_rowSpan_char`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

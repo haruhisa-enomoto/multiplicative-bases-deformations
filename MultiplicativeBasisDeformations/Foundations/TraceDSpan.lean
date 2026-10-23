@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.TraceTypesAD
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TraceTypesAD
 
 /-!
 # Type `D` traces in every characteristic (Appendix B)
@@ -18,6 +20,8 @@ an integer multiple of the trace of the alternating word `altE` starting with `x
 that trace vanishes in odd degree for the trivial twist, in even degree for the
 interchange, and in degree above `N = L c + 2`, where `c` is the long arm.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

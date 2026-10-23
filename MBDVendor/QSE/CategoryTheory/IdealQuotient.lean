@@ -1,6 +1,8 @@
-import Mathlib.CategoryTheory.Quotient.Preadditive
-import MBDVendor.QSE.CategoryTheory.CategoricalRadical
-import MBDVendor.QSE.CategoryTheory.HomIdeal
+module
+
+public import Mathlib.CategoryTheory.Quotient.Preadditive
+public import MBDVendor.QSE.CategoryTheory.CategoricalRadical
+public import MBDVendor.QSE.CategoryTheory.HomIdeal
 
 /-!
 # Ideal quotients of preadditive categories
@@ -10,6 +12,8 @@ a two-sided additive Hom ideal as such a congruence, equips the quotient with
 its induced preadditive structure, and proves that the quotient functor kills
 exactly the ideal.
 -/
+
+@[expose] public section
 
 noncomputable section
 

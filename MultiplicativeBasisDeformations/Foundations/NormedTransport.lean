@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.NormedBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.NormedBasis
 
 /-!
 # Normed multiplicative bases along algebra isomorphisms
@@ -8,6 +10,8 @@ a normed multiplicative basis of `A`." An algebra isomorphism preserves
 products, idempotents, primitivity and the radical powers, so it transports
 normed multiplicative bases (`HasNormedMultiplicativeBasis.of_algEquiv`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

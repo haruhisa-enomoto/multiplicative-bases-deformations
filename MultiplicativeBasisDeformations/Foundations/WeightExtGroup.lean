@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.WeightExt
-import MultiplicativeBasisDeformations.Foundations.MGrading
+module
+
+public import MultiplicativeBasisDeformations.Foundations.WeightExt
+public import MultiplicativeBasisDeformations.Foundations.MGrading
 
 /-!
 # Corrections in each weight component, for a grading by any abelian group
@@ -11,6 +13,8 @@ replaced by its weight-`w` component (`PW0Γ`, `PW1Γ`, `dPW0Γ`, `dPW1Γ`). The
 computed on homogeneous inputs (`PW0Γ_hom`, `PW1Γ_hom`); cochains agreeing on homogeneous inputs
 agree (`ext_oneΓ`, `ext_twoΓ`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

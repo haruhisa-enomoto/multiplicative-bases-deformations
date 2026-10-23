@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.TreeRepetition
-import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TreeRepetition
+public import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
 
 /-!
 # Mesh relations along a covering `ℤΔ → Q`
@@ -10,6 +12,8 @@ the mesh relation at `X` to the mesh relation at `π X`, so `π` preserves the
 mesh ideal (`periodic-mesh-calculations.tex`). This is how the twisted
 trace calculation (Lemma A.2) passes relations downstairs.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

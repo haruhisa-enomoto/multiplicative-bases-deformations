@@ -1,6 +1,8 @@
-import MBDVendor.QSE.CategoryTheory.MinimalMorphism
-import Mathlib.CategoryTheory.Abelian.Projective.Dimension
-import Mathlib.CategoryTheory.Preadditive.Projective.Basic
+module
+
+public import MBDVendor.QSE.CategoryTheory.MinimalMorphism
+public import Mathlib.CategoryTheory.Abelian.Projective.Dimension
+public import Mathlib.CategoryTheory.Preadditive.Projective.Basic
 
 /-!
 # Categorical projective covers
@@ -10,6 +12,8 @@ minimal.  This file records its transport and uniqueness calculus and relates
 right minimality to the essential-epimorphism characterization of projective
 covers.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

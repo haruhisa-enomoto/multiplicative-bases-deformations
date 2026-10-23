@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.GradedExt
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedExt
 
 /-!
 # Corrections in each weight component (Proposition 10.1, last paragraph)
@@ -17,6 +19,8 @@ two multilinear cochains agreeing on homogeneous inputs agree (`ext_one`, `ext_t
 Several weights are treated one after another (`extVanish_weights`): each projection preserves the
 degree and the earlier weights.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

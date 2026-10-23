@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.WeightCoker
-import MultiplicativeBasisDeformations.Foundations.CharDecomp
-import MultiplicativeBasisDeformations.Foundations.PsiInjective
+module
+
+public import MultiplicativeBasisDeformations.Foundations.WeightCoker
+public import MultiplicativeBasisDeformations.Foundations.CharDecomp
+public import MultiplicativeBasisDeformations.Foundations.PsiInjective
 
 /-!
 # The characteristic-two decomposition of `HH²(A₀)_{>0}` (Proposition 7.6)
@@ -16,6 +18,8 @@ coboundary unless `χ = relW R` for a row `R ∈ S`; and if a cocycle `μ_i` of 
 coboundary, in the same internal degree (`char_part`). With the character decomposition
 this gives the spanning hypothesis of Theorem 7.7 (`span_A0`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

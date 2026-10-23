@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.DeckGrading
-import MultiplicativeBasisDeformations.Foundations.Thinness
+module
+
+public import MultiplicativeBasisDeformations.Foundations.DeckGrading
+public import MultiplicativeBasisDeformations.Foundations.Thinness
 
 /-!
 # The deck grading of a scalar mesh category, as a graded family
@@ -12,6 +14,8 @@ walk classes is a height in the sense of `HeightData` (`deckHeight`): nonzero
 morphisms of degree `g` are combinations of paths of length `ℓ(g)`, and in
 length zero only identities occur.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

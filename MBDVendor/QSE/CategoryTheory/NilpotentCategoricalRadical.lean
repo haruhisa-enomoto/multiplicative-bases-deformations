@@ -1,5 +1,7 @@
-import MBDVendor.QSE.CategoryTheory.CategoricalRadical
-import MBDVendor.QSE.CategoryTheory.HomIdealPowers
+module
+
+public import MBDVendor.QSE.CategoryTheory.CategoricalRadical
+public import MBDVendor.QSE.CategoryTheory.HomIdealPowers
 
 /-!
 # A nilpotent categorical radical as Hom-ideal data
@@ -13,6 +15,8 @@ Nilpotence is stronger than Iyama's general `J^∞ = 0` hypothesis, but is the
 appropriate finite condition for the acyclic word mesh categories used in the
 manuscript.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

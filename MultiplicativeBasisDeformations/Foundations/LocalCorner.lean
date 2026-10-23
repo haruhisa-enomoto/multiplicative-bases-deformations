@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.GradedLayers
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedLayers
 
 /-!
 # Local corners are truncated polynomial algebras
@@ -15,6 +17,8 @@ gives `rad C ⊆ C t C`, and Lemma 3.1(3) makes `C t C` one-sided, `C t` or
 `t C`; so every element is a polynomial in `t` (`aeval_surjective`). The kernel of
 `k[X] → C` is `(X^N)` with `N` the nilpotency index of `t`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

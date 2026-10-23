@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Refinements.LiftedCorner
-import MultiplicativeBasisDeformations.Foundations.A0RepFinite
+module
+
+public import MultiplicativeBasisDeformations.Refinements.LiftedCorner
+public import MultiplicativeBasisDeformations.Foundations.A0RepFinite
 
 /-!
 # Corollary 12.1: all modules over a positive deformation
@@ -14,6 +16,8 @@ applied to this mesh data gives representation-finiteness, and every indecomposa
 evaluated module; the evaluation of `M_x^B` at the regular projectives `φ(e_p) B ≅ M_p^B` is
 `M_x^B` itself (`evIso`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

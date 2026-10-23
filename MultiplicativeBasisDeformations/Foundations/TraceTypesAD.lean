@@ -1,6 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.TraceAlgebra
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Tactic.FinCases
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TraceAlgebra
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Tactic.FinCases
+public import Mathlib.Tactic.Ring
 
 /-!
 # Twisted traces of types `A` and `D` (Appendix A, "Types A and D")
@@ -15,6 +18,8 @@ import Mathlib.Tactic.FinCases
   with the short-arm interchange;
 * `D_4` with a three-cycle of the arms.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

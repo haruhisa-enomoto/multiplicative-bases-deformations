@@ -24,9 +24,11 @@ development has not been reconstructed.
 
 ## Dependencies and licences
 
-The proof package pins Lean 4.33.1 and Mathlib commit
-`0df444a360eaa60ab8c11dca51a86af692955474`. Mathlib is the only external Lake
-dependency. The [vendored-source record](VENDORED.md) identifies the
+The proof package pins Lean 4.35.0-rc3 and Mathlib commit
+`c55e6e786f49471c72fbddbec5415808896aec1e` (tag `v4.35.0-rc3`). Mathlib is the
+only external Lake dependency. Until October 23, 2026 it pinned Lean 4.33.1 and
+Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`; the move to the newer
+toolchain and to the Lean module system changed proofs only, not statements. The [vendored-source record](VENDORED.md) identifies the
 Auslander–Reiten library copied from the magnitude-conjecture formalization.
 This repository is released under the [Apache License 2.0](LICENSE), the
 licence of the vendored sources.

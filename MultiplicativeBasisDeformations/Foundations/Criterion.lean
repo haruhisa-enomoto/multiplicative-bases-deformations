@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.LocalMesh
+module
+
+public import MultiplicativeBasisDeformations.Foundations.LocalMesh
 
 /-!
 # Lemma 2.9: vanishing on modules killed by `e`
@@ -16,6 +18,8 @@ killed by `e` when every projective idempotent acts by zero. `Ext¹ = 0` is used
 in extension form: maps into `R_w` extend from a submodule with quotient
 killed by `e`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 
@@ -47,7 +51,7 @@ theorem exists_atom_le {T : Type*} [AddCommGroup T] [Module k T] [Module (Alg F)
     [IsScalarTower k (Alg F) T] [FiniteDimensional k T] {N : Submodule (Alg F) T} (hN : N ≠ ⊥) :
     ∃ S, IsAtom S ∧ S ≤ N := by
   have hA : IsArtinian (Alg F) T := isArtinian_of_tower k inferInstance
-  haveI : IsAtomic (Submodule (Alg F) T) := isAtomic_of_orderBot_wellFounded_lt hA.wf
+  haveI : IsAtomic (Submodule (Alg F) T) := isAtomic_of_orderBot_wellFounded_lt hA
   obtain h | ⟨S, hS, hSN⟩ := eq_bot_or_exists_atom_le N
   · exact absurd h hN
   · exact ⟨S, hS, hSN⟩

@@ -1,5 +1,7 @@
-import MBDVendor.Magnitude.CategoryTheory.FiniteTauMatrix
-import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.FiniteTauMatrix
+public import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
 /-!
 # The mesh matrix is the inverse Hom matrix
@@ -16,6 +18,8 @@ the arrow multiplicities.  Column by column, the resulting recurrence is
 exactly `H * K = 1`; finite square matrices over `ℤ` are Dedekind finite, so
 also `K * H = 1`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

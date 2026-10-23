@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.Criterion
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Criterion
 
 /-!
 # Evaluation at the projective labels: full faithfulness (Lemma 2.9)
@@ -18,6 +20,8 @@ to the whole module because the quotient is killed by `e` (Ext¹-vanishing).
 `add C` is represented by finite families of labels; maps between families are
 matrices of morphisms.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

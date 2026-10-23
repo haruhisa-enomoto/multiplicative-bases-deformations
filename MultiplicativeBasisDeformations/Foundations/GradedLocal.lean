@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.LocalMesh
-import MultiplicativeBasisDeformations.Foundations.MeshGrading
+module
+
+public import MultiplicativeBasisDeformations.Foundations.LocalMesh
+public import MultiplicativeBasisDeformations.Foundations.MeshGrading
 
 /-!
 # The local structure of a finite-dimensional scalar mesh category
@@ -11,6 +13,8 @@ For a finite-dimensional scalar mesh category on a finite translation quiver we
 take as radical the span of the images of paths of positive length
 (`radN 1`) and verify the axioms of `LocalFamily`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

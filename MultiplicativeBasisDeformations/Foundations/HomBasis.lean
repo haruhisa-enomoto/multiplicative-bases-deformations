@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.GradedExt
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedExt
 
 /-!
 # Homogeneous bases of graded vector spaces
@@ -6,6 +8,8 @@ import MultiplicativeBasisDeformations.Foundations.GradedExt
 A finite-dimensional `ℤ`-graded vector space (`GExt.ZGr`) has a basis of homogeneous vectors
 (`exists_homBasis`): it is the internal direct sum of its homogeneous components.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

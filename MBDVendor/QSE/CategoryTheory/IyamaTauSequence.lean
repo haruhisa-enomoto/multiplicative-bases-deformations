@@ -1,8 +1,10 @@
-import Mathlib.Algebra.Homology.ShortComplex.Basic
-import Mathlib.Algebra.Exact.Basic
-import Mathlib.CategoryTheory.Limits.WeakLimits.WeakKernels
-import MBDVendor.QSE.CategoryTheory.CategoricalRadical
-import MBDVendor.QSE.CategoryTheory.MinimalMorphism
+module
+
+public import Mathlib.Algebra.Homology.ShortComplex.Basic
+public import Mathlib.Algebra.Exact.Basic
+public import Mathlib.CategoryTheory.Limits.WeakLimits.WeakKernels
+public import MBDVendor.QSE.CategoryTheory.CategoricalRadical
+public import MBDVendor.QSE.CategoryTheory.MinimalMorphism
 
 /-!
 # Iyama tau-sequences: categorical base layer
@@ -15,6 +17,8 @@ Mathlib represents a weak kernel by the data of an `IsWeakLimit`.  We wrap
 that data in `Nonempty` to obtain a proposition.  A weak cokernel is defined
 by applying the same construction in the opposite category.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.TableAlg
-import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
-import MultiplicativeBasisDeformations.Foundations.FullIdempotent
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TableAlg
+public import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
+public import MultiplicativeBasisDeformations.Foundations.FullIdempotent
 
 /-!
 # Corners, repeated labels and graded covers of ray tables (Lemma 4.7 for `kP`)
@@ -14,6 +16,8 @@ import MultiplicativeBasisDeformations.Foundations.FullIdempotent
   `(v i, g i)`, for a grading `γ` of the rays; representation-finite with `kP` by the split
   transfer of Lemma 4.6 (`lem:homogeneous-projection`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

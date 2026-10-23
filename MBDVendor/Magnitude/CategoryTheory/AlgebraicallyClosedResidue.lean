@@ -1,5 +1,7 @@
-import MBDVendor.Magnitude.CategoryTheory.ResidueDimension
-import MBDVendor.Magnitude.LinearAlgebra.LocalAlgebraResidue
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.ResidueDimension
+public import MBDVendor.Magnitude.LinearAlgebra.LocalAlgebraResidue
 
 /-!
 # Residue maps for chosen indecomposables over an algebraically closed field
@@ -10,6 +12,8 @@ algebra residue construction supplies its unique scalar residue map.  The
 categorical radical criterion identifies the kernel with the diagonal
 categorical radical.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

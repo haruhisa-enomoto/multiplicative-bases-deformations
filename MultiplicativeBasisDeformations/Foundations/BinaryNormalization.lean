@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.FamilyNormalization
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FamilyNormalization
 
 /-!
 # Binary normalization
@@ -16,6 +18,8 @@ The lattice grading is `LatGrading` (finitely supported projections, as for the
 length grading); characters are additive maps `L → Additive kˣ`, extended from
 the prescribed values on the `χ_i` through the basis (`exists_character`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

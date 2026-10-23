@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.RaySetting
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RaySetting
 
 /-!
 # Forbidden configurations in faithful supports
@@ -8,6 +10,8 @@ factorization order isomorphic to a table poset that passes the `decide` checks 
 `FinPoset` (unique lower covers and the dimension count), finite representation type is
 contradicted. The axioms of the table poset follow from those of the factorization order.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

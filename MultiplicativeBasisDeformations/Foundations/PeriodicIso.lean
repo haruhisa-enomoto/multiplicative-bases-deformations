@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.ComponentSpan
-import MultiplicativeBasisDeformations.Foundations.PeriodicLocalization
-import MultiplicativeBasisDeformations.Foundations.ObjectQuotients
-import MultiplicativeBasisDeformations.Foundations.A0Normed
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ComponentSpan
+public import MultiplicativeBasisDeformations.Foundations.PeriodicLocalization
+public import MultiplicativeBasisDeformations.Foundations.ObjectQuotients
+public import MultiplicativeBasisDeformations.Foundations.A0Normed
 
 /-!
 # Proposition 5.1: the periodic localization of the derivative cokernels
@@ -21,6 +23,8 @@ inclusion; injective since a family of `Q` differs from the inclusion of its res
 rows leaving `T`, which lie in the image of `D_m` (`row_mem_imageD_of_not_periodic`), while the
 inclusion of a derivative of `Q_T` is a derivative of `Q` up to such rows (`inclRow_mem_imageD`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

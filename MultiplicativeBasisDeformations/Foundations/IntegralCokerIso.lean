@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralCoker
-import MultiplicativeBasisDeformations.Foundations.MeshGrading
-import MultiplicativeBasisDeformations.Foundations.ResidualSpaces
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralCoker
+public import MultiplicativeBasisDeformations.Foundations.MeshGrading
+public import MultiplicativeBasisDeformations.Foundations.ResidualSpaces
 
 /-!
 # Lemma B.2 as an isomorphism: `⊕ coker D_m(E₄) ≅ ⊕_{i∈I} 𝒪/(2)`
@@ -20,6 +22,8 @@ coefficients are even (`integral_rows_indep`). Thus `coker D_m(E₄)` is `⊕ �
 of `S` of degree `m + 1` (`integralMeshCokernels`). The weight labels `χ_i` are not formalized
 (no weight grading on `E₄` is used).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

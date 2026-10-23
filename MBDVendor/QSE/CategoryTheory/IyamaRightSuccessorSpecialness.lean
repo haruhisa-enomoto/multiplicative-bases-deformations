@@ -1,4 +1,6 @@
-import MBDVendor.QSE.CategoryTheory.IyamaRightLadderConstruction
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaRightLadderConstruction
 
 /-!
 # Special successors in Iyama right ladders
@@ -14,6 +16,8 @@ successor.
 Everything here is categorical; no module classification or concrete
 algebra is used.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

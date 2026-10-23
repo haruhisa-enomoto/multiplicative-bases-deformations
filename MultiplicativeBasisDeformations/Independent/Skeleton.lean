@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Statement
-import MultiplicativeBasisDeformations.Foundations.ARQuiver
+module
+
+public import MultiplicativeBasisDeformations.Statement
+public import MultiplicativeBasisDeformations.Foundations.ARQuiver
 
 /-!
 # Independent families and the skeletons of the proof library
@@ -8,6 +10,8 @@ An independent complete family of indecomposable right modules is an
 `IndSkeleton` of the proof library with the same objects. The radical powers,
 the spaces of irreducible maps and the Auslander–Reiten quivers agree.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

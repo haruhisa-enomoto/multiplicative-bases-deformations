@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.KrullSchmidtForm
-import MBDVendor.Magnitude.Algebra.FiniteModuleDecomposition
-import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
-import Mathlib.RingTheory.Length
+module
+
+public import MultiplicativeBasisDeformations.Foundations.KrullSchmidtForm
+public import MBDVendor.Magnitude.Algebra.FiniteModuleDecomposition
+public import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
+public import Mathlib.RingTheory.Length
 
 /-!
 # Lemma 2.5 for an Artin algebra
@@ -18,6 +20,8 @@ indecomposables (induction on the length, `decomp_module`), whose endomorphism r
 (Fitting, `end_isLocalRing`); the split–radical normal form and the right radical approximations
 then come from `KrullSchmidtForm`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

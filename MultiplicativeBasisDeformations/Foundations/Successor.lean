@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.GeneratingPaths
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GeneratingPaths
 
 /-!
 # Section 9: successors and endpoint types
@@ -11,6 +13,8 @@ successor is obtained by one local generator of character `χ` (`succ_by_gen`), 
 three endpoint types `L`, `R`, `B`. Also `lem:primitive-action-generation`
 (`primitive-ray-equations.tex`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

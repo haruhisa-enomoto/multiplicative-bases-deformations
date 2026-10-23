@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.RayDegree
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayDegree
 
 /-!
 # Homogeneous rays of a length-graded algebra
@@ -19,6 +21,8 @@ Then a homogeneous normed multiplicative basis containing the `e_x` is, after
 reindexing, a ray transversal killing zero ray products (`hasRayBasis_of_graded`):
 this is the "ray basis" of Corollary 5.5(2).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

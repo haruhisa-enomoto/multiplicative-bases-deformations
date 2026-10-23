@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.E7Return
-import MultiplicativeBasisDeformations.Foundations.TraceTypesAD
+module
+
+public import MultiplicativeBasisDeformations.Foundations.E7Return
+public import MultiplicativeBasisDeformations.Foundations.TraceTypesAD
 
 /-!
 # Lemma B.1: top paths of `Π(D_n)`
@@ -26,6 +28,8 @@ Labels: the star has short arms `a, b` with one vertex each and the long arm `c`
 the spine vertex at depth `j` of the long arm has line position `j + 1` and the
 centre has position `1`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

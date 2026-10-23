@@ -1,8 +1,10 @@
-import MultiplicativeBasisDeformations.Foundations.ARMeshExactness
-import MultiplicativeBasisDeformations.Foundations.ARMeshFinite
-import MultiplicativeBasisDeformations.Foundations.GradedLocal
-import MultiplicativeBasisDeformations.Foundations.PathGradingComp
-import MultiplicativeBasisDeformations.Foundations.LocalMesh
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARMeshExactness
+public import MultiplicativeBasisDeformations.Foundations.ARMeshFinite
+public import MultiplicativeBasisDeformations.Foundations.GradedLocal
+public import MultiplicativeBasisDeformations.Foundations.PathGradingComp
+public import MultiplicativeBasisDeformations.Foundations.LocalMesh
 
 /-!
 # The mesh data of `k(Γ_A)`
@@ -19,6 +21,8 @@ are exact, with first map given by `c_{x,a} (σa)`; at a projective `x` the
 right mesh map is a monomorphism. Exactness is reduced to homogeneous families
 of paths (`ARMeshExactness.lean`) by the path-length grading.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

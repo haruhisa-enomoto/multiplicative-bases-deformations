@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PathGrading
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PathGrading
 
 /-!
 # Homogeneous components of composites in `kQ`
@@ -8,6 +10,8 @@ components by `m`. Together with the finiteness of the decomposition into
 components, this reduces statements about the mesh sequences of `C(Q, c)` to
 homogeneous families (`graded-category.tex`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

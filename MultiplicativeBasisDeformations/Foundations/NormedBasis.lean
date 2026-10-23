@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Normed multiplicative bases and basic algebras
@@ -14,6 +16,8 @@ The algebra radical `rad A` is Mathlib's Jacobson radical `Ring.jacobson A`
 Its powers are products of `k`-subspaces, which agree with the ideal powers
 because `rad A` is a two-sided ideal.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

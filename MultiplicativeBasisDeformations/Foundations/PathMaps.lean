@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PathGrading
-import Mathlib.Combinatorics.Quiver.Path.Vertices
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PathGrading
+public import Mathlib.Combinatorics.Quiver.Path.Vertices
 
 /-!
 # Linear maps out of path categories
@@ -15,6 +17,8 @@ are used repeatedly:
   in the subquiver, and to zero otherwise, is multiplicative (in
   `FullSubquiver.lean`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

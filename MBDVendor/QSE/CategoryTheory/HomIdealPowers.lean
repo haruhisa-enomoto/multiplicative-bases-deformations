@@ -1,4 +1,6 @@
-import MBDVendor.QSE.CategoryTheory.HomIdeal
+module
+
+public import MBDVendor.QSE.CategoryTheory.HomIdeal
 
 /-!
 # Multiplication and powers of categorical Hom ideals
@@ -8,6 +10,8 @@ through arbitrary intermediate objects.  This file proves the elementary
 ideal arithmetic needed to state nilpotence of a categorical radical and to
 deduce separation of its power filtration.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

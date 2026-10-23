@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.ZTransport
-import MultiplicativeBasisDeformations.Foundations.StarTree
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ZTransport
+public import MultiplicativeBasisDeformations.Foundations.StarTree
 
 /-!
 # Deck transformations of `ℤΔ → Q`
@@ -14,6 +16,8 @@ Proof of Proposition 4.1, Steps 3 and 4 (`periodic-mesh-calculations.tex`).
   arrows and hence constant on the connected quiver. Its action on translation
   orbits is a tree automorphism `ρ`" — `height_form`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

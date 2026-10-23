@@ -1,8 +1,12 @@
-import MultiplicativeBasisDeformations.Foundations.GradedExt
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedExt
 
 /-!
 # Small lemmas on graded modules
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

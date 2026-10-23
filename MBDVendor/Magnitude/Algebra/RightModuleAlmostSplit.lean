@@ -1,7 +1,9 @@
-import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
-import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
-import MBDVendor.QSE.RepresentationTheory.AlmostSplitUniqueness
-import MBDVendor.QSE.RepresentationTheory.FiniteTypeAlmostSplit
+module
+
+public import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
+public import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
+public import MBDVendor.QSE.RepresentationTheory.AlmostSplitUniqueness
+public import MBDVendor.QSE.RepresentationTheory.FiniteTypeAlmostSplit
 
 /-!
 # Finite-type almost-split data for right modules
@@ -12,6 +14,8 @@ almost-split existence theorem.  The two notions of indecomposability are
 bridged through the local endomorphism ring, and no classification of modules
 is used.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 
@@ -52,7 +56,7 @@ theorem fgModule_isFiniteLength
     IsFiniteLength Aᵐᵒᵖ M := by
   letI : IsArtinianRing Aᵐᵒᵖ := IsArtinianRing.of_finite k Aᵐᵒᵖ
   exact
-    ((IsArtinianRing.tfae Aᵐᵒᵖ M).out 0 3).mp
+    ((IsArtinianRing.tfae Aᵐᵒᵖ M).out 1 4).mp
       (inferInstance : Module.Finite Aᵐᵒᵖ M)
 
 include k in

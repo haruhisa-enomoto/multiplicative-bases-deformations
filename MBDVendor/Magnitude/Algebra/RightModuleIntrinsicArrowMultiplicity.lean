@@ -1,8 +1,10 @@
-import MBDVendor.Magnitude.Algebra.RightModuleTranslationMultiplicity
-import MBDVendor.Magnitude.Algebra.RightModuleProjectiveBoundary
-import MBDVendor.Magnitude.CategoryTheory.ModuleIrreducibleSpaceComparison
-import MBDVendor.Magnitude.CategoryTheory.AlgebraicallyClosedOccurrenceBasis
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtWeight
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleTranslationMultiplicity
+public import MBDVendor.Magnitude.Algebra.RightModuleProjectiveBoundary
+public import MBDVendor.Magnitude.CategoryTheory.ModuleIrreducibleSpaceComparison
+public import MBDVendor.Magnitude.CategoryTheory.AlgebraicallyClosedOccurrenceBasis
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtWeight
 
 /-!
 # Intrinsic irreducible quotients compute arrow multiplicities
@@ -17,6 +19,8 @@ multiplicity lemmas `indecomposableMultiplicity*` from
 are unchanged apart from the namespace rename. The rest of those files is not
 needed and is not copied.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

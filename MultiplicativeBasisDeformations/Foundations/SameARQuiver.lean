@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.StandardConverse
-import MultiplicativeBasisDeformations.Foundations.ARInjData
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StandardConverse
+public import MultiplicativeBasisDeformations.Foundations.ARInjData
 
 /-!
 # Corollary 2.11: `Γ_{A₀} ≅ Γ_A`
@@ -11,6 +13,8 @@ The evaluated modules `M_x` form a skeleton of `ind(mod A₀)` (`skelA0`): they 
 indecomposable, pairwise nonisomorphic (`evA_iso_eq`), and every finite-dimensional
 indecomposable `A₀`-module is one of them (`evA_complete`, from Proposition 2.10).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

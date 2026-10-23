@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.EssentialSurjectivity
-import MultiplicativeBasisDeformations.Foundations.DualRepresentables
+module
+
+public import MultiplicativeBasisDeformations.Foundations.EssentialSurjectivity
+public import MultiplicativeBasisDeformations.Foundations.DualRepresentables
 
 /-!
 # Injective labels and essential surjectivity (Proposition 2.10)
@@ -17,6 +19,8 @@ it an isomorphism."
 The labels `S_x`, `I_x` and the three dimension identities are the inputs
 (`InjData`); they come from `mod A` through the graded Hom dimensions.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.CentralizerTable
-import MultiplicativeBasisDeformations.Foundations.HochschildCochains
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CentralizerTable
+public import MultiplicativeBasisDeformations.Foundations.HochschildCochains
 
 /-!
 # Indicator cocycles on zero products (Section 11)
@@ -12,6 +14,8 @@ of the stem product (associative, Prop 8.12) and the ray product. The identity `
 the proof of Lemma 11.1 is proved here in the monoid with zero `M P`, case by case on the
 table of that proof; nested insertions vanish by Cor 8.11.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

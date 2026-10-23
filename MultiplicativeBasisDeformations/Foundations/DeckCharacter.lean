@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.MeshWeights
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshWeights
 
 /-!
 # The deck weight character (a lemma of an earlier draft)
@@ -19,6 +21,8 @@ formalization (arrows of `A₀` go along paths, `rv` is the weight of the path) 
 `walkWt g = h(θ_g)` (`walkWt_eq`), the sign of the source coming from its opposite convention
 for object values (`−b_x` at `P_x`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

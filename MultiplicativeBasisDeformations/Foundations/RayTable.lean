@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Ray tables (Part III, Setting 8.4)
@@ -13,6 +15,8 @@ We record this as an abstract finite table `Tab`: rays with source and target, i
 a partial associative product, weights and a degree. The rays together with a formal unit and
 a zero form a monoid with zero `M P`, in which all products of the paper are computed.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

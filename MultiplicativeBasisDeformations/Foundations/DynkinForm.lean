@@ -1,10 +1,12 @@
-import Mathlib.Combinatorics.SimpleGraph.Finite
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Ring
-import Mathlib.Algebra.BigOperators.Ring.Finset
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Finite
+public import Mathlib.Algebra.Order.Field.Basic
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Positivity
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.Ring
+public import Mathlib.Algebra.BigOperators.Ring.Finset
 
 /-!
 # Positive definiteness of `2I - Adj(Δ)`
@@ -20,6 +22,8 @@ vector `z ≥ 0` supported on a configuration of edges, `qform` is bounded above
 by the same expression over the configuration (`qform_le_of_pattern`); this is
 how the forbidden subtrees are excluded.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

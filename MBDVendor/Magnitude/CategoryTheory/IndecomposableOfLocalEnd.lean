@@ -1,6 +1,8 @@
-import MBDVendor.QSE.Foundation.RingTheory.LocalRing.Basic
-import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
-import Mathlib.CategoryTheory.Preadditive.Biproducts
+module
+
+public import MBDVendor.QSE.Foundation.RingTheory.LocalRing.Basic
+public import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
 
 /-!
 # Categorical indecomposability from a local endomorphism ring
@@ -11,6 +13,8 @@ generic lemma in the donor's
 `RepresentationDirected/IyamaWordMeshAdditiveHull.lean` at commit
 `d5ba0c48e7a851afd51247ff9cd81fc629e00ed2`; no word-mesh layer is imported.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

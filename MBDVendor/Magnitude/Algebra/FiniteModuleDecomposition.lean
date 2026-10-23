@@ -1,8 +1,10 @@
-import MBDVendor.Magnitude.CategoryTheory.FiniteIndecomposableDecomposition
-import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
-import Mathlib.Algebra.Category.FGModuleCat.Abelian
-import Mathlib.Algebra.Category.ModuleCat.Biproducts
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.FiniteIndecomposableDecomposition
+public import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
+public import Mathlib.Algebra.Category.FGModuleCat.Abelian
+public import Mathlib.Algebra.Category.ModuleCat.Biproducts
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 
 /-!
 # Finite-dimensional modules decompose into indecomposables
@@ -12,6 +14,8 @@ the coefficient-field dimension.  This is a bounded adaptation of the module
 specialization in the Cartan formalization's
 `ClosedRayChain/GenericFiniteness.lean` at commit `eade4e75`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

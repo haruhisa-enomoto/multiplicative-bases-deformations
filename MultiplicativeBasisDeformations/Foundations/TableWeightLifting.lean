@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.FinalStandardness
-import MultiplicativeBasisDeformations.Foundations.InitialFormProducts
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FinalStandardness
+public import MultiplicativeBasisDeformations.Foundations.InitialFormProducts
 
 /-!
 # Proposition 8.2 in every characteristic
@@ -15,6 +17,8 @@ property (`A0Mult_lift2`, `W(P)` free), which passes along the comparison of the
 presentations (`IsRayPres.lift2`). Disconnected tables split along a component
 (`lift2_of_split`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -41,7 +45,7 @@ theorem lift2_conn_any {V R L : Type} [AddCommGroup L] [Fintype V] [DecidableEq 
   set Ssys := T.toSys k hfin
   have hpres2 := Ssys.self_rayPres k hfin
   obtain ⟨ψ, σ, hψ⟩ := exists_algEquiv_idempotents (k := k)
-    (T.isBasic_lin k) (Ssys.fibreIdem k hfin 0 (LinearEquiv.refl k _) (Ssys.self_hΨ k)) F1
+    (Ssys.P.isBasic_lin k) (Ssys.fibreIdem k hfin 0 (LinearEquiv.refl k _) (Ssys.self_hΨ k)) F1
   have hpres2' := hpres2.map ψ F1 σ hψ
   have hconnA : (S.A0MultAR b v₀ hF).Conn := hpres2'.conn hpres1 hc
   have hm : F1.m ≠ 0 := ne_zero_of_complete F1.complete

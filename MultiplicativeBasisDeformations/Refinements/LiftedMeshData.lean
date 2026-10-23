@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.LiftedCategory
+module
+
+public import MultiplicativeBasisDeformations.Refinements.LiftedCategory
 
 /-!
 # Mesh data of the lifted modules (toward Corollary 12.1)
@@ -8,6 +10,8 @@ right `B`-modules (`LiftedMesh.lean`); applying `Hom_B(M_w^B, âˆ’)` and `Hom_B(â
 exactness required of a `MeshData` on the lifted modules (`meshB`), with the radical of
 `localB` (filtration order at least one).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Lemma 11.4: a coefficient criterion for supported representatives
@@ -15,6 +17,8 @@ consequences of freeness used in the proof: the annihilator of `p` is `pM` on `M
 `M₃`, and `U ∩ pM₂ = pU`. A class of `C̄` is represented by `z ∈ M₂` with `dz ∈ pM₃`; its
 representative is `u ∈ U` with `du ∈ pM₃` and `z − u ∈ d(M₁) + pM₂`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

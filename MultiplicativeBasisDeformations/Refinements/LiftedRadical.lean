@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.SplitDeformation
+module
+
+public import MultiplicativeBasisDeformations.Refinements.SplitDeformation
 
 /-!
 # Proposition 6.5(3): the radical filtration of the lifted category
@@ -15,6 +17,8 @@ is a `B`-linear map (`IsBLin`), the categorical radical is `IsRad` (`1 − hg` i
 is the filtration order `≥ 1` (`isRad_iff`), and the `q`th radical power is the filtration order
 `≥ q` (`mem_radPow_iff`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

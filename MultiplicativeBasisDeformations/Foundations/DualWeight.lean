@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.ZCocycle
-import MultiplicativeBasisDeformations.Foundations.PeriodicDepth
-import MultiplicativeBasisDeformations.Foundations.MeshWeights
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ZCocycle
+public import MultiplicativeBasisDeformations.Foundations.PeriodicDepth
+public import MultiplicativeBasisDeformations.Foundations.MeshWeights
 
 /-!
 # Extending a mesh weight from one periodic component (Proposition 7.5)
@@ -12,6 +14,8 @@ are prescribed (the given weight inside `T`, zero elsewhere), and the matched ed
 solved from their triangles (`Morse.zval`); the triangles which solve edges inside a
 periodic component lie in that component.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

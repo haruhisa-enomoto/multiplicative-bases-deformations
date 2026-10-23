@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralLifting
-import MultiplicativeBasisDeformations.Foundations.TwoSidedPaths
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralLifting
+public import MultiplicativeBasisDeformations.Foundations.TwoSidedPaths
 
 /-!
 # Lemma 9.4 along arbitrary ordinary paths
@@ -18,6 +20,8 @@ is left-sided, and it is the same for all paths (`fstNB_unique`). The dual state
 the reversed path (`dR_eq_pathCoef`, `lstNB_unique`). The product equations with generating
 one-sided output are `DL_prod` and `DR_prod`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

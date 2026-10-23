@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralLifting
-import MultiplicativeBasisDeformations.Foundations.SplitTransfer
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralLifting
+public import MultiplicativeBasisDeformations.Foundations.SplitTransfer
 
 /-!
 # Lemma 9.2: the centralizer ray algebra `B_χ`
@@ -12,8 +14,14 @@ products of `A₀` (zero when the product leaves the basis). We record these as 
 and `Tc → Qχ` (quotient), and the projection `π : kP → kQχ`.
 -/
 
+@[expose] public section
+
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
+
+-- Keep `ZMod 2` on its ring structure: Mathlib's instance making simple nilpotent groups
+-- commutative would otherwise give `ZMod 2` a second, non-reducibly-equal additive structure.
+attribute [-instance] instAddCommGroupOfIsSimpleAddGroupOfIsNilpotent
 
 noncomputable section
 

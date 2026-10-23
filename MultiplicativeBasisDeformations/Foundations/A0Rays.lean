@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.A0Normed
-import MultiplicativeBasisDeformations.Foundations.GradedRays
+module
+
+public import MultiplicativeBasisDeformations.Foundations.A0Normed
+public import MultiplicativeBasisDeformations.Foundations.GradedRays
 
 /-!
 # The ray basis of `A₀`
@@ -9,6 +11,8 @@ multiplicative basis of `A₀` (`A0Normed.lean`) is, after reindexing by the
 nonzero rays, a ray transversal killing zero ray products. This is the ray table
 `P = ray A₀` with `A₀ ≅ kP` (`exists_hasRayBasis_A0`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

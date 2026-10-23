@@ -1,7 +1,9 @@
-import Mathlib.CategoryTheory.Abelian.Projective.Basic
-import Mathlib.RingTheory.LocalRing.Basic
-import MBDVendor.QSE.CategoryTheory.CategoricalRadicalIdeal
-import MBDVendor.QSE.CategoryTheory.MinimalMorphism
+module
+
+public import Mathlib.CategoryTheory.Abelian.Projective.Basic
+public import Mathlib.RingTheory.LocalRing.Basic
+public import MBDVendor.QSE.CategoryTheory.CategoricalRadicalIdeal
+public import MBDVendor.QSE.CategoryTheory.MinimalMorphism
 
 /-!
 # Radical morphisms and minimal projective presentations
@@ -11,6 +13,8 @@ projective presentation after applying an exact additive functor.  It also
 packages the componentwise criterion for radical maps between finite
 biproducts.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

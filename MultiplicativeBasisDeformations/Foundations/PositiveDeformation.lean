@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.GradedLayers
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedLayers
 
 /-!
 # Positive filtered deformations
@@ -22,6 +24,8 @@ Here the splitting is built from diagonal idempotents whose degree-`0` corners a
 semisimple `S` with matrix blocks is handled in `Refinements/SplitSemisimple.lean` by lifting
 matrix units and transporting the splitting of the root corners.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

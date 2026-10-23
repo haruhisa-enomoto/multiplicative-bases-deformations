@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ThinCategory
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ThinCategory
 
 /-!
 # Lemma 4.12: exhaustion by sources and sinks
@@ -12,6 +14,8 @@ This file proves the abstract form for a thin directed category with a height
 function, finitely many outgoing lines at each object and countably many
 objects. Sinks are sources of the opposite category (`extend_sink`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

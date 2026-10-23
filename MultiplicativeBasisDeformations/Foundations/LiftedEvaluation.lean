@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
-import MultiplicativeBasisDeformations.Foundations.CoverCategory
+module
+
+public import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
+public import MultiplicativeBasisDeformations.Foundations.CoverCategory
 
 /-!
 # Lemma 4.8: evaluation of lifted objects is fully faithful
@@ -25,6 +27,8 @@ mesh data: a lifted object is `(X, h)`, a lifted projective vertex is
 natural family (`NatFam`); the deck degree `g` of `f̄_g` is relative to the
 sheets of `X̃` and `Ỹ`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

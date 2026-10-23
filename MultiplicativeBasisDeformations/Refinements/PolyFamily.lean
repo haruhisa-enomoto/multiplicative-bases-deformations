@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Polynomial families of vectors (toward Proposition 12.8)
@@ -10,6 +12,8 @@ Polynomial families are closed under sums, linear and bilinear maps; over an inf
 polynomial family vanishing on the torus `t_i ≠ 0` vanishes identically
 (`IsPoly.eq_zero_of_torus`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

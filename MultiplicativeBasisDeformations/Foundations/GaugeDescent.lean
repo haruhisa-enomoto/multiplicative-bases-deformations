@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.StarGaugeQ
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarGaugeQ
 
 /-!
 # Descending invariant scales from `ℤΔ` to `Q`
@@ -8,6 +10,8 @@ the deck generator `g` descend to scales on `Q = ℤΔ / ⟨g⟩`: the fibres of
 are the `g`-orbits, and an arrow into a given vertex is determined by the image
 of its source.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

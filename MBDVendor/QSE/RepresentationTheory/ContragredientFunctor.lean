@@ -1,8 +1,12 @@
-import MBDVendor.QSE.RepresentationTheory.Contragredient
+module
+
+public import MBDVendor.QSE.RepresentationTheory.Contragredient
 
 /-!
 # Categorical packaging of the contragredient dual
 -/
+
+@[expose] public section
 
 noncomputable section
 

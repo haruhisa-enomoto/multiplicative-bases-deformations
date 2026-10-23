@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
 
 /-!
 # Dual representables and injective copresentations
@@ -10,6 +12,8 @@ functional `λ` on a module `X` gives `θ_λ : X → J_p`,
 `θ_λ(x)_q(h) = λ(h · x)`. Every finite-dimensional module embeds into a finite
 sum of the `J_p`, which gives the injective copresentations used in Lemma 2.9.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

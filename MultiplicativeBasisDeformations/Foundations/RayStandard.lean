@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.StandardForm
-import MultiplicativeBasisDeformations.Foundations.A0Rays
-import MultiplicativeBasisDeformations.Foundations.RayTransport
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StandardForm
+public import MultiplicativeBasisDeformations.Foundations.A0Rays
+public import MultiplicativeBasisDeformations.Foundations.RayTransport
 
 /-!
 # The ray basis of a standard basic algebra
@@ -17,6 +19,8 @@ Here: the ray basis of `A₀` (`exists_hasRayBasis_A0`) is transported along
 then, by conjugacy of complete sets of primitive idempotents in a basic algebra,
 to any given complete set `F`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

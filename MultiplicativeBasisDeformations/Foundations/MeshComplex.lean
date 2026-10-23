@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.MorseCollapse
-import MultiplicativeBasisDeformations.Foundations.MeshCategory
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MorseCollapse
+public import MultiplicativeBasisDeformations.Foundations.MeshCategory
 
 /-!
 # The mesh complex `K` and its collapse
@@ -30,6 +32,8 @@ and triangles. Here the eliminations are an acyclic matching (`meshMatching`):
 Once every triangle is eliminated, the remaining complex is a graph and the
 vertex groups are free (`Morse.isFreeGroup_end`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

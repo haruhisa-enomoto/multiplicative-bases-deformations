@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Refinements.FamilyTwist
-import MultiplicativeBasisDeformations.Refinements.FlatPerturbationDim
-import MultiplicativeBasisDeformations.Refinements.MeshNormalForm
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FamilyTwist
+public import MultiplicativeBasisDeformations.Refinements.FlatPerturbationDim
+public import MultiplicativeBasisDeformations.Refinements.MeshNormalForm
 
 /-!
 # The mesh presentation of every fibre (Proposition 12.8, presentations)
@@ -13,6 +15,8 @@ object, hence is the identity. Both maps are isomorphisms."
 At each fibre `t`, the twisted lifted arrows realize `kQ` onto the morphisms of the lifted modules
 (`realize_tw_surjective`, by degree induction on leading terms).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ReductionMesh
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ReductionMesh
 
 /-!
 # Base change of scalar mesh categories along a field extension
@@ -16,6 +18,8 @@ from `K` (`retE_comp_redE`, `retE_redE_comp`) and `retE u θ (λ • redE φ) = 
 `redE` is injective, carries `K`-independent families to `k`-independent ones, its image spans,
 and the Hom spaces over `K` and `k` have the same dimension (`finrank_redE`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

@@ -1,6 +1,6 @@
 # API documentation
 
-This separate project pins doc-gen4 to its Lean 4.33.1 release, so that
+This separate project pins doc-gen4 to its Lean 4.35.0-rc3 release, so that
 documentation dependencies do not enter the proof package's dependency list.
 
 After building the root package, build doc-gen4 here and generate the API:

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.TreeRepetition
-import MultiplicativeBasisDeformations.Foundations.SectionalCover
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TreeRepetition
+public import MultiplicativeBasisDeformations.Foundations.SectionalCover
 
 /-!
 # Transporting `ℤΔ` along a tree isomorphism
@@ -11,6 +13,8 @@ repetition quiver only by the corresponding vertex shifts",
 `periodic-mesh-calculations.tex`). It commutes with translation and
 transports coverings.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

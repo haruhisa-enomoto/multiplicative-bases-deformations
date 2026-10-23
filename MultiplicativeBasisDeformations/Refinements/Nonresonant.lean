@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Lemma 12.7: nonresonant polynomials
@@ -11,6 +13,8 @@ with zero constant term is `a_j t_j`.
 The remark after the lemma ("characters forming part of an integer basis of a lattice satisfy
 these hypotheses") is `nonresonant_of_basis`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 
@@ -31,9 +35,9 @@ theorem eq_C_mul_X_of_nonresonant {χ : σ → L} (hχ : Nonresonant χ) (j : σ
     (hF : F.IsWeightedHomogeneous χ (χ j)) (h0 : constantCoeff F = 0) :
     ∃ a : k, F = C a * X j := by
   classical
-  refine ⟨coeff (Finsupp.single j 1) F, ?_⟩
+  refine ⟨F.coeff (Finsupp.single j 1), ?_⟩
   ext d
-  rw [coeff_C_mul, coeff_X']
+  rw [coeff_C_mul, coeff_X]
   split_ifs with hd
   · rw [← hd, mul_one]
   · rw [mul_zero]

@@ -1,10 +1,14 @@
-import MBDVendor.Magnitude.CategoryTheory.HomIdealComap
-import MBDVendor.QSE.CategoryTheory.CategoricalRadicalIdeal
-import Mathlib.LinearAlgebra.Quotient.Basic
-import Mathlib.LinearAlgebra.Dimension.Constructions
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.HomIdealComap
+public import MBDVendor.QSE.CategoryTheory.CategoricalRadicalIdeal
+public import Mathlib.LinearAlgebra.Quotient.Basic
+public import Mathlib.LinearAlgebra.Dimension.Constructions
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 
 /-! # The intrinsic linear space of irreducible morphisms -/
+
+@[expose] public section
 set_option autoImplicit false
 noncomputable section
 open CategoryTheory

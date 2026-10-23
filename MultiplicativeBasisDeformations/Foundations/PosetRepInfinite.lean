@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.OrbitDim
-import MultiplicativeBasisDeformations.Foundations.RepFinite
+module
+
+public import MultiplicativeBasisDeformations.Foundations.OrbitDim
+public import MultiplicativeBasisDeformations.Foundations.RepFinite
 
 /-!
 # Lemma 8.8 for incidence algebras of posets with unique paths
@@ -16,6 +18,8 @@ incidence algebra is representation-infinite (`not_isRepresentationFinite`): fin
 representation type would give finitely many orbits (`exists_labels_iso`), contradicting
 `OrbitDim.orbits_not_finite` with `F = 0`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

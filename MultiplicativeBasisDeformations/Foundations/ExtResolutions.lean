@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ExtUnique
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ExtUnique
 
 /-!
 # Graded `Ext` from graded projective resolutions (Lemma 6.3)
@@ -25,6 +27,8 @@ So every `Ext` vanishing hypothesis or conclusion stated in the bar form (Lemma 
 Propositions 6.5, 10.1, Lemma 6.6) is equivalent to the manuscript's form for any graded
 projective resolution.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

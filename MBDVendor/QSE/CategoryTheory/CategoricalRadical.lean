@@ -1,8 +1,10 @@
-import Mathlib.Algebra.Field.Basic
-import Mathlib.CategoryTheory.Endomorphism
-import Mathlib.CategoryTheory.FintypeCat
-import Mathlib.CategoryTheory.Preadditive.Biproducts
-import Mathlib.RingTheory.Nilpotent.Basic
+module
+
+public import Mathlib.Algebra.Field.Basic
+public import Mathlib.CategoryTheory.Endomorphism
+public import Mathlib.CategoryTheory.FintypeCat
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
+public import Mathlib.RingTheory.Nilpotent.Basic
 
 /-!
 # The radical of a preadditive category
@@ -12,6 +14,8 @@ a preadditive category and proves a one-generator cosemisimplicity criterion.
 If every object is a finite biproduct of one object `P` and every nonzero
 endomorphism of `P` is invertible, then the categorical radical is zero.
 -/
+
+@[expose] public section
 
 noncomputable section
 

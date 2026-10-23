@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.ARMeshFinite
-import MultiplicativeBasisDeformations.Foundations.SquareFree
-import MultiplicativeBasisDeformations.Foundations.PeriodicDepth
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARMeshFinite
+public import MultiplicativeBasisDeformations.Foundations.SquareFree
+public import MultiplicativeBasisDeformations.Foundations.PeriodicDepth
 
 /-!
 # Lemma 4.2 for the Auslander--Reiten quiver
@@ -12,6 +14,8 @@ of `k(Γ_A)` (`finiteDimensional_meshHom`), which is what Proposition 4.1 needs.
 The source assumes `A` connected; the vertex group at every vertex is free
 without this assumption.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,10 +1,12 @@
-import MultiplicativeBasisDeformations.Foundations.ConnectedCase
-import MultiplicativeBasisDeformations.Foundations.BrickExclusion
-import MultiplicativeBasisDeformations.Foundations.D4Return
-import MultiplicativeBasisDeformations.Foundations.E7Return
-import MultiplicativeBasisDeformations.Foundations.SubstarRestriction
-import MultiplicativeBasisDeformations.Foundations.TraceE6
-import MultiplicativeBasisDeformations.Foundations.TraceE78
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ConnectedCase
+public import MultiplicativeBasisDeformations.Foundations.BrickExclusion
+public import MultiplicativeBasisDeformations.Foundations.D4Return
+public import MultiplicativeBasisDeformations.Foundations.E7Return
+public import MultiplicativeBasisDeformations.Foundations.SubstarRestriction
+public import MultiplicativeBasisDeformations.Foundations.TraceE6
+public import MultiplicativeBasisDeformations.Foundations.TraceE78
 
 /-!
 # The types `E`: traces and the brick hypothesis
@@ -19,6 +21,8 @@ retained vertices after `n` steps and `n c₀ = d`, closed paths of degree `d`
 of `Π` of the retained part lift to closed paths of `Q`, and the brick
 hypothesis fails (`not_brick_star`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -112,7 +116,7 @@ variable {V : Type v'} [Quiver.{w} V] [∀ x y : V, Subsingleton (x ⟶ y)] {Q :
   (hfib : ∀ X Y : (starTree L).ZVert, π.obj X = π.obj Y →
     ∃ n : ℕ, Y = (gZ ρ hρ c0 hρp)^[n] X ∨ X = (gZ ρ hρ c0 hρp)^[n] Y)
   (h0 : ρ none = none) (θ : Equiv.Perm (Fin 3)) (hL : ∀ i, L (θ i) = L i)
-  (hθ : ∀ i j (hj : j ≤ L i), ρ (ch i j hj) = ch (θ i) j (by rw [hL]; exact hj))
+  (hθ : ∀ i j (hj : j ≤ L i), ρ (ch i j hj) = ch (θ i) j (hj.trans (hL i).ge))
 
 include hπ hτ hsurj hdeck hfib h0 hθ in
 /-- **Periods dividing two: deletion to `D₄`** (Lemma A.5 and

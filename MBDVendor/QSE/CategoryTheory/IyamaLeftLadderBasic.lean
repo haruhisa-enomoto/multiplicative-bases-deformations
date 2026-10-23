@@ -1,6 +1,8 @@
-import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderPropagation
-import MBDVendor.QSE.CategoryTheory.IyamaRightLadderConstruction
-import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderPropagation
+public import MBDVendor.QSE.CategoryTheory.IyamaRightLadderConstruction
+public import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
 
 /-!
 # Basic normalized states and rungs for special left ladders
@@ -13,6 +15,8 @@ subsequent modules construct both fields categorically.
 
 No concrete algebra or module classification occurs in this file.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

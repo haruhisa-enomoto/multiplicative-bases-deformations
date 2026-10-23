@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.Thinness
-import MultiplicativeBasisDeformations.Foundations.Exhaustion
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Thinness
+public import MultiplicativeBasisDeformations.Foundations.Exhaustion
 
 /-!
 # The graded covering category as a thin category
@@ -10,6 +12,8 @@ data (`HomGrading`, `HeightData`) and a representation-finite algebra this is a
 thin directed `k`-linear category with a height and finitely many outgoing lines
 at each object (`isThin`, `hgt_lt`, `succ_finite`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

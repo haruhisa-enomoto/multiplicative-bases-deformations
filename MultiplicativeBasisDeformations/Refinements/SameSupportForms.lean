@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Refinements.MeshNormalForm
-import MultiplicativeBasisDeformations.Foundations.MeshGauge
-import MultiplicativeBasisDeformations.Foundations.PeriodicComponents
+module
+
+public import MultiplicativeBasisDeformations.Refinements.MeshNormalForm
+public import MultiplicativeBasisDeformations.Foundations.MeshGauge
+public import MultiplicativeBasisDeformations.Foundations.PeriodicComponents
 
 /-!
 # Lemma 12.6: mesh normal forms with the same support
@@ -23,6 +25,8 @@ Generalizations: any characteristic, any mesh coefficients (the same on both sid
 finite translation quiver; the residual rows are any rows of length at least three, internal to
 pairwise distinct periodic components.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

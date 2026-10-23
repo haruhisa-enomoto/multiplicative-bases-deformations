@@ -1,10 +1,12 @@
-import MBDVendor.Magnitude.Algebra.FiniteModuleDecomposition
-import Mathlib.Algebra.Category.ModuleCat.Abelian
-import Mathlib.Algebra.Category.FGModuleCat.Abelian
-import Mathlib.CategoryTheory.InducedCategory
-import Mathlib.CategoryTheory.Linear.LinearFunctor
-import Mathlib.Data.Fintype.EquivFin
-import Mathlib.LinearAlgebra.Dimension.Finite
+module
+
+public import MBDVendor.Magnitude.Algebra.FiniteModuleDecomposition
+public import Mathlib.Algebra.Category.ModuleCat.Abelian
+public import Mathlib.Algebra.Category.FGModuleCat.Abelian
+public import Mathlib.CategoryTheory.InducedCategory
+public import Mathlib.CategoryTheory.Linear.LinearFunctor
+public import Mathlib.Data.Fintype.EquivFin
+public import Mathlib.LinearAlgebra.Dimension.Finite
 
 /-!
 # Representation-finite algebras and finite right-module skeletons
@@ -19,6 +21,8 @@ The skeleton construction is adapted from
 homological-conjectures commit `eade4e75`, with the module side made explicit
 and the unrelated Auslander-algebra layer omitted.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

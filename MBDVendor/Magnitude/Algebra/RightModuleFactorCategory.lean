@@ -1,7 +1,9 @@
-import MBDVendor.Magnitude.Algebra.RightModuleTauAssembly
-import MBDVendor.QSE.CategoryTheory.LinearGeneratedHomIdeal
-import MBDVendor.QSE.CategoryTheory.IdempotentLifting
-import Mathlib.CategoryTheory.Simple
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleTauAssembly
+public import MBDVendor.QSE.CategoryTheory.LinearGeneratedHomIdeal
+public import MBDVendor.QSE.CategoryTheory.IdempotentLifting
+public import Mathlib.CategoryTheory.Simple
 
 /-!
 # Literal factor categories of finite right-module categories
@@ -12,6 +14,8 @@ modules.  It deliberately stops before the factor tau-sequences: the quotient
 category, its linear and additive structures, its finite biproducts, and its
 surviving skeleton are the reusable substrate for that construction.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 
@@ -73,7 +77,7 @@ private theorem inAdd_biprod
     (S.almostSplitSkeleton.inAdd_iff_of_iso
       (biprod.uniqueUpToIso M N hb)).1 hsum
 
-private theorem factorsThroughSelected_zero
+theorem factorsThroughSelected_zero
     (K : Set (Fin S.n))
     {X Y : RightModule.FinitelyGeneratedCategory A} :
     S.FactorsThroughSelected K (0 : X ⟶ Y) := by
@@ -84,7 +88,7 @@ private theorem factorsThroughSelected_zero
       (FintypeCat.of Empty) F (fun j ↦ j.elim)
   exact ⟨M, hM, 0, 0, by simp⟩
 
-private theorem FactorsThroughSelected.add
+theorem FactorsThroughSelected.add
     {K : Set (Fin S.n)} {X Y : RightModule.FinitelyGeneratedCategory A}
     {f g : X ⟶ Y}
     (hf : S.FactorsThroughSelected K f)
@@ -96,14 +100,14 @@ private theorem FactorsThroughSelected.add
     biprod.lift leftM leftN, biprod.desc rightM rightN, ?_⟩
   rw [biprod.lift_desc, hfacM, hfacN]
 
-private theorem FactorsThroughSelected.neg
+theorem FactorsThroughSelected.neg
     {K : Set (Fin S.n)} {X Y : RightModule.FinitelyGeneratedCategory A}
     {f : X ⟶ Y} (hf : S.FactorsThroughSelected K f) :
     S.FactorsThroughSelected K (-f) := by
   rcases hf with ⟨M, hM, left, right, hfac⟩
   exact ⟨M, hM, -left, right, by simp [hfac]⟩
 
-private theorem factorThroughSelectedMaps_precomp
+theorem factorThroughSelectedMaps_precomp
     {K : Set (Fin S.n)} {X Y Z : S.SelectedAddCategory Set.univ}
     (f : X ⟶ Y) {g : Y ⟶ Z}
     (hg : g ∈ S.factorThroughSelectedMaps K Y Z) :
@@ -113,7 +117,7 @@ private theorem factorThroughSelectedMaps_precomp
     rw [Category.assoc, hfac]
     rfl⟩
 
-private theorem factorThroughSelectedMaps_postcomp
+theorem factorThroughSelectedMaps_postcomp
     {K : Set (Fin S.n)} {X Y Z : S.SelectedAddCategory Set.univ}
     {f : X ⟶ Y} (g : Y ⟶ Z)
     (hf : f ∈ S.factorThroughSelectedMaps K X Y) :
@@ -766,14 +770,14 @@ theorem factorAdditiveGenerator_isFiniteAddGenerator
     intro l
     by_cases hjl : j = l
     · subst l
-      simp [iB, rB, intoGenerator, outOfGenerator]
-      change biproduct.ι
-          (fun x : S.SurvivingLabel K ↦ S.factorObject K x) (label j) ≫
-        biproduct.π
-          (fun x : S.SurvivingLabel K ↦ S.factorObject K x) (label j) =
-        𝟙 (S.factorObject K (label j))
-      exact biproduct.ι_π_self _ _
-    · simp [iB, rB, intoGenerator, outOfGenerator, hjl]
+      simp only [iB, rB, intoGenerator, outOfGenerator, Category.assoc]
+      erw [biproduct.ι_map_assoc, biproduct.ι_map_assoc, biproduct.ι_π_self, Category.comp_id]
+      rw [Category.id_comp]
+      erw [biproduct.ι_π_self, biproduct.ι_π_self]
+    · simp only [iB, rB, intoGenerator, outOfGenerator, Category.assoc]
+      erw [biproduct.ι_map_assoc, biproduct.ι_map_assoc, biproduct.ι_π_ne _ hjl, comp_zero,
+        comp_zero]
+      rw [Category.id_comp, biproduct.ι_π_ne _ hjl]
   exact ⟨{
     n := m
     retract := {

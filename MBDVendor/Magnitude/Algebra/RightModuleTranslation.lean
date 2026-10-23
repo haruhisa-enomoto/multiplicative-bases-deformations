@@ -1,4 +1,6 @@
-import MBDVendor.Magnitude.Algebra.RightModuleLeftAlmostSplit
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleLeftAlmostSplit
 
 /-!
 # Auslander--Reiten translation on the finite right-module skeleton
@@ -9,6 +11,8 @@ uniqueness of minimal left almost-split maps.  Surjectivity follows from the
 dual cokernel construction at every noninjective label and uniqueness of
 minimal right almost-split maps.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

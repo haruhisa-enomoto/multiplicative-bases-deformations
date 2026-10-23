@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Two-sided Hom ideals and their linear quotients
@@ -14,6 +16,8 @@ LinearGeneratedHomIdeal}.lean` (last changed at commit `2659d1755`), with the
 namespace changed, the radical-morphism lemmas omitted, and no change of
 statements or proofs.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

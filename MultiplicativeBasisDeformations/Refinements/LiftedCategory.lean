@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Refinements.LiftedMesh
-import MultiplicativeBasisDeformations.Foundations.A0RepFinite
+module
+
+public import MultiplicativeBasisDeformations.Refinements.LiftedMesh
+public import MultiplicativeBasisDeformations.Foundations.A0RepFinite
 
 /-!
 # The category of lifted modules (toward Corollary 12.1)
@@ -10,6 +12,8 @@ The filtered lifts `M_X^B` of the evaluated modules as right `B`-modules (`FB`),
 (Proposition 6.5(3): "the map-degree filtration has nilpotent positive part, and its degree-zero
 part is a product of copies of `k`").
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

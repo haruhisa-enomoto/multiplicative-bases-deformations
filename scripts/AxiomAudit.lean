@@ -1,7 +1,11 @@
-import MultiplicativeBasisDeformations
+module
+
+public import MultiplicativeBasisDeformations
 
 /-! Axiom report for the main theorems and the principal statements.
 Run with `lake env lean scripts/AxiomAudit.lean`, or `python3 scripts/audit_axioms.py`. -/
+
+@[expose] public section
 
 #print axioms MultiplicativeBasisDeformations.theoremA
 #print axioms MultiplicativeBasisDeformations.theoremB

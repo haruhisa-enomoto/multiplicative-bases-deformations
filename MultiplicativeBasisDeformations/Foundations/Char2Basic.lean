@@ -1,9 +1,11 @@
-import MultiplicativeBasisDeformations.Foundations.Char2A0
-import MultiplicativeBasisDeformations.Foundations.FilteredA
-import MultiplicativeBasisDeformations.Foundations.ResidualDual
-import MultiplicativeBasisDeformations.Foundations.ARInjData
-import MultiplicativeBasisDeformations.Foundations.ARBrick
-import MultiplicativeBasisDeformations.Foundations.HochschildMesh
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Char2A0
+public import MultiplicativeBasisDeformations.Foundations.FilteredA
+public import MultiplicativeBasisDeformations.Foundations.ResidualDual
+public import MultiplicativeBasisDeformations.Foundations.ARInjData
+public import MultiplicativeBasisDeformations.Foundations.ARBrick
+public import MultiplicativeBasisDeformations.Foundations.HochschildMesh
 
 /-!
 # Normed bases of basic algebras in characteristic two (given Corollary 10.5)
@@ -14,6 +16,8 @@ weights (`residual_dual`), the filtered structure of `A` over `A₀` (`posFiltA`
 characteristic-two step on `A₀` (`char2_A0`). Corollary 10.5 is a hypothesis here; it is
 discharged by `cor105Hyp` in `FinalBasis.lean`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

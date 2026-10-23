@@ -1,4 +1,6 @@
-import MBDVendor.QSE.RepresentationTheory.Contragredient
+module
+
+public import MBDVendor.QSE.RepresentationTheory.Contragredient
 
 /-!
 # Linearity of finite-dimensional bidual evaluation
@@ -7,6 +9,8 @@ This verifies the load-bearing algebraic fact needed to turn the concrete
 contragredient functor into an equivalence: after identifying `Rᵐᵒᵖᵐᵒᵖ`
 with `R`, evaluation into the double dual is `R`-linear.
 -/
+
+@[expose] public section
 
 noncomputable section
 

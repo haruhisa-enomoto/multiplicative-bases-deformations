@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PeriodicDepth
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PeriodicDepth
 
 /-!
 # Unit mesh coefficients
@@ -16,6 +18,8 @@ of Lemma 4.2 (`Morse.exists_cochain`): the matched edge of each triangle is
 solved for, in increasing order of the potential. For the mesh complex this
 gives the rescaling (`exists_unit_rescaling`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

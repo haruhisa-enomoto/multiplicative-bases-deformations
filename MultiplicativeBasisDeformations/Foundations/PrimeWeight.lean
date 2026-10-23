@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PrimeTable
-import MultiplicativeBasisDeformations.Foundations.IntegralWeightInstance
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PrimeTable
+public import MultiplicativeBasisDeformations.Foundations.IntegralWeightInstance
 
 /-!
 # Weight-homogeneous lifts for `A⁽²⁾ = 𝔽₂P` (Proposition 10.1)
@@ -14,6 +16,8 @@ vectors `Θ₂(b_r) = e_r` of `A⁽²⁾` are homogeneous of these weights (`hΘ
 unit of a path of the deck degree of `r` (`eT_eq_path`). So the weight-homogeneous lifts hold
 for `A⁽²⁾` with no further hypothesis (`exists_modLiftW₂`, `exists_arrowLiftW₂`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

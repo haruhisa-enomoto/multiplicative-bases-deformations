@@ -1,7 +1,9 @@
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.FinCases
+module
+
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.FinCases
 
 /-!
 # Three-armed stars with positive definite form
@@ -11,6 +13,8 @@ three arms of `L i + 1` vertices and `∑ (L i + 1)/(L i + 2) < 2` is `D_n`
 (two arms of one vertex) or `E_6, E_7, E_8` (arms of `1, 2, 2`, `1, 2, 3`,
 `1, 2, 4` vertices).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

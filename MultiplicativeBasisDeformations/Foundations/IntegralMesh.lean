@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralLifts
-import MultiplicativeBasisDeformations.Foundations.GModLemmas
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralLifts
+public import MultiplicativeBasisDeformations.Foundations.GModLemmas
 
 /-!
 # Exact mesh relations for the lifted arrows (Proposition 10.1(3))
@@ -14,8 +16,14 @@ with the lifted coefficients reduces to zero, so it is twice an `A⁽²⁾`-map 
 subtracting twice its coefficients corrects the mesh coefficients.
 -/
 
+@[expose] public section
+
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
+
+-- Keep `ZMod 2` on its ring structure: Mathlib's instance making simple nilpotent groups
+-- commutative would otherwise give `ZMod 2` a second, non-reducibly-equal additive structure.
+attribute [-instance] instAddCommGroupOfIsSimpleAddGroupOfIsNilpotent
 
 noncomputable section
 

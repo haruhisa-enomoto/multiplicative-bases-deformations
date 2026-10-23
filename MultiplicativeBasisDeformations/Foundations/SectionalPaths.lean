@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.MeshGrading
-import MultiplicativeBasisDeformations.Foundations.HomIdeal
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshGrading
+public import MultiplicativeBasisDeformations.Foundations.HomIdeal
 
 /-!
 # Sectional paths
@@ -15,6 +17,8 @@ least `N` vanish. Hence every sectional path has length less than `N`."
 A path is recorded by its list of arrows (`arrowList`), and it is sectional when
 no two consecutive arrows form a mesh pair `(σ a, a)`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.DeckGrading
+module
+
+public import MultiplicativeBasisDeformations.Foundations.DeckGrading
 
 /-!
 # Weights on the universal cover are ratios of object values
@@ -16,6 +18,8 @@ functor out of the fundamental groupoid into the semidirect groupoid `SD`
 the identity (`Ψ_fst`, "simply connected"), and its values along walks from the
 basepoint are the object values: `pot (γ ≫ e) = pot γ · W e γ` (`pot_comp`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

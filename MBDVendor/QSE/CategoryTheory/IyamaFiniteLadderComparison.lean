@@ -1,5 +1,7 @@
-import MBDVendor.QSE.CategoryTheory.IyamaLadderComparisonCertificate
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtDirectFinite
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaLadderComparisonCertificate
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtDirectFinite
 
 /-!
 # Finite Krull--Schmidt specialization of ladder comparison
@@ -7,6 +9,8 @@ import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtDirectFinite
 This is the exact bridge from the general terminal cycle to the categorical
 finiteness recorded in `FiniteTauCategoryData`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

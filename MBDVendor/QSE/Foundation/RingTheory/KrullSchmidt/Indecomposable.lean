@@ -28,7 +28,7 @@ biproducts, but no module-level indecomposability predicate and no
 local-endomorphism-ring theorem. Both are supplied here.
 -/
 
-public section
+@[expose] public section
 
 namespace MBDVendor.QSE.Foundation
 

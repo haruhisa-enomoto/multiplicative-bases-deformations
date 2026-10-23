@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
-import MultiplicativeBasisDeformations.Foundations.StableTranslation
-import Mathlib.Combinatorics.SimpleGraph.Acyclic
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
+public import MultiplicativeBasisDeformations.Foundations.StableTranslation
+public import Mathlib.Combinatorics.SimpleGraph.Acyclic
 
 /-!
 # The repetition `ℤΔ` of a tree and the signed preprojective category `Π(Δ)`
@@ -22,6 +24,8 @@ oriented `x → y` and `-1` otherwise. The signed mesh coefficients of `ℤΔ` a
 `c_{(x,t), (y,t-1)} = ε(x, y)`, so forgetting heights sends the mesh relation at
 `(x, t)` to `ρ_x`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

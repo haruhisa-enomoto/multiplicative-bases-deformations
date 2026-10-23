@@ -1,5 +1,7 @@
-import MBDVendor.Magnitude.CategoryTheory.IrreducibleRadicalSquare
-import MBDVendor.Magnitude.CategoryTheory.ResidueDimension
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.IrreducibleRadicalSquare
+public import MBDVendor.Magnitude.CategoryTheory.ResidueDimension
 
 /-!
 # Irreducible components of finite tau meshes
@@ -11,6 +13,8 @@ irreducible morphism.  The argument is intrinsic to a finite tau-category:
 right almost-split factorization comes from the tau approximation, while
 minimality of the second mesh map follows from its minimal weak kernel.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

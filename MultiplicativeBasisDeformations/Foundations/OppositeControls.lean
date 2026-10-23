@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.UnequalAction
-import MultiplicativeBasisDeformations.Foundations.TableTree
-import MultiplicativeBasisDeformations.Foundations.RayOp
+module
+
+public import MultiplicativeBasisDeformations.Foundations.UnequalAction
+public import MultiplicativeBasisDeformations.Foundations.TableTree
+public import MultiplicativeBasisDeformations.Foundations.RayOp
 
 /-!
 # Lemma 8.11: opposite controls
@@ -15,6 +17,8 @@ and the four-leaf star of Case 1, which gives the strong star vanishing
 (`eq:strong-star-vanishing`, `local-ray-restrictions.tex`): if `fq, qg, q² ≠ 0` then
 `fg = 0`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

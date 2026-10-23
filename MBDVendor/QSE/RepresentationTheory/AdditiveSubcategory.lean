@@ -1,7 +1,9 @@
-import Mathlib.CategoryTheory.ObjectProperty.FullSubcategory
-import Mathlib.CategoryTheory.ObjectProperty.EpiMono
-import Mathlib.CategoryTheory.Retract
-import MBDVendor.QSE.RepresentationTheory.SplitInjective
+module
+
+public import Mathlib.CategoryTheory.ObjectProperty.FullSubcategory
+public import Mathlib.CategoryTheory.ObjectProperty.EpiMono
+public import Mathlib.CategoryTheory.Retract
+public import MBDVendor.QSE.RepresentationTheory.SplitInjective
 
 /-!
 # Additive subcategories and indecomposable support
@@ -15,6 +17,8 @@ No Krull--Schmidt multiplicity-uniqueness theorem is used.  The only uniqueness
 input is the existing radical argument
 `IndecomposableSkeleton.not_splitMono_of_labels_ne`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

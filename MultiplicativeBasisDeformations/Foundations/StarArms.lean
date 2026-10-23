@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.StarAut
-import Mathlib.Algebra.Order.BigOperators.Group.Finset
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarAut
+public import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
 /-!
 # Automorphisms of a star fixing its centre permute the arms
@@ -7,6 +9,8 @@ import Mathlib.Algebra.Order.BigOperators.Group.Finset
 Used for the twists `θ = ρ^l` of Lemma A.2 (`periodic-mesh-calculations.tex`): an automorphism of a star model fixing the centre preserves depths
 and maps arm `i` onto an arm `θ i` of the same length, vertex by vertex.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

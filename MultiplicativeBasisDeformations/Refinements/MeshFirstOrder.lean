@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Refinements.CocycleLift
-import MultiplicativeBasisDeformations.Foundations.PsiInjective
-import MultiplicativeBasisDeformations.Refinements.PolynomialFlatness
-import MultiplicativeBasisDeformations.Refinements.MeshNormalForm
+module
+
+public import MultiplicativeBasisDeformations.Refinements.CocycleLift
+public import MultiplicativeBasisDeformations.Foundations.PsiInjective
+public import MultiplicativeBasisDeformations.Refinements.PolynomialFlatness
+public import MultiplicativeBasisDeformations.Refinements.MeshNormalForm
 
 /-!
 # First-order mesh deformations (toward Proposition 12.5)
@@ -16,6 +18,8 @@ morphisms of `B` as `ŝ(f) + ε ŝ(g)` for a path section `ŝ`, the `ε`-part of
 Hochschild two-cocycle `φ` of `C`, whose mesh value `Σ_a c_{x,a} φ(σa, a)` is `z_x`
 (`exists_cocycle`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -574,7 +578,7 @@ theorem decomp {w y : V} (x : FlatPert.Q S.IB w y) :
 
 theorem eps_eps {w y : V} (x : FlatPert.Q S.IB w y) :
     (DualNumber.eps : DualNumber k) • (DualNumber.eps : DualNumber k) • x = (0 : FlatPert.Q S.IB w y) := by
-  rw [smul_smul, DualNumber.eps_mul_eps, zero_smul]
+  exact (smul_smul _ _ x).trans ((congrArg (· • x) DualNumber.eps_mul_eps).trans (zero_smul (DualNumber k) x))
 
 theorem π1_pair {w y : V} (f g : obj c w ⟶ obj c y) :
     S.π1 B (S.mkB (sh B f) + (DualNumber.eps : DualNumber k) • S.mkB (sh B g)) = g := by

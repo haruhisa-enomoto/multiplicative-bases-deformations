@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.RepFinite
-import MultiplicativeBasisDeformations.Foundations.CornerAlgebra
-import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
-import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RepFinite
+public import MultiplicativeBasisDeformations.Foundations.CornerAlgebra
+public import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
+public import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
 
 /-!
 # Idempotent corners of representation-finite algebras
@@ -14,6 +16,8 @@ representation-finite. The source uses induction `V ↦ V ⊗_C eA`, whose unit
 `V ↦ Hom_C(Ae, V)`, whose counit `Hom_C(Ae, V)e → V` is an isomorphism; this
 avoids tensor products over the noncommutative ring `C`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

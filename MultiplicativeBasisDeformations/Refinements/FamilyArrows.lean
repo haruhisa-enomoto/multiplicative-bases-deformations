@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Refinements.FamilyLifts
-import MultiplicativeBasisDeformations.Refinements.LiftedCategory
-import MultiplicativeBasisDeformations.Refinements.PathRealize
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FamilyLifts
+public import MultiplicativeBasisDeformations.Refinements.LiftedCategory
+public import MultiplicativeBasisDeformations.Refinements.PathRealize
 
 /-!
 # Homogeneous lifts of morphisms at `t = 1` (Proposition 12.8, morphisms)
@@ -13,6 +15,8 @@ At the fibre `t = 1` a morphism `φ` of `C` of degree `r` and weight `ρ` lifts 
 the lifted modules of order `r`, with leading term `φ`, all of whose components have relative
 weights in the cone, and whose component of relative weight `0` is `φ` itself (`exists_liftHom`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

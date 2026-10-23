@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Refinements.LiftedCompleteness
-import MultiplicativeBasisDeformations.Refinements.LiftedRadical
-import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
-import MultiplicativeBasisDeformations.Foundations.Char2Basic
+module
+
+public import MultiplicativeBasisDeformations.Refinements.LiftedCompleteness
+public import MultiplicativeBasisDeformations.Refinements.LiftedRadical
+public import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
+public import MultiplicativeBasisDeformations.Foundations.Char2Basic
 
 /-!
 # Corollary 12.1: the radical grading of `ind(mod B)` is `C`
@@ -15,6 +17,8 @@ of the categorical radical of the lifted modules is the filtration order `≥ q`
 (`mem_radPow_lifted`). Leading terms identify `rad^q / rad^{q+1}` with the degree-`q` part of
 `C` (`leadL`: surjective, kernel `rad^{q+1}`), compatibly with composition (`leadC_comp`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

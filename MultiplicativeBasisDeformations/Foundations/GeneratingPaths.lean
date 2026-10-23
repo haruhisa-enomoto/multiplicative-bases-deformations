@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ActiveZero
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ActiveZero
 
 /-!
 # Lemma 8.14: generating rays have no radical factorization
@@ -7,6 +9,8 @@ import MultiplicativeBasisDeformations.Foundations.ActiveZero
 in a Hom of dimension at least two does not factor as `a q_y b` through a nonidentity local
 radical.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Independent.MeshComparison
+module
+
+public import MultiplicativeBasisDeformations.Independent.MeshComparison
 
 /-!
 # The independent translate is the translation of `Γ_A`
@@ -19,6 +21,8 @@ generated right modules. This file proves that the two agree
   second map is right minimal; uniqueness of minimal right almost split maps
   identifies the left term with the vendored translate.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

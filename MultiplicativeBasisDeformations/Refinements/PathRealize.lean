@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PathMaps
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PathMaps
 
 /-!
 # Realizing the path category by chosen arrows (toward Proposition 12.8)
@@ -8,6 +10,8 @@ quiver, paths are realized by composition (`pathR`) and the `k`-linear path cate
 linear extension (`realizeR`); the realization is a functor (`realizeR_comp`). This is the
 realization `kQ → ℳ` by lifted arrows of `deformation-refinements.tex`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

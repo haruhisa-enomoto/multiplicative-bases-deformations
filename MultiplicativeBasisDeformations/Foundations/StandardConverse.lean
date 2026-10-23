@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.MeshRadical
-import MultiplicativeBasisDeformations.Foundations.FilteredNormalForm
-import MultiplicativeBasisDeformations.Foundations.StandardForm
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshRadical
+public import MultiplicativeBasisDeformations.Foundations.FilteredNormalForm
+public import MultiplicativeBasisDeformations.Foundations.StandardForm
 
 /-!
 # The converse of Corollary 4.15: `A ≅ A₀` implies that `A` is standard
@@ -18,6 +20,8 @@ degree-one parts of the arrow representatives are taken as lifts; their mesh err
 two and lie in `J³`, so they vanish, and the filtered normal form (`Lifts.functor`) gives the
 object-preserving equivalence (`isStandard_of_algEquiv`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

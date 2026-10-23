@@ -1,6 +1,8 @@
-import MBDVendor.Magnitude.Algebra.RightModuleFactorStrict
-import MBDVendor.QSE.RepresentationTheory.Trace
-import Mathlib.LinearAlgebra.Projection
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleFactorStrict
+public import MBDVendor.QSE.RepresentationTheory.Trace
+public import Mathlib.LinearAlgebra.Projection
 
 /-!
 # The primitive-idempotent multiplicity package
@@ -16,6 +18,8 @@ indecomposable skeleton these literal modules give the source, sink, and
 weight satisfying both factor mesh unit equations used in the frozen
 manuscript.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 
@@ -810,7 +814,7 @@ def leftIdealHomPrimitiveInjectiveHomLinearMap (e f : A) :
       leftIdealDual_restrictScalars_smul_apply,
       primitiveInjectiveMap_apply]
 
-private theorem leftIdealHomPrimitiveInjectiveHomLinearMap_bijective
+theorem leftIdealHomPrimitiveInjectiveHomLinearMap_bijective
     (e f : A) :
     Function.Bijective
       (leftIdealHomPrimitiveInjectiveHomLinearMap (k := k) e f) := by

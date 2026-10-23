@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.WeightGrading
-import MultiplicativeBasisDeformations.Foundations.IntegralCokerIso
+module
+
+public import MultiplicativeBasisDeformations.Foundations.WeightGrading
+public import MultiplicativeBasisDeformations.Foundations.IntegralCokerIso
 
 /-!
 # Weight gradings of the mesh derivative cokernels
@@ -15,6 +17,8 @@ projections of families (`projW`, `projWA`) commute with `D_m` (`D_projWA`), so 
 `D_m` is graded (`projW_mem_imageD`), and a row is homogeneous of degree `W(p) − ν_v`
 (`projW_row`). This gives the labels `χ_i` of Lemma B.2 (`integralMeshCokernels_graded`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

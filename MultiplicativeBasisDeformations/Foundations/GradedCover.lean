@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
 
 /-!
 # Graded covering categories and Lemma 4.7
@@ -22,6 +24,8 @@ cancellation of the degrees of `p` and `q` in the grading group gives
 `π(pbq) = p π(b) q`. Lemma 4.6 therefore applies with `C = D = H`."
 (`isRepresentationFinite_cov`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

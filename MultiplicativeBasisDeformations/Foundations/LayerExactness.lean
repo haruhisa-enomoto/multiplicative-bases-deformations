@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.LayerComparison
-import MBDVendor.Magnitude.CategoryTheory.FiniteTauIrreducible
+module
+
+public import MultiplicativeBasisDeformations.Foundations.LayerComparison
+public import MBDVendor.Magnitude.CategoryTheory.FiniteTauIrreducible
 
 /-!
 # Exactness of almost split sequences on radical layers
@@ -22,6 +24,8 @@ At a projective vertex the left term is zero, which gives Proposition 2.6(2).
 The statements are proved in `mod A`, from Lemma 2.5, and hold for every
 finitely generated `W`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

@@ -1,6 +1,8 @@
-import Mathlib.FieldTheory.IsAlgClosed.Spectrum
-import Mathlib.RingTheory.Artinian.Module
-import Mathlib.RingTheory.LocalRing.Basic
+module
+
+public import Mathlib.FieldTheory.IsAlgClosed.Spectrum
+public import Mathlib.RingTheory.Artinian.Module
+public import Mathlib.RingTheory.LocalRing.Basic
 
 /-!
 # The residue scalar of a finite-dimensional local algebra
@@ -13,6 +15,8 @@ and has precisely the nonunits as its kernel.
 This formulation applies to noncommutative endomorphism algebras; commutativity
 of `E` is not assumed.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 
@@ -143,9 +147,10 @@ theorem residueScalar_mul (a b : E) :
   have hright : ¬ IsUnit ((a - algebraMap k E α) * algebraMap k E β) :=
     fun h ↦ ha (isUnit_of_mul_isUnit_left h)
   have hsum := IsLocalRing.nonunits_add hleft hright
+  rw [mem_nonunits_iff] at hsum
   change ¬ IsUnit (a * b - algebraMap k E (α * β))
   rw [map_mul]
-  convert hsum using 1
+  convert hsum using 2
   noncomm_ring
 
 /-- The residue scalar as a homomorphism of `k`-algebras. -/

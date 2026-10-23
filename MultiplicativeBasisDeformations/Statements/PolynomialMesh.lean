@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Refinements.PolynomialMeshComparison
-import MultiplicativeBasisDeformations.Foundations.FamilyCriterionGen
-import MultiplicativeBasisDeformations.Foundations.Char2Basic
+module
+
+public import MultiplicativeBasisDeformations.Refinements.PolynomialMeshComparison
+public import MultiplicativeBasisDeformations.Foundations.FamilyCriterionGen
+public import MultiplicativeBasisDeformations.Foundations.Char2Basic
 
 /-!
 # Proposition 12.8 for `A₀` and for a representation-finite algebra
@@ -21,6 +23,8 @@ generic `polynomialMeshComparison` applies (`polynomialMeshComparison_A0`); for 
 representation-finite algebra the mesh hypotheses are the Auslander–Reiten ones
 (`IndSkeleton.polynomialMeshComparison_ar`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

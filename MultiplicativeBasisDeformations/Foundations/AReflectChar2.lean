@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.StarDSpan
-import MultiplicativeBasisDeformations.Foundations.LineTopPaths
-import MultiplicativeBasisDeformations.Foundations.APaths
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarDSpan
+public import MultiplicativeBasisDeformations.Foundations.LineTopPaths
+public import MultiplicativeBasisDeformations.Foundations.APaths
 
 /-!
 # The reflected models of type `A` in characteristic two (Appendix B)
@@ -20,6 +22,8 @@ for `s ≥ m` all classes vanish. For `s < m`, the deletion to `A_{2s+1}` and th
 of `LineTop.line_return` contradict the brick hypothesis (`not_brick_star_to`, the
 version of `not_brick_star` with paths ending at the deck image).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

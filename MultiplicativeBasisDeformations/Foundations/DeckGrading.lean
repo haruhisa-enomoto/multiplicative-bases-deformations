@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PeriodicDepth
-import MultiplicativeBasisDeformations.Foundations.WeightGrading
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PeriodicDepth
+public import MultiplicativeBasisDeformations.Foundations.WeightGrading
 
 /-!
 # The deck group and the walk-class grading
@@ -25,6 +27,8 @@ cone edges length zero; triangles preserve length, so length is a
 homomorphism `ℓ : G → ℤ` with `ℓ (deg p) = |p|` (`len_degW`); this is the
 height of the source.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

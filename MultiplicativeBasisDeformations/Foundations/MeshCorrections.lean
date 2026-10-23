@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.MeshCategory
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshCategory
 
 /-!
 # The mesh derivative and the brick hypothesis
@@ -14,6 +16,8 @@ Section 5 of the manuscript (`mesh-deformations.tex`).
   `Σ` of objects, and the brick hypothesis (Subsection 5.2): every object
   quotient that is not zero has an object whose endomorphism ring is `k`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

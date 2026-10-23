@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # The coefficient ring `𝒪 = ℤ/4` (Section 10)
@@ -9,6 +11,8 @@ import Mathlib
 The reduction `red : ℤ/4 → 𝔽₂`, the set-theoretic section `lift`, and the additive embedding
 `tw : 𝔽₂ → 2𝒪`, `a ↦ 2ã`. Every statement is a finite check.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

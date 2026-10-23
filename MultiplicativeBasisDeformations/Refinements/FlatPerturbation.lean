@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PathGrading
-import Mathlib
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PathGrading
+public import Mathlib
 
 /-!
 # Lemma 12.3: flat mesh perturbations
@@ -21,6 +23,8 @@ the representables `C(−, x)` and split relations by their last arrow, the form
 mesh relations and their exact sequences appear in Section 2 (the lemma for one convention is the
 lemma for the opposite quiver in the other). Relations are indexed by their target.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -87,7 +91,7 @@ theorem lastComp_comp_arrow {x y z : V} (g : Hm k x y) (b : y ⟶ z) :
     intro p
     change toFinsupp (g ≫ arrow b') (p.cons b') = toFinsupp g p
     rw [comp_arrow]
-    exact Finsupp.mapDomain_apply (cons_injective _) _ _
+    exact Finsupp.mapDomain_apply_of_injective (cons_injective _) _ _
   · rw [Pi.single_eq_of_ne h, comp_arrow]
     apply Finsupp.ext
     intro p
@@ -130,7 +134,7 @@ theorem decomp {x z : V} [Fintype (Σ y : V, y ⟶ z)] (f : Hm k x z) :
     change _ = (Finsupp.filter _ (toFinsupp f)) _ + _
     rw [Finsupp.filter_apply, if_neg (by simp), zero_add]
     rw [Finset.sum_eq_single ⟨y, b⟩]
-    · rw [Finsupp.mapDomain_apply (cons_injective b)]; rfl
+    · rw [Finsupp.mapDomain_apply_of_injective (cons_injective b)]; rfl
     · intro a _ ha
       refine Finsupp.mapDomain_of_notMem_range _ _ ?_
       rintro ⟨q, hq⟩

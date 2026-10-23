@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.LiftedEvaluation
-import MultiplicativeBasisDeformations.Foundations.WeightTwist
-import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
+module
+
+public import MultiplicativeBasisDeformations.Foundations.LiftedEvaluation
+public import MultiplicativeBasisDeformations.Foundations.WeightTwist
+public import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
 
 /-!
 # The modules `V_X̃` over finite subcategories of `L`
@@ -14,6 +16,8 @@ support of `V_X̃` it is finite-dimensional and indecomposable: "Height gives
 `End(V_X̃) = k`, so the modules are indecomposable" (`VM_isFiniteIndecomposable`,
 via Lemma 4.8).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

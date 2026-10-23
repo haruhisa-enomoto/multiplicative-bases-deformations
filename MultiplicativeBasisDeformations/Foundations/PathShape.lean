@@ -1,5 +1,7 @@
-import Mathlib.Combinatorics.Quiver.Path.Vertices
-import Mathlib.Combinatorics.Quiver.Cast
+module
+
+public import Mathlib.Combinatorics.Quiver.Path.Vertices
+public import Mathlib.Combinatorics.Quiver.Cast
 
 /-!
 # Paths with at most one arrow between vertices
@@ -8,6 +10,8 @@ In a quiver with at most one arrow between any two vertices, a path is
 determined by its list of vertices. This is used to compare images of paths under
 automorphisms of trees.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

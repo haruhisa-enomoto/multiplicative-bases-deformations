@@ -1,6 +1,8 @@
-import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderNormalization
-import MBDVendor.QSE.CategoryTheory.IyamaLeftSuccessorSpecialness
-import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderRadicalLayer
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderNormalization
+public import MBDVendor.QSE.CategoryTheory.IyamaLeftSuccessorSpecialness
+public import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderRadicalLayer
 
 /-!
 # Infinite and finite special left ladders from a zero boundary
@@ -11,6 +13,8 @@ then exposes flat infinite families and exact finite prefixes for Iyama,
 *Tau-categories I*, Lemma 6.4.1(1)(ii).  The construction is entirely
 categorical and uses no concrete algebra or module classification.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

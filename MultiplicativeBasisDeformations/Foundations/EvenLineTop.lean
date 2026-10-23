@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.LineTopPaths
-import MultiplicativeBasisDeformations.Foundations.ASort
+module
+
+public import MultiplicativeBasisDeformations.Foundations.LineTopPaths
+public import MultiplicativeBasisDeformations.Foundations.ASort
 
 /-!
 # Top paths of `Π(A_M)` for a path rooted at an end
@@ -14,6 +16,8 @@ in the odd quotients of even `A`.
 Here the line is the one-armed star (`L 0 = M − 2`), and the position of a vertex is
 its depth plus one.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

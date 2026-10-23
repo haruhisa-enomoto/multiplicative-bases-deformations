@@ -1,5 +1,7 @@
-import Mathlib.Logic.Equiv.Fintype
-import MBDVendor.QSE.ConvexGeometry.LevelPolynomial
+module
+
+public import Mathlib.Logic.Equiv.Fintype
+public import MBDVendor.QSE.ConvexGeometry.LevelPolynomial
 
 /-!
 # Relabeling a closure system
@@ -9,6 +11,8 @@ finite-dimensional vector-space duality.  The categorical work only has to
 produce `map_closure`; all lattice and level-polynomial consequences are then
 formal.
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.TableTree
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TableTree
 
 /-!
 # The six-lift and eight-lift trees of Appendix C.1
@@ -9,6 +11,8 @@ table poset with its rays; the factorization checks of `lem:tree-quotient` enter
 the retraction conditions on cover relations (Lemma 8.9), as hypotheses `X*`/`Y*` naming the
 excluded factorizations. Lemma 8.8 then excludes both trees.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

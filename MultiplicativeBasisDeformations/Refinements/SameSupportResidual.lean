@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Refinements.SameSupportForms
-import MultiplicativeBasisDeformations.Foundations.ResidualSpaces
+module
+
+public import MultiplicativeBasisDeformations.Refinements.SameSupportForms
+public import MultiplicativeBasisDeformations.Foundations.ResidualSpaces
 
 /-!
 # Lemma 12.6 for the residual paths of Proposition 6.1
@@ -14,6 +16,8 @@ least four (degree `2s + 2`), and stay inside their component, since a row throu
 nonperiodic vertex has zero class (`row_mem_imageD_of_not_periodic`) while the classes of the
 rows are nonzero (`pathIn_residual`). The statement is `sameSupport_residual`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

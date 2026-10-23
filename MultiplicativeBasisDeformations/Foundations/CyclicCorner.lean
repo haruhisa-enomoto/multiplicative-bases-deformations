@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PrimitiveCorners
-import MultiplicativeBasisDeformations.Foundations.ProperProducts
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PrimitiveCorners
+public import MultiplicativeBasisDeformations.Foundations.ProperProducts
 
 /-!
 # Lemma 8.21(2): the primitive return corner is cyclic Nakayama
@@ -18,6 +20,8 @@ are the local generators, consecutive paths between distinct vertices of `S_x` a
 generating rays (by degrees), and every nonidentity ray of `S_x` is a consecutive path
 (`cyclicNakayama`). Consecutive products are `cpath a i ℓ = a_i a_{i+1} ⋯ a_{i+ℓ-1}`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

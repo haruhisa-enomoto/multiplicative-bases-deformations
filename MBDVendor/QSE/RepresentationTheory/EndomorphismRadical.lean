@@ -1,5 +1,7 @@
-import Mathlib.RingTheory.Artinian.Ring
-import MBDVendor.QSE.RepresentationTheory.Trace
+module
+
+public import Mathlib.RingTheory.Artinian.Ring
+public import MBDVendor.QSE.RepresentationTheory.Trace
 
 /-!
 # The radical of an indecomposable endomorphism ring
@@ -10,6 +12,8 @@ proves that the Jacobson radical of an Artinian ring is nilpotent.  This
 file identifies its elements with the noninvertible endomorphisms and
 packages the iteration-on-images argument needed by the manuscript.
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.Successor
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Successor
 
 /-!
 # Primitive cyclic corners (Lemma 8.21)
@@ -10,6 +12,8 @@ reverse whenever `f A₀(y, x) ≠ 0`: the generating ray `h` of `A₀(y, x)` sa
 `hf = q_y`. A higher least return exponent gives a four-point crown in the faithful projective
 support at `x`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

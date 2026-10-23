@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CharDecomp
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CharDecomp
 
 /-!
 # Gradings with a homogeneous basis
@@ -7,6 +9,8 @@ For a graded algebra with a basis of homogeneous vectors: the coordinates of a h
 element vanish off its degree, and a bilinear map is homogeneous of a given degree (or
 character) as soon as its values on pairs of basis vectors are.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

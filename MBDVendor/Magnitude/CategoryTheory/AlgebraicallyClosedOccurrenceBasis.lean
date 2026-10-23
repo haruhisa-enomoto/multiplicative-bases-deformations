@@ -1,6 +1,8 @@
-import MBDVendor.QSE.RepresentationTheory.RightAROccurrenceBasis
-import MBDVendor.QSE.RepresentationTheory.LeftAROccurrenceBasis
-import Mathlib.LinearAlgebra.Eigenspace.Triangularizable
+module
+
+public import MBDVendor.QSE.RepresentationTheory.RightAROccurrenceBasis
+public import MBDVendor.QSE.RepresentationTheory.LeftAROccurrenceBasis
+public import Mathlib.LinearAlgebra.Eigenspace.Triangularizable
 
 /-!
 # Occurrence bases over an algebraically closed field
@@ -11,6 +13,8 @@ the precise form of Schur's lemma needed to identify repeated summands in an
 almost-split middle term with the dimension of the corresponding irreducible
 morphism space; the endomorphism itself need not be scalar.
 -/
+
+@[expose] public section
 
 noncomputable section
 

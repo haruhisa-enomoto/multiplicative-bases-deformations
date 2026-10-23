@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.CoverCategory
-import MultiplicativeBasisDeformations.Foundations.WeightDivisibility
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CoverCategory
+public import MultiplicativeBasisDeformations.Foundations.WeightDivisibility
 
 /-!
 # Proposition 4.14: descent of a multiplicative basis along a free deck group
@@ -21,6 +23,8 @@ values `f` are the transport of `(root, 1)` under the homomorphism from the free
 group to permutations of `objects × kˣ` lifting the generators (`Ψ`): this is
 "a value at one root determines consistent values everywhere".
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -193,7 +197,7 @@ theorem free_induction {P : G → Prop} (h1 : P 1) (hof : ∀ a, P (IsFreeGroup.
   obtain ⟨w, rfl⟩ : ∃ w, (IsFreeGroup.toFreeGroup G).symm w = g :=
     ⟨_, MulEquiv.symm_apply_apply _ g⟩
   induction w using FreeGroup.induction_on with
-  | C1 => rw [map_one]; exact h1
+  | one => rw [map_one]; exact h1
   | of a => exact hof a
   | inv_of a ih => rw [map_inv]; exact hinv _ ih
   | mul x y hx hy => rw [map_mul]; exact hmul _ _ hx hy

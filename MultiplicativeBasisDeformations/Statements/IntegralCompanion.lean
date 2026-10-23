@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralPresentation
-import MultiplicativeBasisDeformations.Foundations.PrimeWeight
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralPresentation
+public import MultiplicativeBasisDeformations.Foundations.PrimeWeight
 
 /-!
 # Proposition 10.1 for a basic representation-finite algebra
@@ -14,6 +16,8 @@ The weight refinement is `exists_modLiftW₂`, `exists_arrowLiftW₂` (`PrimeWei
 The instance arguments are those of the Auslander–Reiten quiver (`S.hasAtMostOneArrow`,
 `S.finiteDimensional_meshHom`, `S.prime_fd`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

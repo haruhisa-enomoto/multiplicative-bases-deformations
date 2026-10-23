@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Independent.TheoremA
-import MultiplicativeBasisDeformations.Independent.Translate
-import MultiplicativeBasisDeformations.Independent.StandardComparison
+module
+
+public import MultiplicativeBasisDeformations.Independent.TheoremA
+public import MultiplicativeBasisDeformations.Independent.Translate
+public import MultiplicativeBasisDeformations.Independent.StandardComparison
 
 /-!
 # Theorem B in the independent vocabulary
@@ -10,6 +12,8 @@ there (`theoremB`) transfers to the independent mesh category, because the
 independent translate is the translation of `Γ_A` (`translateCompatible`) and
 the coefficients of the mesh relations normalize to one (Lemma 4.4).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

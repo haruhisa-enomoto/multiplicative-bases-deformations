@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Refinements.FamilyPresentation
-import MultiplicativeBasisDeformations.Refinements.FamilyPsi
-import MultiplicativeBasisDeformations.Refinements.LiftedLayers
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FamilyPresentation
+public import MultiplicativeBasisDeformations.Refinements.FamilyPsi
+public import MultiplicativeBasisDeformations.Refinements.LiftedLayers
 
 /-!
 # Proposition 12.8: the polynomial mesh comparison
@@ -24,6 +26,8 @@ span the cokernels of the mesh derivatives (`CokerSpan`); no `μ_i` is a cobound
   `(𝔪^{N+1}, r_x − Σ_i a_i t_i R_i)`;
 * the lifted modules exhaust the indecomposable modules of the fibre algebra (Corollary 12.1).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

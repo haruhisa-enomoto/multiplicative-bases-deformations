@@ -1,8 +1,11 @@
-import Mathlib.RingTheory.FreeRing
-import Mathlib.RingTheory.Congruence.Hom
-import Mathlib.Algebra.BigOperators.Group.List.Basic
-import Mathlib.Algebra.BigOperators.Ring.Finset
-import Mathlib.Tactic.NoncommRing
+module
+
+public import Mathlib.RingTheory.FreeRing
+public import Mathlib.GroupTheory.FreeAbelianGroup
+public import Mathlib.RingTheory.Congruence.Hom
+public import Mathlib.Algebra.BigOperators.Group.List.Basic
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+public import Mathlib.Tactic.NoncommRing
 
 /-!
 # The ring of centre words and its twisted traces
@@ -16,6 +19,8 @@ additive function `tr` on words, compatible with these relations, with
 to an additive map on the quotient ring `R`, in which the calculations of
 Appendix A are ring identities.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 
@@ -34,12 +39,14 @@ theorem word_append (u v : List (Fin t)) : word (u ++ v) = word u * word v := by
   simp [word, List.prod_append]
 
 theorem word_eq_of (w : List (Fin t)) :
-    word w = (FreeAbelianGroup.of (FreeMonoid.ofList w) : FreeAbelianGroup (FreeMonoid (Fin t))) := by
+    word w = (MonoidAlgebra.single (FreeMonoid.ofList w) (1 : ℤ) :
+      MonoidAlgebra ℤ (FreeMonoid (Fin t))) := by
   induction w with
   | nil => rfl
   | cons i w ih =>
       rw [word, List.map_cons, List.prod_cons, ← word, ih]
-      exact FreeAbelianGroup.of_mul_of (FreeMonoid.of i) (FreeMonoid.ofList w)
+      exact (MonoidAlgebra.single_mul_single (FreeMonoid.of i) (FreeMonoid.ofList w)
+        (1 : ℤ) 1).trans (by rw [one_mul]; rfl)
 
 /-- The relations of the centre corner. -/
 def gens : Set (FreeRing (Fin t)) :=
@@ -122,11 +129,15 @@ variable {L} {M : Type*} [AddCommGroup M] (D : TraceData L M)
 
 /-- The trace on the free ring. -/
 def trA : FreeRing (Fin t) →+ M :=
-  FreeAbelianGroup.lift (fun w : FreeMonoid (Fin t) ↦ D.tr (FreeMonoid.toList w))
+  (Finsupp.liftAddHom fun w : FreeMonoid (Fin t) ↦ zmultiplesHom M (D.tr (FreeMonoid.toList w))).comp
+    (MonoidAlgebra.coeffAddEquiv (R := ℤ) (M := FreeMonoid (Fin t))).toAddMonoidHom
 
 theorem trA_word (w : List (Fin t)) : D.trA (word w) = D.tr w := by
   rw [word_eq_of]
-  exact FreeAbelianGroup.lift_apply_of _ _
+  change (Finsupp.liftAddHom fun w : FreeMonoid (Fin t) ↦
+    zmultiplesHom M (D.tr (FreeMonoid.toList w))) (Finsupp.single (FreeMonoid.ofList w) (1 : ℤ)) = _
+  rw [Finsupp.liftAddHom_apply_single]
+  simp
 
 /-- The twist on the free ring. -/
 def twist : FreeRing (Fin t) →+* FreeRing (Fin t) := FreeRing.map D.θ
@@ -138,9 +149,15 @@ theorem twist_word (w : List (Fin t)) : D.twist (word w) = word (w.map D.θ) := 
 theorem induction_word {C : FreeRing (Fin t) → Prop} (a : FreeRing (Fin t)) (h0 : C 0)
     (hw : ∀ w, C (word w)) (hneg : ∀ a, C a → C (-a)) (hadd : ∀ a b, C a → C b → C (a + b)) :
     C a := by
-  refine FreeAbelianGroup.induction_on a h0 (fun m ↦ ?_) (fun m h ↦ hneg _ h) hadd
-  have := hw (FreeMonoid.toList m)
-  rwa [word_eq_of] at this
+  refine MonoidAlgebra.induction_linear (motive := C) a h0 hadd (fun m r ↦ ?_)
+  have hm : C (MonoidAlgebra.single m (1 : ℤ)) := by
+    simpa [word_eq_of] using hw (FreeMonoid.toList m)
+  induction r using Int.induction_on with
+  | zero => rw [MonoidAlgebra.single_zero]; exact h0
+  | succ n ih => rw [MonoidAlgebra.single_add]; exact hadd _ _ ih hm
+  | pred n ih =>
+      rw [sub_eq_add_neg, MonoidAlgebra.single_add]
+      exact hadd _ _ ih (by rw [MonoidAlgebra.single_neg]; exact hneg _ hm)
 
 /-- **Twisted rotation** on the free ring. -/
 theorem trA_rotate (a b : FreeRing (Fin t)) : D.trA (a * b) = D.trA (b * D.twist a) := by

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.HochschildMesh
+module
+
+public import MultiplicativeBasisDeformations.Foundations.HochschildMesh
 
 /-!
 # Category cocycles and the map `Ψ` (toward Proposition 12.5)
@@ -11,6 +13,8 @@ of the arrow maps (`g_a(m) = φ(m, a)`). The mesh error of these lifts is
 (`deformation-refinements.tex`: "Evaluation of every object at those projectives gives a
 free lift of its normalized module").
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

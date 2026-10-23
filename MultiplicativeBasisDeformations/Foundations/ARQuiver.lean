@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.SquareFree
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SquareFree
 
 /-!
 # The mesh category `k(Γ_A)` and standardness
@@ -36,6 +38,8 @@ sequences changes `k(Γ_A)` only by an object-fixing isomorphism
 (`graded-category.tex`); Definition 1.2 is formalized with an
 existential choice of bases.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

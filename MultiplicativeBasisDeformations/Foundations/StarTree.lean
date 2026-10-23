@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.TreeRepetition
-import MultiplicativeBasisDeformations.Foundations.StarModel
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TreeRepetition
+public import MultiplicativeBasisDeformations.Foundations.StarModel
 
 /-!
 # The star model as an oriented tree
@@ -9,6 +11,8 @@ the centre (`periodic-mesh-calculations.tex`: "For `D` and `E`, root the
 tree at the trivalent vertex; for odd `A`, root it at its middle vertex ...
 With the orientation away from the root ...").
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

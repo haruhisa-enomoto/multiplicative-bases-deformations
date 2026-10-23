@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.TraceE78
-import MultiplicativeBasisDeformations.Foundations.StarCase
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TraceE78
+public import MultiplicativeBasisDeformations.Foundations.StarCase
 
 /-!
 # Twisted traces killed by two (Lemma B.2, the trace calculations)
@@ -15,6 +17,8 @@ over an arbitrary coefficient group (no division by two):
   `4, 8, 14` are killed by two (`trace_E78_two`), by the identities of Lemma A.6 without
   its final division.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

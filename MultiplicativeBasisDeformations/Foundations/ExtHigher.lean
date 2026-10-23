@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.GradedDecomp
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedDecomp
 
 /-!
 # Higher `Ext` between normalized modules (Lemma 6.3(2))
@@ -19,6 +21,8 @@ nonprojective summands directly (`two_le_shift`): every component
 `eq:normalized-hom-degrees`, since `Z ≠ P_{x_ℓ}`. Projective summands contribute
 zero whatever their shift.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

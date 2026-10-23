@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.MeshCorrections
-import MultiplicativeBasisDeformations.Foundations.PathGrading
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshCorrections
+public import MultiplicativeBasisDeformations.Foundations.PathGrading
 
 /-!
 # Rows and columns of the mesh derivative
@@ -19,6 +21,8 @@ two entries (`column_eq`). This file sets up these objects:
   surjective exactly when every row of length `m + 1` lies in the image;
 * `column_eq`, the two entries of a correction column.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

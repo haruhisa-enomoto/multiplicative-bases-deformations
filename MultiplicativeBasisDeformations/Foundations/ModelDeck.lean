@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.DeckGroup
-import MultiplicativeBasisDeformations.Foundations.StarAut
-import Mathlib.GroupTheory.Archimedean
+module
+
+public import MultiplicativeBasisDeformations.Foundations.DeckGroup
+public import MultiplicativeBasisDeformations.Foundations.StarAut
+public import Mathlib.GroupTheory.Archimedean
 
 /-!
 # Deck transformations for star models
@@ -15,6 +17,8 @@ and mates. Since `Δ` is a tree, these choices are consistent."
 
 Here `o` is the centre at height `0`; the rooted tree edges are the arms.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

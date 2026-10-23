@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.GradedCover
-import MultiplicativeBasisDeformations.Foundations.RepFinite
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedCover
+public import MultiplicativeBasisDeformations.Foundations.RepFinite
 
 /-!
 # Thinness of the graded covering category
@@ -16,6 +18,8 @@ Height is a homomorphism `hgt : G → ℤ` such that nonzero homogeneous morphis
 have nonnegative height, and those of height zero are scalar multiples of
 identities in degree one (`HeightData`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

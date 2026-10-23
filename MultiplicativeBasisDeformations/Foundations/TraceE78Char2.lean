@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.TraceE78
-import MultiplicativeBasisDeformations.Foundations.R5Span
-import MultiplicativeBasisDeformations.Foundations.TraceAlgebraChar2
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TraceE78
+public import MultiplicativeBasisDeformations.Foundations.R5Span
+public import MultiplicativeBasisDeformations.Foundations.TraceAlgebraChar2
 
 /-!
 # Ordinary traces of `E_7` and `E_8` in characteristic two (Appendix B)
@@ -19,6 +21,8 @@ We run the induction of Lemma A.6 on the number of `y`'s in a fixed word degree 
 with values in a subgroup `A` of the target containing the candidate class of degree
 `n` (`all_mem`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

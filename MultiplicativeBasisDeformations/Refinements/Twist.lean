@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Refinements.WeightCone
-import MultiplicativeBasisDeformations.Refinements.PolyFamily
+module
+
+public import MultiplicativeBasisDeformations.Refinements.WeightCone
+public import MultiplicativeBasisDeformations.Refinements.PolyFamily
 
 /-!
 # Twisting weight-homogeneous data by parameters (toward Proposition 12.8)
@@ -13,6 +15,8 @@ homogeneous". Conversely, data at `t = 1` whose components have relative weights
 diagonal scaling `S_t` (`twb_torus`, `twl_torus`), so twisting preserves all identities there; the
 twisted data are polynomial in `t` (`IsPoly`), so the identities hold for every `t`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

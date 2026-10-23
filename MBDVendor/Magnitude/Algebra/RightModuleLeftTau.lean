@@ -1,4 +1,6 @@
-import MBDVendor.Magnitude.Algebra.RightModuleTranslation
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleTranslation
 
 /-!
 # Left tau-sequences for the finite right-module category
@@ -9,6 +11,8 @@ an injective selected module, the chosen minimal left almost-split map is
 epic, so its cokernel is zero.  Finite componentwise biproducts extend these
 meshes to every finitely generated right module.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

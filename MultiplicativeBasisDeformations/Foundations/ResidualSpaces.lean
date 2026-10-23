@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.ResidualCorrection
-import MultiplicativeBasisDeformations.Foundations.PeriodicIso
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ResidualCorrection
+public import MultiplicativeBasisDeformations.Foundations.PeriodicIso
 
 /-!
 # Proposition 6.1: residual correction spaces
@@ -21,6 +23,8 @@ The spanning by at most one row per periodic component is `residual_cokerSpan`. 
 * hence rows in distinct periodic components with nonzero classes are linearly independent
   (`rows_independent`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

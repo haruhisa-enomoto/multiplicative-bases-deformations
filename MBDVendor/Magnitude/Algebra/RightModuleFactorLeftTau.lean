@@ -1,4 +1,6 @@
-import MBDVendor.Magnitude.Algebra.RightModuleFactorRightTau
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleFactorRightTau
 
 /-!
 # Left tau-sequences in literal finite-module factor categories
@@ -9,6 +11,8 @@ left-right dual of the direct right-mesh descent, with an explicit quotient
 weak-cokernel correction and minimalization of the possibly zero right
 boundary.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

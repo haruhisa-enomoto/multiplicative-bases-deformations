@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.Char2A0
-import MultiplicativeBasisDeformations.Foundations.RayTransport
-import MultiplicativeBasisDeformations.Foundations.NormedTransport
-import MultiplicativeBasisDeformations.Refinements.FibreAlgebra
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Char2A0
+public import MultiplicativeBasisDeformations.Foundations.RayTransport
+public import MultiplicativeBasisDeformations.Foundations.NormedTransport
+public import MultiplicativeBasisDeformations.Refinements.FibreAlgebra
 
 /-!
 # Proposition 7.9 on `A₀` for an arbitrary family
@@ -23,6 +25,8 @@ which follows from associativity over the polynomial ring. Hypothesis (3) is sta
 fibre algebra itself (`Fib (fibAM …)`), and used for binary fibres; it is transported to `B`
 along the isomorphism (`IsNormedMultiplicativeBasis.map_algEquiv`, `IsRayPres.map`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralCorner
-import MultiplicativeBasisDeformations.Foundations.CornerDeriv
-import MultiplicativeBasisDeformations.Foundations.IntegralCoker
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralCorner
+public import MultiplicativeBasisDeformations.Foundations.CornerDeriv
+public import MultiplicativeBasisDeformations.Foundations.IntegralCoker
 
 /-!
 # Lemma 10.2 for twice a cocycle of `A⁽²⁾` (Proposition 10.3)
@@ -15,6 +17,8 @@ arrow change removes them; the projective corner of the lifted modules is `𝒪P
 This is the composite `j = 0` and injectivity of `Ψ₄` used in the proof of Proposition 10.3,
 restricted to the classes `i_*[μ̄]`, which is all that proof uses.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

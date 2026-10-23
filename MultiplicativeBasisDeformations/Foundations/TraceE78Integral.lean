@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.TraceE78
-import Mathlib.Tactic.IntervalCases
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TraceE78
+public import Mathlib.Tactic.IntervalCases
 
 /-!
 # Lemma A.6 over any coefficient ring
@@ -23,6 +25,8 @@ identity `F` multiplied by `x^k W` gives the block relations (`Fk`). As usual we
 additive map `tr` killing commutators and positive powers of `x`, `y`; `T_m` is the universal
 such map. The char-two-free statements in `TraceE78.lean` are the case two invertible.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

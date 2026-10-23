@@ -1,5 +1,7 @@
-import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
-import MBDVendor.Magnitude.CategoryTheory.FiniteGeneratorRadicalNilpotence
+module
+
+public import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
+public import MBDVendor.Magnitude.CategoryTheory.FiniteGeneratorRadicalNilpotence
 
 /-!
 # Nilpotence of the radical of a representation-finite module category
@@ -10,6 +12,8 @@ finite-dimensional over the coefficient field and hence Artinian.  The generic
 finite-generator theorem therefore supplies the canonical nilpotent
 categorical radical required by the tau-category interface.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

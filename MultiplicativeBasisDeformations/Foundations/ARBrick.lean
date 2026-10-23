@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.ARInjData
-import MultiplicativeBasisDeformations.Foundations.DeletionBrick
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARInjData
+public import MultiplicativeBasisDeformations.Foundations.DeletionBrick
 
 /-!
 # The brick hypothesis for `k(Γ_A)`
@@ -12,6 +14,8 @@ object quotient `C/[Σ]` the kernel on `C(x, y)` is the span of composites
 through objects of `Σ`; hence such a label has endomorphism ring `k` in
 `C/[Σ]`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

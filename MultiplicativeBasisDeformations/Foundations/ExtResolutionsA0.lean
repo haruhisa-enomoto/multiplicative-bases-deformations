@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ExtResolutions
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ExtResolutions
 
 /-!
 # Lemma 6.3(2) with `Ext` from graded projective resolutions
@@ -9,6 +11,8 @@ graded projective resolution, and `Ext^n_{A₀}(M_i, M_j)_t = 0` for `n ≥ 1`, 
 computed from it vanishes in the stated range (`extVanish_ev_res`), by the comparison with the
 bar `Ext` (`GExt.GRes.extVanish_iff`) and the bar form of the lemma (`extVanish_ev`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

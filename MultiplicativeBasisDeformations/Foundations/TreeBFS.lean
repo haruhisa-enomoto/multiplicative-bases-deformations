@@ -1,8 +1,10 @@
-import Mathlib.Combinatorics.SimpleGraph.Acyclic
-import Mathlib.Combinatorics.SimpleGraph.Metric
-import Mathlib.Data.ZMod.Basic
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.LinearCombination
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Acyclic
+public import Mathlib.Combinatorics.SimpleGraph.Metric
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.Tactic.Ring
+public import Mathlib.Tactic.LinearCombination
 
 /-!
 # Trees seen from a root
@@ -12,6 +14,8 @@ proof of Proposition 4.1, Step 2 (`periodic-mesh-calculations.tex`):
 seen from a root `o`, adjacent vertices have distances differing by one, and
 every other vertex has a unique neighbour closer to `o` (its parent).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

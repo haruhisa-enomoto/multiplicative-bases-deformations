@@ -1,4 +1,6 @@
-import MBDVendor.Magnitude.Algebra.RightModuleFactorCategory
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleFactorCategory
 
 /-!
 # Right tau-sequences in literal finite-module factor categories
@@ -8,6 +10,8 @@ the literal quotient by maps factoring through selected labels.  The raw
 quotient mesh retains the radical approximation and weak-kernel properties;
 only its possibly zero left boundary requires minimalization.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.GradedPreproj
-import MultiplicativeBasisDeformations.Foundations.StarCorner
-import MultiplicativeBasisDeformations.Foundations.TraceTypesAD
-import Mathlib.Tactic.IntervalCases
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedPreproj
+public import MultiplicativeBasisDeformations.Foundations.StarCorner
+public import MultiplicativeBasisDeformations.Foundations.TraceTypesAD
+public import Mathlib.Tactic.IntervalCases
 
 /-!
 # Lemma A.7: closed paths of degree sixteen in `Π(E₇)`
@@ -16,6 +18,8 @@ The matrices `U_d` are integer matrices determined by the recurrence; we list
 them in a fixed labelling of the vertices and check the recurrence, the
 nonnegativity and `U_16 = I` by direct computation.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

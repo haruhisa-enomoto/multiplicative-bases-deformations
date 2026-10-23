@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.OppositeControls2
+module
+
+public import MultiplicativeBasisDeformations.Foundations.OppositeControls2
 
 /-!
 # Lemma 8.11(2)
@@ -11,6 +13,8 @@ term `f q^n g` with `n ≥ 2` vanishes by (1) (`opposite_controls`); the endpoin
 with a one-dimensional socle (`socle_unique`, from the endpoint chain), so the nonzero products
 `f q^j g` all coincide (`opposite_controls_two`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,9 +1,11 @@
-import Mathlib.CategoryTheory.Adjunction.Limits
-import Mathlib.CategoryTheory.Limits.Constructions.EpiMono
-import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products
-import Mathlib.CategoryTheory.Limits.Shapes.Opposites.Products
-import Mathlib.CategoryTheory.Preadditive.Injective.Basic
-import MBDVendor.QSE.RepresentationTheory.FacSub
+module
+
+public import Mathlib.CategoryTheory.Adjunction.Limits
+public import Mathlib.CategoryTheory.Limits.Constructions.EpiMono
+public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products
+public import Mathlib.CategoryTheory.Limits.Shapes.Opposites.Products
+public import Mathlib.CategoryTheory.Preadditive.Injective.Basic
+public import MBDVendor.QSE.RepresentationTheory.FacSub
 
 /-!
 # Quotient/submodule exchange under an anti-equivalence
@@ -11,6 +13,8 @@ import MBDVendor.QSE.RepresentationTheory.FacSub
 This is the abstract categorical interface expected from finite-dimensional
 `k`-linear duality.  It deliberately does not construct that concrete duality.
 -/
+
+@[expose] public section
 
 noncomputable section
 

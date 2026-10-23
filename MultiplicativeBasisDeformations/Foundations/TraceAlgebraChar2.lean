@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.TraceAlgebra
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TraceAlgebra
 
 /-!
 # Twisted traces in characteristic two
@@ -8,6 +10,8 @@ corner over a field of characteristic two. When `m + m = 0` on the target, a twi
 trace kills `2 r` for every `r`, so it factors through the quotient `Rc` of the free
 ring by the relations and by `2`; in `Rc` we have `2 = 0`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

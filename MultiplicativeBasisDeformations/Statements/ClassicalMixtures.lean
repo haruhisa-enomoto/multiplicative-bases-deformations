@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.Prop103
-import MultiplicativeBasisDeformations.Foundations.RelativeHochschild
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Prop103
+public import MultiplicativeBasisDeformations.Foundations.RelativeHochschild
 
 /-!
 # Remark 11.5: the indicator cocycles span `HH²(A₀)_{>0}`
@@ -15,6 +17,8 @@ characteristic two. Here `HH²` is ordinary Hochschild cohomology (all cocycles 
 the given internal degree; `RelativeHochschild.lean`), and Corollary 10.5 is the proved
 `cor105Hyp`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

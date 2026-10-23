@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.BaseChange
-import MultiplicativeBasisDeformations.Foundations.GaugeTransfer
+module
+
+public import MultiplicativeBasisDeformations.Foundations.BaseChange
+public import MultiplicativeBasisDeformations.Foundations.GaugeTransfer
 
 /-!
 # The prime-field form of a scalar mesh category
@@ -16,6 +18,8 @@ arrows, and for every `K`-linear `θ : k → K` the *retraction*
 (`Π_comp_Fm`, `Π_Fm_comp`) with `Π θ (t • Fm φ) = θ t • φ` (`Π_smul_Fm`). Hence `Fm` is injective
 and the Hom spaces have equal dimensions (`finrank_Fm`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

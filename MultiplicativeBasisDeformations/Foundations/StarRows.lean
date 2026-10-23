@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.StarTrace
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarTrace
 
 /-!
 # Every row class is a word trace (Lemmas A.2 and A.4)
@@ -11,6 +13,8 @@ Twisted rotation gives a path from `o` to `θ o = o`, and Lemma A.3 expresses it
 in the `x_i`. A path avoiding `o` stays on one arm. That arm is fixed pointwise
 by `θ` … the process ends in zero."
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -122,7 +126,7 @@ variable {V : Type v'} [Quiver.{w} V] [∀ x y : V, Subsingleton (x ⟶ y)] {Q :
   (hdeck : ∀ Z, π.obj (((starTree L).zAct σ hσ s hσp).obj Z) = π.obj Z)
   (hs : (m : ℤ) + 1 = 2 + s)
   (hσo : σ none = none) (θ : Equiv.Perm (Fin t)) (hL : ∀ i, L (θ i) = L i)
-  (hθ : ∀ i j (hj : j ≤ L i), σ (av L i j hj) = av L (θ i) j (by rw [hL]; exact hj))
+  (hθ : ∀ i j (hj : j ≤ L i), σ (av L i j hj) = av L (θ i) j (hj.trans (hL i).ge))
 
 include hπ hτ hsig hc hdeck hs hθ in
 /-- **Lemma A.4, first part**: the lifted row class of a path from `v` to `σ v`

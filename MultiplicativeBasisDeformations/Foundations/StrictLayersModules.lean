@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.StrictLayers
-import MBDVendor.Magnitude.Algebra.RightModuleLeftTau
-import MBDVendor.Magnitude.Algebra.RightModuleFactorStrict
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StrictLayers
+public import MBDVendor.Magnitude.Algebra.RightModuleLeftTau
+public import MBDVendor.Magnitude.Algebra.RightModuleFactorStrict
 
 /-!
 # Lemma 2.5 for `mod A`
@@ -18,6 +20,8 @@ Both are supplied by the vendored Auslander--Reiten library
 (`moduleRightMesh`, `moduleRightTau`, `labelRightMesh_f_mono`,
 `exists_splitMono_radical_normalForm`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

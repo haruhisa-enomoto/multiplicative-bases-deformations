@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralMesh
-import MultiplicativeBasisDeformations.Foundations.SquareZero
-import MultiplicativeBasisDeformations.Foundations.GModLemmas
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralMesh
+public import MultiplicativeBasisDeformations.Foundations.SquareZero
+public import MultiplicativeBasisDeformations.Foundations.GModLemmas
 
 /-!
 # Twice a first-order lift
@@ -12,6 +14,8 @@ multiplication by two makes it depend only on the modulo-two base matrices."
 For a cocycle `μ̃ = 2μ̄` over `𝒪`, a lifted action `ν` of `M` for `μ̄` gives the lifted action
 `2ν` of a lift `M̃` (`actLiftTw`), and a lifted map `(f, g)` gives `(f̃, 2g)` (`isLiftHom_tw`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

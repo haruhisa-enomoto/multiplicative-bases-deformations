@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.HochschildMesh
+module
+
+public import MultiplicativeBasisDeformations.Foundations.HochschildMesh
 
 /-!
 # Injectivity of `Ψ` (Proposition 7.6)
@@ -14,6 +16,8 @@ modules with `(rs φ, δ φ)` a lifted map for every `φ`. We build `δ` on path
 (`δp`), extend it linearly to the path category (`δL`), show that it kills the mesh
 ideal once the mesh errors vanish (`δL_ideal`), and descend it to `C` (`δC`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

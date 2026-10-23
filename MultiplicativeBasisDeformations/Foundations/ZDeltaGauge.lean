@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.MeshGauge
-import MultiplicativeBasisDeformations.Foundations.TreeRepetition
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshGauge
+public import MultiplicativeBasisDeformations.Foundations.TreeRepetition
 
 /-!
 # Rescaling the meshes of `ℤΔ` to the signed coefficients
@@ -17,6 +19,8 @@ the height `h` of their source, and the mesh at height `h + 2` prescribes the
 product of the scalars of the arrows of heights `h` and `h + 1`
 (`exists_line_solution`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

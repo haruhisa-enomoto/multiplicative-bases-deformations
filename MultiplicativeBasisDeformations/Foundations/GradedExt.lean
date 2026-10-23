@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.BarComplex
+module
+
+public import MultiplicativeBasisDeformations.Foundations.BarComplex
 
 /-!
 # Graded modules and graded `Ext` via the bar complex
@@ -15,6 +17,8 @@ The bar complex is taken over `R` rather than relative to `S`; both compute `Ext
 `Ext` is proved in `ExtResolutions.lean`: for every graded projective resolution, the `Ext`
 computed from it vanishes exactly when the bar `Ext` does (`GRes.extVanish_iff`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -640,11 +644,11 @@ def twist {t : ℤ} (F : Bar.Cochain Λ (M →ₗ[R] N)) (hF : Good MM NN 1 t F)
     · simp only [LinearMap.mk₂_apply, map_add, LinearMap.add_apply, NN.act_mul, h']
       abel
     · simp [MM.act_mul]
-  gr := twistGr t
+  gr := twistGr (MM := MM) (NN := NN) t
   act_hom p q x a hx ha := by
     rw [twistGr_isHom (MM := MM) (NN := NN)] at hx ⊢
-    refine ⟨?_, MM.act_hom _ _ _ _ hx.2 ha⟩
     simp only [LinearMap.mk₂_apply]
+    refine ⟨?_, MM.act_hom _ _ _ _ hx.2 ha⟩
     have h1 := NN.act_hom _ _ _ _ hx.1 ha
     have h2 := hF.deg (single a) (fun _ ↦ q) p x.2 (fun i hi ↦ by
       obtain rfl : i = 0 := by omega

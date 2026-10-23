@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.ExtHigher
-import MultiplicativeBasisDeformations.Foundations.SquareZero
-import MultiplicativeBasisDeformations.Foundations.RowRotation
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ExtHigher
+public import MultiplicativeBasisDeformations.Foundations.SquareZero
+public import MultiplicativeBasisDeformations.Foundations.RowRotation
 
 /-!
 # Hochschild classes and mesh corrections (Proposition 7.6, the map `Ψ`)
@@ -18,6 +20,8 @@ Here: the arrow maps `fA` on evaluated modules, the choice data `LiftData`
 (module lifts and arrow lifts), the mesh error `zE`, its representative
 `zhat ∈ C_{q+2}(τx, x)`, and the class `Ψ ∈ coker D_{q+1}`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

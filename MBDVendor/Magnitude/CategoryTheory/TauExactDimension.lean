@@ -1,7 +1,9 @@
-import Mathlib.CategoryTheory.Linear.Basic
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
-import MBDVendor.QSE.CategoryTheory.CategoricalRadicalIdeal
-import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
+module
+
+public import Mathlib.CategoryTheory.Linear.Basic
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+public import MBDVendor.QSE.CategoryTheory.CategoricalRadicalIdeal
+public import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
 
 /-!
 # Dimension recurrence from a strict right tau-sequence
@@ -15,6 +17,8 @@ This file constructs the radical as a linear subspace and proves the resulting
 finite-dimensional equality.  It is the linear-algebraic heart of the mesh/
 Hom inverse recurrence.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

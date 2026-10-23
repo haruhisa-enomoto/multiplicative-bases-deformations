@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.FamilyCriterionGen
-import MultiplicativeBasisDeformations.Refinements.SplitRelative
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FamilyCriterionGen
+public import MultiplicativeBasisDeformations.Refinements.SplitRelative
 
 /-!
 # Proposition 2.10(2): `A₀` is basic
@@ -9,6 +11,8 @@ vertex idempotents of `A₀` are primitive (`FpA0`); a corner element `e_i x e_j
 no degree-zero part (degree zero is spanned by the vertex idempotents, `VxG`), so an inverse pair
 `x ∈ e_iA₀e_j`, `y ∈ e_jA₀e_i` would put `e_i = xy` in positive degree (`isBasic_A0`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

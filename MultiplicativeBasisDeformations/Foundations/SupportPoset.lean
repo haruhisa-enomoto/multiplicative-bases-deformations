@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CoverCategory
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CoverCategory
 
 /-!
 # Lemma 4.10: the support poset of a thin module
@@ -18,6 +20,8 @@ the incidence algebra, sending a morphism to its action on `M`
 (`qSrc`, `qSnk`). Hence the incidence algebra is representation-finite
 (Lemma 4.6 applied to the quotient).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

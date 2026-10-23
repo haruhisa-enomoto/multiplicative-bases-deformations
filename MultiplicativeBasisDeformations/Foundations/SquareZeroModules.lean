@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.SquareZero
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SquareZero
 
 /-!
 # Lemma 6.6 for graded `Λ_μ`-modules
@@ -17,6 +19,8 @@ with the lift of an `ActLift` (`MuMod.exists_model`), which gives existence (`ex
 uniqueness up to a graded isomorphism reducing to the identity (`muMod_unique`) and the lifting
 of maps (`muMod_mapLift`) in this form.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

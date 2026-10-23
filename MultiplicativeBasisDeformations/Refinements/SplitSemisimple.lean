@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.SplitRelative
+module
+
+public import MultiplicativeBasisDeformations.Refinements.SplitRelative
 
 /-!
 # Lemma 6.4 for a split semisimple `S = Λ₀`
@@ -20,6 +22,8 @@ transported from the root corners: `Φ(a) = Σ_{i,j} L_{i,rt i} φ0(E_{rt i,i} a
 which is `S`-bilinear (`Φ_left`, `Φ_right`), unital and has leading term the identity
 (`Φ_lead`). The statement is `splitPositiveDeformation_ss`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

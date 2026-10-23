@@ -1,9 +1,11 @@
-import MultiplicativeBasisDeformations.Refinements.FamilyArrows
-import MultiplicativeBasisDeformations.Refinements.FamilySpan
-import MultiplicativeBasisDeformations.Refinements.LiftedMeshData
-import MultiplicativeBasisDeformations.Refinements.LiftedCorner
-import MultiplicativeBasisDeformations.Refinements.LiftedRadical
-import MultiplicativeBasisDeformations.Foundations.PsiInjective
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FamilyArrows
+public import MultiplicativeBasisDeformations.Refinements.FamilySpan
+public import MultiplicativeBasisDeformations.Refinements.LiftedMeshData
+public import MultiplicativeBasisDeformations.Refinements.LiftedCorner
+public import MultiplicativeBasisDeformations.Refinements.LiftedRadical
+public import MultiplicativeBasisDeformations.Foundations.PsiInjective
 
 /-!
 # Retained mesh coefficients at `t = 1` (Proposition 12.8, mesh presentations)
@@ -17,6 +19,8 @@ procedure is triangular and finite. It produces polynomials `F_i(t)` in the mesh
 At the fibre `t = 1`: lifted arrows (`ArrowL`) are realized on paths (`pathR`); their realizations
 have the expected order, leading term, weights in the cone and bottom part (`pathR_props`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

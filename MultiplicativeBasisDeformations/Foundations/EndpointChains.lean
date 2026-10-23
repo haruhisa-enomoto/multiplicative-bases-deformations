@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.Rays
-import MultiplicativeBasisDeformations.Foundations.RepFinite
-import MultiplicativeBasisDeformations.Foundations.CornerRepFinite
-import MBDVendor.Magnitude.LinearAlgebra.LocalAlgebraResidue
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Rays
+public import MultiplicativeBasisDeformations.Foundations.RepFinite
+public import MultiplicativeBasisDeformations.Foundations.CornerRepFinite
+public import MBDVendor.Magnitude.LinearAlgebra.LocalAlgebraResidue
 
 /-!
 # Endpoint subbimodules form chains
@@ -20,6 +22,8 @@ primitive idempotents `e_x`, put `R_x = e_xAe_x`.
   successive quotients.
 * For `f ≠ 0`, `R_xfR_y = R_xf` or `fR_y`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

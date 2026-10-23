@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.NormedBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.NormedBasis
 
 /-!
 # Right modules, representation-finite algebras, and the radical of `ind(mod A)`
@@ -24,6 +26,8 @@ manuscript's `fg` is Lean's `f ≫ g`.
 * `Irr(X, Y) = J(X, Y) / J²(X, Y)`.
 * Almost split sequences.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

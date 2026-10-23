@@ -1,6 +1,8 @@
-import Mathlib.Algebra.BigOperators.Fin
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtDirectFinite
-import MBDVendor.QSE.CategoryTheory.IyamaNakayamaWeight
+module
+
+public import Mathlib.Algebra.BigOperators.Fin
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtDirectFinite
+public import MBDVendor.QSE.CategoryTheory.IyamaNakayamaWeight
 
 /-!
 # Label weights in a finite Krull--Schmidt category
@@ -13,6 +15,8 @@ isomorphism-invariant, biproduct-additive weight on all objects.
 This is the classification-free weight extension used in Iyama's strictness
 argument.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

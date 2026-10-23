@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.FormFunctor
-import MultiplicativeBasisDeformations.Foundations.GradedLocal
-import MultiplicativeBasisDeformations.Foundations.LocalMesh
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FormFunctor
+public import MultiplicativeBasisDeformations.Foundations.GradedLocal
+public import MultiplicativeBasisDeformations.Foundations.LocalMesh
 
 /-!
 # Exact meshes of a scalar mesh category and their descent to a prime field
@@ -14,6 +16,8 @@ are exact (`MeshExact`). For `k(Γ_A)` this is Proposition 2.6(1)(2) (`IndSkelet
 exactness of the meshes of `C(Q, c)` over `k`, for a gauge `c = η · (ι ∘ u) · μ μ`, implies that of
 `C(Q, u)` over the subfield `K`, through the form functor and its retractions (`FormFunctor`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

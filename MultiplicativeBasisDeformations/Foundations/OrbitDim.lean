@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.KrullTrdeg
+module
+
+public import MultiplicativeBasisDeformations.Foundations.KrullTrdeg
 
 /-!
 # Lemma 8.8, geometric part: finitely many orbits cannot cover a large zero set
@@ -23,6 +25,8 @@ Formalization of the dimension count:
 * (step 3) by the Nullstellensatz a prime over `I` contains some `J_{x,c}`, so
   `dim k[x]/I ≤ D − 1`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

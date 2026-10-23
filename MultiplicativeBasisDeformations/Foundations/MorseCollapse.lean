@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.FreeGroupoidVertex
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FreeGroupoidVertex
 
 /-!
 # Collapsing a 2-complex along an acyclic matching
@@ -13,6 +15,8 @@ edges, each matched edge is expressed through the remaining ones — the
 source's "eliminate these edges and triangles from one end of the chain" —
 and `Π` is isomorphic to the free groupoid on the unmatched edges.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

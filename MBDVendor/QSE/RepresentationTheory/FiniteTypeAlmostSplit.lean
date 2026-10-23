@@ -1,6 +1,8 @@
-import MBDVendor.QSE.RepresentationTheory.AlmostSplitCofinite
-import Mathlib.Algebra.Category.ModuleCat.Biproducts
-import Mathlib.LinearAlgebra.Matrix.FiniteDimensional
+module
+
+public import MBDVendor.QSE.RepresentationTheory.AlmostSplitCofinite
+public import Mathlib.Algebra.Category.ModuleCat.Biproducts
+public import Mathlib.LinearAlgebra.Matrix.FiniteDimensional
 
 /-!
 # Almost-split morphisms for a finite indecomposable skeleton
@@ -14,6 +16,8 @@ The construction is intrinsic: it uses only the radical Hom-spaces between
 the chosen indecomposables and their finite biproducts.  No presentation or
 classification of the algebra or its modules enters.
 -/
+
+@[expose] public section
 
 noncomputable section
 
@@ -32,11 +36,11 @@ variable {K : Type uK} [Field K]
 attribute [local instance]
   HasFiniteBiproducts.of_hasFiniteCoproducts
 
-private abbrev asHom {X Y : FGModuleCat.{w} R}
+abbrev asHom {X Y : FGModuleCat.{w} R}
     (f : X →ₗ[R] Y) : X ⟶ Y :=
   ConcreteCategory.ofHom f
 
-private theorem zero_not_isSplitEpi (x z : ι) :
+theorem zero_not_isSplitEpi (x z : ι) :
     ¬ IsSplitEpi (asHom (0 : σ.obj x →ₗ[R] σ.obj z)) := by
   intro h
   letI : IsSplitEpi (asHom (0 : σ.obj x →ₗ[R] σ.obj z)) := h

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.TraceE78Char2
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TraceE78Char2
 
 /-!
 # Exceptional twisted traces in characteristic two (Appendix B)
@@ -16,6 +18,8 @@ closed paths along `c, b`; then `x^m = y³ = (x + y)² = 0` with `m = L c + 2`.
   second with `w = ξ₃` gives `[ξ₅] = 0`. Degree five is already spanned by `ξ₆`."
   (`trace_E6_twist_c2`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

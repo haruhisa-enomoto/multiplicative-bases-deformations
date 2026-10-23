@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CharBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CharBasis
 
 /-!
 # Connectedness of the Auslander–Reiten quiver in Lemma 7.4 and Proposition 7.5
@@ -12,6 +14,8 @@ walk (`hK`), and Proposition 7.2(1) assumes that the projectives of `A₀` are c
 (`aconn_of_walk`, `hK_of_QConn`), and lifted projectives in one component of the lifted quiver
 are connected in `L` (`conn_of_aconn`), hence by nonzero pieces of `A₀` (`A0Conn_of_QConn`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

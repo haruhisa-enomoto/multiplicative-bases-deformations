@@ -1,4 +1,6 @@
-import MBDVendor.QSE.CategoryTheory.IyamaRightSuccessorSpecialness
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaRightSuccessorSpecialness
 
 /-!
 # Infinite special right ladders
@@ -12,6 +14,8 @@ is retained explicitly for the radical-power argument in Lemma 6.4.1(1)(i).
 The construction is entirely categorical: it uses no presentation or
 classification of a concrete algebra or its modules.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

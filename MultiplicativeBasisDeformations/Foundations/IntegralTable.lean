@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralModuleLift
-import MultiplicativeBasisDeformations.Foundations.TableAlg
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralModuleLift
+public import MultiplicativeBasisDeformations.Foundations.TableAlg
 
 /-!
 # The graded algebra `𝒪P` and its reduction
@@ -9,6 +11,8 @@ commutative ring is graded by the degrees of the rays (`galgLin`), and reduction
 coefficients along a ring map is a ring map `𝒪P → kP` (`redLin`). This is the algebra
 `A^{(4)} = 𝒪P` of `integral-deformations.tex`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

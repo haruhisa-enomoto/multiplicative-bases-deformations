@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.WeightDivisibility
+module
+
+public import MultiplicativeBasisDeformations.Foundations.WeightDivisibility
 
 /-!
 # Lemma 4.11(2): restriction of multiplicative weights over a source
@@ -16,6 +18,8 @@ comparabilities. The splitting (`ext`, `res_ext`) is the source's: on each compo
 values are the object values of Lemma 4.9 (`ratio_of_mult`), normalized to one at a chosen root;
 the normalization makes them unique, hence multiplicative in the weight.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

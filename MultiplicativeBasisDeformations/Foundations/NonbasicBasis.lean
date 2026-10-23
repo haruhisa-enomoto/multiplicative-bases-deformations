@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.CornerRadical
-import MultiplicativeBasisDeformations.Foundations.PrimitiveDecomposition
-import MultiplicativeBasisDeformations.Foundations.A0Normed
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CornerRadical
+public import MultiplicativeBasisDeformations.Foundations.PrimitiveDecomposition
+public import MultiplicativeBasisDeformations.Foundations.A0Normed
 
 /-!
 # Lemma 2.1: normed bases from the basic algebra
@@ -18,6 +20,8 @@ single-entry matrices `E_{iα,jβ}(b)`": here `u_s b v_t`. "Their multiplication
 orthogonal idempotents. The radical powers of `A` have the same block
 description with `e_i (rad B₀)^n e_j` in each block."
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

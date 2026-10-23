@@ -1,9 +1,11 @@
-import MultiplicativeBasisDeformations.Foundations.MeshWeightsConn
-import MultiplicativeBasisDeformations.Foundations.Char2Basic
-import MultiplicativeBasisDeformations.Foundations.MeshRadical
-import MultiplicativeBasisDeformations.Foundations.ConnectedIdempotents
-import MultiplicativeBasisDeformations.Foundations.FilteredA
-import MultiplicativeBasisDeformations.Refinements.LiftedCorner
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshWeightsConn
+public import MultiplicativeBasisDeformations.Foundations.Char2Basic
+public import MultiplicativeBasisDeformations.Foundations.MeshRadical
+public import MultiplicativeBasisDeformations.Foundations.ConnectedIdempotents
+public import MultiplicativeBasisDeformations.Foundations.FilteredA
+public import MultiplicativeBasisDeformations.Refinements.LiftedCorner
 
 /-!
 # Lemma 7.4 and Proposition 7.5 for a representation-finite algebra
@@ -16,6 +18,8 @@ projective used in the proofs (`hK_of_A0Conn`; the source cites [ARS, Theorem VI
 connectedness of `Γ_A`). Every mesh of `Γ_A` has a nonzero middle term (`ar_hmid`, from the
 exactness of the mesh data).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

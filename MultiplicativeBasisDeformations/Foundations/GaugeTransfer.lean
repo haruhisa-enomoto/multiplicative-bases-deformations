@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.MeshGauge
-import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshGauge
+public import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
 
 /-!
 # Gauge transformations preserve derivative surjectivity
@@ -12,6 +14,8 @@ functor `Φ : C(Q, c) → C(Q, c')` with `Φ(a) = μ_a a`; and for `f'_a = μ_a�
 `D'(f') = η Φ(D f)`. Hence each row of `C(Q, c')` lies in the image of `D'_m`
 when the corresponding row of `C(Q, c)` lies in that of `D_m`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

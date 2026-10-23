@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.FilteredNormalForm
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FilteredNormalForm
 
 /-!
 # Proposition 5.4 in its general form
@@ -21,6 +23,8 @@ degree `2q - 2 > q` (`exists_correction`); the filtration is finite, so the erro
 resulting functor `C → E` is bijective on Hom spaces by graded injectivity and surjectivity
 (`normalForm`). The case `E = ind(mod A)`, `C = k(Γ_A)` is `IndSkeleton.filteredNormalForm`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,5 +1,7 @@
-import Mathlib.Data.Fintype.Card
-import Mathlib.Tactic
+module
+
+public import Mathlib.Data.Fintype.Card
+public import Mathlib.Tactic
 
 /-!
 # Auslander--Reiten Euler counts and surplus
@@ -14,6 +16,8 @@ If the projective count is the number of simple modules and magnitude is given
 by the Auslander--Reiten Euler characteristic `vertices - arrows + meshes`, its
 surplus over the number of simples is `2 * meshes - arrows`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

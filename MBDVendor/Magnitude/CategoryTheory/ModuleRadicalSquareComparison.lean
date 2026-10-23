@@ -1,7 +1,11 @@
-import MBDVendor.Magnitude.CategoryTheory.CategoricalIrreducibleSpace
-import MBDVendor.QSE.RepresentationTheory.IrreducibleRadicalQuotient
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.CategoricalIrreducibleSpace
+public import MBDVendor.QSE.RepresentationTheory.IrreducibleRadicalQuotient
 
 /-! # Intrinsic and module-skeleton radical-square definitions agree -/
+
+@[expose] public section
 set_option autoImplicit false
 noncomputable section
 open CategoryTheory

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.ARBridge
-import MultiplicativeBasisDeformations.Foundations.MeshCategory
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARBridge
+public import MultiplicativeBasisDeformations.Foundations.MeshCategory
 
 /-!
 # The Auslander--Reiten quiver as a translation quiver
@@ -20,6 +22,8 @@ injective vertices are those whose module is projective, respectively
 injective, in `mod A`. The translation and the dimension identities come from
 the vendored Auslander--Reiten theory through `ARBridge.lean`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

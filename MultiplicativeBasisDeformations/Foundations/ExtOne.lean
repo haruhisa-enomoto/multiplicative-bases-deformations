@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.A0Graded
+module
+
+public import MultiplicativeBasisDeformations.Foundations.A0Graded
 
 /-!
 # `Ext¹` between normalized modules (Lemma 6.3, `n = 1`)
@@ -20,6 +22,8 @@ Here: the evaluated mesh maps `πE`, `ιτ` (`exact_E`, `ιτ_injective`), the r
 almost split property (`exists_factor`, `not_retraction`), and the vanishing
 (`extOne_vanish`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

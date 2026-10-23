@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.RayTransport
-import MultiplicativeBasisDeformations.Foundations.RayStandard
-import MultiplicativeBasisDeformations.Foundations.Prop103
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayTransport
+public import MultiplicativeBasisDeformations.Foundations.RayStandard
+public import MultiplicativeBasisDeformations.Foundations.Prop103
 
 /-!
 # Theorem 11.7(1)(2) in characteristic two
@@ -11,6 +13,8 @@ now proved (`cor105Hyp`), gives a normed multiplicative ray transversal for one 
 primitive idempotents; conjugation (`exists_algEquiv_idempotents`) moves it to any other
 (`exists_rayTransversal_of_algEquiv`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

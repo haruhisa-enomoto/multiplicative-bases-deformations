@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Corner algebras
@@ -7,6 +9,8 @@ For an idempotent `e` of a `k`-algebra `A`, Mathlib's corner ring
 `IsIdempotentElem.Corner` is `eAe` with identity `e`. This file makes it a
 `k`-algebra, with `c ↦ c • e` as structure map.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

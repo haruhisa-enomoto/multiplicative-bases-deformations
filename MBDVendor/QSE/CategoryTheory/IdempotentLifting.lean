@@ -1,8 +1,10 @@
-import Mathlib.CategoryTheory.Endomorphism
-import Mathlib.CategoryTheory.Functor.ReflectsIso.Basic
-import Mathlib.CategoryTheory.Idempotents.Basic
-import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
-import Mathlib.RingTheory.Idempotents
+module
+
+public import Mathlib.CategoryTheory.Endomorphism
+public import Mathlib.CategoryTheory.Functor.ReflectsIso.Basic
+public import Mathlib.CategoryTheory.Idempotents.Basic
+public import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
+public import Mathlib.RingTheory.Idempotents
 
 /-!
 # Idempotent completeness from nilpotent functor kernels
@@ -13,6 +15,8 @@ full, essentially surjective additive functor out of an idempotent-complete
 category has idempotent-complete target as soon as its endomorphism kernels
 are elementwise nilpotent.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.MGrading
-import MultiplicativeBasisDeformations.Foundations.HomBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MGrading
+public import MultiplicativeBasisDeformations.Foundations.HomBasis
 
 /-!
 # Coordinates of a simultaneous integer grading
@@ -10,6 +12,8 @@ any grading commuting with the `ℤʳ`-grading (`coord_preserve`). A `ℤ`-gradi
 grading by an abelian group combine into one grading (`MGr.comb`), and a finite-dimensional
 space has a basis homogeneous for both (`exists_homBasis_comb`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

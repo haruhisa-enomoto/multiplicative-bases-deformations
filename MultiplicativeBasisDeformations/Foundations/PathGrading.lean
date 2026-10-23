@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.MeshCategory
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshCategory
 
 /-!
 # The path-length grading of a linear path category
@@ -8,6 +10,8 @@ every morphism is the finite sum of its homogeneous components, and
 composition adds degrees (`graded-category.tex`: "The quotient is
 graded by path length").
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

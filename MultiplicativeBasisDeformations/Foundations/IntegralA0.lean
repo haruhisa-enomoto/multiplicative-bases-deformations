@@ -1,9 +1,11 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralTable
-import MultiplicativeBasisDeformations.Foundations.HomBasis
-import MultiplicativeBasisDeformations.Foundations.A0Graded
-import MultiplicativeBasisDeformations.Foundations.PsiInjective
-import MultiplicativeBasisDeformations.Foundations.ZModFour
-import MultiplicativeBasisDeformations.Foundations.GradedBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralTable
+public import MultiplicativeBasisDeformations.Foundations.HomBasis
+public import MultiplicativeBasisDeformations.Foundations.A0Graded
+public import MultiplicativeBasisDeformations.Foundations.PsiInjective
+public import MultiplicativeBasisDeformations.Foundations.ZModFour
+public import MultiplicativeBasisDeformations.Foundations.GradedBasis
 
 /-!
 # `A⁽⁴⁾ = 𝒪P` and its reduction to `A⁽²⁾` (Proposition 10.1, the algebra)
@@ -17,6 +19,8 @@ element of its degree and the vertex rays to the vertex idempotents (for `C⁽²
 `IndSkeleton.Θ₂`). Then `A⁽⁴⁾ = 𝒪P` is graded by the degrees of the rays (`galgO`), and the
 reduction `π : 𝒪P → 𝔽₂P ≅ A⁽²⁾` is a reduction of graded algebras (`isRed_πO`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Independent.Skeleton
-import MultiplicativeBasisDeformations.Foundations.FormFunctor
-import MultiplicativeBasisDeformations.Statements.PartOne
+module
+
+public import MultiplicativeBasisDeformations.Independent.Skeleton
+public import MultiplicativeBasisDeformations.Foundations.FormFunctor
+public import MultiplicativeBasisDeformations.Statements.PartOne
 
 /-!
 # The independent mesh category and the scalar mesh categories of `Γ_A`
@@ -14,6 +16,8 @@ category with all coefficients one. A gauge transformation (Lemma 4.4) then
 identifies it with the scalar mesh category whose coefficients come from the
 almost split sequences.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

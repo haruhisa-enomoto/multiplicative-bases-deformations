@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.RaySetting
-import MultiplicativeBasisDeformations.Foundations.OppositeRepFinite
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RaySetting
+public import MultiplicativeBasisDeformations.Foundations.OppositeRepFinite
 
 /-!
 # The opposite ray system
@@ -9,6 +11,8 @@ the opposite algebra". `Tab.op` reverses rays and products; its linearization is
 algebra of `kP` (`linOpEquiv`), so it is representation-finite when `kP` is
 (`isRepresentationFinite_op`); `Sys.op` carries Setting 8.4 over.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

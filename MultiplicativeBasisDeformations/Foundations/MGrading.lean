@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Gradings of modules by an abelian group
@@ -14,6 +16,8 @@ weight `g + γ`; the weight-`γ` part of an arbitrary linear map is `pr γ φ`. 
 solutions of linear equations are obtained by applying `pr` to arbitrary solutions,
 since `pr` commutes with composition by shifting maps (`pr_comp_left`, `pr_comp_right`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

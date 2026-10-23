@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ARBridge
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARBridge
 
 /-!
 # The radical filtration of `ind(mod A)`
@@ -13,6 +15,8 @@ the vendored nilpotence of the categorical radical of `mod A`, which is proved
 by that argument (`MBDVendor.Magnitude.Algebra.RightModuleRadical`,
 `nilpotentRadicalDataOfArtinianGenerator`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

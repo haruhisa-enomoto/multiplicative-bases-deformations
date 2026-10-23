@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.TraceAlgebra
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TraceAlgebra
 
 /-!
 # Twisted traces when two is invertible
@@ -9,6 +11,8 @@ a twisted trace kills every element `r` with `2^n r` in the ideal of relations.
 It therefore factors through the quotient `R₂` of the free ring by the
 `2`-saturation of the relations, where `2 r = 0` implies `r = 0`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

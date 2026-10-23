@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Refinements.SplitDeformation
-import MultiplicativeBasisDeformations.Foundations.HochschildCochains
+module
+
+public import MultiplicativeBasisDeformations.Refinements.SplitDeformation
+public import MultiplicativeBasisDeformations.Foundations.HochschildCochains
 
 /-!
 # Lemma 6.4 as stated
@@ -16,6 +18,8 @@ For `S = Λ₀` with its vertex idempotents (`Vertices`): the splitting of `exis
 `μ_q`, `q > 0`, is a normalized `S`-relative cochain (`μ_isRelS`), and the statement is assembled
 in `splitPositiveDeformation`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

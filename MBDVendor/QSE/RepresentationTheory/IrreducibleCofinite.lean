@@ -1,6 +1,8 @@
-import Mathlib.CategoryTheory.Preadditive.Injective.Basic
-import MBDVendor.QSE.RepresentationTheory.AdditiveSubcategory
-import MBDVendor.QSE.RepresentationTheory.SplitProjective
+module
+
+public import Mathlib.CategoryTheory.Preadditive.Injective.Basic
+public import MBDVendor.QSE.RepresentationTheory.AdditiveSubcategory
+public import MBDVendor.QSE.RepresentationTheory.SplitProjective
 
 /-!
 # Irreducible maps and the converse cofinite-two criterion
@@ -15,6 +17,8 @@ The definition of irreducibility is categorical: the map itself is neither
 a split monomorphism nor a split epimorphism, and in every factorization the
 first factor is a split monomorphism or the second is a split epimorphism.
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,8 +1,10 @@
-import Mathlib.CategoryTheory.Linear.Basic
-import Mathlib.CategoryTheory.Preadditive.Biproducts
-import Mathlib.LinearAlgebra.Dimension.Constructions
-import Mathlib.LinearAlgebra.Dimension.Finite
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+module
+
+public import Mathlib.CategoryTheory.Linear.Basic
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
+public import Mathlib.LinearAlgebra.Dimension.Constructions
+public import Mathlib.LinearAlgebra.Dimension.Finite
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 
 /-!
 # Linear Hom spaces and finite biproducts
@@ -12,6 +14,8 @@ finite biproduct and the family of their components.  They are used to turn a
 chosen Krull--Schmidt middle-term decomposition into the corresponding Hom-
 dimension sum.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

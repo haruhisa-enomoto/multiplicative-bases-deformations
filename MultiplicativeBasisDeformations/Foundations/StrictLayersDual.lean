@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.StrictLayers
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtConormalForm
-import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StrictLayers
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtConormalForm
+public import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
 
 /-!
 # Lemma 2.5 in the opposite category
@@ -17,6 +19,8 @@ injective labels." This file transfers the hypotheses of the abstract Lemma 2.5
 * a left tau-sequence `Y → E → T` with epic second map is a right radical
   approximation of `Y` in `Cᵒᵖ` (`approxOfLeftTau`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

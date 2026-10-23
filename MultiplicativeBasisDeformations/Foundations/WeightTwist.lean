@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.SupportPoset
-import MultiplicativeBasisDeformations.Foundations.WeightDivisibility
-import MultiplicativeBasisDeformations.Foundations.Twist
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SupportPoset
+public import MultiplicativeBasisDeformations.Foundations.WeightDivisibility
+public import MultiplicativeBasisDeformations.Foundations.Twist
 
 /-!
 # Scalar automorphisms act trivially on module classes
@@ -17,6 +19,8 @@ defines the automorphism `σ_d` of the covering algebra `cov D s` scaling the
 (Lemma 4.11(2)) `σ_d = σ_e^N` for the `N` of `twist_pow_iso`, so `σ_d` fixes
 every finite-dimensional indecomposable class (`weight_twist_iso`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

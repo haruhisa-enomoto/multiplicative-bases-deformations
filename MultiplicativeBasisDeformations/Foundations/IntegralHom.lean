@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralLifts
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralLifts
 
 /-!
 # Proposition 10.1(1): the Hom modules of `E₄` are free, and `E₄/2E₄ = C⁽²⁾`
@@ -14,6 +16,8 @@ its kernel is `2H̃_d` (`ker_redHom`), and `2f = 0` forces `red f = 0` (`redHom_
 finite `ℤ/4`-module with such a reduction onto an `𝔽₂`-space is free on lifts of a basis
 (`free_of_red`). So `H̃_d` is free with `H̃_d/2H̃_d = H_d` (`homFree`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.A0RepFinite
+module
+
+public import MultiplicativeBasisDeformations.Foundations.A0RepFinite
 
 /-!
 # Proposition 2.10(1): evaluation is an equivalence `add C ≃ mod A₀`
@@ -12,6 +14,8 @@ projective labels (`ModFG`). Evaluation is a functor (`evFunctor`); it is faithf
 (`evMap_injective`), full (`evMap_surjective`) and essentially surjective (`InjData.essSurj`), hence
 an equivalence (`evFunctor_isEquivalence`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

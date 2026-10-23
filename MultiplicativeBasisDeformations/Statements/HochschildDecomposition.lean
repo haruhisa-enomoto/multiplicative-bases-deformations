@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Statements.IntegerWeights
-import MultiplicativeBasisDeformations.Foundations.CharSummands
-import MultiplicativeBasisDeformations.Refinements.LiftedCorner
+module
+
+public import MultiplicativeBasisDeformations.Statements.IntegerWeights
+public import MultiplicativeBasisDeformations.Foundations.CharSummands
+public import MultiplicativeBasisDeformations.Refinements.LiftedCorner
 
 /-!
 # Proposition 7.6, the characteristic-two decomposition, for a representation-finite algebra
@@ -12,6 +14,8 @@ modulo coboundaries in each internal degree `q > 0` (`exists_rel_cobdry`), the c
 taken in `L = W(P)` through the universal mesh weight (Lemma 7.4), and the rows are those of
 Proposition 6.1. The injection `Ψ` of the first part is `fullHochschildComparison_ar`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

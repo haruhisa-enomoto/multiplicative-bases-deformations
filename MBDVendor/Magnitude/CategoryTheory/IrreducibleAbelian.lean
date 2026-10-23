@@ -1,4 +1,6 @@
-import MBDVendor.QSE.RepresentationTheory.AlmostSplitCofinite
+module
+
+public import MBDVendor.QSE.RepresentationTheory.AlmostSplitCofinite
 
 /-!
 # Irreducible morphisms in an abelian category
@@ -8,6 +10,8 @@ morphism in an abelian category is either monic or epic.  This is the
 categorical step used in Ringel's support argument for an almost-split
 sequence.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

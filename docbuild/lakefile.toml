@@ -3,8 +3,8 @@ version = "0.1.0"
 
 [[require]]
 name = "doc-gen4"
-git = "https://github.com/leanprover/doc-gen4.git"
-rev = "e2af49a7b7e5e1a9224008c1f15e7aa4f58a4015"
+git = "https://github.com/leanprover/doc-gen4"
+rev = "20b0edcaf3d2882fe2c906158e79f2f5dbebe57c"
 
 [[require]]
 name = "multiplicative_basis_deformations"

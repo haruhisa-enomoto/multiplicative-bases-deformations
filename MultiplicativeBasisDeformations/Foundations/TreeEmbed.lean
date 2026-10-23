@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.SubstarRestriction
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SubstarRestriction
 
 /-!
 # Restricting `Π` of a tree to a full subtree
@@ -10,6 +12,8 @@ ideal of `Π(Δ)` with the outside of the image deleted into the ideal of `Π(Δ
 intervals in the middle of a path (Appendix B, odd quotients of even `A`:
 "retain the first `(r+1)/2` levels").
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

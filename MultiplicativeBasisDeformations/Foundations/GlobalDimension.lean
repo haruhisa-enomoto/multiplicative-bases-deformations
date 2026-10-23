@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ProjectiveEvaluation
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ProjectiveEvaluation
 
 /-!
 # Global dimension at most two (proof of Proposition 2.10)
@@ -15,6 +17,8 @@ horseshoe construction, along a composition series); by Schanuel's lemma every
 second syzygy is projective; a finite-dimensional projective module is some
 `R_W` (tops and Nakayama's lemma).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

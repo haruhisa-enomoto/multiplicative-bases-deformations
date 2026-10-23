@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
 
 /-!
 # Fibre algebras of deformation families (toward Proposition 12.8)
@@ -9,6 +11,8 @@ the underlying space of `Λ` with an associative unital bilinear product. `Fib A
 the length filtration of `Λ` makes `Fib A` a positive filtered deformation of `Λ`
 (`Fib.posFiltration`, Definition 6.2).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

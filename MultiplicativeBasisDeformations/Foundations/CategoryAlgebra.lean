@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # The category algebra of a finite family of objects
@@ -13,6 +15,8 @@ category we realize `Λ` as `⊕_{x,y} C(F x, F y)` with the product in path ord
 `(a · m)_x = ∑_y a_{xy} ≫ m_y`. The algebra `A₀` of Construction 2.8 is the
 category algebra of the projective labels.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

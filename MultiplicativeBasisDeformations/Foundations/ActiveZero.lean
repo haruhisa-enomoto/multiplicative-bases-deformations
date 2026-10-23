@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.StemProduct
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StemProduct
 
 /-!
 # Corollary 8.13: active zero pairs
@@ -7,6 +9,8 @@ import MultiplicativeBasisDeformations.Foundations.StemProduct
 `s : y → z` with `rs = 0` and `r * s ≠ 0`, both are generating, `r * s = r q_y s`, and this
 ray is annihilated by both endpoint radicals.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

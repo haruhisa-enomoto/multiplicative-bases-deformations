@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
 
 /-!
 # The path-length grading of a scalar mesh category
@@ -11,6 +13,8 @@ so all sufficiently long paths vanish (`exists_pathMor_eq_zero`); this is the
 first step of the proof of Proposition 4.1
 (`periodic-mesh-calculations.tex`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

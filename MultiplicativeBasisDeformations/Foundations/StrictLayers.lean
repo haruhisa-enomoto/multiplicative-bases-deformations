@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.RadicalFiltration
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
-import MBDVendor.QSE.RepresentationTheory.AlmostSplitKernel
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RadicalFiltration
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
+public import MBDVendor.QSE.RepresentationTheory.AlmostSplitKernel
 
 /-!
 # Lemma 2.5: strict radical layers
@@ -34,6 +36,8 @@ monomorphisms simultaneously. In Lean composition is written `z ≫ a` for the
 manuscript's `a ∘ z`, and the exponents are shifted: `z ≫ a ∈ I^{n+1}` implies
 `z ∈ I^n`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

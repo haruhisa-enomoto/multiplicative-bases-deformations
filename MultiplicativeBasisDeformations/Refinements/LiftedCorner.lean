@@ -1,8 +1,10 @@
-import MultiplicativeBasisDeformations.Refinements.LiftedMeshData
-import MultiplicativeBasisDeformations.Refinements.RegularLift
-import MultiplicativeBasisDeformations.Foundations.ExtProjective
-import MultiplicativeBasisDeformations.Foundations.FiltrationDim
-import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
+module
+
+public import MultiplicativeBasisDeformations.Refinements.LiftedMeshData
+public import MultiplicativeBasisDeformations.Refinements.RegularLift
+public import MultiplicativeBasisDeformations.Foundations.ExtProjective
+public import MultiplicativeBasisDeformations.Foundations.FiltrationDim
+public import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
 
 /-!
 # The projective corner of the lifted modules is `B` (toward Corollary 12.1)
@@ -13,6 +15,8 @@ splitting of `B` respecting them (Lemma 6.4). The lift `M_p^B` at a projective l
 regular module `φ(e_p) B` (Proposition 6.5(3)), by uniqueness of lifts; the corner algebra of
 the lifted modules at the projective labels is therefore `B` (`cornerEquiv`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

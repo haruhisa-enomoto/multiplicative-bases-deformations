@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.SectionalTree
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SectionalTree
 
 /-!
 # The covering `ℤΔ → Q` of a periodic component
@@ -13,6 +15,8 @@ conclusion on incoming stars."
 In height coordinates the vertex `(p, t)` of `ℤΔ` has `t = 2j + |p|`, and
 `π(p, t) = τ^{-j}(end p)`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

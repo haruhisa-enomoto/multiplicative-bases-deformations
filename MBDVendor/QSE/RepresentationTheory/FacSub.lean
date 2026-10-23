@@ -1,6 +1,8 @@
-import Mathlib.CategoryTheory.FintypeCat
-import MBDVendor.QSE.ConvexGeometry.Basic
-import MBDVendor.QSE.RepresentationTheory.FiniteType
+module
+
+public import Mathlib.CategoryTheory.FintypeCat
+public import MBDVendor.QSE.ConvexGeometry.Basic
+public import MBDVendor.QSE.RepresentationTheory.FiniteType
 
 /-!
 # Quotient and submodule generation on an indecomposable skeleton
@@ -10,6 +12,8 @@ explicit finite biproduct presentations.  The finite indexing type is
 bundled so that iterated finite sums can be flattened without any
 cardinality bookkeeping.
 -/
+
+@[expose] public section
 
 noncomputable section
 

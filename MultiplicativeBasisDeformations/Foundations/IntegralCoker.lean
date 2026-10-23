@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.ReductionMesh
-import MultiplicativeBasisDeformations.Foundations.ResidualCorrection
-import MultiplicativeBasisDeformations.Foundations.ZModFour
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ReductionMesh
+public import MultiplicativeBasisDeformations.Foundations.ResidualCorrection
+public import MultiplicativeBasisDeformations.Foundations.ZModFour
 
 /-!
 # Lemma B.2: the derivative cokernels over `ℤ/4` are killed by two
@@ -17,6 +19,8 @@ these are `IndSkeleton.prime_cokerSpan`) which are killed by two over every coef
 `𝒪`-combination of these rows plus a derivative, so twice it is a derivative
 (`two_smul_mem_imageD`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

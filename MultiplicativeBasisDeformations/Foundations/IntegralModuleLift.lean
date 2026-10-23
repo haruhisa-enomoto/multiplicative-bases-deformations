@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralModules
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralModules
 
 /-!
 # Lifting a graded module to `ℤ/4` (Proposition 10.1)
@@ -12,6 +14,8 @@ For a graded `Λ`-module `M` with a homogeneous basis `β` and `Ext²_0(M, M) = 
 module `ι → 𝒪` carries a graded `Λ̃`-action lifting that of `M` (`exists_liftMod`). The
 unit is automatic: the action of `1` is an idempotent congruent to the identity.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,8 +1,10 @@
-import Mathlib.RingTheory.Artinian.Ring
-import Mathlib.RingTheory.Ideal.BigOperators
-import MBDVendor.QSE.CategoryTheory.CategoricalRadicalIdeal
-import MBDVendor.QSE.CategoryTheory.HomIdealPowers
-import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
+module
+
+public import Mathlib.RingTheory.Artinian.Ring
+public import Mathlib.RingTheory.Ideal.BigOperators
+public import MBDVendor.QSE.CategoryTheory.CategoricalRadicalIdeal
+public import MBDVendor.QSE.CategoryTheory.HomIdealPowers
+public import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
 
 /-!
 # Nilpotence of the radical from a finite additive generator
@@ -16,6 +18,8 @@ at donor commit `d5ba0c48e7a851afd51247ff9cd81fc629e00ed2`.
 Only the finite-generator definitions and nilpotence proof are retained; the
 donor's wider Auslander-equivalence layer is not imported.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

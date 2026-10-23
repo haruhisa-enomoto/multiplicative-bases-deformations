@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.StrictLayersModules
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StrictLayersModules
 
 /-!
 # Radical powers of `ind(mod A)` and of `mod A`
@@ -11,6 +13,8 @@ the general form of `mem_radPow_two_iff`: an intermediate module is
 decomposed into indecomposable summands, and the components of radical maps
 are radical.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

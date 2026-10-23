@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.RayDegree
-import MultiplicativeBasisDeformations.Foundations.FilteredA
-import MultiplicativeBasisDeformations.Foundations.A0Graded
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayDegree
+public import MultiplicativeBasisDeformations.Foundations.FilteredA
+public import MultiplicativeBasisDeformations.Foundations.A0Graded
 
 /-!
 # Lemma 3.7 for the categorical filtration
@@ -23,6 +25,8 @@ For `A` itself, `posFiltA` is the filtration `J^n` of the source (`FilteredA.lea
 radical lies in `J¹` because the degree-zero part of `A₀` has no nonzero nilpotents
 (`lenA0_noNil`). This gives the literal Lemma 3.7 (`IndSkeleton.rayDegree_J`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.RayBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayBasis
 
 /-!
 # Ray products
@@ -11,6 +13,8 @@ subbimodule `M(f,h)` is unchanged. If `fh ∉ M(f,h)`, the chain property forces
 `U(fh) ∖ R(fh)`, is nonzero and has ray `[fh]`. If `fh ∈ M(f,h)`, the changed
 product is still in `M(f,h)`."
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

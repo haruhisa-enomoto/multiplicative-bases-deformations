@@ -17,7 +17,7 @@ A local ring has no idempotents besides `0` and `1`: splitting
 is `1`.
 -/
 
-public section
+@[expose] public section
 
 namespace MBDVendor.QSE.Foundation
 

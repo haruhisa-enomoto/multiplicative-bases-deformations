@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.FamilyTwist
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FamilyTwist
 
 /-!
 # The retained coefficients are nonzero (Proposition 12.8, `a_i ∈ k^*`)
@@ -13,6 +15,8 @@ and arrows are therefore the square-zero lifts of Lemma 6.6 for `μ_j` (`ν1`, `
 specialization `t = ε e_j`; their mesh errors are `λ_j R_j` (`zE_psi`). So `Ψ[μ_j] = λ_j [R_j]`,
 and `λ_j ≠ 0` because `μ_j` is not a coboundary.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

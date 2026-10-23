@@ -1,5 +1,7 @@
-import MBDVendor.Magnitude.Algebra.RightModuleProjectiveBoundary
-import MBDVendor.Magnitude.Algebra.RightModuleTauData
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleProjectiveBoundary
+public import MBDVendor.Magnitude.Algebra.RightModuleTauData
 
 /-!
 # Right tau-sequences for the literal right-module category
@@ -10,6 +12,8 @@ indecomposable, the boundary complex is `0 ⟶ rad P ⟶ P`.  Finite
 componentwise biproducts extend these label meshes to every finitely
 generated right module.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,7 +1,9 @@
-import Mathlib.Algebra.Category.FGModuleCat.Abelian
-import Mathlib.CategoryTheory.Preadditive.Biproducts
-import Mathlib.RingTheory.HopkinsLevitzki
-import MBDVendor.QSE.Foundation.RingTheory.KrullSchmidt.Indecomposable
+module
+
+public import Mathlib.Algebra.Category.FGModuleCat.Abelian
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
+public import Mathlib.RingTheory.HopkinsLevitzki
+public import MBDVendor.QSE.Foundation.RingTheory.KrullSchmidt.Indecomposable
 
 /-!
 # Chosen representatives of indecomposable modules
@@ -15,6 +17,8 @@ The structure is not restricted to representation-finite rings.  Later
 finite-type statements add `[Finite ι]`; the arbitrary-type structural
 theorems use the same interface without that hypothesis.
 -/
+
+@[expose] public section
 
 noncomputable section
 

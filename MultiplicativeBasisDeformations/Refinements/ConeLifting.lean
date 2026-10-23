@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Refinements.ModuleLifting
-import MultiplicativeBasisDeformations.Refinements.WeightCone
+module
+
+public import MultiplicativeBasisDeformations.Refinements.ModuleLifting
+public import MultiplicativeBasisDeformations.Refinements.WeightCone
 
 /-!
 # Weight-homogeneous lifts of module actions (toward Proposition 12.8)
@@ -12,6 +14,8 @@ any correction removing it removes it as well, since the correction equation com
 cone parts (`cbil`). Hence a lifted action with all relative weights in `C`
 (`exists_actFam_cone`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

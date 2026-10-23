@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralPsi
-import MultiplicativeBasisDeformations.Foundations.Cor105A0
-import MultiplicativeBasisDeformations.Foundations.PrimeTable
-import MultiplicativeBasisDeformations.Foundations.PrimeCoker
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralPsi
+public import MultiplicativeBasisDeformations.Foundations.Cor105A0
+public import MultiplicativeBasisDeformations.Foundations.PrimeTable
+public import MultiplicativeBasisDeformations.Foundations.PrimeCoker
 
 /-!
 # Proposition 10.3 in coefficients
@@ -17,6 +19,8 @@ coboundary are `d₁` of coefficients (`coef_of_hcobdry`). For `A` this runs in 
 model `C⁽²⁾` with `Θ₂ : 𝔽₂P ≅ A⁽²⁾` (`IndSkeleton.tab₂`) and the rows of
 `IndSkeleton.prime_cokerSpan`. This proves `IStarHyp`, hence `Cor105Hyp` (`cor105Hyp`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

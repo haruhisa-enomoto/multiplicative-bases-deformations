@@ -1,4 +1,6 @@
-import MBDVendor.QSE.RepresentationTheory.AlmostSplitKernel
+module
+
+public import MBDVendor.QSE.RepresentationTheory.AlmostSplitKernel
 
 /-!
 # Uniqueness and transport of minimal almost-split morphisms
@@ -9,6 +11,8 @@ isomorphic targets.  This file also records the isomorphism-transport and
 kernel/cokernel consequences used to identify Auslander--Reiten translates
 inside a chosen indecomposable skeleton.
 -/
+
+@[expose] public section
 
 noncomputable section
 

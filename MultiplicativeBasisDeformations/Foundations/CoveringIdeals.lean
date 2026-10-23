@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.PathMaps
-import MultiplicativeBasisDeformations.Foundations.HomIdeal
-import Mathlib.Combinatorics.Quiver.Covering
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PathMaps
+public import MultiplicativeBasisDeformations.Foundations.HomIdeal
+public import Mathlib.Combinatorics.Quiver.Covering
 
 /-!
 # Relations along quiver coverings
@@ -19,6 +21,8 @@ relations of the cover map onto relations of the base, every base relation
 starting at `φ X` lifting to one starting at `X`. Then `φ` preserves and
 reflects ideal membership (`mapPaths_mem_ideal_iff`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

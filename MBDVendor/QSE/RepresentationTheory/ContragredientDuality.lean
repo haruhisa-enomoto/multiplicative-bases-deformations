@@ -1,7 +1,11 @@
-import MBDVendor.QSE.RepresentationTheory.ContragredientFunctor
-import MBDVendor.QSE.RepresentationTheory.Biduality
-import MBDVendor.QSE.RepresentationTheory.ContravariantTransport
-import MBDVendor.QSE.RepresentationTheory.DualityConsequences
+module
+
+public import MBDVendor.QSE.RepresentationTheory.ContragredientFunctor
+public import MBDVendor.QSE.RepresentationTheory.Biduality
+public import MBDVendor.QSE.RepresentationTheory.ContravariantTransport
+public import MBDVendor.QSE.RepresentationTheory.DualityConsequences
+
+@[expose] public section
 
 noncomputable section
 

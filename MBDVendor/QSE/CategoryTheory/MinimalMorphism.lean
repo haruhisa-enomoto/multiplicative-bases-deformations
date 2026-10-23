@@ -1,6 +1,8 @@
-import Mathlib.CategoryTheory.Iso
-import Mathlib.CategoryTheory.Preadditive.Basic
-import Mathlib.RingTheory.LocalRing.Basic
+module
+
+public import Mathlib.CategoryTheory.Iso
+public import Mathlib.CategoryTheory.Preadditive.Basic
+public import Mathlib.RingTheory.LocalRing.Basic
 
 /-!
 # Minimal morphisms
@@ -8,6 +10,8 @@ import Mathlib.RingTheory.LocalRing.Basic
 The standard right- and left-minimal predicates are useful both for
 almost-split morphisms and for minimal weak kernels and cokernels.
 -/
+
+@[expose] public section
 
 open CategoryTheory
 

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.StarCase
-import MultiplicativeBasisDeformations.Foundations.RowSpan
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarCase
+public import MultiplicativeBasisDeformations.Foundations.RowSpan
 
 /-!
 # Cokernels on a periodic star model spanned by one row (Appendix B)
@@ -13,6 +15,8 @@ cokernel classes are multiples of the class of the row given by `W₀` at the ce
 (`star_span_deg`). This is the analogue of `star_surjective_deg` with a spanning
 word instead of vanishing traces.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -90,7 +94,7 @@ variable (hπ : π.IsCovering) (hτ : ∀ Y, π.obj ((starTree L).ztau Y) = hQ.t
   (hsurj : ∀ x : V, ∃ X, π.obj X = x)
   (ρ : StarV L ≃ StarV L) (hρ : ∀ a b, (starTree L).G.Adj (ρ a) (ρ b) ↔ (starTree L).G.Adj a b)
   (h0 : ρ none = none) (θ : Equiv.Perm (Fin t)) (hL : ∀ i, L (θ i) = L i)
-  (hθ : ∀ i j (hj : j ≤ L i), ρ (ch i j hj) = ch (θ i) j (by rw [hL]; exact hj))
+  (hθ : ∀ i j (hj : j ≤ L i), ρ (ch i j hj) = ch (θ i) j (hj.trans (hL i).ge))
   (c0 : ℕ) (hρp : ∀ v, (starTree L).par (ρ v) = (starTree L).par v + ((c0 : ℤ) : ZMod 2))
   (hdeck : ∀ Z, π.obj (((starTree L).zAct ρ hρ (c0 : ℤ) hρp).obj Z) = π.obj Z)
   (hfib : ∀ X Y : (starTree L).ZVert, π.obj X = π.obj Y →

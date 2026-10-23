@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.NormedBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.NormedBasis
 
 /-!
 # Complete sets of primitive orthogonal idempotents
@@ -10,6 +12,8 @@ finite-dimensional algebra has a complete set of primitive orthogonal
 idempotents (`exists_primitive_decomposition`), as used in Lemma 2.1
 (`graded-category.tex`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

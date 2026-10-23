@@ -1,8 +1,10 @@
-import Mathlib
-import Mathlib.CategoryTheory.Abelian.Basic
-import Mathlib.CategoryTheory.Linear.Basic
-import Mathlib.RingTheory.LocalRing.Basic
-import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
+module
+
+public import Mathlib
+public import Mathlib.CategoryTheory.Abelian.Basic
+public import Mathlib.CategoryTheory.Linear.Basic
+public import Mathlib.RingTheory.LocalRing.Basic
+public import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
 
 /-!
 # Lemma 5.2 in its abstract form
@@ -24,6 +26,8 @@ invertible one would make `X` a summand of an indecomposable object of `Σ`
 (`deletionBrick`). Indecomposable objects are those with local endomorphism rings
 (Krull–Schmidt); closure under summands is not needed.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

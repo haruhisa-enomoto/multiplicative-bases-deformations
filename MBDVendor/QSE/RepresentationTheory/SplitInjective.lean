@@ -1,4 +1,6 @@
-import MBDVendor.QSE.RepresentationTheory.SubmoduleAntiExchange
+module
+
+public import MBDVendor.QSE.RepresentationTheory.SubmoduleAntiExchange
 
 /-!
 # Extremality and relative split injectivity
@@ -8,6 +10,8 @@ relative split injectives.  The proof uses common kernels and the nilpotent
 Jacobson radical; it does not invoke categorical duality or
 Krull--Schmidt multiplicity uniqueness.
 -/
+
+@[expose] public section
 
 noncomputable section
 

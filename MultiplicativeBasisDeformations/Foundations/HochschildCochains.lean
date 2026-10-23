@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PositiveDeformation
 
 /-!
 # Normalized relative Hochschild cochains
@@ -14,6 +16,8 @@ modulo coboundaries of degree-`q` one-cochains.
 Also: a degree calculus for maps raising the length grading (`Raises₁`,
 `Raises₂`) used by the normalization arguments.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

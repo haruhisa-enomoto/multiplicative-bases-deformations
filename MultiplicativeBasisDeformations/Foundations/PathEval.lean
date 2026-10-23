@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PsiInjective
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PsiInjective
 
 /-!
 # Evaluation of linear paths and its first-order deformation, over any ring
@@ -12,6 +14,8 @@ linearly to `RQ` (`evL`). Arrow corrections `g_a` give the `ε`-part `δ` of the
 This is the ring-generic part of the proof of Proposition 7.6 (`PsiInjective`), used over
 `ℤ/4` for Lemma 10.2 (`integral-deformations.tex`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

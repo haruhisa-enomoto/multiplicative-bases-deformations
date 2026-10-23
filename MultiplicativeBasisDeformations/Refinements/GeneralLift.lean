@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.SplitDeformation
+module
+
+public import MultiplicativeBasisDeformations.Refinements.SplitDeformation
 
 /-!
 # Proposition 6.5(1) for arbitrary filtered lifts
@@ -15,6 +17,8 @@ an `FLift` (`GenLift.exists_model`). Hence a lift exists (`exists_genLift`) and 
 are isomorphic by a `B`-linear isomorphism preserving the filtrations with leading term the
 identity (`genLift_unique`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PosetRepInfinite
-import MultiplicativeBasisDeformations.Foundations.TableBound
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PosetRepInfinite
+public import MultiplicativeBasisDeformations.Foundations.TableBound
 
 /-!
 # Lemma 8.8 with one zero relation
@@ -15,6 +17,8 @@ matrix units of the incidence algebra; isomorphisms of such modules are conjugat
 (`conj_of_iso`), and `OrbitDim.orbits_not_finite` applies with the `F` entries of the
 composite along the relation.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

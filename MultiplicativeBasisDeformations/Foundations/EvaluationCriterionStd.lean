@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.EvaluationCriterion
+module
+
+public import MultiplicativeBasisDeformations.Foundations.EvaluationCriterion
 
 /-!
 # Lemma 2.9 with the standard homological notions
@@ -14,6 +16,8 @@ projectives are projective" (`GlDimLeTwo`). Here they are derived from Mathlib's
 So Lemma 2.9 holds with the hypotheses as stated (`projectiveEvaluationCriterion_std`), and the
 check on simples is `van_of_simple_std`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import MBDVendor.QSE.CategoryTheory.IyamaRightSuccessorSpecialness
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaRightSuccessorSpecialness
 
 /-!
 # Special successors in Iyama left ladders
@@ -8,6 +10,8 @@ This file proves the categorical dual of Iyama, *Tau-categories I*,
 a left tau-sequence has a special complementary successor through the second
 map.  No concrete algebra or module classification is used.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

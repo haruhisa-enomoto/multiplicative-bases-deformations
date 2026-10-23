@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.NormalFormRetained
-import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
+module
+
+public import MultiplicativeBasisDeformations.Foundations.NormalFormRetained
+public import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
 
 /-!
 # Proposition 5.4 for a filtered algebra
@@ -19,6 +21,8 @@ summing over the corners gives an algebra isomorphism `C ≅ E` inducing the ide
 for an algebra: `E ≅ kQ/(𝔪^{N+1}, r_v − Σ_j λ_j (p_j)_v)` inducing the identification
 (`normalFormRetained_algebra`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

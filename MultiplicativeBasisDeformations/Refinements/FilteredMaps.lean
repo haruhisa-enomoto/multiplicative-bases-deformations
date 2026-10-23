@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.LiftedRadical
+module
+
+public import MultiplicativeBasisDeformations.Refinements.LiftedRadical
 
 /-!
 # Filtered maps with surjective or injective leading terms (toward Corollary 12.1)
@@ -11,6 +13,8 @@ with surjective leading term corrects to a filtered map killed by the map itself
 `deformation-refinements.tex` ("graded surjectivity supplies `p_d`... The finite
 filtration makes the process terminate").
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

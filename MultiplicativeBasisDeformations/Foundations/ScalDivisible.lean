@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.ObjectValues
-import MultiplicativeBasisDeformations.Foundations.ScalSplit
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ObjectValues
+public import MultiplicativeBasisDeformations.Foundations.ScalSplit
 
 /-!
 # Lemma 4.12, last clause: `Scal(L)` is an abelian divisible group
@@ -14,6 +16,8 @@ weight is a ratio of object values `ζ_y / ζ_x`; `n`-th roots of the object val
 algebraically closed) give an `n`-th root of the weight. The source instead identifies `Scal(L)`
 with the inverse limit along the exhaustion, split at each step by Lemma 4.11(2).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

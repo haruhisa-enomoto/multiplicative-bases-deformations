@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Refinements.MeshFirstOrder
-import MultiplicativeBasisDeformations.Foundations.Char2Basic
+module
+
+public import MultiplicativeBasisDeformations.Refinements.MeshFirstOrder
+public import MultiplicativeBasisDeformations.Foundations.Char2Basic
 
 /-!
 # Proposition 12.5 for the algebra `A₀` of a representation-finite algebra
@@ -10,6 +12,8 @@ resolutions (they come from the almost split sequences; the paragraph after Lemm
 `Ψ : HH²(A₀)_q → coker D_{q+1}` is an isomorphism in every internal degree `q ≥ 1`
 (`MeshWalk.fullHochschildComparison`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

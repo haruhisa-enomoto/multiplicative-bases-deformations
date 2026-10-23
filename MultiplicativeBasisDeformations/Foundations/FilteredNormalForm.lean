@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.GradedRealizationIso
-import MultiplicativeBasisDeformations.Foundations.MeshCorrections
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedRealizationIso
+public import MultiplicativeBasisDeformations.Foundations.MeshCorrections
 
 /-!
 # Proposition 5.4: successive correction of irreducible representatives
@@ -23,6 +25,8 @@ characteristic two by Proposition 5.3.
 
 This file: lift families and their realizations.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -236,6 +240,7 @@ theorem error_eq (x : S.nonprojectiveVertices) :
 end Lifts
 
 set_option maxHeartbeats 800000 in
+set_option synthInstance.maxHeartbeats 100000 in
 /-- **The correction step** of Proposition 5.4: if the relation errors of a lift
 family lie in `J^{m+1}` (`m ≥ 2`) and `D_m` is surjective, a change of the lifts
 in degree `m` moves all errors into `J^{m+2}`. -/

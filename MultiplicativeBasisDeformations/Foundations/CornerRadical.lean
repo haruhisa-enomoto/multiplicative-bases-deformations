@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.EndpointChains
-import MultiplicativeBasisDeformations.Foundations.BasicLabels
+module
+
+public import MultiplicativeBasisDeformations.Foundations.EndpointChains
+public import MultiplicativeBasisDeformations.Foundations.BasicLabels
 
 /-!
 # The radical of a corner
@@ -10,6 +12,8 @@ idempotent `e` the radical of `eAe` is `e (rad A) e` (`cornerVal_mem_jacobson`,
 `cornerMk_mem_jacobson`); when `AeA = A` the same holds for all radical powers
 (`corner_mem_radPow`), by inserting `1 ∈ AeA` between the factors.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

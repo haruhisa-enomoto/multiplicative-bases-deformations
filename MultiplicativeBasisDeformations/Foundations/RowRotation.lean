@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PeriodicLocalization
-import MultiplicativeBasisDeformations.Foundations.StableTranslation
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PeriodicLocalization
+public import MultiplicativeBasisDeformations.Foundations.StableTranslation
 
 /-!
 # Rotation of rows with signed coefficients
@@ -13,6 +15,8 @@ mesh coefficients of the corresponding tree edge, and these are opposite."
 Here the cokernel of `D_m` is the quotient `MeshFamily c ⧸ imageD c m`, and the
 coefficients are *opposite on mates*: `c_{y, σ a} = - c_{x, a}` for `a : y → x`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

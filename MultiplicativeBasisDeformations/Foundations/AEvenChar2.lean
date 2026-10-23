@@ -1,8 +1,10 @@
-import MultiplicativeBasisDeformations.Foundations.AEven
-import MultiplicativeBasisDeformations.Foundations.ASort
-import MultiplicativeBasisDeformations.Foundations.AReflectChar2
-import MultiplicativeBasisDeformations.Foundations.TreeEmbed
-import MultiplicativeBasisDeformations.Foundations.EvenLineTop
+module
+
+public import MultiplicativeBasisDeformations.Foundations.AEven
+public import MultiplicativeBasisDeformations.Foundations.ASort
+public import MultiplicativeBasisDeformations.Foundations.AReflectChar2
+public import MultiplicativeBasisDeformations.Foundations.TreeEmbed
+public import MultiplicativeBasisDeformations.Foundations.EvenLineTop
 
 /-!
 # The odd quotients of even `A` in characteristic two (Appendix B)
@@ -20,6 +22,8 @@ of length `2 + n r ≥ 2 + r > 2n`, which vanishes in `Π(A_{2n})` (`ASort.long_
 in characteristic two the all-one coefficients are the signed ones, so it gives the
 zero class (`phiL_eq_zero_of_mem`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

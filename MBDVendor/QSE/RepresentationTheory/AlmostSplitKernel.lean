@@ -1,5 +1,7 @@
-import MBDVendor.QSE.RepresentationTheory.AlmostSplitCofinite
-import Mathlib.CategoryTheory.Abelian.CommSq
+module
+
+public import MBDVendor.QSE.RepresentationTheory.AlmostSplitCofinite
+public import Mathlib.CategoryTheory.Abelian.CommSq
 
 /-!
 # Kernels of minimal right almost-split epimorphisms
@@ -13,6 +15,8 @@ kernel inclusion is also left minimal.
 
 No presentation or classification of an algebra or of its modules is used.
 -/
+
+@[expose] public section
 
 noncomputable section
 

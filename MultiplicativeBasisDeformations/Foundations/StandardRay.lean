@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.StandardConverse
-import MultiplicativeBasisDeformations.Foundations.Prop103
-import MultiplicativeBasisDeformations.Foundations.TableOfBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StandardConverse
+public import MultiplicativeBasisDeformations.Foundations.Prop103
+public import MultiplicativeBasisDeformations.Foundations.TableOfBasis
 
 /-!
 # `A ≅ k ray A` implies that `A` is standard in characteristic two (Theorem 11.8(2))
@@ -14,6 +16,8 @@ Lemma 3.6 matches the two tables (`IsRayPres.matchFn`, `IsRayPres.mul_iff`), so 
 (`algEquivA0_of_rayBasis`), and `A` is standard by the converse of Corollary 4.15
 (`isStandard_of_algEquiv`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

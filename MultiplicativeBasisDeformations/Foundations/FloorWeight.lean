@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.StarESpan
-import MultiplicativeBasisDeformations.Foundations.StarDSpan
-import MultiplicativeBasisDeformations.Foundations.MeshWeights
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarESpan
+public import MultiplicativeBasisDeformations.Foundations.StarDSpan
+public import MultiplicativeBasisDeformations.Foundations.MeshWeights
 
 /-!
 # The winding mesh weight of a periodic component (Proposition 7.5)
@@ -16,6 +18,8 @@ an arrow lifted to `X → Y` gets weight `⌊Y_t / c₀⌋ − ⌊X_t / c₀⌋`
 the lift (`floorWt`). For the candidate row of a word of length `c₀/2 + 1` (Appendix B) the
 weight of the row minus `ν` is one (`floorWt_candRow`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

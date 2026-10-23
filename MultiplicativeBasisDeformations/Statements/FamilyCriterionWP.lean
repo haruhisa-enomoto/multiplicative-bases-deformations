@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Statements.IntegerWeights
-import MultiplicativeBasisDeformations.Statements.PolynomialMesh
-import MultiplicativeBasisDeformations.Foundations.FamilyCriterionGen
+module
+
+public import MultiplicativeBasisDeformations.Statements.IntegerWeights
+public import MultiplicativeBasisDeformations.Statements.PolynomialMesh
+public import MultiplicativeBasisDeformations.Foundations.FamilyCriterionGen
 
 /-!
 # Propositions 7.9 and 12.8 with characters in `W(P)`
@@ -14,6 +16,8 @@ part of an integer basis of `W(P)` (Proposition 7.5), and have degree `len p_i â
 (`rowsWP`). The family statements are the generic ones of `FamilyCriterionGen.lean` and
 `PolynomialMesh.lean` for this weight.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

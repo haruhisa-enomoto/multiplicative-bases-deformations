@@ -1,5 +1,7 @@
-import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderPropagation
-import MBDVendor.QSE.CategoryTheory.IyamaRightSuccessorSpecialness
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderPropagation
+public import MBDVendor.QSE.CategoryTheory.IyamaRightSuccessorSpecialness
 
 /-!
 # Radical-layer factorization in Iyama left ladders
@@ -14,6 +16,8 @@ left-ladder domain to be nonzero.
 The argument is entirely categorical and uses no concrete algebra or module
 classification.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

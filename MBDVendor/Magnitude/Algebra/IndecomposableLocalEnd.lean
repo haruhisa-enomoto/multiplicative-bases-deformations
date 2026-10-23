@@ -1,11 +1,13 @@
-import MBDVendor.Magnitude.Algebra.RightModuleFiniteType
-import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
-import MBDVendor.QSE.Foundation.RingTheory.KrullSchmidt.Indecomposable
-import Mathlib.Algebra.Category.ModuleCat.Biproducts
-import Mathlib.LinearAlgebra.Projection
-import Mathlib.RingTheory.HopkinsLevitzki
-import Mathlib.RingTheory.LocalRing.Basic
-import Mathlib.RingTheory.Nilpotent.Basic
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleFiniteType
+public import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
+public import MBDVendor.QSE.Foundation.RingTheory.KrullSchmidt.Indecomposable
+public import Mathlib.Algebra.Category.ModuleCat.Biproducts
+public import Mathlib.LinearAlgebra.Projection
+public import Mathlib.RingTheory.HopkinsLevitzki
+public import Mathlib.RingTheory.LocalRing.Basic
+public import Mathlib.RingTheory.Nilpotent.Basic
 
 /-!
 # Local endomorphism rings of finite-dimensional indecomposable modules
@@ -24,6 +26,8 @@ The file also records a ring-level form: a finite-dimensional algebra with
 no nontrivial idempotents is local.  This follows by applying Fitting's lemma
 to its right regular module.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

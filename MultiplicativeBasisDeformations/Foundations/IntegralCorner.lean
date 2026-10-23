@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralTransport
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralTransport
 
 /-!
 # Regular lifts of cyclic projectives
@@ -10,6 +12,8 @@ inverse `ψ`, and `e = π ẽ` for an idempotent `ẽ` of `Λ̃`, then every lif
 `ẽΛ̃` through the generator `w = ũ ẽ` (`exists_act_w`, `eq_zero_of_act_w`), with inverse `ψ̃`
 lifting `ψ` (`ψO`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

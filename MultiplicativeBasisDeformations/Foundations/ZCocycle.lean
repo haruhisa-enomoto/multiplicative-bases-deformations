@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.MorseCollapse
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MorseCollapse
 
 /-!
 # Integer cocycles from an acyclic matching
@@ -12,6 +14,8 @@ expressed through the remaining ones").
 `zval_agree`: on a set of edges closed under the matching triangles, a cocycle agreeing
 with the prescribed values on the unmatched edges of the set agrees with `zval`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

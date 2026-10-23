@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.StarGauge
-import MultiplicativeBasisDeformations.Foundations.TwistedTrace
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarGauge
+public import MultiplicativeBasisDeformations.Foundations.TwistedTrace
 
 /-!
 # Lemma A.1(1): signed coefficients on a periodic star model
@@ -11,6 +13,8 @@ Every coefficient system `c` on `Q` becomes the signed preprojective one after
 rescaling arrows and entire mesh relations: the scales of `StarGauge` are
 `g`-invariant, so they descend to `Q`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -156,7 +160,7 @@ theorem ne_succ_zmod (j : ℕ) : ((j : ℕ) : ZMod 2) ≠ ((j + 1 : ℕ) : ZMod 
   simp at this
 
 variable (θ : Equiv.Perm (Fin t)) (hL : ∀ i, L (θ i) = L i) (hσo : σ none = none)
-  (hθ : ∀ i j (h : j ≤ L i), σ (ch i j h) = ch (θ i) j (by rw [hL]; exact h))
+  (hθ : ∀ i j (h : j ≤ L i), σ (ch i j h) = ch (θ i) j (h.trans (hL i).ge))
 
 include hσo hθ in
 theorem depth_σ (v : StarV L) : starDepth (σ v) = starDepth v := by

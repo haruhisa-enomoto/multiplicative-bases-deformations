@@ -1,9 +1,11 @@
-import MultiplicativeBasisDeformations.Foundations.TableOfBasis
-import MultiplicativeBasisDeformations.Foundations.TabSys
-import MultiplicativeBasisDeformations.Foundations.A0Normed
-import MultiplicativeBasisDeformations.Foundations.RayWeights
-import MultiplicativeBasisDeformations.Foundations.MeshWeights
-import MultiplicativeBasisDeformations.Foundations.RayBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TableOfBasis
+public import MultiplicativeBasisDeformations.Foundations.TabSys
+public import MultiplicativeBasisDeformations.Foundations.A0Normed
+public import MultiplicativeBasisDeformations.Foundations.RayWeights
+public import MultiplicativeBasisDeformations.Foundations.MeshWeights
+public import MultiplicativeBasisDeformations.Foundations.RayBasis
 
 /-!
 # The ray table of `A₀`
@@ -20,6 +22,8 @@ representation-finite, so the table carries Setting 8.4 (`A0Sys`).
 The basis vector of the piece `(x, y, g)` lies in the corner `e_y A₀ e_x` of the opposite
 algebra, so the table has source `y` and target `x`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

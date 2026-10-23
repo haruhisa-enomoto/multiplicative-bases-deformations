@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.RightModules
-import MBDVendor.Magnitude.Algebra.FiniteModuleDecomposition
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RightModules
+public import MBDVendor.Magnitude.Algebra.FiniteModuleDecomposition
 
 /-!
 # Representation-finite algebras: bounded modules and two-sided ideals
@@ -8,6 +10,8 @@ Lemma 3.1(1), first part (`projective-rays.tex`): "The annihilator of
 the right module `A/I` is `I`. Finite representation type gives only finitely
 many isomorphism classes of modules of dimension at most `dim_k A`."
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

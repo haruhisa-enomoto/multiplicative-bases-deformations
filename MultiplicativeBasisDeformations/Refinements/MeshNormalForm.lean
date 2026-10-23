@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.FilteredNormalForm
-import MultiplicativeBasisDeformations.Refinements.FlatPerturbation
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FilteredNormalForm
+public import MultiplicativeBasisDeformations.Refinements.FlatPerturbation
 
 /-!
 # Proposition 12.2: normal forms for filtered mesh categories
@@ -24,9 +26,12 @@ degree by degree, that a morphism realized to zero lies in the perturbed ideal, 
 injectivity of Proposition 2.6(3) and the homogeneous parts of the mesh ideal.
 -/
 
+@[expose] public section
+
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option linter.unusedSectionVars false
+set_option synthInstance.maxHeartbeats 100000
 
 noncomputable section
 

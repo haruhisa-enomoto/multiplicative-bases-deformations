@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.RootedGauge
-import MultiplicativeBasisDeformations.Foundations.ResidualSpaces
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RootedGauge
+public import MultiplicativeBasisDeformations.Foundations.ResidualSpaces
 
 /-!
 # Lemma A.2 for an arbitrary tree
@@ -18,6 +20,8 @@ the deck generator `g (v, t) = (ρ v, t + c₀)` in height coordinates (so `c₀
 (`TwTrace`); lifting paths gives a linear map onto the degree-`(m+1)` cokernel of `D_m`
 (`twMap`). The star case is `StarTrace.rowClass_mem_span` with `DegreeDeck.row_lift`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

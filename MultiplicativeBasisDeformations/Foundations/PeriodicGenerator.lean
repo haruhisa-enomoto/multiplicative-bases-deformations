@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PeriodicModel
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PeriodicModel
 
 /-!
 # Proposition 4.1(2): the generator of the deck group
@@ -19,6 +21,8 @@ the reversal (`path_aut`), which fixes the middle vertex when the number of vert
 `A_{2n}` the reversal changes parity, and `g = η^{c₀}` with `η(v, j) = (rev v, j + 1)`.
 (We state the generator `g`; its inverse `τ^s ρ⁻¹` is the form of the source.)
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

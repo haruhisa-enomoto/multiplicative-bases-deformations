@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.TraceE6
-import Mathlib.Tactic.IntervalCases
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TraceE6
+public import Mathlib.Tactic.IntervalCases
 
 /-!
 # Ordinary traces of types `E_7` and `E_8` (Lemma A.6)
@@ -21,6 +23,8 @@ record the vanishing in all other word degrees, which is what the period
 exclusion uses. A word `y x^{g₁} ⋯ y x^{g_k}` is `blk [g₁, …, g_k]`; the
 induction runs on the number `k` of `y`'s, in a fixed word degree.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

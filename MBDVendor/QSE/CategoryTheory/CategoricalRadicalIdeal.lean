@@ -1,5 +1,7 @@
-import MBDVendor.QSE.CategoryTheory.CategoricalRadical
-import MBDVendor.QSE.CategoryTheory.HomIdeal
+module
+
+public import MBDVendor.QSE.CategoryTheory.CategoricalRadical
+public import MBDVendor.QSE.CategoryTheory.HomIdeal
 
 /-!
 # The categorical radical as an additive Hom ideal
@@ -8,6 +10,8 @@ The Jacobson condition `IsRadicalMorphism f` is closed under addition,
 negation, and arbitrary composition.  Consequently it defines a canonical
 two-sided additive Hom ideal in every preadditive category.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

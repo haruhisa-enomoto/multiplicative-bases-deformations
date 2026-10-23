@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Connected algebras and their idempotents
@@ -8,6 +10,8 @@ nonzero orthogonal idempotents `f_i` of a connected ring, any two indices are jo
 of nonzero corners `f_i A f_j` (`eqvGen_corner`): otherwise the sum of the `f_l` over the
 component of an index is a central idempotent other than `0` and `1`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.ZDeltaGauge
-import Mathlib.Algebra.BigOperators.Intervals
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ZDeltaGauge
+public import Mathlib.Algebra.BigOperators.Intervals
 
 /-!
 # Periodic scalar gauges (Lemma A.1)
@@ -18,6 +20,8 @@ endpoint when it sits at height `h + 2`, and the parent's scales are already
 absorbed into `S`. A solution periodic of even period `P` exists after choosing
 one factor of `η'` per period (`exists_periodic_line`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

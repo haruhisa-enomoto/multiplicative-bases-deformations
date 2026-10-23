@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.RepFinite
-import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
-import Mathlib.Combinatorics.Enumerative.IncidenceAlgebra
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RepFinite
+public import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
+public import Mathlib.Combinatorics.Enumerative.IncidenceAlgebra
 
 /-!
 # Lemma 4.9: weights on representation-finite posets
@@ -29,6 +31,8 @@ through the up-sets of `R`, whose components are convex in `R`, so the
 representations of all steps are representations of the incidence algebra of
 `R` itself (no corner argument is needed).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

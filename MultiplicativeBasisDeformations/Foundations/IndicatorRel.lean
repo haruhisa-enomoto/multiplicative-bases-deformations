@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.IndicatorCocycles
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IndicatorCocycles
 
 /-!
 # Indicator cochains: relativity and characters
@@ -11,6 +13,8 @@ Two facts used in the proofs of Propositions 11.2 and 11.3 (`binary-families.tex
   All pairs in one class `E` have the same character, since each equation `a_z = a_{z'}`
   comes from a homogeneous cocycle equation." (`pairChar_edge`)
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

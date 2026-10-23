@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralWeights
-import MultiplicativeBasisDeformations.Foundations.SupportPoset
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralWeights
+public import MultiplicativeBasisDeformations.Foundations.SupportPoset
 
 /-!
 # Integral weights on the graded covering category (Proposition 7.2(2))
@@ -9,6 +11,8 @@ any abelian group, is a difference of object values." The generic statement
 `Thin.addWeight_eq_diff` applied to the graded covering category, whose
 exhaustion hypotheses are those of Lemma 4.12 (`cov_exists_multBasis`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

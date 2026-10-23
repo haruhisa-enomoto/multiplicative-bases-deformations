@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.MGrading
-import MultiplicativeBasisDeformations.Foundations.MeshWeights
-import MultiplicativeBasisDeformations.Foundations.HochschildMesh
-import MultiplicativeBasisDeformations.Foundations.BinaryNormalization
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MGrading
+public import MultiplicativeBasisDeformations.Foundations.MeshWeights
+public import MultiplicativeBasisDeformations.Foundations.HochschildMesh
+public import MultiplicativeBasisDeformations.Foundations.BinaryNormalization
 
 /-!
 # Mesh-weight gradings of `A₀` and of its evaluated modules
@@ -19,6 +21,8 @@ element of `A₀`, the arrow maps and all evaluated morphisms shift weights
 (`act_shift`, `fA_shift`, `rs_shift`), and an evaluated morphism shifting by `γ` comes
 from the weight-`γ` part of `C` (`mem_wP_of_shift`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

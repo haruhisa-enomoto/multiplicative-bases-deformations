@@ -1,8 +1,10 @@
-import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderPropagation
-import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderIteration
-import MBDVendor.QSE.CategoryTheory.IyamaLadderComparisonAssembly
-import MBDVendor.QSE.CategoryTheory.IyamaMixedMeshSplitLifting
-import MBDVendor.QSE.CategoryTheory.IyamaRightLadderPropagation
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderPropagation
+public import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderIteration
+public import MBDVendor.QSE.CategoryTheory.IyamaLadderComparisonAssembly
+public import MBDVendor.QSE.CategoryTheory.IyamaMixedMeshSplitLifting
+public import MBDVendor.QSE.CategoryTheory.IyamaRightLadderPropagation
 
 /-!
 # Reversed domination and finite comparison propagation
@@ -11,6 +13,8 @@ This is the explicit triangular-matrix step used when a finite left ladder is
 read backwards against a right ladder.  It is entirely categorical: no
 concrete algebra or module classification is involved.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

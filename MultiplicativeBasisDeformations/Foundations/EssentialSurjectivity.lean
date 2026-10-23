@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.GlobalDimension
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GlobalDimension
 
 /-!
 # Evaluation at the projective labels: essential surjectivity
@@ -15,6 +17,8 @@ Here: the extension `ext : A₀ → Λ` by zero; the `e`-part of kernels; the du
 representables `J_p` and injective copresentations; `J_p ≅ ev(I_p)` from the
 Hom-dimensions; essential surjectivity.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

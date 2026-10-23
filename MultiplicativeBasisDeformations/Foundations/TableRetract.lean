@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.TableCover
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TableCover
 
 /-!
 # Retractions of ray tables (Lemma 8.9 at ray level)
@@ -9,6 +11,8 @@ itself embedded (on either side). The projection of `kT` onto the embedded rays 
 `S`-bimodule retraction, and Lemma 4.6 shows that `kS` is representation-finite when `kT`
 is.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

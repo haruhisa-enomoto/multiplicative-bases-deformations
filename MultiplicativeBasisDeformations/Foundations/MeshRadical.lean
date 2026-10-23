@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.A0Normed
-import MultiplicativeBasisDeformations.Foundations.A0Graded
-import MultiplicativeBasisDeformations.Foundations.GradedLocal
+module
+
+public import MultiplicativeBasisDeformations.Foundations.A0Normed
+public import MultiplicativeBasisDeformations.Foundations.A0Graded
+public import MultiplicativeBasisDeformations.Foundations.GradedLocal
 
 /-!
 # The radical of a finite scalar mesh category is its positive part
@@ -11,6 +13,8 @@ For a finite-dimensional scalar mesh category `C(Q, c)`, the morphisms of degree
 its degree-zero part vanishes (`radical_iff`). This is the input `gr_J C = C` of the proof of
 Corollary 4.15 (`scalar-normalization.tex`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

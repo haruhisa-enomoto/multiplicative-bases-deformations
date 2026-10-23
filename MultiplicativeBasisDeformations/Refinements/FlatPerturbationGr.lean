@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.FlatPerturbationDim
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FlatPerturbationDim
 
 /-!
 # Lemma 12.3: `gr_𝔪 B ≅ C`
@@ -12,6 +14,8 @@ is `u (r − f) v + u f v` with `u f v ∈ 𝔪^{d+1}` (`hctx_le_B_succ`), onto 
 projections make `C` graded (`πC`), so `Σ_d dim C_d ≤ dim C`, while
 `Σ_d dim gr^d B = dim B = dim C` (Lemma 12.3's dimension equality).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

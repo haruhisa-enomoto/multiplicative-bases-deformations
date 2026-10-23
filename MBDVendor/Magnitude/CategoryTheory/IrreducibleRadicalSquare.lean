@@ -1,5 +1,7 @@
-import MBDVendor.QSE.CategoryTheory.IyamaLadderRadical
-import MBDVendor.QSE.RepresentationTheory.IrreducibleCofinite
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaLadderRadical
+public import MBDVendor.QSE.RepresentationTheory.IrreducibleCofinite
 
 /-!
 # Irreducible morphisms do not lie in the categorical radical square
@@ -9,6 +11,8 @@ morphisms can be consolidated into one factorization through a finite
 biproduct.  Both consolidated factors remain radical.  Hence a morphism in
 the square of the categorical radical cannot be irreducible.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.SupportedBockstein
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SupportedBockstein
 
 /-!
 # Lemma 10.4 for free `ℤ/p²`-modules
@@ -9,6 +11,8 @@ used by `supported_bockstein` hold: the annihilator of `p` is `pM` (`ann_p_free`
 `U ∩ pC² = pU` (`smul_mem_span_image`). So the lemma holds as stated
 (`supported_bockstein_free`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

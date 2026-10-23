@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.TreePoset
-import MultiplicativeBasisDeformations.Foundations.SupportPoset
-import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TreePoset
+public import MultiplicativeBasisDeformations.Foundations.SupportPoset
+public import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
 
 /-!
 # Concrete finite posets and forbidden configurations
@@ -11,6 +13,8 @@ a Boolean table (`Pos`), whose axioms, cover relation, uniqueness of lower cover
 and dimension count are checked by `decide`. `forbidden` transfers the conclusion along an
 order isomorphism, for the poset and its dual.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

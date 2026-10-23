@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.FamilyNormalization
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FamilyNormalization
 
 /-!
 # Relative cochains compute ordinary Hochschild cohomology in degree two
@@ -18,6 +20,8 @@ So the relative classes are exactly the ordinary classes. In particular the span
 hypotheses of Theorem 7.7 in the ordinary form give `FamilyHyp`, `familyHyp_of_ordinary`), and so
 does the nonvanishing of a class (`rel_isCobdry_iff`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

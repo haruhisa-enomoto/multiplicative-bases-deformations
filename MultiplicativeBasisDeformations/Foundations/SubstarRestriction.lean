@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.GradedPreproj
-import MultiplicativeBasisDeformations.Foundations.StarCorner
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedPreproj
+public import MultiplicativeBasisDeformations.Foundations.StarCorner
 
 /-!
 # Restricting `Π` of a star to a substar
@@ -16,6 +18,8 @@ restriction `res` sends a path inside the image to its preimage and other paths
 to zero; it maps the ideal of `Π(Δ)` with the outside deleted into the ideal of
 `Π(Δ')` (`res_mem`). Hence nonzero paths of `Π(Δ')` stay nonzero.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

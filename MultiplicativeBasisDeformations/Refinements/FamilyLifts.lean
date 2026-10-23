@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Refinements.TwistLifting
-import MultiplicativeBasisDeformations.Refinements.FibreAlgebra
-import MultiplicativeBasisDeformations.Refinements.LiftedMesh
-import MultiplicativeBasisDeformations.Foundations.WeightLift
+module
+
+public import MultiplicativeBasisDeformations.Refinements.TwistLifting
+public import MultiplicativeBasisDeformations.Refinements.FibreAlgebra
+public import MultiplicativeBasisDeformations.Refinements.LiftedMesh
+public import MultiplicativeBasisDeformations.Foundations.WeightLift
 
 /-!
 # Polynomial lifts of the evaluated modules (Proposition 12.8, first part)
@@ -16,6 +18,8 @@ by the identity (`famSplit`); its deformation terms are `[q = 0]·m + Σ_{q_i = 
 the `χ_i` (`exists_actFam_cone`), and their twists are lifts for every fibre (`famLifts`), which
 are polynomial in `t` and specialize to the chosen lifts at `t = 1`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

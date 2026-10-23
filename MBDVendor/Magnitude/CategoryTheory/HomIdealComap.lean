@@ -1,8 +1,10 @@
-import Mathlib.CategoryTheory.Functor.ReflectsIso.Basic
-import Mathlib.CategoryTheory.Linear.Basic
-import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
-import Mathlib.Algebra.Module.Submodule.Basic
-import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
+module
+
+public import Mathlib.CategoryTheory.Functor.ReflectsIso.Basic
+public import Mathlib.CategoryTheory.Linear.Basic
+public import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
+public import Mathlib.Algebra.Module.Submodule.Basic
+public import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
 
 /-!
 # Pullback of categorical Hom ideals
@@ -12,6 +14,8 @@ maps.  Ideal powers in the pullback map into the corresponding powers
 downstairs.  For a fully faithful additive functor, categorical-radical
 membership is equivalent before and after applying the functor.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

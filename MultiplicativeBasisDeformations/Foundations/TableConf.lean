@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.TableRetract
-import MultiplicativeBasisDeformations.Foundations.TableSupport
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TableRetract
+public import MultiplicativeBasisDeformations.Foundations.TableSupport
 
 /-!
 # Poset configurations in a ray table (Lemmas 8.9 and C.1)
@@ -11,6 +13,8 @@ non-selected morphism (on either side); they are required only for cover relatio
 (the arrows of its Hasse diagram, `lem:representation-transfer`, `lem:tree-quotient`).
 Then the incidence algebra of `Q` is representation-finite when `kP` is.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

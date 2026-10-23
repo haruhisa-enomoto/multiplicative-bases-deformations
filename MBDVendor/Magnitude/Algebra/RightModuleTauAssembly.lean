@@ -1,4 +1,6 @@
-import MBDVendor.Magnitude.Algebra.RightModuleLeftTau
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleLeftTau
 
 /-!
 # Two-sided tau-data assembly for finite right-module categories
@@ -8,6 +10,8 @@ indecomposable objects, identifies the nonzero mesh boundaries with the
 nonprojective and noninjective labels, and assembles the two-sided
 translation data required by the generic finite tau-category interface.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

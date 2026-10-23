@@ -1,8 +1,10 @@
-import Mathlib.CategoryTheory.Abelian.Subcategory
-import Mathlib.Data.Fintype.EquivFin
-import Mathlib.Order.CompactlyGenerated.Basic
-import Mathlib.RingTheory.Finiteness.Basic
-import MBDVendor.QSE.RepresentationTheory.FacSub
+module
+
+public import Mathlib.CategoryTheory.Abelian.Subcategory
+public import Mathlib.Data.Fintype.EquivFin
+public import Mathlib.Order.CompactlyGenerated.Basic
+public import Mathlib.RingTheory.Finiteness.Basic
+public import MBDVendor.QSE.RepresentationTheory.FacSub
 
 /-!
 # Trace and reject submodules
@@ -15,6 +17,8 @@ between trace generation and `Fac(add S)` literal rather than implicit.
 The dual object is the intersection of the kernels of all maps into
 explicit finite sums from `add S`.
 -/
+
+@[expose] public section
 
 noncomputable section
 
@@ -273,8 +277,8 @@ theorem inFac_iff_trace_eq_top (S : Set ι)
       change (⊤ : Submodule R X) ≤ σ.trace S X
       exact htrace.ge
     obtain ⟨F, hF⟩ :=
-      CompleteLattice.IsCompactElement.exists_finset_of_le_iSup
-        (Submodule R X) hcompact
+      IsCompactElement.exists_finset_of_le_iSup
+        hcompact
         (fun f : σ.SelectedMapTo S X ↦
           LinearMap.range f.map.hom.hom) hle
     let f := SelectedMapTo.flattenFinset σ F
@@ -459,8 +463,8 @@ theorem exists_finset_reject_eq
   let L := (Submodule R X)ᵒᵈ
   have hcompact :
       IsCompactElement (OrderDual.toDual (σ.reject S X) : L) :=
-    (CompleteLattice.isSupFiniteCompact_iff_all_elements_compact L).mp
-      (CompleteLattice.WellFoundedGT.isSupFiniteCompact L) _
+    (isSupFiniteCompact_iff_all_elements_compact (α := L)).mp
+      (WellFoundedGT.isSupFiniteCompact (α := L)) _
   have hall :
       (OrderDual.toDual (σ.reject S X) : L) ≤
         ⨆ f : σ.SelectedMapFrom S X,
@@ -469,7 +473,7 @@ theorem exists_finset_reject_eq
       LinearMap.ker f.map.hom.hom) ≤ σ.reject S X
     exact le_of_eq rfl
   obtain ⟨F, hF⟩ :=
-    CompleteLattice.IsCompactElement.exists_finset_of_le_iSup L hcompact
+    IsCompactElement.exists_finset_of_le_iSup hcompact
       (fun f : σ.SelectedMapFrom S X =>
         (OrderDual.toDual (LinearMap.ker f.map.hom.hom) : L)) hall
   refine ⟨F, le_antisymm hF ?_⟩

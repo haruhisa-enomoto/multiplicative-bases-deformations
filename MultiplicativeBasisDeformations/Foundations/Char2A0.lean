@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.A0Table
-import MultiplicativeBasisDeformations.Foundations.TransportFamily
-import MultiplicativeBasisDeformations.Foundations.WeightHH
-import MultiplicativeBasisDeformations.Foundations.CharBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.A0Table
+public import MultiplicativeBasisDeformations.Foundations.TransportFamily
+public import MultiplicativeBasisDeformations.Foundations.WeightHH
+public import MultiplicativeBasisDeformations.Foundations.CharBasis
 
 /-!
 # The characteristic-two step for `A₀`
@@ -18,6 +20,8 @@ weight `w = (w_R)_{R ∈ S} × length` built from the dual mesh weights of Propo
 and Lemma 7.4 here (which need a connected Auslander–Reiten quiver). Corollary 10.5 is an
 explicit hypothesis of `char2_A0`; it is discharged by `cor105Hyp` in `FinalBasis.lean`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

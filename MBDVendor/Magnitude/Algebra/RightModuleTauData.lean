@@ -1,5 +1,7 @@
-import MBDVendor.Magnitude.Algebra.RightModuleRadical
-import MBDVendor.QSE.CategoryTheory.FiniteTauCategory
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleRadical
+public import MBDVendor.QSE.CategoryTheory.FiniteTauCategory
 
 /-!
 # The finite right-module category as finite tau-category data
@@ -10,6 +12,8 @@ generated right modules over a representation-finite finite-dimensional
 algebra.  After this construction, the remaining inputs are exactly the chosen
 right and left Auslander--Reiten meshes and their translation compatibility.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

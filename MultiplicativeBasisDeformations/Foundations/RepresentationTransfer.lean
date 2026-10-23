@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
 
 /-!
 # Lemma 8.9: representation transfer along a functor with a bimodule retraction
@@ -16,6 +18,8 @@ repeated labels (`isRepresentationFinite_comp`: an idempotent corner of a Morita
 algebra); `G` embeds `S` into `B_F` (`funcAlgHom`), and Lemma 4.6
 (`splitRepresentationTransfer_of`) applies to the retraction (`representationTransfer`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

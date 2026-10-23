@@ -1,8 +1,10 @@
-import MultiplicativeBasisDeformations.Foundations.ScalarAutomorphism
-import MultiplicativeBasisDeformations.Foundations.DeckInstance
-import MultiplicativeBasisDeformations.Foundations.MeshDegreeTwo
-import MultiplicativeBasisDeformations.Foundations.CoverPotential
-import MultiplicativeBasisDeformations.Foundations.SectionalPaths
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ScalarAutomorphism
+public import MultiplicativeBasisDeformations.Foundations.DeckInstance
+public import MultiplicativeBasisDeformations.Foundations.MeshDegreeTwo
+public import MultiplicativeBasisDeformations.Foundations.CoverPotential
+public import MultiplicativeBasisDeformations.Foundations.SectionalPaths
 
 /-!
 # Lemma 4.13: weights on `L` are ratios of object values
@@ -20,6 +22,8 @@ multiplying along walks gives object values `ζ_X`" (`ζ`, `ζ_arrow`).
 multiplies each morphism `X̃ → Ỹ` by `ζ_Ỹ / ζ_X̃`" (`Φ_eq_ratio`), and on `L`
 this gives `d(x, y) = ζ_y / ζ_x` (`weight_eq_ratio`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -124,7 +128,9 @@ variable [IsAlgClosed k] [Infinite k] [hone : ∀ x y : V, Subsingleton (x ⟶ y
 include hd hF in
 /-- **`Φ(a) = w(a) a`**: the scalar of `Φ` on the lift of an arrow in sheet `h`. -/
 def wArr (h : Deck Q v₀) {y x : V} (a : y ⟶ x) : k :=
-  Classical.choose (part_arrow (c := c) a (by
+  Classical.choose (part_arrow (c := c) (v₀ := v₀) a
+    (g := Φ hd (deckHeight Q c v₀) hF (X := (y, h)) (Y := (x, h * dg Q v₀ a)) (arrowMor c a)
+      (arrow_mem h a)) (by
     have := Φ_mem hd (deckHeight Q c v₀) hF (X := (y, h)) (Y := (x, h * dg Q v₀ a)) _
       (arrow_mem h a)
     rwa [show h⁻¹ * (h * dg Q v₀ a) = dg Q v₀ a from inv_mul_cancel_left h _] at this))
@@ -132,7 +138,9 @@ def wArr (h : Deck Q v₀) {y x : V} (a : y ⟶ x) : k :=
 theorem wArr_spec (h : Deck Q v₀) {y x : V} (a : y ⟶ x) :
     Φ hd (deckHeight Q c v₀) hF (X := (y, h)) (Y := (x, h * dg Q v₀ a)) (arrowMor c a)
       (arrow_mem h a) = wArr hF hd h a • arrowMor c a :=
-  Classical.choose_spec (part_arrow (c := c) a (by
+  Classical.choose_spec (part_arrow (c := c) (v₀ := v₀) a
+    (g := Φ hd (deckHeight Q c v₀) hF (X := (y, h)) (Y := (x, h * dg Q v₀ a)) (arrowMor c a)
+      (arrow_mem h a)) (by
     have := Φ_mem hd (deckHeight Q c v₀) hF (X := (y, h)) (Y := (x, h * dg Q v₀ a)) _
       (arrow_mem h a)
     rwa [show h⁻¹ * (h * dg Q v₀ a) = dg Q v₀ a from inv_mul_cancel_left h _] at this))

@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.PreprojectiveNilpotent
-import MultiplicativeBasisDeformations.Foundations.PreprojectiveDimension
-import MultiplicativeBasisDeformations.Foundations.TreeArms
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PreprojectiveNilpotent
+public import MultiplicativeBasisDeformations.Foundations.PreprojectiveDimension
+public import MultiplicativeBasisDeformations.Foundations.TreeArms
 
 /-!
 # The sectional tree is a Dynkin tree
@@ -16,6 +18,8 @@ finite-dimensional scalar mesh category.
 * Hence `Δ` is a star model with at most one arm, or with three arms satisfying
   `∑ p_i/(p_i + 1) < 2` (`classify_tree`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.RayWeights
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayWeights
 
 /-!
 # Proposition 7.2(1): `W(P) ≅ ℤ^{n−1} ⊕ G_ab`
@@ -18,6 +20,8 @@ base object in the deck group of the coned complex; see `RayWeights.lean`):
   `WPequivFree` (`theta_summand`).
 `W(P)` is free of finite rank (`WP_free`, `WP_finite`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

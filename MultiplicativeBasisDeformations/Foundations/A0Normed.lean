@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.ScalarNormalization
-import MultiplicativeBasisDeformations.Foundations.GradedLayers
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ScalarNormalization
+public import MultiplicativeBasisDeformations.Foundations.GradedLayers
 
 /-!
 # `A₀` has a normed multiplicative basis
@@ -13,6 +15,8 @@ The path-length grading of the scalar mesh category grades `A₀ = (Alg F₀)ᵒ
 corners, so by the layer argument (`GradedLayers.lean`) it is adapted to every
 radical power, and `A₀` has a normed multiplicative basis (`hasNormedBasis_A0`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

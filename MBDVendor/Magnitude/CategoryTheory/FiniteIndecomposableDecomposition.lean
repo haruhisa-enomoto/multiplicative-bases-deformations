@@ -1,10 +1,12 @@
-import Mathlib.CategoryTheory.Preadditive.Biproducts
-import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
-import Mathlib.CategoryTheory.Preadditive.Opposite
-import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products
-import Mathlib.CategoryTheory.Limits.Shapes.Opposites.Products
-import Mathlib.Data.List.OfFn
-import Mathlib.Logic.Equiv.Fin.Basic
+module
+
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
+public import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
+public import Mathlib.CategoryTheory.Preadditive.Opposite
+public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products
+public import Mathlib.CategoryTheory.Limits.Shapes.Opposites.Products
+public import Mathlib.Data.List.OfFn
+public import Mathlib.Logic.Equiv.Fin.Basic
 
 /-!
 # Finite displayed decompositions into indecomposables
@@ -13,6 +15,8 @@ This small generic interface and its biproduct combiner are adapted from the
 Cartan formalization's `ClosedRayChain/GenericFiniteness.lean` at
 homological-conjectures commit `eade4e75`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

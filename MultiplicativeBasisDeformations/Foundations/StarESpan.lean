@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.StarDSpan
-import MultiplicativeBasisDeformations.Foundations.TraceEChar2
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarDSpan
+public import MultiplicativeBasisDeformations.Foundations.TraceEChar2
 
 /-!
 # The types `E` in characteristic two (Appendix B)
@@ -14,6 +16,8 @@ A row of word degree `j` occurs with twist `θ^n` only when `j = 1 + n s`. With 
 the candidate degrees `4, 8, 14` (ordinary) and `5` (reflection of `E₆`) force `n = 1`,
 so `j = s + 1`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

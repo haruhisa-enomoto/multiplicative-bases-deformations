@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.CoverWeights
-import MultiplicativeBasisDeformations.Foundations.ScalarNormalization
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CoverWeights
+public import MultiplicativeBasisDeformations.Foundations.ScalarNormalization
 
 /-!
 # The scalar-weight group `W(P)` of `A₀` (Definition 7.1, Proposition 7.2)
@@ -24,6 +26,8 @@ component of a base object in place of `G = π₁(K)`; for connected `A` the pap
 argument then gives `W(P) ≅ ℤ^{n−1} ⊕ H_ab` (`Φ ∘ Ψ = 1`). Its freeness, needed
 later, follows: `W(P)` is finitely generated and embeds in a torsion-free group.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

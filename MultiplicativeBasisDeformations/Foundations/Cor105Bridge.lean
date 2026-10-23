@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.Bockstein
-import MultiplicativeBasisDeformations.Foundations.TransportFamily
-import MultiplicativeBasisDeformations.Foundations.GradedBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Bockstein
+public import MultiplicativeBasisDeformations.Foundations.TransportFamily
+public import MultiplicativeBasisDeformations.Foundations.GradedBasis
 
 /-!
 # Relative cochains of character `χ` and their coefficients
@@ -11,6 +13,8 @@ relative two-cochain of character `χ` on `Λ ≅ kP` is `Φ₂` of its coeffici
 it is a coboundary exactly when its coefficients are `d₁` of coefficients (`coef_of_isCobdry`,
 `isCobdry_of_coef`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

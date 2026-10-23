@@ -1,4 +1,6 @@
-import MBDVendor.QSE.CategoryTheory.IyamaNakayamaBoundary
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaNakayamaBoundary
 
 /-!
 # Split-component lifting between tau-sequences
@@ -8,6 +10,8 @@ This file begins the categorical chain-map lifting used in Iyama,
 right-endpoint component forces both earlier components to be split epic.
 The mixed left-mesh-to-right-mesh specialization is built on this lemma.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

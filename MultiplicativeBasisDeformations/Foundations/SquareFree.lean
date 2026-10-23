@@ -1,8 +1,10 @@
-import MultiplicativeBasisDeformations.Foundations.ARTranslationQuiver
-import MBDVendor.Magnitude.CategoryTheory.FiniteTauIrreducible
-import MBDVendor.Magnitude.CategoryTheory.IrreducibleAbelian
-import MBDVendor.Magnitude.CategoryTheory.TauExactDimension
-import MBDVendor.Magnitude.Algebra.RightModuleLeftTau
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARTranslationQuiver
+public import MBDVendor.Magnitude.CategoryTheory.FiniteTauIrreducible
+public import MBDVendor.Magnitude.CategoryTheory.IrreducibleAbelian
+public import MBDVendor.Magnitude.CategoryTheory.TauExactDimension
+public import MBDVendor.Magnitude.Algebra.RightModuleLeftTau
 
 /-!
 # Lemma 2.2: the Auslander--Reiten quiver is square-free
@@ -30,6 +32,8 @@ vendored middle-term inclusions and components (`FiniteTauIrreducible`), and
 the exactness lemma `rightKernelMap_functionExact` is copied from
 `Algebra/RightModuleHoshinoTorsion.lean`. The no-loop part is added here.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.GradedHomDimension
-import MultiplicativeBasisDeformations.Foundations.StandardForm
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedHomDimension
+public import MultiplicativeBasisDeformations.Foundations.StandardForm
 
 /-!
 # Proposition 2.10(3): dimensions of evaluated modules
@@ -12,6 +14,8 @@ The evaluation at the projective label `P_x` is `C(P_x, X)`, of dimension `dim H
 (`finrank_meshHom`, eq. graded-hom-dimensions); for `P_x ≅ e_xA`, `Hom_A(e_xA, X) ≅ Xe_x` by
 evaluation at `e_x` (`homIdealEquiv`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

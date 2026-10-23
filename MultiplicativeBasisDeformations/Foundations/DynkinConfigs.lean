@@ -1,10 +1,12 @@
-import MultiplicativeBasisDeformations.Foundations.DynkinForm
-import Mathlib.Data.Fin.Tuple.Basic
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.FinCases
-import Mathlib.Tactic.LinearCombination
-import Mathlib.Algebra.BigOperators.Intervals
+module
+
+public import MultiplicativeBasisDeformations.Foundations.DynkinForm
+public import Mathlib.Data.Fin.Tuple.Basic
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.FinCases
+public import Mathlib.Tactic.LinearCombination
+public import Mathlib.Algebra.BigOperators.Intervals
 
 /-!
 # Forbidden configurations
@@ -20,6 +22,8 @@ definiteness of principal submatrices."
 With the configuration bound (`qform_le_config`), the extra edges of the whole
 graph only lower `zᵀMz`, so each configuration gives `zᵀMz ≤ 0`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

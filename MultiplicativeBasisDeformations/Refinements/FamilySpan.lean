@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.RowSpan
-import MultiplicativeBasisDeformations.Foundations.WeightEv
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RowSpan
+public import MultiplicativeBasisDeformations.Foundations.WeightEv
 
 /-!
 # Weighted decomposition of mesh errors (toward Proposition 12.8)
@@ -14,6 +16,8 @@ derivatives (`CokerSpan`). Every mesh family of degree `m + 1` is `D f + Σ_i c_
 only the rows of weight `γ` occur (`exists_span_wt`), since the weight projections commute with
 `D` (`wπ_meshDerivative`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

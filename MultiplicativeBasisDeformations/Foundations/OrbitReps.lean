@@ -1,6 +1,8 @@
-import Mathlib.GroupTheory.Perm.Cycle.Factors
-import Mathlib.Dynamics.PeriodicPts.Defs
-import Mathlib.GroupTheory.OrderOfElement
+module
+
+public import Mathlib.GroupTheory.Perm.Cycle.Factors
+public import Mathlib.Dynamics.PeriodicPts.Defs
+public import Mathlib.GroupTheory.OrderOfElement
 
 /-!
 # Representatives of the orbits of a permutation
@@ -12,6 +14,8 @@ For a permutation `θ` of a finite linearly ordered type we fix the least elemen
 the minimal period `per i` of `rep i`; exponents reaching the same point differ
 by a multiple of the period.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

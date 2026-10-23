@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ExtOne
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ExtOne
 
 /-!
 # Evaluated projectives (Lemma 6.3)
@@ -9,6 +11,8 @@ regular gradings. […] Projective summands contribute zero." At a projective la
 `e_p A₀` generated in degree `0` by `1_p` (Yoneda: `colAlg`, `colAlg_smul_unit`),
 so all its higher `Ext` groups vanish (`extVanish_proj`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

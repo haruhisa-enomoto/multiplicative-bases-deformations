@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
-import MultiplicativeBasisDeformations.Foundations.RightModules
-import MBDVendor.Magnitude.Algebra.RightModulePrimitiveIdempotent
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
+public import MultiplicativeBasisDeformations.Foundations.RightModules
+public import MBDVendor.Magnitude.Algebra.RightModulePrimitiveIdempotent
 
 /-!
 # The Peirce isomorphism `A ≅ End(⊕ e_i A)ᵒᵖ`
@@ -14,6 +16,8 @@ labels (Corollary 5.5, `mesh-deformations.tex`: "Restrict the resulting
 isomorphism `ind(mod A) ≅ C` to the labelled projective objects and take
 opposite algebras").
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

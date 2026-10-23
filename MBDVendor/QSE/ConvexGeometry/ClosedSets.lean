@@ -1,5 +1,7 @@
-import Mathlib.Order.Grade
-import MBDVendor.QSE.ConvexGeometry.Finite
+module
+
+public import Mathlib.Order.Grade
+public import MBDVendor.QSE.ConvexGeometry.Finite
 
 /-!
 # The lattice of closed sets
@@ -8,6 +10,8 @@ Every closure system is a complete lattice.  For a finite anti-exchange
 closure system, cardinality is a grading: every cover adds exactly one
 point.
 -/
+
+@[expose] public section
 
 open Set
 

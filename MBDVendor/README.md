@@ -10,10 +10,17 @@ translation bijection between nonprojective and noninjective labels, the
 arrow-multiplicity identity across a mesh, and the comparison of irreducible
 spaces with middle-term multiplicities over an algebraically closed field.
 
-The only change is a mechanical rename of module paths and namespaces:
+The copy renamed module paths and namespaces only:
 `MagnitudeConjecture` became `MBDVendor.Magnitude` and
-`QuotientSubmoduleEquidistribution` became `MBDVendor.QSE`. Statements and
-proofs are unchanged. This is general Auslander--Reiten theory, which the
+`QuotientSubmoduleEquidistribution` became `MBDVendor.QSE`. On October 23,
+2026 the files were moved to Lean v4.35.0-rc3 and ported to the Lean module
+system (`module`, public imports, `@[expose] public section`). A few proofs
+were adapted to Mathlib changes and to the module system: renamed lattice
+lemmas in `QSE/RepresentationTheory/Trace.lean`, one-based `TFAE` indices in
+`RightModuleAlmostSplit.lean`, an explicit unfolding of `nonunits` in
+`LocalAlgebraResidue.lean`, explicit biproduct rewriting in
+`RightModuleFactorCategory.lean`, and some private helper lemmas made public
+because public definitions use them. No statement changed. This is general Auslander--Reiten theory, which the
 manuscript assumes; it is not a proof of any manuscript statement. Comments in
 these files keep their original wording, so references to "the manuscript"
 there mean the magnitude paper. The package `MultiplicativeBasisDeformations` uses it

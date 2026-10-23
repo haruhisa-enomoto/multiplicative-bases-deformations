@@ -1,6 +1,8 @@
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtConormalForm
-import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderBasic
-import MBDVendor.QSE.CategoryTheory.IyamaRightSuccessorSpecialness
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtConormalForm
+public import MBDVendor.QSE.CategoryTheory.IyamaLeftLadderBasic
+public import MBDVendor.QSE.CategoryTheory.IyamaRightSuccessorSpecialness
 
 /-!
 # Special-arrow target conormalization
@@ -9,6 +11,8 @@ This is the dual of Iyama's source-padded special normalization.  The file
 uses the target split--radical normal form and produces the exact
 `SpecialConormalization` expected by the finite left-ladder builder.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

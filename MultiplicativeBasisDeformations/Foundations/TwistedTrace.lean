@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.RowRotation
-import MultiplicativeBasisDeformations.Foundations.CoveringMesh
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RowRotation
+public import MultiplicativeBasisDeformations.Foundations.CoveringMesh
 
 /-!
 # Lifted paths and row classes (Lemma A.2)
@@ -12,6 +14,8 @@ from `τ X` for any `X = (v, t)` (`liftZ`); the class of the image of the lift i
 with the same endpoints and heights, the linear extension `phiL X` of `phiD X`
 kills the ideal of `Π(Δ)` (`phiL_eq_zero_of_mem`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

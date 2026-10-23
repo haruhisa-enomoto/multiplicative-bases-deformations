@@ -1,8 +1,10 @@
-import Mathlib.Tactic.NoncommRing
-import Mathlib.Tactic.IntervalCases
-import Mathlib.Algebra.Group.Subgroup.Basic
-import Mathlib.Algebra.Group.Subgroup.Lattice
-import Mathlib.Data.List.Induction
+module
+
+public import Mathlib.Tactic.NoncommRing
+public import Mathlib.Tactic.IntervalCases
+public import Mathlib.Algebra.Group.Subgroup.Basic
+public import Mathlib.Algebra.Group.Subgroup.Lattice
+public import Mathlib.Data.List.Induction
 
 /-!
 # The centre corner of `E₈` in characteristic two (Appendix B)
@@ -16,6 +18,8 @@ the list is fourteen." We prove the closure (`spn_mul_x`, `spn_mul_y`), so that 
 word of degree `n` lies in the span `spn n` of the listed words of degree `n`, and
 `spn n = 0` for `n ≥ 15`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

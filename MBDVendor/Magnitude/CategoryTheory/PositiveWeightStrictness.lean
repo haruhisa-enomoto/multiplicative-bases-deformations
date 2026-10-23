@@ -1,6 +1,8 @@
-import MBDVendor.Magnitude.CategoryTheory.AlgebraicallyClosedResidue
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtWeight
-import MBDVendor.QSE.CategoryTheory.IyamaNakayamaExtraction
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.AlgebraicallyClosedResidue
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtWeight
+public import MBDVendor.QSE.CategoryTheory.IyamaNakayamaExtraction
 
 /-!
 # Positive right-additive weights imply strictness
@@ -13,6 +15,8 @@ The proof uses the source-faithful generic Nakayama-ladder extraction vendored
 from the clean equidistribution formalization.  It contains no module
 classification or OP-conjecture theorem layer.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

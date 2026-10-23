@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.DeletionTransfer
+module
+
+public import MultiplicativeBasisDeformations.Foundations.DeletionTransfer
 
 /-!
 # Excluding periods by the brick hypothesis
@@ -12,6 +14,8 @@ whose lift is nonzero in `Π(Δ)` modulo the deleted vertices, then every
 retained object of the object quotient has a nonzero radical endomorphism
 besides the identity, and the brick hypothesis fails for that quotient.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

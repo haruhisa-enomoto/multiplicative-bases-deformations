@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.InitialFormProducts
+module
+
+public import MultiplicativeBasisDeformations.Foundations.InitialFormProducts
 
 /-!
 # Proposition 4.14: `A₀ ≅ kP` with `P = ray A₀`
@@ -14,6 +16,8 @@ homogeneous line, Proposition 3.8, and homogeneous lines are the lines of `basis
 `eq_smul_basisR`). With `thetaA0 : kP ≃ A₀` (`b_t ↦ basisR t`, identities to the labelled
 idempotents) this is the proposition (`scalarNormalization`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

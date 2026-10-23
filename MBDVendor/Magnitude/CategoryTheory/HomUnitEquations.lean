@@ -1,4 +1,6 @@
-import MBDVendor.Magnitude.CategoryTheory.MeshWeight
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.MeshWeight
 
 /-!
 # Hom-dimension weights and the two unit equations
@@ -8,6 +10,8 @@ by a label `P` satisfies the paper's column equation `Phi^T d = e_P`, while a
 column represented by `I` satisfies `Phi d = e_I`.  Nonzero maps from `P`, or
 to `I`, make the corresponding integral weights strictly positive.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.OddGaugeQ
-import MultiplicativeBasisDeformations.Foundations.StarCase
+module
+
+public import MultiplicativeBasisDeformations.Foundations.OddGaugeQ
+public import MultiplicativeBasisDeformations.Foundations.StarCase
 
 /-!
 # The odd quotients of even `A` (Appendix A)
@@ -10,6 +12,8 @@ path and its one-arrow rotation, with opposite classes"; rows are reduced by the
 sum of their levels to words in the middle arrows `ε`, and "going around the
 cycle gives `w_j = -w_j`".
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

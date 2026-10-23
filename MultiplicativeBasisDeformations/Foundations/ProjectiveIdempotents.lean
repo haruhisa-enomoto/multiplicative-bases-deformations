@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.SimpleTops
-import MBDVendor.Magnitude.Algebra.RightModulePrimitiveIdempotent
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SimpleTops
+public import MBDVendor.Magnitude.Algebra.RightModulePrimitiveIdempotent
 
 /-!
 # Indecomposable projectives are principal right ideals `eA`
@@ -11,6 +13,8 @@ isomorphic to `eA` for a primitive idempotent `e`: a finite dual basis writes
 `End(P)` is local, so `P` is a retract of `A_A`, and the corresponding
 idempotent endomorphism of `A_A` is left multiplication by `e`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

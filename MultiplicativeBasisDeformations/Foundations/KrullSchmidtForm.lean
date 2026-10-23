@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.StrictLayers
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
-import MBDVendor.Magnitude.CategoryTheory.RadicalMinimality
-import MBDVendor.QSE.RepresentationTheory.AlmostSplitCofinite
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StrictLayers
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
+public import MBDVendor.Magnitude.CategoryTheory.RadicalMinimality
+public import MBDVendor.QSE.RepresentationTheory.AlmostSplitCofinite
 
 /-!
 # The Krull–Schmidt split–radical normal form
@@ -13,6 +15,8 @@ endomorphism rings (`hasSplitRadicalNormalForm_of_decomp`). The argument is the 
 finite `τ`-categories (`MBDVendor.QSE.Iyama.splitRadicalForm_finBiproduct`), with the finite
 skeleton replaced by this decomposition hypothesis.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

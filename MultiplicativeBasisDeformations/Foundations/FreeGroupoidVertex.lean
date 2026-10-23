@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Vertex groups of free groupoids are free
@@ -11,6 +13,8 @@ Here the free groupoid on any quiver is shown to be free in Mathlib's sense, and
 the vertex group at `X₀` is identified with the vertex group of the free
 groupoid on the connected component of `X₀`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

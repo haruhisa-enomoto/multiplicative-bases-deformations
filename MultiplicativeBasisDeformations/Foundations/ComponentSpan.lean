@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.ComponentTransfer
-import MultiplicativeBasisDeformations.Foundations.RowSpan
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ComponentTransfer
+public import MultiplicativeBasisDeformations.Foundations.RowSpan
 
 /-!
 # Periodic localization for spanning rows
@@ -12,6 +14,8 @@ on a `τ`-closed subquiver `Q_S` (`inclRow_mem_imageD`): if its classes lie in t
 vertices outside `S` do. Consequently spanning rows transfer
 (`rowClass_mem_rowSpan_of_restrict`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

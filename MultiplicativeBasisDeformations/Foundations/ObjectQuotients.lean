@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PeriodicComponents
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PeriodicComponents
 
 /-!
 # Object quotients of scalar mesh categories
@@ -14,6 +16,8 @@ import MultiplicativeBasisDeformations.Foundations.PeriodicComponents
   lies in the mesh ideal plus the paths through `D`
   (`objectQuotient_map_eq_zero_iff`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

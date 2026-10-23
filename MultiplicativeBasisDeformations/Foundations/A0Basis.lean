@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.LiftedEvaluation
-import MultiplicativeBasisDeformations.Foundations.NormedBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.LiftedEvaluation
+public import MultiplicativeBasisDeformations.Foundations.NormedBasis
 
 /-!
 # A multiplicative basis of `A₀` from homogeneous vectors
@@ -15,6 +17,8 @@ with identities `b(x, x, 1) = 𝟙`, the matrix units of the `b(x, y, g)` form a
 basis of `(Alg F)ᵒᵖ` (`basisA0`) which is multiplicative and contains the
 idempotents of the labels (`basisA0_isMultiplicative`, `basisA0_idempotents`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

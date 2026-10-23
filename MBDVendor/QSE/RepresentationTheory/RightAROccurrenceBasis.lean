@@ -1,4 +1,6 @@
-import MBDVendor.QSE.RepresentationTheory.LinearIrreducibleHomSpace
+module
+
+public import MBDVendor.QSE.RepresentationTheory.LinearIrreducibleHomSpace
 
 /-!
 # Occurrence bases for minimal right almost-split maps
@@ -15,6 +17,8 @@ The construction is abstract: it uses no quiver presentation or module
 classification, and it applies to projective-boundary right almost-split maps
 as well as to almost-split sequences.
 -/
+
+@[expose] public section
 
 noncomputable section
 

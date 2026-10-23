@@ -1,0 +1,41 @@
+{
+ "checked_at": "2026-10-23T12:50:08+09:00",
+ "exit": 0,
+ "targets": [
+  "MultiplicativeBasisDeformations.Challenge.theoremA",
+  "MultiplicativeBasisDeformations.Challenge.theoremB"
+ ],
+ "source_sync": "source-sync.json (research commit 8e6e678dfa987e4e116de4ad09eda25249071084)",
+ "challenge_sha256": "3531b45475794c2cc388f053b78df180e00b39bc899374391098f0bc84f14240",
+ "solution_sha256": "36b41be26386c790c3ef308e39243684b6434a4ba5cddd9e28a61b24b3e1a1fc",
+ "comparator_json_sha256": "8bf54efa0666262317da1b27b56b5f6c0c0d39536d74fcb1a038d0fa53cb6fe9",
+ "lean": "leanprover/lean4:v4.35.0-rc3",
+ "mathlib": "c55e6e786f49471c72fbddbec5415808896aec1e",
+ "tools": {
+  "comparator": "lake comparator bundled with Lean v4.35.0-rc3",
+  "kernels": [
+   "Lean default kernel",
+   "nanoda_bin (bundled)",
+   "con-ron (bundled)"
+  ],
+  "bubblewrap": "0.12.0, built from the release tarball (sha256 9760d007363e3abba7c747489910f9f82d9fca53ba3bd3282e396fa3c97a3314)"
+ },
+ "axioms": [
+  "propext",
+  "Classical.choice",
+  "Quot.sound"
+ ],
+ "statement_match": "passed",
+ "axiom_boundary": "passed",
+ "con_ron": "passed (63933 declarations)",
+ "nanoda": "passed",
+ "lean_kernel_replay": "passed",
+ "result": "Your solution is okay!",
+ "log_sha256": "86fb0ae71f992c0b53cdd52ca660f211547fea304fdc9b1c931c50025fdbfb04",
+ "log_bytes": 895639,
+ "qualification": "Local run of scripts/verify-comparator.sh, which follows Palomar's template; not a hosted Palomar preflight or registry acceptance.",
+ "timing": {
+  "elapsed_seconds": 423.6,
+  "exit": 0
+ }
+}

@@ -1,7 +1,9 @@
-import Mathlib.Algebra.Algebra.Tower
-import Mathlib.Algebra.Category.FGModuleCat.Basic
-import Mathlib.Algebra.Algebra.RestrictScalars
-import Mathlib.LinearAlgebra.Dual.Lemmas
+module
+
+public import Mathlib.Algebra.Algebra.Tower
+public import Mathlib.Algebra.Category.FGModuleCat.Basic
+public import Mathlib.Algebra.Algebra.RestrictScalars
+public import Mathlib.LinearAlgebra.Dual.Lemmas
 
 /-!
 # The contragredient action on a vector-space dual
@@ -9,6 +11,8 @@ import Mathlib.LinearAlgebra.Dual.Lemmas
 This is the concrete algebraic core used to instantiate `AlignedBiduality`
 with `D = Hom_k(-, k)`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

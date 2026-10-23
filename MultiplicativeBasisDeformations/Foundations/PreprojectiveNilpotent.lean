@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.SectionalMesh
-import MultiplicativeBasisDeformations.Foundations.ZDeltaGauge
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SectionalMesh
+public import MultiplicativeBasisDeformations.Foundations.ZDeltaGauge
 
 /-!
 # Long paths vanish in `Π(Δ)`
@@ -14,6 +16,8 @@ under `π` is a long path of `Q`, hence zero; `π` reflects the mesh ideal, the
 rescaling of Step 2 moves it to the signed mesh ideal, and forgetting heights
 lands in the ideal of `Π(Δ)`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

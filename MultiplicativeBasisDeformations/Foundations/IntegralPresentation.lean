@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralPsi
-import MultiplicativeBasisDeformations.Foundations.IntegralHom
-import MultiplicativeBasisDeformations.Foundations.ProjectiveEvaluation
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralPsi
+public import MultiplicativeBasisDeformations.Foundations.IntegralHom
+public import MultiplicativeBasisDeformations.Foundations.ProjectiveEvaluation
 
 /-!
 # Proposition 10.1(1) in all degrees and 10.1(3): the presentation of `E₄`
@@ -19,6 +21,8 @@ the all-one presentation of `C⁽²⁾`".
   degree, by length-homogeneous path combinations (`evO_surj`), and its kernel is exactly the
   ideal of the unit mesh relations (`evO_eq_zero_iff`): this is the presentation (3).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

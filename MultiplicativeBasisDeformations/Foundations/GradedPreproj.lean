@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.PreprojectiveDimension
-import MultiplicativeBasisDeformations.Foundations.PathGrading
-import MultiplicativeBasisDeformations.Foundations.PreprojFunctionals
-import MultiplicativeBasisDeformations.Foundations.UBound
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PreprojectiveDimension
+public import MultiplicativeBasisDeformations.Foundations.PathGrading
+public import MultiplicativeBasisDeformations.Foundations.PreprojFunctionals
+public import MultiplicativeBasisDeformations.Foundations.UBound
 
 /-!
 # The graded first-arrow sequence of `Π(Δ)`
@@ -16,6 +18,8 @@ middle exactness (`exact_star`, proved for Proposition 4.1) and the grading of
 the ideal give `∑_{l∼i} h_l(d+1) ≤ h_i(d+2) + h_i(d)` and
 `∑_{l∼i} h_l(0) ≤ h_i(1)`; these are the inequalities `κ ≥ 0` of `UBound`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

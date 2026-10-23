@@ -1,6 +1,8 @@
-import Mathlib.Algebra.Homology.ShortComplex.Exact
-import Mathlib.CategoryTheory.Idempotents.Basic
-import Mathlib.CategoryTheory.Preadditive.Biproducts
+module
+
+public import Mathlib.Algebra.Homology.ShortComplex.Exact
+public import Mathlib.CategoryTheory.Idempotents.Basic
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
 
 /-!
 # Split morphisms in an idempotent-complete preadditive category
@@ -9,6 +11,8 @@ This file constructs the complementary summand of a split monomorphism, and
 dually of a split epimorphism, directly by splitting the complementary
 idempotent.  No kernel or cokernel is assumed.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

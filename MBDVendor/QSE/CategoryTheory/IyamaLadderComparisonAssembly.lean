@@ -1,5 +1,7 @@
-import MBDVendor.QSE.CategoryTheory.IyamaLadderComparisonEndpoint
-import MBDVendor.QSE.CategoryTheory.IyamaRightLadderIteration
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaLadderComparisonEndpoint
+public import MBDVendor.QSE.CategoryTheory.IyamaRightLadderIteration
 
 /-!
 # Categorical assembly of Iyama's finite ladder comparison
@@ -9,6 +11,8 @@ Iyama, *Tau-categories I*, Lemma 6.3.1(2)(i) has supplied the comparison
 isomorphisms.  It converts those isomorphisms into the literal finite
 invertible-ladder relation used for Nakayama pairs.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

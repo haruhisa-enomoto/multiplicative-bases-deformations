@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.Peirce
-import MultiplicativeBasisDeformations.Foundations.EndpointChains
-import MultiplicativeBasisDeformations.Foundations.Exchange
-import MultiplicativeBasisDeformations.Foundations.ProjectiveIdempotents
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Peirce
+public import MultiplicativeBasisDeformations.Foundations.EndpointChains
+public import MultiplicativeBasisDeformations.Foundations.Exchange
+public import MultiplicativeBasisDeformations.Foundations.ProjectiveIdempotents
 
 /-!
 # Indecomposable projectives of a basic algebra
@@ -13,6 +15,8 @@ set (`exists_iso_ideal`: some `e e_i e` is a unit of the local corner `eAe`, so
 `eA` is a retract of `e_i A`), and for a basic algebra distinct `e_i A` are not
 isomorphic (`eq_of_iso_ideal`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

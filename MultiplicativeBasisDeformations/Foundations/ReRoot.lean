@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.DeckData
-import MultiplicativeBasisDeformations.Foundations.ZTransport
+module
+
+public import MultiplicativeBasisDeformations.Foundations.DeckData
+public import MultiplicativeBasisDeformations.Foundations.ZTransport
 
 /-!
 # Changing the root of a star model
@@ -9,6 +11,8 @@ vertex". A covering `π : ℤΔ → Q` and its deck data transport along an
 isomorphism `e : Δ ≃ Δ'` of star models (any graph isomorphism; the heights
 shift by `δ` to match the two-colourings).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

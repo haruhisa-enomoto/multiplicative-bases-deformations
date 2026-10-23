@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.RayConfigs
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayConfigs
 
 /-!
 # Tree configurations from arrows
@@ -8,6 +10,8 @@ rays on the cover arrows, provided every path product is nonzero: `ρ a b` is th
 the unique path (`Conf.ofArrows`). This is how the paper presents its trees ("every path
 survives").
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

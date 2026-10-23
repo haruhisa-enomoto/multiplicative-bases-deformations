@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Refinements.FullHochschild
-import MultiplicativeBasisDeformations.Foundations.WeightLift
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FullHochschild
+public import MultiplicativeBasisDeformations.Foundations.WeightLift
 
 /-!
 # Proposition 12.5: weights, and `I₀ = I`
@@ -17,6 +19,8 @@ tuple of relative weight `χ` is `Ψ[μ]` for a cocycle `μ` of character `χ`
 character which is not a coboundary (`exists_not_cobdry`): `I ⊆ I₀`. The inclusion `I₀ ⊆ I` is
 Proposition 7.6 (`Ψc_mem_rowSpan_char`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

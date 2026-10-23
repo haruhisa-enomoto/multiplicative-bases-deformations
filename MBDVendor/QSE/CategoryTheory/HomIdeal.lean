@@ -1,5 +1,7 @@
-import Mathlib.Algebra.Group.Subgroup.Lattice
-import Mathlib.CategoryTheory.Preadditive.Basic
+module
+
+public import Mathlib.Algebra.Group.Subgroup.Lattice
+public import Mathlib.CategoryTheory.Preadditive.Basic
 
 /-!
 # Additive ideals in preadditive categories
@@ -7,6 +9,8 @@ import Mathlib.CategoryTheory.Preadditive.Basic
 This file contains the lightweight two-sided Hom-ideal structure shared by
 categorical quotients and radical-power arguments.
 -/
+
+@[expose] public section
 
 open CategoryTheory
 

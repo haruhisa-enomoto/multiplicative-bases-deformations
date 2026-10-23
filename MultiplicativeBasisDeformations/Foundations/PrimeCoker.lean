@@ -1,8 +1,10 @@
-import MultiplicativeBasisDeformations.Foundations.BaseChange
-import MultiplicativeBasisDeformations.Foundations.RowSpan
-import MultiplicativeBasisDeformations.Foundations.ARPrime
-import MultiplicativeBasisDeformations.Foundations.ResidualCorrection
-import MultiplicativeBasisDeformations.Foundations.ARBrick
+module
+
+public import MultiplicativeBasisDeformations.Foundations.BaseChange
+public import MultiplicativeBasisDeformations.Foundations.RowSpan
+public import MultiplicativeBasisDeformations.Foundations.ARPrime
+public import MultiplicativeBasisDeformations.Foundations.ResidualCorrection
+public import MultiplicativeBasisDeformations.Foundations.ARBrick
 
 /-!
 # The spanning rows of `C⁽²⁾` (Lemma B.2 over `𝔽₂`)
@@ -14,6 +16,8 @@ spanning property passes to the all-one presentation over `k` by the gauge of Le
 (`cokerSpan_descend`): applying the retraction to a relation
 `row = ∑ αᵢ rowᵢ + D f` over `k` gives `row = ∑ θ(αᵢ) rowᵢ + D(θ f)` over `𝔽₂`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

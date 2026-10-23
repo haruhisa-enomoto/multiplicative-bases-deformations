@@ -1,6 +1,8 @@
-import Mathlib.Data.Set.Finite.Powerset
-import Mathlib.Order.Closure
-import Mathlib.Order.Preorder.Finite
+module
+
+public import Mathlib.Data.Set.Finite.Powerset
+public import Mathlib.Order.Closure
+public import Mathlib.Order.Preorder.Finite
 
 /-!
 # Closure operators with anti-exchange
@@ -10,6 +12,8 @@ This file develops the abstract closure-theoretic layer used in
 ground type is finite; finiteness enters only in the later finite convex
 geometry results.
 -/
+
+@[expose] public section
 
 open Set
 

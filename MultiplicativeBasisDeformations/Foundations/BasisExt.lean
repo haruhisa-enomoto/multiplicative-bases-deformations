@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Extending a dual family to a basis
@@ -8,6 +10,8 @@ integer functionals `h_j` with `h_j(x_i) = δ_ij` are part of a basis
 (`exists_basis_of_dual`). The projection `v ↦ ∑ h_i(v) x_i` splits off the span of the
 `x_i`, with basis the `x_i`; its kernel is free, being finite and torsion-free.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

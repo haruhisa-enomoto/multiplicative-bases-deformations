@@ -1,7 +1,9 @@
-import MBDVendor.Magnitude.CategoryTheory.ProjectiveCover
-import MBDVendor.QSE.RepresentationTheory.AlmostSplitUniqueness
-import Mathlib.CategoryTheory.Abelian.Opposite
-import Mathlib.CategoryTheory.Simple
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.ProjectiveCover
+public import MBDVendor.QSE.RepresentationTheory.AlmostSplitUniqueness
+public import Mathlib.CategoryTheory.Abelian.Opposite
+public import Mathlib.CategoryTheory.Simple
 
 /-!
 # Cokernels of minimal left almost-split monomorphisms
@@ -11,6 +13,8 @@ sequence theorem from the already-vendored kernel half by passage to the
 opposite category.  Keeping the transport explicit avoids duplicating the
 pushout argument used for kernels.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

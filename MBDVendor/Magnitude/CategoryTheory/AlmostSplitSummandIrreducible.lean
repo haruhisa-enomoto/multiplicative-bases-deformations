@@ -1,5 +1,7 @@
-import MBDVendor.Magnitude.CategoryTheory.FiniteKrullSchmidtMatrix
-import MBDVendor.Magnitude.CategoryTheory.IrreducibleAbelian
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.FiniteKrullSchmidtMatrix
+public import MBDVendor.Magnitude.CategoryTheory.IrreducibleAbelian
 
 /-!
 # Irreducible components of minimal almost-split morphisms
@@ -7,6 +9,8 @@ import MBDVendor.Magnitude.CategoryTheory.IrreducibleAbelian
 This leaf module keeps the finite Krull--Schmidt matrix dependency out of the
 widely imported elementary irreducible-morphism API.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralLifting
-import MultiplicativeBasisDeformations.Foundations.IndicatorRel
-import MultiplicativeBasisDeformations.Foundations.SquareZero
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralLifting
+public import MultiplicativeBasisDeformations.Foundations.IndicatorRel
+public import MultiplicativeBasisDeformations.Foundations.SquareZero
 
 /-!
 # The Hochschild complex of `OP` in one character
@@ -17,6 +19,8 @@ pairs for which `w₂` exists (`C2`); one-cochains are coefficient functions on 
 rays (`C1`). Their realizations `Φ₁`, `Φ₂` as linear and bilinear maps of `OP`, and the
 coboundary `d₁` in coefficients (`d1`), with `hcobdry (Φ₁ f) = Φ₂ (d₁ f)`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

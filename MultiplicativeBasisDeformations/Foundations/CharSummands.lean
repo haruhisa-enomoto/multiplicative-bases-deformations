@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CharDecomp
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CharDecomp
 
 /-!
 # Independence of character summands of `HH²` (Proposition 7.6)
@@ -12,6 +14,8 @@ coboundaries is a coboundary only when all coefficients vanish (`coef_eq_zero_of
 a cocycle of character `χ_i` is a multiple of `μ_i` modulo coboundaries once it lies in the
 span (`eq_smul_add_cobdry`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

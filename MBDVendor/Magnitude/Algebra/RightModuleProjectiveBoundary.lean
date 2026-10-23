@@ -1,6 +1,8 @@
-import MBDVendor.Magnitude.Algebra.RightModuleAlmostSplit
-import Mathlib.Algebra.Category.ModuleCat.Projective
-import MBDVendor.QSE.RepresentationTheory.IrreducibleRadicalQuotient
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleAlmostSplit
+public import Mathlib.Algebra.Category.ModuleCat.Projective
+public import MBDVendor.QSE.RepresentationTheory.IrreducibleRadicalQuotient
 
 /-!
 # The projective boundary almost-split morphism
@@ -12,6 +14,8 @@ of the relevant arguments in the donor's `ProjectiveSimpleTop.lean`,
 `d5ba0c48e7a851afd51247ff9cd81fc629e00ed2`.  Their unrelated simple-ranking
 and standard-semantics layers are not imported.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

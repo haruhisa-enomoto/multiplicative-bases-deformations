@@ -1,4 +1,6 @@
-import MBDVendor.QSE.CategoryTheory.IyamaNakayamaBoundary
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaNakayamaBoundary
 
 /-!
 # The nonzero endpoint in Iyama's finite ladder comparison
@@ -10,6 +12,8 @@ initial `muMinus` map.  The proof uses indecomposability, left-mesh uniqueness,
 weak-cokernel exactness, and radical perturbation; it requires neither a
 functor-category construction nor a concrete module classification.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

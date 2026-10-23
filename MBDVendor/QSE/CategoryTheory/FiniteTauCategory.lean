@@ -1,8 +1,10 @@
-import Mathlib.CategoryTheory.MorphismProperty.Basic
-import Mathlib.CategoryTheory.Idempotents.Basic
-import Mathlib.RingTheory.LocalRing.Basic
-import MBDVendor.QSE.CategoryTheory.IyamaTauBiproduct
-import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
+module
+
+public import Mathlib.CategoryTheory.MorphismProperty.Basic
+public import Mathlib.CategoryTheory.Idempotents.Basic
+public import Mathlib.RingTheory.LocalRing.Basic
+public import MBDVendor.QSE.CategoryTheory.IyamaTauBiproduct
+public import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
 
 /-!
 # Finite tau-category data for Iyama's extraction theorem
@@ -15,6 +17,8 @@ form of that theorem formally implies the right-mesh form.
 The relation `NakayamaPair` remains an external parameter here.  Its genuine
 definition by finite invertible ladders belongs to the next layer.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

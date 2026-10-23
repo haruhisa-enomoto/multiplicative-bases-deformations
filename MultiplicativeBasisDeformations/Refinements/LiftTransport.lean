@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.FilteredMaps
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FilteredMaps
 
 /-!
 # Products and transports of filtered lifts (toward Corollary 12.1)
@@ -8,6 +10,8 @@ shifted gradings (`FLift.pi`), and a `B`-stable subspace which is the image of a
 filtered map with injective `Λ`-linear leading term carries a transported filtered lift
 (`FLift.transport`): the leading-term arguments of `deformation-refinements.tex`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

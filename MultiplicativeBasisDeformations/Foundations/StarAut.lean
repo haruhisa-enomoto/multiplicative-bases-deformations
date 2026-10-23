@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.StarModel
-import Mathlib.Tactic.FinCases
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarModel
+public import Mathlib.Tactic.FinCases
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.Positivity
 
 /-!
 # Automorphisms of star models
@@ -15,6 +17,8 @@ its middle vertex. Every tree automorphism fixes that root."
   depths (`path_aut`); a reversal preserving the parity of depths fixes the
   middle vertex.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

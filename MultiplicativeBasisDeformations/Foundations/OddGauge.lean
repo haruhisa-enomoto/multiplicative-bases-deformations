@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PeriodicGauge
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PeriodicGauge
 
 /-!
 # The gauge on odd quotients of even `A` (Lemma A.1(2))
@@ -16,6 +18,8 @@ middle edge is `{h - 1, h}`, and the deck generator is
 `C a b s` (the coefficient at `(a, s + 2)` of the arrow from `(b, s + 1)`). We
 solve the equations on the half `d ≥ h` and fold the other half onto it.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 
@@ -193,8 +197,7 @@ theorem right_eqn (e : ℕ) (he : h ≤ e) (s : ℤ) :
   · intro hpar
     have hne : ¬ (s : ZMod 2) = ((h + j + 1 : ℕ) : ZMod 2) := by
       rw [hpar]; push_cast; intro h'
-      have := congrArg (· - ((h + j : ℕ) : ZMod 2)) h'
-      simp at this
+      exact absurd (add_left_cancel (h'.symm.trans (add_zero _).symm)) (by decide)
     rw [if_neg hne] at hs
     rw [hM, hM, hNp]
     simp only [lineS, if_neg hne, mul_one] at hs

@@ -1,5 +1,7 @@
-import Mathlib.RingTheory.Polynomial.Basic
-import MBDVendor.QSE.ConvexGeometry.ClosedSets
+module
+
+public import Mathlib.RingTheory.Polynomial.Basic
+public import MBDVendor.QSE.ConvexGeometry.ClosedSets
 
 /-!
 # Level generating polynomials
@@ -9,6 +11,8 @@ number of closed sets at each cardinality level in a polynomial.  This file
 defines that invariant independently of the later module-theoretic
 instantiations.
 -/
+
+@[expose] public section
 
 open Polynomial Set
 

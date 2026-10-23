@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.PeriodicGauge
-import MultiplicativeBasisDeformations.Foundations.OrbitReps
-import MultiplicativeBasisDeformations.Foundations.TwistedTrace
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PeriodicGauge
+public import MultiplicativeBasisDeformations.Foundations.OrbitReps
+public import MultiplicativeBasisDeformations.Foundations.TwistedTrace
 
 /-!
 # Lemma A.1(1) for an arbitrary rooted tree
@@ -21,6 +23,8 @@ scales of its parent (`step`, `exists_periodic_line_vertex`), and transported al
 recursion runs on the depth (`NM`). The solution is `g`-invariant and solves every edge equation
 (`main`). The star version is `StarGauge.exists_signed_gauge`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -327,7 +331,7 @@ theorem pullCoeff_eq (X : T.zQuiver.nonprojective) (Y : T.ZVert) (A : Y ⟶ X.1)
   change s = s' + 1 at ht
   subst ht
   have hpar : (((s' + 1 - 2 : ℤ)) : ZMod 2) = T.par w := by
-    rw [← hs]; push_cast; rw [show (2 : ZMod 2) = 0 from rfl, sub_zero]
+    rw [← hs]; push_cast; rw [show (2 : ZMod 2) = 0 from rfl]; exact sub_zero _
   unfold Cf
   rw [dif_pos ⟨hadj, hpar⟩]
   exact c_congr c (Subtype.ext (congrArg π.obj (by ext <;> simp <;> ring)))
@@ -422,7 +426,7 @@ theorem zEq (hc0 : 0 < c0) (hc0e : Even c0) (X : T.zQuiver.nonprojective) (Y : T
   change T.sgn k w w' = Nz T hQ π c R c0 w (s' + 1) * Cf T hQ π c w w' (s' + 1 - 2) *
     Mz T hQ π c R c0 (child R w w') (s' + 1 - 2) * Mz T hQ π c R c0 (child R w' w) s'
   have hpar : ((s' + 1 - 2 : ℤ) : ZMod 2) = T.par w := by
-    rw [← hs]; push_cast; rw [show (2 : ZMod 2) = 0 from rfl, sub_zero]
+    rw [← hs]; push_cast; rw [show (2 : ZMod 2) = 0 from rfl]; exact sub_zero _
   set u := s' + 1 - 2 with hu
   rw [show s' = u + 1 by omega, show u + 1 + 1 = u + 2 by ring]
   rcases (hadj w' w).1 hadjw with ⟨hw'o, hpw'⟩ | ⟨hwo, hpw⟩
@@ -433,7 +437,7 @@ theorem zEq (hc0 : 0 < c0) (hc0e : Even c0) (X : T.zQuiver.nonprojective) (Y : T
       rfl).2 hw'o u
     have hne : (u : ZMod 2) ≠ T.par w' := by
       rw [hpar, T.par_adj hadjw]; intro h
-      have := congrArg (· - T.par w') h; simp at this
+      exact absurd (add_left_cancel (h.trans (add_zero _).symm)) (by decide)
     rw [if_neg hne] at e
     rw [child_down R w' hw'o, child_up R w' hw'o]
     simp only [Rooted.lineS, if_neg hne, mul_one] at e

@@ -1,4 +1,6 @@
-import MBDVendor.QSE.RepresentationTheory.AntiExchange
+module
+
+public import MBDVendor.QSE.RepresentationTheory.AntiExchange
 
 /-!
 # Extremality and relative split projectivity
@@ -11,6 +13,8 @@ The difficult implication uses nilpotence of the Jacobson radical of
 `End(x)`.  In the current skeleton this is supplied by the same Artinian
 endomorphism-ring hypothesis used for anti-exchange.
 -/
+
+@[expose] public section
 
 noncomputable section
 

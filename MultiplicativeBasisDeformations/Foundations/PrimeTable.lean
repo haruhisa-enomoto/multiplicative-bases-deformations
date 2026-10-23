@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.ARPrime
-import MultiplicativeBasisDeformations.Foundations.Char2A0
-import MultiplicativeBasisDeformations.Foundations.IntegralA0
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARPrime
+public import MultiplicativeBasisDeformations.Foundations.Char2A0
+public import MultiplicativeBasisDeformations.Foundations.IntegralA0
 
 /-!
 # `A⁽²⁾ = 𝔽₂P` (Section 10)
@@ -17,6 +19,8 @@ nonzero vector `e_t` (`eT`); `ι₂ e_t` is a nonzero multiple of `b_t`. The `e_
 multiplicative basis of `A⁽²⁾` with the multiplication table of `A₀`, hence
 `𝔽₂P ≅ A⁽²⁾` (`Θ₂`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import MBDVendor.QSE.RepresentationTheory.AntiExchange
+module
+
+public import MBDVendor.QSE.RepresentationTheory.AntiExchange
 
 /-!
 # Anti-exchange for submodule closure
@@ -8,6 +10,8 @@ This file gives the direct reject-and-kernel dual of the trace proof in
 duality equivalence: the common kernels of maps through a distinct
 indecomposable are iterated through the nilpotent Jacobson radical.
 -/
+
+@[expose] public section
 
 noncomputable section
 

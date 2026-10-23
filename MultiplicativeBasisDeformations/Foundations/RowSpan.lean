@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.GaugeTransfer
-import MultiplicativeBasisDeformations.Foundations.RowRotation
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GaugeTransfer
+public import MultiplicativeBasisDeformations.Foundations.RowRotation
 
 /-!
 # Cokernels spanned by given rows
@@ -13,6 +15,8 @@ rescaling arrows and entire mesh relations (`periodic-mesh-calculations.tex`:
 "rescaling arrows and entire relations changes the mesh derivative by invertible
 diagonal maps, so it changes neither its cokernel …").
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.TreeBFS
-import MultiplicativeBasisDeformations.Foundations.DynkinConfigs
-import MultiplicativeBasisDeformations.Foundations.StarModel
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TreeBFS
+public import MultiplicativeBasisDeformations.Foundations.DynkinConfigs
+public import MultiplicativeBasisDeformations.Foundations.StarModel
 
 /-!
 # Parents, children and arms in a finite tree
@@ -13,6 +15,8 @@ Seen from a root `o`, each other vertex has a unique parent (`TreeBFS`); its
 other neighbours are its children. This file sets up parents, children and
 ancestors.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

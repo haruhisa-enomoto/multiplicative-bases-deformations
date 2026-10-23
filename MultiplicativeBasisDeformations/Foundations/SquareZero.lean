@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.GradedExt
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedExt
 
 /-!
 # Square-zero lifts of modules and maps (Lemma 6.6)
@@ -21,6 +23,8 @@ equations (`ActLift`, `IsLiftHom`), with `R[ε]`-linear structure
 (`CycProj.actLift`, the paper's "If `M_i = e_xΛ`, the regular module `e_xΛ_μ`
 is such a lift"). The additional gradings of the lemma are in `SquareZeroWeight.lean`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

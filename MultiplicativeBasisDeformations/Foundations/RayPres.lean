@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.FibreRays
-import MultiplicativeBasisDeformations.Foundations.RayProduct
-import MultiplicativeBasisDeformations.Foundations.RayTransport
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FibreRays
+public import MultiplicativeBasisDeformations.Foundations.RayProduct
+public import MultiplicativeBasisDeformations.Foundations.RayTransport
 
 /-!
 # Ray presentations
@@ -16,6 +18,8 @@ The transported rays of a fibre of the zero-product family present `B` by `P` (`
 Each correction `r*s = rq_ys` belongs to this subspace." With zero coefficients this shows
 that a representation-finite ray table presents its own linearization.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

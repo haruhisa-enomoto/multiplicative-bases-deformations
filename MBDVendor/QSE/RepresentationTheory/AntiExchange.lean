@@ -1,4 +1,6 @@
-import MBDVendor.QSE.RepresentationTheory.EndomorphismRadical
+module
+
+public import MBDVendor.QSE.RepresentationTheory.EndomorphismRadical
 
 /-!
 # Anti-exchange for quotient closure
@@ -9,6 +11,8 @@ assumes that each indecomposable endomorphism ring is Artinian.  That is
 the exact ring-theoretic input used to make its Jacobson radical
 nilpotent.
 -/
+
+@[expose] public section
 
 noncomputable section
 

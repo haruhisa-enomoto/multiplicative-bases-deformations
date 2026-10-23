@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.GradedRays
-import MultiplicativeBasisDeformations.Foundations.NormedTransport
-import MultiplicativeBasisDeformations.Foundations.BasicLabels
-import MultiplicativeBasisDeformations.Foundations.BasicCorner
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedRays
+public import MultiplicativeBasisDeformations.Foundations.NormedTransport
+public import MultiplicativeBasisDeformations.Foundations.BasicLabels
+public import MultiplicativeBasisDeformations.Foundations.BasicCorner
 
 /-!
 # Transport of ray bases
@@ -17,6 +19,8 @@ The rays are defined relative to a complete set of primitive idempotents. In a
 basic algebra any two complete sets are conjugate (`exists_algEquiv_idempotents`),
 so a ray basis for one set gives one for any other.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

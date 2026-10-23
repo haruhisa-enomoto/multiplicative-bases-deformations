@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.RayPres
-import MultiplicativeBasisDeformations.Foundations.CentralizerTable
-import MultiplicativeBasisDeformations.Foundations.TabSys
-import MultiplicativeBasisDeformations.Foundations.IndicatorRel
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayPres
+public import MultiplicativeBasisDeformations.Foundations.CentralizerTable
+public import MultiplicativeBasisDeformations.Foundations.TabSys
+public import MultiplicativeBasisDeformations.Foundations.IndicatorRel
 
 /-!
 # Tables for the dimension induction
@@ -16,6 +18,8 @@ induction … applied to each connected factor"):
 * a representation-finite ray table presents its own linearization (`self_rayPres`), which is
   basic.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

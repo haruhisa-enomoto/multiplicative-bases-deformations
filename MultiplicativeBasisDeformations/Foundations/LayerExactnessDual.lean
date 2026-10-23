@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.LayerExactness
-import MultiplicativeBasisDeformations.Foundations.ARQuiver
-import MultiplicativeBasisDeformations.Foundations.StrictLayersDual
+module
+
+public import MultiplicativeBasisDeformations.Foundations.LayerExactness
+public import MultiplicativeBasisDeformations.Foundations.ARQuiver
+public import MultiplicativeBasisDeformations.Foundations.StrictLayersDual
 
 /-!
 # Exactness of the second sequence of Proposition 2.6(1)
@@ -22,6 +24,8 @@ the left mesh of `τx`. Its dual radical approximation gives, for a family
   `u ∈ J^n(x, W)`;
 * (injectivity) if every `β_i u ∈ J^{n+2}`, then `u ∈ J^{n+1}`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

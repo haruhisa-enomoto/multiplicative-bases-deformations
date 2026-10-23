@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.OppositeControls2
+module
+
+public import MultiplicativeBasisDeformations.Foundations.OppositeControls2
 
 /-!
 # Proposition 8.12: the stem product
@@ -9,6 +11,8 @@ set of rays `q^i r q^j`, and the product of the sets `U_r U_s` is `U_{r*s}` (`st
 the stem product is associative (`stem_assoc`), and it is the ray product when the latter is
 nonzero (`stem_of_mul_ne`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

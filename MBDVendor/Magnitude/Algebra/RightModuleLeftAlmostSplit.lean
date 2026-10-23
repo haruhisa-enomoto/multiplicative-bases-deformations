@@ -1,6 +1,8 @@
-import MBDVendor.Magnitude.Algebra.RightModuleRightTau
-import MBDVendor.Magnitude.CategoryTheory.AlmostSplitCokernel
-import MBDVendor.QSE.RepresentationTheory.ContragredientDuality
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleRightTau
+public import MBDVendor.Magnitude.CategoryTheory.AlmostSplitCokernel
+public import MBDVendor.QSE.RepresentationTheory.ContragredientDuality
 
 /-!
 # Left almost-split monomorphisms for finite-dimensional modules
@@ -10,6 +12,8 @@ presentations to finite injective copresentations.  Consequently the chosen
 left almost-split map at a noninjective indecomposable is monic.  Its
 cokernel projection is then the dual Auslander--Reiten map.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

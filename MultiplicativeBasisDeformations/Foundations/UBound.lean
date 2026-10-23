@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # The lower bound by the matrices `U_d`
@@ -14,6 +16,8 @@ We record the coefficientwise form: a sequence of vectors `h_d` with
 `κ_d = h_d - M h_{d-1} + h_{d-2} ≥ 0` satisfies `h_N = ∑_{e ≤ N} U_{N-e} κ_e`,
 hence `h_N ≥ U_N h_0` when `U_0, …, U_N ≥ 0`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

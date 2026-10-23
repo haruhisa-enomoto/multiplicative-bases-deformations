@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.DTopPaths
-import MultiplicativeBasisDeformations.Foundations.ReRoot
+module
+
+public import MultiplicativeBasisDeformations.Foundations.DTopPaths
+public import MultiplicativeBasisDeformations.Foundations.ReRoot
 
 /-!
 # Top paths of `Π(A_{2N+1})`
@@ -14,6 +16,8 @@ We use the line rooted at its middle vertex, `ReRoot.Lmid N` (two arms of `N` ve
 with signed positions `−N, …, N`; there the recurrence matrices are `U_d = V_d` of
 `DTop.V`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

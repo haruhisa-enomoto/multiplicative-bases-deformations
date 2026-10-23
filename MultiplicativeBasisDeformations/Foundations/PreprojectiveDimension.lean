@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.TreeRepetition
-import MultiplicativeBasisDeformations.Foundations.SectionalTree
-import Mathlib.Data.Set.Finite.List
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TreeRepetition
+public import MultiplicativeBasisDeformations.Foundations.SectionalTree
+public import Mathlib.Data.Set.Finite.List
 
 /-!
 # The dimension inequality for `Π(Δ)`
@@ -21,6 +23,8 @@ its subspace `I i` spanned by the contextual relations starting at `i`, so that
 
 This file: first-arrow decompositions of paths.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

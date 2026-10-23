@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.DegreeDeck
+module
+
+public import MultiplicativeBasisDeformations.Foundations.DegreeDeck
 
 /-!
 # Mesh corrections on the odd quotients of even `A`
@@ -7,6 +9,8 @@ Appendix A, "The odd quotients of even A" (`periodic-mesh-calculations.tex`): af
 reduced by the sum of their levels to words in the middle arrows, which vanish
 when two is invertible.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

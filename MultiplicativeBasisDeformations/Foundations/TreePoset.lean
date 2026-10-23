@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PosetRepInfinite
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PosetRepInfinite
 
 /-!
 # Lemma 8.8 for tree posets
@@ -10,6 +12,8 @@ points (`nonempty_ePath`), so the incidence algebra is the path algebra of the o
 tree and Lemma 8.8 applies (`tree_not_isRepresentationFinite`); the dual poset has the same
 cover graph (`tree_not_isRepresentationFinite_dual`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

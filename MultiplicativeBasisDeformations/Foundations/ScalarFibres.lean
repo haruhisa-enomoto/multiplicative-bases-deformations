@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.TransportFamily
-import MultiplicativeBasisDeformations.Refinements.FibreAlgebra
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TransportFamily
+public import MultiplicativeBasisDeformations.Refinements.FibreAlgebra
 
 /-!
 # Proposition 11.3(2): scalar fibres are positive filtered deformations
@@ -14,6 +16,8 @@ a correction `u q_y v` has degree at least `deg ℓ(u) + deg ℓ(v) + 1` (`deg_e
 product agrees with that of `Λ` up to terms of higher degree, and the length filtration makes
 the fibre a positive filtered deformation (Definition 6.2, `Fib.posFiltration`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

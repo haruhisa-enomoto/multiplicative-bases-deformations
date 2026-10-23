@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.IntegralLifts
-import MultiplicativeBasisDeformations.Foundations.IntegralWeightLift
-import MultiplicativeBasisDeformations.Foundations.WeightEv
-import MultiplicativeBasisDeformations.Foundations.CoordGrading
+module
+
+public import MultiplicativeBasisDeformations.Foundations.IntegralLifts
+public import MultiplicativeBasisDeformations.Foundations.IntegralWeightLift
+public import MultiplicativeBasisDeformations.Foundations.WeightEv
+public import MultiplicativeBasisDeformations.Foundations.CoordGrading
 
 /-!
 # Weight-homogeneous lifts of the evaluated modules (Proposition 10.1)
@@ -20,6 +22,8 @@ module lifts and arrow lifts of Proposition 10.1 can be chosen homogeneous for a
 of coordinates (`exists_modLiftW`, `exists_arrowLiftW`), by `exists_liftMod_weights` and
 `exists_liftHom_weights`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

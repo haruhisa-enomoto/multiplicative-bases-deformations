@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PosetWeights
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PosetWeights
 
 /-!
 # Thin directed categories and the extension of multiplicative bases
@@ -18,6 +20,8 @@ representation-finiteness of the incidence algebra of the support poset is a
 hypothesis here; it is supplied by Lemma 4.10 for the graded covering category
 (`SupportPoset.lean`). Sinks are sources of the opposite category.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

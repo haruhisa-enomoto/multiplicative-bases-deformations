@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.MGrading
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MGrading
 
 /-!
 # Weights in a cone (toward Proposition 12.8)
@@ -13,6 +15,8 @@ For a weight grading `G` and `σ`, `ConeAt C σ n` says that the components of `
 `σ + γ + C` (`ConeAt.shift`); maps and bilinear maps whose components have relative weights in `C`
 (`ConeLin`, `ConeBil`) preserve the cone condition, and their cone parts are `clin`, `cbil`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

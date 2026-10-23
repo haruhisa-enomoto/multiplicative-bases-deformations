@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.PathMaps
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PathMaps
 
 /-!
 # Full translation subquivers
@@ -19,6 +21,8 @@ This file provides:
 * `TranslationQuiver.restrict`, the translation quiver structure on `FullSub S`,
   and the restricted coefficients.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

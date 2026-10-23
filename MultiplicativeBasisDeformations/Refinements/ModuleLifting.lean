@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.SquareZero
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SquareZero
 
 /-!
 # Proposition 6.5: lifting modules to positive deformations
@@ -17,6 +19,8 @@ associator `assocErr ν μ n` (`ActFam`). The cocycle identity of the error is t
 part of the identity `A(E(m,a,b),c) − E(A(m,a),b,c) + E(m,a⋆b,c) − E(m,a,b⋆c) = 0`, proved by
 reindexing triple sums (`assocErr_identity`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

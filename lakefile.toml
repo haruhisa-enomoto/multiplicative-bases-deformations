@@ -4,8 +4,8 @@ defaultTargets = ["MultiplicativeBasisDeformations"]
 
 [[require]]
 name = "mathlib"
-git = "https://github.com/leanprover-community/mathlib4.git"
-rev = "0df444a360eaa60ab8c11dca51a86af692955474"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "c55e6e786f49471c72fbddbec5415808896aec1e"
 
 [[lean_lib]]
 name = "MultiplicativeBasisDeformations"

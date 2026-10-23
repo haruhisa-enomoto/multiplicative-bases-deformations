@@ -1,4 +1,6 @@
-import MBDVendor.Magnitude.Algebra.RightModuleFactorLeftTau
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleFactorLeftTau
 
 /-!
 # Two-sided tau-data assembly for literal finite-module factor categories
@@ -8,6 +10,8 @@ indecomposables.  The remaining declarations identify their nonzero
 boundaries by restricting the ambient Auslander--Reiten translation and map
 the ambient mesh isomorphisms through the literal quotient.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

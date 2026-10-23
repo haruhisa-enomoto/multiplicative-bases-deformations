@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.StarTree
-import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarTree
+public import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
 
 /-!
 # The centre corner of the preprojective category of a star (Lemma A.3)
@@ -17,6 +19,8 @@ modulo the relations, a word in the `x_i` followed by the geodesic from `o` to
 `v` (`normal_form`). (In `StarV L` the arm `i` has `L i + 1` vertices, so the
 manuscript's `L_i` is `L i + 1`.)
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

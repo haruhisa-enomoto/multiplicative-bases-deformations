@@ -1,10 +1,14 @@
-import MBDVendor.QSE.ConvexGeometry.Relabeling
-import MBDVendor.QSE.RepresentationTheory.AdditiveSubcategory
-import MBDVendor.QSE.RepresentationTheory.ContravariantTransport
+module
+
+public import MBDVendor.QSE.ConvexGeometry.Relabeling
+public import MBDVendor.QSE.RepresentationTheory.AdditiveSubcategory
+public import MBDVendor.QSE.RepresentationTheory.ContravariantTransport
 
 /-!
 # Closure and polynomial consequences of an aligned biduality
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.Exchange
-import MultiplicativeBasisDeformations.Foundations.RepFinite
-import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
-import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Exchange
+public import MultiplicativeBasisDeformations.Foundations.RepFinite
+public import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
+public import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
 
 /-!
 # Lemma 4.6: split representation transfer
@@ -18,6 +20,8 @@ adjoint form: `M` is a summand of `Hom_C(B, M)|_C`, with map
 (decomposition over the finitely many indecomposable `B`-modules, exchange,
 inflation fully faithful) is the source's.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

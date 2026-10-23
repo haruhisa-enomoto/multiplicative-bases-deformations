@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.GradedRealizationIso
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedRealizationIso
 
 /-!
 # `k(Γ_A)` is finite-dimensional
@@ -9,6 +11,8 @@ from the finite radical filtration." By Proposition 2.6(3) the Hom spaces of
 `k(Γ_A)` are the direct sums of their degree parts, which are the radical
 layers; these vanish from the nilpotency index of the radical on.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

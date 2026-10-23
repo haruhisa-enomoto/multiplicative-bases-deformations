@@ -1,6 +1,8 @@
-import Mathlib.Logic.Equiv.Fin.Basic
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
-import MBDVendor.QSE.CategoryTheory.IyamaNakayamaBoundary
+module
+
+public import Mathlib.Logic.Equiv.Fin.Basic
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
+public import MBDVendor.QSE.CategoryTheory.IyamaNakayamaBoundary
 
 /-!
 # Finite Krull--Schmidt cancellation and direct finiteness
@@ -10,6 +12,8 @@ well-defined total number of summands.  Consequently every split-monic
 endomorphism is invertible.  This is the categorical direct-finiteness input
 used in Iyama's ladder comparison.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

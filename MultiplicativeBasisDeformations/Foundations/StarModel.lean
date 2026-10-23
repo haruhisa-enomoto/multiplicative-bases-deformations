@@ -1,6 +1,8 @@
-import Mathlib.Combinatorics.SimpleGraph.Basic
-import Mathlib.Data.Fintype.Sigma
-import Mathlib.Data.Fintype.Option
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Basic
+public import Mathlib.Data.Fintype.Sigma
+public import Mathlib.Data.Fintype.Option
 
 /-!
 # Star models of Dynkin trees
@@ -11,6 +13,8 @@ model `StarV L` has the centre `none` and, on arm `i`, the vertices
 centre. Paths are stars with at most two arms; `D_n`, `E_6`, `E_7`, `E_8` have
 three arms of lengths `(1, 1, n - 3)`, `(1, 2, 2)`, `(1, 2, 3)`, `(1, 2, 4)`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

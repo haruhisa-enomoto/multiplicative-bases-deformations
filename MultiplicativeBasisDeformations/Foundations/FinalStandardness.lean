@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Statements.MainTheorems
+module
+
+public import MultiplicativeBasisDeformations.Statements.MainTheorems
 
 /-!
 # Theorem 11.8(1): initial forms identify `ray A` with `ray A₀`
@@ -14,6 +16,8 @@ presentation is Proposition 8.3(2) (`exists_normedRayBasis_char2`); otherwise `A
 (Theorem B with Corollary 4.15) and the fibre presentation of Proposition 11.3(3) with zero
 correction (`exists_rayPres_A0`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option maxHeartbeats 1000000

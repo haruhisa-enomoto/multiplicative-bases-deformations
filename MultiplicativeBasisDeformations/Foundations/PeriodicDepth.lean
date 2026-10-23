@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.PeriodicModel
-import MultiplicativeBasisDeformations.Foundations.ComponentGlue
-import MultiplicativeBasisDeformations.Foundations.MeshComplex
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PeriodicModel
+public import MultiplicativeBasisDeformations.Foundations.ComponentGlue
+public import MultiplicativeBasisDeformations.Foundations.MeshComplex
 
 /-!
 # The depth function on periodic components
@@ -17,6 +19,8 @@ transformation, so it descends to the component; each vertex has at most one
 neighbour at depth at most its own. This depth function drives the
 contraction onto the core circle in `MeshComplex.lean`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

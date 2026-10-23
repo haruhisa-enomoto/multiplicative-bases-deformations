@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.Cor105Bridge
-import MultiplicativeBasisDeformations.Foundations.Induction
-import MultiplicativeBasisDeformations.Foundations.FiltrationDim
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Cor105Bridge
+public import MultiplicativeBasisDeformations.Foundations.Induction
+public import MultiplicativeBasisDeformations.Foundations.FiltrationDim
 
 /-!
 # Corollary 10.5 for `A₀`, given Proposition 10.3
@@ -10,6 +12,8 @@ import MultiplicativeBasisDeformations.Foundations.FiltrationDim
 induction hypothesis of Proposition 8.3 through Lemma 9.2 (`hWl_of_liftBelow`), and the only
 remaining input is Proposition 10.3 in coefficients (`IStar`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

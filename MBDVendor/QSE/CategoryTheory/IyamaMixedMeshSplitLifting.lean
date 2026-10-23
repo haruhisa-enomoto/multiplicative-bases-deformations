@@ -1,4 +1,6 @@
-import MBDVendor.QSE.CategoryTheory.IyamaMeshSplitLifting
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaMeshSplitLifting
 
 /-!
 # Mixed split-component lifting between chosen meshes
@@ -9,6 +11,8 @@ chosen left mesh from finite Krull--Schmidt decomposition and mesh
 compatibility, then reduces mixed split lifting to the right-right theorem.
 The construction is entirely categorical.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

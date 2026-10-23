@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.TableInduction
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TableInduction
 
 /-!
 # Lemma 9.2 as stated: `B_χ = C_χ/𝔞_χ ≅ kQ_χ`
@@ -18,6 +20,8 @@ on the right (`qhat_mul_b_cases`, `b_mul_qhat_cases`), so the commutator of `q̂
 `q̂_x = 0` (`mem_aχ_iff`), and the quotient map `C_χ → kQ_χ` induces `B_χ ≅ kQ_χ`
 (`Bχ_equiv`, `centralizerRayAlgebra`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaKrullSchmidtNormalForm
 
 /-!
 # Target split--radical normal form
@@ -7,6 +9,8 @@ This is the categorical dual of the source normal form used in Iyama's
 right-ladder construction.  No concrete algebra or module classification is
 used.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

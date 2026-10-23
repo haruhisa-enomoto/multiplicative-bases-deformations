@@ -1,5 +1,7 @@
-import Mathlib
-import MBDVendor.QSE.Foundation.RingTheory.KrullSchmidt.Indecomposable
+module
+
+public import Mathlib
+public import MBDVendor.QSE.Foundation.RingTheory.KrullSchmidt.Indecomposable
 
 /-!
 # Lemma 2.9 for an arbitrary finite-dimensional algebra
@@ -25,6 +27,8 @@ The proof is the source's, without tensor products (as in `ProjectiveEvaluation.
 defined because the discrepancy is a submodule of `Q` killed by `ε`; it extends to `M` because
 `M / R εM` is killed by `ε` (`Ext¹`); injectivity is the Hom-vanishing for `M / R εM`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

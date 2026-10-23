@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.StarAut
-import MultiplicativeBasisDeformations.Foundations.ReRoot
-import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarAut
+public import MultiplicativeBasisDeformations.Foundations.ReRoot
+public import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
 
 /-!
 # Long paths of `Π(A_N)` vanish
@@ -21,6 +23,8 @@ step). A path without such pairs makes all its left steps first, so it has at mo
 ideal (`left_overflow`); symmetrically for right steps (`right_overflow`), and every
 path of length at least `L 0 + 2` lies in the ideal (`long_mem`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

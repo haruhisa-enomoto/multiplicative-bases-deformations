@@ -1,6 +1,8 @@
-import MBDVendor.Magnitude.Algebra.RightModuleFactorStrict
-import MBDVendor.Magnitude.CategoryTheory.AlgebraicallyClosedResidue
-import MBDVendor.Magnitude.CategoryTheory.FiniteTauTranslationMultiplicity
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleFactorStrict
+public import MBDVendor.Magnitude.CategoryTheory.AlgebraicallyClosedResidue
+public import MBDVendor.Magnitude.CategoryTheory.FiniteTauTranslationMultiplicity
 
 /-!
 # Translation invariance of right-module arrow multiplicities
@@ -11,6 +13,8 @@ noninjective label with arrows into its inverse translate.  This numerical
 identity is independent of directedness and supplies the polarization of the
 standard-form mesh category.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

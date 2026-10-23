@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.FlatPerturbation
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FlatPerturbation
 
 /-!
 # Lemma 12.3: the dimension count
@@ -6,6 +8,8 @@ import MultiplicativeBasisDeformations.Refinements.FlatPerturbation
 The dimension part of `lem:flat-mesh-perturbations` over a field: the identities `ZH = I`,
 `ZH_B ≥ I`, the bound `H_B ≤ H` and the matrix argument (see `FlatPerturbation.lean`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

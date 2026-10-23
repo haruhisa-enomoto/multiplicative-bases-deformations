@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
+module
+
+public import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
 
 /-!
 # Lemma 5.2: object quotients have bricks
@@ -16,6 +18,8 @@ We run this argument for `C` through the evaluation `ev : add C ≃ mod A₀`
 the length of `X` is `dim ev(X)`, the image of `ev(r)` is `ev(W)` for a family
 `W` of smaller labels, and `r` factors through `W`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

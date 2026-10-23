@@ -1,5 +1,7 @@
-import Mathlib.CategoryTheory.Preadditive.Biproducts
-import MBDVendor.QSE.CategoryTheory.FiniteTauCategory
+module
+
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
+public import MBDVendor.QSE.CategoryTheory.FiniteTauCategory
 
 /-!
 # Finite invertible ladders and Nakayama pairs
@@ -22,6 +24,8 @@ is the invariant form of Iyama's literal equalities `a₀ = muMinus A` and
 `aₙ = muPlus B`, and accommodates the chosen representatives in
 `FiniteTauCategoryData`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

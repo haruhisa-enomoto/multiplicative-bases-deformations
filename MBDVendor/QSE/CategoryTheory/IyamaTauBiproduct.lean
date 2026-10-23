@@ -1,6 +1,8 @@
-import Mathlib.CategoryTheory.Preadditive.Biproducts
-import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
-import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
+module
+
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
+public import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
+public import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
 
 /-!
 # Finite biproducts of Iyama tau-approximation complexes
@@ -13,6 +15,8 @@ left tau-sequences are closed under finite biproducts.  The current interface
 supplies that ideal through `NilpotentRadicalData`; its nilpotence field is not
 used by the results in this file.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

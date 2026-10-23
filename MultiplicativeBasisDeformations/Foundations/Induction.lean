@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.Char2Basic
-import MultiplicativeBasisDeformations.Foundations.TableInduction
-import MultiplicativeBasisDeformations.Foundations.A0Lift
-import MultiplicativeBasisDeformations.Foundations.SkeletonExists
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Char2Basic
+public import MultiplicativeBasisDeformations.Foundations.TableInduction
+public import MultiplicativeBasisDeformations.Foundations.A0Lift
+public import MultiplicativeBasisDeformations.Foundations.SkeletonExists
 
 /-!
 # The dimension induction (Proposition 8.3) in characteristic two
@@ -19,6 +21,8 @@ property of `T` (Proposition 8.3(3), in the form `hW` used by Theorem 9.1):
 Corollary 10.5 enters the characteristic-two step and itself uses the induction hypothesis
 (through Lemma 9.2 and Theorem 9.1); here it is the hypothesis `Cor105Hyp`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -74,7 +78,7 @@ theorem lift2_conn (h2 : (2 : k) = 0) (hcor : Cor105Hyp k) {V R L : Type} [AddCo
   set Ssys := T.toSys k hfin
   have hpres2 := Ssys.self_rayPres k hfin
   obtain ⟨ψ, σ, hψ⟩ := exists_algEquiv_idempotents (k := k)
-    (T.isBasic_lin k) (Ssys.fibreIdem k hfin 0 (LinearEquiv.refl k _) (Ssys.self_hΨ k)) F1
+    (Ssys.P.isBasic_lin k) (Ssys.fibreIdem k hfin 0 (LinearEquiv.refl k _) (Ssys.self_hΨ k)) F1
   have hpres2' := hpres2.map ψ F1 σ hψ
   have hconnA : (S.A0MultAR b v₀ hF).Conn := hpres2'.conn hpres1 hc
   have hm : F1.m ≠ 0 := ne_zero_of_complete F1.complete

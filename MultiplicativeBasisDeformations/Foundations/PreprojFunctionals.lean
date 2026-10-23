@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.DeletionTransfer
+module
+
+public import MultiplicativeBasisDeformations.Foundations.DeletionTransfer
 
 /-!
 # Functionals on `Π(Δ)` modulo deleted vertices
@@ -12,6 +14,8 @@ relation cancel and it vanishes on lists through deleted vertices
 (`vfun_eq_zero_of_mem`). The constant term (`len0`) shows that the vertex
 idempotents of retained vertices are nonzero.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

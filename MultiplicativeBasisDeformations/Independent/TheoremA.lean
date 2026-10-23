@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Statement
-import MultiplicativeBasisDeformations.Statements.MainTheorems
+module
+
+public import MultiplicativeBasisDeformations.Statement
+public import MultiplicativeBasisDeformations.Statements.MainTheorems
 
 /-!
 # Theorem A in the independent vocabulary
@@ -7,6 +9,8 @@ import MultiplicativeBasisDeformations.Statements.MainTheorems
 The Mathlib-only notions of `Statement.lean` agree with those of the proof
 library, so `theoremA` gives `Statement.TheoremA`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

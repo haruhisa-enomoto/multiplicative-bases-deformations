@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.SquareZero
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SquareZero
 
 /-!
 # Unit-normalized representatives of Hochschild two-classes
@@ -9,6 +11,8 @@ degree-`q` one-cochain `h(a) = a μ(1, 1)`, to a cocycle vanishing when either a
 unit-normalized cocycles; this is how the Bockstein statement of Proposition 10.3
 (`BocksteinStmt`) covers every class of `HH²(A⁽²⁾)_q`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

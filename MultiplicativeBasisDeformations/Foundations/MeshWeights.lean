@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.RayWeights
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayWeights
 
 /-!
 # Integer mesh weights and their restriction to rays (Lemma 7.4)
@@ -24,6 +26,8 @@ projectives with nonzero maps to one lifted object are connected in `L`, by
 Lemma 4.8 and the locality of degree-one endomorphisms; hence the lifted
 projectives of `K₀` lie in one component of `L` (`conn_of_aconn`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

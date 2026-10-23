@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.RightModules
-import MBDVendor.Magnitude.Algebra.RightModuleIntrinsicArrowMultiplicity
-import MBDVendor.Magnitude.CategoryTheory.AlmostSplitSummandIrreducible
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RightModules
+public import MBDVendor.Magnitude.Algebra.RightModuleIntrinsicArrowMultiplicity
+public import MBDVendor.Magnitude.CategoryTheory.AlmostSplitSummandIrreducible
 
 /-!
 # Bridge to the vendored Auslander--Reiten theory
@@ -19,6 +21,8 @@ file connects it with the manuscript-literal objects of
   intermediate modules;
 * hence `Irr(X, Y)` is linearly isomorphic to the vendored irreducible space.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

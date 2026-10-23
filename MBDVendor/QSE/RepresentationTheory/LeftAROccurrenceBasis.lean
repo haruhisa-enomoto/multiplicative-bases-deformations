@@ -1,4 +1,6 @@
-import MBDVendor.QSE.RepresentationTheory.LinearIrreducibleHomSpace
+module
+
+public import MBDVendor.QSE.RepresentationTheory.LinearIrreducibleHomSpace
 
 /-!
 # Occurrence bases for minimal left almost-split maps
@@ -13,6 +15,8 @@ is exactly the dimension of the corresponding irreducible-morphism space.
 The construction is abstract and uses no quiver presentation or module
 classification.
 -/
+
+@[expose] public section
 
 noncomputable section
 

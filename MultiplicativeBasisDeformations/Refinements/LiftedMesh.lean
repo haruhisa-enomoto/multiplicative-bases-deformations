@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Refinements.LiftTransport
-import MultiplicativeBasisDeformations.Refinements.CocycleLift
+module
+
+public import MultiplicativeBasisDeformations.Refinements.LiftTransport
+public import MultiplicativeBasisDeformations.Refinements.CocycleLift
 
 /-!
 # Lifted mesh sequences over a positive deformation (toward Corollary 12.1)
@@ -12,6 +14,8 @@ an injective `B`-linear map `M_{τx}^B → ⊕_a M_{y_a}^B` (the kernel is a fil
 `M_{τx}`, by uniqueness of lifts); at a projective `x`, `π` is injective. These are the lifted
 almost split sequences of `ind(mod B)`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

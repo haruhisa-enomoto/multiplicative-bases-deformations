@@ -1,9 +1,11 @@
-import MultiplicativeBasisDeformations.Foundations.ObjectValues
-import MultiplicativeBasisDeformations.Foundations.Descent
-import MultiplicativeBasisDeformations.Foundations.A0Basis
-import MultiplicativeBasisDeformations.Foundations.DeckCountable
-import MultiplicativeBasisDeformations.Foundations.A0RepFinite
-import MultiplicativeBasisDeformations.Foundations.ProjectiveIdempotents
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ObjectValues
+public import MultiplicativeBasisDeformations.Foundations.Descent
+public import MultiplicativeBasisDeformations.Foundations.A0Basis
+public import MultiplicativeBasisDeformations.Foundations.DeckCountable
+public import MultiplicativeBasisDeformations.Foundations.A0RepFinite
+public import MultiplicativeBasisDeformations.Foundations.ProjectiveIdempotents
 
 /-!
 # Proposition 4.14 for a scalar mesh category
@@ -19,6 +21,8 @@ each nonzero deck-homogeneous piece of `A₀`, closed under composition up to ze
 `A₀ = (Alg F₀)ᵒᵖ` containing the primitive idempotents of the labels
 (`exists_multBasis_A0`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

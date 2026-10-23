@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.TreeRepetition
-import MultiplicativeBasisDeformations.Foundations.SectionalPaths
-import Mathlib.Data.Set.Finite.List
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TreeRepetition
+public import MultiplicativeBasisDeformations.Foundations.SectionalPaths
+public import Mathlib.Data.Set.Finite.List
 
 /-!
 # The tree of sectional paths
@@ -17,6 +19,8 @@ paths from `x₀`, shows it is finite when sectional paths are bounded, and
 equips it with the oriented tree structure (edges from a path to its sectional
 one-arrow extensions).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

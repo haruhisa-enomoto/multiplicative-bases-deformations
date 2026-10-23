@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.A0RepFinite
+module
+
+public import MultiplicativeBasisDeformations.Foundations.A0RepFinite
 
 /-!
 # Representation-finiteness of the opposite algebra
@@ -9,6 +11,8 @@ finite-dimensional algebra is representation-finite if and only if its opposite 
 (`isRepresentationFinite_op`). This is used for the dual halves of the local arguments of
 Part III ("the dual assertion holds", "passing to the opposite algebra").
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -193,9 +197,9 @@ theorem eq_of_dual {x y : M} (h : ∀ φ : Module.Dual k M, φ x = φ y) : x = y
 /-- The preimage as a module map. -/
 def preHom (h : End (D (k := k) M)) : M →ₗ[B] M where
   toFun := preE M h
-  map_add' m m' := eq_of_dual M fun φ ↦ by
+  map_add' m m' := eq_of_dual (k := k) M fun φ ↦ by
     rw [dual_preE, map_add, map_add φ, dual_preE, dual_preE]
-  map_smul' b m := eq_of_dual M fun φ ↦ by
+  map_smul' b m := eq_of_dual (k := k) M fun φ ↦ by
     rw [dual_preE, RingHom.id_apply]
     have e1 : ofD (h.hom (toD φ)) (b • m) = ofD (MulOpposite.op b • h.hom (toD φ)) m := rfl
     rw [e1, ← map_smul]

@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Statements.PartOne
-import MultiplicativeBasisDeformations.Foundations.A0RayTable
-import MultiplicativeBasisDeformations.Foundations.EvaluationEquivalence
-import MultiplicativeBasisDeformations.Foundations.StandardConverse
+module
+
+public import MultiplicativeBasisDeformations.Statements.PartOne
+public import MultiplicativeBasisDeformations.Foundations.A0RayTable
+public import MultiplicativeBasisDeformations.Foundations.EvaluationEquivalence
+public import MultiplicativeBasisDeformations.Foundations.StandardConverse
 
 /-!
 # Propositions 3.8 and 4.14 for the algebra `A₀` of Construction 2.8
@@ -14,6 +16,8 @@ algebras with degree-zero local corners; `MeshWalk.scalarNormalization` for scal
 with mesh data) are instantiated here for the Auslander–Reiten mesh data of `A`
 (`arMeshData`), whose `A₀` is representation-finite (`isRepresentationFinite_A0`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

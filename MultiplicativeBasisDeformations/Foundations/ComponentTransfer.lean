@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.FullSubquiver
-import MultiplicativeBasisDeformations.Foundations.PeriodicLocalization
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FullSubquiver
+public import MultiplicativeBasisDeformations.Foundations.PeriodicLocalization
 
 /-!
 # Transfer of the mesh derivative to a `τ`-closed full subquiver
@@ -16,6 +18,8 @@ Consequently, if `D_m(C(Q_S))` is surjective and the rows through vertices
 outside `S` are already in the image of `D_m(C(Q))`, then every row at a vertex
 of `S` is in that image (`row_mem_imageD_of_restrict`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

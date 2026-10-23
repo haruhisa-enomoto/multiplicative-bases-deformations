@@ -1,7 +1,11 @@
-import MBDVendor.Magnitude.CategoryTheory.ModuleRadicalSquareComparison
-import MBDVendor.QSE.RepresentationTheory.LinearIrreducibleHomSpace
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.ModuleRadicalSquareComparison
+public import MBDVendor.QSE.RepresentationTheory.LinearIrreducibleHomSpace
 
 /-! # Intrinsic irreducible spaces and the existing module multiplicity interface -/
+
+@[expose] public section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 noncomputable section

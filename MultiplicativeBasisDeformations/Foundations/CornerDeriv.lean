@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.PathEval
-import MultiplicativeBasisDeformations.Foundations.GModLemmas
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PathEval
+public import MultiplicativeBasisDeformations.Foundations.GModLemmas
 
 /-!
 # A first-order functor on the projective corner trivializes the deformation
@@ -16,6 +18,8 @@ evaluation at `w_p` identifies `RQ(p, s)` modulo the mesh ideal with `N_p e_s`. 
 Hochschild coboundary (`eq_hcobdry`), through the derivation `Δ(b) = ∑_p ψ_p Δ_p(w_p b)` with
 `Δ_p(n) = ∑_s δ(n e_s)(w_s)`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

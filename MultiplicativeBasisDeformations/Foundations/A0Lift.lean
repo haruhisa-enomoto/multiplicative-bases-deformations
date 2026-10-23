@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.A0Table
-import MultiplicativeBasisDeformations.Foundations.RayPres
+module
+
+public import MultiplicativeBasisDeformations.Foundations.A0Table
+public import MultiplicativeBasisDeformations.Foundations.RayPres
 
 /-!
 # Weight lifting for the ray table of `A₀`
@@ -10,8 +12,14 @@ Proposition 8.3(3) for `P = ray A₀` (`local-ray-geometry.tex`: "For the presen
 integer additive weight (`A0Mult_lift2`).
 -/
 
+@[expose] public section
+
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
+
+-- Keep `ZMod 2` on its ring structure: Mathlib's instance making simple nilpotent groups
+-- commutative would otherwise give `ZMod 2` a second, non-reducibly-equal additive structure.
+attribute [-instance] instAddCommGroupOfIsSimpleAddGroupOfIsNilpotent
 
 noncomputable section
 

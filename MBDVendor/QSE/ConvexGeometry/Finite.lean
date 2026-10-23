@@ -1,5 +1,7 @@
-import Mathlib.Data.Set.Card
-import MBDVendor.QSE.ConvexGeometry.Basic
+module
+
+public import Mathlib.Data.Set.Card
+public import MBDVendor.QSE.ConvexGeometry.Basic
 
 /-!
 # Finite convex geometries
@@ -7,6 +9,8 @@ import MBDVendor.QSE.ConvexGeometry.Basic
 This file proves the finite extreme-point and unique-basis consequences of
 anti-exchange used in the manuscript.
 -/
+
+@[expose] public section
 
 open Set
 

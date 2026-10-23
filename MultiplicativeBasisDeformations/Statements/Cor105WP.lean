@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Statements.FamilyCriterionWP
-import MultiplicativeBasisDeformations.Foundations.Cor105A0
-import MultiplicativeBasisDeformations.Foundations.Prop103
+module
+
+public import MultiplicativeBasisDeformations.Statements.FamilyCriterionWP
+public import MultiplicativeBasisDeformations.Foundations.Cor105A0
+public import MultiplicativeBasisDeformations.Foundations.Prop103
 
 /-!
 # Corollary 10.5 with the residual characters in `W(P)`
@@ -18,6 +20,8 @@ representation-finite algebra in characteristic two with the characters in `L = 
 `MeshWalk.istar` with the prime-field table, and primitivity from the integer basis of
 Proposition 7.5.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

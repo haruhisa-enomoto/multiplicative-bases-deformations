@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ProperProducts
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ProperProducts
 
 /-!
 # Two-sided segments, crown rows and nondeep boundary arrows
@@ -7,6 +9,8 @@ import MultiplicativeBasisDeformations.Foundations.ProperProducts
 `lem:nondeep-boundary-arrows` (`integral-partial-lifts.tex`), in path-free form: an
 ordinary path is recorded by its first (last) arrow, an ordinary left (right) divisor.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

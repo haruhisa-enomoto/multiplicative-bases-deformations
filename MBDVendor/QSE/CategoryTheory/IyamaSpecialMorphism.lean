@@ -1,7 +1,9 @@
-import Mathlib.CategoryTheory.Comma.Arrow
-import Mathlib.CategoryTheory.Preadditive.Biproducts
-import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
-import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
+module
+
+public import Mathlib.CategoryTheory.Comma.Arrow
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
+public import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
+public import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
 
 /-!
 # Special morphisms in Iyama tau-categories
@@ -16,6 +18,8 @@ The nilpotence field of `NilpotentRadicalData` is not used here; the structure
 currently provides the project's chosen Hom-ideal realization of the
 categorical radical.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

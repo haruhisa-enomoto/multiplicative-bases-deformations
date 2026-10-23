@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.RepFinite
-import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
-import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RepFinite
+public import MBDVendor.Magnitude.CategoryTheory.IndecomposableOfLocalEnd
+public import MBDVendor.Magnitude.Algebra.IndecomposableLocalEnd
 
 /-!
 # Twisting modules by automorphisms
@@ -18,6 +20,8 @@ For an automorphism `σ` of a representation-finite algebra, the twist
 (`twist_pow_iso`). With the divisibility of weights this gives the triviality of
 the action.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

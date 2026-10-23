@@ -1,6 +1,8 @@
-import MBDVendor.QSE.RepresentationTheory.IrreducibleCofinite
-import MBDVendor.QSE.CategoryTheory.MinimalMorphism
-import Mathlib.RingTheory.Length
+module
+
+public import MBDVendor.QSE.RepresentationTheory.IrreducibleCofinite
+public import MBDVendor.QSE.CategoryTheory.MinimalMorphism
+public import Mathlib.RingTheory.Length
 
 /-!
 # An abstract almost-split interface for the forward cofinite-two criterion
@@ -12,6 +14,8 @@ middle term and irreducible morphisms.  It also proves that a supplied
 finite-length almost-split map can be replaced by a minimal one.  Existence
 of ordinary almost-split maps is still left as a separate input.
 -/
+
+@[expose] public section
 
 noncomputable section
 

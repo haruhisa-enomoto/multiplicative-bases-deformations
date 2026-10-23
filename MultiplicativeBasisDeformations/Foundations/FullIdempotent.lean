@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CornerRepFinite
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CornerRepFinite
 
 /-!
 # Full idempotents: Morita equivalence for representation-finiteness
@@ -16,6 +18,8 @@ labels are handled by placing them, together with the distinct labels, in one
 category algebra in which the distinct labels form a full idempotent
 (`CategoryAlgebraCorners.lean`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.NormedBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.NormedBasis
 
 /-!
 # Sanity checks of the definitions
@@ -6,6 +8,8 @@ import MultiplicativeBasisDeformations.Foundations.NormedBasis
 Small proved examples showing that the definitions are satisfiable in the
 expected trivial cases.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

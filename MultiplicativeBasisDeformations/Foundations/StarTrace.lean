@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.TwistedTrace
-import MultiplicativeBasisDeformations.Foundations.StarCorner
-import MultiplicativeBasisDeformations.Foundations.PathShape
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TwistedTrace
+public import MultiplicativeBasisDeformations.Foundations.StarCorner
+public import MultiplicativeBasisDeformations.Foundations.PathShape
 
 /-!
 # Twisted traces on a star (Lemmas A.2 and A.4)
@@ -12,6 +14,8 @@ transformation with `σ` fixing the centre. In degree `d = m + 1 = 2 + s`, the r
 class of a closed path at a `σ`-fixed vertex `v` (`phiV`) is independent of the
 height, kills the relations of `Π(Δ)`, and satisfies twisted rotation.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -143,7 +147,7 @@ theorem phiVL_eq_zero_of_mem (v : (starTree L).Dbl) (hv : σ v = v) (h : ℤ)
 /-! ### Traces of words at the centre -/
 
 variable (hσo : σ none = none) (θ : Equiv.Perm (Fin t)) (hL : ∀ i, L (θ i) = L i)
-  (hθ : ∀ i j (hj : j ≤ L i), σ (av L i j hj) = av L (θ i) j (by rw [hL]; exact hj))
+  (hθ : ∀ i j (hj : j ≤ L i), σ (av L i j hj) = av L (θ i) j (hj.trans (hL i).ge))
 
 theorem vertices_wordP (i : Fin t) (w : List (Fin t)) :
     (wordP (L := L) (i :: w)).vertices = [o L, av L i 0 (Nat.zero_le _)] ++ (wordP w).vertices := by

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.StarCase
-import MultiplicativeBasisDeformations.Foundations.ReRoot
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarCase
+public import MultiplicativeBasisDeformations.Foundations.ReRoot
 
 /-!
 # Mesh corrections for periodic models of type `A`
@@ -10,6 +12,8 @@ as a star with one arm … For the reflection of `A_{2n-1}`, rooted at its middl
 vertex, the two closed paths at the centre are `x` and `-x`, and reflection sends
 `x` to `-x`."
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

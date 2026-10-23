@@ -1,5 +1,7 @@
-import MBDVendor.QSE.CategoryTheory.IyamaRightLadderIteration
-import MBDVendor.QSE.CategoryTheory.IyamaLadderRadical
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaRightLadderIteration
+public import MBDVendor.QSE.CategoryTheory.IyamaLadderRadical
 
 /-!
 # The initial complementary branch in an infinite Iyama right ladder
@@ -9,6 +11,8 @@ radical-power annihilator propagation from Iyama, Lemma 6.4.1(1)(i). It treats
 the zero-th padded summand separately. The argument is entirely categorical
 and contains no concrete algebra or module classification.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

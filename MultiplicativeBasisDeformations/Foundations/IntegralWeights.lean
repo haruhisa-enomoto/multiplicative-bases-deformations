@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.Exhaustion
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Exhaustion
 
 /-!
 # Integral weights on thin categories (Proposition 7.2, first part)
@@ -27,6 +29,8 @@ constants `c_D` (`extW`), and the character detecting a nonzero coordinate as
 `exists_zpow_ne_one`. Combined with Lemma 4.13 this gives Proposition 7.2(2)
 (`addWeight_eq_diff`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

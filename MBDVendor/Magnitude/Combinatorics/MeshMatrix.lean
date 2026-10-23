@@ -1,5 +1,7 @@
-import MBDVendor.Magnitude.Combinatorics.EulerSurplus
-import Mathlib.Data.Matrix.Diagonal
+module
+
+public import MBDVendor.Magnitude.Combinatorics.EulerSurplus
+public import Mathlib.Data.Matrix.Diagonal
 
 /-!
 # The Auslander--Reiten mesh matrix
@@ -13,6 +15,8 @@ Auslander--Reiten Euler expression `vertices - arrows + meshes`.
 The construction is deliberately combinatorial.  A later categorical layer
 will identify this matrix with the inverse Hom matrix.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

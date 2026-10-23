@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.PeriodicComponents
-import MultiplicativeBasisDeformations.Foundations.ObjectQuotients
-import MultiplicativeBasisDeformations.Foundations.SectionalCover
+module
+
+public import MultiplicativeBasisDeformations.Foundations.PeriodicComponents
+public import MultiplicativeBasisDeformations.Foundations.ObjectQuotients
+public import MultiplicativeBasisDeformations.Foundations.SectionalCover
 
 /-!
 # Periodic components are connected stable translation quivers
@@ -10,6 +12,8 @@ under `τ^{±1}` and every vertex of `K` is the translate of a vertex of `K`, so
 the full translation subquiver on `K` is stable; it is connected by arrows and
 translation edges.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
-import MultiplicativeBasisDeformations.Foundations.Exchange
-import MultiplicativeBasisDeformations.Foundations.Twist
-import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
+module
+
+public import MultiplicativeBasisDeformations.Foundations.InjectiveLabels
+public import MultiplicativeBasisDeformations.Foundations.Exchange
+public import MultiplicativeBasisDeformations.Foundations.Twist
+public import MultiplicativeBasisDeformations.Foundations.CategoryAlgebraCorners
 
 /-!
 # Proposition 2.10(2): `A₀` is representation-finite
@@ -17,6 +19,8 @@ endomorphism ring `C(x, x)` (full faithfulness), hence isomorphic to it.
 Modules of `Alg F₀` are the paper's right `A₀`-modules; they are transported to
 right modules of `(Alg F₀)ᵒᵖ` along `R ≅ Rᵒᵖᵒᵖ`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

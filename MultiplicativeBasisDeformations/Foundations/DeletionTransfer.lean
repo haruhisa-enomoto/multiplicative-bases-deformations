@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.ObjectQuotients
-import MultiplicativeBasisDeformations.Foundations.ZDeltaGauge
-import MultiplicativeBasisDeformations.Foundations.CoveringMesh
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ObjectQuotients
+public import MultiplicativeBasisDeformations.Foundations.ZDeltaGauge
+public import MultiplicativeBasisDeformations.Foundations.CoveringMesh
 
 /-!
 # Deleting vertices along a covering
@@ -17,6 +19,8 @@ vertices to a relation system (`RelSystem.del`), lift relations along a
 covering from a fixed start (`ofStar_liftStar_mem`), rescale to signed
 coefficients, and forget heights into `Π(Δ)` modulo the deleted vertices.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

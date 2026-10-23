@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ARMeshFinite
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARMeshFinite
 
 /-!
 # Graded Hom dimensions
@@ -9,6 +11,8 @@ finite radical filtration". The first equality is the decomposition of the
 Hom spaces of `k(Γ_A)` into finitely many degree parts together with
 Proposition 2.6(3); the second is the telescoping of the radical filtration.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

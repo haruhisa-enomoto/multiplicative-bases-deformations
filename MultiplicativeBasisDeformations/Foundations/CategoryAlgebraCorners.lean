@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.FullIdempotent
-import MultiplicativeBasisDeformations.Foundations.SplitTransfer
-import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FullIdempotent
+public import MultiplicativeBasisDeformations.Foundations.SplitTransfer
+public import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
 
 /-!
 # Repeated labels in category algebras
@@ -19,6 +21,8 @@ For a family `F : ι → C` and a relabelling `σ : κ → ι`, both `Alg F` and
 (`isRepresentationFinite_comp`). Algebras are taken opposite, so that right
 modules are the modules `Rep F X` of `CategoryAlgebra.lean`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

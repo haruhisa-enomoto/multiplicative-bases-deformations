@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.EndpointChains
-import MultiplicativeBasisDeformations.Foundations.CornerRepFinite
+module
+
+public import MultiplicativeBasisDeformations.Foundations.EndpointChains
+public import MultiplicativeBasisDeformations.Foundations.CornerRepFinite
 
 /-!
 # Homogeneous layers of a graded representation-finite algebra
@@ -20,6 +22,8 @@ member."
 `LenGrading` is a grading of the algebra by `ℕ` with homogeneous products; the
 scaling maps `σ_t` (`scale`) are multiplicative.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

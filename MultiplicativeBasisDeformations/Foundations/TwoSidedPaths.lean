@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CrownRows
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CrownRows
 
 /-!
 # Lemma 9.3: two-sided factor paths
@@ -15,6 +17,8 @@ an arrow `aᵢ` between two two-sided prefixes has both endpoint actions nonzero
 two-sided ray commutes with `q̂`, so it is two-sided (`ordPath_TB`). The dual statement
 follows by passing to `Sys.op` (`ordPath_TB'`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

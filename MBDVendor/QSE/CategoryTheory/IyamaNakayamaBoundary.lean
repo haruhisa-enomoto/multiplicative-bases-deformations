@@ -1,6 +1,8 @@
-import MBDVendor.QSE.CategoryTheory.IyamaNakayamaPair
-import MBDVendor.QSE.CategoryTheory.IyamaLadderRadical
-import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
+module
+
+public import MBDVendor.QSE.CategoryTheory.IyamaNakayamaPair
+public import MBDVendor.QSE.CategoryTheory.IyamaLadderRadical
+public import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
 
 /-!
 # Projective-free ladder support and the Nakayama boundary
@@ -12,6 +14,8 @@ vertical arrow immediately before a zero-target terminal rung with a genuine
 in Iyama's Nakayama-pair extraction; no concrete algebra or classification is
 used.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

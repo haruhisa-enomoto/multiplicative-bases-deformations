@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.NormalFormGeneral
+module
+
+public import MultiplicativeBasisDeformations.Foundations.NormalFormGeneral
 
 /-!
 # Proposition 12.2 in its general form
@@ -22,6 +24,8 @@ source's: in increasing degree `q`, split the degree-`q` errors as `D_{q-1}(f) +
 retain the `c_j` and change the arrows by lifts of `f`; a retained word of degree `d_j ≥ 3`
 changes only in degree `≥ q + d_j − 2 > q`, and the two-correction terms have degree `2q − 2`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

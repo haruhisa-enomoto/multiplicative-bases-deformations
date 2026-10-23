@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.GradedRealizationIso
-import MultiplicativeBasisDeformations.Foundations.LayerExactnessDual
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedRealizationIso
+public import MultiplicativeBasisDeformations.Foundations.LayerExactnessDual
 
 /-!
 # The mesh sequences of `k(Γ_A)` on homogeneous paths
@@ -21,6 +23,8 @@ ideal:
 The first two use the first sequence of (1), the last two the second
 sequence (`LayerExactnessDual.lean`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

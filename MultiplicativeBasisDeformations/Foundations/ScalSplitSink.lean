@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ScalSplit
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ScalSplit
 
 /-!
 # Lemma 4.11(2) for a sink
@@ -9,6 +11,8 @@ on `S ⊆ O` and on the corresponding set of `Oᵒᵖ` correspond (`opScal`: a l
 line `f.op : op o' → op o`), compatibly with restriction (`res_opScal`), so the split surjection
 over a source (`sourceScalSplit`) transports to `sinkScalSplit`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

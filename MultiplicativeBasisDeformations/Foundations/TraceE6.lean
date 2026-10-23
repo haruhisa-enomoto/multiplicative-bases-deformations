@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.TraceAlgebraTwo
-import MultiplicativeBasisDeformations.Foundations.TraceTypesAD
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TraceAlgebraTwo
+public import MultiplicativeBasisDeformations.Foundations.TraceTypesAD
 
 /-!
 # Twisted traces of type `E_6`
@@ -12,6 +14,8 @@ subtracting the cubic relations gives `x² = 0`, `v³ = -xvx`,
 `v²x + vxv + xv² = 0`", and the words `x, v; xv, vx, v²; xvx, xv², vxv;
 xvxv, vxv²; xvxv²` span the positive part, with all words of degree six zero.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

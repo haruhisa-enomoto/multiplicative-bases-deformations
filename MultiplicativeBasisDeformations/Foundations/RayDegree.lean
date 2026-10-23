@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.RayProduct
-import MultiplicativeBasisDeformations.Foundations.A0Normed
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RayProduct
+public import MultiplicativeBasisDeformations.Foundations.A0Normed
 
 /-!
 # The radical degree of a ray
@@ -16,6 +18,8 @@ the same degree lie in the same ray (`ray_eq_of_degree`), and a strictly smaller
 subbimodule has a strictly larger degree (`degree_lt_of_lt`). The pieces
 `F^dV/F^{d+1}V` are the graded pieces `A₀(x,y)_d` of `gr_J` on projectives.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

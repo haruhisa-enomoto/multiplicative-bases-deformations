@@ -1,6 +1,8 @@
-import MBDVendor.Magnitude.CategoryTheory.HomMeshInverse
-import MBDVendor.QSE.CategoryTheory.IyamaLadderRadical
-import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.HomMeshInverse
+public import MBDVendor.QSE.CategoryTheory.IyamaLadderRadical
+public import MBDVendor.QSE.CategoryTheory.SplitMorphismComplement
 
 /-!
 # Residue-field discharge for the Hom--mesh recurrence
@@ -15,6 +17,8 @@ The remaining module-theoretic input is a surjective linear residue map
 `End(X) -> k` whose kernel is the categorical radical.  Rank-nullity then gives
 codimension one on the diagonal.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

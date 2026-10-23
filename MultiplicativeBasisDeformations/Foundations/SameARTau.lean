@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.SameARQuiver
+module
+
+public import MultiplicativeBasisDeformations.Foundations.SameARQuiver
 
 /-!
 # Corollary 2.11: the translations of `Γ_{A₀}` and `Γ_A` agree
@@ -17,6 +19,8 @@ library. Every component of `c` is radical, so `c` factors through `f_x` (`c = h
 identifies `ker c` with a summand of `ker f_x`; as `ker f_x ≅ M_{τ x}` is indecomposable, the
 two kernels agree.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

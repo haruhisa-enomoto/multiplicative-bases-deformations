@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.LinCorners
-import MultiplicativeBasisDeformations.Foundations.EndpointChains
-import MultiplicativeBasisDeformations.Foundations.LocalCorner
-import MultiplicativeBasisDeformations.Foundations.GradedLayers
+module
+
+public import MultiplicativeBasisDeformations.Foundations.LinCorners
+public import MultiplicativeBasisDeformations.Foundations.EndpointChains
+public import MultiplicativeBasisDeformations.Foundations.LocalCorner
+public import MultiplicativeBasisDeformations.Foundations.GradedLayers
 
 /-!
 # Setting 8.4 from a representation-finite ray table
@@ -16,6 +18,8 @@ not a product of two positive local rays; it generates all local rays (`q_x`). E
 cyclic over one endpoint (`endpointSpan_one_sided`) and its endpoint subbimodules form a
 chain (`isChain_subbimodules`), which gives the fields `cyc` and `chain` of `Sys`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

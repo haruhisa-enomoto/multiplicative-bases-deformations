@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.HochschildCochains
+module
+
+public import MultiplicativeBasisDeformations.Foundations.HochschildCochains
 
 /-!
 # Finite normalization of an associative family
@@ -24,6 +26,8 @@ Here the stage invariant is `Stage` (the error `⋆_g - m_λ` raises degree by
 The associativity of `m_t` over `k[t]` is used only through its specializations
 (`FamilyHyp.assoc`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

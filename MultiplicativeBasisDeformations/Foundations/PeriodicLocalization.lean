@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
+module
+
+public import MultiplicativeBasisDeformations.Foundations.MeshDerivativeRows
 
 /-!
 # Periodic localization of the mesh derivative
@@ -19,6 +21,8 @@ The counting is organized by the potential `d·δ(v_i) + (d - 1 - i)`, minimized
 over the positions `i < d` of the path, where `δ(v)` is the number of times `τ`
 can be applied to `v`. One rotation lowers it by exactly one.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

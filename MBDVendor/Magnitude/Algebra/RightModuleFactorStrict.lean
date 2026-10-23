@@ -1,5 +1,7 @@
-import MBDVendor.Magnitude.Algebra.RightModuleFactorTauAssembly
-import MBDVendor.Magnitude.CategoryTheory.HomUnitEquations
+module
+
+public import MBDVendor.Magnitude.Algebra.RightModuleFactorTauAssembly
+public import MBDVendor.Magnitude.CategoryTheory.HomUnitEquations
 
 /-!
 # Strictness criteria for literal finite-module factors
@@ -11,6 +13,8 @@ exact categorical consequences of those two facts: quotient images of
 ambient monomorphisms remain monic, and hence all chosen factor right meshes
 are strict.  The dual criterion treats a distinguished injective sink.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

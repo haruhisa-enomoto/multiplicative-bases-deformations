@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.Contours
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Contours
 
 /-!
 # Proper products and external returns (Appendix C.2)
@@ -6,6 +8,8 @@ import MultiplicativeBasisDeformations.Foundations.Contours
 `lem:nondeep-two-object-return` and `prop:proper-ray-products`
 (`local-ray-restrictions.tex`, `primitive-ray-equations.tex`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

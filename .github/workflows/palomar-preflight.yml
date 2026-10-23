@@ -1,0 +1,28 @@
+name: Palomar preflight
+
+# Runs Palomar's complete mechanical verification for one commit of this
+# repository, as required before a submission to https://submit.palomar-registry.org/.
+# Start it by hand from the Actions tab with the full commit SHA to check.
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: Full 40-character commit to verify
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@07a02bae1e85c75ae349d0e75195162d16d41e21
+    with:
+      repository: haruhisa-enomoto/multiplicative-bases-deformations
+      commit: ${{ inputs.commit }}
+      pipeline_commit: 07a02bae1e85c75ae349d0e75195162d16d41e21
+      request_id: mbdpreflight
+      mode: full
+      execution_profile: palomar-standard-v1
+      options: '{"comparator_config_path": "comparator.json", "authorization_relationship": "maintainer"}'

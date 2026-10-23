@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.ProjectiveIdempotents
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ProjectiveIdempotents
 
 /-!
 # The exchange step of Krull–Schmidt
@@ -10,6 +12,8 @@ in Lemma 4.6 ("Decomposing the latter over the finitely many indecomposable
 `B`-modules shows that only finitely many isomorphism classes can occur",
 `scalar-normalization.tex`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

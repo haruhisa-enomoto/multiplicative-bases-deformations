@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CategoryAlgebra
 
 /-!
 # Local families with exact right meshes
@@ -16,6 +18,8 @@ We record these properties for a finite family of objects of a `k`-linear
 category (`LocalFamily`, `MeshData`), and derive the module-theoretic
 consequences over the category algebra `Λ`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,4 +1,8 @@
-import MultiplicativeBasisDeformations.Independent.TheoremB
+module
+
+public import MultiplicativeBasisDeformations.Independent.TheoremB
+
+@[expose] public section
 
 universe u
 

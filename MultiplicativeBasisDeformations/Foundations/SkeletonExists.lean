@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.RightModules
+module
+
+public import MultiplicativeBasisDeformations.Foundations.RightModules
 
 /-!
 # Indecomposable skeletons exist
@@ -7,6 +9,8 @@ A representation-finite algebra has a complete irredundant list of its
 finite-dimensional indecomposable modules: keep, in each isomorphism class of a
 complete list, the representative of least index.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.ConnectedChar2
-import MultiplicativeBasisDeformations.Foundations.FloorWeight
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ConnectedChar2
+public import MultiplicativeBasisDeformations.Foundations.FloorWeight
 
 /-!
 # The spanning row of a connected periodic quiver winds once
@@ -9,6 +11,8 @@ a finite connected stable translation quiver in characteristic two has a winding
 weight in which the weight of the row minus `ν` of its vertex is one
 (`connected_cokerSpan_wt`; the weight is `floorWt`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

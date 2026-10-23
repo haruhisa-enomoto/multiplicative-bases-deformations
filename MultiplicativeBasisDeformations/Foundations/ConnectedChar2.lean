@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.StarESpan
-import MultiplicativeBasisDeformations.Foundations.AEvenChar2
-import MultiplicativeBasisDeformations.Foundations.ConnectedCase
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarESpan
+public import MultiplicativeBasisDeformations.Foundations.AEvenChar2
+public import MultiplicativeBasisDeformations.Foundations.ConnectedCase
 
 /-!
 # Mesh corrections on a connected periodic quiver in characteristic two
@@ -13,6 +15,8 @@ mesh derivatives are spanned by the class of at most one row (`connected_cokerSp
 by Proposition 4.1 the quiver is covered by a star model; the types `A` give zero
 cokernels, and the types `D`, `E` one row of degree `2s + 2` at the centre.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

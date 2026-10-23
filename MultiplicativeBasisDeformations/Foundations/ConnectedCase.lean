@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.AEven
-import MultiplicativeBasisDeformations.Foundations.APaths
-import MultiplicativeBasisDeformations.Foundations.PeriodicModel
-import MultiplicativeBasisDeformations.Foundations.StarTypes
+module
+
+public import MultiplicativeBasisDeformations.Foundations.AEven
+public import MultiplicativeBasisDeformations.Foundations.APaths
+public import MultiplicativeBasisDeformations.Foundations.PeriodicModel
+public import MultiplicativeBasisDeformations.Foundations.StarTypes
 
 /-!
 # Mesh corrections on a connected stable translation quiver
@@ -14,6 +16,8 @@ quiver: by Proposition 4.1 it is covered by a star model; the types `A` and `D`
 are settled here, and the types `E` are passed in as a hypothesis (they are
 treated with the brick hypothesis in `ECase.lean`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.FiltrationRays
-import MultiplicativeBasisDeformations.Foundations.FinalStandardness
+module
+
+public import MultiplicativeBasisDeformations.Foundations.FiltrationRays
+public import MultiplicativeBasisDeformations.Foundations.FinalStandardness
 
 /-!
 # Initial forms identify ray products (Proposition 8.3(2), Theorem 11.8(1))
@@ -21,6 +23,8 @@ bijection `θ` of the rays of `P` (`thetaR`) under which every nonzero product o
 from a nonzero product of `A`; both tables have the same number of nonzero products, so the
 two sets of pairs coincide.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

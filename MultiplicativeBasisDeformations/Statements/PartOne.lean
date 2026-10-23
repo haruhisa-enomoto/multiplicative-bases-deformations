@@ -1,20 +1,22 @@
-import MultiplicativeBasisDeformations.Foundations.ARQuiver
-import MultiplicativeBasisDeformations.Foundations.GradedRealizationIso
-import MultiplicativeBasisDeformations.Foundations.CornerAlgebra
-import MultiplicativeBasisDeformations.Foundations.MeshCorrections
-import MultiplicativeBasisDeformations.Foundations.Rays
-import MultiplicativeBasisDeformations.Foundations.ECase
-import MultiplicativeBasisDeformations.Foundations.ComponentGlue
-import MultiplicativeBasisDeformations.Foundations.CornerRepFinite
-import MultiplicativeBasisDeformations.Foundations.SplitTransfer
-import MultiplicativeBasisDeformations.Foundations.EndpointChains
-import MultiplicativeBasisDeformations.Foundations.PosetWeights
-import MultiplicativeBasisDeformations.Foundations.NonbasicBasis
-import MultiplicativeBasisDeformations.Foundations.GradedRays
-import MultiplicativeBasisDeformations.Foundations.UnitCoefficients
-import MultiplicativeBasisDeformations.Foundations.ARMeshFinite
-import MultiplicativeBasisDeformations.Foundations.StandardForm
-import MultiplicativeBasisDeformations.Foundations.FiltrationRays
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ARQuiver
+public import MultiplicativeBasisDeformations.Foundations.GradedRealizationIso
+public import MultiplicativeBasisDeformations.Foundations.CornerAlgebra
+public import MultiplicativeBasisDeformations.Foundations.MeshCorrections
+public import MultiplicativeBasisDeformations.Foundations.Rays
+public import MultiplicativeBasisDeformations.Foundations.ECase
+public import MultiplicativeBasisDeformations.Foundations.ComponentGlue
+public import MultiplicativeBasisDeformations.Foundations.CornerRepFinite
+public import MultiplicativeBasisDeformations.Foundations.SplitTransfer
+public import MultiplicativeBasisDeformations.Foundations.EndpointChains
+public import MultiplicativeBasisDeformations.Foundations.PosetWeights
+public import MultiplicativeBasisDeformations.Foundations.NonbasicBasis
+public import MultiplicativeBasisDeformations.Foundations.GradedRays
+public import MultiplicativeBasisDeformations.Foundations.UnitCoefficients
+public import MultiplicativeBasisDeformations.Foundations.ARMeshFinite
+public import MultiplicativeBasisDeformations.Foundations.StandardForm
+public import MultiplicativeBasisDeformations.Foundations.FiltrationRays
 
 /-!
 # Part I statements
@@ -23,6 +25,8 @@ Statements of Part I results of the manuscript (Sections 2--5), with their proof
 from the foundations. The remaining Part I results are proved in the foundation
 files listed in `docs/PAPER-CORRESPONDENCE.md`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

@@ -1,7 +1,9 @@
-import Mathlib.CategoryTheory.Preadditive.Biproducts
-import MBDVendor.QSE.CategoryTheory.HomIdealPowers
-import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
-import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
+module
+
+public import Mathlib.CategoryTheory.Preadditive.Biproducts
+public import MBDVendor.QSE.CategoryTheory.HomIdealPowers
+public import MBDVendor.QSE.CategoryTheory.IyamaTauSequence
+public import MBDVendor.QSE.CategoryTheory.NilpotentCategoricalRadical
 
 /-!
 # Radical-power propagation in Iyama left ladders
@@ -11,6 +13,8 @@ This is the categorical dual of the right-ladder calculation in Iyama,
 opposing the right-ladder matrix and then writing the biproducts back in the
 original category.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

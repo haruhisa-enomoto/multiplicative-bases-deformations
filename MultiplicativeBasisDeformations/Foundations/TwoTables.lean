@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Lemma 11.1: two associative tables
@@ -22,6 +24,8 @@ cocycle iff `a` is constant along the relation `Rel` of the nonvanishing equatio
 (`isCocycle_iff`); the product `m + eps T` is associative for such `T` (`assoc_add_eps`),
 and has `b` as a multiplicative basis when `T` takes values `0, 1` (`mul_basis_of_binary`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

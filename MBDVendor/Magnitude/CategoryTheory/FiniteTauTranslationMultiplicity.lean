@@ -1,4 +1,6 @@
-import MBDVendor.Magnitude.CategoryTheory.HomUnitEquations
+module
+
+public import MBDVendor.Magnitude.CategoryTheory.HomUnitEquations
 
 /-!
 # Translation of arrow multiplicities in a finite tau-category
@@ -11,6 +13,8 @@ translation identity for the official arrow multiplicities:
 
 `a(X,Y) = a(Y,tauMinus X)`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

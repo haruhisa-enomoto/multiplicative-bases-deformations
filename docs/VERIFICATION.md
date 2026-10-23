@@ -31,7 +31,19 @@ library. The bridge shows:
 `sorry` placeholders, for Theorems A and B. `Solution.lean` proves them and
 does not import the Challenge.
 
-## Results of October 17, 2026
+## Results of October 23, 2026
+
+| Check | Result |
+| --- | --- |
+| Lean source check (`scripts/check-lean-sources.py`) | every file uses the module system and has at most 10,000 lines |
+| Fresh build (no project artifacts, Mathlib from cache) | 9519 jobs including Challenge and Solution, 19 min 39 s, research commit `8e6e678df` |
+| Axiom audit, `scripts/AxiomAudit.lean` | 14 declarations; only `propext`, `Classical.choice`, `Quot.sound`; a scan of all 23981 project declarations finds no other axiom |
+| `lake comparator` (Lean v4.35.0-rc3) on Challenge and Solution | statement match, axiom boundary, con-ron, NanoDa and Lean kernel replay passed; 7 min 4 s |
+
+The [record](../verification/2026-10-23/README.md) gives the hashes. This is a
+local run, not a hosted Palomar preflight or registry acceptance.
+
+## Results of October 17, 2026 (Lean v4.33.1)
 
 | Check | Result |
 | --- | --- |
@@ -50,6 +62,7 @@ hosted Palomar preflight or registry acceptance.
 ## Reproduce the checks
 
 ```sh
+python3 scripts/check-lean-sources.py
 lake exe cache get
 lake build
 python3 scripts/audit_axioms.py
@@ -58,15 +71,12 @@ lake build Challenge Solution
 ./scripts/verify-comparator.sh
 ```
 
-`verify-comparator.sh` clones and builds Comparator, lean4export, NanoDa and
-Landrun at these commits, and needs Go and Rust:
-
-| Tool | Source commit |
-| --- | --- |
-| Comparator | `575674928e239f5bc452aab72d1dd7b0f1326494` |
-| lean4export | `15f6055e299ad5b89345e533cc2192f4cc00f659` |
-| NanoDa | `68d5ca9db226849b41a6fff59d796ff19d0a8840` |
-| Landrun | `811cfff51ceaf3d9843708aa6d22e9b84ccac8b4` |
+`verify-comparator.sh` follows the Palomar template: it runs the
+`lake comparator` bundled with the toolchain, with the Lean kernel and the
+bundled NanoDa and con-ron checkers, inside a `bwrap` (bubblewrap) sandbox, so
+`bwrap` must be on the path. The workflow
+[Palomar preflight](../.github/workflows/palomar-preflight.yml) runs Palomar's
+complete mechanical verification on GitHub for a chosen commit.
 
 Use a machine with at least 16 GB of memory.
 

@@ -1,9 +1,11 @@
-import MBDVendor.Magnitude.Combinatorics.MeshMatrix
-import MBDVendor.Magnitude.CategoryTheory.LinearBiproduct
-import MBDVendor.Magnitude.CategoryTheory.TauExactDimension
-import Mathlib.CategoryTheory.Linear.Basic
-import Mathlib.LinearAlgebra.Dimension.Finite
-import MBDVendor.QSE.CategoryTheory.FiniteTauCategory
+module
+
+public import MBDVendor.Magnitude.Combinatorics.MeshMatrix
+public import MBDVendor.Magnitude.CategoryTheory.LinearBiproduct
+public import MBDVendor.Magnitude.CategoryTheory.TauExactDimension
+public import Mathlib.CategoryTheory.Linear.Basic
+public import Mathlib.LinearAlgebra.Dimension.Finite
+public import MBDVendor.QSE.CategoryTheory.FiniteTauCategory
 
 /-!
 # Matrices attached to a finite tau-category
@@ -19,6 +21,8 @@ matrix.  The next layer will prove, from tau-sequence exactness and the
 one-dimensional residue division algebras, that the mesh and Hom matrices are
 mutual inverses.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

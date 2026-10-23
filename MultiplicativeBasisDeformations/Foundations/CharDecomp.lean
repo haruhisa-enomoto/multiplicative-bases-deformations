@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.BinaryNormalization
+module
+
+public import MultiplicativeBasisDeformations.Foundations.BinaryNormalization
 
 /-!
 # Character decomposition of Hochschild cochains
@@ -20,6 +22,8 @@ normalized relative cocycle which is the coboundary of some one-cochain of degre
 the coboundary of a normalized relative one-cochain of degree `q`. The correction is the
 inner derivation of `u = ∑ f(e_j) e_j`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

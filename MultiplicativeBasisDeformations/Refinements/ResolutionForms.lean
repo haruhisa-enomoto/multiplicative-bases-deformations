@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.ExtResolutions
-import MultiplicativeBasisDeformations.Foundations.SquareZeroModules
-import MultiplicativeBasisDeformations.Refinements.GeneralLift
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ExtResolutions
+public import MultiplicativeBasisDeformations.Foundations.SquareZeroModules
+public import MultiplicativeBasisDeformations.Refinements.GeneralLift
 
 /-!
 # Proposition 6.5 and Lemma 6.6 with `Ext` from graded projective resolutions
@@ -16,6 +18,8 @@ comparison `GRes.extVanish_iff`:
   with `Λ` and the modules free, as in the lemma (`lemma66_Z4`);
 * Proposition 6.5 over a field (`exists_genLift_res`, `genLift_unique_res`, `fLift_map_res`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

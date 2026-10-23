@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.GradedExt
-import MultiplicativeBasisDeformations.Foundations.IntegralCoker
+module
+
+public import MultiplicativeBasisDeformations.Foundations.GradedExt
+public import MultiplicativeBasisDeformations.Foundations.IntegralCoker
 
 /-!
 # Lifting graded modules and maps to `ℤ/4` (Proposition 10.1, the lifting steps)
@@ -17,6 +19,8 @@ Setting: a graded `𝔽₂`-algebra `Λ`, a graded `𝒪`-algebra `Λ̃` (`𝒪 
 (`tw`) and division by two (`half`) are well defined; maps of degree `d` lift when
 `Ext¹_d` vanishes (`exists_liftHom`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

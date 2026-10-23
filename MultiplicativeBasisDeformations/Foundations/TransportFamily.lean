@@ -1,6 +1,8 @@
-import MultiplicativeBasisDeformations.Foundations.Char2Core
-import MultiplicativeBasisDeformations.Foundations.IndicatorRel
-import MultiplicativeBasisDeformations.Foundations.GradedBasis
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Char2Core
+public import MultiplicativeBasisDeformations.Foundations.IndicatorRel
+public import MultiplicativeBasisDeformations.Foundations.GradedBasis
 
 /-!
 # The indicator family on a graded algebra `Λ ≅ kP`
@@ -12,6 +14,8 @@ of character `χ` has character `χ` and internal degree `deg χ`; and the famil
 `m + Σ t_E μ_E` is associative (Proposition 11.3(1)). These are the hypotheses of
 Theorem 7.7 other than spanning (`binary-families.tex`).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

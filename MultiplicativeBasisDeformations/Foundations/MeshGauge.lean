@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
+module
+
+public import MultiplicativeBasisDeformations.Foundations.CoveringIdeals
 
 /-!
 # Rescaling arrows and mesh relations
@@ -13,6 +15,8 @@ mesh relation `r_x(c)` to `η_x⁻¹ r_x(c')`, hence the mesh ideal of `c` into 
 of `c'` (`gaugeMap_mem_ideal`). A single path therefore lies in one ideal iff it
 lies in the other.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

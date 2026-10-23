@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.ConnectedChar2
-import MultiplicativeBasisDeformations.Foundations.ComponentSpan
-import MultiplicativeBasisDeformations.Foundations.ComponentGlue
-import MultiplicativeBasisDeformations.Foundations.ObjectQuotients
+module
+
+public import MultiplicativeBasisDeformations.Foundations.ConnectedChar2
+public import MultiplicativeBasisDeformations.Foundations.ComponentSpan
+public import MultiplicativeBasisDeformations.Foundations.ComponentGlue
+public import MultiplicativeBasisDeformations.Foundations.ObjectQuotients
 
 /-!
 # Proposition 6.1: residual correction spaces (spanning form)
@@ -17,6 +19,8 @@ nonzero class; we keep all components with a candidate row (a superset), which i
 the spanning statement needs. The component models and degrees of the rows are recorded
 by `connected_cokerSpan` and the files `StarDSpan`, `StarESpan`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

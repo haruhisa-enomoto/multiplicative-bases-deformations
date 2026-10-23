@@ -1,7 +1,9 @@
-import MultiplicativeBasisDeformations.Foundations.StarTwo
-import MultiplicativeBasisDeformations.Foundations.TraceDSpan
-import MultiplicativeBasisDeformations.Foundations.DTopPaths
-import MultiplicativeBasisDeformations.Foundations.ECase
+module
+
+public import MultiplicativeBasisDeformations.Foundations.StarTwo
+public import MultiplicativeBasisDeformations.Foundations.TraceDSpan
+public import MultiplicativeBasisDeformations.Foundations.DTopPaths
+public import MultiplicativeBasisDeformations.Foundations.ECase
 
 /-!
 # Type `D` in characteristic two (Appendix B)
@@ -19,6 +21,8 @@ row of `w_{s+1}` at the centre.
 
 For the three-cycle of the arms of `D_4`, all classes vanish.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
@@ -208,7 +212,7 @@ variable {V : Type v'} [Quiver.{w} V] [∀ x y : V, Subsingleton (x ⟶ y)] {Q :
   (hfib : ∀ X Y : (starTree L).ZVert, π.obj X = π.obj Y →
     ∃ n : ℕ, Y = (gZ ρ hρ c0 hρp)^[n] X ∨ X = (gZ ρ hρ c0 hρp)^[n] Y)
   (h0 : ρ none = none) (θ : Equiv.Perm (Fin 3)) (hL : ∀ i, L (θ i) = L i)
-  (hθ : ∀ i j (hj : j ≤ L i), ρ (ch i j hj) = ch (θ i) j (by rw [hL]; exact hj))
+  (hθ : ∀ i j (hj : j ≤ L i), ρ (ch i j hj) = ch (θ i) j (hj.trans (hL i).ge))
 
 include hπ hτ hsurj hdeck hfib h0 hθ in
 /-- **The brick hypothesis bounds the long arm of type `D`**: if `θ` fixes the long arm

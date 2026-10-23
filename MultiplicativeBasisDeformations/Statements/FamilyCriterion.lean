@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.Char2Basic
-import MultiplicativeBasisDeformations.Foundations.FamilyCriterionA0
+module
+
+public import MultiplicativeBasisDeformations.Foundations.Char2Basic
+public import MultiplicativeBasisDeformations.Foundations.FamilyCriterionA0
 
 /-!
 # Proposition 7.9 for a basic representation-finite algebra
@@ -12,6 +14,8 @@ a normed multiplicative ray basis of `A` presenting `P = ray A₀`, and the lead
 image of each ray vector `b_r` (for the radical filtration of `A`, `posFiltA`) is a nonzero
 multiple of `b_r`. The argument does not use the characteristic.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

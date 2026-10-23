@@ -1,5 +1,7 @@
-import MultiplicativeBasisDeformations.Foundations.TableCover
-import MultiplicativeBasisDeformations.Foundations.FinPoset
+module
+
+public import MultiplicativeBasisDeformations.Foundations.TableCover
+public import MultiplicativeBasisDeformations.Foundations.FinPoset
 
 /-!
 # Incidence tables and faithful supports of ray tables
@@ -11,6 +13,8 @@ import MultiplicativeBasisDeformations.Foundations.FinPoset
   the graded cover on the objects `(tgt r, wt r)` (the action on `H(X, -)`), so it is
   representation-finite when `kP` is (Lemma 4.10).
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false

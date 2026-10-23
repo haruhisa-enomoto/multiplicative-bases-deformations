@@ -1,4 +1,6 @@
-import MultiplicativeBasisDeformations.Refinements.FamilyNormalForm
+module
+
+public import MultiplicativeBasisDeformations.Refinements.FamilyNormalForm
 
 /-!
 # The polynomial mesh relations (Proposition 12.8, `F_i(t) = a_i t_i`)
@@ -13,6 +15,8 @@ The twisted arrows are morphisms of the lifted modules of the fibre `t`, realize
 twist of its realization (`toLin_pathR_tw`), and satisfy `r_x = Σ_i λ_i t_i R_i` (`tw_relation`):
 the retained coefficients are `F_i(t) = λ_i t_i`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 set_option linter.unusedSectionVars false
